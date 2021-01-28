@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: piloncillo.github.io
-Token: 4c51fd64047d377baeac34fbb609ce48416b5758ddd67d65888b61d4e50e9205
