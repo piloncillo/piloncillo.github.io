@@ -108,7 +108,8 @@ width: 860px;
 .img_auto {
 height: auto;
 width: auto;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript">$(document.head).append("<link rel='icon' href='Images/favicon.png'>");</script><tw-passagedata pid="1" name="Inicio" tags="" position="851,100" size="100,100">!!La Guía de Piloncillo para Wii U
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">$(document.head).append("<link rel='icon' href='Images/favicon.png'>");
+$(document.head).append("<meta name='google-site-verification' content='qzgxLiPkLZqct4OizWs3vUrabLQxt_L2CdA_bYOS2XI' />");</script><tw-passagedata pid="1" name="Inicio" tags="" position="851,100" size="100,100">!!La Guía de Piloncillo para Wii U
 
 Esta guía te enseña paso a paso desde cero a instalar aplicaciones y juegos en tu consola. No importa si es nueva o si fue modificada previamente.
 
@@ -122,7 +123,7 @@ Esto necesitas para hacer esta guía con éxito:
 * Una Wii U con acceso a Internet.
 * Una tarjeta SD (cualquiera, pero se recomienda una de 32 GB para cuando se quieran instalar los juegos más pesados).
 * Un dispositivo como una computadora para colocar archivos en la tarjeta SD.
-Las Wii U con firmware 5.5.3 U o 5.5.4 E (la última versión de la región americana o la última versión de la región europea, respectivamente) son vulnerables. Esta guía funcionará en todas las Wii U de todas las regiones con firmware 5.5.4 o inferior. Lo ideal es que actualices a la última versión antes de modificar la consola.
+Las Wii U con firmware 5.5.5 U o 5.5.5 E (la última versión de la región americana o la última versión de la región europea, respectivamente) son vulnerables. Esta guía funcionará en todas las Wii U de todas las regiones con firmware 5.5.5 o inferior. Lo ideal es que actualices a la última versión antes de modificar la consola.
 
 Debes saber que modificar cualquier sistema implica la posibilidad de producir un falló irreversible (brick) en el mismo. En el caso de la Wii U es muy específica la situación para que esto ocurra así que asegúrate de seguir las instrucciones cuando se indique la posibilidad de un falló irreversible.
 
@@ -1128,7 +1129,7 @@ CFW
 [[Preguntas Frecuentes]]
 [[Homebrew Destacado]]
 [[Acerca de|Acerca de esta guía]]</tw-passagedata><tw-passagedata pid="52" name="Acerca de esta guía" tags="" position="1701,100" size="100,100">!Acerca de esta guía
-!!Versión: 1.5
+!!Versión: 1.7 (1 de marzo de 2021)
 Esta guía fue hecha usando [[Twine 2.3.9|https://twinery.org/]] con [[SugarCube 2.31.1|http://www.motoslave.net/sugarcube/2/]] y fue escrita por &#39;&#39;Fran AC&#39;&#39; basado en la guía de los miembros de [[Nintendo Homebrew Discord Server|https://wiiu.hacks.guide/#/about]].
 
 Puedes descargar la guía completa desde [[esté enlace|https://github.com/piloncillo/piloncillo.github.io/releases]].
@@ -1200,7 +1201,7 @@ Créditos a los desarrolladores de las herramientas
 * &quot;&quot;&quot;https://wiikeys.web.app/&quot;&quot;&quot;
 * &quot;&quot;&quot;http://vault.titlekeys.ovh/&quot;&quot;&quot;
 
-&lt;&lt;back &quot;Regresar&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="55" name="Qué es Haxchi" tags="" position="1901.3333333333335,400.83333333333337" size="100,100">!!¿Qué es Haxchi?
+&lt;&lt;back &quot;Regresar&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="55" name="Qué es Haxchi" tags="" position="1901,400" size="100,100">!!¿Qué es Haxchi?
 
 Haxchi es un tipo de exploit ContentHax que se aprovecha de una vulnerabilidad en ciertos juegos de la Consola Virtual de DS después de su instalación en la Wii U. Cuando se utiliza, permite al usuario tener un icono en el menú de la Wii U como un punto de entrada para arrancar su propio CFW interno y aplicaciones homebrew. Si seguiste la guía de piloncillo para Wii U, Haxchi iniciará su CFW interno de forma predeterminada. Esto en base al archivo de configuración de la guía.
 
@@ -1215,7 +1216,7 @@ Otro detalle de Haxchi es que cambia la versión de firmware a la versión 99.99
 * Creer que se puede volver a jugar el juego de DS que se usó para instalar Haxchi simplemente instalándolo con WUP Installer. (El juego se debe instalar con un Title-ID diferente al original para evitar sobrescribir la instalación de Haxchi).
 * Creer que se puede usar una copia ilegitima de un juego de DS para instalar Haxchi. Es necesario comprar una copia legítima de un juego de DS para Wii U de lo contrario no podrás abrir el icono sin antes realizar por otro exploit.
 
-[[Personalizar Haxchi]]</tw-passagedata><tw-passagedata pid="56" name="Personalizar Haxchi" tags="" position="1900.6666666666667,550.8333333333335" size="100,100">!!Personalizar Haxchi
+[[Personalizar Haxchi]]</tw-passagedata><tw-passagedata pid="56" name="Personalizar Haxchi" tags="" position="1900,550" size="100,100">!!Personalizar Haxchi
 
 La estructura de archivos del instalador de haxchi se divide en dos capetas.
 * //sd:/wiiu/apps/haxchi// Contiene el instalador en sí mismo (archivo .elf).
@@ -1261,7 +1262,7 @@ Este archivo lo puedes editar con Photoshop. Puedes usar cualquier imagen como i
 &lt;img class=&quot;img_auto&quot; src=&quot;Images/Personalizar_Haxchi/icon.png&quot;&gt;
 
 !!!Editar el archivo de imagen para la TV (//bootTvTex.tga//)
-Este archivo lo puedes editar con Photoshop. Puedes usar cualquier imagen, pero en este caso el resultado no debe tener transparencia de fondo, debes respetar dos cosas:
+Este archivo lo puedes editar con Photoshop. Puedes usar cualquier imagen, pero en esté caso el resultado no debe tener transparencia de fondo, debes respetar dos cosas:
 * La imagen debe ser de 1280x720 pixeles, ni uno más, ni uno menos.
 * Debes guardar la imagen en formato Targa (//.tga//) a 24 bits por pixel, sin ningún tipo de compresión.
 &lt;img class=&quot;img_auto&quot; src=&quot;Images/Personalizar_Haxchi/tv.png&quot;&gt;
