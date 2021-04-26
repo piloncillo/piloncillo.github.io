@@ -284,7 +284,7 @@ El Homebrew Launcher se iniciará cada vez que cargue la Página de inicio del n
 
 En caso de que desees desinstalar Indexiine, consulta [[Desinstalar Indexiine correctamente|Desinstalar Indexiine]].
 
-[[Instalación del Homebrew Launcher Channel|Instalación HBL Channel]]</tw-passagedata><tw-passagedata pid="9" name="Instalación Haxchi" tags="" position="626.6666666666666,849.6666666666666" size="100,100">!!Instalación de Haxchi
+[[Instalación del Homebrew Launcher Channel|Instalación HBL Channel]]</tw-passagedata><tw-passagedata pid="9" name="Instalación Haxchi" tags="" position="626,849" size="100,100">!!Instalación de Haxchi
 
 Ya cargado el Homebrew Launcher&lt;&lt;if def $se&gt;&gt; como se explicó [[anteriormente|Webhack]]&lt;&lt;/if&gt;&gt;.
 
@@ -568,9 +568,11 @@ Se asume que sabes entrar en el Homebrew Launcher para iniciar aplicaciones ya q
 Debes preparar los archivos para la tarjeta SD tú mismo. Los siguientes enlaces dirigen a los lanzamientos oficiales de los desarrolladores de cada aplicación, son las versiones estables más recientes.
 !!!Descarga
 * [[CBHC|https://apps.fortheusers.org/wiiu/cbhc]] (instalador de Coldboot Haxchi, clic en el botón Download).
+* [[Wii U NAND Dumper|https://apps.fortheusers.org/wiiu/nanddumper]] (clic en el botón Download).
 !!!Colocación
 Nota: Los archivos info.json y manifest.install no son necesarios, los puedes omitir y eliminar sin ningún problema.
 * Copia el contenido del archivo //cbhc.zip// a la raíz de la tarjeta SD.
+* Copia el contenido del archivo //nanddumper.zip// a la raíz de la tarjeta SD.
 Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada
 # Enciende la Wii U.
 # Entra en el Homebrew Launcher como ya sabes hacerlo.
@@ -627,7 +629,7 @@ Haxchi y Coldboot Haxchi correctamente instalados no necesitan de la tarjeta SD 
 
 ¿La consola tiene tarjeta SD?
 [[Sí|Revisa Contenido SD]]
-[[No|Revisa Navegador]]</tw-passagedata><tw-passagedata pid="27" name="Revisa Contenido SD" tags="" position="849.6666666666666,400" size="100,100">!!Revisa el contenido de la tarjeta SD de la Wii U.
+[[No|Revisa Navegador]]</tw-passagedata><tw-passagedata pid="27" name="Revisa Contenido SD" tags="" position="849,400" size="100,100">!!Revisa el contenido de la tarjeta SD de la Wii U.
 
 Las aplicaciones homebrew residen en la tarjeta SD de la Wii U su presencia indica un hack.
 
@@ -978,7 +980,7 @@ Para borrar definitivamente las aplicaciones homebrew borra la carpeta //wiiu// 
 [[Preguntas Frecuentes]]
 [[Homebrew Destacado]]
 [[Acerca de|Acerca de esta guía]]</tw-passagedata><tw-passagedata pid="41" name="Acerca de esta guía" tags="" position="2301,100" size="100,100">!Acerca de esta guía
-!!Versión: 1.8 (19 de abril de 2021)
+!!Versión: 1.9 (26 de abril de 2021)
 Esta guía fue hecha usando [[Twine 2.3.9|https://twinery.org/]] con [[SugarCube 2.31.1|http://www.motoslave.net/sugarcube/2/]] y fue escrita por &#39;&#39;Fran AC&#39;&#39; basado en la guía de los miembros de [[Nintendo Homebrew Discord Server|https://wiiu.hacks.guide/#/about]].
 
 Puedes descargar la guía completa desde [[esté enlace|https://github.com/piloncillo/piloncillo.github.io/releases]].
@@ -1019,6 +1021,8 @@ Créditos a los desarrolladores de las herramientas
 [[WUP Installer GX2|https://github.com/wiiu-controller-mods/wup-installer-gx2/releases/tag/v1]] (Wii U Public title Installer) Instalador de juegos y aplicaciones en formato NUS Content cifrado.
 
 [[WUP Installer GX2 Channel|https://github.com/wiiu-controller-mods/wup-installer-gx2/releases/tag/channel_v1]] Icono en el menú de la Wii U que abre WUP Installer GX2.
+
+[[NUSspli|https://github.com/V10lator/NUSspli/releases]] Descarga e instala juegos de forma rápida y simple directamente desde la Wii U
 
 [[Loadiine GX2|https://apps.fortheusers.org/wiiu/loadiine_gx2]] Permite cargar juegos desde la tarjeta SD. No se recomienda como método principal de carga de juegos ya que los tiempos de carga son mucho mayores y no todos los juegos funcionan correctamente.
 
@@ -1064,7 +1068,7 @@ Otro detalle de Haxchi es que cambia la versión de firmware a la versión 99.99
 * No darse cuenta que se puede editar el archivo //config.txt// en la carpeta //haxchi// para agregar o cambiar los botones para iniciar aplicaciones.
 * Creer que se puede volver a jugar el juego de DS que se usó para instalar Haxchi simplemente instalándolo con WUP Installer. (El juego se debe instalar con un Title-ID diferente al original para evitar sobrescribir la instalación de Haxchi).
 * Creer que se puede usar una copia ilegitima de un juego de DS para instalar Haxchi. Es necesario comprar una copia legítima de un juego de DS para Wii U de lo contrario no podrás abrir el icono sin antes realizar por otro exploit.
-</tw-passagedata><tw-passagedata pid="45" name="Personalizar Haxchi" tags="" position="1552.3333333333333,100" size="100,100">!!Personalizar Haxchi
+</tw-passagedata><tw-passagedata pid="45" name="Personalizar Haxchi" tags="" position="1552,100" size="100,100">!!Personalizar Haxchi
 
 La estructura de archivos del instalador de Haxchi se divide en dos capetas.
 * //sd:/wiiu/apps/haxchi// Contiene el instalador en sí mismo (//haxchi.elf//).
@@ -1148,7 +1152,7 @@ Con la tarjeta SD preparada con los archivos personalizados.
 
 &#39;&#39;[[Desinstalar Coldboot Haxchi (CBHC) correctamente y formatear la consola|Desinstalar CBHC][$formatear to true]]&#39;&#39;
 
-Si no sabes cual hack tiene la consola responde el [[test para identificar el hack|Test de Identificación]].</tw-passagedata><tw-passagedata pid="47" name="Personalizar Payload" tags="" position="1700.3333333333333,99.66666666666667" size="100,100">!!Personalizar Payload
+Si no sabes cual hack tiene la consola responde el [[test para identificar el hack|Test de Identificación]].</tw-passagedata><tw-passagedata pid="47" name="Personalizar Payload" tags="" position="1700,99" size="100,100">!!Personalizar Payload
 
 Los archivos de Configurable Payload son dos.
 * //sd:/wiiu/payload.elf// Es el payload en sí mismo.
