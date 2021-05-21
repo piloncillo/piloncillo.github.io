@@ -128,7 +128,6 @@ Esta guía funcionará en todas las Wii U de todas las regiones con firmware 5.5
 Debes saber que modificar cualquier sistema implica la posibilidad de producir un falló irreversible (brick) en el mismo. En el caso de la Wii U es muy específica la situación para que esto ocurra, ser descuidado con la instalación o desinstalación de Coldboot Haxchi (CBHC), así que asegúrate de seguir las instrucciones cuando se trate de CBHC. Con los demás métodos de hackeo no hay riesgo de dañar irreversiblemente la Wii U.
 
 Antes de empezar puedes consultar terminología como homebrew, CFW, exploit, Title-ID o ticket en el [[Glosario]]. Si tienes alguna duda puedes ir a la sección de [[Preguntas frecuentes|Preguntas Frecuentes]].
-
 &lt;&lt;set $hack to &quot;ninguno&quot;&gt;&gt;
 Empecemos.
 [[Instalar un hack]]</tw-passagedata><tw-passagedata pid="2" name="Instalar un hack" tags="" position="501,101" size="100,100">!!Elige un punto de entrada
@@ -137,7 +136,7 @@ Lo único que cambia entre un método u otro es la forma en que lo ejecutas. Eli
 
 &#39;&#39;[[Webhack|Prepara SD][$hack to &quot;webhack&quot;]]&#39;&#39;: Deberás entrar a una página web en Internet para ejecutarlo cada vez que se inicia la Wii U. No necesita de la compra de un juego, es el más simple de instalar y no modifica archivos de la consola. Recomendado para familiarizarse con el proceso de hackeo e instalación de juegos, es fácil pasar de Webhack a Indexiine o de Webhack a Haxchi posteriormente. No tiene riesgo de dañar la consola.
 
-&#39;&#39;[[Indexiine|Prepara SD][$hack to &quot;indexiine&quot;]]&#39;&#39;: Sólo deberás entrar en el navegador de Internet de la consola para ejecutarlo cada vez que se inicia la Wii U. No necesita de Internet o de la compra de un juego. Modifica un archivo del navegador, formatear la Wii U no restaurará ese archivo debe ser restaurado manualmente. Tiene riesgo de dañar el navegador de Internet si no se instala correctamente, el daño siempre puede ser reparado.
+&#39;&#39;[[Indexiine|Prepara SD][$hack to &quot;indexiine&quot;]]&#39;&#39;: Sólo deberás entrar en el navegador de Internet de la consola para ejecutarlo cada vez que se inicia la Wii U. No necesita de Internet o de la compra de un juego. Modifica un archivo del navegador, formatear la Wii U no restaurará ese archivo, debe ser restaurado manualmente. Tiene riesgo de dañar el navegador de Internet si no se instala correctamente, el daño siempre puede ser reparado.
 
 &#39;&#39;[[Haxchi|Juego NDS][$hack to &quot;haxchi&quot;]]&#39;&#39;: Una vez instalado bastará con abrir el icono en el menú de la Wii U para ejecutarlo cada vez que se inicia la Wii U. Requiere comprar un juego de Nintendo DS en la eShop de la Wii U. No necesita de Internet, es el más práctico para el uso del día a día. No tiene riesgo de dañar la consola.
 
@@ -286,7 +285,7 @@ En caso de que desees desinstalar Indexiine, consulta [[Desinstalar Indexiine co
 
 [[Instalación del Homebrew Launcher Channel|Instalación HBL Channel]]</tw-passagedata><tw-passagedata pid="9" name="Instalación Haxchi" tags="" position="626,849" size="100,100">!!Instalación de Haxchi
 
-Ya cargado el Homebrew Launcher&lt;&lt;if def $se&gt;&gt; como se explicó [[anteriormente|Webhack]]&lt;&lt;/if&gt;&gt;.
+Ya cargado el Homebrew Launcher&lt;&lt;if def $webhack&gt;&gt; como se explicó [[anteriormente|Webhack]]&lt;&lt;/if&gt;&gt;.
 
 # Navega a través del Homebrew Launcher y abre //Haxchi//.
 # Usa el D-Pad del Wii U GamePad para navegar con el cursor hasta el juego en el que deseas inyectar Haxchi.
@@ -406,7 +405,7 @@ En la ventana Ticket vamos a usar el método 1 para agregar los tickets (los arc
 
 Aquí debes ir a Google y buscar [[wiiu tik|https://www.google.com/search?q=wiiu+tik]] para encontrar una página con tickets.
 
-Aunque [[aquí|Páginas Tickets]] dejo una lista de sitios que actualmente (enero 2021) están en funcionamiento.
+Aunque [[aquí|Páginas Tickets]] dejo una lista de sitios que actualmente (mayo 2021) están en funcionamiento.
 
 Debes escribir la URL completa. Si la página ya no está en funcionamiento o la escribes mal te saldrá un error, deberás cerrar el programa y volverlo a abrir.
 
@@ -697,13 +696,15 @@ Tener un juego de Nintendo DS comprado en la eShop y al abrir un icono en el men
 
 [[Inicio]]</tw-passagedata><tw-passagedata pid="34" name="Glosario" tags="" position="1852,101" size="100,100">!!Glosario
 
-&#39;&#39;Hack&#39;&#39;: Modificación del funcionamiento de un objeto o sistema. Para realizar un HACK en la Wii U se requiere de un EXPLOIT que permita cargar un CFW.
+&#39;&#39;Hack&#39;&#39;: Modificación del funcionamiento de un objeto o sistema. Para realizar un HACK en la Wii U se requiere ejecutar un EXPLOIT que permita cargar un CFW.
 
-&#39;&#39;Exploit&#39;&#39;: Vulnerabilidad de seguridad explotable (aprovechable) de un sistema informático.
+&#39;&#39;Exploit&#39;&#39;: Vulnerabilidad de seguridad explotable (aprovechable) de un sistema informático. Ejemplos de exploits de Wii U son: JsTypeHax, MK8 exploit, BluUBomb y Contenthax. 
+
+&#39;&#39;Punto de entrada&#39;&#39;: Ejecuta un exploit que permite acceder a los recursos de un sistema. Ejemplos de puntos de entrada de Wii U son: Webhack (usa una version mejorada de JsTypeHax), Indexiine (usa una version mejorada de JsTypeHax), Haxchi (es un tipo de Contenthax), Coldboot Haxchi (es un derivado de Haxchi) y FailST (es un tipo de Contenthax 2.0).
 
 &#39;&#39;Firmware&#39;&#39;: Software que controla directamente al hardware. Sobre el firmware se construyen los drivers, programas de usuario o el sistema operativo de un sistema informático.
 
-&#39;&#39;Custom Firmware (CFW)&#39;&#39;: Firmware personalizado, por lo regular hecho por un tercero, para habilitar o agregar funciones no soportadas por el firmware del fabricante del hardware.
+&#39;&#39;Custom Firmware (CFW)&#39;&#39;: Firmware personalizado, por lo regular hecho por un tercero, para habilitar o agregar funciones no soportadas por el firmware del fabricante del hardware. Ejemplos de CFW para Wii U son: Mocha CFW, SigPatcher, IOSUHAX y Haxchi CFW.
 
 &#39;&#39;Homebrew&#39;&#39;: Software &quot;hecho en casa&quot;, suele requerir de un hack para ser ejecutado ya que no cuenta con certificación del fabricante del hardware.
 
@@ -716,6 +717,12 @@ Tener un juego de Nintendo DS comprado en la eShop y al abrir un icono en el men
 &#39;&#39;DLC&#39;&#39;: Contenido descargable, se refiere al material adicional creado por los desarrolladores de un videojuego y que se publica por separado, no incluido en el producto base.
 
 &#39;&#39;Payload&#39;&#39;: Carga útil o código que se ejecuta al provocar un exploit, sin la carga útil no se realiza ninguna acción. Un mismo exploit puede utilizar varios payloads y un payload puede ser utilizado por varios exploits.
+
+Según las definiciones anteriores esta guía tiene los procedimientos para instalar los hacks (Punto de entrada + CFW):
+* Webhack + Mocha CFW
+* Indexiine + Mocha CFW
+* Haxchi + Haxchi CFW
+* Coldboot Haxchi + Haxchi CFW
 
 &lt;&lt;back &quot;Regresar&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="Preguntas Frecuentes" tags="" position="2001,100" size="100,100">!!Preguntas frecuentes
 
@@ -757,11 +764,11 @@ Sí, pero se recomienda un disco duro sobre una memoria USB ya que las memorias 
 &#39;&#39;¿Qué disco duro se recomienda como unidad USB externa para almacenar juegos?&#39;&#39;
 Si bien la Wii U soporta discos duros de hasta 2 TB, se recomienda uno acorde a los juegos que vayas a jugar frecuentemente, considera que los juegos más pesados tienen un tamaño de 20 GB.
 
-Si vas a tener unos 20 o 30 juegos con uno de 512 GB basta y sobra.
+Si vas a tener unos 20 o 30 juegos con uno de 500 GB basta y sobra. Ten en cuenta que el menú de la Wii U tiene un límite de 300 iconos incluyendo los que se encuentran dentro de carpetas.
 
 Se recomienda el uso de discos duros externos con su propia fuente de alimentación.
 
-Los discos duros que se alimentan a través de un solo puerto USB, no son recomendables para su uso ya que un solo puerto USB de la Wii U no da la corriente necesaria para mover el motor del disco. Para ese tipo de discos duros externos es obligatorio usar un cable en Y.
+Los discos duros que se alimentan a través de un solo puerto USB, no son recomendables para su uso ya que un solo puerto USB de la Wii U no da la corriente necesaria para mover el motor del disco. Para ese tipo de discos duros externos es obligatorio usar un cable Y (Y-cable o splitter cable).
 
 Toma en cuenta que los discos duros externos internamente son idénticos a los discos duros internos de PCs y Laptops, por lo que únicamente cambia la carcasa (enclosure, case, shell o gabinete) que los protege.
 
@@ -920,8 +927,10 @@ Nota: Los archivos //info.json// y //manifest.install// no son necesarios, los p
 * //[[http://u.wiidb.de/]]// Clic en HAXX.
 * //[[http://wiiuexploit.xyz/]]// Clic en el botón &quot;5.5.X Exploit!&quot;.
 * //[[http://wiiubru.com/go/]]// Clic en Homebrew Launcher.
-* //[[http://loadiine.ovh/]]// Selecciona &quot;Homebrew Launcher JsTypeHax&quot;, clic en el botón &quot;Set my automation&quot;.
+* //[[http://loadiine.ovh/]]// Clic en el botón &quot;5.5.X Exploit!&quot;.
 * //[[http://wiiu.91wii.com/552/]]// Clic en HAXX.
+
+Nota: Actualmente la página //loadiine.ovh// ha dejado de dar servicio y redirige a la página //wiiuexploit.xyz//.
 
 &lt;&lt;back &quot;Regresar&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="CBHC Advertencias" tags="" position="376,851" size="100,100">!!Advertencias para Coldboot Haxchi (CBHC)
 
@@ -980,7 +989,7 @@ Para borrar definitivamente las aplicaciones homebrew borra la carpeta //wiiu// 
 [[Preguntas Frecuentes]]
 [[Homebrew Destacado]]
 [[Acerca de|Acerca de esta guía]]</tw-passagedata><tw-passagedata pid="41" name="Acerca de esta guía" tags="" position="2301,100" size="100,100">!Acerca de esta guía
-!!Versión: 1.9 (26 de abril de 2021)
+!!Versión: 1.10 (20 de mayo de 2021)
 Esta guía fue hecha usando [[Twine 2.3.9|https://twinery.org/]] con [[SugarCube 2.31.1|http://www.motoslave.net/sugarcube/2/]] y fue escrita por &#39;&#39;Fran AC&#39;&#39; basado en la guía de los miembros de [[Nintendo Homebrew Discord Server|https://wiiu.hacks.guide/#/about]].
 
 Puedes descargar la guía completa desde [[esté enlace|https://github.com/piloncillo/piloncillo.github.io/releases]].
@@ -1047,14 +1056,14 @@ Créditos a los desarrolladores de las herramientas
 [[Wuphax|https://apps.fortheusers.org/wiiu/wuphax]] Facilita hackear el modo virtual Wii de la Wii U.
 
 [[sign_c2w_patcher|https://apps.fortheusers.org/wiiu/sign_c2w_patcher]] Su principal uso es habilitar el overclock del modo virtual Wii de la Wii U.
-</tw-passagedata><tw-passagedata pid="43" name="Páginas Tickets" tags="" position="1376,550" size="100,100">!!Páginas con Tickets
+</tw-passagedata><tw-passagedata pid="43" name="Páginas Tickets" tags="" position="1401,555" size="100,100">!!Páginas con Tickets
 
 * &quot;&quot;&quot;https://wiiu.tecno.site/&quot;&quot;&quot;
 * &quot;&quot;&quot;https://wiiu-keys.netlify.app/&quot;&quot;&quot;
 * &quot;&quot;&quot;https://wiikeys.web.app/&quot;&quot;&quot;
 * &quot;&quot;&quot;http://vault.titlekeys.ovh/&quot;&quot;&quot;
 
-&lt;&lt;back &quot;Regresar&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="Qué es Haxchi" tags="" position="1852,376" size="100,100">!!¿Qué es Haxchi?
+&lt;&lt;back &quot;Regresar&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="Qué es Haxchi" tags="" position="1852,399" size="100,100">!!¿Qué es Haxchi?
 
 Haxchi es un tipo de exploit ContentHax que se aprovecha de una vulnerabilidad en ciertos juegos de la Consola Virtual de DS después de su instalación en la Wii U. Cuando se utiliza, permite al usuario tener un icono en el menú de la Wii U como un punto de entrada para arrancar su propio CFW interno y aplicaciones homebrew. Si seguiste la guía de piloncillo para Wii U, Haxchi iniciará su CFW interno de forma predeterminada. Esto en base al archivo de configuración de la guía.
 
@@ -1185,7 +1194,7 @@ Con esa configuración:
 
 !!!Aplicar la personalización
 La nueva configuración del Payload funcionará la siguiente vez que inicies la consola con la tarjeta SD preparada con el archivo personalizado y ejecutes Indexiine o Webhack.
-</tw-passagedata><tw-passagedata pid="48" name="Puntos de entrada" tags="" position="1852,250" size="100,100">Puntos de entrada</tw-passagedata><tw-passagedata pid="49" name="CFW" tags="" position="1851,526" size="100,100">CFW</tw-passagedata><tw-passagedata pid="50" name="Interface USB Helper" tags="" position="1252,700" size="100,100">!!Interface de Wii U USB Helper
+</tw-passagedata><tw-passagedata pid="48" name="Puntos de entrada" tags="" position="1852,250" size="100,100">Puntos de entrada</tw-passagedata><tw-passagedata pid="49" name="CFW" tags="" position="1851,549" size="100,100">CFW</tw-passagedata><tw-passagedata pid="50" name="Interface USB Helper" tags="" position="1252,700" size="100,100">!!Interface de Wii U USB Helper
 
 Finalmente carga la interface principal, si sale un mensaje del Firewall permite el acceso para el programa.
 
