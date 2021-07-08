@@ -1953,7 +1953,7 @@ function openSidebar() {
   
   const links = document.querySelectorAll("a[href]");
   var linksArray = [...links];
-  linksArray = linksArray.filter(l => l.hostname == "");
+  linksArray = linksArray.filter(l => l.hostname == window.location.hostname);
   var url;
   var i;
   for (i = 0; i < linksArray.length; i++) {
@@ -1973,7 +1973,7 @@ function closeSidebar() {
 	
   const links = document.querySelectorAll("a[href]");
   var linksArray = [...links];
-  linksArray = linksArray.filter(l => l.hostname == "");
+  linksArray = linksArray.filter(l => l.hostname == window.location.hostname);
   var url;
   var i;
   for (i = 0; i < linksArray.length; i++) {
