@@ -1,6 +1,6 @@
 # Acerca de esta guía
 
-Versión: 2.1 (9 de septiembre de 2021)
+Versión: 2.2 (3 de enero de 2022)
 
 Esta guía fue hecha por FranAC basado en la guía de los miembros de [Nintendo Homebrew Discord Server](https://wiiu.hacks.guide/#/about).
 
@@ -16,11 +16,13 @@ Esta guía fue hecha por FranAC basado en la guía de los miembros de [Nintendo 
 - dimok789, n1ghty, Maschell y dibas por [Loadiine GX2](https://github.com/dimok789/loadiine_gx2).
 - djskual, Loadiine GX2 Team, Yardape y brienj por [WUP Installer GX2](https://sourceforge.net/projects/wup-installer-gx2/).
 - koolkdev por [Wii U NAND Dumper](https://github.com/koolkdev/wiiu-nanddumper).
+- koolkdev y Maschell por [Wii U NAND Dumper payload](https://github.com/wiiu-env/wiiu-nanddumper-payload).
 - dimok789 por [wupclient.py](https://github.com/dimok789/mocha/blob/master/ios_mcp/wupclient.py).
 - FIX94 por [Wuphax](https://github.com/FIX94/wuphax).
+- Maschell y GaryOderNichts por [AutobootModule](https://github.com/wiiu-env/AutobootModule).
 - GaryOderNichts por [Configurable Payload](https://github.com/GaryOderNichts/configurable-payload), [Indexiine-Installer](https://github.com/GaryOderNichts/indexiine-installer), [UFDiine](https://github.com/GaryOderNichts/UFDiine), [vWii Decaffeinator](https://github.com/GaryOderNichts/vWii-Decaffeinator), y [las versiones controller mod del Homebrew Launcher, WUP Installer GX2 y SaveMii](https://github.com/wiiu-controller-mods).
 - GabyPCgeeK y Ryuzaki-MrL por [SaveMii Mod](https://github.com/GabyPCgeeK/savemii).
-- Maschell por [HID to VPAD](https://github.com/Maschell/hid_to_vpad), [Wii U Plugin System](https://github.com/Maschell/WiiUPluginSystem), FailST y Aroma.
+- Maschell por [HID to VPAD](https://github.com/Maschell/hid_to_vpad), [Wii U Plugin System](https://github.com/Maschell/WiiUPluginSystem), [CustomRPXLoader](https://github.com/wiiu-env/CustomRPXLoader), [FailST](https://maschell.github.io/homebrew/2020/12/02/failst.html), [EnvironmentLoader](https://github.com/wiiu-env/EnvironmentLoader), [HBLInstallerWrapper](https://github.com/wiiu-env/HBLInstallerWrapper), [LaunchInstaller](https://github.com/wiiu-env/LaunchInstaller), [MochaPayload](https://github.com/wiiu-env/MochaPayload), [PayloadFromRPX](https://github.com/wiiu-env/PayloadFromRPX), [PayloadLoaderInstaller](https://github.com/wiiu-env/PayloadLoaderInstaller), [PayloadLoaderInstallerEnvironment](https://github.com/wiiu-env/PayloadLoaderInstallerEnvironment), [PayloadloaderPayload](https://github.com/wiiu-env/PayloadloaderPayload) y [Tiramisu Downloader](https://tiramisu.foryour.cafe/).
 - Chadderz y Maschell por [SDCafiine](https://github.com/Maschell/SDCafiine).
 - OatmealDome y Yahya14 por [SwapDRC Lite](https://gbatemp.net/threads/swap-drc-for-tv-only-wii-u-games.478026/).
 - ::Phoenix:: por [Spiik](https://github.com/marco-calautti/spiik).
