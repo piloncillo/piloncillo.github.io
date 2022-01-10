@@ -345,14 +345,15 @@ img.center {
 <div class="cont">
 <h2>Introducción a TiramisU Environment</h2>
 <br>
+<p><img src="Images/Tiramisu_logo.png" class="auto_size"></p>
 <h3>¿Qué es el TiramisU?</h3>
 <p>Tiramisu es un entorno modular para Wii U. Sus módulos permiten cargar un CFW (versión modificada de Mocha CFW), instalar el Homebrew Launcher en <em>Mii Maker</em> (Editor de Mii) y proporciona un menú de inicio automático.</p>
 <p>Junto con PayloadLoader, es una alternativa a Coldboot Haxchi (CBHC) segura y gratuita, con algunas características adicionales como soporte completo para el menú de inicio rápido del GamePad y bloqueo de actualizaciones.</p>
 <p>TiramisU es un entorno que debe cargarse por medio de EnvironmentLoader.</p>
 <p>Se recomienda realizar un arranque automático de EnvironmentLoader (y TiramisU) a través de Autobooting PayloadLoader.</p>
 <h3>¿Conviene actualizar de un hack anterior a TiramisU?</h3>
-<p>En conjunto EnvironmentLoader, PayloadLoader y TiramisU tienen casi todas las ventajas de los anteriores hacks y ninguna de sus desventajas.</p>
-<p><a target="_blank" href="Images/Comparativa_v1.png"><img src="Images/Comparativa_v1.png" class="auto_size"></a></p>
+<p>Sí. En conjunto EnvironmentLoader, PayloadLoader y TiramisU tienen casi todas las ventajas de los anteriores hacks y ninguna de sus desventajas.</p>
+<p><a target="_blank" href="Images/Comparativa.png"><img src="Images/Comparativa.png" class="auto_size"></a></p>
 <h3>Créditos</h3>
 <ul>
 <li>Maschell (EnvironmentLoader, HBLInstallerWrapper, MochaPayload, PayloadLoader + PayloadLoaderInstaller, AutobootModule, ...)</li>
@@ -499,8 +500,8 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <p>Vamos a hacer que el entorno de Tiramisu se inicie automáticamente cuando la consola encienda (o cuando abras manualmente <strong>Información sobre salud y seguridad</strong> si elegiste omitir que PayloadLoader arrancara automáticamente).</p>
 <ul>
 <li>Si elegiste que PayloadLoader <strong class="green">sí</strong> arrancara automáticamente: Enciende la consola y mantén presionado el botón X del GamePad para abrir el menú EnvironmentLoader.</li>
-<li>Si elegiste que PayloadLoader <strong class="blue">no</strong> arrancara automáticamente: Enciende la consola, accede al menú de Wii U y abre la aplicación <strong>Información sobre salud y seguridad</strong> y mantén presionado el botón X del GamePad para abrir el menú EnvironmentLoader.</li>
-<li>Navega por el menú usando las flechas del D-Pad del GamePad, selecciona <em class="green">tiramisu</em> como entorno, presiona el botón Y para configurarlo en el entorno predeterminado y luego presiona el botón A para iniciar Tiramisu.</li>
+<li>Si elegiste que PayloadLoader <strong class="blue">no</strong> arrancara automáticamente: Enciende la consola, accede al menú de Wii U, abre la aplicación <strong>Información sobre salud y seguridad</strong> y mantén presionado el botón X del GamePad para abrir el menú EnvironmentLoader.</li>
+<li>Navega por el menú usando las flechas del D-Pad del GamePad, selecciona <em class="green">tiramisu</em> como entorno, presiona el botón Y para configurarlo como el entorno predeterminado y luego presiona el botón A para iniciar Tiramisu.</li>
 <li>Ahora debes estar en el menú <em>Tiramisu Boot Selector</em> (Selector de Arranque de Tiramisu), con la opción <em class="green">Wii U Menu</em> seleccionada, presiona el botón Y para configurar dicha opción como predeterminada y luego presiona el botón A para iniciar el menú de Wii U.</li>
 </ul>
 <div class="info">Para abrir el menú <em>Tiramisu Boot Selector</em> en el futuro, debes mantener presionado <em>START</em> (+) mientras la Wii U se está iniciando (o cuando abras manualmente <strong>Información sobre salud y seguridad</strong> si elegiste omitir que PayloadLoader arrancara automáticamente).</div>
@@ -527,7 +528,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <li><strong>WUP Installer GX2</strong> (Wii U Public title Installer) es un instalador de juegos y aplicaciones en formato <strong class="green">NUS Content cifrado</strong>.</li>
 <li>La <strong>Homebrew Appstore</strong> permite buscar y descargar aplicaciones homebrew directamente desde tu Wii U.</li>
 <li><strong>SaveMii mod</strong> permite administrar los archivos de datos guardados de Wii U y vWii.</li>
-<li><strong>Bloopair</strong> permite conectar de forma inalámbrica los controles Bluetooth más populares. Consulta el hilo oficial de la aplicación para más detalles.</li>
+<li><strong>Bloopair</strong> permite conectar de forma inalámbrica los controles Bluetooth más populares. Consulta <a href="https://gbatemp.net/threads/bloopair-connect-controllers-from-other-consoles-natively.594289/">el hilo oficial de la aplicación</a> para más detalles.</li>
 </ul>
 <h3>Necesitas</h3>
 <ul>
@@ -562,7 +563,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <div class="info">El módulo <strong class="yellow">Sigpatches</strong> cargará junto con el resto de módulos cuando inicie el entorno de Tiramisu. Con este módulo ya puedes instalar y abrir juegos con tickets falsos (todo el contenido exclusivo de la eShop como DLCs y juegos de la Consola Virtual) y abrir aplicaciones homebrew desde el menú de Wii U.</div>
 <br>
 <h3>Añadir aplicaciones al menú de Wii U</h3>
-<p>Las aplicaciones para el menú de Wii U vienen en formato NUS Content cifrado (archivos <code>title.cert</code>, <code>title.tik</code>, <code>title.tmd</code>, <code>*.app</code> y <code>*.h3</code>) y se instalan usando WUP Installer GX2, igual que cualquier juego de Wii U. Consulta la sección de instalación de juegos para aprender a instalar juegos (y aplicaciones) usando WUP Installer GX2.</p>
+<p>Las aplicaciones para el menú de Wii U vienen en formato <strong class="green">NUS Content cifrado</strong> (archivos <code>title.cert</code>, <code>title.tik</code>, <code>title.tmd</code>, <code>*.app</code> y <code>*.h3</code>) y se instalan usando WUP Installer GX2, igual que cualquier juego de Wii U. Consulta la sección de instalación de juegos para aprender a instalar juegos (y aplicaciones) usando WUP Installer GX2.</p>
 <p>Vamos a añadir las siguientes aplicaciones:</p>
 <ul>
 <li><strong>WUP Installer GX2 Channel</strong> es la aplicación WUP Installer GX2 en sí misma, pero lista para ser instalada en la memoria interna de la Wii U, al terminar la instalación tendrás WUP Installer GX2 en el menú de Wii U.</li>
@@ -595,7 +596,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <li>Vuelve a presionar el botón <em>HOME</em> del GamePad para regresar a <em>Mii Maker</em> (Editor de Mii), toca en Salir para regresar al menú de Wii U.</li>
 <li>En este punto ya finalizaste la instalación de las aplicaciones fundamentales para agregar funcionalidad a tu Wii U.</li>
 </ul>
-<div class="info">Algunas personas han reportado algunos problemas al cargar juegos como <strong>Rayman Legends</strong>, <strong>Hyrule Warriors</strong>, <strong>Paper Mario: Color Splash</strong> y <strong>Mario Party 10</strong>, esto se soluciona eliminando el módulo <code>sd:/wiiu/environments/tiramisu/modules/setup/50_hbl_installer.rpx</code>. Este módulo es el que se encarga de instalar el Homebrew Launcher en <em>Mii Maker</em> (Editor de Mii). Puedes eliminarlo sin problema si ya instalaste el <strong>Homebrew Launcher Channel</strong>.</div>
+<div class="info">Si la Wii U se congela de alguna otra forma después de instalar algo con WUP Installer GX2 no te preocupes, espera unos 10 segundos y si no sucede nada, mantén presionado el botón <em>POWER</em> de la consola hasta que se apague, esto no daña a la consola.</div>
 <p>Aquí termina la guía de Tiramisu. Puedes continuar con la siguiente guía o volver al inicio.</p>
 <p><a href="?s=games">Guía de descarga e instalación de juegos</a></p>
 <p><a href="?s=main">Inicio</a></p>
@@ -1542,7 +1543,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <li>Después de que la desinstalación termine, presiona botón A para apagar la consola.</li>
 <li>En este punto ya finalizaste la desinstalación de EnvironmentLoader, PayloadLoader y Tiramisu.</li>
 </ul>
-<p>Haz una copia del contenido se la tarjeta SD (en una computadora o teléfono móvil) y borrar definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo. Con eso ya haz desinstalado Webhack correctamente.</p>
+<p>Haz una copia del contenido se la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo. Con eso ya haz desinstalado Webhack correctamente.</p>
 <p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola, sin ningún problema.</p>
 <p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. No es necesario que formatees la consola.</p>
 <p><a href="?s=main">Inicio</a></p>
@@ -1554,7 +1555,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <h2>Desinstalar Webhack correctamente</h2>
 <br>
 <p>Webhack no modifica nada en la consola por eso desinstalar Webhack es simplemente borrar el payload dentro de la carpeta <code>wiiu</code> de la tarjeta SD de la consola.</p>
-<p>Haz una copia del contenido se la tarjeta SD (en una computadora o teléfono móvil) y borrar definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo. Con eso ya haz desinstalado Webhack correctamente.</p>
+<p>Haz una copia del contenido se la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo. Con eso ya haz desinstalado Webhack correctamente.</p>
 <p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola, sin ningún problema.</p>
 <p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. No es necesario que formatees la consola.</p>
 <p><a href="?s=main">Inicio</a></p>
@@ -1579,7 +1580,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <ul>
 <li>Si no tienes Indexiine-Installer copia el contenido del archivo <code>indexiine-installer.zip</code> a la raíz de la tarjeta SD.</li>
 <li>Si no tienes el Homebrew Launcher crea una carpeta llamada <code>homebrew_launcher</code> en la carpeta <code>sd:/wiiu/apps</code> y copia el archivo <code>homebrew_launcher.elf</code> en la carpeta <code>sd:/wiiu/apps/homebrew_launcher</code>.</li>
-<li>Si no tienes el archivo <code>payload.elf</code> en la carpeta <code>sd:/wiiu</code> cópialo.</li>
+<li>Si no tienes el archivo <code>payload.elf</code> en la carpeta <code>sd:/wiiu</code> cópialo o si tienes un archivo <code>payload.elf</code> en la carpeta <code>sd:/wiiu</code> entonces remplázalo.</li>
 <li>Si tienes un archivo <code>payload.cfg</code> en la carpeta <code>sd:/wiiu</code> borralo.</li>
 <li>Si no tienes el archivo <code>backup-index.html</code> en la carpeta <code>sd:/wiiu/apps/Indexiine-installer</code> cópialo.</li>
 </ul>
@@ -1593,20 +1594,21 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <li>Toca en Sí. Esto cargará el navegador de internet.</li>
 <li>Saldrá un código de error. Toca en Sí y toca en la parte superior de la pantalla del GamePad para ingresar una URL.</li>
 <li>Introduce la URL: <a href="http://u.wiidb.de">u.wiidb.de</a> (puedes consultar paginas alternativas <a href="?s=webhack&p=exploit">aquí</a>).</li>
-<li>Al cargar la página haz clic en HAXX.</li>
-<li>Espera unos segundos, deberá cargar el Homebrew Launcher.</li>
+<li>Al cargar la página por completo toca en <strong class="blue">HAXX</strong>, espera unos segundos, deberá cargar el Homebrew Launcher. Si no logras entrar al Homebrew Launcher, paga la consola y vuelve a intentarlo.</li>
 </ul>
-<p>Si la Wii U se atasca mostrando una pantalla en blanco o se congela de alguna forma, espera unos 20 segundos. Si no sucede nada, reinicia la consola y vuelve a intentarlo.</p>
+<div class="info">El mensaje <q><em>FSGetMountSource falied. Please insert a FAT32 formatted sd card.</em></q> quiere decir que la consola no está detectando la tarjeta SD, limpia los contactos, si estas usando una microSD cambia el adaptador. Mantén presionado el botón <em>POWER</em> de la consola hasta que se apague.</div>
+<div class="info">El mensaje <q><em>FSOpenFile falied. File missing /vol/external01/wiiu/payload.elf.</em></q> quiere decir que la consola sí está detectando la tarjeta SD, pero no encontró el archivo <code>payload.elf</code> dentro de la carpeta <code>sd:/wiiu</code>. Mantén presionado el botón <em>POWER</em> de la consola hasta que se apague.</div>
+<div class="info">Si la Wii U se congela de alguna otra forma, espera unos 10 segundos. Si no sucede nada, mantén presionado el botón <em>POWER</em> de la consola hasta que se apague, vuelve prender la consola, abre el navegador, entra en Ajustes, selecciona un motor de búsqueda, borra las cookies del navegador y vuelve a intentarlo.</div>
 <ul>
-<li>Navega a través del Homebrew Launcher y abre Indexiine Installer.</li>
-<li>Presiona el botón B para desinstalar Indexiine.</li>
+<li>Una vez dentro del Homebrew Launcher navega por el menú usando la pantalla táctil del GamePad, selecciona <strong>Indexiine Installer</strong> y toca en <em class="green">Load</em> para cargar la aplicacion.</li>
+<li>Dentro del Indexiine Installer presiona el botón B para desinstalar Indexiine.</li>
 <li>Cuando se complete el proceso, regresará automáticamente al Homebrew Launcher.</li>
-<li>Presiona el botón Home y luego toca el botón Salir para regresar al menú de la Wii U.</li>
+<li>Presiona el botón <em>HOME</em> y luego toca el botón Salir para regresar al menú de la Wii U.</li>
 <li>Apaga la consola.</li>
 </ul>
-<p>En este punto ya haz desinstalado Indexiine correctamente.</p>
+<p>En este punto ya has desinstalado Indexiine correctamente.</p>
 <p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola, sin ningún problema.</p>
-<p>Haz una copia del contenido se la tarjeta SD (en una computadora o teléfono móvil) y borrar definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo.</p>
+<p>Haz una copia del contenido se la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo.</p>
 <p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. No es necesario que formatees la consola.</p>
 <p><a href="?s=main">Inicio</a></p>
 <p><a href="?s=delete">Formatear la consola</a></p>
@@ -1624,9 +1626,9 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <li>Selecciona el icono de Haxchi y vuelve a selecciónalo para que salga el botón Borrar.</li>
 <li>Toca el botón de Borrar y después el botón Sí, espera a que se borre, y después toca en Aceptar.</li>
 </ul>
-<p>En este punto ya haz desinstalado Haxchi correctamente.</p>
+<p>En este punto ya has desinstalado Haxchi correctamente.</p>
 <p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola, sin ningún problema.</p>
-<p>Haz una copia del contenido se la tarjeta SD (en una computadora o teléfono móvil) y borrar definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo.</p>
+<p>Haz una copia del contenido se la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo.</p>
 <p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. No es necesario que formatees la consola.</p>
 <p><a href="?s=main">Inicio</a></p>
 <p><a href="?s=delete">Formatear la consola</a></p>
@@ -1662,29 +1664,33 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 </div>
 <div id="uninstall_cbhc_nand_backup" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Haz un respaldo de la memoria interna de la Wii U</h2>
+<h2>Haz una copia de seguridad de la NAND (memoria interna) de la Wii U</h2>
 <br>
 <p><strong class="red">¡Este paso es obligatorio si usas Coldboot Haxchi (CBHC)!</strong></p>
-<p>En el caso de que algo salga muy mal y la Wii U termine brickeada, restaurar la copia de la memoria interna puede solucionarlo.</p>
-<p>Restaurar la copia de respaldo de la Wii U requiere hardware especial y habilidades de micro soldadura. El respaldo de la memoria interna es único para cada consola, las copias de respaldo de otras consolas no funcionarán.</p>
+<p>En el caso de que algo salga muy mal restaurar la copia de la memoria interna puede solucionarlo.</p>
 <ul>
-<li>Navega a través del Homebrew Launcher y abre Wii U NAND Dumper.</li>
-<li>Usa el D-Pad del Wii U GamePad para ingresar la siguiente configuración:</li>
+<li>Dentro del Homebrew Launcher navega por el menú usando la pantalla táctil del GamePad, selecciona <strong>Wii U NAND Dumper</strong> y toca en <em class="green">Load</em> para cargar la aplicacion.</li>
+<li>Usa las flechas del D-Pad del Wii U GamePad para ingresar la siguiente configuración:</li>
 <ul>
-<li>Dump SLC (528MB) : yes</li>
-<li>Dump SLCCMPT (528MB) : yes</li>
-<li>Dump MLC (8GB/32GB) : Opcional</li>
-<li>Dump OTP (1KB) : yes</li>
-<li>Dump SEEPROM (1KB) : yes</li>
+<li>Dump SLC (528MB): yes</li>
+<li>Dump SLCCMPT (528MB): yes</li>
+<li>Dump MLC (8GB/32GB): no</li>
+<li>Dump OTP (1KB): yes</li>
+<li>Dump SEEPROM (1KB): yes</li>
 </ul>
 <li>Presiona el botón A para iniciar el proceso de copia.</li>
-<li>Cuando se complete el proceso la consola cargará el menú de la Wii U.</li>
-<li>Apaga la consola, saca la tarjeta SD de la Wii U y conéctala a tu dispositivo para copiar los archivos.</li>
-<li>Copia los archivos <code>slc.bin</code>, <code>slccmpt.bin</code>, <code>seeprom.bin</code>, <code>otp.bin</code> y, si elegiste realizar una copia de seguridad completa, todos los archivos <code>mlc.bin.part</code> en tu dispositivo.</li>
-<li>Elimina los archivos de respaldo en la tarjeta SD para liberar espacio.</li>
+<li>Aparentemente la consola cargara el menú de Wii U, pero en unos instantes mostrara el proceso de copiado.</li>
+</ul>
+<div class="info">El copiado tarda menos de 5 minutos con una tarjeta SD clase 10.</div>
+<ul>
+<li>Cuando se complete el proceso la consola cargará el menú de Wii U.</li>
+<li>Apaga la consola, saca la tarjeta SD de la Wii U y ponla a tu dispositivo (computadora o teléfono móvil) para copiar archivos.</li>
+<li>Copia los archivos <code>otp.bin</code>, <code>seeprom.bin</code>, <code>slc.bin</code> y <code>slccmpt.bin</code> de la raíz de la tarjeta SD a una ubicación segura en tu dispositivo.</li>
+<li>Elimina los archivos <code>otp.bin</code>, <code>seeprom.bin</code>, <code>slc.bin</code> y <code>slccmpt.bin</code> en la tarjeta SD para liberar espacio.</li>
 <li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
 </ul>
-<p>Puedes hacer varias copias de seguridad en servicios de la nube de internet para evitar perder el valioso respaldo de la Wii U.</p>
+<div class="info">El respaldo de la memoria interna es único para cada consola, las copias de respaldo de otras consolas no funcionarán en tu Wii U.</div>
+<div class="info">Puedes hacer varias copias en servicios de la nube de internet para evitar perder la valiosa copia de seguridad de la NAND de tu Wii U.</div>
 <p><a href="?s=uninstall_cbhc&p=process&console=off">Continuar con la desinstalación de Coldboot Haxchi</a></p>
 </div>
 </div>
@@ -1696,21 +1702,24 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <ul>
 <li class="console_status" style="display:none;">Enciende la Wii U.</li>
 <li class="console_status" style="display:none;">Entra en el Homebrew Launcher como ya sabes hacerlo.</li>
-<li>Navega a través del Homebrew Launcher y abre CBHC.</li>
+<li>Dentro del Homebrew Launcher navega por el menú usando la pantalla táctil del GamePad, selecciona <strong>CBHC</strong> y toca en <em class="green">Load</em> para cargar la aplicacion.</li>
 <li>Usa el D-Pad del Wii U GamePad para navegar con el cursor hasta el juego en el que instalaste Haxchi anteriormente.</li>
-<li>Presiona el botón A, lee bien las advertencias.</li>
+<li>Presiona el botón A y lee las advertencias.</li>
 <li>Presiona el botón B para desinstalar Coldboot Haxchi.</li>
 <li>Completada la desinstalación, tu consola cargará el menú de la Wii U.</li>
-<li>Reinicia la consola. Si Coldboot Haxchi se desinstaló correctamente, deberás ver que el mensaje de "CBHC" (fondo negro, letras blancas) ya no aparece al prenderla. <strong class="red">Asegúrate de ya no ver el mensaje de CBHC al prender la consola antes de continuar.</strong></li>
+<li>Reinicia la consola. Si Coldboot Haxchi se desinstaló correctamente, deberás ver que el mensaje de "CBHC" (fondo negro, letras blancas) ya no aparece al prenderla.
+</ul>
+<div class="warning"><strong class="red">Asegúrate de ya no ver el mensaje de CBHC al prender la consola antes de continuar.</strong></div>
+<ul>
 <li>Abre el icono de Configuración de la consola.</li>
 <li>Entra en Gestión de datos, luego en Transferir, copiar o borrar datos.</li>
 <li>Selecciona Memoria de la consola, en la lista busca el icono DON'T TOUCH ME.</li>
 <li>Selecciona el icono DON'T TOUCH ME y vuelve a selecciónalo para que salga el botón Borrar.</li>
 <li>Toca el botón de Borrar y después el botón Sí, espera a que se borre, y después toca en Aceptar.</li>
 </ul>
-<p>En este punto ya haz desinstalado Coldboot Haxchi correctamente.</p>
+<p>En este punto ya has desinstalado Coldboot Haxchi correctamente.</p>
 <p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola, sin ningún problema.</p>
-<p>Haz una copia del contenido se la tarjeta SD (en una computadora o teléfono móvil) y borrar definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo.</p>
+<p>Haz una copia del contenido se la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo.</p>
 <p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. No es necesario que formatees la consola.</p>
 <p><a href="?s=main">Inicio</a></p>
 <p><a href="?s=delete">Formatear la consola</a></p>
@@ -2011,22 +2020,16 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <br>
 <p><strong class="blue">Hack</strong>: Modificación del funcionamiento de un objeto o sistema. Para realizar un <strong>hack</strong> en la Wii U se requiere ejecutar un <strong class="green">exploit</strong> que permita cargar un <strong class="red">CFW</strong>.</p>
 <p><strong class="blue">Exploit</strong>: Vulnerabilidad de seguridad explotable (aprovechable) de un sistema informático. Ejemplos de <strong>exploits</strong> de Wii U son: <em class="green">JsTypeHax</em>, <em class="green">MK8 exploit</em>, <em class="green">BluUBomb</em>, <em class="green">Contenthax</em> y <em class="green">FailST</em> (es un tipo de Contenthax 2.0).</p>
-<p><strong class="blue">Punto de entrada</strong>: Ejecuta un exploit que permite acceder a los recursos de un sistema. Ejemplos de <strong>puntos de entrada</strong> de Wii U son: <em class="yellow">Webhack</em> (usa una version mejorada de <em class="green">JsTypeHax</em>), <em class="yellow">Indexiine</em> (usa una version mejorada de <em class="green">JsTypeHax</em>), <em class="yellow">Haxchi</em> (es un tipo de <em class="green">Contenthax</em>) y <em class="yellow">Coldboot Haxchi</em> (es un derivado de <em class="yellow">Haxchi</em>).</p>
+<p><strong class="blue">Punto de entrada</strong>: Ejecuta un exploit que permite acceder a los recursos de un sistema. Ejemplos de <strong>puntos de entrada</strong> de Wii U son: <em class="yellow">Webhack</em> (usa una version mejorada de <em class="green">JsTypeHax</em>), <em class="yellow">Indexiine</em> (usa una version mejorada de <em class="green">JsTypeHax</em>), <em class="yellow">Haxchi</em> (es un tipo de <em class="green">Contenthax</em>), <em class="yellow">Coldboot Haxchi</em> (es un derivado de <em class="yellow">Haxchi</em>) y <em class="yellow">PayloadLoader</em> (es una version de <em class="green">FailST</em>).</p>
 <p><strong class="blue">Firmware</strong>: Software que controla directamente al hardware. Sobre el firmware se construyen los drivers, programas de usuario o el sistema operativo de un sistema informático.</p>
-<p><strong class="blue">Custom Firmware (CFW)</strong>: Firmware personalizado, por lo regular hecho por un tercero, para habilitar o agregar funciones no soportadas por el firmware del fabricante del hardware. Ejemplos de <strong>CFW</strong> para Wii U son: <em class="red">Mocha CFW</em>, <em class="red">SigPatcher</em>, <em class="red">IOSUHAX</em> y <em class="red">Haxchi CFW</em>.</p>
+<p><strong class="blue">Custom Firmware (CFW)</strong>: Firmware personalizado, por lo regular hecho por un tercero, para habilitar o agregar funciones no soportadas por el firmware del fabricante del hardware. Ejemplos de <strong>CFW</strong> para Wii U son: <em class="red">Mocha CFW</em>, <em class="red">SigPatcher</em>, <em class="red">IOSUHAX</em>, <em class="red">Haxchi CFW</em>, <em class="red">módulo Mocha mod</em> y <em class="red">módulo Sigpatches</em>.</p>
 <p><strong class="blue">Homebrew</strong>: Software "hecho en casa", suele requerir de un hack para ser ejecutado ya que no cuenta con certificación del fabricante del hardware.</p>
-<p><strong class="blue">Ticket</strong>: Contiene la clave de validación de un software en la Wii U, entre otras cosas, sin esa clave la Wii U no puede ejecutar el software, a menos que previamente se le aplique un hack a la consola.</p>
-<p><strong class="blue">Title ID</strong>: El identificador de título es un número de 16 dígitos que usa la Wii U para, en su sistema de archivos, asignar una carpeta a un juego o aplicación. Los primeros 8 dígitos identifican el tipo de contenido (juego, DLC, demo, actualización, aplicación del sistema, etc.).</p>
+<p><strong class="blue">Environment (Entorno)</strong>: En Wii U se refiere a las aplicaciones que se cargan y ejecutan para dar funcionalidad a la consola. Por ejemplo, el entorno por defecto de Wii U consiste en su firmware de fábrica, aplicaciones oficiales en segundo plano y el menú de Wii U, mientras que un entorno homebrew consistiría en un custom firmware, aplicaciones homebrew (como Bloopair) en segundo plano y menús adicionales.</p>
+<p><strong class="blue">Payload</strong>: Carga útil o código que se ejecuta al provocar un exploit, sin la carga útil no se realiza ninguna acción. Un mismo exploit puede utilizar varios payloads y un payload puede ser utilizado por varios exploits.</p>
+<p><strong class="blue">Ticket</strong>: Contiene la firma de validación de un software en la Wii U, entre otras cosas, sin esa clave la Wii U no puede ejecutar el software, a menos que previamente se le aplique un hack a la consola.</p>
 <p><strong class="blue">Brick</strong>: Literalmente ladrillo en inglés. Se refiere a dañar un dispositivo al punto de sólo servir como pisapapeles.</p>
 <p><strong class="blue">DLC</strong>: Contenido descargable, se refiere al material adicional creado por los desarrolladores de un videojuego y que se publica por separado, no incluido en el producto base.</p>
-<p><strong class="blue">Payload</strong>: Carga útil o código que se ejecuta al provocar un exploit, sin la carga útil no se realiza ninguna acción. Un mismo exploit puede utilizar varios payloads y un payload puede ser utilizado por varios exploits.</p>
-<p>Según las definiciones anteriores <ins>esta guía tiene los procedimientos para instalar</ins> los hacks (punto de entrada + CFW):</p>
-<ul>
-<li>Webhack + Mocha CFW</li>
-<li>Indexiine + Mocha CFW</li>
-<li>Haxchi + Haxchi CFW</li>
-<li>Coldboot Haxchi + Haxchi CFW</li>
-</ul>
+<p><strong class="blue">Title ID</strong>: El identificador de título es un número de 16 dígitos que usa la Wii U para, en su sistema de archivos, asignar una carpeta a un juego o aplicación. Los primeros 8 dígitos identifican el tipo de contenido (juego, DLC, demo, actualización, aplicación del sistema, etc.).</p>
 </div>
 </div>
 <div id="questions" class="tabcontent" style="display:none;">
@@ -2127,10 +2130,10 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <p><a href="https://github.com/wiiu-controller-mods/wup-installer-gx2/releases/tag/v1">WUP Installer GX2</a> (Wii U Public title Installer) Instalador de juegos y aplicaciones en formato <strong class="green">NUS Content cifrado</strong>.</p>
 <p><a href="https://github.com/wiiu-controller-mods/wup-installer-gx2/releases/tag/channel_v1">WUP Installer GX2 Channel</a> Icono en el menú de la Wii U que abre WUP Installer GX2.</p>
 <p><a href="https://github.com/V10lator/NUSspli/releases">NUSspli</a> Descarga e instala juegos de forma rápida y simple directamente desde la Wii U.</p>
-<p><a href="https://apps.fortheusers.org/wiiu/loadiine_gx2">Loadiine GX2</a> Permite cargar juegos desde la tarjeta SD. No se recomienda como método principal de carga de juegos ya que los tiempos de carga son mucho mayores y no todos los juegos funcionan correctamente.</p>
 <p><a href="https://github.com/wiiu-controller-mods/savemii/releases/tag/v1">SaveMii</a> Gestor de archivos de guardado.</p>
 <p><a href="https://apps.fortheusers.org/wiiu/nanddumper">Wii U NAND Dumper</a> Permite hacer volcados de respaldo de las memorias internas de la Wii U. Es muy importante tener al menos un respaldo del OTP y del SEEPROM de la consola.</p>
 <p><a href="https://github.com/FIX94/Nintendont/blob/master/loader/loader.dol">Nintendont</a> Es un "parche" que permite que los juegos de GameCube sean identificados como juegos de Wii logrando que carguen en el modo virtual Wii de la Wii U. (El enlace lleva a la última versión de Nintendont, archivo <code>boot.dol</code> solamente). <a href="https://drive.google.com/uc?id=1ZDEuXq3QhiNGuMBCP8wKv4ueR_YCv-lT">Aquí</a> puedes descargar un paquete con todos los archivos importantes para una instalación completa.</p>
+<p><a href="https://github.com/GaryOderNichts/Bloopair/releases">Bloopair</a> Permite conectar de forma inalámbrica los controles Bluetooth más populares. Consulta <a href="https://gbatemp.net/threads/bloopair-connect-controllers-from-other-consoles-natively.594289/">el hilo oficial de la aplicación</a> para más detalles.</p>
 <p><a href="https://apps.fortheusers.org/wiiu/hidtovpad">HID to VPAD</a> Permite usar controles de terceros por conexión USB. Cada modelo de control debe tener su archivo de <a href="https://github.com/Maschell/controller_patcher_configs">configuración .ini</a> para que la aplicación lo reconozca correctamente. Más información <a href="https://gbatemp.net/threads/hid-to-vpad.424127/">aquí</a>.</p>
 <p><a href="https://www.retroarch.com/?page=platforms">RetroArch</a> No es un emulador en sí, sino un proyecto modular que sirve de envoltura para cargar diferentes núcleos emuladores y que tiene versiones para una gran cantidad de plataformas (incluida la Wii U).</p>
 <p><a href="https://apps.fortheusers.org/wiiu/swapdrc_lite">SwapDRC Lite</a> Permite intercambiar imagen y video entre la TV y el Wii U GamePad.</p>
@@ -2139,13 +2142,14 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <p><a href="https://apps.fortheusers.org/wiiu/ftpiiu_everywhere">FTPiiU_Everywhere</a> Permite leer y trasferir archivos a la consola por medio de FTP. La versión Everywhere permite acceder a archivos del sistema por lo que sólo se recomienda a usuarios avanzados.</p>
 <p><a href="https://apps.fortheusers.org/wiiu/wuphax">Wuphax</a> Facilita hackear el modo virtual Wii de la Wii U.</p>
 <p><a href="https://apps.fortheusers.org/wiiu/sign_c2w_patcher">sign_c2w_patcher</a> Su principal uso es habilitar el overclock del modo virtual Wii de la Wii U.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/loadiine_gx2">Loadiine GX2</a> Permite cargar juegos desde la tarjeta SD. No se recomienda como método principal de carga de juegos ya que los tiempos de carga son mucho mayores y no todos los juegos funcionan correctamente.</p>
 </div>
 </div>
 <div id="about" class="tabcontent" style="display:none;">
 <div class="cont">
 <h2>Acerca de esta guía</h2>
 <br>
-<h3>Versión: 3.0 (5 de enero de 2022)</h3>
+<h3>Versión: 3.1 (9 de enero de 2022)</h3>
 <p>Esta guía fue hecha por <strong>Fran AC</strong> basado en la guía de los miembros de <a href="https://wiiu.hacks.guide/#/about">Nintendo Homebrew Discord Server</a>.</p>
 <p>Puedes descargar la guía completa desde <a href="https://github.com/piloncillo/piloncillo.github.io/releases">esté enlace</a>.</p>
 <p>Créditos a los desarrolladores de las herramientas</p>
