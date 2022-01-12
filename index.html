@@ -283,7 +283,17 @@ img.center {
   </div>
   <div id="sidenav">
     <a href="?s=main" id="main_link" class="tablinks">Inicio</a>
-    <!--a href="?s=entry" id="entry_link" class="tablinks">Instalar un hack</a-->
+	<button id="install_hack" class="dropdown-btn">Instalar hack</button>
+	<div class="dropdown-container">
+      <a href="?s=tiramisu&p=sd" id="tiramisu_sd_link" class="tablinks">Prepara la tarjeta SD</a>
+      <a href="?s=tiramisu&p=browser_exploit" id="tiramisu_browser_exploit_link" class="tablinks">Exploit del navegador</a>
+      <a href="?s=tiramisu&p=nand_backup" id="tiramisu_nand_backup_link" class="tablinks">Copia de la NAND</a>
+  	  <a href="?s=tiramisu&p=payloadloader" id="tiramisu_payloadloader_link" class="tablinks">PayloadLoader</a>
+	  <a href="?s=tiramisu&p=autobooting" id="tiramisu_autobooting_link" class="tablinks">Autobooting</a>
+	  <a href="?s=tiramisu&p=config" id="tiramisu_config_link" class="tablinks">Configurar Tiramisu</a>
+	  <a href="?s=tiramisu&p=apps" id="tiramisu_apps_link" class="tablinks">Añadir aplicaciones</a>
+    </div>
+    <!--a href="?s=entry" id="entry_link" class="tablinks">Instalar un hack anterior</a-->
     <a href="?s=test" id="test_link" class="tablinks">Identificar hack</a>
     <button id="uninstall_hack" class="dropdown-btn">Desinstalar hack</button>
     <div class="dropdown-container">
@@ -293,9 +303,10 @@ img.center {
   	  <a href="?s=uninstall_cbhc" id="uninstall_cbhc_link" class="tablinks">Coldboot Haxchi</a>
 	  <a href="?s=uninstall_payloadloader" id="uninstall_payloadloader_link" class="tablinks">Tiramisu</a>
     </div>
+	<a href="?s=update_tiramisu" id="update_tiramisu_link">Actualizar Tiramisu</a>
     <a href="?s=games" id="games_link">Descarga de juegos</a>
     <a href="?s=install_games" id="install_games_link" class="tablinks">Instalación de juegos</a>
-    <!--a href="?s=custom_haxchi" id="custom_haxchi_link" class="tablinks">Personalizar Haxchi</a-->
+    <a href="?s=custom_haxchi" id="custom_haxchi_link" class="tablinks">Personalizar Haxchi</a>
     <!--a href="?s=config_payload" id="config_payload_link" class="tablinks">Personalizar payload</a-->
     <a href="?s=glossary" id="glossary_link" class="tablinks">Glosario</a>
    <a href="?s=questions" id="questions_link" class="tablinks">Preguntas frecuentes</a>
@@ -362,6 +373,31 @@ img.center {
 <li>pwsincd (Logo)</li>
 </ul>
 <p><a href="?s=tiramisu&p=sd">Comencemos a instalar Tiramisu</a></p>
+</div>
+</div>
+<div id="update_tiramisu" class="tabcontent" style="display:none;">
+<div class="cont">
+<h2>Actualizar Tiramisu</h2>
+<br>
+<p>Tiramisu es extremadamente simple de actualizar, sólo debes descargar los archivos más recientes y remplazar los anteriores en la tarjeta SD.</p>
+<h3>Necesitas</h3>
+<ul>
+<li>Los archivos más recientes de <a href="https://tiramisu.foryour.cafe/">Tiramisu para tu café</a>.</li>
+<ul>
+<li>Selecciona <code>EnvironmentLoader</code>, <code>Nanddumper</code>, <code>PayloadLoader Installer</code> y <code>Base-Tiramisu</code>.</li>
+<li>Haz clic en el botón <em class="green">Download package</em> de la parte inferior de la página para descargar los archivos (se descargarán comprimidos en un solo archivo <code>files.zip</code>).</li>
+</ul>
+</ul>
+<h3>Instalación</h3>
+<ul>
+<li>Descomprime el archivo <code>files.zip</code> y copia el contenido a la raíz de la tarjeta SD, la carpeta <code>wiiu</code> debe quedar en la raíz de la tarjeta SD.</li>
+</ul>
+<div class="info">Si el dispositivo (computadora o teléfono móvil) te pregunta si deseas sobrescribir archivos existentes en la tarjeta SD, debes indicar que Sí quieres sobrescribir los archivos.</div>
+<ul>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
+<li>En este punto ya finalizaste la actualización de EnvironmentLoader, PayloadLoader y Tiramisu. La próxima vez que cargue el entorno de Tiramisu cargará con los archivos más actuales.</li>
+<p><a href="?s=main">Inicio</a></p>
+</ul>
 </div>
 </div>
 <div id="tiramisu_sd" class="tabcontent" style="display:none;">
@@ -510,7 +546,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 </ul>
 <div class="info">Para volver a <em>Mii Maker</em> (Editor de Mii), simplemente presiona el botón <em>HOME</em> mientras estás en el Homebrew Launcher.</div>
 <ul>
-<li>En este punto ya finalizaste la instalación de EnvironmentLoader, PayloadLoader y Tiramisu.</li>
+<li>En este punto ya finalizaste la instalación de EnvironmentLoader, PayloadLoader y Tiramisu, pero aún falta añadir aplicaciones y módulos que agregan funcionalidad a la consola.</li>
 </ul>
 <p><a href="?s=tiramisu&p=apps">Añadir aplicaciones y módulos</a></p>
 </div>
@@ -1308,7 +1344,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <h2>Identifica que hack tiene tu Wii U</h2>
 <br>
 <p>Puedes comprobar de forma simple que hack tiene tu consola si reconoces el punto de entrada que te da acceso a ejecutar aplicaciones homebrew. Puedes realizar el test completo para detectar sin lugar a dudas cual es el hack.</p>
-<p>Si compraste tu consola de segunda mano y no logras identificar el punto de entrada que usaron para instalar juegos lo más probable es que usaron Webhack. Toma en cuenta que los juegos de la misma región de la consola que no tienen DLC y no son de la Consola Virtual funcionan sin activar nada (a eso se le llama <strong class="red">método brasileño</strong>), los juegos que tienen una versión en físico cuentan con tickets siempre validos (extraídos de los discos originales), por eso, para esos juegos no es necesario ejecutar un hack para abrirlos (funcionan igual que juegos legítimos).</p>
+<p>Si compraste tu consola de segunda mano y no logras identificar el punto de entrada que usaron para instalar juegos lo más probable es que usaron Webhack. Ten en cuenta que los juegos de la misma región de la consola que no tienen DLC y no son de la Consola Virtual funcionan sin activar nada (a eso se le llama <strong class="red">método brasileño</strong>), los juegos que tienen una versión en físico cuentan con tickets siempre validos (extraídos de los discos originales), por eso, para esos juegos no es necesario ejecutar un hack para abrirlos (funcionan igual que juegos legítimos).</p>
 <p><strong class="yellow">Webhack</strong>: Si lo primero que debes hacer es entrar en el navegador de la consola para cargar una página web en internet y abrir un enlace (o tocar un botón) en la página web para ejecutar el hack entonces estas usando Webhack.</p>
 <p><strong class="yellow">Indexiine</strong>: Si abres el navegador de internet de la consola y automáticamente se ejecuta el hack entonces estas usando Indexiine. También se trata de Indexiine cuando el navegador abre, pero después de abrir se queda atorado en blanco (intentado cargar el hack).</p>
 <p><strong class="yellow">Haxchi</strong>: Si debes abrir un icono en el menú de la Wii U para cargar el hack entonces estas usando Haxchi.</p>
@@ -1517,7 +1553,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
 <li>Cerciórate de no tener ningún dispositivo USB conectado en la Wii U antes de continuar.</li>
 </ul>
-<h3>Deshacer el arranque automático en PayloadLoader</h3>
+<h3>Deshacer el arranque automático de PayloadLoader</h3>
 <ul>
 <li>Enciende la consola y mantén presionado el botón X del GamePad para abrir el menú EnvironmentLoader.</li>
 <li>Navega por el menú usando las flechas del D-Pad del GamePad, selecciona <em>installer</em> como entorno y presiona el botón A para iniciarlo.</li>
@@ -1556,8 +1592,8 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <br>
 <p>Webhack no modifica nada en la consola por eso desinstalar Webhack es simplemente borrar el payload dentro de la carpeta <code>wiiu</code> de la tarjeta SD de la consola.</p>
 <p>Haz una copia del contenido se la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo. Con eso ya haz desinstalado Webhack correctamente.</p>
-<p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola, sin ningún problema.</p>
-<p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. No es necesario que formatees la consola.</p>
+<p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola sin ningún problema.</p>
+<p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. <strong class="red">No es necesario formatear la consola</strong>.</p>
 <p><a href="?s=main">Inicio</a></p>
 <p><a href="?s=delete">Formatear la consola</a></p>
 </div>
@@ -1567,9 +1603,62 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <h2>Desinstalar Indexiine correctamente</h2>
 <br>
 <p>Recuerda que al momento de instalar Indexiine se remplaza el archivo <code>index.html</code> dentro del navegador de la consola por eso desinstalar Indexiine es restaurar el archivo <code>index.html</code> original del navegador, después de restaurarlo puedes volver a ocupar el navegador de forma normal.</p>
-<p>Desinstalar Indexiine se resume en ejecutar Indexiine-Installer desde el Homebrew Launcher.</p>
-<p>Debes preparar los archivos para la tarjeta SD tú mismo. Los siguientes enlaces dirigen a los lanzamientos oficiales de los desarrolladores de cada aplicación, son las versiones estables más recientes.</p>
+<p>Desinstalar Indexiine se resume en ejecutar Indexiine Installer desde el Homebrew Launcher.</p>
+<p>Si tienes acceso al Homebrew Launcher y puedes abrir aplicaciones desde ahí entonces es muy fácil desinstalar Indexiine, pero si no tienes acceso al Homebrew Launcher entonces hay que seguir un procedimiento algo más complicado.</p>
+<h3>¿Tienes acceso al Homebrew Launcher?</h3>
+<p><a href="?s=uninstall_indexiine&p=hbl">Sí</a></p>
+<p><a href="?s=uninstall_indexiine&p=ext">No</a></p>
+</div>
+</div>
+<div id="uninstall_indexiine_hbl" class="tabcontent" style="display:none;">
+<div class="cont">
+<h2>Desinstalar Indexiine correctamente</h2>
+<br>
+<p>Aquí se asume que sabes cómo entrar en el Homebrew Launcher para iniciar aplicaciones.</p>
+<p>Para asegurar que todo salga bien debes preparar y revisar algunos archivos en la tarjeta SD. Así que apaga la consola, saca la tarjeta SD de la Wii U y ponla a tu dispositivo (computadora o teléfono móvil) para copiar archivos.</p>
 <h3>Descarga</h3>
+<div class="info">Los siguientes enlaces dirigen a los lanzamientos oficiales de los desarrolladores de cada aplicación, son las versiones estables más recientes.</div>
+<ul>
+<li><a href="https://github.com/GaryOderNichts/indexiine-installer/releases/tag/v2">Indexiine-Installer</a> (descarga el archivo <code>indexiine-installer.zip</code>).</li>
+<li>Archivo <a href="https://drive.google.com/uc?id=149g4RisXhqjAZe3K0VDbTGZtpvt8-oyq">backup-index.html</a> (es el respaldo del archivo original del navegador).</li>
+</ul>
+<h3>Colocación</h3>
+<ul>
+<li>Si no tienes Indexiine Installer en el Homebrew Launcher descomprime el archivo <code>indexiine-installer.zip</code> y copia la carpeta <code>wiiu</code> a la raíz de la tarjeta SD.</li>
+</ul>
+<div class="info">Si el dispositivo (computadora o teléfono móvil) te pregunta si deseas combinar carpetas existentes en la tarjeta SD, debes indicar que Sí quieres combinar las carpetas.</div>
+<ul>
+<li>Revisa la carpeta <code>sd:/wiiu/apps/indexiine-installer</code>.</li>
+<ul>
+<li>Si tienes un archivo <code>backup-index.html</code> en dicha carpeta entonces remplázalo con el respaldo que descargaste.</li>
+<li>Si no tienes el archivo <code>backup-index.html</code> en dicha carpeta entonces coloca el respaldo que descargaste.</li>
+</ul>
+</ul>
+<h3>Procedimiento de desinstalación</h3>
+<ul>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
+<li>Enciende la consola y accede al menú de Wii U.</li>
+<li>Abre el Homebrew Launcher como ya sabes hacerlo.</li>
+<li>Navega por el menú del Homebrew Launcher, selecciona Indexiine Installer y toca en <em class="green">Load</em> para cargar la aplicacion.</li>
+<li>Dentro de Indexiine Installer presiona el botón B para desinstalar Indexiine.</li>
+<li>Después de que la desinstalación termine regresará automáticamente al Homebrew Launcher.</li>
+<li>En este punto ya has desinstalado Indexiine correctamente.</li>
+</ul>
+<p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola sin ningún problema.</p>
+<p>Haz una copia del contenido se la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo.</p>
+<p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. <strong class="red">No es necesario formatear la consola</strong>.</p>
+<p><a href="?s=main">Inicio</a></p>
+<p><a href="?s=delete">Formatear la consola</a></p>
+</div>
+</div>
+<div id="uninstall_indexiine_ext" class="tabcontent" style="display:none;">
+<div class="cont">
+<h2>Desinstalar Indexiine correctamente</h2>
+<br>
+<p>Aquí se asume que no puedes abrir el Homebrew Launcher, posiblemente tengas el navegador bloqueado (por inestabilidad de Indexiine) lo cual te impide cargar el CFW o el mismo Homebrew Launcher.</p>
+<p>Para asegurar que todo salga bien debes preparar y revisar algunos archivos en la tarjeta SD. Así que apaga la consola, saca la tarjeta SD de la Wii U y ponla a tu dispositivo (computadora o teléfono móvil) para copiar archivos.</p>
+<h3>Descarga</h3>
+<div class="info">Los siguientes enlaces dirigen a los lanzamientos oficiales de los desarrolladores de cada aplicación, son las versiones estables más recientes.</div>
 <ul>
 <li><a href="https://github.com/GaryOderNichts/configurable-payload/releases/tag/v1">Configurable Payload</a> (descarga el archivo <code>payload.elf</code>).</li>
 <li><a href="https://github.com/wiiu-controller-mods/homebrew_launcher/releases/tag/v2">Homebrew Launcher</a> (descarga el archivo <code>homebrew_launcher.elf</code>).</li>
@@ -1578,38 +1667,51 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 </ul>
 <h3>Colocación</h3>
 <ul>
-<li>Si no tienes Indexiine-Installer copia el contenido del archivo <code>indexiine-installer.zip</code> a la raíz de la tarjeta SD.</li>
-<li>Si no tienes el Homebrew Launcher crea una carpeta llamada <code>homebrew_launcher</code> en la carpeta <code>sd:/wiiu/apps</code> y copia el archivo <code>homebrew_launcher.elf</code> en la carpeta <code>sd:/wiiu/apps/homebrew_launcher</code>.</li>
-<li>Si no tienes el archivo <code>payload.elf</code> en la carpeta <code>sd:/wiiu</code> cópialo o si tienes un archivo <code>payload.elf</code> en la carpeta <code>sd:/wiiu</code> entonces remplázalo.</li>
-<li>Si tienes un archivo <code>payload.cfg</code> en la carpeta <code>sd:/wiiu</code> borralo.</li>
-<li>Si no tienes el archivo <code>backup-index.html</code> en la carpeta <code>sd:/wiiu/apps/Indexiine-installer</code> cópialo.</li>
+<li>Descomprime el archivo <code>indexiine-installer.zip</code> y copia la carpeta <code>wiiu</code> a la raíz de la tarjeta SD.</li>
 </ul>
-<h3>Procedimiento</h3>
-<p>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</p>
-<p>Con la tarjeta SD preparada sólo falta iniciar el Homebrew Launcher. Ahora puedes encender la Wii U.</p>
+<div class="info">Si el dispositivo (computadora o teléfono móvil) te pregunta si deseas combinar carpetas existentes en la tarjeta SD, debes indicar que Sí quieres combinar las carpetas.</div>
 <ul>
-<li>Abre el icono de Notificaciones (al lado derecho del icono del navegador de internet en el menú de la Wii U).</li>
-<li>Desplázate por la lista de notificaciones hasta la notificación "Actualización de la consola" y ábrela.</li>
+<li>Revisa que tengas el archivo <code>sd:/wiiu/apps/homebrew_launcher/homebrew_launcher.elf</code>.</li>
+<ul>
+<li>Si no lo tienes crea la carpeta <code>homebrew_launcher</code> dentro de la carpeta <code>sd:/wiiu/apps</code> y despues coloca el archivo <code>homebrew_launcher.elf</code> dentro de la carpeta <code>sd:/wiiu/apps/homebrew_launcher</code>.</li>
+</ul>
+<li>Revisa la carpeta <code>sd:/wiiu/apps/indexiine-installer</code>.</li>
+<ul>
+<li>Si tienes un archivo <code>backup-index.html</code> en dicha carpeta remplázalo con el respaldo que descargaste.</li>
+<li>Si no tienes el archivo <code>backup-index.html</code> en dicha carpeta entonces coloca el respaldo que descargaste.</li>
+</ul>
+<li>Revisa la carpeta <code>sd:/wiiu</code>.</li>
+<ul>
+<li>Si tienes un archivo <code>payload.cfg</code> en dicha carpeta borralo.</li>
+<li>Si tienes un archivo <code>payload.elf</code> en dicha carpeta remplázalo con el respaldo que descargaste.</li>
+<li>Si no tienes el archivo <code>payload.elf</code> en dicha carpeta entonces coloca el respaldo que descargaste.</li>
+</ul>
+</ul>
+<h3>Procedimiento de desinstalación</h3>
+<ul>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
+<li>Enciende la consola y accede al menú de Wii U.</li>
+<li>Abre el icono de Notificaciones (se encuentra al lado derecho del icono del navegador de internet en el menú de Wii U).</li>
+<li>Desplázate por la lista de notificaciones hasta la notificación <strong class="blue">Actualización de la consola</strong> y ábrela.</li>
 <li>Toca el icono del navegador de internet en la esquina inferior derecha.</li>
 <li>Toca en Sí. Esto cargará el navegador de internet.</li>
 <li>Saldrá un código de error. Toca en Sí y toca en la parte superior de la pantalla del GamePad para ingresar una URL.</li>
 <li>Introduce la URL: <a href="http://u.wiidb.de">u.wiidb.de</a> (puedes consultar paginas alternativas <a href="?s=webhack&p=exploit">aquí</a>).</li>
-<li>Al cargar la página por completo toca en <strong class="blue">HAXX</strong>, espera unos segundos, deberá cargar el Homebrew Launcher. Si no logras entrar al Homebrew Launcher, paga la consola y vuelve a intentarlo.</li>
+<li>Al cargar la página por completo toca en <strong class="blue">HAXX</strong>, espera unos segundos, deberá cargar el Homebrew Launcher. Si no logras entrar al Homebrew Launcher, paga la consola y vuelve a intentarlo (asegúrate de haber colocado correctamente los archivos en la tarjeta SD).</li>
 </ul>
 <div class="info">El mensaje <q><em>FSGetMountSource falied. Please insert a FAT32 formatted sd card.</em></q> quiere decir que la consola no está detectando la tarjeta SD, limpia los contactos, si estas usando una microSD cambia el adaptador. Mantén presionado el botón <em>POWER</em> de la consola hasta que se apague.</div>
 <div class="info">El mensaje <q><em>FSOpenFile falied. File missing /vol/external01/wiiu/payload.elf.</em></q> quiere decir que la consola sí está detectando la tarjeta SD, pero no encontró el archivo <code>payload.elf</code> dentro de la carpeta <code>sd:/wiiu</code>. Mantén presionado el botón <em>POWER</em> de la consola hasta que se apague.</div>
-<div class="info">Si la Wii U se congela de alguna otra forma, espera unos 10 segundos. Si no sucede nada, mantén presionado el botón <em>POWER</em> de la consola hasta que se apague, vuelve prender la consola, abre el navegador, entra en Ajustes, selecciona un motor de búsqueda, borra las cookies del navegador y vuelve a intentarlo.</div>
+<div class="info">Si la Wii U se congela de alguna otra forma, espera unos 10 segundos. Si no sucede nada, mantén presionado el botón <em>POWER</em> de la consola hasta que se apague, vuelve prender la consola, abre el navegador, entra rápidamente en Ajustes, selecciona un motor de búsqueda, borra las cookies del navegador y vuelve a apagar la consola. Asegúrate de haber colocado correctamente los archivos en la tarjeta SD y repite los pasos del <strong>Procedimiento de desinstalación</strong>.</div>
 <ul>
-<li>Una vez dentro del Homebrew Launcher navega por el menú usando la pantalla táctil del GamePad, selecciona <strong>Indexiine Installer</strong> y toca en <em class="green">Load</em> para cargar la aplicacion.</li>
-<li>Dentro del Indexiine Installer presiona el botón B para desinstalar Indexiine.</li>
-<li>Cuando se complete el proceso, regresará automáticamente al Homebrew Launcher.</li>
+<li>Una vez dentro del navega por el menú del Homebrew Launcher, selecciona Indexiine Installer y toca en <em class="green">Load</em> para cargar la aplicacion.</li>
+<li>Dentro de Indexiine Installer presiona el botón B para desinstalar Indexiine.</li>
+<li>Después de que la desinstalación termine regresará automáticamente al Homebrew Launcher.</li>
+<li>En este punto ya has desinstalado Indexiine correctamente.</li>
 <li>Presiona el botón <em>HOME</em> y luego toca el botón Salir para regresar al menú de la Wii U.</li>
-<li>Apaga la consola.</li>
 </ul>
-<p>En este punto ya has desinstalado Indexiine correctamente.</p>
-<p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola, sin ningún problema.</p>
+<p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola sin ningún problema.</p>
 <p>Haz una copia del contenido se la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo.</p>
-<p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. No es necesario que formatees la consola.</p>
+<p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. <strong class="red">No es necesario formatear la consola</strong>.</p>
 <p><a href="?s=main">Inicio</a></p>
 <p><a href="?s=delete">Formatear la consola</a></p>
 </div>
@@ -1627,9 +1729,9 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <li>Toca el botón de Borrar y después el botón Sí, espera a que se borre, y después toca en Aceptar.</li>
 </ul>
 <p>En este punto ya has desinstalado Haxchi correctamente.</p>
-<p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola, sin ningún problema.</p>
+<p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola sin ningún problema.</p>
 <p>Haz una copia del contenido se la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo.</p>
-<p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. No es necesario que formatees la consola.</p>
+<p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. <strong class="red">No es necesario formatear la consola</strong>.</p>
 <p><a href="?s=main">Inicio</a></p>
 <p><a href="?s=delete">Formatear la consola</a></p>
 </div>
@@ -1707,7 +1809,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <li>Presiona el botón A y lee las advertencias.</li>
 <li>Presiona el botón B para desinstalar Coldboot Haxchi.</li>
 <li>Completada la desinstalación, tu consola cargará el menú de la Wii U.</li>
-<li>Reinicia la consola. Si Coldboot Haxchi se desinstaló correctamente, deberás ver que el mensaje de "CBHC" (fondo negro, letras blancas) ya no aparece al prenderla.
+<li>Reinicia la consola. Si Coldboot Haxchi se desinstaló correctamente, deberás ver que el mensaje de "CBHC" (fondo negro, letras blancas) ya no aparece al prenderla.</li>
 </ul>
 <div class="warning"><strong class="red">Asegúrate de ya no ver el mensaje de CBHC al prender la consola antes de continuar.</strong></div>
 <ul>
@@ -1718,9 +1820,9 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <li>Toca el botón de Borrar y después el botón Sí, espera a que se borre, y después toca en Aceptar.</li>
 </ul>
 <p>En este punto ya has desinstalado Coldboot Haxchi correctamente.</p>
-<p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola, sin ningún problema.</p>
+<p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola sin ningún problema.</p>
 <p>Haz una copia del contenido se la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo.</p>
-<p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. No es necesario que formatees la consola.</p>
+<p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. <strong class="red">No es necesario formatear la consola</strong>.</p>
 <p><a href="?s=main">Inicio</a></p>
 <p><a href="?s=delete">Formatear la consola</a></p>
 </div>
@@ -2149,7 +2251,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <div class="cont">
 <h2>Acerca de esta guía</h2>
 <br>
-<h3>Versión: 3.1 (9 de enero de 2022)</h3>
+<h3>Versión: 3.2 (12 de enero de 2022)</h3>
 <p>Esta guía fue hecha por <strong>Fran AC</strong> basado en la guía de los miembros de <a href="https://wiiu.hacks.guide/#/about">Nintendo Homebrew Discord Server</a>.</p>
 <p>Puedes descargar la guía completa desde <a href="https://github.com/piloncillo/piloncillo.github.io/releases">esté enlace</a>.</p>
 <p>Créditos a los desarrolladores de las herramientas</p>
@@ -2223,7 +2325,9 @@ function loadContent() {
 	  section == "haxchi" ||
 	  section == "cbhc")
 	  section = "entry";
-	if (document.getElementById(section + "_link") != null)
+	if (document.getElementById(section + "_" + page + "_link") != null)
+      document.getElementById(section + "_" + page + "_link").className += " active";
+	else if (document.getElementById(section + "_link") != null)
       document.getElementById(section + "_link").className += " active";
     else
 	  document.getElementById("main_link").className += " active";
@@ -2233,6 +2337,9 @@ function loadContent() {
     document.getElementById("main").style.display = "block";
   }
   
+  if (section == "tiramisu")
+    document.getElementById("install_hack").click();
+	
   if (section == "uninstall_payloadloader" ||
   section == "uninstall_webhack" ||
   section == "uninstall_indexiine" ||
