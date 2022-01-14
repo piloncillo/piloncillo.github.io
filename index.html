@@ -336,17 +336,18 @@ img.center {
 </ul>
 <p>Esta guía funcionará en todas las Wii U de todas las regiones con firmware 5.5.5 o inferior. Lo ideal es que actualices a la última versión antes de modificar la consola.</p>
 <h3>Antes de empezar</h3>
-<p>Debes saber que modificar cualquier sistema implica la posibilidad de producir un falló irreversible (brick). En el caso de la Wii U es raro, pero sigue siendo una posibilidad, así que asegúrate de seguir TODAS las instrucciones EXACTAMENTE como se indican.</p>
-<p>Si completas la guía correctamente no perderás ningún dato y la consola terminará con todo lo que tenía al comienzo (juegos, partidas guardadas, NNID, etc., se conservarán).</p>
+<p>Debes saber que modificar cualquier sistema implica la posibilidad de producir un falló irreversible (brick). En el caso de la Wii U es raro, pero sigue siendo una posibilidad, así que <strong class="green">asegúrate de seguir TODAS las instrucciones EXACTAMENTE como se indican hasta el final</strong>.</p>
+<p>Si completas la guía correctamente no perderás ningún dato y la consola terminará con todo lo que tenía al comienzo (juegos de Wii U, partidas guardadas, NNID, etc., se conservarán).</p>
 <p>Si es necesario lee la guía completa de principio a fin una o más veces antes de usarla en tu Wii U.</p>
 <p>Si la Wii U (o la tarjeta SD) tiene un hack desinstálalo antes de seguir adelante.</p>
 <ul>
-<li>Usuarios con Coldboot Haxchi (CBHC): Vayan a la sección <a href="?s=uninstall_cbhc">Desinstalar Coldboot Haxchi correctamente</a>.</li>
-<li>Usuarios con Haxchi: Desinstalen la aplicación Haxchi desde la gestión de datos en la configuración de la consola, hagan una copia del contenido se la tarjeta SD y formateen la tarjeta SD como se indica más adelante en la guía.</li>
-<li>Usuarios con Indexiine: Vayan a la sección <a href="?s=uninstall_indexiine">Desinstalar Indexiine correctamente</a>.</li>
-<li>Usuarios con Webhack: Hagan una copia del contenido se la tarjeta SD y formateen la tarjeta SD como se indica más adelante en la guía.</li>
+<li>Usuarios con <strong class="blue">Coldboot Haxchi (CBHC)</strong>: Vayan a la sección <a href="?s=uninstall_cbhc">Desinstalar Coldboot Haxchi correctamente</a>.</li>
+<li>Usuarios con <strong class="blue">Haxchi</strong>: Desinstalen la aplicación Haxchi desde la gestión de datos en la configuración de la consola, hagan una copia de todo el contenido de la tarjeta SD y formateen la tarjeta SD como se indica más adelante en la guía.</li>
+<li>Usuarios con <strong class="blue">Indexiine</strong>: Vayan a la sección <a href="?s=uninstall_indexiine">Desinstalar Indexiine correctamente</a>.</li>
+<li>Usuarios con <strong class="blue">Webhack</strong>: Hagan una copia de todo el contenido de la tarjeta SD y formateen la tarjeta SD como se indica más adelante en la guía.</li>
 <li>Si no sabes que hack tiene tu Wii U consulta la sección <a href="?s=test">Identificar hack</a>.</li>
 </ul>
+<div class="info"><strong class="green">Puedes dejar la tarjeta SD tal cual, y sólo sobrescribir los archivos del anterior hack con los archivos del nuevo hack así no necesitas volver a colocar cada cosa</strong>, pero se recomienda hacer una instalación en limpio copiando todo el contenido de la tarjeta SD a un lugar seguro, formatear la tarjeta SD, colocar los archivos del nuevo hack y al final colocar selectivamente las carpetas y los archivos de las aplicaciones (emuladores y ROMs incluidos) que más te interesan.</div>
 <div class="info">Puedes consultar terminología como <em>homebrew</em>, <em>exploit</em>, <em>mocha</em>, etc. en el <a href="/glossary">glosario</a>. Si tienes alguna duda puedes ir a la sección de <a href="/questions">preguntas frecuentes</a>.</div>
 <p><a href="?s=intro_tiramisu">Aquí puedes leer una breve introducción a Tiramisu</a></p>
 <p><a href="?s=tiramisu&p=sd">Comencemos a instalar Tiramisu</a></p>
@@ -392,6 +393,7 @@ img.center {
 <ul>
 <li>Descomprime el archivo <code>files.zip</code> y copia el contenido a la raíz de la tarjeta SD, la carpeta <code>wiiu</code> debe quedar en la raíz de la tarjeta SD.</li>
 </ul>
+<div class="info">Si el dispositivo (computadora o teléfono móvil) te pregunta si deseas combinar carpetas existentes en la tarjeta SD, debes indicar que Sí quieres combinar las carpetas.</div>
 <div class="info">Si el dispositivo (computadora o teléfono móvil) te pregunta si deseas sobrescribir archivos existentes en la tarjeta SD, debes indicar que Sí quieres sobrescribir los archivos.</div>
 <ul>
 <li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
@@ -413,10 +415,12 @@ img.center {
 <li>Haz clic en el botón <em class="green">Download package</em> de la parte inferior de la página para descargar los archivos (se descargarán comprimidos en un solo archivo <code>files.zip</code>).</li>
 </ul>
 </ul>
+<div class="info">La descarga e instalación del módulo <a href="?s=tiramisu&p=apps#modules"><strong class="yellow">Sigpatches</strong></a> de encuentra al final de la guía así que asegúrate de terminar la guía por completo.</div>
 <h3>Instalación</h3>
 <ul>
 <li>Descomprime el archivo <code>files.zip</code> y copia el contenido a la raíz de la tarjeta SD, la carpeta <code>wiiu</code> debe quedar en la raíz de la tarjeta SD.</li>
 </ul>
+<div class="info">Si el dispositivo (computadora o teléfono móvil) te pregunta si deseas combinar carpetas existentes en la tarjeta SD, debes indicar que Sí quieres combinar las carpetas.</div>
 <div class="info">Si el dispositivo (computadora o teléfono móvil) te pregunta si deseas sobrescribir archivos existentes en la tarjeta SD, debes indicar que Sí quieres sobrescribir los archivos.</div>
 <ul>
 <li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
@@ -553,7 +557,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 </div>
 <div id="tiramisu_apps" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Añadir aplicaciones y módulos</h2>
+<h2 id="hbl">Añadir aplicaciones y módulos</h2>
 <p>Vamos a agregar más funcionalidad la Wii U con varias aplicaciones. Así que apaga la consola, saca la tarjeta SD de la Wii U y ponla a tu dispositivo (computadora o teléfono móvil) para copiar archivos.</p>
 <br>
 <h3>Añadir aplicaciones al Homebrew Launcher</h3>
@@ -575,6 +579,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 </ul>
 <h3>Instalación</h3>
 <div class="info">Si el dispositivo (computadora o teléfono móvil) te pregunta si deseas combinar carpetas existentes en la tarjeta SD, debes indicar que Sí quieres combinar las carpetas.</div>
+<div class="info">Si el dispositivo (computadora o teléfono móvil) te pregunta si deseas sobrescribir archivos existentes en la tarjeta SD, debes indicar que Sí quieres sobrescribir los archivos.</div>
 <ul>
 <li>Descomprime el archivo <code>wup_installer_gx2.zip</code> y únicamente copia la carpeta <code>wiiu</code> a la raíz de la tarjeta SD, (ignora los archivos <code>info.json</code>, <code>manifest.install</code> y <code>screen#.png</code>).</li>
 <li>Descomprime el archivo <code>wiiu-extracttosd.zip</code>, copia la carpeta <code>wiiu</code> a la raíz de la tarjeta SD.</li>
@@ -590,7 +595,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 </ul>
 <div class="info">Puedes eliminar el archivo <code>sd:/wiiu/apps/appstore/hbas.elf</code> para no tener duplicada la aplicacion Homebrew Appstore en el Homebrew Launcher.</div>
 <br>
-<h3>Añadir módulos a Tiramisu Environment (Entorno de Tiramisu)</h3>
+<h3 id="modules">Añadir módulos a Tiramisu Environment (Entorno de Tiramisu)</h3>
 <p>Los módulos deben estar hechos explícitamente para ser usados en el entorno de Tiramisu, tienen formato <code>*.rpx</code> y se colocan en la carpeta <code>sd:/wiiu/environments/tiramisu/modules/setup</code>.</p>
 <p>Si seguiste las instrucciones para añadir Bloopair al Homebrew Launcher puedes verificar que ya se añadió el módulo de Bloopair al entorno de Tiramisu.</p>
 <p>Revisa que ya tienes el archivo <code>30_bloopair.rpx</code> en la carpeta <code>sd:/wiiu/environments/tiramisu/modules/setup</code>.</p>
@@ -598,7 +603,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <p class="left">Descarga el archivo <a href="https://wiiu.hacks.guide/docs/files/01_sigpatches.rpx"><code>01_sigpatches.rpx</code></a> y colócalo en la carpeta <code>sd:/wiiu/environments/tiramisu/modules/setup</code>.</p>
 <div class="info">El módulo <strong class="yellow">Sigpatches</strong> cargará junto con el resto de módulos cuando inicie el entorno de Tiramisu. Con este módulo ya puedes instalar y abrir juegos con tickets falsos (todo el contenido exclusivo de la eShop como DLCs y juegos de la Consola Virtual) y abrir aplicaciones homebrew desde el menú de Wii U.</div>
 <br>
-<h3>Añadir aplicaciones al menú de Wii U</h3>
+<h3 id="menu">Añadir aplicaciones al menú de Wii U</h3>
 <p>Las aplicaciones para el menú de Wii U vienen en formato <strong class="green">NUS Content cifrado</strong> (archivos <code>title.cert</code>, <code>title.tik</code>, <code>title.tmd</code>, <code>*.app</code> y <code>*.h3</code>) y se instalan usando WUP Installer GX2, igual que cualquier juego de Wii U. Consulta la sección de instalación de juegos para aprender a instalar juegos (y aplicaciones) usando WUP Installer GX2.</p>
 <p>Vamos a añadir las siguientes aplicaciones:</p>
 <ul>
@@ -1548,6 +1553,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <ul>
 <li>Descomprime el archivo <code>files.zip</code> y copia el contenido a la raíz de la tarjeta SD, la carpeta <code>wiiu</code> debe quedar en la raíz de la tarjeta SD.</li>
 </ul>
+<div class="info">Si el dispositivo (computadora o teléfono móvil) te pregunta si deseas combinar carpetas existentes en la tarjeta SD, debes indicar que Sí quieres combinar las carpetas.</div>
 <div class="info">Si el dispositivo (computadora o teléfono móvil) te pregunta si deseas sobrescribir archivos existentes en la tarjeta SD, debes indicar que Sí quieres sobrescribir los archivos.</div>
 <ul>
 <li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
@@ -1579,7 +1585,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <li>Después de que la desinstalación termine, presiona botón A para apagar la consola.</li>
 <li>En este punto ya finalizaste la desinstalación de EnvironmentLoader, PayloadLoader y Tiramisu.</li>
 </ul>
-<p>Haz una copia del contenido se la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo. Con eso ya haz desinstalado Webhack correctamente.</p>
+<p>Haz una copia de todo el contenido de la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo. Con eso ya haz desinstalado Webhack correctamente.</p>
 <p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola, sin ningún problema.</p>
 <p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. No es necesario que formatees la consola.</p>
 <p><a href="?s=main">Inicio</a></p>
@@ -1591,7 +1597,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <h2>Desinstalar Webhack correctamente</h2>
 <br>
 <p>Webhack no modifica nada en la consola por eso desinstalar Webhack es simplemente borrar el payload dentro de la carpeta <code>wiiu</code> de la tarjeta SD de la consola.</p>
-<p>Haz una copia del contenido se la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo. Con eso ya haz desinstalado Webhack correctamente.</p>
+<p>Haz una copia de todo el contenido de la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo. Con eso ya haz desinstalado Webhack correctamente.</p>
 <p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola sin ningún problema.</p>
 <p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. <strong class="red">No es necesario formatear la consola</strong>.</p>
 <p><a href="?s=main">Inicio</a></p>
@@ -1627,6 +1633,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <li>Si no tienes Indexiine Installer en el Homebrew Launcher descomprime el archivo <code>indexiine-installer.zip</code> y copia la carpeta <code>wiiu</code> a la raíz de la tarjeta SD.</li>
 </ul>
 <div class="info">Si el dispositivo (computadora o teléfono móvil) te pregunta si deseas combinar carpetas existentes en la tarjeta SD, debes indicar que Sí quieres combinar las carpetas.</div>
+<div class="info">Si el dispositivo (computadora o teléfono móvil) te pregunta si deseas sobrescribir archivos existentes en la tarjeta SD, debes indicar que Sí quieres sobrescribir los archivos.</div>
 <ul>
 <li>Revisa la carpeta <code>sd:/wiiu/apps/indexiine-installer</code>.</li>
 <ul>
@@ -1645,7 +1652,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <li>En este punto ya has desinstalado Indexiine correctamente.</li>
 </ul>
 <p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola sin ningún problema.</p>
-<p>Haz una copia del contenido se la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo.</p>
+<p>Haz una copia de todo el contenido de la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo.</p>
 <p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. <strong class="red">No es necesario formatear la consola</strong>.</p>
 <p><a href="?s=main">Inicio</a></p>
 <p><a href="?s=delete">Formatear la consola</a></p>
@@ -1670,6 +1677,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <li>Descomprime el archivo <code>indexiine-installer.zip</code> y copia la carpeta <code>wiiu</code> a la raíz de la tarjeta SD.</li>
 </ul>
 <div class="info">Si el dispositivo (computadora o teléfono móvil) te pregunta si deseas combinar carpetas existentes en la tarjeta SD, debes indicar que Sí quieres combinar las carpetas.</div>
+<div class="info">Si el dispositivo (computadora o teléfono móvil) te pregunta si deseas sobrescribir archivos existentes en la tarjeta SD, debes indicar que Sí quieres sobrescribir los archivos.</div>
 <ul>
 <li>Revisa que tengas el archivo <code>sd:/wiiu/apps/homebrew_launcher/homebrew_launcher.elf</code>.</li>
 <ul>
@@ -1710,7 +1718,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <li>Presiona el botón <em>HOME</em> y luego toca el botón Salir para regresar al menú de la Wii U.</li>
 </ul>
 <p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola sin ningún problema.</p>
-<p>Haz una copia del contenido se la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo.</p>
+<p>Haz una copia de todo el contenido de la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo.</p>
 <p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. <strong class="red">No es necesario formatear la consola</strong>.</p>
 <p><a href="?s=main">Inicio</a></p>
 <p><a href="?s=delete">Formatear la consola</a></p>
@@ -1730,7 +1738,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 </ul>
 <p>En este punto ya has desinstalado Haxchi correctamente.</p>
 <p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola sin ningún problema.</p>
-<p>Haz una copia del contenido se la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo.</p>
+<p>Haz una copia de todo el contenido de la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo.</p>
 <p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. <strong class="red">No es necesario formatear la consola</strong>.</p>
 <p><a href="?s=main">Inicio</a></p>
 <p><a href="?s=delete">Formatear la consola</a></p>
@@ -1821,7 +1829,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 </ul>
 <p>En este punto ya has desinstalado Coldboot Haxchi correctamente.</p>
 <p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola sin ningún problema.</p>
-<p>Haz una copia del contenido se la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo.</p>
+<p>Haz una copia de todo el contenido de la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo.</p>
 <p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. <strong class="red">No es necesario formatear la consola</strong>.</p>
 <p><a href="?s=main">Inicio</a></p>
 <p><a href="?s=delete">Formatear la consola</a></p>
@@ -2251,7 +2259,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <div class="cont">
 <h2>Acerca de esta guía</h2>
 <br>
-<h3>Versión: 3.2.2 (13 de enero de 2022)</h3>
+<h3>Versión: 3.3 (14 de enero de 2022)</h3>
 <p>Esta guía fue hecha por <strong>Fran AC</strong> basado en la guía de los miembros de <a href="https://wiiu.hacks.guide/#/about">Nintendo Homebrew Discord Server</a>.</p>
 <p>Puedes descargar la guía completa desde <a href="https://github.com/piloncillo/piloncillo.github.io/releases">esté enlace</a>.</p>
 <p>Créditos a los desarrolladores de las herramientas</p>
