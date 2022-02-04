@@ -124,6 +124,45 @@ code {
     background-color: #222222;
 }
 
+.button {
+	background-color: #0a2b55;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
+.button:hover {
+	background-color: #0a2b80;
+	color: white;
+	text-decoration: none;
+}
+
+.button_click {
+	background-color: #0a2b55;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
+.button_click:hover {
+	background-color: #0a2b80;
+	color: white;
+	text-decoration: none;
+}
+
+.button_click:active {
+  background-color: #800a0a;
+  transform: translateY(1px);
+}
+
 a {
     cursor: pointer;
     color: #6688dd;
@@ -141,6 +180,19 @@ a:hover {
 a.external {
 	background: url(Images/external.png) center right no-repeat;
     padding-right: 20px;
+}
+
+.link {
+    cursor: pointer;
+    color: #cccccc;
+    text-decoration: none;
+    -webkit-transition-duration: .2s;
+    -o-transition-duration: .2s;
+    transition-duration: .2s;
+}
+
+.link:hover {
+	text-decoration: underline;
 }
 
 img.center {
@@ -294,7 +346,14 @@ img.center {
 	  <a href="?s=tiramisu&p=apps" id="tiramisu_apps_link" class="tablinks">Añadir aplicaciones</a>
     </div>
     <!--a href="?s=entry" id="entry_link" class="tablinks">Instalar un hack anterior</a-->
-    <a href="?s=test" id="test_link" class="tablinks">Identificar hack</a>
+	<button id="test_hack" class="dropdown-btn">Identificar hack</button>
+    <div class="dropdown-container">
+	  <a href="?s=test" id="test_link" class="tablinks">Identificación</a>
+	  <a href="?s=test&p=autobooting" id="test_autobooting_link" class="tablinks">Autobooting</a>
+	  <a href="?s=test&p=indexiine" id="test_indexiine_link" class="tablinks">Indexiine</a>
+	  <a href="?s=test&p=haxchi" id="test_haxchi_link" class="tablinks">Haxchi</a>
+	  <a href="?s=test&p=tiramisu" id="test_tiramisu_link" class="tablinks">Tiramisu</a>
+    </div>
     <button id="uninstall_hack" class="dropdown-btn">Desinstalar hack</button>
     <div class="dropdown-container">
       <a href="?s=uninstall_webhack" id="uninstall_webhack_link" class="tablinks">Webhack</a>
@@ -366,6 +425,57 @@ img.center {
 <h3>¿Conviene actualizar de un hack anterior a TiramisU?</h3>
 <p>Sí. En conjunto EnvironmentLoader, PayloadLoader y TiramisU tienen casi todas las ventajas de los anteriores hacks y ninguna de sus desventajas.</p>
 <p><a target="_blank" href="Images/Comparativa.png"><img src="Images/Comparativa.png" class="auto_size"></a></p>
+<h3>Paginas "oficiales" del proyecto</h3>
+<ul>
+<li><a href="https://gbatemp.net/threads/release-tiramisu-environment-free-cbhc.605381/">[RELEASE] Tiramisu Environment | Free CBHC</a></li>
+<li><a href="https://tiramisu.foryour.cafe/">Tiramisu para tu café</a></li>
+<li><a href="https://wiiu.hacks.guide/">Wii U Hacks Guide</a></li>
+<li><a href="https://maschell.github.io/homebrew/2020/12/02/failst.html">FailST aka contenthax 2.0</a></li>
+<li><a href="https://maschell.github.io/homebrew/2021/12/31/tiramisu.html">Tiramisu</a></li>
+</ul>
+<h3>Registro de cambios</h3>
+<p>31 de diciembre de 2021 - 10:09 p.m.</p>
+<ul>
+<li>Lanzamiento.</li>
+</ul>
+<p><a href="https://gbatemp.net/threads/release-tiramisu-environment-free-cbhc.605381/post-9705908">1 de enero de 2022 - 1:29 p.m.</a></p>
+<ul>
+<li>Arranque automático: Arregla el inicio rápido en applets.</li>
+<li>HBLInstallerWrapper: Corrige el lanzamiento de canales que ejecutan sus propios exploits. (por ejemplo, el Homebrew Launcher Channel y cualquier forwarder basado en este canal como el forwarder de Retroarch).</li>
+</ul>
+<p><a href="https://gbatemp.net/threads/release-tiramisu-environment-free-cbhc.605381/post-9705940">1 de enero de 2022 - 2:54 p.m.</a></p>
+<ul>
+<li>Corrige un problema de pantalla negra en la TV al iniciar en frío el entorno o en el menú de inicio automático.</li>
+</ul>
+<p><a href="https://gbatemp.net/threads/release-tiramisu-environment-free-cbhc.605381/post-9707523">3 de enero de 2022 - 4:26 p.m.</a></p>
+<ul>
+<li>MochaPayload: Ejecuta la llamada del sistema del kernel con permisos completos del kernel. (gracias @Gary#4139).</li>
+<li>MochaPayload: Parcha CheckTitleLaunch para ignorar la verificación del GamePad, esto permite lanzar títulos que normalmente requieren un GamePad.</li>
+<li>HBLInstallerWrapper: Parcha ACPGetTitleMetaXmlByDevice del proceso HomeMenu para permitir el arranque en frío del Homebrew Launcher sin un GamePad.</li>
+<li>Homebrew Launcher: Compatibilidad con esquemas de control adicionales (Pro Controller, etc.) (gracias @Gary#4139 y @neoninteger#6152).</li>
+</ul>
+<p><a href="https://gbatemp.net/threads/release-tiramisu-environment-free-cbhc.605381/post-9709315">5 de enero de 2022 - 3:30 p.m.</a></p>
+<ul>
+<li>Algunas personas informan fallas al iniciar juegos mientras tienen el modulo <code>50_hbl_installer.rpx</code>. Resulta que había un error en el código de sd_loader de hace 6 años que nadie había notado antes. Algunas aplicaciones/juegos sólo se iniciaban si se ejecutaba el Homebrew Launcher antes, pero esto ahora se ha solucionado.</li>
+<li>Corrige un problema que había al iniciar algunas aplicaciones, como los ajustes de Amiibo, cuando no se ejecutaba el Homebrew Launcher antes.</li>
+</ul>
+<p><a href="https://gbatemp.net/threads/release-tiramisu-environment-free-cbhc.605381/post-9713933">10 de enero de 2022 - 10:08 p.m.</a></p>
+<ul>
+<li>Corrige un softlock al ejecutar Mass Effect 3.</li>
+</ul>
+<p><a href="https://gbatemp.net/threads/release-tiramisu-environment-free-cbhc.605381/post-9718811">16 de enero de 2022 - 12:16 a.m.</a></p>
+<ul>
+<li>Espera a que los dispositivos USB realmente se activen.</li>
+<li>Reduce el glitch gráfico cuando se inicia el menú de Wii U.</li>
+</ul>
+<p><a href="https://gbatemp.net/threads/release-tiramisu-environment-free-cbhc.605381/post-9720896">18 de enero de 2022 - 2:14 p.m.</a></p>
+<ul>
+<li>Muestra la pantalla de selección de usuario cuando la consola inicia con el Homebrew Launcher y no hay una cuenta predeterminada configurada.</li>
+</ul>
+<p><a href="https://gbatemp.net/threads/release-tiramisu-environment-free-cbhc.605381/post-9725731">22 de enero de 2022 - 2:18 p.m.</a></p>
+<ul>
+<li>AutobootModule: Corrige el arranque en otras versiones de vWii HBL distintas al <a href="https://github.com/FIX94/hbc">The Homebrew Channel - open source edition</a> (Gracias @GaryOderNichts).</li>
+</ul>
 <h3>Créditos</h3>
 <ul>
 <li>Maschell (EnvironmentLoader, HBLInstallerWrapper, MochaPayload, PayloadLoader + PayloadLoaderInstaller, AutobootModule, ...)</li>
@@ -461,19 +571,31 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <ul>
 <li>Dump SLC (528MB): yes</li>
 <li>Dump SLCCMPT (528MB): yes</li>
-<li>Dump MLC (8GB/32GB): no</li>
+<li>Dump MLC (8GB/32GB): Opcional</li>
 <li>Dump OTP (1KB): yes</li>
 <li>Dump SEEPROM (1KB): yes</li>
 </ul>
+</ul>
+<div class="info"><ul>
+<li>SLC: IOSU y Cafe OS, sistemas operativos del modo Wii U.</li>
+<li>SLCCMPT: IOS, sistema operativo del modo virtual Wii.</li>
+<li>MLC: Juegos, actualizaciones de los juegos, DLCs y archivos de guardado.</li>
+<li>OTP: Valores y keys (claves) de fábrica.</li>
+<li>SEEPROM: Valores y keys (claves) del sistema.</li>
+<li><a href="Images/Wii_U_ Memories.jpg" target="_blank">Aquí puedes ver una imagen de los chips de memoria del consola.</a></li>
+</ul></div>
+<ul>
 <li>Presiona el botón A para iniciar el proceso de copia.</li>
 <li>Aparentemente la consola cargara el menú de Wii U, pero en unos instantes mostrara el proceso de copiado.</li>
 </ul>
-<div class="info">El copiado tarda menos de 5 minutos con una tarjeta SD clase 10.</div>
+<div class="info">El copiado de SLC, SLCCMPT, OTP y SEEPROM en conjunto tarda menos de 5 minutos con una tarjeta SD clase 10.</div>
 <ul>
 <li>Cuando se complete el proceso la consola cargará el menú de Wii U.</li>
 <li>Apaga la consola, saca la tarjeta SD de la Wii U y ponla a tu dispositivo (computadora o teléfono móvil) para copiar archivos.</li>
 <li>Copia los archivos <code>otp.bin</code>, <code>seeprom.bin</code>, <code>slc.bin</code> y <code>slccmpt.bin</code> de la raíz de la tarjeta SD a una ubicación segura en tu dispositivo.</li>
-<li>Elimina los archivos <code>otp.bin</code>, <code>seeprom.bin</code>, <code>slc.bin</code> y <code>slccmpt.bin</code> en la tarjeta SD para liberar espacio.</li>
+<li>Si elegiste realizar la copia de MLC, copia los archivos <code>mlc.bin.part##</code> de la raíz de la tarjeta SD a una ubicación segura en tu dispositivo.</li>
+<li>Elimina los archivos <code>otp.bin</code>, <code>seeprom.bin</code>, <code>slc.bin</code> y <code>slccmpt.bin</code> de la tarjeta SD para liberar espacio.</li>
+<li>Si elegiste realizar la copia de MLC, elimina los archivos <code>mlc.bin.part##</code> de la tarjeta SD para liberar espacio.</li>
 <li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
 </ul>
 <div class="info">El respaldo de la memoria interna es único para cada consola, las copias de respaldo de otras consolas no funcionarán en tu Wii U.</div>
@@ -558,7 +680,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <div id="tiramisu_apps" class="tabcontent" style="display:none;">
 <div class="cont">
 <h2 id="hbl">Añadir aplicaciones y módulos</h2>
-<p>Vamos a agregar más funcionalidad la Wii U con varias aplicaciones. Así que apaga la consola, saca la tarjeta SD de la Wii U y ponla a tu dispositivo (computadora o teléfono móvil) para copiar archivos.</p>
+<p>Vamos a agregar más funcionalidad a la Wii U con varias aplicaciones. Así que apaga la consola, saca la tarjeta SD de la Wii U y ponla a tu dispositivo (computadora o teléfono móvil) para copiar archivos.</p>
 <br>
 <h3>Añadir aplicaciones al Homebrew Launcher</h3>
 <p>El Homebrew Launcher muestra las aplicaciones ubicadas en carpeta <code>sd:/wiiu/apps</code>.</p>
@@ -1346,195 +1468,179 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 </div>
 <div id="test" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Identifica que hack tiene tu Wii U</h2>
+<h2>Identificación</h2>
 <br>
-<p>Puedes comprobar de forma simple que hack tiene tu consola si reconoces el punto de entrada que te da acceso a ejecutar aplicaciones homebrew. Puedes realizar el test completo para detectar sin lugar a dudas cual es el hack.</p>
-<p>Si compraste tu consola de segunda mano y no logras identificar el punto de entrada que usaron para instalar juegos lo más probable es que usaron Webhack. Ten en cuenta que los juegos de la misma región de la consola que no tienen DLC y no son de la Consola Virtual funcionan sin activar nada (a eso se le llama <strong class="red">método brasileño</strong>), los juegos que tienen una versión en físico cuentan con tickets siempre validos (extraídos de los discos originales), por eso, para esos juegos no es necesario ejecutar un hack para abrirlos (funcionan igual que juegos legítimos).</p>
-<p><strong class="yellow">Webhack</strong>: Si lo primero que debes hacer es entrar en el navegador de la consola para cargar una página web en internet y abrir un enlace (o tocar un botón) en la página web para ejecutar el hack entonces estas usando Webhack.</p>
-<p><strong class="yellow">Indexiine</strong>: Si abres el navegador de internet de la consola y automáticamente se ejecuta el hack entonces estas usando Indexiine. También se trata de Indexiine cuando el navegador abre, pero después de abrir se queda atorado en blanco (intentado cargar el hack).</p>
-<p><strong class="yellow">Haxchi</strong>: Si debes abrir un icono en el menú de la Wii U para cargar el hack entonces estas usando Haxchi.</p>
-<p>Para salir de dudas contesta las siguientes preguntas, al completarlas podrás ir descartando puntos de entrada y obtendrás un diagnostico general de la situación de tu consola.</p>
-<p>¿Al prender la consola sale un mensaje similar al de la imagen? ¿Dice "CBHC v1.6 by FIX94 (DS Title 10179B00) Autobooting…" en fondo negro y letras blancas?</p>
-<p>Nota: El código 10198B00 del DS Title varía dependiendo del juego que se usó para instalar el hack.</p>
-<p><a target="_blank" href="Images/Identificar_Hack/CBHC_Autobooting.png"><img src="Images/Identificar_Hack/CBHC_Autobooting.png" class="auto_size"></a></p>
-<p><a href="?s=test&p=cbhc_detected">Sí</a></p>
-<p><a href="?s=test&p=sd">No</a></p>
+<p>La forma más fácil para identificar el "hack" de tu Wii U es reconocer el punto de entrada que da acceso a ejecutar aplicaciones "caseras". Puedes tener más de un punto de entrada en tu consola así que contesta las preguntas de todas las secciones.</p>
+<p><a href="?s=test&p=autobooting"><strong>Autobooting</strong></a>: <span id="autobooting_result">Para detectar Coldboot Haxchi o Autobooting Tiramisu. Contesta la pregunta de esta sección para determinar si tu consola inicia de forma automática un "hack".</span></p>
+<p><a href="?s=test&p=indexiine"><strong>Indexiine</strong></a>: <span id="indexiine_result">Contesta la pregunta de esta sección para detectar Indexiine en tu consola.</span></p>
+<p><a href="?s=test&p=haxchi"><strong>Haxchi</strong></a>: <span id="haxchi_result">Al contestar las preguntas de esta sección podrás determinar si tu consola tiene Haxchi correctamente instalado.</span></p>
+<p><a href="?s=test&p=tiramisu"><strong>Tiramisu</strong></a>: <span id="tiramisu_result">La pregunta de esta sección te permitirá detectar si tienes el "hack" Tiramisu en tu consola.</span></p>
+<p><strong class="green">Webhack</strong>: <span id="webhack_result">Contesta todas las preguntas de las secciones anteriores para determinar si el exploit del navegador es el único punto de entrada de tu consola.</span></p>
+<p><a href="?s=test"><button class="button_click" onclick="resetTest()">Resetear respuestas</button></a></p>
+<p>Si compraste tu consola de segunda mano y no sabes cómo instalaron los juegos en la consola (o en el dispositivo USB de la misma) lo más probable es que usaron <strong class="green">Webhack</strong> para instalar los juegos. Hay un conjunto de juegos que puedes abrir sin ejecutar un hack (funcionan igual que juegos legítimos), estos juegos cuentan con una versión en físico (de los discos originales se han extraído los tickets siempre válidos y se han colocado en las copias digitales esto es el <strong class="red">método brasileño</strong>). Por otra parte, los juegos de la Consola Virtual y juegos con DLC van a necesitar de cargar un CFW que parche la verificación de firmas (verificación de tickets) para poder abrir o ser instados ya que estos no cuentan con tickets validos (a menos que los compres en la eShop oficial).</p>
+<p>Contesta las preguntas de abajo para tener un diagnostico básico de la situación de "los archivos del hack" de tu consola.</p>
+<h3>¿La Wii U tiene tarjeta SD?</h3>
+<form id="f_sd" onclick="updateFormSD()">
+<input type="radio" id="sd_yes" value="sd_yes" name="default" style="display:none;">
+<label class="link" for="sd_yes">Sí, la consola tiene tarjeta SD.</label><br><br>
+<input type="radio" id="sd_no" value="sd_no" name="default" style="display:none;">
+<label class="link" for="sd_no">No, la consola no tiene tarjeta SD.</label><br><br>
+</form>
+<div id="d_folder" style="display:none;"><h3>¿En la raíz de la tarjeta SD hay una carpeta <code>wiiu</code>?</h3>
+<form id="f_folder" onclick="updateFormFolder()">
+<input type="radio" id="folder_yes" value="folder_yes" name="default" style="display:none;">
+<label class="link" for="folder_yes">Sí, la tarjeta SD tiene la carpeta <code>wiiu</code>.</label><br><br>
+<input type="radio" id="folder_no" value="folder_no" name="default" style="display:none;">
+<label class="link" for="folder_no">No, la tarjeta SD no tiene la carpeta <code>wiiu</code>.</label><br><br>
+</form></div>
+<p id="sd_result"></p>
 </div>
 </div>
-<div id="test_sd" class="tabcontent" style="display:none;">
+<div id="test_autobooting" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Tarjeta SD</h2>
+<h2>Autobooting (Arranque Automático)</h2>
 <br>
-<p>Webhack e Indexiine necesitan de la tarjeta SD para cargar, mientras que Haxchi y Coldboot Haxchi correctamente instalados no necesitan de la tarjeta SD.</p>
-<p>¿La consola tiene tarjeta SD?</p>
-<p><a href="?s=test&p=sd_content">Sí</a></p>
-<p><a href="?s=test&p=browser&directory=no_sd">No</a></p>
+<p>Un par de "hacks" pueden iniciar de forma automática al prender la Wii U, estos "hacks" son: Coldboot Haxchi y Autobooting Tiramisu.</p>
+<p>Para lograr el arranque automático se configura la consola para que en lugar de cargar el menú de Wii U cargue la aplicacion "hackeada", en el caso de Coldboot Haxchi carga el juego de Nintendo DS "hackeado" con Haxchi y en el caso de Autobooting Tiramisu se carga la aplicación Información sobre salud y seguridad "hackeada" con Tiramisu.</p>
+<p>Dependiendo de la configuración de la instalación del "hack" se puede cargar determinada cosa después del "autobooting del hack", pero lo más común es que automáticamente cargue el menú de Wii U.</p>
+<p>Para determinar si hay un "hack" de arranque automático en tu Wii U observa lo que ocurre al prender la consola.</p>
+<h3>¿Al prender la consola carga algo especial?</h3>
+<form id="f_autobooting" onclick="updateFormAutobooting()">
+<input type="radio" id="autobooting_cbhc" value="autobooting_cbhc" name="default" style="display:none;">
+<label class="link" for="autobooting_cbhc"><img src="Images/Identificar_Hack/CBHC_Autobooting.jpg" class="auto_size"><br>Sí, al prender la consola muestra el mensaje <code>CBHC v1.6 by FIX94 (DS Title 10179B00) Autobooting...</code></label><br><br>
+<input type="radio" id="autobooting_tiramisu" value="autobooting_tiramisu" name="default" style="display:none;">
+<label class="link" for="autobooting_tiramisu"><img src="Images/Identificar_Hack/Tiramisu_Autobooting_new.gif" class="auto_size"><br>Sí, al prender la consola muestra un glitch gráfico, una línea blanca que cruza de izquierda a derecha en la pantalla del GamePad antes de cargar el menú de Wii U.</label><br><br>
+<input type="radio" id="autobooting_tiramisu_old" value="autobooting_tiramisu_old" name="default" style="display:none;">
+<label class="link" for="autobooting_tiramisu_old"><img src="Images/Identificar_Hack/Tiramisu_Autobooting_old.jpg" class="auto_size"><br>Sí, al prender la consola muestra un glitch gráfico, una línea negra que cruza de izquierda a derecha en la pantalla del GamePad al momento de cargar el menú de Wii U.</label><br><br>
+<input type="radio" id="autobooting_hbl" value="autobooting_hbl" name="default" style="display:none;">
+<label class="link" for="autobooting_hbl">Sí, al prender la consola carga el Homebrew Launcher.</label><br><br>
+<input type="radio" id="autobooting_wii" value="autobooting_wii" name="default" style="display:none;">
+<label class="link" for="autobooting_wii">Sí, al prender la consola carga el menú de Wii (vWii System Menu).</label><br><br>
+<input type="radio" id="autobooting_hbc" value="autobooting_hbc" name="default" style="display:none;">
+<label class="link" for="autobooting_hbc">Sí, al prender la consola carga el Homebrew Channel (vWii).</label><br><br>
+<input type="radio" id="autobooting_el" value="autobooting_el" name="default" style="display:none;">
+<label class="link" for="autobooting_el">Sí, al prender la consola carga el EnvironmentLoader (Cargador de Entorno).</label><br><br>
+<input type="radio" id="autobooting_tbs" value="autobooting_tbs" name="default" style="display:none;">
+<label class="link" for="autobooting_tbs">Sí, al prender la consola carga el Tiramisu Boot Selector (Selector de Arranque de Tiramisu).</label><br><br>
+<input type="radio" id="autobooting_failed" value="autobooting_failed" name="default" style="display:none;">
+<label class="link" for="autobooting_failed"><img src="Images/Identificar_Hack/Tiramisu_Failed_to_load.jpg" class="auto_size"><br>Sí, al prender la consola muestra el mensaje <code>Failed to load sd:/wiiu/payload.elf Starting the console without any modifications</code> y carga automáticamente el menú de Wii U.</label><br><br>
+<input type="radio" id="autobooting_no" value="autobooting_no" name="default" style="display:none;">
+<label class="link" for="autobooting_no">No, al prender la consola no carga nada especial, no muestra ningún glitch gráfico, carga el menú de Wii U con normalidad.</label><br><br>
+</form>
+<div id="autobooting_next" style="display:none;"><p><a id="autobooting_next_button" href="?s=test" class="button">Siguiente</a></p></div>
 </div>
 </div>
-<div id="test_sd_content" class="tabcontent" style="display:none;">
+<div id="test_indexiine" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Revisa el contenido de la tarjeta SD de la Wii U.</h2>
+<h2>Indexiine</h2>
 <br>
-<p>Ubica los archivos que integran el hack, su simple presencia indica que tu consola realmente esta hackeada.</p>
-<p>Dentro de la carpeta <code>wiiu</code> se encuentran las aplicaciones homebrew (carpeta <code>apps</code>) y la carga útil para el exploit del navegador (archivo <code>payload.elf</code>).</p>
-<p>¿En la raíz de la tarjeta SD hay una carpeta <code>wiiu</code>?</p>
-<p><a href="?s=test&p=browser&directory=yes">Sí</a></p>
-<p><a href="?s=test&p=browser&directory=no">No</a></p>
+<p>Existen dos "hacks" que usan el mismo exploit del navegador. Con Webhack debes entrar en una página web y tocar en un enlace o botón para ejecutar el exploit, por otro lado, con Indexiine no necesitas entrar en ninguna página ni tocar nada ya que se ejecuta automáticamente después de unos segundos de abrir el navegador.</p>
+<p>Indexiine es un punto de entrada muy versátil ya que se puede configurar para cargar casi cualquier aplicación homebrew. Sin embargo, también es fácil bloquear el navegador si es que se desconfiguran los ajustes correctos del propio navegador teniendo Indexiine instalado.</p>
+<p>Para evitar confusiones debes saber que tener la aplicación Indexiine Installer en el Homebrew Launcher no es tener Indexiine instalado en la consola. La aplicación que se muestra en el Homebrew Launcher es el instalador de Indexiine, puedes tener la aplicación Indexiine Installer en el Homebrew Launcher sin tener realmente instalado Indexiine en la consola.</p>
+<h3>¿Al abrir el navegador carga algo especial?</h3>
+<form id="f_indexiine" onclick="updateFormIndexiine()">
+<input type="radio" id="indexiine_hbl" value="indexiine_hbl" name="default" style="display:none;">
+<label class="link" for="indexiine_hbl">Sí, el navegador carga automáticamente el Homebrew Launcher.</label><br><br>
+<input type="radio" id="indexiine_iosuhax" value="indexiine_iosuhax" name="default" style="display:none;">
+<label class="link" for="indexiine_iosuhax">Sí, el navegador carga automáticamente IOSUHAX.</label><br><br>
+<input type="radio" id="indexiine_mocha" value="indexiine_mocha" name="default" style="display:none;">
+<label class="link" for="indexiine_mocha">Sí, el navegador carga automáticamente Mocha CFW.</label><br><br>
+<input type="radio" id="indexiine_wiiu" value="indexiine_wiiu" name="default" style="display:none;">
+<label class="link" for="indexiine_wiiu">Sí, el navegador carga automáticamente el menú de Wii U.</label><br><br>
+<input type="radio" id="indexiine_el" value="indexiine_el" name="default" style="display:none;">
+<label class="link" for="indexiine_el">Sí, el navegador carga automáticamente el Environment Loader (Cargador de Entorno).</label><br><br>
+<input type="radio" id="indexiine_tbs" value="indexiine_tbs" name="default" style="display:none;">
+<label class="link" for="indexiine_tbs">Sí, el navegador carga automáticamente el Tiramisu Boot Selector (Selector de Arranque de Tiramisu).</label><br><br>
+<input type="radio" id="indexiine_wii" value="indexiine_wii" name="default" style="display:none;">
+<label class="link" for="indexiine_wii">Sí, el navegador carga automáticamente el menú de Wii (vWii System Menu).</label><br><br>
+<input type="radio" id="indexiine_hbc" value="indexiine_hbc" name="default" style="display:none;">
+<label class="link" for="indexiine_hbc">Sí, el navegador carga automáticamente el Homebrew Channel (vWii).</label><br><br>
+<input type="radio" id="indexiine_ohb" value="indexiine_ohb" name="default" style="display:none;">
+<label class="link" for="indexiine_ohb">Sí, el navegador carga automáticamente alguna otra aplicación homebrew.</label><br><br>
+<input type="radio" id="indexiine_q" value="indexiine_q" name="default" style="display:none;">
+<label class="link" for="indexiine_q">Sí, el navegador muestra un mensaje preguntando si quiero cargar Indexiine.</label><br><br>
+<input type="radio" id="indexiine_twice" value="indexiine_twice" name="default" style="display:none;">
+<label class="link" for="indexiine_twice"><img src="Images/Identificar_Hack/Dont_run_the_EnvironmentLoader_twice.jpg" class="auto_size"><br>Sí, el navegador se congela con el mensaje <code>Don't run EnvironmentLoader twice. If you want to open the Homebrew Launcher, launch the Mii Maker instead</code>.</label><br><br>
+<input type="radio" id="indexiine_msf" value="indexiine_msf" name="default" style="display:none;">
+<label class="link" for="indexiine_msf">Sí, el navegador se congela con el mensaje <code>FSGetMountSource falied. Please insert a FAT32 formatted sd card</code>.</label><br><br>
+<input type="radio" id="indexiine_fm" value="indexiine_fm" name="default" style="display:none;">
+<label class="link" for="indexiine_fm">Sí, el navegador se congela con el mensaje <code>FSOpenFile falied. File missing /vol/external01/wiiu/payload.elf</code>.</label><br><br>
+<input type="radio" id="indexiine_freeze" value="indexiine_freeze" name="default" style="display:none;">
+<label class="link" for="indexiine_freeze">Sí, de alguna otra forma el navegador se congela y no lo puedo usar para navegar.</label><br><br>
+<input type="radio" id="indexiine_no" value="indexiine_no" name="default" style="display:none;">
+<label class="link" for="indexiine_no"><img src="Images/Identificar_Hack/Browser_Index.jpg" class="auto_size"><br>No, el navegador no carga nada especial automáticamente, muestra su página de inicio, no se congela y lo puedo usar para navegar con normalidad.</label><br><br>
+</form>
+<div id="indexiine_next" style="display:none;"><p><a id="indexiine_next_button" href="?s=test" class="button">Siguiente</a></p></div>
 </div>
 </div>
-<div id="test_browser" class="tabcontent" style="display:none;">
+<div id="test_haxchi" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Abre en el navegador de internet de la consola</h2>
+<h2>Haxchi</h2>
 <br>
-<p>El comportamiento del navegador muestra o descarta la presencia de Indexiine. Según como esté configurado el payload, Indexiine puede cargar automáticamente: el Homebrew Launcher, Mocha CFW u otra aplicación.</p>
-<p>Esto es lo que más comúnmente ocurre al abrir el navegador teniendo Indexiine instalado:</p>
-<ul>
-<li>Abre el Homebrew Launcher.</li>
-<li>Abre Mocha CFW.</li>
-<li>Abre SigPatcher.</li>
-<li>Abre IOSUHAX.</li>
-<li>Carga el menú de Wii U (realmente está cargando un CFW y esté a su vez, después de abrir, carga el menú).</li>
-<li>Muestra un mensaje preguntando si quieres cargar Indexiine.</li>
-<li>No carga nada, el navegador se queda atorado en blanco (síntoma de que la consola no está detectando la tarjeta SD, faltan los archivos necesarios o el navegador no tiene los ajustes correctos).</li>
-</ul>
-<p>¿Al abrir el navegador ocurrió algo de lo anteriormente listado?</p>
-<p><a href="?s=test&p=indexiine_detected" class="add_test_params">Sí</a></p>
-<p><a href="?s=test&p=eshop" class="add_test_params">No</a></p>
+<p>Este "hack" no es tan fácil de detectar sin algo de experiencia. La forma más simple de determinar que una consola tiene Haxchi correctamente instado es abriendo el icono de Haxchi en el menú de Wii U y observando que ocurre, el problema es que <a href="?s=custom_haxchi">Haxchi puede ser personalizado para que muestre el icono y título que uno quiera en el menú de Wii U, además Haxchi se puede configurar para cargar casi cualquier aplicación homebrew</a>.</p>
+<p>Para evitar confusiones la siguiente lista explica que cosas <strong>no</strong> son tener Haxchi en la Wii U.</p>
+<p>Tener Haxchi en el Homebrew Launcher no es tener Haxchi instalado en la consola. La aplicación que se muestra en el Homebrew Launcher es el instalador (y actualizador) de Haxchi.</p>
+<p>Tener alguna carpeta <code>haxchi</code> en la tarjeta SD no es tener Haxchi instalado en la consola. La carpeta <code>haxchi</code> en la raíz de la tarjeta SD es parte del instalador (y actualizador) de Haxchi.</p>
+<p>Tener un icono de Haxchi en el menú de Wii U no necesariamente es tener Haxchi correctamente instalado en la consola. El icono de Haxchi en el menú de Wii U puede estar presente en la consola, pero sólo se puede comprobar si es Haxchi correctamente instalado si no requiere de algo más para abrirlo, es decir debes poder abrirlo directamente sin que salga ningún mensaje de error.</p>
+<h3>¿Tienes un icono de Haxchi en el menú de Wii U?</h3>
+<form id="f_haxchi_icon" onclick="updateFormHaxchiIcon()">
+<input type="radio" id="haxchi_icon_yes" value="haxchi_icon_yes" name="default" style="display:none;">
+<label class="link" for="haxchi_icon_yes">Sí, hay un icono de Haxchi en el menú de Wii U.</label><br><br>
+<input type="radio" id="haxchi_icon_no" value="haxchi_icon_no" name="default" style="display:none;">
+<label class="link" for="haxchi_icon_no">No, no hay ningún icono de Haxchi en el menú de Wii U.</label><br><br>
+</form>
+<div id="d_haxchi" style="display:none;"><h3>¿Pudiste abrir el icono de Haxchi en el menú de Wii U?</h3>
+<form id="f_haxchi" onclick="updateFormHaxchi()">
+<input type="radio" id="haxchi_hbl" value="haxchi_hbl" name="default" style="display:none;">
+<label class="link" for="haxchi_hbl">Sí, carga automáticamente el Homebrew Launcher.</label><br><br>
+<input type="radio" id="haxchi_iosuhax" value="haxchi_iosuhax" name="default" style="display:none;">
+<label class="link" for="haxchi_iosuhax">Sí, carga automáticamente IOSUHAX.</label><br><br>
+<input type="radio" id="haxchi_mocha" value="haxchi_mocha" name="default" style="display:none;">
+<label class="link" for="haxchi_mocha">Sí, carga automáticamente Mocha CFW.</label><br><br>
+<input type="radio" id="haxchi_wiiu" value="haxchi_wiiu" name="default" style="display:none;">
+<label class="link" for="haxchi_wiiu">Sí, carga automáticamente el menú de Wii U.</label><br><br>
+<input type="radio" id="haxchi_ohb" value="haxchi_ohb" name="default" style="display:none;">
+<label class="link" for="haxchi_ohb">Sí, carga automáticamente una aplicación.</label><br><br>
+<input type="radio" id="haxchi_3" value="haxchi_3" name="default" style="display:none;">
+<label class="link" for="haxchi_3">Sí, pero se congela con el mensaje -3. (La consola no detectó la tarjeta SD).</label><br><br>
+<input type="radio" id="haxchi_5" value="haxchi_5" name="default" style="display:none;">
+<label class="link" for="haxchi_5">Sí, pero se congela con el mensaje -5. (La consola sí detectó la tarjeta SD, pero no encontró la aplicación en la tarjeta SD).</label><br><br>
+<input type="radio" id="haxchi_freeze" value="haxchi_freeze" name="default" style="display:none;">
+<label class="link" for="haxchi_freeze">Sí, pero se congela sin mostrar ningún mensaje.</label><br><br>
+<input type="radio" id="haxchi_no" value="haxchi_no" name="default" style="display:none;">
+<label class="link" for="haxchi_no">No, la consola muestra el mensaje "No se puede usar este programa. El identificador de Nintendo Network que se usó para adquirirlo se ha borrado".</label><br><br>
+</form></div>
+<div id="haxchi_next" style="display:none;"><p><a id="haxchi_next_button" href="?s=test" class="button">Siguiente</a></p></div>
 </div>
 </div>
-<div id="test_eshop" class="tabcontent" style="display:none;">
+<div id="test_tiramisu" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Revisa la eShop de la(s) cuenta(s) de usuario</h2>
+<h2>Tiramisu</h2>
 <br>
-<p>Haxchi y Coldboot Haxchi necesitan de un juego de Nintendo DS comprado en la eShop.</p>
-<p>¿Alguno de los usuarios de la consola compró un juego vulnerable de la Consola Virtual de Nintendo DS?</p>
-<p><a href="?s=test&p=icons&eshop_game=yes" class="add_test_params">Sí</a></p>
-<p><a href="?s=test&p=webhack_detected&eshop_game=no" class="add_test_params">No</a></p>
-<br>
-<h3>Para revisar la eShop</h3>
-<ul>
-<li>Abre la eShop</li>
-<li>Presiona el botón Y para ver el menú del usuario.</li>
-<li>Baja hasta el Historial y da clic en el botón de Artículos descargados.</li>
-<li>Toca el botón de Programas descargados.</li>
-</ul>
-<p>En la lista debe estar alguno de estos juegos vulnerables de la Consola Virtual de Nintendo DS:</p>
-<ul>
-<li>Animal Crossing: Wild World</li>
-<li>Big Brain Academy</li>
-<li>Brain Age: Train Your Brain in Minutes a Day! / Dr. Kawashima’s Brain Training: How Old is Your Brain?</li>
-<li>Donkey Kong: Jungle Climber</li>
-<li>Kirby: Canvas Curse / Kirby: Power Paintbrush</li>
-<li>Kirby: Mass Attack</li>
-<li>Kirby: Squeak Squad / Kirby: Mouse Attack</li>
-<li>The Legend of Zelda: Phantom Hourglass</li>
-<li>The Legend of Zelda: Spirit Tracks</li>
-<li>Mario & Luigi: Partners in Time</li>
-<li>Mario Kart DS</li>
-<li>New Super Mario Bros.</li>
-<li>Pokemon Mystery Dungeon: Explorers of the Sky</li>
-<li>Star Fox Command</li>
-<li>Super Mario 64 DS</li>
-<li>Wario: Master of Disguise</li>
-<li>WarioWare: Touched!</li>
-<li>Yoshi’s Island DS</li>
-<li>Yoshi Touch & Go</li>
-</ul>
-</div>
-</div>
-<div id="test_icons" class="tabcontent" style="display:none;">
-<div class="cont">
-<h2>Abre cada uno de los iconos del menú de la Wii U</h2>
-<br>
-<p>Para descartar completamente la presencia de Haxchi debes revisar todos los iconos en el menú de la Wii U.</p>
-<p>Esto es el comportamiento esperado al abrir algún icono teniendo Haxchi instalado:</p>
-<ul>
-<li>Carga el Homebrew Launcher.</li>
-<li>Carga Mocha CFW.</li>
-<li>Carga SigPatcher.</li>
-<li>Carga IOSUHAX.</li>
-<li>Carga el menú de Wii U (realmente está cargando Haxchi CFW y esté a su vez, después de abrir, carga el menú).</li>
-<li>Muestra un mensaje FSOs failed (síntoma de que la consola no está detectando la tarjeta SD, faltan los archivos necesarios o que Haxchi no tiene los ajustes correctos).</li>
-</ul>
-<p>¿Al abrir algún icono ocurrió algo de lo anteriormente listado?</p>
-<p><a href="?s=test&p=haxchi_detected" class="add_test_params">Sí</a></p>
-<p><a href="?s=test&p=webhack_detected" class="add_test_params">No</a></p>
-</div>
-</div>
-<div id="test_webhack_detected" class="tabcontent" style="display:none;">
-<div class="cont">
-<h2>Webhack detectado</h2>
-<br>
-<p>Se han descartado los puntos de entrada de Indexiine, Haxchi y Coldboot Haxchi.</p>
-<p>Webhack por sí mismo no modifica archivos en la consola, reside 100% en la tarjeta SD.</p>
-<div class="directory_yes" style="display:none;">
-<p>La presencia de la carpeta wiiu en la tarjeta SD indica que Webhack es el punto de entrada del hack de la consola.</p>
-</div>
-<div class="directory_no" style="display:none;">
-<p>La consola cuenta con tarjeta SD, pero no tiene la carpeta wiiu, esto no es problema ya que puedes ponerla por tu cuenta siguiendo la guía de instalación de Webhack.</p>
-<p>Sin la carpeta wiiu y descartados los demás puntos de entrada se considera que la consola no está hackeada.</p>
-</div>
-<div class="directory_no_sd" style="display:none;">
-<p>Indicaste que la consola no tiene tarjeta SD, está es necesaria para las aplicaciones homebrew y para realizar Webhack.</p>
-<p>Sin la tarjeta SD y descartados los demás puntos de entrada se considera que la consola no está hackeada.</p>
-</div>
-<div class="eshop_game_yes" style="display:none;">
-<p>Detectaste que algún usuario de la consola compró un juego de la Consola Virtual de Nintendo DS esto hace posible Haxchi, pero al abrir cada icono en el menú de la Wii U no hallaste ninguna aplicación homebrew.</p>
-</div>
-<div class="eshop_game_no" style="display:none;">
-<p>Señalaste que ningún usuario de la consola tiene comprado un juego de la Consola Virtual de Nintendo DS, por lo que si quieres instalar Haxchi o Coldboot Haxchi debes comprar el juego por tu cuenta.</p>
-</div>
-<p><a href="?s=main">Inicio</a></p>
-</div>
-</div>
-<div id="test_indexiine_detected" class="tabcontent" style="display:none;">
-<div class="cont">
-<h2>Indexiine detectado</h2>
-<br>
-<p>El comportamiento del navegador muestra sin lugar a dudas que la consola tiene Indexiine.</p>
-<div class="directory_yes" style="display:none;">
-<p>La presencia de la carpeta wiiu en la tarjeta SD indica que Indexiine es el punto de entrada del hack de la consola.</p>
-</div>
-<div class="directory_no" style="display:none;">
-<p>La consola cuenta con tarjeta SD, pero no tiene la carpeta wiiu, esto no es problema ya que puedes ponerla por tu cuenta siguiendo la guía de instalación de Indexiine.</p>
-</div>
-<div class="directory_no_sd" style="display:none;">
-<p>Indicaste que la consola no tiene tarjeta SD, está es necesaria para las aplicaciones homebrew y para ejecutar Indexiine.</p>
-</div>
-<p><a href="?s=main">Inicio</a></p>
-</div>
-</div>
-<div id="test_haxchi_detected" class="tabcontent" style="display:none;">
-<div class="cont">
-<h2>Haxchi detectado</h2>
-<br>
-<p>Tener un juego de Nintendo DS comprado en la eShop y el comportamiento al abrir cierto icono en el menú de la Wii U muestra sin lugar a dudas que la consola tiene Haxchi.</p>
-<div class="directory_yes" style="display:none;">
-<p>La presencia de la carpeta wiiu en la tarjeta SD indica que la consola tiene un hack, en este caso Haxchi.</p>
-</div>
-<div class="directory_no" style="display:none;">
-<p>La consola cuenta con tarjeta SD, pero no tiene la carpeta wiiu, está es necesaria para las aplicaciones homebrew.</p>
-</div>
-<div class="directory_no_sd" style="display:none;">
-<p>Indicaste que la consola no tiene tarjeta SD, está es necesaria para las aplicaciones homebrew.</p>
-</div>
-<div class="eshop_game_yes" style="display:none;">
-<p>Detectaste que algún usuario de la consola compró un juego de la Consola Virtual de Nintendo DS esto hace posible Haxchi.</p>
-</div>
-<div class="eshop_game_no" style="display:none;">
-<p>El no tener un juego de Nintendo DS comprado en la eShop, pero que al abrir cierto icono en el menú de la Wii U cargué una aplicación homebrew indica que la consola tiene FailST.</p>
-</div>
-<p><a href="?s=main">Inicio</a></p>
-</div>
-</div>
-<div id="test_cbhc_detected" class="tabcontent" style="display:none;">
-<div class="cont">
-<h2>Coldboot Haxchi (CBHC) detectado</h2>
-<br>
-<p>El mensaje "CBHC v1.6 by FIX94 (DS Title 10198B00) Autobooting…" al prender la Wii U indica sin lugar a dudas que la consola tiene Coldboot Haxchi.</p>
-<p>Nota: El código 10198B00 del DS Title varía dependiendo del juego que se usó para instalar el hack.</p>
-<p>No formatees la consola teniendo Coldboot Haxchi instalado, hacerlo dañará de forma irreversible la consola.</p>
-<p><a href="?s=main">Inicio</a></p>
+<p>El "hack" Tiramisu (o más bien PayloadLoader) es fácil de detectar ya que se instala en el icono de Información sobre salud y seguridad.</p>
+<p>PayloadLoader es el punto de entrada que se usa para cargar el EnvironmentLoader y a su vez el EnvironmentLoader se usa para cargar Tiramisu Boot Selector. Dependiendo de la configuración de la instalación se puede cargar determinada cosa, pero lo más común es que automáticamente Tiramisu Boot Selector cargue el menú de Wii U.</p>
+<h3>¿Al abrir el icono de Información sobre salud y seguridad carga algo especial?</h3>
+<form id="f_tiramisu" onclick="updateFormTiramisu()">
+<input type="radio" id="tiramisu_wiiu" value="tiramisu_wiiu" name="default" style="display:none;">
+<label class="link" for="tiramisu_wiiu">Sí, al abrir el icono carga el menú de Wii U.</label><br><br>
+<input type="radio" id="tiramisu_hbl" value="tiramisu_hbl" name="default" style="display:none;">
+<label class="link" for="tiramisu_hbl">Sí, al abrir el icono carga el Homebrew Launcher.</label><br><br>
+<input type="radio" id="tiramisu_wii" value="tiramisu_wii" name="default" style="display:none;">
+<label class="link" for="tiramisu_wii">Sí, al abrir el icono carga el menú de Wii (vWii System Menu).</label><br><br>
+<input type="radio" id="tiramisu_hbc" value="tiramisu_hbc" name="default" style="display:none;">
+<label class="link" for="tiramisu_hbc">Sí, al abrir el icono carga el Homebrew Channel (vWii).</label><br><br>
+<input type="radio" id="tiramisu_el" value="tiramisu_el" name="default" style="display:none;">
+<label class="link" for="tiramisu_el">Sí, al abrir el icono carga el EnvironmentLoader (Cargador de Entorno).</label><br><br>
+<input type="radio" id="tiramisu_tbs" value="tiramisu_tbs" name="default" style="display:none;">
+<label class="link" for="tiramisu_tbs">Sí, al abrir el icono carga el Tiramisu Boot Selector (Selector de Arranque de Tiramisu).</label><br><br>
+<input type="radio" id="tiramisu_failed" value="tiramisu_failed" name="default" style="display:none;">
+<label class="link" for="tiramisu_failed"><img src="Images/Identificar_Hack/Tiramisu_Failed_to_load.jpg" class="auto_size"><br>Sí, al abrir el icono muestra el mensaje <code>Failed to load sd:/wiiu/payload.elf Starting the console without any modifications</code> y carga automáticamente el menú de Wii U.</label><br><br>
+<input type="radio" id="tiramisu_twice" value="tiramisu_twice" name="default" style="display:none;">
+<label class="link" for="tiramisu_twice"><img src="Images/Identificar_Hack/Dont_run_the_EnvironmentLoader_twice.jpg" class="auto_size"><br>Sí, al abrir el icono la consola se congela con el mensaje <code>Don't run EnvironmentLoader twice. If you want to open the Homebrew Launcher, launch the Mii Maker instead</code>.</label><br><br>
+<input type="radio" id="tiramisu_no" value="tiramisu_no" name="default" style="display:none;">
+<label class="link" for="tiramisu_no"><img src="Images/Identificar_Hack/Health_and_Safety_Information.jpg" class="auto_size"><br>No, al abrir el icono no carga nada especial, no se congela y puedo consultar información sobre salud y seguridad con normalidad.</label><br><br>
+</form>
+<div id="tiramisu_next" style="display:none;"><p><a id="tiramisu_next_button" href="?s=test" class="button">Siguiente</a></p></div>
 </div>
 </div>
 <div id="uninstall_payloadloader" class="tabcontent" style="display:none;">
@@ -2258,7 +2364,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <div class="cont">
 <h2>Acerca de esta guía</h2>
 <br>
-<h3>Versión: 3.3.1 (14 de enero de 2022)</h3>
+<h3>Versión: 3.4 (3 de febrero de 2022)</h3>
 <p>Esta guía fue hecha por <strong>Fran AC</strong> basado en la guía de los miembros de <a href="https://wiiu.hacks.guide/#/about">Nintendo Homebrew Discord Server</a>.</p>
 <p>Puedes descargar la guía completa desde <a href="https://github.com/piloncillo/piloncillo.github.io/releases">esté enlace</a>.</p>
 <p>Créditos a los desarrolladores de las herramientas</p>
@@ -2346,6 +2452,9 @@ function loadContent() {
   
   if (section == "tiramisu")
     document.getElementById("install_hack").click();
+
+  if (section == "test")
+    document.getElementById("test_hack").click();
 	
   if (section == "uninstall_payloadloader" ||
   section == "uninstall_webhack" ||
@@ -2397,7 +2506,8 @@ function loadContent() {
   } else
     defaultSidebar();
 
-  addTestParams();
+  //addTestParams();
+  testResults();
 }
 
 var dropdown = document.getElementsByClassName("dropdown-btn");
@@ -2423,7 +2533,7 @@ function contentResize() {
   var contents = document.getElementsByClassName("cont");
   const availableWidth = window.innerWidth - sidebarWidth - scrollBarWidth;
   var imgs = document.getElementsByClassName("auto_size");
-  var imgWidth;
+  var vids = document.getElementsByClassName("auto_size_video");
 
   if (availableWidth < 900) {
     for (i = 0; i < contents.length; i++) {
@@ -2433,7 +2543,12 @@ function contentResize() {
       imgs[i].style.width = imgs[i].naturalWidth + "px";
       if (parseInt(imgs[i].style.width) > availableWidth)
 	    imgs[i].style.width = (availableWidth - 50) + "px";
-  }
+	}
+	for (i = 0; i < vids.length; i++) {
+      vids[i].style.width = vids[i].videoWidth + "px";
+      if (parseInt(vids[i].style.width) > availableWidth)
+	    vids[i].style.width = (availableWidth - 50) + "px";
+	}
   } else {
     for (i = 0; i < contents.length; i++) {
       contents[i].style.width = "870px";
@@ -2495,7 +2610,7 @@ function closeSidebar() {
   contentResize();
 }
 
-function addTestParams() {
+/*function addTestParams() {
   var url = new URL(document.URL);
   var directory = url.searchParams.get("directory");
   var eshop_game = url.searchParams.get("eshop_game");
@@ -2516,6 +2631,619 @@ function addTestParams() {
 	}
 	
 	linksArray[i].href = href;
+  }
+}*/
+
+function testResults() {
+  var autobooting = localStorage.getItem("autobooting");
+  var indexiine = localStorage.getItem("indexiine");
+  var haxchiIcon = localStorage.getItem("haxchi icon");
+  var haxchi = localStorage.getItem("haxchi");
+  var tiramisu = localStorage.getItem("tiramisu");
+  
+  if (autobooting == "cbhc") {
+    document.getElementById("autobooting_result").innerHTML = 'Coldboot Haxchi detectado. Tienes un "hack" que tiene el riesgo de brickear la consola si no eres cuidadoso, sigue las reglas de <a href="?s=cbhc&p=warning">aquí</a> para prevenir un brick.';
+  }
+  else if (autobooting == "tiramisu") {
+    document.getElementById("autobooting_result").innerHTML = 'Autobooting Tiramisu detectado.';
+  }
+  else if (autobooting == "tiramisu_old") {
+    document.getElementById("autobooting_result").innerHTML = 'Autobooting Tiramisu detectado. Tienes una versión "antigua" de Tiramisu, <a href="?s=update_tiramisu">actualiza "los archivos del hack"</a>';
+  }
+  else if (autobooting == "hbl") {
+    document.getElementById("autobooting_result").innerHTML = 'Al parecer PayloadLoader (Tiramisu) arrancara automáticamente al encender la consola y Tiramisu está configurado para cargar el Homebrew Launcher, es una configuración extraña, si quieres cambiarla consulta como <a href="?s=tiramisu&p=config">configurar Tiramisu</a>.';
+  }
+  else if (autobooting == "wii") {
+    document.getElementById("autobooting_result").innerHTML = 'Al parecer PayloadLoader (Tiramisu) arrancara automáticamente al encender la consola y Tiramisu está configurado para cargar el menú de Wii (vWii System Menu), es una configuración extraña, si quieres cambiarla consulta como <a href="?s=tiramisu&p=config">configurar Tiramisu</a>.';
+  }
+  else if (autobooting == "hbc") {
+    document.getElementById("autobooting_result").innerHTML = 'Al parecer PayloadLoader (Tiramisu) arrancara automáticamente al encender la consola y Tiramisu está configurado para cargar el Homebrew Channel (vWii), es una configuración extraña, si quieres cambiarla consulta como <a href="?s=tiramisu&p=config">configurar Tiramisu</a>.';
+  }
+  else if (autobooting == "el") {
+    document.getElementById("autobooting_result").innerHTML = 'Autobooting Tiramisu está configurado para cargar el EnvironmentLoader (Cargador de Entorno), si quieres cambiarlo consulta como <a href="?s=tiramisu&p=config">configurar Tiramisu</a>.';
+  }
+  else if (autobooting == "tbs") {
+    document.getElementById("autobooting_result").innerHTML = 'Autobooting Tiramisu está configurado para cargar el Tiramisu Boot Selector (Selector de Arranque de Tiramisu), si quieres cambiarlo consulta como <a href="?s=tiramisu&p=config">configurar Tiramisu</a>.';
+  }
+  else if (autobooting == "failed") {
+    document.getElementById("autobooting_result").innerHTML = 'Autobooting Tiramisu no está detectando la tarjeta SD o no encontró el archivo <code>payload.elf</code> dentro de la carpeta <code>sd:/wiiu</code>. Limpia los contactos de la tarjeta SD, si estas usando una microSD prueba cambiar el adaptador, revisa que tengas "los archivos del hack" en la tarjeta SD. Si no tienes los archivos de Tiramisu en la tarjeta SD puedes colocarlos siguiendo <a href="?s=update_tiramisu">las instrucciones de como actualizar Tiramisu</a> (no olvides colocar también el módulo de <a href="?s=tiramisu&p=apps#modules">Sigpatches</a>).';
+  }
+  else if (autobooting == "no") {
+    document.getElementById("autobooting_result").innerHTML = 'No detectaste ningún "hack" que inicie de forma automática al encender la consola.';
+  }
+  
+  if (indexiine == "hbl") {
+    document.getElementById("indexiine_result").innerHTML = 'Detectado. Está configurado para cargar el Homebrew Launcher.';
+  }
+  else if (indexiine == "iosuhax") {
+    document.getElementById("indexiine_result").innerHTML = 'Detectado. Está configurado para cargar el "obsoleto" IOSUHAX.';
+  }
+  else if (indexiine == "mocha") {
+    document.getElementById("indexiine_result").innerHTML = 'Detectado. Está configurado para cargar Mocha CFW.';
+  }
+  else if (indexiine == "wiiu") {
+    document.getElementById("indexiine_result").innerHTML = 'Detectado. Está configurado para cargar una aplicación (o CFW) que a su vez redirige al menú de Wii U.';
+  }
+  else if (indexiine == "el") {
+    document.getElementById("indexiine_result").innerHTML = 'Detectado. Carga el EnvironmentLoader (Cargador de Entorno), seguramente tienes los archivos de Tiramisu en la tarjeta SD.';
+  }
+  else if (indexiine == "tbs") {
+    document.getElementById("indexiine_result").innerHTML = 'Detectado. Carga el Tiramisu Boot Selector (Selector de Arranque de Tiramisu), seguramente tienes los archivos de Tiramisu en la tarjeta SD.';
+  }
+  else if (indexiine == "wii") {
+    document.getElementById("indexiine_result").innerHTML = 'Detectado. Carga el menú de Wii (vWii System Menu), seguramente tienes los archivos de Tiramisu en la tarjeta SD.';
+  }
+  else if (indexiine == "hbc") {
+    document.getElementById("indexiine_result").innerHTML = 'Detectado. Carga el Homebrew Channel (vWii), seguramente tienes los archivos de Tiramisu en la tarjeta SD.';
+  }
+  else if (indexiine == "ohb") {
+    document.getElementById("indexiine_result").innerHTML = 'Detectado. Está configurado para cargar una aplicación homebrew.';
+  }
+  else if (indexiine == "q") {
+    document.getElementById("indexiine_result").innerHTML = 'Detectado. Se trata de un mod de Indexiine que permite omitir la carga del mismo para poder usar el navegador (involucra el riesgo de desconfigurar los ajustes correctos del propio navegador). Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
+  }
+  else if (indexiine == "twice") {
+    document.getElementById("indexiine_result").innerHTML = 'Detectado. El mensaje <code>Don\'t run EnvironmentLoader twice</code> indica que antes de ejecutar Indexiine habías cargado el "hack" Tiramisu. No puedes cargar más de una vez el EnvironmentLoader (Tiramisu).';
+  }
+  else if (indexiine == "msf") {
+    document.getElementById("indexiine_result").innerHTML = 'Detectado. El mensaje <code>FSGetMountSource falied</code> quiere decir que la consola no está detectando la tarjeta SD, limpia los contactos, si estas usando una microSD prueba cambiar el adaptador.';
+  }
+  else if (indexiine == "fm") {
+    document.getElementById("indexiine_result").innerHTML = 'Detectado. El mensaje <code>FSOpenFile falied</code> quiere decir que la consola sí está detectando la tarjeta SD, pero no encontró el archivo <code>payload.elf</code> dentro de la carpeta <code>sd:/wiiu</code>.';
+  }
+  else if (indexiine == "freeze") {
+    document.getElementById("indexiine_result").innerHTML = 'Detectado. Si se bloquea el navegador teniendo Indexiine instalado lo más probable es que se perdieron los ajustes correctos del navegador. Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
+  }
+  else if (indexiine == "no") {
+    document.getElementById("indexiine_result").innerHTML = 'No detectado. Puedes usar el navegador de forma normal.';
+  }
+	
+  if (haxchiIcon == "yes") {
+    document.getElementById("haxchi_result").innerHTML = 'Icono de Haxchi detectado, pero no has indicado que pasa al abrir el icono.';
+  }
+  else if (haxchiIcon == "no") {
+    document.getElementById("haxchi_result").innerHTML = 'Icono de Haxchi no detectado.';
+  }
+	
+  if (haxchi == "hbl") {
+    document.getElementById("haxchi_result").innerHTML = 'Detectado. Está configurado para cargar el Homebrew Launcher.';
+  }
+  else if (haxchi == "iosuhax") {
+    document.getElementById("haxchi_result").innerHTML = 'Detectado. Está configurado para cargar el "obsoleto" IOSUHAX.';
+  }
+  else if (haxchi == "mocha") {
+    document.getElementById("haxchi_result").innerHTML = 'Detectado. Está configurado para cargar Mocha CFW.';
+  }
+  else if (haxchi == "wiiu") {
+    document.getElementById("haxchi_result").innerHTML = 'Detectado. Está configurado para cargar una aplicación (o CFW) que a su vez redirige al menú de Wii U.';
+  }
+  else if (haxchi == "ohb") {
+    document.getElementById("haxchi_result").innerHTML = 'Detectado. Está configurado para cargar una aplicación homebrew.';
+  }
+  else if (haxchi == "-3") {
+    document.getElementById("haxchi_result").innerHTML = 'Detectado. El mensaje <code>-3</code> quiere decir que la consola no está detectando la tarjeta SD, limpia los contactos, si estas usando una microSD prueba cambiar el adaptador.';
+  }
+  else if (haxchi == "-5") {
+    document.getElementById("haxchi_result").innerHTML = 'Detectado. El mensaje <code>-5</code> quiere decir que la consola sí está detectando la tarjeta SD, pero no encontró la aplicación configurada para cargar por defecto en la tarjeta SD.';
+  }
+  else if (haxchi == "freeze") {
+    document.getElementById("haxchi_result").innerHTML = 'Detectado. Es raro que Haxchi se bloquee, lo más probable es que antes de ejecutar Haxchi hayas cargado el "hack" Tiramisu. No puedes cargar el CFW interno de Haxchi si tienes cargado el entorno de Tiramisu. Prueba <a href="?s=uninstall_haxchi">desinstalar Haxchi correctamente</a> para volver a ocupar el juego de Nintendo DS de forma normal o <a href="?s=custom_haxchi">personaliza Haxchi</a> para que no cargue su CFW interno.';
+  }
+  else if (haxchi == "no") {
+    document.getElementById("haxchi_result").innerHTML = 'Icono de Haxchi detectado, pero requiere de algo más para abrirlo. La consola no tiene Haxchi instalado.';
+  }
+	
+  if (tiramisu == "wiiu") {
+    document.getElementById("tiramisu_result").innerHTML = 'Detectado.';
+  }
+  else if (tiramisu == "hbl") {
+    document.getElementById("tiramisu_result").innerHTML = 'Detectado. PayloadLoader (Tiramisu) está configurado para cargar el Homebrew Launcher, es una configuración extraña, si quieres cambiarla consulta como <a href="?s=tiramisu&p=config">configurar Tiramisu</a>.';
+  }
+  else if (tiramisu == "wii") {
+    document.getElementById("tiramisu_result").innerHTML = 'Detectado. PayloadLoader (Tiramisu) está configurado para cargar el menú de Wii (vWii System Menu), es una configuración extraña, si quieres cambiarla consulta como <a href="?s=tiramisu&p=config">configurar Tiramisu</a>.';
+  }
+  else if (tiramisu == "hbc") {
+    document.getElementById("tiramisu_result").innerHTML = 'Detectado. PayloadLoader (Tiramisu) está configurado para cargar el Homebrew Channel (vWii), es una configuración extraña, si quieres cambiarla consulta como <a href="?s=tiramisu&p=config">configurar Tiramisu</a>.';
+  }
+  else if (tiramisu == "el") {
+    document.getElementById("tiramisu_result").innerHTML = 'Detectado. PayloadLoader (Tiramisu) está configurado para cargar el EnvironmentLoader (Cargador de Entorno), si quieres cambiarlo consulta como <a href="?s=tiramisu&p=config">configurar Tiramisu</a>.';
+  }
+  else if (tiramisu == "tbs") {
+    document.getElementById("tiramisu_result").innerHTML = 'Detectado. PayloadLoader (Tiramisu) está configurado para cargar el Tiramisu Boot Selector (Selector de Arranque de Tiramisu), si quieres cambiarlo consulta como <a href="?s=tiramisu&p=config">configurar Tiramisu</a>.';
+  }
+  else if (tiramisu == "failed") {
+    document.getElementById("tiramisu_result").innerHTML = 'Detectado. PayloadLoader (Tiramisu) no está detectando la tarjeta SD o no encontró el archivo <code>payload.elf</code> dentro de la carpeta <code>sd:/wiiu</code>. Limpia los contactos de la tarjeta SD, si estas usando una microSD prueba cambiar el adaptador, revisa que tengas "los archivos del hack" en la tarjeta SD. Si no tienes los archivos de Tiramisu en la tarjeta SD puedes colocarlos siguiendo <a href="?s=update_tiramisu">las instrucciones de como actualizar Tiramisu</a> (no olvides colocar también el módulo de <a href="?s=tiramisu&p=apps#modules">Sigpatches</a>).';
+  }
+  else if (tiramisu == "twice") {
+    document.getElementById("tiramisu_result").innerHTML = 'Detectado. El mensaje <code>Don\'t run EnvironmentLoader twice</code> indica que antes de abrir el icono de Información sobre salud y seguridad ya habías cargado el "hack" Tiramisu. No puedes cargar más de una vez el EnvironmentLoader (Tiramisu).';
+  }
+  else if (tiramisu == "no") {
+    document.getElementById("tiramisu_result").innerHTML = 'No detectado.';
+  }
+  
+  testSDResults();
+}
+
+function testSDResults() {
+  var sd = localStorage.getItem("sd");
+  var folder = localStorage.getItem("folder");
+  var autobooting = localStorage.getItem("autobooting");
+  var indexiine = localStorage.getItem("indexiine");
+  var haxchiIcon = localStorage.getItem("haxchi icon");
+  var haxchi = localStorage.getItem("haxchi");
+  var tiramisu = localStorage.getItem("tiramisu");
+  
+  if (sd == "yes" && folder == "yes") {
+    if (autobooting == "failed" ||
+	indexiine == "msf" ||
+	indexiine == "fm" ||
+	haxchi == "-3" ||
+	haxchi == "-5" ||
+	tiramisu == "failed") {
+      document.getElementById("sd_result").innerHTML = 'Aunque tienes la carpeta <code>sd:/wiiu</code> la consola no esta detectando los archivos relacionados con Tiramisu, Indexiine o Haxchi. Revisa las recomendaciones de arriba según sea el caso.';
+    }
+    else {
+      document.getElementById("sd_result").innerHTML = 'Aparentemente tienes "los archivos del hack" bien colocados.';
+    }
+	getLabelByControlId("sd_yes").style.color = "#bbffbb";
+	getLabelByControlId("sd_no").style.color = "#cccccc";
+	getLabelByControlId("folder_yes").style.color = "#bbffbb";
+	getLabelByControlId("folder_no").style.color = "#cccccc";
+	document.getElementById("d_folder").style.display = "inline";
+  }
+  else if (sd == "yes" && folder == "no") {
+    if (autobooting == "tiramisu" || autobooting == "tiramisu_old" || autobooting == "hbl" || autobooting == "wii" || autobooting == "hbc" || autobooting == "el" || autobooting == "tbs" ||
+	indexiine == "hbl" || indexiine == "iosuhax" || indexiine == "mocha" || indexiine == "wiiu" || indexiine == "el" || indexiine == "tbs" || indexiine == "wii" || indexiine == "hbc" || indexiine == "ohb" || indexiine == "twice" ||
+	haxchi == "hbl" || haxchi == "iosuhax" || haxchi == "mocha" || haxchi == "ohb" ||
+	tiramisu == "wiiu" || tiramisu == "hbl" || tiramisu == "wii" || tiramisu == "hbc" || tiramisu == "el" || tiramisu == "tbs" || tiramisu == "twice") {
+      document.getElementById("sd_result").innerHTML = 'Hay una contradicción en tus respuestas, señalaste que Tiramisu, Indexiine y/o Haxchi carga una aplicacion homebrew (o CFW) sin problema, pero la tarjeta SD no tiene la carpeta <code>wiiu</code>. La carpeta <code>sd:/wiiu</code> es esencial ya que ahí se almacenan las aplicaciones homebrew que agregan más funcionalidad a Tiramisu, Indexiine o Haxchi. Revisa tus respuestas.';
+    }
+	else if (autobooting == "failed" ||
+	indexiine == "msf" ||
+	indexiine == "fm" ||
+	haxchi == "-3" ||
+	haxchi == "-5" ||
+	tiramisu == "failed") {
+      document.getElementById("sd_result").innerHTML = 'Ya que no tienes en la tarjeta SD la carpeta <code>wiiu</code> es de esperar que la consola te muestre un mensaje de error al intentar ejecutar Tiramisu, Indexiine o Haxchi. La carpeta <code>sd:/wiiu</code> es esencial ya que ahí se almacenan las aplicaciones homebrew que agregan más funcionalidad a Tiramisu, Indexiine o Haxchi. Revisa las recomendaciones de arriba según sea el caso.';
+    }
+	else if (autobooting == "no" && indexiine == "no" && (haxchiIcon == "no" || haxchi == "no") && tiramisu == "no") {
+      document.getElementById("sd_result").innerHTML = 'La carpeta <code>sd:/wiiu</code> es esencial ya que ahí se almacena "Webhack" y las aplicaciones homebrew que agregan más funcionalidad al "hack" de la consola. Sin la carpeta <code>sd:/wiiu</code> y descartados los puntos de entrada se considera que <strong class="green">la consola no está hackeada</strong>.';
+    }
+    else {
+      document.getElementById("sd_result").innerHTML = 'La carpeta <code>sd:/wiiu</code> es esencial ya que ahí se almacenan las aplicaciones homebrew que agregan más funcionalidad al "hack" de la consola.';
+    }
+	getLabelByControlId("sd_yes").style.color = "#bbffbb";
+	getLabelByControlId("sd_no").style.color = "#cccccc";
+	getLabelByControlId("folder_yes").style.color = "#cccccc";
+	getLabelByControlId("folder_no").style.color = "#bbffbb";
+	document.getElementById("d_folder").style.display = "inline";
+  }
+  else if (sd == "no") {
+    if (autobooting == "tiramisu" || autobooting == "tiramisu_old" || autobooting == "hbl" || autobooting == "wii" || autobooting == "hbc" || autobooting == "el" || autobooting == "tbs" ||
+	indexiine == "hbl" || indexiine == "iosuhax" || indexiine == "mocha" || indexiine == "wiiu" || indexiine == "el" || indexiine == "tbs" || indexiine == "wii" || indexiine == "hbc" || indexiine == "ohb" || indexiine == "twice" ||
+	haxchi == "hbl" || haxchi == "iosuhax" || haxchi == "mocha" || haxchi == "ohb" ||
+	tiramisu == "wiiu" || tiramisu == "hbl" || tiramisu == "wii" || tiramisu == "hbc" || tiramisu == "el" || tiramisu == "tbs" || tiramisu == "twice") {
+      document.getElementById("sd_result").innerHTML = 'Hay una contradicción en tus respuestas, señalaste que Tiramisu, Indexiine y/o Haxchi carga una aplicacion homebrew (o CFW) sin problema, pero la consola no tiene tarjeta SD. La tarjeta SD es esencial ya que ahí se almacenan las aplicaciones homebrew que agregan más funcionalidad a Tiramisu, Indexiine o Haxchi. Revisa tus respuestas.';
+    }
+	else if (autobooting == "failed" ||
+	indexiine == "msf" ||
+	indexiine == "fm" ||
+	haxchi == "-3" ||
+	haxchi == "-5" ||
+	tiramisu == "failed") {
+      document.getElementById("sd_result").innerHTML = 'Ya que no tienes la tarjeta SD de la consola es de esperar que te muestre un mensaje de error al intentar ejecutar Tiramisu, Indexiine o Haxchi. La tarjeta SD es esencial ya que ahí se almacenan las aplicaciones homebrew que agregan más funcionalidad a Tiramisu, Indexiine o Haxchi. Consigue una tarjeta SD y revisa las recomendaciones de arriba según sea el caso.';
+    }
+	else if (autobooting == "no" && indexiine == "no" && (haxchiIcon == "no" || haxchi == "no") && tiramisu == "no") {
+      document.getElementById("sd_result").innerHTML = 'Consigue una tarjeta SD. La tarjeta SD es esencial ya que ahí se almacena "Webhack" y las aplicaciones homebrew que agregan más funcionalidad al "hack" de la consola. Sin la tarjeta SD y descartados los puntos de entrada se considera que <strong class="green">la consola no está hackeada</strong>.';
+    }
+    else {
+      document.getElementById("sd_result").innerHTML = 'Consigue una tarjeta SD. La tarjeta SD es esencial ya que ahí se almacenan las aplicaciones homebrew que agregan más funcionalidad al "hack" de la consola.';
+    }
+	getLabelByControlId("sd_yes").style.color = "#cccccc";
+	getLabelByControlId("sd_no").style.color = "#bbffbb";
+	getLabelByControlId("folder_yes").style.color = "#cccccc";
+	getLabelByControlId("folder_no").style.color = "#cccccc";
+	document.getElementById("d_folder").style.display = "none";
+  }
+  else {
+    document.getElementById("sd_result").innerHTML = '';
+  }
+  
+  if (autobooting == null || indexiine == null || (haxchiIcon == null && haxchi == null) || tiramisu == null) {
+    document.getElementById("webhack_result").innerHTML = 'Contesta todas las preguntas de las secciones anteriores para determinar si el exploit del navegador es el único punto de entrada de tu consola.';
+  }
+  else if (autobooting == "no" && indexiine == "no" && (haxchiIcon == "no" || haxchi == "no") && tiramisu == "no") {
+    if (sd == "yes" && folder == "yes") {
+      document.getElementById("webhack_result").innerHTML = 'Detectado. El exploit del navegador es el punto de entrada principal de tu consola.';
+	}
+	else if (sd == "no" || (sd == "yes" && folder == "no")) {
+      document.getElementById("webhack_result").innerHTML = 'No detectado. El exploit del navegador es el punto de entrada principal de tu consola, pero no tienes "los archivos del hack" en la tarjeta SD. En esta situación se considera que <strong class="green">la consola no está hackeada</strong>.';
+	}
+	else {
+      document.getElementById("webhack_result").innerHTML = 'El exploit del navegador es un punto de entrada principal de tu consola, pero no has indicado la situación de "los archivos del hack" de tu consola. Contesta la(s) pregunta(s) de abajo.';
+    }
+  }
+  else {
+    if (sd == "yes" && folder == "yes") {
+      document.getElementById("webhack_result").innerHTML = 'Detectado. Puede funcionar como un punto de entrada secundario de tu consola.';
+	}
+	else if (sd == "no" || (sd == "yes" && folder == "no")) {
+      document.getElementById("webhack_result").innerHTML = 'No detectado. Puede funcionar como un punto de entrada secundario de tu consola, pero no tienes "los archivos del hack" en la tarjeta SD.';
+	}
+	else {
+      document.getElementById("webhack_result").innerHTML = 'Puede funcionar como un punto de entrada secundario de tu consola, pero no has indicado la situación de "los archivos del hack" de tu consola. Contesta la(s) pregunta(s) de abajo.';
+    }
+  }
+}
+
+function resetTest() {
+  localStorage.removeItem("sd");
+  localStorage.removeItem("folder");
+  localStorage.removeItem("autobooting");
+  localStorage.removeItem("indexiine");
+  localStorage.removeItem("haxchi icon");
+  localStorage.removeItem("haxchi");
+  localStorage.removeItem("tiramisu");
+}
+
+function updateFormSD() {
+  var form = document.getElementById("f_sd");
+  var value = form["default"].value;
+
+  if (value != null && value != '') {
+    var labels = form.getElementsByTagName("label");
+    for (i = 0; i < labels.length; i++)
+      labels[i].style.color = "#cccccc";
+    getLabelByControlId(value).style.color = "#bbffbb";
+	
+	if (value == "sd_yes") {
+	  localStorage.setItem("sd", "yes");
+      document.getElementById("d_folder").style.display = "inline";
+	}
+	else if (value == "sd_no") {
+	  //resetForm("f_folder");
+	  localStorage.setItem("sd", "no");
+	  localStorage.removeItem("folder");
+      document.getElementById("d_folder").style.display = "none";
+	}
+	else {
+	  resetForm("f_folder");
+	  localStorage.removeItem("sd");
+      document.getElementById("d_folder").style.display = "none";
+	}
+	
+	testSDResults();
+  }
+}
+
+function updateFormFolder() {
+  var form = document.getElementById("f_folder");
+  var value = form["default"].value;
+
+  if (value != null && value != '') {
+    var labels = form.getElementsByTagName("label");
+    for (i = 0; i < labels.length; i++)
+      labels[i].style.color = "#cccccc";
+    getLabelByControlId(value).style.color = "#bbffbb";
+	
+	if (value == "folder_yes") {
+	  localStorage.setItem("folder", "yes");
+	}
+	else if (value == "folder_no") {
+	  localStorage.setItem("folder", "no");
+	}
+	else {
+	  localStorage.removeItem("folder");
+	}
+	
+	testSDResults();
+  }
+}
+
+function updateFormAutobooting() {
+  var form = document.getElementById("f_autobooting");
+  var value = form["default"].value;
+
+  if (value != null && value != "") {
+    var labels = form.getElementsByTagName("label");
+    for (i = 0; i < labels.length; i++)
+      labels[i].style.color = "#cccccc";
+    getLabelByControlId(value).style.color = "#bbffbb";
+
+	if (value == "autobooting_cbhc") {
+	  localStorage.setItem("autobooting", "cbhc");
+	  document.getElementById("autobooting_next").style.display = "inline";
+	  document.getElementById("autobooting_result").innerHTML = "Coldboot Haxchi detectado.";
+	}
+	else if (value == "autobooting_tiramisu") {
+	  localStorage.setItem("autobooting", "tiramisu");
+	  document.getElementById("autobooting_next").style.display = "inline";
+	}
+	else if (value == "autobooting_tiramisu_old") {
+	  localStorage.setItem("autobooting", "tiramisu old");
+	  document.getElementById("autobooting_next").style.display = "inline";
+	}
+	else if (value == "autobooting_hbl") {
+	  localStorage.setItem("autobooting", "hbl");
+	  document.getElementById("autobooting_next").style.display = "inline";
+	}
+	else if (value == "autobooting_wii") {
+	  localStorage.setItem("autobooting", "wii");
+      document.getElementById("autobooting_next").style.display = "inline";
+	}
+	else if (value == "autobooting_hbc") {
+	  localStorage.setItem("autobooting", "hbc");
+      document.getElementById("autobooting_next").style.display = "inline";
+	}
+	else if (value == "autobooting_el") {
+	  localStorage.setItem("autobooting", "el");
+      document.getElementById("autobooting_next").style.display = "inline";
+	}
+	else if (value == "autobooting_tbs") {
+	  localStorage.setItem("autobooting", "tbs");
+      document.getElementById("autobooting_next").style.display = "inline";
+	}
+	else if (value == "autobooting_failed") {
+	  localStorage.setItem("autobooting", "failed");
+      document.getElementById("autobooting_next").style.display = "inline";
+	}
+	else if (value == "autobooting_no") {
+	  localStorage.setItem("autobooting", "no");
+      document.getElementById("autobooting_next").style.display = "inline";
+	}
+	else {
+	  localStorage.removeItem("autobooting");
+	  document.getElementById("at_next").style.display = "none";
+	}
+  }
+}
+
+function updateFormIndexiine() {
+  var form = document.getElementById("f_indexiine");
+  var value = form["default"].value;
+
+  if (value != null && value != '') {
+    var labels = form.getElementsByTagName("label");
+    for (i = 0; i < labels.length; i++)
+      labels[i].style.color = "#cccccc";
+    getLabelByControlId(value).style.color = "#bbffbb";
+
+	if (value == "indexiine_hbl") {
+	  localStorage.setItem("indexiine", "hbl");
+	  document.getElementById("indexiine_next").style.display = "inline";
+	}
+	else if (value == "indexiine_iosuhax") {
+	  localStorage.setItem("indexiine", "iosuhax");
+	  document.getElementById("indexiine_next").style.display = "inline";
+	}
+	else if (value == "indexiine_mocha") {
+	  localStorage.setItem("indexiine", "mocha");
+	  document.getElementById("indexiine_next").style.display = "inline";
+	}
+	else if (value == "indexiine_wiiu") {
+	  localStorage.setItem("indexiine", "wiiu");
+	  document.getElementById("indexiine_next").style.display = "inline";
+	}
+	else if (value == "indexiine_el") {
+	  localStorage.setItem("indexiine", "el");
+	  document.getElementById("indexiine_next").style.display = "inline";
+	}
+	else if (value == "indexiine_tbs") {
+	  localStorage.setItem("indexiine", "tbs");
+	  document.getElementById("indexiine_next").style.display = "inline";
+	}
+	else if (value == "indexiine_wii") {
+	  localStorage.setItem("indexiine", "wii");
+	  document.getElementById("indexiine_next").style.display = "inline";
+	}
+	else if (value == "indexiine_hbc") {
+	  localStorage.setItem("indexiine", "hbc");
+	  document.getElementById("indexiine_next").style.display = "inline";
+	}
+	else if (value == "indexiine_ohb") {
+	  localStorage.setItem("indexiine", "ohb");
+	  document.getElementById("indexiine_next").style.display = "inline";
+	}
+	else if (value == "indexiine_q") {
+	  localStorage.setItem("indexiine", "q");
+	  document.getElementById("indexiine_next").style.display = "inline";
+	}
+	else if (value == "indexiine_twice") {
+	  localStorage.setItem("indexiine", "twice");
+	  document.getElementById("indexiine_next").style.display = "inline";
+	}
+	else if (value == "indexiine_msf") {
+	  localStorage.setItem("indexiine", "msf");
+	  document.getElementById("indexiine_next").style.display = "inline";
+	}
+	else if (value == "indexiine_fm") {
+	  localStorage.setItem("indexiine", "fm");
+	  document.getElementById("indexiine_next").style.display = "inline";
+	}
+	else if (value == "indexiine_freeze") {
+	  localStorage.setItem("indexiine", "freeze");
+	  document.getElementById("indexiine_next").style.display = "inline";
+	}
+	else if (value == "indexiine_no") {
+	  localStorage.setItem("indexiine", "no");
+	  document.getElementById("indexiine_next").style.display = "inline";
+	}
+	else {
+	  localStorage.removeItem("indexiine");
+	  document.getElementById("indexiine_next").style.display = "none";
+	}
+  }
+}
+
+function updateFormHaxchiIcon() {
+  var form = document.getElementById("f_haxchi_icon");
+  var value = form["default"].value;
+
+  if (value != null && value != '') {
+    var labels = form.getElementsByTagName("label");
+    for (i = 0; i < labels.length; i++)
+      labels[i].style.color = "#cccccc";
+    getLabelByControlId(value).style.color = "#bbffbb";
+	
+	if (value == "haxchi_icon_yes") {
+	  localStorage.setItem("haxchi icon", "yes");
+	  document.getElementById("haxchi_next").style.display = "none";
+      document.getElementById("d_haxchi").style.display = "inline";
+	}
+	else if (value == "haxchi_icon_no") {
+	  resetForm("f_haxchi");
+	  localStorage.setItem("haxchi icon", "no");
+	  document.getElementById("haxchi_next").style.display = "inline";
+      document.getElementById("d_haxchi").style.display = "none";
+	}
+	else {
+	  resetForm("f_haxchi");
+	  localStorage.removeItem("haxchi icon");
+	  document.getElementById("haxchi_next").style.display = "none";
+      document.getElementById("d_haxchi").style.display = "none";
+	}
+  }
+}
+
+function updateFormHaxchi() {
+  var form = document.getElementById("f_haxchi");
+  var value = form["default"].value;
+
+  if (value != null && value != '') {
+    var labels = form.getElementsByTagName("label");
+    for (i = 0; i < labels.length; i++)
+      labels[i].style.color = "#cccccc";
+    getLabelByControlId(value).style.color = "#bbffbb";
+
+	if (value == "haxchi_hbl") {
+	  localStorage.setItem("haxchi", "hbl");
+	  document.getElementById("haxchi_next").style.display = "inline";
+	}
+	else if (value == "haxchi_iosuhax") {
+	  localStorage.setItem("haxchi", "iosuhax");
+	  document.getElementById("haxchi_next").style.display = "inline";
+	}
+	else if (value == "haxchi_mocha") {
+	  localStorage.setItem("haxchi", "mocha");
+	  document.getElementById("haxchi_next").style.display = "inline";
+	}
+	else if (value == "haxchi_wiiu") {
+	  localStorage.setItem("haxchi", "wiiu");
+	  document.getElementById("haxchi_next").style.display = "inline";
+	}
+	else if (value == "haxchi_ohb") {
+	  localStorage.setItem("haxchi", "ohb");
+	  document.getElementById("haxchi_next").style.display = "inline";
+	}
+	else if (value == "haxchi_3") {
+	  localStorage.setItem("haxchi", "-3");
+	  document.getElementById("haxchi_next").style.display = "inline";
+	}
+	else if (value == "haxchi_5") {
+	  localStorage.setItem("haxchi", "-5");
+	  document.getElementById("haxchi_next").style.display = "inline";
+	}
+	else if (value == "haxchi_freeze") {
+	  localStorage.setItem("haxchi", "freeze");
+	  document.getElementById("haxchi_next").style.display = "inline";
+	}
+	else if (value == "haxchi_no") {
+	  localStorage.setItem("haxchi", "no");
+	  document.getElementById("haxchi_next").style.display = "inline";
+	}
+	else {
+	  localStorage.removeItem("haxchi");
+	  document.getElementById("haxchi_next").style.display = "none";
+	}
+  }
+}
+
+function updateFormTiramisu() {
+  var form = document.getElementById("f_tiramisu");
+  var value = form["default"].value;
+
+  if (value != null && value != '') {
+    var labels = form.getElementsByTagName("label");
+    for (i = 0; i < labels.length; i++)
+      labels[i].style.color = "#cccccc";
+    getLabelByControlId(value).style.color = "#bbffbb";
+
+	if (value == "tiramisu_wiiu") {
+	  localStorage.setItem("tiramisu", "wiiu");
+	  document.getElementById("tiramisu_next").style.display = "inline";
+	}
+	else if (value == "tiramisu_hbl") {
+	  localStorage.setItem("tiramisu", "hbl");
+	  document.getElementById("tiramisu_next").style.display = "inline";
+	}
+	else if (value == "tiramisu_wii") {
+	  localStorage.setItem("tiramisu", "wii");
+	  document.getElementById("tiramisu_next").style.display = "inline";
+	}
+	else if (value == "tiramisu_hbc") {
+	  localStorage.setItem("tiramisu", "hbc");
+	  document.getElementById("tiramisu_next").style.display = "inline";
+	}
+	else if (value == "tiramisu_el") {
+	  localStorage.setItem("tiramisu", "el");
+	  document.getElementById("tiramisu_next").style.display = "inline";
+	}
+	else if (value == "tiramisu_tbs") {
+	  localStorage.setItem("tiramisu", "tbs");
+	  document.getElementById("tiramisu_next").style.display = "inline";
+	}
+	else if (value == "tiramisu_failed") {
+	  localStorage.setItem("tiramisu", "failed");
+	  document.getElementById("tiramisu_next").style.display = "inline";
+	}
+	else if (value == "tiramisu_twice") {
+	  localStorage.setItem("tiramisu", "twice");
+	  document.getElementById("tiramisu_next").style.display = "inline";
+	}
+	else if (value == "tiramisu_no") {
+	  localStorage.setItem("tiramisu", "no");
+	  document.getElementById("tiramisu_next").style.display = "inline";
+	}
+	else {
+	  localStorage.removeItem("tiramisu");
+	  document.getElementById("tiramisu_next").style.display = "none";
+	}
+  }
+}
+
+function resetForm(id) {
+  var form = document.getElementById(id);
+  form.reset();
+  var labels = form.getElementsByTagName("label");
+  for (i = 0; i < labels.length; i++)
+    labels[i].style.color = "#cccccc";
+}
+
+function getLabelByControlId(id) {
+  labels = document.getElementsByTagName('label');
+  for (var i = 0; i < labels.length; i++) {
+    if (labels[i].htmlFor == id)
+      return labels[i];
   }
 }
 </script>
