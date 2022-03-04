@@ -82,11 +82,11 @@ ul, ol {
 }
 
 div.info, div.warning {
-	margin-top: 2px;
-	margin-bottom: 2px;
-	padding-top: 8px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	padding-top: 6px;
 	padding-right: 20px;
-	padding-bottom: 8px;
+	padding-bottom: 6px;
 	padding-left: 16px;
 	border-style: none none none solid;
 	border-width: 4px;
@@ -729,7 +729,13 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <p class="left">Descarga el archivo <a href="https://wiiu.hacks.guide/docs/files/01_sigpatches.rpx"><code>01_sigpatches.rpx</code></a> y colócalo en la carpeta <code>sd:/wiiu/environments/tiramisu/modules/setup</code>.</p>
 <div class="info">El módulo <strong class="yellow">Sigpatches</strong> cargará junto con el resto de módulos cuando inicie el entorno de Tiramisu. Con este módulo ya puedes instalar y abrir juegos con tickets falsos (todo el contenido exclusivo de la eShop como DLCs y juegos de la Consola Virtual) y abrir aplicaciones homebrew desde el menú de Wii U.</div>
 <br>
-<h3 id="menu">Añadir aplicaciones al menú de Wii U</h3>
+<h3><strong class="red">Importante</strong></h3>
+<p>Recuerda que:</p>
+<ul>
+<li>A partir de ahora accedes al <strong class="green">Homebrew Launcher</strong> al abrir el icono de <strong>Editor de Mii</strong> desde el menú de Wii U y que al presionar el botón <em>HOME</em> en el <strong class="green">Homebrew Launcher</strong> abres el <strong>Editor de Mii</strong>.</li>
+<li>Desde el menú del <strong class="green">Homebrew Launcher</strong> puedes abrir la aplicación para instalar juegos (<strong>WUP Instaler GX2</strong>) o la aplicación que permite descargar juegos (<strong>NUSspli</strong>).</li>
+</ul>
+<!--h3 id="menu">Añadir aplicaciones al menú de Wii U</h3>
 <p>Las aplicaciones para el menú de Wii U vienen en formato <strong class="green">NUS Content cifrado</strong> (archivos <code>title.cert</code>, <code>title.tik</code>, <code>title.tmd</code>, <code>*.app</code> y <code>*.h3</code>) y se instalan usando WUP Installer GX2, igual que cualquier juego de Wii U. Consulta la sección de instalación de juegos para aprender a instalar juegos (y aplicaciones) usando WUP Installer GX2.</p>
 <p>Vamos a añadir las siguientes aplicaciones:</p>
 <ul>
@@ -763,7 +769,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <li>Vuelve a presionar el botón <em>HOME</em> del GamePad para regresar a <em>Mii Maker</em> (Editor de Mii), toca en Salir para regresar al menú de Wii U.</li>
 <li>En este punto ya finalizaste la instalación de las aplicaciones fundamentales para agregar funcionalidad a tu Wii U.</li>
 </ul>
-<div class="info">Si la Wii U se congela de alguna otra forma después de instalar algo con WUP Installer GX2 no te preocupes, espera unos 10 segundos y si no sucede nada, mantén presionado el botón <em>POWER</em> de la consola hasta que se apague, esto no daña a la consola.</div>
+<div class="info">Si la Wii U se congela de alguna otra forma después de instalar algo con WUP Installer GX2 no te preocupes, espera unos 10 segundos y si no sucede nada, mantén presionado el botón <em>POWER</em> de la consola hasta que se apague, esto no daña a la consola.</div-->
 <p>Aquí termina la guía de Tiramisu. Puedes continuar con la siguiente guía o volver al inicio.</p>
 <p><a href="?s=games">Guía de descarga e instalación de juegos</a></p>
 <p><a href="?s=main">Inicio</a></p>
@@ -2356,8 +2362,11 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <p><a href="https://apps.fortheusers.org/wiiu/hidtovpad">HID to VPAD</a> Permite usar controles de terceros por conexión USB. Cada modelo de control debe tener su archivo de <a href="https://github.com/Maschell/controller_patcher_configs">configuración .ini</a> para que la aplicación lo reconozca correctamente. Más información <a href="https://gbatemp.net/threads/hid-to-vpad.424127/">aquí</a>.</p>
 <p><a href="https://www.retroarch.com/?page=platforms">RetroArch</a> No es un emulador en sí, sino un proyecto modular que sirve de envoltura para cargar diferentes núcleos emuladores y que tiene versiones para una gran cantidad de plataformas (incluida la Wii U).</p>
 <p><a href="https://apps.fortheusers.org/wiiu/swapdrc_lite">SwapDRC Lite</a> Permite intercambiar imagen y video entre la TV y el Wii U GamePad.</p>
-<p><a href="https://apps.fortheusers.org/wiiu/SDcafiine">SDCafiine</a> Permite usar mods en algunos juegos de Wii U. Puedes ir a <a href="https://gamebanana.com/games/6289">esté enlace</a> para obtener mods y más información al respecto.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/wups">Wii U Plugin System</a> Permite usar mods en algunos juegos de Wii U.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/SDCafiine_WUPS">SDCafiine</a> Permite usar mods en algunos juegos de Wii U. Puedes ir a <a href="https://gamebanana.com/games/6289">esté enlace</a> para obtener mods y más información al respecto.</p>
 <p><a href="https://apps.fortheusers.org/wiiu/spiik">Spiik</a> Facilita ajustar la configuración de región e idioma para que los juegos carguen en el idioma deseado.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/WiiU-Shell">WiiU-Shell</a> Administrador de archivos para la Wii U.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/moonlight-wiiu">Moonlight Wii U</a> Permite hacer streaming de juegos desde una PC a la Wii U.</p>
 <p><a href="https://apps.fortheusers.org/wiiu/ftpiiu_everywhere">FTPiiU_Everywhere</a> Permite leer y trasferir archivos a la consola por medio de FTP. La versión Everywhere permite acceder a archivos del sistema por lo que sólo se recomienda a usuarios avanzados.</p>
 <p><a href="https://apps.fortheusers.org/wiiu/loadiine_gx2">Loadiine GX2</a> Permite cargar juegos desde la tarjeta SD. No se recomienda como método principal de carga de juegos ya que los tiempos de carga son mucho mayores y no todos los juegos funcionan correctamente.</p>
 <p><a href="https://apps.fortheusers.org/wiiu/sign_c2w_patcher">sign_c2w_patcher</a> Su principal uso es habilitar el overclock del modo virtual Wii de la Wii U.</p>
@@ -2368,7 +2377,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <div class="cont">
 <h2>Acerca de esta guía</h2>
 <br>
-<h3>Versión: 3.6.1 (16 de febrero de 2022)</h3>
+<h3>Versión: 3.7 (4 de marzo de 2022)</h3>
 <p>Esta guía fue hecha por <strong>Fran AC</strong> basado en la guía de los miembros de <a href="https://wiiu.hacks.guide/#/about">Nintendo Homebrew Discord Server</a>.</p>
 <p>Puedes descargar la guía completa desde <a href="https://github.com/piloncillo/piloncillo.github.io/releases">esté enlace</a>.</p>
 <p>Créditos a los desarrolladores de las herramientas</p>
