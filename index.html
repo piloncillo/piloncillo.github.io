@@ -414,15 +414,16 @@ img.center {
 </div>
 <div id="intro_tiramisu" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Introducción a TiramisU Environment</h2>
+<h2>Introducción a Tiramisu Environment</h2>
 <br>
 <p><img src="Images/Tiramisu_logo.png" class="auto_size"></p>
-<h3>¿Qué es el TiramisU?</h3>
-<p>Tiramisu es un entorno modular para Wii U. Sus módulos permiten cargar un CFW (versión modificada de Mocha CFW), instalar el Homebrew Launcher en <em>Mii Maker</em> (Editor de Mii) y proporciona un menú de inicio automático.</p>
+<h3>¿Qué es el Tiramisu?</h3>
+<p>Tiramisu es un Environment (Entorno) modular para Wii U. Sus módulos permiten cargar un CFW (versión modificada de Mocha CFW), instalar el Homebrew Launcher en <em>Mii Maker</em> (Editor de Mii) y proporciona un menú de inicio automático.</p>
 <p>Junto con PayloadLoader, es una alternativa a Coldboot Haxchi (CBHC) segura y gratuita, con algunas características adicionales como soporte completo para el menú de inicio rápido del GamePad y bloqueo de actualizaciones.</p>
-<p>TiramisU es un entorno que debe cargarse por medio de EnvironmentLoader.</p>
-<p>Se recomienda realizar un arranque automático de EnvironmentLoader (y TiramisU) a través de Autobooting PayloadLoader.</p>
-<h3>¿Conviene actualizar de un hack anterior a TiramisU?</h3>
+<p>Tiramisu es un entorno que debe cargarse por medio de EnvironmentLoader.</p>
+<p>Se recomienda realizar un arranque automático de EnvironmentLoader (y Tiramisu) a través de Autobooting PayloadLoader.</p>
+<p>Tiramisu no es un hack. El hack formalmente sería "Autobooting PayloadLoader + Mocha mod" (o "PayloadLoader + Mocha mod"), pero en medio de eso, para lograr cargar "Mocha mod" (y los demás módulos), se encuentra EnvironmentLoader. PayloadLoader carga el EnvironmentLoader que a su vez carga a Tiramisu y sus módulos.</p>
+<h3>¿Conviene actualizar de un hack anterior a Tiramisu?</h3>
 <p>Sí. En conjunto EnvironmentLoader, PayloadLoader y TiramisU tienen casi todas las ventajas de los anteriores hacks y ninguna de sus desventajas.</p>
 <p><a target="_blank" href="Images/Comparativa.png"><img src="Images/Comparativa.png" class="auto_size"></a></p>
 <h3>Paginas "oficiales" del proyecto</h3>
@@ -732,7 +733,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <h3><strong class="red">Importante</strong></h3>
 <p>Recuerda que:</p>
 <ul>
-<li>A partir de ahora accedes al <strong class="green">Homebrew Launcher</strong> al abrir el icono de <strong>Editor de Mii</strong> desde el menú de Wii U y que al presionar el botón <em>HOME</em> en el <strong class="green">Homebrew Launcher</strong> abres el <strong>Editor de Mii</strong>.</li>
+<li>A partir de ahora accedes al <strong class="green">Homebrew Launcher</strong> al abrir el icono de <strong>Editor de Mii</strong> desde el menú de Wii U y al presionar el botón <em>HOME</em> en el <strong class="green">Homebrew Launcher</strong> abres el <strong>Editor de Mii</strong>.</li>
 <li>Desde el menú del <strong class="green">Homebrew Launcher</strong> puedes abrir la aplicación para instalar juegos (<strong>WUP Instaler GX2</strong>) o la aplicación que permite descargar juegos (<strong>NUSspli</strong>).</li>
 </ul>
 <!--h3 id="menu">Añadir aplicaciones al menú de Wii U</h3>
@@ -867,7 +868,6 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <ul>
 <li><a href="http://u.wiidb.de/">http://u.wiidb.de/</a> Toca en <strong class="blue">HAXX</strong>.</li>
 <li><a href="http://wiiuexploit.xyz/">http://wiiuexploit.xyz/</a> Toca en el botón <q><strong class="blue">Run Homebrew Launcher!</strong></q>.</li>
-<li><a href="http://wiiu.91wii.com/552/">http://wiiu.91wii.com/552/</a> Toca en <strong class="blue">HAXX</strong>.</li>
 <li><a href="http://loadiine.ovh/">http://loadiine.ovh/</a> Toca en el botón <q><strong class="blue">Submit</strong></q>.</li>
 </ul>
 <div class="info">Actualmente la página loadiine.ovh ha dejado de dar un buen servicio.</div>
@@ -2034,7 +2034,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <p><a target="_blank" href="Images/USB_Helper/05.png"><img src="Images/USB_Helper/05.png" class="auto_size center"></a></p>
 <p id="window_tickets">En la ventana Ticket vamos a usar el método 1 para agregar los tickets (los archivos que contienen la información necesaria para descargar cada juego).</p>
 <p>Aquí debes ir a Google y buscar <a href="https://www.google.com/search?q=wiiu+tik">wiiu tik</a> para encontrar una página con tickets.</p>
-<p>Aunque <a href="?s=games&p=tickets">aquí</a> dejo una lista de sitios que actualmente (julio 2021) están en funcionamiento.</p>
+<p>Aunque <a href="?s=games&p=tickets">aquí</a> dejo una lista de sitios que actualmente (marzo 2022) están en funcionamiento.</p>
 <p>Debes escribir la URL completa. Si la página ya no está en funcionamiento o la escribes mal te saldrá un error, deberás cerrar el programa y volverlo a abrir.</p>
 <p>Clic en el botón Ok.</p>
 <p>Ahora empezará a cargar los tickets.</p>
@@ -2095,7 +2095,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <h2>Transferir juegos a la tarjeta SD</h2>
 <br>
 <p>Vamos a la carpeta donde descargamos el juego, DLC o actualización.</p>
-<p><ins>En WUP Installer GX2 sólo veremos las carpetas que tengan <strong class="green">NUS Content cifrado</strong> (archivos <code>title.cert</code>, <code>title.tik</code>, <code>title.tmd</code>, <code>*.app</code> y <code>*.h3</code>)</ins> y que tengan nombres <ins>sin caracteres especiales</ins> como acentos (usa sólo letras, números y espacios para nombrar las carpetas). Por eso para evitar conflictos y confusiones es mejor renombrar las capetas después de copiar cada una a la carpeta <code>install</code> de la tarjeta SD.</p>
+<p><ins>En WUP Installer GX2 sólo podemos ver carpetas que tengan <strong class="green">NUS Content cifrado</strong> (archivos <code>title.cert</code>, <code>title.tik</code>, <code>title.tmd</code>, <code>*.app</code> y <code>*.h3</code>)</ins> y que tengan nombres <ins>sin caracteres especiales</ins> como acentos (usa sólo letras, números y espacios para nombrar las carpetas). Por eso, para evitar conflictos y confusiones es mejor renombrar las capetas después de copiar cada una a la carpeta <code>install</code> de la tarjeta SD.</p>
 <p><a target="_blank" href="Images/USB_Helper/17.png"><img src="Images/USB_Helper/17.png" class="auto_size center"></a></p>
 <p>En esté ejemplo sería de la siguiente forma:</p>
 <ul>
@@ -2255,6 +2255,25 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <p><strong class="blue">Brick</strong>: Literalmente ladrillo en inglés. Se refiere a dañar un dispositivo al punto de sólo servir como pisapapeles.</p>
 <p><strong class="blue">DLC</strong>: Contenido descargable, se refiere al material adicional creado por los desarrolladores de un videojuego y que se publica por separado, no incluido en el producto base.</p>
 <p><strong class="blue">Title ID</strong>: El identificador de título es un número de 16 dígitos que usa la Wii U para, en su sistema de archivos, asignar una carpeta a un juego o aplicación. Los primeros 8 dígitos identifican el tipo de contenido (juego, DLC, demo, actualización, aplicación del sistema, etc.).</p>
+<p>Según las definiciones anteriores y simplificando las cosas un hack en Wii U se compone básicamente de dos elementos, un "punto de entrada" y un CFW. Sin un punto de entrada no puedes cargar el CFW. Así que un CFW por sí mismo no es un hack de Wii U. A continuación, una lista de todos los hacks de Wii U (todas las combinaciones de "punto de entrada" + CFW).</p>
+<ul>
+<li>Webhack + Mocha CFW</li>
+<li>Webhack + IOSUHAX</li>
+<li>Webhack + SigPatcher</li>
+<li>Indexiine + Mocha CFW</li>
+<li>Indexiine + IOSUHAX</li>
+<li>Indexiine + SigPatcher</li>
+<li>Haxchi + Mocha CFW</li>
+<li>Haxchi + Haxchi CFW</li>
+<li>Haxchi + IOSUHAX</li>
+<li>Haxchi + SigPatcher</li>
+<li>Coldboot Haxchi (CBHC) + Mocha CFW</li>
+<li>Coldboot Haxchi (CBHC) + Haxchi CFW</li>
+<li>Coldboot Haxchi (CBHC) + IOSUHAX</li>
+<li>Coldboot Haxchi (CBHC) + SigPatcher</li>
+<li>PayloadLoader + Mocha mod (Tiramisu de arranque manual)</li>
+<li>Autobooting PayloadLoader + Mocha mod (Tiramisu de arranque automático)</li>
+</ul>
 </div>
 </div>
 <div id="questions" class="tabcontent" style="display:none;">
@@ -2377,7 +2396,7 @@ Antes de hacer cualquier modificación en la consola es obligatorio hacer un res
 <div class="cont">
 <h2>Acerca de esta guía</h2>
 <br>
-<h3>Versión: 3.7 (4 de marzo de 2022)</h3>
+<h3>Versión: 3.8 (18 de marzo de 2022)</h3>
 <p>Esta guía fue hecha por <strong>Fran AC</strong> basado en la guía de los miembros de <a href="https://wiiu.hacks.guide/#/about">Nintendo Homebrew Discord Server</a>.</p>
 <p>Puedes descargar la guía completa desde <a href="https://github.com/piloncillo/piloncillo.github.io/releases">esté enlace</a>.</p>
 <p>Créditos a los desarrolladores de las herramientas</p>
@@ -2914,7 +2933,7 @@ function testSDResults() {
   if (indexiine != null) {
     document.getElementById("indexiine_a").style.color = "#808080";
   }
-  if (haxchi != null) {
+  if (haxchiIcon != null || haxchi != null) {
     document.getElementById("haxchi_a").style.color = "#808080";
   }
   if (tiramisu != null) {
@@ -3124,6 +3143,7 @@ function updateFormIndexiine() {
 function updateFormHaxchiIcon() {
   var form = document.getElementById("f_haxchi_icon");
   var value = form["default"].value;
+  localStorage.removeItem("haxchi");
 
   if (value != null && value != '') {
     var labels = form.getElementsByTagName("label");
