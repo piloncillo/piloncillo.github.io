@@ -16,7 +16,7 @@
 <link rel="image_src" href="Images/favicon.png"/>
 <style>
 body {
-	color: #f0f0f0;
+	color: #d3d3d3;
 	background-color: #111111;
 	font-family: Helmet, Freesans, sans-serif;
 	font-size: 16px;
@@ -104,24 +104,25 @@ div.warning {
 }
 
 strong.red, em.red, code.red {
-    color: #ffb3b3;
+    color: #d3b3b3;
 }
 
 strong.green, em.green, code.green {
-    color: #b3ffb3;
+    color: #b3d3b3;
 }
 
 strong.blue, em.blue, code.blue {
-    color: #b3b3ff;
+    color: #a3b3d3;
 }
 
 strong.yellow, em.yellow, code.yellow {
-    color: #ffffb3;
+    color: #d3d3b3;
 }
 
 code {
 	font-size: 16px;
     background-color: #2A2A2A;
+	word-break: break-word;
 }
 
 .button {
@@ -301,6 +302,10 @@ img.center {
   text-align: left;
   cursor: pointer;
   outline: none;
+}
+
+#sidenav a.large, .dropdown-btn.large {
+  font-size: 19px;
 }
 
 .dropdown-btn:after {
@@ -486,8 +491,9 @@ a.previous:hover, a.next:hover {
 	  <a href="?s=uninstall_payloadloader" id="uninstall_payloadloader_link" class="tablinks">Tiramisu</a>
     </div>
 	<a href="?s=update_tiramisu" id="update_tiramisu_link">Actualizar Tiramisu</a>
-    <a href="?s=games" id="games_link">Descarga de juegos</a>
+    <a href="?s=games" id="games_link" class="tablinks">Descarga de juegos</a>
     <a href="?s=install_games" id="install_games_link" class="tablinks">Instalación de juegos</a>
+	<a href="?s=block_updates" id="block_updates_link" class="tablinks large">Bloquear actualizaciones</a>
     <a href="?s=custom_haxchi" id="custom_haxchi_link" class="tablinks">Personalizar Haxchi</a>
     <!--a href="?s=config_payload" id="config_payload_link" class="tablinks">Personalizar payload</a-->
     <a href="?s=glossary" id="glossary_link" class="tablinks">Glosario</a>
@@ -537,6 +543,37 @@ a.previous:hover, a.next:hover {
 <div class="bottomnav">
 <a href="?s=tiramisu&p=sd" class="next">Comenzar a instalar Tiramisu &#8250;</a>
 </div>
+</div>
+</div>
+<div id="block_updates" class="tabcontent" style="display:none;">
+<div class="cont">
+<h2>Bloquear las actualizaciones</h2>
+<br>
+<p>Todos los exploits de Wii U actualmente conocidos pueden ser parcheados por una actualización del sistema. Aunque el fin del soporte de la Wii U por parte de Nintendo está próximo es posible que la compañía aún lance actualizaciones para la consola. Las actualizaciones 5.5.3 a 5.5.6 se lanzaron después de que se descontinuó la fabricación de la Wii U, por lo que bloquear las actualizaciones sigue siendo una acción recomendada.</p>
+<p>Si bien Tiramisu ya tiene una funcionalidad de bloqueo de actualizaciones, se recomienda eliminar la carpeta update del sistema de la Wii U para bloquear de manera definitiva las actualizaciones del sistema de consola. Si llegaste a ver una pantalla de advertencia roja mientras Tiramisu iniciaba, quiere decir que la carpeta <em>update</em> aún existe y se recomienda eliminarla utilizando la guía de a continuación, los mismos pasos se aplican para restaurar la carpeta <em>update</em> si deseas actualizar la Wii U posteriormente. Si en un futuro sale una actualización para el sistema de la Wii U, el proceso de descarga de la actualización se detendrá con un código de error <strong class="yellow">105-301X</strong>.</p>
+<br>
+<h3>Eliminar la carpeta update del sistema de la Wii U</h3>
+<div class="info">Este método de bloqueo de actualizaciones es un poco más avanzado que el bloqueo por DNS, utiliza una aplicación <em>homebrew</em> para modificar la carpeta <em>update</em> del sistema y tiene la ventaja de que la funcionalidad de la eShop no estará restringida.</div>
+<ul>
+<li>Conecta la tarjeta SD de la Wii U a una PC (o teléfono inteligente).</li>
+<li>Descarga la versión más actual de <a href="https://github.com/GaryOderNichts/UFDiine/releases">UFDiine</a>.</li>
+<ul>
+<li>Debes descargar el archivo <code>ufdiine.zip</code>.</li>
+</ul>
+<li>Descomprime el archivo <code>ufdiine.zip</code>, copia la carpeta <code>wiiu</code> a la raíz de la tarjeta SD.</li>
+</ul>
+<div class="info">Si la PC (o el teléfono inteligente) te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
+<div class="info">Si la PC (o el teléfono inteligente) te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
+<ul>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U.</li>
+<li>Enciende la Wii U y abre el Homebrew Launcher.</li>
+<li>Navega a través del Homebrew Launcher y carga UFDiine.</li>
+<li>Presiona el <strong class="green">botón A</strong> para eliminar la carpeta de actualización.</li>
+<li>UFDiine debe indicar que <em>Update folder is deleted</em> confirmando que la carpeta <em>update</em> fue eliminada.</li>
+<li>En este punto están completamente bloqueadas las actualizaciones.</li>
+<li>Presiona el <strong class="green">botón HOME</strong> para salir de UFDiine.</li>
+<p><a onclick="window.history.back()">Regresar</a></p>
+</ul>
 </div>
 </div>
 <div id="intro_tiramisu" class="tabcontent" style="display:none;">
@@ -636,8 +673,8 @@ a.previous:hover, a.next:hover {
 <div class="info">Si la PC (o el teléfono inteligente) te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
 <div class="info">Si la PC (o el teléfono inteligente) te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
 <ul>
-<li>Descomprime y copia el contenido del archivo <code>.zip</code> de Tiramisu en la raíz de la tarjeta SD.<br><img src="Images/Tiramisu/wiiu_folder.png" class="auto_size"></li>
-<li>Copia el archivo <code>01_sigpatches.rpx</code> a la carpeta <code>sd:/wiiu/environments/tiramisu/modules/setup</code>.<br><img src="Images/Tiramisu/sigpatches.png" class="auto_size"></li>
+<li>Descomprime y copia el contenido del archivo <code>.zip</code> de Tiramisu en la raíz de la tarjeta SD.<br><img src="Images/Tiramisu/wiiu_folder.png" class="auto_size_li"></li>
+<li>Copia el archivo <code>01_sigpatches.rpx</code> a la carpeta <code>sd:/wiiu/environments/tiramisu/modules/setup</code>.<br><img src="Images/Tiramisu/sigpatches.png" class="auto_size_li"></li>
 </ul>
 <ul>
 <li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
@@ -699,8 +736,8 @@ a.previous:hover, a.next:hover {
 <div class="info">Si la PC (o el teléfono inteligente) te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
 <div class="info">Si la PC (o el teléfono inteligente) te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
 <ul>
-<li>Descomprime y copia el contenido del archivo <code>.zip</code> de Tiramisu en la raíz de la tarjeta SD.<br><img src="Images/Tiramisu/wiiu_folder.png" class="auto_size"></li>
-<li>Copia el archivo <code>01_sigpatches.rpx</code> a la carpeta <code>sd:/wiiu/environments/tiramisu/modules/setup</code>.<br><img src="Images/Tiramisu/sigpatches.png" class="auto_size"></li>
+<li>Descomprime y copia el contenido del archivo <code>.zip</code> de Tiramisu en la raíz de la tarjeta SD.<br><img src="Images/Tiramisu/wiiu_folder.png" class="auto_size_li"></li>
+<li>Copia el archivo <code>01_sigpatches.rpx</code> a la carpeta <code>sd:/wiiu/environments/tiramisu/modules/setup</code>.<br><img src="Images/Tiramisu/sigpatches.png" class="auto_size_li"></li>
 </ul>
 <ul>
 <li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
@@ -755,11 +792,11 @@ a.previous:hover, a.next:hover {
 <ul>
 <li>Enciende la consola y accede al menú de Wii U. Asegúrate de que la consola tenga acceso a internet para este paso.</li>
 <li>Abre el navegador de internet de la consola.</li>
-<li>Introduce la URL: <a href="http://u.wiidb.de">u.wiidb.de</a> (puedes consultar paginas alternativas <a href="?s=webhack&p=exploit">aquí</a>).<br><img src="Images/Browser_Exploit/url_u_wiidb_de.jpg" class="auto_size"></li>
-<li>Al cargar la página por completo mostrará en grande el enlace <strong class="blue">HAXX</strong>.<br><img src="Images/Browser_Exploit/u_wiidb_de.jpg" class="auto_size"></li>
+<li>Introduce la URL: <a href="http://u.wiidb.de">u.wiidb.de</a> (puedes consultar paginas alternativas <a href="?s=webhack&p=exploit">aquí</a>).<br><img src="Images/Browser_Exploit/url_u_wiidb_de.jpg" class="auto_size_li"></li>
+<li>Al cargar la página por completo mostrará en grande el enlace <strong class="blue">HAXX</strong>.<br><img src="Images/Browser_Exploit/u_wiidb_de.jpg" class="auto_size_li"></li>
 <li><strong class="green">Toca el enlace HAXX</strong>, cuando la pantalla del GamePad se ponga completamente en blanco presiona el botón B, <strong class="green">mantén presionado el botón B</strong> hasta que salga un menú (<em>Please choose your payload</em>).</li>
 <li>Acceder a ese menú es necesario para poder hacer el respaldo de la NAND. Si no lograste entrar a ese menú revisa <a href="#notas_nbbe">las notas de abajo</a>.</li>
-<li>Ya en el menú <em>Please choose your payload</em> usa las flechas del D-Pad del GamePad para <strong class="green">seleccionar</strong> <code class="green">nanddumper</code> y presiona el <strong class="green">botón A</strong> para iniciar la aplicación.<br><img src="Images/NAND_Dumper/choose_payload.jpg" class="auto_size"></li>
+<li>Ya en el menú <em>Please choose your payload</em> usa las flechas del D-Pad del GamePad para <strong class="green">seleccionar</strong> <code class="green">nanddumper</code> y presiona el <strong class="green">botón A</strong> para iniciar la aplicación.<br><img src="Images/NAND_Dumper/choose_payload.jpg" class="auto_size_li"></li>
 </ul>
 <div class="bottomnav">
 <a href="?s=tiramisu&p=sd" class="previous">&#8249; Preparar la tarjeta SD</a><a href="?s=tiramisu&p=nand_backup" class="next">Hacer la copia de seguridad de la NAND &#8250;</a>
@@ -813,7 +850,7 @@ a.previous:hover, a.next:hover {
 <br>
 <p>En el caso de que algo salga muy mal restaurar la copia de la memoria interna puede solucionarlo.</p>
 <ul>
-<li>En este punto debes estar dentro de la aplicación NAND Dumper.<br><img src="Images/NAND_Dumper/menu.jpg" class="auto_size"></li>
+<li>En este punto debes estar dentro de la aplicación NAND Dumper.<br><img src="Images/NAND_Dumper/menu.jpg" class="auto_size_li"></li>
 <li>Usa las flechas del D-Pad del Wii U GamePad para ingresar la configuración deseada.</li>
 <ul>
 <li>Dump SLC (528MB): yes</li>
@@ -834,11 +871,11 @@ a.previous:hover, a.next:hover {
 <div class="warning">El respaldo de la memoria MLC es completamente opcional, no es necesario para restaurar la consola en caso de algún problema. Si la consola es el modelo de 8 GB se requiere una tarjeta SD de 16 GB para completar el respaldo. Si la consola es el modelo de 32 GB se requiere una tarjeta SD de 64 GB para completar el respaldo.</div>
 <ul>
 <li>Presiona el <strong class="green">botón A</strong> para iniciar el proceso de copia.</li>
-<li>Aparentemente la consola carga el menú de Wii U, pero en unos instantes mostrará el proceso de copiado.<br><img src="Images/NAND_Dumper/progress_slc.jpg" class="auto_size"></li>
+<li>Aparentemente la consola carga el menú de Wii U, pero en unos instantes mostrará el proceso de copiado.<br><img src="Images/NAND_Dumper/progress_slc.jpg" class="auto_size_li"></li>
 </ul>
 <div class="info">El copiado de SLC, SLCCMPT, OTP y SEEPROM en conjunto tarda menos de 5 minutos con una tarjeta SD clase 10.</div>
 <ul>
-<li>Cuando se complete el proceso la consola cargará el menú de Wii U.<br><img src="Images/NAND_Dumper/complete.jpg" class="auto_size"></li>
+<li>Cuando se complete el proceso la consola cargará el menú de Wii U.<br><img src="Images/NAND_Dumper/complete.jpg" class="auto_size_li"></li>
 <li>Apaga la consola, saca la tarjeta SD de la Wii U y ponla a tu PC (o teléfono insteligente) para copiar archivos.</li>
 <li>Copia los archivos <code>otp.bin</code>, <code>seeprom.bin</code>, <code>slc.bin</code> y <code>slccmpt.bin</code> de la raíz de la tarjeta SD a una ubicación segura en tu dispositivo.</li>
 <li>Si elegiste realizar la copia de MLC, copia los archivos <code>mlc.bin.part##</code> de la raíz de la tarjeta SD a una ubicación segura en tu dispositivo.</li>
@@ -898,19 +935,19 @@ a.previous:hover, a.next:hover {
 <li>En este punto debes tener la Wii U apagada con la tarjeta SD introducida.</li>
 <li>Enciende la consola y accede al menú de Wii U. Asegúrate de que la consola tenga acceso a internet para este paso.</li>
 <li>Abre el navegador de internet de la consola.</li>
-<li>Introduce la URL: <a href="http://u.wiidb.de">u.wiidb.de</a> (puedes consultar paginas alternativas <a href="?s=webhack&p=exploit">aquí</a>).<br><img src="Images/Browser_Exploit/url_u_wiidb_de.jpg" class="auto_size"></li>
-<li>Al cargar la página por completo mostrará en grande el enlace <strong class="blue">HAXX</strong>.<br><img src="Images/Browser_Exploit/u_wiidb_de.jpg" class="auto_size"></li>
+<li>Introduce la URL: <a href="http://u.wiidb.de">u.wiidb.de</a> (puedes consultar paginas alternativas <a href="?s=webhack&p=exploit">aquí</a>).<br><img src="Images/Browser_Exploit/url_u_wiidb_de.jpg" class="auto_size_li"></li>
+<li>Al cargar la página por completo mostrará en grande el enlace <strong class="blue">HAXX</strong>.<br><img src="Images/Browser_Exploit/u_wiidb_de.jpg" class="auto_size_li"></li>
 <li><strong class="green">Toca el enlace HAXX</strong>, cuando la pantalla del GamePad se ponga completamente en blanco presiona el botón X, <strong class="green">mantén presionado el botón X</strong> hasta que salga el menú <em>EnvironmentLoader</em>.</li>
 <li>Acceder a ese menú es necesario para instalar <em>PayloadLoader</em>. Si no lograste entrar a ese menú revisa <a href="#notas_pl">las notas de abajo</a>.</li>
-<li>Navega por el menú usando las flechas del D-Pad del GamePad, <strong class="green">selecciona</strong> <em class="green">installer</em> como entorno y presiona el <strong class="green">botón A</strong> para iniciarlo.<br><img src="Images/EnvironmentLoader/installer.jpg" class="auto_size"></li>
-<li>Ahora debes estar en el <em>PayloadLoader Installer</em>, con la opción <em class="green">Check</em> seleccionada.<br><img src="Images/PayloadLoader_Installer/check.jpg" class="auto_size"></li>
+<li>Navega por el menú usando las flechas del D-Pad del GamePad, <strong class="green">selecciona</strong> <em class="green">installer</em> como entorno y presiona el <strong class="green">botón A</strong> para iniciarlo.<br><img src="Images/EnvironmentLoader/installer.jpg" class="auto_size_li"></li>
+<li>Ahora debes estar en el <em>PayloadLoader Installer</em>, con la opción <em class="green">Check</em> seleccionada.<br><img src="Images/PayloadLoader_Installer/check.jpg" class="auto_size_li"></li>
 <li>Presiona el <strong class="green">botón A</strong> para verificar si es posible instalar <em>PayloadLoader</em>.</li>
 <li>El instalador debe indicarte que <em>PayloadLoader</em> se puede instalar en la aplicación <em>Health and Safety Information</em> (Información sobre salud y seguridad).</li>
-<li>La opción <em class="green">Install / Update</em> debe estar seleccionada.<br><img src="Images/PayloadLoader_Installer/install_update.jpg" class="auto_size"></li>
+<li>La opción <em class="green">Install / Update</em> debe estar seleccionada.<br><img src="Images/PayloadLoader_Installer/install_update.jpg" class="auto_size_li"></li>
 <li>Presiona el <strong class="green">botón A</strong> para instalar <em>PayloadLoader</em>.</li>
 <li>El instalador te pregunta si estas REALMENTE seguro de querer instalar <em>PayloadLoader</em>.</li>
-<li>Usa las flechas del D-Pad del GamePad para seleccionar <em class="green">Install</em> y presiona el <strong class="green">botón A</strong> para iniciar la instalación.<br><img src="Images/PayloadLoader_Installer/install.jpg" class="auto_size"></li>
-<li>Después de que la instalación termine, presiona <strong class="green">botón A</strong> para apagar la consola.<br><img src="Images/PayloadLoader_Installer/installed.jpg" class="auto_size"></li>
+<li>Usa las flechas del D-Pad del GamePad para seleccionar <em class="green">Install</em> y presiona el <strong class="green">botón A</strong> para iniciar la instalación.<br><img src="Images/PayloadLoader_Installer/install.jpg" class="auto_size_li"></li>
+<li>Después de que la instalación termine, presiona <strong class="green">botón A</strong> para apagar la consola.<br><img src="Images/PayloadLoader_Installer/installed.jpg" class="auto_size_li"></li>
 </ul>
 <div class="bottomnav">
 <a href="?s=tiramisu&p=nand_backup" class="previous">&#8249; Copia de la NAND</a><a href="?s=tiramisu&p=autobooting" class="next">Autobooting PayloadLoader &#8250;</a>
@@ -965,17 +1002,17 @@ a.previous:hover, a.next:hover {
 <h3>Instrucciones</h3>
 <ul>
 <li>En este punto debes tener la Wii U apagada con la tarjeta SD introducida.</li>
-<li>Enciende la consola y accede al menú de Wii U.<br><img src="Images/Identificar/isss.jpg" class="auto_size"></li>
+<li>Enciende la consola y accede al menú de Wii U.<br><img src="Images/Identificar/isss.jpg" class="auto_size_li"></li>
 <li><strong class="green">Abre Información sobre salud y seguridad</strong> y presiona el botón X, <strong class="green">mantén presionado el botón X</strong> hasta que salga el menú <em>EnvironmentLoader</em>.</li>
-<li>Navega por el menú usando las flechas del D-Pad del GamePad, <strong class="green">selecciona</strong> <em class="green">installer</em> como entorno y presiona el <strong class="green">botón A</strong> para iniciarlo.<br><img src="Images/EnvironmentLoader/installer.jpg" class="auto_size"></li>
-<li>Ahora debes estar en el <em>PayloadLoader Installer</em>, con la opción <em class="green">Check</em> seleccionada.<br><img src="Images/PayloadLoader_Installer/check.jpg" class="auto_size"></li>
+<li>Navega por el menú usando las flechas del D-Pad del GamePad, <strong class="green">selecciona</strong> <em class="green">installer</em> como entorno y presiona el <strong class="green">botón A</strong> para iniciarlo.<br><img src="Images/EnvironmentLoader/installer.jpg" class="auto_size_li"></li>
+<li>Ahora debes estar en el <em>PayloadLoader Installer</em>, con la opción <em class="green">Check</em> seleccionada.<br><img src="Images/PayloadLoader_Installer/check.jpg" class="auto_size_li"></li>
 <li>Presiona el <strong class="green">botón A</strong> para verificar.</li>
 <li>El instalador debe indicar que <em>PayloadLoader</em> está instalado en la aplicación <em>Health and Safety Information</em> (Información sobre salud y seguridad).</li>
-<li>Usa las flechas del D-Pad del GamePad para seleccionar <em class="green">Boot options</em> y presiona el <strong class="green">botón A</strong>.<br><img src="Images/PayloadLoader_Installer/boot_options.jpg" class="auto_size"></li>
+<li>Usa las flechas del D-Pad del GamePad para seleccionar <em class="green">Boot options</em> y presiona el <strong class="green">botón A</strong>.<br><img src="Images/PayloadLoader_Installer/boot_options.jpg" class="auto_size_li"></li>
 <li>El instalador debe indicar que el sistema de la Wii U actualmente inicia con la aplicación <em>Wii U Menu</em>.</li>
 <li>La opción <em class="green">Switch to PayloadLoader</em> debe estar seleccionada.</li>
-<li>Presiona el <strong class="green">botón A</strong>. Esto hará que <em>PayloadLoader</em> sea la aplicación con la que inicia la Wii U.<br><img src="Images/PayloadLoader_Installer/switch_to_payloadloader.jpg" class="auto_size"></li>
-<li>Después de que la instalación termine, presiona <strong class="green">botón A</strong> para apagar la consola.<br><img src="Images/PayloadLoader_Installer/boot_updated.jpg" class="auto_size"></li>
+<li>Presiona el <strong class="green">botón A</strong>. Esto hará que <em>PayloadLoader</em> sea la aplicación con la que inicia la Wii U.<br><img src="Images/PayloadLoader_Installer/switch_to_payloadloader.jpg" class="auto_size_li"></li>
+<li>Después de que la instalación termine, presiona <strong class="green">botón A</strong> para apagar la consola.<br><img src="Images/PayloadLoader_Installer/boot_updated.jpg" class="auto_size_li"></li>
 </ul>
 <p>Ahora el <em>PayloadLoader</em> arrancará automáticamente cada que enciendas la Wii U.</p>
 <div class="bottomnav">
@@ -1024,11 +1061,11 @@ a.previous:hover, a.next:hover {
 <ul>
 <li>Si activaste el <strong class="blue">arranque automático</strong> del <em>PayloadLoader</em>: <strong class="green">Enciende la consola</strong> y presiona el botón X, <strong class="green">mantén presionado el botón X</strong> hasta que salga el <em>EnvironmentLoader</em>.</li>
 <li>Si tu consola tiene <em>PayloadLoader</em> de <strong class="yellow">arranque manual</strong>: Enciende la consola, accede al menú de Wii U, <strong class="green">abre Información sobre salud y seguridad</strong> y <strong class="green">mantén presionado el botón X</strong> del GamePad para abrir el <em>EnvironmentLoader</em>.</li>
-<li>Navega por el menú usando las flechas del D-Pad del GamePad, <strong class="green">selecciona</strong> <em class="green">tiramisu</em> como entorno, presiona el <strong class="green">botón Y</strong> para configurarlo como el entorno predeterminado y luego presiona el <strong class="green">botón A</strong> para abrir Tiramisu.<br><img src="Images/EnvironmentLoader/default_tiramisu.jpg" class="auto_size"></li>
-<li>Si te aparece un mensaje de alerta acerca del <em>update folder</em> (carpeta <em>update</em>) quiere decir que tu consola no está bloqueando las actualizaciones del sistema apropiadamente.<br><img src="Images/Tiramisu/warning.jpg" class="auto_size"></li>
+<li>Navega por el menú usando las flechas del D-Pad del GamePad, <strong class="green">selecciona</strong> <em class="green">tiramisu</em> como entorno, presiona el <strong class="green">botón Y</strong> para configurarlo como el entorno predeterminado y luego presiona el <strong class="green">botón A</strong> para abrir Tiramisu.<br><img src="Images/EnvironmentLoader/default_tiramisu.jpg" class="auto_size_li"></li>
+<li>Si te aparece un mensaje de alerta acerca del <em>update folder</em> (carpeta <em>update</em>) quiere decir que tu consola no está bloqueando las actualizaciones del sistema apropiadamente.<br><img src="Images/Tiramisu/warning.jpg" class="auto_size_li"></li>
 <li>Presiona el <strong class="green">botón B</strong> para no volver a ver el mensaje de alerta.</li>
 <li>Consulta la información de <a href="?s=block_updates">aquí</a> si quieres bloquear completamente las actualizaciones del sistema de la consola.</li>
-<li>Ahora debes estar en el menú de Tiramisu <em>Boot Selector</em>, con la opción <em class="green">Wii U Menu</em> seleccionada, presiona el <strong class="green">botón Y</strong> para configurar dicha opción como predeterminada y luego presiona el <strong class="green">botón A</strong> para abrir el menú de Wii U.<br><img src="Images/Tiramisu/autoboot_wiiu_menu.jpg" class="auto_size"></li>
+<li>Ahora debes estar en el menú de Tiramisu <em>Boot Selector</em>, con la opción <em class="green">Wii U Menu</em> seleccionada, presiona el <strong class="green">botón Y</strong> para configurar dicha opción como predeterminada y luego presiona el <strong class="green">botón A</strong> para abrir el menú de Wii U.<br><img src="Images/Tiramisu/autoboot_wiiu_menu.jpg" class="auto_size_li"></li>
 <li>En este punto ya finalizaste la instalación de <em>EnvironmentLoader</em>, <em>PayloadLoader</em> y Tiramisu, pero aún falta añadir aplicaciones y módulos que agregan funcionalidad al "hack" de la consola. <strong class="red">Toma nota de los siguientes cuadros de información para usar correctamente Tiramisu</strong>.</li>
 </ul>
 <div class="info">Con el entorno de Tiramisu cargado en la consola debes abrir el Editor de Mii para acceder al <em>Homebrew Launcher</em>. El <em>Homebrew Launcher</em> del Editor de Mii está hecho para funcionar con Tiramisu, otros <em>Homebrew Launcher</em> no están garantizados para funcionar correctamente con Tiramisu, no se recomienda usarlos.</div>
@@ -1109,18 +1146,18 @@ a.previous:hover, a.next:hover {
 </ul>
 <h3>Revisa que:</h3>
 <ul>
-<li>La aplicación <strong>WUP Installer GX2</strong> se encuentre en <code>sd:/wiiu/apps/wup_installer_gx2/wup_installer_gx2.elf</code>.<br><img src="Images/Tiramisu/wup_installer_gx2.png" class="auto_size"></li>
-<li>La aplicación <strong>HB App Store</strong> se encuentre en <code>sd:/wiiu/apps/appstore/appstore.rpx</code>.<br><img src="Images/Tiramisu/appstore.png" class="auto_size"></li>
-<li>La aplicación <strong>SaveMii mod WUT Port</strong> se encuentre en <code>sd:/wiiu/apps/SaveMiiModWUTPort/savemii.rpx</code>.<br><img src="Images/Tiramisu/savemii.png" class="auto_size"></li>
-<li>La aplicación <strong>Bloopair pair menu</strong> se encuentre en <code>sd:/wiiu/apps/Bloopair_pair_menu/Bloopair_pair_menu.rpx</code>.<br><img src="Images/Tiramisu/bloopair_pair_menu.png" class="auto_size"></li>
-<li>La aplicación <strong>NUSspli</strong> se encuentre en <code>sd:/wiiu/apps/NUSspli/NUSspli.rpx</code>.<br><img src="Images/Tiramisu/nusspli.png" class="auto_size"></li>
+<li>La aplicación <strong>WUP Installer GX2</strong> se encuentre en <code>sd:/wiiu/apps/wup_installer_gx2/wup_installer_gx2.elf</code>.<br><img src="Images/Tiramisu/wup_installer_gx2.png" class="auto_size_li"></li>
+<li>La aplicación <strong>HB App Store</strong> se encuentre en <code>sd:/wiiu/apps/appstore/appstore.rpx</code>.<br><img src="Images/Tiramisu/appstore.png" class="auto_size_li"></li>
+<li>La aplicación <strong>SaveMii mod WUT Port</strong> se encuentre en <code>sd:/wiiu/apps/SaveMiiModWUTPort/savemii.rpx</code>.<br><img src="Images/Tiramisu/savemii.png" class="auto_size_li"></li>
+<li>La aplicación <strong>Bloopair pair menu</strong> se encuentre en <code>sd:/wiiu/apps/Bloopair_pair_menu/Bloopair_pair_menu.rpx</code>.<br><img src="Images/Tiramisu/bloopair_pair_menu.png" class="auto_size_li"></li>
+<li>La aplicación <strong>NUSspli</strong> se encuentre en <code>sd:/wiiu/apps/NUSspli/NUSspli.rpx</code>.<br><img src="Images/Tiramisu/nusspli.png" class="auto_size_li"></li>
 </ul>
 <br>
 <h3 id="modules">Añadir módulos a Tiramisu</h3>
 <p>Los módulos deben estar hechos explícitamente para ser usados en el entorno de Tiramisu, tienen formato <code>.rpx</code>.</p>
 <ul>
 <li>Si seguiste las instrucciones para añadir aplicaciones al Homebrew Launcher debes tener el archivo <code>Bloopair_v#.#.#.zip</code></li>
-<li>Descomprime el archivo <code>Bloopair_v#.#.#.zip</code> y copia el archivo <code>30_bloopair.rpx</code> a la carpeta <code>sd:/wiiu/environments/tiramisu/modules/setup</code>.<br><img src="Images/Tiramisu/bloopair.png" class="auto_size"></li>
+<li>Descomprime el archivo <code>Bloopair_v#.#.#.zip</code> y copia el archivo <code>30_bloopair.rpx</code> a la carpeta <code>sd:/wiiu/environments/tiramisu/modules/setup</code>.<br><img src="Images/Tiramisu/bloopair.png" class="auto_size_li"></li>
 </ul>
 <div class="info">El archivo <code>30_bloopair.rpx</code> es Bloopair en sí mismo. Cargará junto con el resto de módulos cuando inicie el entorno de Tiramisu.</div>
 <br>
@@ -2032,7 +2069,7 @@ a.previous:hover, a.next:hover {
 <div class="info">Si la PC (o el teléfono inteligente) te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
 <div class="info">Si la PC (o el teléfono inteligente) te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
 <ul>
-<li>Descomprime y copia el contenido del archivo <code>.zip</code> de Tiramisu en la raíz de la tarjeta SD.<br><img src="Images/Tiramisu/wiiu_folder.png" class="auto_size"></li>
+<li>Descomprime y copia el contenido del archivo <code>.zip</code> de Tiramisu en la raíz de la tarjeta SD.<br><img src="Images/Tiramisu/wiiu_folder.png" class="auto_size_li"></li>
 </ul>
 <ul>
 <li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
@@ -2760,7 +2797,7 @@ a.previous:hover, a.next:hover {
 <div class="cont">
 <h2>Acerca de esta guía</h2>
 <br>
-<h3>Versión: 4.1 (20 de septiembre de 2022)</h3>
+<h3>Versión: 4.2 (28 de septiembre de 2022)</h3>
 <p>Esta guía fue hecha por <strong>Fran AC</strong> basado en la guía de los miembros de <a href="https://wiiu.hacks.guide/#/about">Nintendo Homebrew Discord Server</a>.</p>
 <p>Puedes descargar la guía completa desde <a href="https://github.com/piloncillo/piloncillo.github.io/releases">esté enlace</a>.</p>
 <p>Créditos a los desarrolladores de las herramientas</p>
@@ -2929,6 +2966,7 @@ function contentResize() {
   var contents = document.getElementsByClassName("cont");
   const availableWidth = window.innerWidth - sidebarWidth - scrollBarWidth;
   var imgs = document.getElementsByClassName("auto_size");
+  var imgs_li = document.getElementsByClassName("auto_size_li");
   var vids = document.getElementsByClassName("auto_size_video");
 
   if (availableWidth < 900) {
@@ -2939,6 +2977,11 @@ function contentResize() {
       imgs[i].style.width = imgs[i].naturalWidth + "px";
       if (parseInt(imgs[i].style.width) > availableWidth)
 	    imgs[i].style.width = (availableWidth - 50) + "px";
+	}
+	for (i = 0; i < imgs_li.length; i++) {
+      imgs_li[i].style.width = imgs_li[i].naturalWidth + "px";
+      if (parseInt(imgs_li[i].style.width) > availableWidth - 90)
+	    imgs_li[i].style.width = (availableWidth - 90) + "px";
 	}
 	for (i = 0; i < vids.length; i++) {
       vids[i].style.width = vids[i].videoWidth + "px";
@@ -2953,6 +2996,11 @@ function contentResize() {
       imgs[i].style.width = imgs[i].naturalWidth + "px";
       if (parseInt(imgs[i].style.width) > 870)
 		imgs[i].style.width = "870px";
+    }
+	for (i = 0; i < imgs_li.length; i++) {
+      imgs_li[i].style.width = imgs_li[i].naturalWidth + "px";
+      if (parseInt(imgs_li[i].style.width) > 870)
+		imgs_li[i].style.width = "870px";
     }
   }
 }
