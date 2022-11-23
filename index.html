@@ -563,15 +563,18 @@ a.previous:hover, a.next:hover {
 </ul>
 <li>Descomprime el archivo <code>ufdiine.zip</code>, copia la carpeta <code>wiiu</code> a la raíz de la tarjeta SD.</li>
 </ul>
-<div class="info">Si la PC (o el teléfono inteligente) te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
-<div class="info">Si la PC (o el teléfono inteligente) te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
 <ul>
 <li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U.</li>
 <li>Enciende la Wii U y abre el Homebrew Launcher.</li>
 <li>Navega a través del Homebrew Launcher y carga UFDiine.</li>
 <li>Presiona el <strong class="green">botón A</strong> para eliminar la carpeta de actualización.</li>
 <li>UFDiine debe indicar que <em>Update folder is deleted</em> confirmando que la carpeta <em>update</em> fue eliminada.</li>
-<li>En este punto están completamente bloqueadas las actualizaciones.</li>
+<ul>
+<li>UFDiine indica que <em>Update folder exists</em> cuando la carpeta <em>update</em> es restaurada.</li>
+</ul>
+<li>Con <em>Update folder is deleted</em> están completamente bloqueadas las actualizaciones.</li>
 <li>Presiona el <strong class="green">botón HOME</strong> para salir de UFDiine.</li>
 <p><a onclick="window.history.back()">Regresar</a></p>
 </ul>
@@ -659,27 +662,29 @@ a.previous:hover, a.next:hover {
 <h2>Actualizar Tiramisu</h2>
 <br>
 <p>Tiramisu es extremadamente simple de actualizar, sólo debes descargar los archivos más recientes y remplazar los anteriores en la tarjeta SD.</p>
-<h3>Necesitas</h3>
+<h3>Necesitas los archivos más recientes de Tiramisu</h3>
 <ul>
-<li>Los archivos más recientes de <a href="https://tiramisu.foryour.cafe/">Tiramisu para tu café</a>.</li>
+<li>Este enlace lleva al sitio oficial: <a href="https://tiramisu.foryour.cafe/">Tiramisu para tu café</a>.</li>
 <ul>
-<li>Haz clic en el botón <em class="green">Download Tiramisu</em>, se descargará un solo archivo <code>.zip</code>.</li>
+<li>Dentro del sitio debes tocar en el botón <em class="green">Download Tiramisu</em> para iniciar la descarga de un archivo <code>.zip</code>.</li>
 </ul>
-<li>La versión más actual del <a href="https://github.com/marco-calautti/SigpatchesModuleWiiU/releases">módulo Sigpatches</a>.</li>
+<li>Además, necesitas la versión más actual del <a href="https://github.com/marco-calautti/SigpatchesModuleWiiU/releases">módulo Sigpatches</a>.</li>
 <ul>
-<li>Debes descargar el archivo <code>01_sigpatches.rpx</code>.</li>
+<li>Únicamente necesitas el archivo <code>01_sigpatches.rpx</code>.</li>
 </ul>
 </ul>
 <h3>Instalación</h3>
-<div class="info">Si la PC (o el teléfono inteligente) te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
-<div class="info">Si la PC (o el teléfono inteligente) te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
 <ul>
-<li>Descomprime y copia el contenido del archivo <code>.zip</code> de Tiramisu en la raíz de la tarjeta SD.<br><img src="Images/Tiramisu/wiiu_folder.png" class="auto_size_li"></li>
+<li>Descomprime el archivo <code>.zip</code> de Tiramisu.</li>
+<li>Copia la carpeta <code>wiiu</code> y el archivo <code>versions.json</code> a la raíz de la tarjeta SD.</li>
+<li>Tu tarjeta SD debe quedar como esta imagen:<br><img src="Images/Tiramisu/wiiu_folder.png" class="auto_size_li"></li>
 <li>Copia el archivo <code>01_sigpatches.rpx</code> a la carpeta <code>sd:/wiiu/environments/tiramisu/modules/setup</code>.<br><img src="Images/Tiramisu/sigpatches.png" class="auto_size_li"></li>
 </ul>
 <ul>
 <li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
-<li>En este punto ya finalizaste la actualización de <em>EnvironmentLoader</em>, <em>PayloadLoader</em> y Tiramisu. La próxima vez que cargue el entorno de Tiramisu cargará con los archivos más actuales.</li>
+<li>En este punto ya finalizaste la actualización de <em>EnvironmentLoader</em> y Tiramisu. La próxima vez que cargue el entorno de Tiramisu cargará con los archivos más actuales.</li>
 <p><a href="?s=main">Inicio</a></p>
 </ul>
 </div>
@@ -2716,19 +2721,44 @@ a.previous:hover, a.next:hover {
 <div class="cont">
 <h2>Glosario</h2>
 <br>
-<p><strong class="blue">Hack</strong>: Modificación del funcionamiento de un objeto o sistema. Para realizar un <strong>hack</strong> en la Wii U se requiere ejecutar un <strong class="green">exploit</strong> que permita cargar un <strong class="red">CFW</strong>.</p>
-<p><strong class="blue">Exploit</strong>: Vulnerabilidad de seguridad explotable (aprovechable) de un sistema informático. Ejemplos de <strong>exploits</strong> de Wii U son: <em class="green">JsTypeHax</em>, <em class="green">MK8 exploit</em>, <em class="green">BluUBomb</em>, <em class="green">Contenthax</em> y <em class="green">FailST</em> (es un tipo de Contenthax 2.0).</p>
-<p><strong class="blue">Punto de entrada</strong>: Ejecuta un exploit que permite acceder a los recursos de un sistema. Ejemplos de <strong>puntos de entrada</strong> de Wii U son: <em class="yellow">Webhack</em> (usa una version mejorada de <em class="green">JsTypeHax</em>), <em class="yellow">Indexiine</em> (usa una version mejorada de <em class="green">JsTypeHax</em>), <em class="yellow">Haxchi</em> (es un tipo de <em class="green">Contenthax</em>), <em class="yellow">Coldboot Haxchi</em> (es un derivado de <em class="yellow">Haxchi</em>) y <em class="yellow">PayloadLoader</em> (es una version de <em class="green">FailST</em>).</p>
-<p><strong class="blue">Firmware</strong>: Software que controla directamente al hardware. Sobre el firmware se construyen los drivers, programas de usuario o el sistema operativo de un sistema informático.</p>
-<p><strong class="blue">Custom Firmware (CFW)</strong>: Firmware personalizado, por lo regular hecho por un tercero, para habilitar o agregar funciones no soportadas por el firmware del fabricante del hardware. Ejemplos de <strong>CFW</strong> para Wii U son: <em class="red">Mocha CFW</em>, <em class="red">SigPatcher</em>, <em class="red">IOSUHAX</em>, <em class="red">Haxchi CFW</em>, <em class="red">módulo Mocha mod</em> y <em class="red">módulo Sigpatches</em>.</p>
+<p><strong class="blue">Hack</strong>: Modificación del funcionamiento de un objeto o sistema. Para realizar un hack en la Wii U se requiere ejecutar un <strong class="green">exploit</strong> que permita cargar un <strong class="red">CFW</strong> o que permita cargar un <strong class="red">Environment</strong>.</p>
+<p><strong class="blue">Exploit</strong>: Vulnerabilidad de seguridad explotable (aprovechable) de un sistema informático. Ejemplos de <strong class="green">exploits</strong> de Wii U son:</p>
+<ul>
+<li><a href="https://gbatemp.net/threads/webhack-on-5-5-2-jstypehax.480938/">JsTypeHax</a>.</li>
+<li><a href="https://gbatemp.net/threads/contenthax-a-vulnerability-in-wii-u-file-system-verification.447688/">Contenthax</a>.</li>
+<li><a href="https://maschell.github.io/homebrew/2020/12/02/failst.html">FailST</a> (permite instalar un tipo de Contenthax 2.0).</li>
+<li><a href="https://maschell.github.io/homebrew/2020/02/11/mk8-exploit.html">MK8 exploit</a>.</li>
+<li><a href="https://gbatemp.net/threads/bluubomb-a-primary-wii-u-entrypoint-via-bluetooth.588522/">BluUBomb</a>.</li>
+</ul>
+<p><strong class="blue">Punto de entrada</strong>: Es el procedimiento que tienes que hacer cada que enciendes la Wii U para establecer el hack en la consola. El punto de entrada ejecuta un <strong class="green">exploit</strong> que permite acceder a los recursos de un sistema. Ejemplos de puntos de entrada de Wii U son:</p>
+<ul>
+<li><a href="https://gbatemp.net/threads/more-stable-webhack-for-5-5-2-5-5-3-5-5-4-5-5-5-released.528757/">Webhack</a> (usa una versión mejorada de JsTypeHax).</li>
+<li><a href="https://gbatemp.net/threads/release-indexiine-installer.561332/">Indexiine</a> (usa una versión mejorada de JsTypeHax).</li>
+<li><a href="https://gbatemp.net/threads/haxchi-v2-5u2-a-persistent-wiiu-hack.451071/">Haxchi</a> (es un tipo de Contenthax).</li>
+<li><a href="https://gbatemp.net/threads/cbhc-v1-6-coldboot-haxchi-cfw.452615/">Coldboot Haxchi</a> (es un derivado de Haxchi).</li>
+<li><a href="https://github.com/wiiu-env/PayloadLoaderInstaller">PayloadLoader</a> (es un tipo de Contenthax 2.0, factible gracias a FailST).</li>
+<li><a href="https://github.com/wiiu-env/PayloadLoaderInstaller">Autobooting PayloadLoader</a> (es un derivado de PayloadLoader).</li>
+</ul>
+<p><strong class="blue">Firmware (FW)</strong>: Software que controla directamente al hardware. Es la parte del sistema de la consola que se encarga de las funciones básicas, por ejemplo, la validación de tickets de los juegos. Sobre el firmware se construyen los drivers, programas de usuario o el sistema operativo de la consola.</p>
+<p><strong class="blue">Custom Firmware (CFW)</strong>: Firmware personalizado (custom) hecho por desarrolladores independientes, permite habilitar o agregar funciones no soportadas por el firmware original admitiendo, por ejemplo, validar tickets falsos. Ejemplos de <strong class="red">CFW</strong> para Wii U son:</p>
+<ul>
+<li><a href="https://gbatemp.net/threads/mocha-cfw-the-sweet-chocolate-to-your-latte.452940/">Mocha CFW</a>.</li>
+<li><a href="https://github.com/dimok789/sign_patcher">SigPatcher</a>.</li>
+<li><a href="https://gbatemp.net/threads/what-is-iosuhax.481166/">IOSUHAX</a>.</li>
+<li><a href="https://gbatemp.net/threads/haxchi-v2-5u2-a-persistent-wiiu-hack.451071/">Haxchi CFW</a> (Haxchi comes with its own sysnand CFW included).</li>
+</ul>
+<p><strong class="blue">Environment (entorno)</strong>: En Wii U se refiere a las aplicaciones que se cargan y ejecutan para dar funcionalidad a la consola. Por ejemplo, el entorno por defecto de Wii U consiste en su firmware de original, aplicaciones oficiales en segundo plano y el menú de Wii U. Un entorno hecho por desarrolladores independientes puede cumplir el mismo propósito que un CFW, pero además cuenta con módulos, plugins y bibliotecas que trabajan en conjunto ofreciendo funciones que el sistema de la consola no ofrece originalmente. Ejemplos de <strong class="red">Environments</strong> para Wii U son:</p>
+<ul>
+<li><a href="https://gbatemp.net/threads/release-tiramisu-environment-free-cbhc.605381/">Tiramisu</a>.</li>
+<li><a href="https://gbatemp.net/threads/release-aroma-environment-for-wii-u.618474/">Aroma</a>.</li>
+</ul>
 <p><strong class="blue">Homebrew</strong>: Software "hecho en casa", suele requerir de un hack para ser ejecutado ya que no cuenta con certificación del fabricante del hardware.</p>
-<p><strong class="blue">Environment (Entorno)</strong>: En Wii U se refiere a las aplicaciones que se cargan y ejecutan para dar funcionalidad a la consola. Por ejemplo, el entorno por defecto de Wii U consiste en su firmware de fábrica, aplicaciones oficiales en segundo plano y el menú de Wii U, mientras que un entorno homebrew consistiría en un custom firmware, aplicaciones homebrew (como Bloopair) en segundo plano y menús adicionales.</p>
 <p><strong class="blue">Payload</strong>: Carga útil o código que se ejecuta al provocar un exploit, sin la carga útil no se realiza ninguna acción. Un mismo exploit puede utilizar varios payloads y un payload puede ser utilizado por varios exploits.</p>
 <p><strong class="blue">Ticket</strong>: Contiene la firma de validación de un software en la Wii U, entre otras cosas, sin esa clave la Wii U no puede ejecutar el software, a menos que previamente se le aplique un hack a la consola.</p>
 <p><strong class="blue">Brick</strong>: Literalmente ladrillo en inglés. Se refiere a dañar un dispositivo al punto de sólo servir como pisapapeles.</p>
-<p><strong class="blue">DLC</strong>: Contenido descargable, se refiere al material adicional creado por los desarrolladores de un videojuego y que se publica por separado, no incluido en el producto base.</p>
-<p><strong class="blue">Title ID</strong>: El identificador de título es un número de 16 dígitos que usa la Wii U para, en su sistema de archivos, asignar una carpeta a un juego o aplicación. Los primeros 8 dígitos identifican el tipo de contenido (juego, DLC, demo, actualización, aplicación del sistema, etc.).</p>
-<p>Según las definiciones anteriores y simplificando las cosas un hack en Wii U se compone básicamente de dos elementos, un "punto de entrada" y un CFW. Sin un punto de entrada no puedes cargar el CFW. Así que un CFW por sí mismo no es un hack de Wii U. A continuación, una lista de todos los hacks de Wii U (todas las combinaciones de "punto de entrada" + CFW).</p>
+<p><strong class="blue">Downloadable Content (DLC)</strong>: Contenido descargable, se refiere al material adicional creado por los desarrolladores de un videojuego y que se publica por separado, no incluido en el producto base.</p>
+<p><strong class="blue">Title ID</strong>: El identificador de título es un número de 16 dígitos que usa la Wii U para reconocer un juego o aplicacion en su sistema de archivos. El Title ID para asignar una carpeta a un juego o aplicación. Los primeros 8 dígitos identifican el tipo de contenido (juego, DLC, demo, actualización, aplicación del sistema, etc.).</p>
+<p>Según las definiciones anteriores y simplificando las cosas un hack de Wii U es la suma de un "punto de entrada" y un CFW. Un hack de Wii U también es la suma de un "punto de entrada" y un Environment. Sin un punto de entrada no puedes cargar un CFW. Así que un CFW por sí mismo no es un hack de Wii U. A continuación, una los principales hacks de Wii U:</p>
 <ul>
 <li>Webhack + Mocha CFW</li>
 <li>Webhack + IOSUHAX</li>
@@ -2736,16 +2766,18 @@ a.previous:hover, a.next:hover {
 <li>Indexiine + Mocha CFW</li>
 <li>Indexiine + IOSUHAX</li>
 <li>Indexiine + SigPatcher</li>
-<li>Haxchi + Mocha CFW</li>
 <li>Haxchi + Haxchi CFW</li>
+<li>Haxchi + Mocha CFW</li>
 <li>Haxchi + IOSUHAX</li>
 <li>Haxchi + SigPatcher</li>
-<li>Coldboot Haxchi (CBHC) + Mocha CFW</li>
 <li>Coldboot Haxchi (CBHC) + Haxchi CFW</li>
+<li>Coldboot Haxchi (CBHC) + Mocha CFW</li>
 <li>Coldboot Haxchi (CBHC) + IOSUHAX</li>
 <li>Coldboot Haxchi (CBHC) + SigPatcher</li>
-<li>PayloadLoader + Mocha mod (Tiramisu de arranque manual)</li>
-<li>Autobooting PayloadLoader + Mocha mod (Tiramisu de arranque automático)</li>
+<li>PayloadLoader + Tiramisu (Tiramisu de arranque manual)</li>
+<li>PayloadLoader + Aroma (Aroma de arranque manual)</li>
+<li>Autobooting PayloadLoader + Tiramisu (Tiramisu de arranque automático)</li>
+<li>Autobooting PayloadLoader + Aroma (Aroma de arranque automático)</li>
 </ul>
 </div>
 </div>
@@ -2869,7 +2901,7 @@ a.previous:hover, a.next:hover {
 <div class="cont">
 <h2>Acerca de esta guía</h2>
 <br>
-<h3>Versión: 4.5.3 (17 de noviembre de 2022)</h3>
+<h3>Versión: 4.6 (23 de noviembre de 2022)</h3>
 <p>Esta guía fue hecha por <strong>Fran AC</strong> basado en la guía de los miembros de <a href="https://wiiu.hacks.guide/#/about">Nintendo Homebrew Discord Server</a>.</p>
 <p>Puedes descargar la guía completa desde <a href="https://github.com/piloncillo/piloncillo.github.io/releases">esté enlace</a>.</p>
 <p>Créditos a los desarrolladores de las herramientas</p>
