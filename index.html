@@ -1072,7 +1072,7 @@ a.previous:hover, a.next:hover {
 <ul>
 <li>Si activaste el <strong class="blue">arranque automático</strong> del <em>PayloadLoader</em>: <strong class="green">Enciende la consola</strong> y <strong class="green">mantén presionado el botón X</strong> hasta que salga el <em>EnvironmentLoader</em>.</li>
 <li>Si tu consola tiene <em>PayloadLoader</em> de <strong class="yellow">arranque manual</strong>: Enciende la consola, accede al menú de Wii U, <strong class="green">abre Información sobre salud y seguridad</strong> y <strong class="green">mantén presionado el botón X</strong> del GamePad para abrir el <em>EnvironmentLoader</em>.</li>
-<li>Navega por el menú usando las flechas del D-Pad del GamePad, <strong class="green">selecciona</strong> <em class="green">tiramisu</em>, presiona el <strong class="green">botón Y</strong> para configurarlo como el entorno predeterminado y luego presiona el <strong class="green">botón A</strong> para abrir Tiramisu.<br><img src="Images/EnvironmentLoader/default_tiramisu.jpg" class="auto_size_li"></li>
+<li>Navega por el menú usando las flechas del D-Pad del GamePad, <strong class="green">selecciona</strong> <em class="green">tiramisu</em>, presiona el <strong class="green">botón Y</strong> para configurarlo como el entorno predeterminado y luego presiona el <strong class="green">botón A</strong> para abrir Tiramisu.<br><img src="Images/EnvironmentLoader/tiramisu_default_tiramisu.jpg" class="auto_size_li"></li>
 <li>Si te aparece un mensaje de alerta acerca del <em>update folder</em> (carpeta <em>update</em>) quiere decir que tu consola no está bloqueando las actualizaciones del sistema apropiadamente.<br><img src="Images/Tiramisu/warning.jpg" class="auto_size_li"></li>
 <li>Presiona el <strong class="green">botón B</strong> para no volver a ver el mensaje de alerta.</li>
 <li>Consulta la información de <a href="?s=block_updates">aquí</a> si quieres bloquear completamente las actualizaciones del sistema de la consola.</li>
@@ -2136,47 +2136,51 @@ a.previous:hover, a.next:hover {
 <div class="cont">
 <h2>Desinstalar PayloadLoader correctamente</h2>
 <br>
-<h3>Necesitas</h3>
+<h3>Necesitas los archivos más recientes de Tiramisu</h3>
 <ul>
-<li>Los archivos más recientes de <a href="https://tiramisu.foryour.cafe/">Tiramisu para tu café</a>.</li>
+<li>Este enlace lleva al sitio oficial: <a href="https://tiramisu.foryour.cafe/">Tiramisu para tu café</a>.</li>
 <ul>
-<li>Haz clic en el botón <em class="green">Download Tiramisu</em>, se descargará un solo archivo <code>.zip</code>.</li>
+<li>Dentro del sitio debes tocar en el botón <em class="green">Download Tiramisu</em> para iniciar la descarga de un archivo <code>.zip</code>.</li>
 </ul>
 </ul>
 <h3>Instalación</h3>
-<div class="info">Si la PC (o el teléfono inteligente) te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
-<div class="info">Si la PC (o el teléfono inteligente) te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
 <ul>
-<li>Descomprime y copia el contenido del archivo <code>.zip</code> de Tiramisu en la raíz de la tarjeta SD.<br><img src="Images/Tiramisu/wiiu_folder.png" class="auto_size_li"></li>
+<li>Descomprime el archivo <code>.zip</code> de Tiramisu.</li>
+<li>Copia la carpeta <code>wiiu</code> y el archivo <code>versions.json</code> a la raíz de la tarjeta SD.</li>
+<li>Tu tarjeta SD debe quedar como esta imagen:<br><img src="Images/Tiramisu/wiiu_folder.png" class="auto_size_li"></li>
 </ul>
 <ul>
 <li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
 </ul>
+<div class="info">Si ya tienes desactivado el arranque automático salta a <a href="#upl">desinstalar PayloadLoader</a>.</div>
 <h3>Desactivar el arranque automático de PayloadLoader</h3>
 <ul>
-<li><strong class="green">Enciende la consola</strong> y presiona el botón X, <strong class="green">mantén presionado el botón X</strong> hasta que salga el <em>EnvironmentLoader</em></li>
-<li>Navega por el menú usando las flechas del D-Pad del GamePad, <strong class="green">selecciona</strong> <em class="green">installer</em> como entorno y presiona el <strong class="green">botón A</strong> para iniciarlo.</li>
-<li>Ahora debes estar en el <em>PayloadLoader Installer</em>, con la opción <em class="green">Check</em> seleccionada.</li>
+<li><strong class="green">Enciende la consola</strong> y <strong class="green">mantén presionado el botón X</strong> hasta que salga el <em>EnvironmentLoader</em>.</li>
+<li>Navega por el menú usando las flechas del D-Pad del GamePad, <strong class="green">selecciona</strong> <em class="green">installer</em> y presiona el <strong class="green">botón A</strong> para iniciarlo.<br><img src="Images/EnvironmentLoader/installer_default_tiramisu.jpg" class="auto_size_li"></li>
+<li>Ahora debes estar en el <em>PayloadLoader Installer</em>, con la opción <em class="green">Check</em> seleccionada.<br><img src="Images/PayloadLoader_Installer/check.jpg" class="auto_size_li"></li>
 <li>Presiona el <strong class="green">botón A</strong> para verificar.</li>
 <li>El instalador debe indicar que <em>PayloadLoader</em> está instalado en la aplicación <em>Health and Safety Information</em> (Información sobre salud y seguridad).</li>
-<li>Usa las flechas del D-Pad del GamePad para seleccionar <em class="green">Boot options</em> y presiona el <strong class="green">botón A</strong> para abrir las opciones.</li>
+<li>Usa las flechas del D-Pad del GamePad para seleccionar <em class="green">Boot options</em> y presiona el <strong class="green">botón A</strong>.<br><img src="Images/PayloadLoader_Installer/boot_options.jpg" class="auto_size_li"></li>
 <li>El instalador debe indicar que el sistema de la Wii U actualmente inicia con la aplicación <em>Health and Safety Information</em>.</li>
-<li>La opción <em class="green">Switch back to Wii Menu</em> debe estar seleccionada.</li>
-<li>Presiona el <strong class="green">botón A</strong>. Esto hará que <em>Wii Menu</em> sea la aplicación con la que inicia la Wii U.</li>
-<li>Después de que la instalación termine, presiona <strong class="green">botón A</strong> para apagar la consola.</li>
+<li>La opción <em class="green">Switch back to Wii U Menu</em> debe estar seleccionada.</li>
+<li>Presiona el <strong class="green">botón A</strong>. Esto hará que <em>Wii U Menu</em> sea la aplicación con la que inicia la Wii U.<br><img src="Images/PayloadLoader_Installer/switch_back_to_wii_u_menu.jpg" class="auto_size_li"></li>
+<li>Después de que la instalación termine, presiona <strong class="green">botón A</strong> para apagar la consola.<br><img src="Images/PayloadLoader_Installer/boot_updated.jpg" class="auto_size_li"></li>
 </ul>
-<p>Ahora <em>PayloadLoader</em> <strong class="red">no</strong> iniciará automáticamente cada que enciendas la Wii U.</p>
-<h3>Desinstalar PayloadLoader</h3>
+<p>Ahora el <em>PayloadLoader</em> <strong class="red">no</strong> arrancará automáticamente cada que enciendas la Wii U.</p>
+<h3 id="upl">Desinstalar PayloadLoader</h3>
 <ul>
-<li>Enciende la consola, accede al menú de Wii U</li>
-<li><strong class="green">Abre la aplicación Información sobre salud y seguridad</strong> y presiona el botón X, <strong class="green">mantén presionado el botón X</strong> hasta que salga el menú <em>EnvironmentLoader</em>.</li>
-<li>Navega por el menú usando las flechas del D-Pad del GamePad, <strong class="green">selecciona</strong> <em class="green">installer</em> como entorno y presiona el <strong class="green">botón A</strong> para iniciarlo.</li>
-<li>Ahora debes estar en el PayloadLoader Installer, con la opción <em class="green">Check</em> seleccionada.</li>
+<li>Enciende la consola y accede al menú de Wii U.<br><img src="Images/Identificar/isss.jpg" class="auto_size_li"></li>
+<li><strong class="green">Abre Información sobre salud y seguridad</strong> y <strong class="green">mantén presionado el botón X</strong> hasta que salga el menú <em>EnvironmentLoader</em>.</li>
+<li>Navega por el menú usando las flechas del D-Pad del GamePad, <strong class="green">selecciona</strong> <em class="green">installer</em> y presiona el <strong class="green">botón A</strong> para iniciarlo.<br><img src="Images/EnvironmentLoader/installer_default_tiramisu.jpg" class="auto_size_li"></li>
+<li>Ahora debes estar en el <em>PayloadLoader Installer</em>, con la opción <em class="green">Check</em> seleccionada.<br><img src="Images/PayloadLoader_Installer/check.jpg" class="auto_size_li"></li>
 <li>Presiona el <strong class="green">botón A</strong> para verificar.</li>
-<li>Usa las flechas del D-Pad del GamePad para seleccionar <em class="green">Remove</em> y presiona el <strong class="green">botón A</strong>.</li>
-<li>El instalador te pregunta si estas REALMENTE seguro de querer eliminar <em>PayloadLoader</em> de la consola.</li>
-<li>Usa las flechas del D-Pad del GamePad para seleccionar <em class="green">Remove</em> y presiona el <strong class="green">botón A</strong> para iniciar la desinstalación.</li>
-<li>Después de que la desinstalación termine, presiona <strong class="green">botón A</strong> para apagar la consola.</li>
+<li>El instalador debe indicar que <em>PayloadLoader</em> está instalado en la aplicación <em>Health and Safety Information</em> (Información sobre salud y seguridad).</li>
+<li>Usa las flechas del D-Pad del GamePad para seleccionar <em class="green">Remove</em> y presiona el <strong class="green">botón A</strong>.<br><img src="Images/PayloadLoader_Installer/remove.jpg" class="auto_size_li"></li>
+<li>El instalador te pregunta si estas REALMENTE seguro de querer desinstalar <em>PayloadLoader</em>.</li>
+<li>Usa las flechas del D-Pad del GamePad para seleccionar <em class="green">Remove</em> y presiona el <strong class="green">botón A</strong> para iniciar la desinstalación.<br><img src="Images/PayloadLoader_Installer/uninstall.jpg" class="auto_size_li"></li>
+<li>Después de que la desinstalación termine, presiona <strong class="green">botón A</strong> para apagar la consola.<br><img src="Images/PayloadLoader_Installer/installed.jpg" class="auto_size_li"></li>
 <li>En este punto ya finalizaste la desinstalación de <em>PayloadLoader</em>.</li>
 </ul>
 <p>Haz una copia de todo el contenido de la tarjeta SD en la PC (o el teléfono inteligente) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo. Con eso ya haz desinstalado el <em>EnvironmentLoader</em> y Tiramisu correctamente.</p>
@@ -2752,13 +2756,13 @@ a.previous:hover, a.next:hover {
 <li><a href="https://gbatemp.net/threads/release-tiramisu-environment-free-cbhc.605381/">Tiramisu</a>.</li>
 <li><a href="https://gbatemp.net/threads/release-aroma-environment-for-wii-u.618474/">Aroma</a>.</li>
 </ul>
-<p><strong class="blue">Homebrew</strong>: Software "hecho en casa", suele requerir de un hack para ser ejecutado ya que no cuenta con certificación del fabricante del hardware.</p>
+<p><strong class="blue">Homebrew</strong>: Software "hecho en casa" por desarrolladores independientes, suele requerir de un hack para ser ejecutado ya que no cuenta con certificación del fabricante del hardware.</p>
 <p><strong class="blue">Payload</strong>: Carga útil o código que se ejecuta al provocar un exploit, sin la carga útil no se realiza ninguna acción. Un mismo exploit puede utilizar varios payloads y un payload puede ser utilizado por varios exploits.</p>
 <p><strong class="blue">Ticket</strong>: Contiene la firma de validación de un software en la Wii U, entre otras cosas, sin esa clave la Wii U no puede ejecutar el software, a menos que previamente se le aplique un hack a la consola.</p>
 <p><strong class="blue">Brick</strong>: Literalmente ladrillo en inglés. Se refiere a dañar un dispositivo al punto de sólo servir como pisapapeles.</p>
 <p><strong class="blue">Downloadable Content (DLC)</strong>: Contenido descargable, se refiere al material adicional creado por los desarrolladores de un videojuego y que se publica por separado, no incluido en el producto base.</p>
-<p><strong class="blue">Title ID</strong>: El identificador de título es un número de 16 dígitos que usa la Wii U para reconocer un juego o aplicacion en su sistema de archivos. El Title ID para asignar una carpeta a un juego o aplicación. Los primeros 8 dígitos identifican el tipo de contenido (juego, DLC, demo, actualización, aplicación del sistema, etc.).</p>
-<p>Según las definiciones anteriores y simplificando las cosas un hack de Wii U es la suma de un "punto de entrada" y un CFW. Un hack de Wii U también es la suma de un "punto de entrada" y un Environment. Sin un punto de entrada no puedes cargar un CFW. Así que un CFW por sí mismo no es un hack de Wii U. A continuación, una los principales hacks de Wii U:</p>
+<p><strong class="blue">Title ID</strong>: El identificador de título es un número de 16 dígitos que usa la Wii U para reconocer un juego o aplicacion en su sistema de archivos. El Title ID se usa para asignar una carpeta a un juego o aplicación. Los primeros 8 dígitos identifican el tipo de contenido (juego, DLC, demo, actualización, aplicación del sistema, etc.).</p>
+<p>Según las definiciones anteriores y simplificando las cosas un hack de Wii U es la suma de un "punto de entrada" y un CFW. Un hack de Wii U también es la suma de un "punto de entrada" y un Environment. Sin un punto de entrada no puedes cargar un CFW. Así que un CFW por sí mismo no es un hack de Wii U. A continuación, una lista de los principales hacks de Wii U:</p>
 <ul>
 <li>Webhack + Mocha CFW</li>
 <li>Webhack + IOSUHAX</li>
@@ -2901,7 +2905,7 @@ a.previous:hover, a.next:hover {
 <div class="cont">
 <h2>Acerca de esta guía</h2>
 <br>
-<h3>Versión: 4.6 (23 de noviembre de 2022)</h3>
+<h3>Versión: 4.7 (24 de noviembre de 2022)</h3>
 <p>Esta guía fue hecha por <strong>Fran AC</strong> basado en la guía de los miembros de <a href="https://wiiu.hacks.guide/#/about">Nintendo Homebrew Discord Server</a>.</p>
 <p>Puedes descargar la guía completa desde <a href="https://github.com/piloncillo/piloncillo.github.io/releases">esté enlace</a>.</p>
 <p>Créditos a los desarrolladores de las herramientas</p>
@@ -2924,7 +2928,7 @@ a.previous:hover, a.next:hover {
 <li><strong>Maschell</strong> y <strong>GaryOderNichts</strong> por <a href="https://github.com/wiiu-env/AutobootModule">AutobootModule</a>.</li>
 <li><strong>GaryOderNichts</strong> por <a href="https://github.com/GaryOderNichts/configurable-payload">Configurable Payload</a>, <a href="https://github.com/GaryOderNichts/indexiine-installer">Indexiine-Installer</a>, <a href="https://github.com/GaryOderNichts/UFDiine">UFDiine</a>, <a href="https://github.com/GaryOderNichts/vWii-Decaffeinator">vWii Decaffeinator</a>, <a href="https://github.com/GaryOderNichts/DumpsterU">DumpsterU</a>, <a href="https://github.com/GaryOderNichts/Bloopair">Bloopair</a> y <a href="https://github.com/wiiu-controller-mods">las versiones controller mod del Homebrew Launcher, WUP Installer GX2 y SaveMii</a>.</li>
 <li><strong>GabyPCgeeK</strong> y <strong>Ryuzaki-MrL</strong> por <a href="https://github.com/GabyPCgeeK/savemii">SaveMii Mod</a>.</li>
-<li><strong>Maschell</strong> por <a href="https://github.com/Maschell/hid_to_vpad">HID to VPAD</a>, <a href="https://github.com/Maschell/WiiUPluginSystem">Wii U Plugin System</a>, <a href="https://github.com/wiiu-env/CustomRPXLoader">CustomRPXLoader</a>, <a href="https://maschell.github.io/homebrew/2020/12/02/failst.html">FailST</a>, <a href="https://github.com/wiiu-env/EnvironmentLoader">EnvironmentLoader</a>, <a href="https://github.com/wiiu-env/HBLInstallerWrapper">HBLInstallerWrapper</a>, <a href="https://github.com/wiiu-env/LaunchInstaller">LaunchInstaller</a>, <a href="https://github.com/wiiu-env/MochaPayload">MochaPayload</a>, <a href="https://github.com/wiiu-env/PayloadFromRPX">PayloadFromRPX</a>, <a href="https://github.com/wiiu-env/PayloadLoaderInstaller">PayloadLoaderInstaller</a>, <a href="https://github.com/wiiu-env/PayloadLoaderInstallerEnvironment">PayloadLoaderInstallerEnvironment</a>, <a href="https://github.com/wiiu-env/PayloadloaderPayload">PayloadloaderPayload</a> y <a href="https://tiramisu.foryour.cafe/">Tiramisu Downloader</a>.</li>
+<li><strong>Maschell</strong> por <a href="https://github.com/Maschell/hid_to_vpad">HID to VPAD</a>, <a href="https://github.com/Maschell/WiiUPluginSystem">Wii U Plugin System</a>, <a href="https://github.com/wiiu-env/CustomRPXLoader">CustomRPXLoader</a>, <a href="https://maschell.github.io/homebrew/2020/12/02/failst.html">FailST</a>, <a href="https://github.com/wiiu-env/EnvironmentLoader">EnvironmentLoader</a>, <a href="https://github.com/wiiu-env/HBLInstallerWrapper">HBLInstallerWrapper</a>, <a href="https://github.com/wiiu-env/LaunchInstaller">LaunchInstaller</a>, <a href="https://github.com/wiiu-env/MochaPayload">MochaPayload</a>, <a href="https://github.com/wiiu-env/PayloadFromRPX">PayloadFromRPX</a>, <a href="https://github.com/wiiu-env/PayloadLoaderInstaller">PayloadLoaderInstaller</a>, <a href="https://github.com/wiiu-env/PayloadLoaderInstallerEnvironment">PayloadLoaderInstallerEnvironment</a>, <a href="https://github.com/wiiu-env/PayloadloaderPayload">PayloadloaderPayload</a>, <a href="https://tiramisu.foryour.cafe/">Tiramisu Downloader</a> y <a href="https://aroma.foryour.cafe/">Aroma Downloader</a>.</li>
 <li><strong>Chadderz</strong> y <strong>Maschell</strong> por <a href="https://github.com/Maschell/SDCafiine">SDCafiine</a>.</li>
 <li><strong>OatmealDome</strong> y <strong>Yahya14</strong> por <a href="https://gbatemp.net/threads/swap-drc-for-tv-only-wii-u-games.478026/">SwapDRC Lite</a>.</li>
 <li><strong>::Phoenix::</strong> por <a href="https://github.com/marco-calautti/spiik">Spiik</a>.</li>
