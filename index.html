@@ -104,7 +104,7 @@ div.warning {
 }
 
 strong.red, em.red, code.red {
-    color: #d3b3b3;
+    color: #e3b3b3;
 }
 
 strong.green, em.green, code.green {
@@ -112,11 +112,15 @@ strong.green, em.green, code.green {
 }
 
 strong.blue, em.blue, code.blue {
-    color: #a3b3d3;
+    color: #a3c3e3;
 }
 
 strong.yellow, em.yellow, code.yellow {
     color: #d3d3b3;
+}
+
+strong.oranje, em.oranje, code.oranje {
+    color: #d3b3a3;
 }
 
 code {
@@ -494,7 +498,7 @@ a.previous:hover, a.next:hover {
     <a href="?s=games" id="games_link" class="tablinks">Descarga de juegos</a>
     <a href="?s=install_games" id="install_games_link" class="tablinks">Instalación de juegos</a>
 	<a href="?s=block_updates" id="block_updates_link" class="tablinks large">Bloquear actualizaciones</a>
-	<!--a href="?s=?s=standby_functions" id="?s=standby_functions_link" class="tablinks large">Desactivar modo reposo</a-->
+	<a href="?s=standby_functions" id="?s=standby_functions_link" class="tablinks large">Desactivar modo reposo</a>
     <a href="?s=custom_haxchi" id="custom_haxchi_link" class="tablinks">Personalizar Haxchi</a>
     <!--a href="?s=config_payload" id="config_payload_link" class="tablinks">Personalizar payload</a-->
     <a href="?s=glossary" id="glossary_link" class="tablinks">Glosario</a>
@@ -547,6 +551,26 @@ a.previous:hover, a.next:hover {
 </div>
 </div>
 </div>
+<div id="standby_functions" class="tabcontent" style="display:none;">
+<div class="cont">
+<h2>Desactivar las funciones en modo de reposo</h2>
+<br>
+<p>La consola indica que está trabajando en modo de reposo cuando el LED de POWER cambia de <strong class="red">rojo</strong> a <strong class="oranje">naranja</strong>. Una consola con las funciones en modo de reposo activadas se activa periódicamente para descargar información de utilidad y actualizaciones del sistema, además permite usar el menú de inicio rápido en el GamePad.</p>
+<p>Aunque el fin del soporte de la Wii U por parte de Nintendo está próximo es posible que la compañía aún lance actualizaciones para la consola. Las actualizaciones 5.5.3 a 5.5.6 se lanzaron después de que se descontinuó la fabricación de la Wii U, por lo que desactivar las funciones en modo de reposo para impedir la actualización automática de la consola es una acción recomendada. Además, <strong class="yellow">desactivar el menú de inicio rápido facilita la identificación de Autobooting PayloadLoader</strong>.</p>
+<h3>Para desactivar las funciones en modo de reposo</h3>
+<ul>
+<li>Entra en la Configuración de la consola</li>
+<li>Selecciona Ajustes de apagado.</li>
+<li>Toca en el bloque de Funciones en modo de reposo.</li>
+<li>Toca en No y después en Aceptar.</li>
+<li>Toca en Aceptar.</li>
+<li>Toca en Atrás o presiona B.</li>
+<li>Toca en Salir o persona B.</li>
+</ul>
+<p>Ahora al apagar la consola no trabajará en modo de reposo y el LED de POWER no cambiará de <strong class="red">rojo</strong> a <strong class="oranje">naranja</strong>.</p>
+<p><a onclick="window.history.back()">Regresar</a></p>
+</div>
+</div>
 <div id="block_updates" class="tabcontent" style="display:none;">
 <div class="cont">
 <h2>Bloquear las actualizaciones</h2>
@@ -577,8 +601,8 @@ a.previous:hover, a.next:hover {
 </ul>
 <li>Con <em>Update folder is deleted</em> están completamente bloqueadas las actualizaciones.</li>
 <li>Presiona el <strong class="green">botón HOME</strong> para salir de UFDiine.</li>
-<p><a onclick="window.history.back()">Regresar</a></p>
 </ul>
+<p><a onclick="window.history.back()">Regresar</a></p>
 </div>
 </div>
 <div id="intro_tiramisu" class="tabcontent" style="display:none;">
@@ -2017,7 +2041,8 @@ a.previous:hover, a.next:hover {
 <input type="radio" id="payloadloader_twice" value="payloadloader_twice" name="default" style="display:none;">
 <label class="link" for="payloadloader_twice">Sí, al abrir el icono la consola se congela con el mensaje <code>Don't run EnvironmentLoader twice. If you want to open the Homebrew Launcher, launch the Mii Maker instead</code>.<br><img src="Images/Identificar/dont_run_the_environment_loader_twice.jpg" class="auto_size"></label><br><br>
 </form>
-<div id="payloadloader_next" style="display:none;"><p><a id="payloadloader_next_button" href="?s=test" class="button">Siguiente</a></p></div>
+<div id="payloadloader_next" style="display:none;"><h3>Apaga la consola.</h3>
+<p><a id="payloadloader_next_button" href="?s=test" class="button">Siguiente</a></p></div>
 </div>
 </div>
 <div id="test_autobooting" class="tabcontent" style="display:none;">
@@ -2058,7 +2083,8 @@ a.previous:hover, a.next:hover {
 <label class="link" for="autobooting_quick_start">No, al encender la consola no muestra nada en particular, carga el menú de inicio rápido con normalidad.<br><img src="Images/Identificar/quick_start_menu.jpg" class="auto_size"></label><br><br>
 </form>
 <div id="fmr" style="display:none;"><p>Usar el menú de inicio rápido impide observar la carga del PayloadLoader al encender la consola, para comprobar al 100% que la consola no tenga Autobooting PayloadLoader es necesario <a href="?s=standby_functions">desactivar las funciones en modo de reposo</a> y volver a contestar la pregunta de está sección.</p></div>
-<div id="autobooting_next" style="display:none;"><p><a id="autobooting_next_button" href="?s=test" class="button">Siguiente</a></p></div>
+<div id="autobooting_next" style="display:none;"><h3>Apaga la consola.</h3>
+<p><a id="autobooting_next_button" href="?s=test" class="button">Siguiente</a></p></div>
 </div>
 </div>
 <div id="test_haxchi" class="tabcontent" style="display:none;">
@@ -2101,7 +2127,8 @@ a.previous:hover, a.next:hover {
 <input type="radio" id="haxchi_ohb" value="haxchi_ohb" name="default" style="display:none;">
 <label class="link" for="haxchi_ohb">Sí, carga automáticamente una aplicación.</label><br><br>
 </form></div>
-<div id="haxchi_next" style="display:none;"><p><a id="haxchi_next_button" href="?s=test" class="button">Siguiente</a></p></div>
+<div id="haxchi_next" style="display:none;"><h3>Apaga la consola.</h3>
+<p><a id="haxchi_next_button" href="?s=test" class="button">Siguiente</a></p></div>
 </div>
 </div>
 <div id="test_indexiine" class="tabcontent" style="display:none;">
@@ -2151,7 +2178,8 @@ a.previous:hover, a.next:hover {
 <input type="radio" id="indexiine_ohb" value="indexiine_ohb" name="default" style="display:none;">
 <label class="link" for="indexiine_ohb">Sí, el navegador carga automáticamente una aplicación.</label><br><br>
 </form>
-<div id="indexiine_next" style="display:none;"><p><a id="indexiine_next_button" href="?s=test" class="button">Siguiente</a></p></div>
+<div id="indexiine_next" style="display:none;"><h3>Apaga la consola.</h3>
+<p><a id="indexiine_next_button" href="?s=test" class="button">Siguiente</a></p></div>
 </div>
 </div>
 <div id="uninstall_payloadloader" class="tabcontent" style="display:none;">
@@ -2898,36 +2926,57 @@ a.previous:hover, a.next:hover {
 <div class="cont">
 <h2>Homebrew destacado</h2>
 <br>
-<p><a href="https://github.com/wiiu-controller-mods/homebrew_launcher/releases/tag/v2">Homebrew Launcher</a> Permite cargar homebrew de la Wii U desde la tarjeta SD (Controller Mod permite usar Wii U Pro Controller o Wii Remote).</p>
-<p><a href="https://bootmii.org/download/">Homebrew Channel</a> Permite cargar homebrew de la Wii desde la tarjeta SD (usa el modo virtual Wii de la Wii U).</p>
-<p><a href="https://github.com/wiiu-controller-mods/homebrew_launcher/releases/tag/channel_v2">Homebrew Launcher Channel</a> Icono en el menú de la Wii U que abre el Homebrew Launcher.</p>
-<p><a href="https://apps.fortheusers.org/wiiu/appstore">Homebrew App Store</a> Permite descargar homebrew de la Wii U directamente desde la consola.</p>
-<p><a href="https://github.com/wiiu-controller-mods/wup-installer-gx2/releases/tag/v1">WUP Installer GX2</a> (Wii U Public title Installer) Instalador de juegos y aplicaciones en formato <strong class="green">NUS Content cifrado</strong>.</p>
-<p><a href="https://github.com/wiiu-controller-mods/wup-installer-gx2/releases/tag/channel_v1">WUP Installer GX2 Channel</a> Icono en el menú de la Wii U que abre WUP Installer GX2.</p>
-<p><a href="https://github.com/V10lator/NUSspli/releases">NUSspli</a> Descarga e instala juegos de forma rápida y simple directamente desde la Wii U.</p>
-<p><a href="https://github.com/wiiu-controller-mods/savemii/releases/tag/v1">SaveMii mod</a> Gestor de archivos de guardado.</p>
-<p><a href="https://apps.fortheusers.org/wiiu/nanddumper">Wii U NAND Dumper</a> Permite hacer volcados de respaldo de las memorias internas de la Wii U. Es muy importante tener al menos un respaldo del OTP y del SEEPROM de la consola.</p>
-<p><a href="https://github.com/FIX94/Nintendont/blob/master/loader/loader.dol">Nintendont</a> Es un "parche" que permite que los juegos de GameCube sean identificados como juegos de Wii logrando que carguen en el modo virtual Wii de la Wii U. (El enlace lleva a la última versión de Nintendont, archivo <code>boot.dol</code> solamente). <a href="https://piloncillo.github.io/Files/Nintendont.zip">Aquí</a> puedes descargar un paquete con todos los archivos importantes para una instalación completa.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/homebrew_launcher">Homebrew Launcher</a> Permite cargar aplicaciones "hechas en casa" por desarrolladores independientes para la Wii U, colocadas en la carpeta <code>sd:/wiiu/apps</code>.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/vwii-compat-installer">Homebrew Channel</a> Permite cargar aplicaciones "hechas en casa" por desarrolladores independientes para la Wii (usa el modo virtual Wii de la Wii U). vWii Compat Installer facilita instalar el Homebrew Channel en el modo virtual Wii de la Wii U.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/appstore">Homebrew App Store</a> Permite descargar homebrew de la Wii U directamente usando la consola.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/wup_installer_gx2">WUP Installer GX2</a> Wii U Public title Installer es un instalador de contenido para la Wii U. El contenido (juegos, aplicaciones, multimedia, etc.) debe estar en formato <strong class="green">NUS Content cifrado</strong>, archivos <code>.app</code>, <code>.h3</code>, <code>title.cert</code>, <code>title.tmd</code>, <code>title.tik</code>.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/SaveMiiModWUTPort">SaveMii mod WUT Port</a> Gestor de archivos de guardado de juegos de Wii U y de Wii.</p>
+<p><a href="https://github.com/V10lator/NUSspli/releases">NUSspli</a> Permite descargar e instalar juegos de forma rápida y simple directamente usando la Wii U.</p>
 <p><a href="https://github.com/GaryOderNichts/Bloopair/releases">Bloopair</a> Permite conectar de forma inalámbrica los controles Bluetooth más populares. Consulta <a href="https://gbatemp.net/threads/bloopair-connect-controllers-from-other-consoles-natively.594289/">el hilo oficial de la aplicación</a> para más detalles.</p>
-<p><a href="https://apps.fortheusers.org/wiiu/hidtovpad">HID to VPAD</a> Permite usar controles de terceros por conexión USB. Cada modelo de control debe tener su archivo de <a href="https://github.com/Maschell/controller_patcher_configs">configuración .ini</a> para que la aplicación lo reconozca correctamente. Más información <a href="https://gbatemp.net/threads/hid-to-vpad.424127/">aquí</a>.</p>
-<p><a href="https://www.retroarch.com/?page=platforms">RetroArch</a> No es un emulador en sí, sino un proyecto modular que sirve de envoltura para cargar diferentes núcleos emuladores y que tiene versiones para una gran cantidad de plataformas (incluida la Wii U).</p>
-<p><a href="https://apps.fortheusers.org/wiiu/swapdrc_lite">SwapDRC Lite</a> Permite intercambiar imagen y video entre la TV y el Wii U GamePad.</p>
-<p><a href="https://apps.fortheusers.org/wiiu/wups">Wii U Plugin System</a> Permite usar mods en algunos juegos de Wii U.</p>
-<p><a href="https://apps.fortheusers.org/wiiu/SDCafiine_WUPS">SDCafiine</a> Permite usar mods en algunos juegos de Wii U. Puedes ir a <a href="https://gamebanana.com/games/6289">esté enlace</a> para obtener mods y más información al respecto.</p>
+<p><a href="https://github.com/FIX94/Nintendont/blob/master/loader/loader.dol">Nintendont</a> Funciona como un "parche" que permite que los juegos de GameCube sean identificados como juegos de Wii logrando que carguen en el modo virtual Wii de la Wii U. El enlace anterior lleva a la última versión de Nintendont, archivo <code>boot.dol</code> solamente, <a href="https://piloncillo.github.io/Files/Nintendont.zip">aquí</a> puedes descargar un paquete con todos los archivos importantes para una instalación completa.</p>
+<p><a href="https://www.retroarch.com/?page=platforms">Retroarch</a> No es un emulador en sí. Es un proyecto modular que sirve de envoltura para cargar diferentes núcleos emuladores y que tiene versiones para una gran cantidad de plataformas (incluida la Wii U).</p>
 <p><a href="https://apps.fortheusers.org/wiiu/spiik">Spiik</a> Facilita ajustar la configuración de región e idioma para que los juegos carguen en el idioma deseado.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/Padcon">Padcon</a> Habilita el botón "R3" para encender y apagar la pantalla del GamePad. La pantalla táctil sigue funcionando, sólo la visualización de la pantalla se desactiva para ahorrar batería cuando no se necesita.</p>
 <p><a href="https://apps.fortheusers.org/wiiu/WiiU-Shell">WiiU-Shell</a> Administrador de archivos para la Wii U.</p>
-<p><a href="https://apps.fortheusers.org/wiiu/moonlight-wiiu">Moonlight Wii U</a> Permite hacer streaming de juegos desde una PC a la Wii U.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/UFDiine">UFDiine</a> Wii U Update Folder Deleter permite eliminar o crear la carpeta update del sistema de la Wii U (<code>vol/storage_mlc01/sys/update</code>), esto bloquea o habilita la descarga de actualizaciones del sistema de la Wii U.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/USBHide">USBHide</a> Esta aplicación detiene el mensaje de la Wii U pidiendo formatear un dispositivo USB. Para lograrlo modifica un valor en el dispositivo USB a ocultar.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/sign_c2w_patcher">Sign C2W Patcher</a> Su principal uso es habilitar el overclock del modo virtual Wii de la Wii U.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/wups">Wii U Plugin System</a> Permite cargar múltiples complementos en la Wii. Por ejemplo, puedes aplicar mods en los juegos (SDCafiine), usar un control USB (HID to VPAD), intercambiar la visualización la TV y el GamePad (Swip Swap Me) y mucho más.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/SDCafiine_WUPS">SDCafiine</a> Permite usar mods en algunos juegos de Wii U. Puedes ir a esté enlace para obtener mods y más información al respecto. Puedes ir a <a href="https://gamebanana.com/games/6289">esté enlace</a> para obtener mods y más información al respecto. Revisa <a href="https://apps.fortheusers.org/wiiu/SDCafiine_WUPS">aquí</a> el complemento para Wii U Plugin System.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/hidtovpad">HID to VPAD</a> Permite conectar controles de otras compañías vía USB a la Wii U. Cada modelo de control debe tener su archivo de <a href="https://github.com/Maschell/controller_patcher_configs">configuración .ini</a> para que la aplicación lo reconozca. Más información <a href="https://gbatemp.net/threads/hid-to-vpad.424127/">aquí</a>. Revisa <a href="https://apps.fortheusers.org/wiiu/HIDtoVPAD_WUPS">aquí</a> el complemento para Wii U Plugin System.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/swapdrc_lite">SwapDRC Lite</a> Permite intercambiar la visualización entre la TV y el GamePad. Revisa <a href="https://apps.fortheusers.org/wiiu/SwipSwapMe_WUPS">aquí</a> un complemento para Wii U Plugin System.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/nanddumper">Wii U NAND Dumper</a> Permite hacer respaldos de las memorias internas de la Wii U. Es muy importante tener al menos un respaldo del SLC, del SLCCMPT, del OTP y del SEEPROM de la consola.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/vWii-NAND-Restorer">vWii NAND Restorer</a> Permite restaurar el modo vWii con la copia de seguridad de la NAND.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/vWii_decaffeinator">vWii Decaffenaitor</a> Permite restaurar el modo vWii sin necesidad de una copia de seguridad de la NAND. La aplicación se aprovecha del hecho de que la Wii U vuelve a descargar archivos faltantes del modo vWii al realizar una actualización del sistema. Entonces, la aplicacion elimina los archivos que se pueden volver a descargar y fuerza una actualización del sistema.</p>
 <p><a href="https://apps.fortheusers.org/wiiu/ftpiiu_everywhere">FTPiiU_Everywhere</a> Permite leer y trasferir archivos a la consola por medio de FTP. La versión Everywhere permite acceder a archivos del sistema por lo que sólo se recomienda a usuarios avanzados.</p>
+<p><a href="https://github.com/Laf111/WiiUFtpServer">WiiU FTP Server</a> Es un a servidor FTP robusto y optimizado para Wii U. Permite leer y trasferir archivos a la consola por medio de FTP. Sólo se recomienda a usuarios avanzados.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/ourloader">OurLoader</a> Cargador region free de discos de juego de Wii U. Permite jugar discos de juegos de una región diferente a la región de la consola.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/disc2app">Disc2App</a> Permite volcar el contenido de un disco de juego de Wii U a la tarjeta SD (FAT32) o aun dispositivo USB (FAT32), el volcado se hace en formato <strong class="green">NUS Content cifrado</strong> (archivos <code>.app</code>, <code>.h3</code>, <code>title.cert</code>, <code>title.tmd</code>, <code>title.tik</code>).</p>
+<p><a href="https://apps.fortheusers.org/wiiu/wudd">WUDD</a> Wii U Disc Dumper sirve para volcar el contenido de un disco de juego de Wii U a la tarjeta SD (FAT32) o aun dispositivo USB (NTFS), el volcado puede ser en formato WUD, WUX o <strong class="green">NUS Content cifrado</strong> (archivos <code>.app</code>, <code>.h3</code>, <code>title.cert</code>, <code>title.tmd</code>, <code>title.tik</code>).</p>
+<p><a href="https://apps.fortheusers.org/wiiu/dumpling">Dumpling</a> Permite volcar el contenido de un disco de juego de Wii U y juegos instalados en digital en la consola a la tarjeta SD (FAT32) o aun dispositivo USB (FAT32), el volcado se hace en formato descifrado (carpetas <code>code</code>, <code>content</code> y <code>meta</code>).</p>
 <p><a href="https://apps.fortheusers.org/wiiu/loadiine_gx2">Loadiine GX2</a> Permite cargar juegos desde la tarjeta SD. No se recomienda como método principal de carga de juegos ya que los tiempos de carga son mucho mayores y no todos los juegos funcionan correctamente.</p>
-<p><a href="https://apps.fortheusers.org/wiiu/sign_c2w_patcher">sign_c2w_patcher</a> Su principal uso es habilitar el overclock del modo virtual Wii de la Wii U.</p>
-<p><a href="https://github.com/TheLordScruffy/vwii-compat-installer/releases">vWii Compat Installer</a> Facilita hackear el modo virtual Wii de la Wii U.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/moonlight-wiiu">Moonlight Wii U</a> Permite hacer streaming de juegos desde una PC a la Wii U, requiere de una tarjeta GTX o RTX en la PC.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/ntrview-wiiu">NTRView</a> Permite hacer streaming de juegos desde una New 3DS a la Wii U, requiere de una N3DS, N3DS XL o N2DS XL.</p>
+</div>
+</div>
+<div id="homebrew_aroma" class="tabcontent" style="display:none;">
+<div class="cont">
+<h2>Homebrew para Aroma</h2>
+<br>
+<p><a href="https://apps.fortheusers.org/wiiu/wup_installer_gx2_wuhb">WUP Installer GX2</a> Wii U Public title Installer es un instalador de contenido para la Wii U. El contenido (juegos, aplicaciones, multimedia, etc.) debe estar en formato <strong class="green">NUS Content cifrado</strong>, archivos <code>.app</code>, <code>.h3</code>, <code>title.cert</code>, <code>title.tmd</code>, <code>title.tik</code>.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/SaveMiiModWUTPort-wuhb">SaveMii mod WUT Port</a> Gestor de archivos de guardado de juegos de Wii U y de Wii.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/WiiU-Shell-wuhb">WiiU-Shell</a> Administrador de archivos para la Wii U.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/UFDiine-wuhb">UFDiine</a> Wii U Update Folder Deleter permite eliminar o crear la carpeta update del sistema de la Wii U (<code>vol/storage_mlc01/sys/update</code>), esto bloquea o habilita la descarga de actualizaciones del sistema de la Wii U.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/wudd-wuhb">WUDD</a> Wii U Disc Dumper sirve para volcar el contenido de un disco de juego de Wii U a la tarjeta SD (FAT32) o aun dispositivo USB (NTFS), el volcado puede ser en formato WUD, WUX o <strong class="green">NUS Content cifrado</strong> (archivos <code>.app</code>, <code>.h3</code>, <code>title.cert</code>, <code>title.tmd</code>, <code>title.tik</code>).</p>
+<p><a href="https://apps.fortheusers.org/wiiu/ntrview-wuhb">NTRView</a> Permite hacer streaming de juegos desde una New 3DS a la Wii U, requiere de una N3DS, N3DS XL o N2DS XL.</p>
+<p><a href="https://apps.fortheusers.org/wiiu/GiveMiiYouTube">GiveMiiYouTube</a> Este plugin hace que la solicitud de servicio de la aplicación de YouTube devuelva siempre el éxito y, por lo tanto, permite que la aplicación de YouTube continúe funcionando.</p>
 </div>
 </div>
 <div id="about" class="tabcontent" style="display:none;">
 <div class="cont">
 <h2>Acerca de esta guía</h2>
 <br>
-<h3>Versión: 4.8 (28 de noviembre de 2022)</h3>
+<h3>Versión: 4.9 (30 de noviembre de 2022)</h3>
 <p>Esta guía fue hecha por <strong>Fran AC</strong> basado en la guía de los miembros de <a href="https://wiiu.hacks.guide/#/about">Nintendo Homebrew Discord Server</a>.</p>
 <p>Puedes descargar la guía completa desde <a href="https://github.com/piloncillo/piloncillo.github.io/releases">esté enlace</a>.</p>
 <p>Créditos a los desarrolladores de las herramientas</p>
