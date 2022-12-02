@@ -3490,7 +3490,7 @@ function testSDResults() {
 	payloadloader == "wiiu" || payloadloader == "user" || payloadloader == "hbl" || payloadloader == "wii" || payloadloader == "hbc" || payloadloader == "el" || payloadloader == "tbs" || payloadloader == "warning" || payloadloader == "twice") {
       document.getElementById("sd_result").innerHTML = 'Hay una contradicción en tus respuestas, señalaste que PayloadLoader, Indexiine y/o Haxchi carga una aplicacion homebrew o un CFW, pero la tarjeta SD no tiene la carpeta <code>wiiu</code>. La carpeta <code>sd:/wiiu</code> es esencial ya que ahí se almacenan las aplicaciones homebrew y los archivos del "hack" de la consola. Revisa tus respuestas.';
     }
-	else if (autobooting == "rpx_failed" || autobooting == "mocha_failed" || indexiine == "rpx_failed" || indexiine == "mocha_failed" || payloadloader == "rpx_failed" || payloadloader == "mocha_failed" || ) {
+	else if (autobooting == "rpx_failed" || autobooting == "mocha_failed" || indexiine == "rpx_failed" || indexiine == "mocha_failed" || payloadloader == "rpx_failed" || payloadloader == "mocha_failed") {
       document.getElementById("sd_result").innerHTML = 'Hay una contradicción en tus respuestas, señalaste que PayloadLoader y/o Indexiine muestra un mensaje que requiere de la presencia de la carpeta <code>wiiu</code>. Revisa tus respuestas.';
     }
 	else if (indexiine == "msf" || haxchi == "-3") {
@@ -3521,7 +3521,7 @@ function testSDResults() {
 	payloadloader == "wiiu" || payloadloader == "user" || payloadloader == "hbl" || payloadloader == "wii" || payloadloader == "hbc" || payloadloader == "el" || payloadloader == "tbs" || payloadloader == "twice") {
       document.getElementById("sd_result").innerHTML = 'Hay una contradicción en tus respuestas, señalaste que PayloadLoader, Indexiine y/o Haxchi carga una aplicacion homebrew o un CFW, pero la consola no tiene tarjeta SD. La tarjeta SD es esencial ya que ahí se almacenan las aplicaciones homebrew y los archivos del "hack" de la consola. Revisa tus respuestas.';
     }
-	else if (autobooting == "rpx_failed" || autobooting == "mocha_failed" || indexiine == "rpx_failed" || indexiine == "mocha_failed" || payloadloader == "rpx_failed" || payloadloader == "mocha_failed" || ) {
+	else if (autobooting == "rpx_failed" || autobooting == "mocha_failed" || indexiine == "rpx_failed" || indexiine == "mocha_failed" || payloadloader == "rpx_failed" || payloadloader == "mocha_failed") {
       document.getElementById("sd_result").innerHTML = 'Hay una contradicción en tus respuestas, señalaste que PayloadLoader y/o Indexiine muestra un mensaje que requiere de la presencia de la tarjeta SD. Revisa tus respuestas.';
     }
 	else if (indexiine == "fm" || haxchi == "-5") {
