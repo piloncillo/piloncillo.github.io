@@ -497,13 +497,14 @@ a.previous:hover, a.next:hover {
 	<a href="?s=update_tiramisu" id="update_tiramisu_link">Actualizar Tiramisu</a>
     <a href="?s=games" id="games_link" class="tablinks">Descarga de juegos</a>
     <a href="?s=install_games" id="install_games_link" class="tablinks">Instalación de juegos</a>
-	<a href="?s=block_updates" id="block_updates_link" class="tablinks large">Bloquear actualizaciones</a>
 	<a href="?s=standby_functions" id="?s=standby_functions_link" class="tablinks large">Desactivar modo reposo</a>
+	<a href="?s=block_updates" id="block_updates_link" class="tablinks large">Bloquear actualizaciones</a>
     <a href="?s=custom_haxchi" id="custom_haxchi_link" class="tablinks">Personalizar Haxchi</a>
     <!--a href="?s=config_payload" id="config_payload_link" class="tablinks">Personalizar payload</a-->
     <a href="?s=glossary" id="glossary_link" class="tablinks">Glosario</a>
-   <a href="?s=questions" id="questions_link" class="tablinks">Preguntas frecuentes</a>
+    <a href="?s=questions" id="questions_link" class="tablinks">Preguntas frecuentes</a>
     <a href="?s=homebrew" id="homebrew_link" class="tablinks">Homebrew destacado</a>
+	<a href="?s=homebrew_aroma" id="homebrew_aroma_link" class="tablinks">Homebrew Aroma</a>
     <a href="?s=about" id="about_link" class="tablinks">Acerca de</a>
   </div>
 </div>
@@ -1981,8 +1982,9 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="test" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Identificación</h2>
+<h2>Identificación y diagnostico</h2>
 <br>
+<p>Usa esta sección para determinar y analizar el estado del hack de tu consola. Al contestar las preguntas de los 4 apartados obtendrás información que puede ser de utilidad, esta información es difícil de encontrar en otros sitios.</p>
 <p>Si usas el navegador de Internet para cargar el "hack" entonces tu consola tiene <strong class="green">Webhack</strong> o tiene <strong class="green">Indexiine</strong>. Si debes entrar en una página web y tocar un enlace o botón para poder ejecutar el "hack" entonces tienes <strong class="green">Webhack</strong>. Si sólo debes abrir el navegador de Internet y esperar sin tocar nada a que cargue el "hack" entonces tienes <strong class="green">Indexiine</strong>.</p>
 <p>Si compraste tu consola de segunda mano y no sabes cómo instalaron los juegos en la consola (o en el dispositivo USB de la misma) lo más probable es que usaron <strong class="green">Webhack</strong> más WUP Installer GX2 para instalar los juegos. Hay un conjunto de juegos que puedes abrir sin ejecutar ningún hack (funcionan igual que juegos legítimos), estos juegos cuentan con una versión en físico. De los discos originales se han extraído los tickets siempre válidos y se han colocado en las copias digitales, eso se llama <strong class="red">método brasileño</strong>. Por otra parte, el contenido exclusivo de la eShop (juegos de Consola Virtual y DLCs) requieren de aplicar un parche de firmas (signature patch) para poder abrirlos o para ser instados, a menos que compres legítimamente el contenido en la eShop.</p>
 <p>La forma más fácil para identificar el "hack" de tu Wii U es reconocer el <strong class="green">punto de entrada</strong> que da acceso a ejecutar aplicaciones "caseras". Puedes tener más de un punto de entrada en tu consola así que contesta las preguntas de todas las secciones.</p>
@@ -2015,13 +2017,17 @@ a.previous:hover, a.next:hover {
 <br>
 <p>El "hack" Tiramisu (o Aroma) es fácil de detectar ya que se instala el PayloadLoader en el icono de Información sobre salud y seguridad.</p>
 <p>PayloadLoader es el punto de entrada que se usa para cargar el Environment Loader y a su vez el Environment Loader se usa para cargar Tiramisu (o Aroma). Dependiendo de la configuración de Tiramisu (o Aroma) se puede cargar determinada cosa, pero lo más común es que automáticamente cargue el menú de Wii U.</p>
-<p>Enciende la consola, accede al menú de Wii U, abre el icono de Información sobre salud y seguridad, y observa que ocurre en la pantalla del GamePad, no presiones ningún botón.<br><img src="Images/Identificar/health_and_safety_information_icon.jpg" class="auto_size"></p>
+<p>Enciende la consola con la tarjeta SD puesta, accede al menú de Wii U, abre el icono de Información sobre salud y seguridad, y observa que ocurre en la pantalla del GamePad, no presiones ningún botón.<br><img src="Images/Identificar/health_and_safety_information_icon.jpg" class="auto_size"></p>
 <h3>¿Al abrir el icono de Información sobre salud y seguridad carga algo especial?</h3>
 <form id="f_payloadloader" onclick="updateFormPayloadLoader()">
 <input type="radio" id="payloadloader_no" value="payloadloader_no" name="default" style="display:none;">
 <label class="link" for="payloadloader_no">No, al abrir el icono no carga nada especial, no se congela y puedo consultar información sobre salud y seguridad con normalidad.<br><img src="Images/Identificar/health_and_safety_information.jpg" class="auto_size"></label><br><br>
 <input type="radio" id="payloadloader_failed" value="payloadloader_failed" name="default" style="display:none;">
 <label class="link" for="payloadloader_failed">Sí, al abrir el icono muestra el mensaje <code>Failed to load sd:/wiiu/payload.elf Starting the console without any modifications</code>.<br><img src="Images/Identificar/payload_loader_failed_to_load.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="payloadloader_rpx_failed" value="payloadloader_rpx_failed" name="default" style="display:none;">
+<label class="link" for="payloadloader_rpx_failed">Sí, al abrir el icono muestra el mensaje <code>Failed to load "fs:/vol/external01/wiiu/payload.rpx"</code>.<br><img src="Images/Identificar/payload_loader_failed_to_load_rpx.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="payloadloader_mocha_failed" value="payloadloader_mocha_failed" name="default" style="display:none;">
+<label class="link" for="payloadloader_mocha_failed">Sí, al abrir el icono muestra el mensaje <code>AutobootModule: Mocha_InitLibrary failed</code>.<br><img src="Images/Identificar/mocha_initlibrary_failed.jpg" class="auto_size"></label><br><br>
 <input type="radio" id="payloadloader_el" value="payloadloader_el" name="default" style="display:none;">
 <label class="link" for="payloadloader_el">Sí, al abrir el icono carga el Environment Loader (Cargador de Entorno).<br><img src="Images/EnvironmentLoader/installer.jpg" class="auto_size"></label><br><br>
 <input type="radio" id="payloadloader_tbs" value="payloadloader_tbs" name="default" style="display:none;">
@@ -2052,13 +2058,17 @@ a.previous:hover, a.next:hover {
 <p>Un par de "hacks" pueden iniciar de forma automática al encender la Wii U, estos "hacks" son: Coldboot Haxchi y Autobooting PayloadLoader.</p>
 <p>Para lograr el arranque automático se configura la consola para que en lugar de cargar el menú de Wii U cargue la aplicacion "hackeada", en el caso de Coldboot Haxchi carga el juego de Nintendo DS "hackeado" con Haxchi y en el caso de Autobooting PayloadLoader se carga la aplicación Información sobre salud y seguridad "hackeada" con PayloadLoader.</p>
 <p>Dependiendo de la configuración del "hack" se puede cargar otra cosa después del "autobooting", pero lo más común es que automáticamente cargue el menú de Wii U.</p>
-<p>Para determinar si hay un "hack" de arranque automático en tu Wii U vigila lo que pasa al encender la consola. Enciende la consola y observa que ocurre en la pantalla del GamePad, no presiones ningún botón. <ins>Selecciona lo que muestre primero la consola</ins>.</p>
+<p>Para determinar si hay un "hack" de arranque automático en tu Wii U vigila lo que pasa al encender la consola. Enciende la consola con la tarjeta SD puesta y observa que ocurre en la pantalla del GamePad, no presiones ningún botón. <ins>Selecciona lo que muestre primero la consola</ins>.</p>
 <h3>¿Al encender la consola se muestra algo en particular?</h3>
 <form id="f_autobooting" onclick="updateFormAutobooting()">
 <input type="radio" id="autobooting_cbhc" value="autobooting_cbhc" name="default" style="display:none;">
 <label class="link" for="autobooting_cbhc">Sí, al encender la consola muestra el mensaje <code>CBHC v1.6 by FIX94 (DS Title 10179B00) Autobooting...</code><br><img src="Images/Identificar/cbhc_autobooting.jpg" class="auto_size"></label><br><br>
 <input type="radio" id="autobooting_failed" value="autobooting_failed" name="default" style="display:none;">
 <label class="link" for="autobooting_failed">Sí, al encender la consola muestra el mensaje <code>Failed to load sd:/wiiu/payload.elf Starting the console without any modifications</code>.<br><img src="Images/Identificar/payload_loader_failed_to_load.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="autobooting_rpx_failed" value="autobooting_rpx_failed" name="default" style="display:none;">
+<label class="link" for="autobooting_rpx_failed">Sí, al encender la consola muestra el mensaje <code>Failed to load "fs:/vol/external01/wiiu/payload.rpx"</code>.<br><img src="Images/Identificar/payload_loader_failed_to_load_rpx.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="autobooting_mocha_failed" value="autobooting_mocha_failed" name="default" style="display:none;">
+<label class="link" for="autobooting_mocha_failed">Sí, al encender la consola muestra el mensaje <code>AutobootModule: Mocha_InitLibrary failed</code>.<br><img src="Images/Identificar/mocha_initlibrary_failed.jpg" class="auto_size"></label><br><br>
 <input type="radio" id="autobooting_payload_loader_old" value="autobooting_payload_loader_old" name="default" style="display:none;">
 <label class="link" for="autobooting_payload_loader_old">Sí, al encender la consola muestra un glitch gráfico, una línea negra que cruza de izquierda a derecha en la pantalla del GamePad.<br><img src="Images/Identificar/autobooting_payload_loader_old.jpg" class="auto_size"></label><br><br>
 <input type="radio" id="autobooting_payload_loader" value="autobooting_payload_loader" name="default" style="display:none;">
@@ -2103,7 +2113,7 @@ a.previous:hover, a.next:hover {
 <input type="radio" id="haxchi_icon_no" value="haxchi_icon_no" name="default" style="display:none;">
 <label class="link" for="haxchi_icon_no">No, no hay ningún icono de Haxchi en el menú de Wii U.</label><br><br>
 </form>
-<div id="d_haxchi" style="display:none;"><p>Enciende la consola, accede al menú de Wii U, abre el icono de Haxchi y observa que ocurre en la pantalla del GamePad, no presiones ningún botón.</p>
+<div id="d_haxchi" style="display:none;"><p>Enciende la consola con la tarjeta SD puesta, accede al menú de Wii U, abre el icono de Haxchi y observa que ocurre en la pantalla del GamePad, no presiones ningún botón.</p>
 <h3>¿Pudiste abrir el icono de Haxchi en el menú de Wii U?</h3>
 <form id="f_haxchi" onclick="updateFormHaxchi()">
 <input type="radio" id="haxchi_no" value="haxchi_no" name="default" style="display:none;">
@@ -2138,12 +2148,11 @@ a.previous:hover, a.next:hover {
 <p>Existen dos "hacks" que usan el mismo exploit del navegador. Con Webhack debes entrar en una página web y tocar en un enlace o botón para ejecutar el exploit, por otro lado, con Indexiine no necesitas entrar en ninguna página ni tocar nada ya que se ejecuta automáticamente después de unos segundos de abrir el navegador.</p>
 <p>El exploit del navegador es un punto de entrada muy versátil ya que se puede usar para cargar cualquier aplicación homebrew. Sin embargo, también es fácil bloquear el navegador si es que se desconfiguran los ajustes correctos del propio navegador teniendo Indexiine instalado.</p>
 <p>Para evitar confusiones debes saber que tener la aplicación Indexiine Installer en el Homebrew Launcher <strong class="red">no</strong> es tener Indexiine instalado en la consola. La aplicación que se muestra en el Homebrew Launcher es el instalador de Indexiine, puedes tener la aplicación Indexiine Installer en el Homebrew Launcher sin tener realmente instalado Indexiine en la consola.<br><img src="Images/Identificar/hbl_with_indexiine_installer.jpg" class="auto_size"></p>
-<p>Enciende la consola, accede al menú de Wii U, abre el navegador de Internet y observa que ocurre en la pantalla del GamePad, espera unos segundos, no presiones ningún botón.<br><img src="Images/Identificar/internet_browser.jpg" class="auto_size"></p>
+<p>Enciende la consola con la tarjeta SD puesta, accede al menú de Wii U, abre el navegador de Internet y observa que ocurre en la pantalla del GamePad, espera unos segundos, no presiones ningún botón.<br><img src="Images/Identificar/internet_browser.jpg" class="auto_size"></p>
 <h3>¿Al abrir el navegador carga algo especial?</h3>
 <form id="f_indexiine" onclick="updateFormIndexiine()">
 <input type="radio" id="indexiine_no" value="indexiine_no" name="default" style="display:none;">
 <label class="link" for="indexiine_no">No, el navegador no carga nada especial, muestra su página de inicio, no se congela y lo puedo usar para navegar con normalidad.<br><img src="Images/Identificar/browser_index.jpg" class="auto_size"></label><br><br>
-
 <input type="radio" id="indexiine_mocha" value="indexiine_mocha" name="default" style="display:none;">
 <label class="link" for="indexiine_mocha">Sí, el navegador carga automáticamente Mocha CFW.<br><img src="Images/Identificar/mocha.jpg" class="auto_size"></label><br><br>
 <input type="radio" id="indexiine_iosuhax" value="indexiine_iosuhax" name="default" style="display:none;">
@@ -2154,7 +2163,11 @@ a.previous:hover, a.next:hover {
 <label class="link" for="indexiine_msf">Sí, el navegador se congela con el mensaje <code>FSGetMountSource falied. Please insert a FAT32 formatted sd card</code>.<br><img src="Images/Identificar/fs_get_mount_source.jpg" class="auto_size"></label><br><br>
 <input type="radio" id="indexiine_fm" value="indexiine_fm" name="default" style="display:none;">
 <label class="link" for="indexiine_fm">Sí, el navegador se congela con el mensaje <code>FSOpenFile falied. File missing /vol/external01/wiiu/payload.elf</code>.<br><img src="Images/Identificar/fs_open_file.jpg" class="auto_size"></label><br><br>
-
+<input type="radio" id="indexiine_failed" value="indexiine_failed" name="default" style="display:none;">
+<input type="radio" id="indexiine_rpx_failed" value="indexiine_rpx_failed" name="default" style="display:none;">
+<label class="link" for="indexiine_rpx_failed">Sí, el navegador se congela con el mensaje <code>Failed to load "fs:/vol/external01/wiiu/payload.rpx"</code>.<br><img src="Images/Identificar/payload_loader_failed_to_load_rpx.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="indexiine_mocha_failed" value="indexiine_mocha_failed" name="default" style="display:none;">
+<label class="link" for="indexiine_mocha_failed">Sí, el navegador se congela con el mensaje <code>AutobootModule: Mocha_InitLibrary failed</code>.<br><img src="Images/Identificar/mocha_initlibrary_failed.jpg" class="auto_size"></label><br><br>
 <input type="radio" id="indexiine_el" value="indexiine_el" name="default" style="display:none;">
 <label class="link" for="indexiine_el">Sí, el navegador carga automáticamente el Environment Loader (Cargador de Entorno).<br><img src="Images/EnvironmentLoader/installer.jpg" class="auto_size"></label><br><br>
 <input type="radio" id="indexiine_tbs" value="indexiine_tbs" name="default" style="display:none;">
@@ -2976,7 +2989,7 @@ a.previous:hover, a.next:hover {
 <div class="cont">
 <h2>Acerca de esta guía</h2>
 <br>
-<h3>Versión: 4.9 (30 de noviembre de 2022)</h3>
+<h3>Versión: 4.10 (2 de diciembre de 2022)</h3>
 <p>Esta guía fue hecha por <strong>Fran AC</strong> basado en la guía de los miembros de <a href="https://wiiu.hacks.guide/#/about">Nintendo Homebrew Discord Server</a>.</p>
 <p>Puedes descargar la guía completa desde <a href="https://github.com/piloncillo/piloncillo.github.io/releases">esté enlace</a>.</p>
 <p>Créditos a los desarrolladores de las herramientas</p>
@@ -3291,6 +3304,12 @@ function testResults() {
   else if (autobooting == "failed") {
     document.getElementById("autobooting_result").innerHTML = 'Autobooting PayloadLoader detectado. El PayloadLoader no está detectando la tarjeta SD o no encontró el archivo <code>sd:/wiiu/payload.elf</code>. Limpia los contactos de la tarjeta SD, si estas usando una microSD prueba cambiar el adaptador, revisa que tengas "los archivos del hack" en la tarjeta SD. Si no tienes los archivos de Tiramisu en la tarjeta SD puedes colocarlos siguiendo <a href="?s=update_tiramisu">las instrucciones para actualizar Tiramisu</a>.';
   }
+  else if (autobooting == "rpx_failed") {
+    document.getElementById("autobooting_result").innerHTML = 'Autobooting PayloadLoader detectado. La consola no encontró el archivo <code>sd:/wiiu/payload.rpx</code>. Para recuperar el archivo vuelve a poner todos los archivos de Tiramisu en la tarjeta SD siguiendo <a href="?s=update_tiramisu">las instrucciones para actualizar Tiramisu</a>.';
+  }
+  else if (autobooting == "mocha_failed") {
+    document.getElementById("autobooting_result").innerHTML = 'Autobooting PayloadLoader detectado. Si estas usando Tiramisu la consola no encontró el archivo <code>sd:/wiiu/environments/tiramisu/modules/setup/00_mocha.rpx</code>. Para recuperar el archivo vuelve a poner todos los archivos de Tiramisu en la tarjeta SD siguiendo <a href="?s=update_tiramisu">las instrucciones para actualizar Tiramisu</a>. Si estas usando Aroma La consola no encontró el archivo <code>sd:/wiiu/environments/aroma/modules/setup/00_mocha.rpx</code>. Para recuperar el archivo vuelve a poner todos los archivos de Aroma en la tarjeta SD.';
+  }
   else if (autobooting == "warning") {
     document.getElementById("autobooting_result").innerHTML = 'Autobooting PayloadLoader detectado. Si te aparece el mensaje de alerta <code>the update folder current exists</code> quiere decir que tu consola no está bloqueando las actualizaciones del sistema apropiadamente. Presiona el botón B para no volver a ver el mensaje de alerta. Consulta la información de <a href="?s=block_updates">aquí</a> si quieres bloquear completamente las actualizaciones del sistema de la consola.';
   }
@@ -3305,31 +3324,31 @@ function testResults() {
     document.getElementById("indexiine_result").innerHTML = 'Detectado. Está configurado para cargar el Homebrew Launcher.';
   }
   else if (indexiine == "iosuhax") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. Está configurado para cargar el "obsoleto" IOSUHAX.';
+    document.getElementById("indexiine_result").innerHTML = 'Detectado. Está configurado para cargar el "obsoleto" IOSUHAX. Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
   }
   else if (indexiine == "mocha") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. Está configurado para cargar Mocha CFW.';
+    document.getElementById("indexiine_result").innerHTML = 'Detectado. Está configurado para cargar Mocha CFW. Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
   }
   else if (indexiine == "wiiu" || indexiine == "user") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. Está configurado para cargar una aplicación o un CFW que a su vez redirige al menú de Wii U.';
+    document.getElementById("indexiine_result").innerHTML = 'Detectado. Está configurado para cargar una aplicación o un CFW que a su vez redirige al menú de Wii U. Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
   }
   else if (indexiine == "el") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. Carga el Environment Loader (Cargador de Entorno), seguramente tienes los archivos de Tiramisu en la tarjeta SD.';
+    document.getElementById("indexiine_result").innerHTML = 'Detectado. Carga el Environment Loader (Cargador de Entorno), seguramente tienes los archivos de Tiramisu en la tarjeta SD. Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
   }
   else if (indexiine == "tbs") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. Carga el Tiramisu Boot Selector (Selector de Arranque de Tiramisu), seguramente tienes los archivos de Tiramisu en la tarjeta SD.';
+    document.getElementById("indexiine_result").innerHTML = 'Detectado. Carga el Tiramisu Boot Selector (Selector de Arranque de Tiramisu), seguramente tienes los archivos de Tiramisu en la tarjeta SD. Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
   }
   else if (indexiine == "warning") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. Si te aparece el mensaje de alerta <code>the update folder current exists</code>, seguramente tienes los archivos de Tiramisu en la tarjeta SD.';
+    document.getElementById("indexiine_result").innerHTML = 'Detectado. Si te aparece el mensaje de alerta <code>the update folder current exists</code>, seguramente tienes los archivos de Tiramisu en la tarjeta SD. Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
   }
   else if (indexiine == "wii") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. Carga el menú de Wii (vWii System Menu), seguramente tienes los archivos de Tiramisu en la tarjeta SD.';
+    document.getElementById("indexiine_result").innerHTML = 'Detectado. Carga el menú de Wii (vWii System Menu), seguramente tienes los archivos de Tiramisu en la tarjeta SD. Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
   }
   else if (indexiine == "hbc") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. Carga el Homebrew Channel (vWii), seguramente tienes los archivos de Tiramisu en la tarjeta SD.';
+    document.getElementById("indexiine_result").innerHTML = 'Detectado. Carga el Homebrew Channel (vWii), seguramente tienes los archivos de Tiramisu en la tarjeta SD. Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
   }
   else if (indexiine == "ohb") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. Está configurado para cargar una aplicación homebrew.';
+    document.getElementById("indexiine_result").innerHTML = 'Detectado. Está configurado para cargar una aplicación homebrew. Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
   }
   else if (indexiine == "q") {
     document.getElementById("indexiine_result").innerHTML = 'Detectado. Se trata de un mod de Indexiine que permite omitir la carga del mismo para poder usar el navegador (involucra el riesgo de desconfigurar los ajustes correctos del propio navegador). Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
@@ -3342,6 +3361,12 @@ function testResults() {
   }
   else if (indexiine == "fm") {
     document.getElementById("indexiine_result").innerHTML = 'Detectado. El mensaje <code>FSOpenFile falied</code> quiere decir que la consola sí está detectando la tarjeta SD, pero no encontró el archivo <code>payload.elf</code> dentro de la carpeta <code>sd:/wiiu</code>.';
+  }
+  else if (indexiine == "rpx_failed") {
+    document.getElementById("indexiine_result").innerHTML = 'Detectado. Está intentando cargar el Environment Loader (Cargador de Entorno), seguramente tienes los archivos de Tiramisu en la tarjeta SD. Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
+  }
+  else if (indexiine == "mocha_failed") {
+    document.getElementById("indexiine_result").innerHTML = 'Detectado. Está intentando cargar Tiramisu (o Aroma), seguramente tienes los archivos de Tiramisu (o Aroma) en la tarjeta SD. Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
   }
   else if (indexiine == "freeze") {
     document.getElementById("indexiine_result").innerHTML = 'Detectado. Si se bloquea el navegador lo más probable es que se perdieron los ajustes correctos para ejecutar Indexiine. Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
@@ -3409,6 +3434,12 @@ function testResults() {
   else if (payloadloader == "failed") {
     document.getElementById("payloadloader_result").innerHTML = 'Detectado. No está detectando la tarjeta SD o no encontró el archivo <code>sd:/wiiu/payload.elf</code>. Limpia los contactos de la tarjeta SD, si estas usando una microSD prueba cambiar el adaptador, revisa que tengas "los archivos del hack" en la tarjeta SD. Si no tienes los archivos de Tiramisu en la tarjeta SD puedes colocarlos siguiendo <a href="?s=update_tiramisu">las instrucciones de como actualizar Tiramisu</a>.';
   }
+  else if (autobooting == "rpx_failed") {
+    document.getElementById("payloadloader_result").innerHTML = 'Detectado. La consola no encontró el archivo <code>sd:/wiiu/payload.rpx</code>. Para recuperar el archivo vuelve a poner todos los archivos de Tiramisu en la tarjeta SD siguiendo <a href="?s=update_tiramisu">las instrucciones para actualizar Tiramisu</a>.';
+  }
+  else if (autobooting == "mocha_failed") {
+    document.getElementById("payloadloader_result").innerHTML = 'Detectado. Si estas usando Tiramisu la consola no encontró el archivo <code>sd:/wiiu/environments/tiramisu/modules/setup/00_mocha.rpx</code>. Para recuperar el archivo vuelve a poner todos los archivos de Tiramisu en la tarjeta SD siguiendo <a href="?s=update_tiramisu">las instrucciones para actualizar Tiramisu</a>. Si estas usando Aroma La consola no encontró el archivo <code>sd:/wiiu/environments/aroma/modules/setup/00_mocha.rpx</code>. Para recuperar el archivo vuelve a poner todos los archivos de Aroma en la tarjeta SD.';
+  }
   else if (payloadloader == "twice") {
     document.getElementById("payloadloader_result").innerHTML = 'Detectado. El mensaje <code>Don\'t run EnvironmentLoader twice</code> indica que antes de abrir el icono de Información sobre salud y seguridad ya habías cargado el Environment Loader. Si tienes Autobooting PayloadLoader el Environment Loader se carga cuando enciendes la consola. El Environment Loader también se puede cargar usando el exploit del navegador de Internet o se puede cargar al abrir el icono de Información sobre salud y seguridad.';
   }
@@ -3430,11 +3461,17 @@ function testSDResults() {
   
   if (sd == "yes" && folder == "yes") {
     if (autobooting == "failed" ||
+	autobooting == "rpx_failed" ||
+	autobooting == "mocha_failed" ||
 	indexiine == "msf" ||
 	indexiine == "fm" ||
+	indexiine == "rpx_failed" ||
+	indexiine == "mocha_failed" ||
 	haxchi == "-3" ||
 	haxchi == "-5" ||
-	payloadloader == "failed") {
+	payloadloader == "failed" ||
+	payloadloader == "rpx_failed" ||
+	payloadloader == "mocha_failed") {
       document.getElementById("sd_result").innerHTML = 'Aunque tienes la carpeta <code>sd:/wiiu</code> la consola no esta detectando la tarjeta SD o los archivos del "hack" de la consola. Revisa las recomendaciones de arriba según sea el caso.';
     }
     else {
@@ -3453,8 +3490,11 @@ function testSDResults() {
 	payloadloader == "wiiu" || payloadloader == "user" || payloadloader == "hbl" || payloadloader == "wii" || payloadloader == "hbc" || payloadloader == "el" || payloadloader == "tbs" || payloadloader == "warning" || payloadloader == "twice") {
       document.getElementById("sd_result").innerHTML = 'Hay una contradicción en tus respuestas, señalaste que PayloadLoader, Indexiine y/o Haxchi carga una aplicacion homebrew o un CFW, pero la tarjeta SD no tiene la carpeta <code>wiiu</code>. La carpeta <code>sd:/wiiu</code> es esencial ya que ahí se almacenan las aplicaciones homebrew y los archivos del "hack" de la consola. Revisa tus respuestas.';
     }
+	else if (autobooting == "rpx_failed" || autobooting == "mocha_failed" || indexiine == "rpx_failed" || indexiine == "mocha_failed" || payloadloader == "rpx_failed" || payloadloader == "mocha_failed" || ) {
+      document.getElementById("sd_result").innerHTML = 'Hay una contradicción en tus respuestas, señalaste que PayloadLoader y/o Indexiine muestra un mensaje que requiere de la presencia de la carpeta <code>wiiu</code>. Revisa tus respuestas.';
+    }
 	else if (indexiine == "msf" || haxchi == "-3") {
-      document.getElementById("sd_result").innerHTML = 'La consola no esta detectando los archivos relacionados con Indexiine o Haxchi. Revisa las recomendaciones de arriba según sea el caso.';
+      document.getElementById("sd_result").innerHTML = 'La consola no esta detectando la tarjeta SD. Revisa las recomendaciones de arriba según sea el caso.';
     }
 	else if (autobooting == "failed" ||
 	indexiine == "fm" ||
@@ -3480,6 +3520,9 @@ function testSDResults() {
 	haxchi == "hbl" || haxchi == "iosuhax" || haxchi == "mocha" || haxchi == "ohb" ||
 	payloadloader == "wiiu" || payloadloader == "user" || payloadloader == "hbl" || payloadloader == "wii" || payloadloader == "hbc" || payloadloader == "el" || payloadloader == "tbs" || payloadloader == "twice") {
       document.getElementById("sd_result").innerHTML = 'Hay una contradicción en tus respuestas, señalaste que PayloadLoader, Indexiine y/o Haxchi carga una aplicacion homebrew o un CFW, pero la consola no tiene tarjeta SD. La tarjeta SD es esencial ya que ahí se almacenan las aplicaciones homebrew y los archivos del "hack" de la consola. Revisa tus respuestas.';
+    }
+	else if (autobooting == "rpx_failed" || autobooting == "mocha_failed" || indexiine == "rpx_failed" || indexiine == "mocha_failed" || payloadloader == "rpx_failed" || payloadloader == "mocha_failed" || ) {
+      document.getElementById("sd_result").innerHTML = 'Hay una contradicción en tus respuestas, señalaste que PayloadLoader y/o Indexiine muestra un mensaje que requiere de la presencia de la tarjeta SD. Revisa tus respuestas.';
     }
 	else if (indexiine == "fm" || haxchi == "-5") {
       document.getElementById("sd_result").innerHTML = 'Hay una contradicción en tus respuestas, señalaste que Indexiine o Haxchi muestra un error que indica que sí está detectando la tarjeta SD, pero la consola no tiene tarjeta SD. Revisa tus respuestas.';
@@ -3663,6 +3706,16 @@ function updateFormAutobooting() {
 	}
 	else if (value == "autobooting_failed") {
 	  localStorage.setItem("autobooting", "failed");
+      document.getElementById("autobooting_next").style.display = "inline";
+	  document.getElementById("fmr").style.display = "none";
+	}
+	else if (value == "autobooting_rpx_failed") {
+	  localStorage.setItem("autobooting", "rpx_failed");
+      document.getElementById("autobooting_next").style.display = "inline";
+	  document.getElementById("fmr").style.display = "none";
+	}
+	else if (value == "autobooting_mocha_failed") {
+	  localStorage.setItem("autobooting", "mocha_failed");
       document.getElementById("autobooting_next").style.display = "inline";
 	  document.getElementById("fmr").style.display = "none";
 	}
