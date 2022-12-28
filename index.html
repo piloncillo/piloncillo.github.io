@@ -495,6 +495,7 @@ a.previous:hover, a.next:hover {
 	  <a href="?s=uninstall_payloadloader" id="uninstall_payloadloader_link" class="tablinks">Tiramisu o Aroma</a>
     </div>
 	<a href="?s=update_tiramisu" id="update_tiramisu_link">Actualizar Tiramisu</a>
+	<a href="?s=aroma_beta" id="aroma_beta_link">Probar Aroma beta</a>
     <a href="?s=games" id="games_link" class="tablinks">Descarga de juegos</a>
     <a href="?s=install_games" id="install_games_link" class="tablinks">Instalación de juegos</a>
 	<a href="?s=standby_functions" id="?s=standby_functions_link" class="tablinks large">Desactivar modo reposo</a>
@@ -604,6 +605,69 @@ a.previous:hover, a.next:hover {
 <li>Presiona el <strong class="green">botón HOME</strong> para salir de UFDiine.</li>
 </ul>
 <p><a onclick="window.history.back()">Regresar</a></p>
+</div>
+</div>
+<div id="aroma_beta" class="tabcontent" style="display:none;">
+<div class="cont">
+<h2>Probar la beta de Aroma</h2>
+<br>
+<p><strong class="red">¡¡Importante!!</strong> Antes de instalar la beta de Aroma debes tener Tiramisu instalado y actualizado, si no estás seguro de tener Tiramisu actualizado entonces primero sigue los pasos para <a href="?s=update_tiramisu">actualizar Tiramisu</a> y después regresa aquí.</p>
+<br>
+<h3>Necesitas los archivos más recientes de Aroma</h3>
+<ul>
+<li>Este enlace lleva al sitio oficial: <a href="https://aroma.foryour.cafe/">Aroma para tu café</a>.</li>
+<ul>
+<li>Dentro del sitio debes ir hasta abajo y tocar en las 4 checkbox para tenerlas palomeadas. Al hacerlo estás dando por entendido que:</li>
+<ul>
+<li><strong class="red">Conoces el alcance y las limitaciones de la versión beta de Aroma.</strong></li>
+<li>La tarjeta SD no está protegida contra escritura, de lo contrario, va a salir el código de error <strong class="yellow">150-3030</strong>.</li>
+<li>Estas utilizando la versión más reciente del Environment Loader.</li>
+<li>Aroma recibirá actualizaciones frecuentes por lo cual debes mantenerte informado por vías oficiales para conocer las últimas noticias sobre su desarrollo.</li>
+</ul>
+<img src="Images/Aroma/01.png" class="auto_size_li">
+<li>Al palomear la última casilla el sitio muestra los botones de descarga. Los bloques de la sección Base no nos interesan porque ya tenemos Tiramisu instalado y actualizado.</li>
+<li>Toca en el botón <em class="green">Download Base Aroma</em> para iniciar la descarga del archivo <code>base-aroma.zip</code>.</li>
+<li>Seleciona <em class="green">Bloopair</em> y <em class="green">SDCafiine Plugin</em>, el resto de plugins no son necesarios para un usuario común, son útiles para desarrolladores o testers.</li>
+<li>Toca en el botón <em class="green">Download Additional Plugin and Modules</em> para iniciar la descarga del archivo <code>bloopair+sdcafiine.zip</code>.<br><img src="Images/Aroma/02.png" class="auto_size_li"></li>
+</ul>
+<li>Además, necesitas la versión más actual del <a href="https://github.com/marco-calautti/SigpatchesModuleWiiU/releases">módulo Sigpatches</a>.</li>
+<ul>
+<li>Únicamente necesitas el archivo <code>01_sigpatches.rpx</code>.<br><img src="Images/Aroma/sigpatches_repo.png" class="auto_size_li"></li>
+</ul>
+</ul>
+<h3>Instalación</h3>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
+<ul>
+<li>Descomprime el archivo <code>base-aroma.zip</code>.</li>
+<li>Copia la carpeta <code>wiiu</code> a la raíz de la tarjeta SD.</li>
+<li>Descomprime el archivo <code>bloopair+sdcafiine.zip</code>.</li>
+<li>Copia la carpeta <code>wiiu</code> a la raíz de la tarjeta SD.</li>
+<li>Copia el archivo <code>01_sigpatches.rpx</code> a la carpeta <code>sd:/wiiu/environments/aroma/modules/setup</code>.<br><img src="Images/Aroma/sigpatches.png" class="auto_size_li"></li>
+</ul>
+<ul>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
+</ul>
+<h3>Configurar el arranque del EnvironmentLoader y Aroma</h3>
+<ul>
+<li>Si activaste el <strong class="blue">arranque automático</strong> del <em>PayloadLoader</em>: <strong class="green">Enciende la consola</strong> y <strong class="green">mantén presionado el botón X</strong> hasta que salga el <em>EnvironmentLoader</em>.</li>
+<li>Si tu consola tiene <em>PayloadLoader</em> de <strong class="yellow">arranque manual</strong>: Enciende la consola, accede al menú de Wii U, <strong class="green">abre Información sobre salud y seguridad</strong> y <strong class="green">mantén presionado el botón X</strong> del GamePad para abrir el <em>EnvironmentLoader</em>.</li>
+<li>Navega por el menú usando las flechas del D-Pad del GamePad, <strong class="green">selecciona</strong> <em class="green">Aroma</em>.</li>
+<li>Opcionalmente presiona el <strong class="green">botón Y</strong> para configurar Aroma como el entorno predeterminado.</li>
+<li>Presiona el <strong class="green">botón A</strong> para abrir Aroma.<br><img src="Images/EnvironmentLoader/aroma_default_tiramisu.jpg" class="auto_size_li"></li>
+<li>Si te aparece un mensaje de alerta acerca del <em>update folder</em> (carpeta <em>update</em>) quiere decir que tu consola no está bloqueando las actualizaciones del sistema apropiadamente.<br><img src="Images/Tiramisu/warning.jpg" class="auto_size_li"></li>
+<li>Presiona el <strong class="green">botón B</strong> para no volver a ver el mensaje de alerta.</li>
+<li>Consulta la información de <a href="?s=block_updates">aquí</a> si quieres bloquear completamente las actualizaciones del sistema de la consola.</li>
+<li>Ahora debes estar en el menú de Aroma <em>Boot Selector</em>, con la opción <em class="green">Wii U Menu</em> seleccionada, presiona el <strong class="green">botón Y</strong> para configurar dicha opción como predeterminada y luego presiona el <strong class="green">botón A</strong> para abrir el menú de Wii U.<br><img src="Images/Aroma/wiiu_menu_default_wii_u_menu.jpg" class="auto_size_li"></li>
+<li>En este punto ya finalizaste la instalación de Aroma, pero aún falta añadir aplicaciones, módulos y plugins que agregan funcionalidad al "hack" de la consola. Consulta la sección de <a href="">Homebrew para Aroma</a>. <strong class="red">Toma nota de los siguientes cuadros de información para usar correctamente Aroma</strong>.</li>
+</ul>
+<div class="info">Con el entorno de Aroma cargado en la consola no se usa el <em>Homebrew Launcher</em>. Las aplicaciones <em>homebrew</em> compatibles con Aroma aparecen directamente en el menú de Wii U, actualmente no todas las aplicaciones están garantizadas para funcionar correctamente con Aroma.</div>
+<div class="info">Si activaste el <strong class="blue">arranque automático</strong> del <em>PayloadLoader</em> puedes abrir el <em>EnvironmentLoader</em> si enciendes la consola y mantienes presionado el botón X.</div>
+<div class="info">Si activaste el <strong class="blue">arranque automático</strong> del <em>PayloadLoader</em> puedes abrir el menú <em>Boot Selector</em> si enciendes la consola y mantienes presionado el botón <em>START</em> (+).</div>
+<div class="info">Si activaste el <strong class="blue">arranque automático</strong> del <em>PayloadLoader</em> puedes impedir que cargue el <em>EnvironmentLoader</em>, Tiramisu y Aroma sacando la tarjeta SD de la consola antes de encenderla. De esta forma la consola iniciará sin modificaciones. La siguiente vez que enciendas la consola con la tarjeta SD con los archivos del <em>EnvironmentLoader</em>, Tiramisu y Aroma cargará estos normalmente.</div>
+<div class="bottomnav">
+<a href="?s=main" class="previous">&#8249; Inicio</a><a href="?s=Homebrew_aroma" class="next">Homebrew para Aroma &#8250;</a>
+</div>
 </div>
 </div>
 <div id="intro_tiramisu" class="tabcontent" style="display:none;">
@@ -2990,7 +3054,7 @@ a.previous:hover, a.next:hover {
 <div class="cont">
 <h2>Acerca de esta guía</h2>
 <br>
-<h3>Versión: 4.11 (21 de diciembre de 2022)</h3>
+<h3>Versión: 4.12 (27 de diciembre de 2022)</h3>
 <p>Esta guía fue hecha por <strong>Fran AC</strong> basado en la guía de los miembros de <a href="https://wiiu.hacks.guide/#/about">Nintendo Homebrew Discord Server</a>.</p>
 <p>Puedes descargar la guía completa desde <a href="https://github.com/piloncillo/piloncillo.github.io/releases">esté enlace</a>.</p>
 <p>Créditos a los desarrolladores de las herramientas</p>
