@@ -1,6 +1,6 @@
 # Acerca de esta guía
 
-Versión: 4.11 (21 de diciembre de 2022)
+Versión: 4.12 (27 de diciembre de 2022)
 
 Esta guía fue hecha por FranAC basado en la guía de los miembros de [Nintendo Homebrew Discord Server](https://wiiu.hacks.guide/#/about).
 
