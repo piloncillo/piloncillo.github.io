@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
-<meta charset="utf-8">
 <head>
-<title itemprop="name">Guía de Piloncillo para Wii U</title>
-<meta property="og:title" content="Guía de Piloncillo para Wii U" />
-<meta name="twitter:title" content="Guía de Piloncillo para Wii U" />
-<meta itemprop="name" content="Guía de Piloncillo para Wii U" />
-<meta name="application-name" content="Guía de Piloncillo para Wii U" />
-<meta property="og:site_name" content="Guía de Piloncillo para Wii U" />
+<title itemprop="name">Piloncillo para Wii U</title>
+<meta property="og:title" content="Piloncillo para Wii U" />
+<meta name="twitter:title" content="Piloncillo para Wii U" />
+<meta itemprop="name" content="Piloncillo para Wii U" />
+<meta name="application-name" content="Piloncillo para Wii U" />
+<meta property="og:site_name" content="Piloncillo para Wii U" />
 <link rel='icon' href='Images/favicon.png'>
 <meta name='google-site-verification' content='qzgxLiPkLZqct4OizWs3vUrabLQxt_L2CdA_bYOS2XI' />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
@@ -16,69 +15,262 @@
 <link rel="image_src" href="Images/favicon.png"/>
 <style>
 body {
+	font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+	font-size: 0.9em;
+	line-height: 1.7;
+	background-color: #393939;
 	color: #d3d3d3;
-	background-color: #111111;
-	font-family: Helmet, Freesans, sans-serif;
-	font-size: 16px;
-	padding: 0px;
-	margin: 0px;
+	margin: 0;
+	padding: 0;
 	overflow-x: hidden;
 }
 
-#content {
-	padding-top: 0px;
-	padding-right: 0px;
-	padding-bottom: 0px;
-	padding-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	margin-left: 6px;
-}
-
-.cont {
-	padding-top: 45px;
-	padding-right: 15px;
-	padding-bottom: 35px;
-	padding-left: 15px;
-	margin: auto;
-    width: 870px;
+h1 {
+	font-size: 2.4em;
+	font-weight: 400;
+	color: #ffffff;
 }
 
 h2 {
+	font-size: 1.4em;
+	font-weight: 500;
+	color: #ffffff;
+}
+
+#sidebar a:link {
+	color: #d3d3d3;
+	text-decoration: none;
+}
+
+#sidebar a:visited {
+	color: #d3d3d3;
+	text-decoration: none;
+}
+
+#sidebar a:hover {
+	color: #d3d3d3;
+	text-decoration: underline;
+}
+
+#sidebar a:active {
+	color: #0B87DA;
+	text-decoration: none;
+}
+
+#sidebar .selected, #sidebar a.selected {
+	color: #0B87DA;
+}
+
+a {
+    cursor: pointer;
+    color: #6688dd;
+    text-decoration: none;
+    -webkit-transition-duration: .2s;
+    -o-transition-duration: .2s;
+    transition-duration: .2s;
+}
+
+a:hover {
+	color: #88aaff;
+	text-decoration: underline;
+}
+
+a.external {
+	background: url(Images/external.png) no-repeat right center;
+    padding-right: 14px;
+}
+
+.caret {
+	cursor: pointer;
+	user-select: none;
+}
+
+.caret:hover {
+	text-decoration: underline;
+}
+
+.caret::before {
+	content: "\276F";
+	display: inline-block;
+	margin-right: 6px;
+}
+
+.caret-down::before {
+	transform: rotate(90deg);
+	color: #0B87DA;
+}
+
+.nested {
+	display: none;
+}
+
+.active_nav {
 	display: block;
-    font-size: 24px;
-    margin-block-start: 0px;
-    margin-block-end: 13px;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
 }
 
-p {
-    display: block;
-	font-size: 16px;
-    margin-block-start: 16px;
-    margin-block-end: 16px;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+.accordion {
+	font-size: 0.9em;
+	line-height: 1.7;
+	cursor: pointer;
+	padding: 18px;
+	max-width: 720px;
+	text-align: left;
+	color: #d3d3d3;
+	background-color: #333333;
+}
+
+.active_acco, .accordion:hover {
+	background-color: #2a2a2a;
+}
+
+.accordion:after {
+	content: '\25BC';
+	font-weight: bold;
+	float: right;
+	padding: 0;
+	color: #0B87DA;
+}
+
+.active_acco:after {
+	content: "\25B2";
+	color: #0B87DA;
+}
+
+.panel {
+	border-bottom: 1px solid #2a2a2a;
+	padding: 0 18px;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.5s ease-out;
+}
+
+body::-webkit-scrollbar, #sidebar::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+	background-color: #494949;
+}
+
+body::-webkit-scrollbar-thumb, #sidebar::-webkit-scrollbar-thumb {
+	background: #666666;
+}
+
+#sidebar {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: rgba(40, 40, 40, 0.9);
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding: 0;
+}
+
+#sidebar_close {
+	position: absolute;
+	top: 4px;
+	right: 20px;
+	margin: 0;
+	padding: 0;
+	font-size: 36px;
+	cursor: pointer;
+	text-decoration: none;
+	color: white;
+	padding: 0px 6px 0px 6px;
+	visibility: hidden;
+}
+
+#sidebar_toggle {
+	font-size: 20px;
+	cursor: pointer;
+	background-color: rgba(40, 40, 40, 0.9);
+	color: white;
+	padding: 0px 9px 2px 9px;
+	border: none;
+	transition: margin-left .5s;
+	position: fixed;
+	top: 20px;
+	left: 0px;
+	margin-left: 0;
+}
+
+#sidebar_toggle:hover {
+	background-color: rgba(40, 40, 40, 0.45);
+}
+
+#sidebar_content {
+	max-width: 250px;
+	margin: 0 auto;
+}
+
+.sidenav ul, .sidenav {
+	list-style-type: none;
+}
+
+.sidenav {
+	position: absolute;
+	margin: 0 0 0 25px;
+	padding: 10px 0;
+	width: 350px;
+}
+
+.sidenav li {
+	margin: 0;
+	padding: 4px 0px;
+}
+
+.sidenav ul {
+	margin: 0 0 0 30px;
+	padding: 0;
+}
+
+.sidenav ul ul {
+	margin: 0 0 0 30px;
+	padding: 0;
+}
+
+#logo {
+	padding: 25px;
+	height: 40px;
+	text-align: center;
+}
+
+#content {
+	transition: margin-left .5s;
+	margin: 0;
+	padding: 40px 40px 120px 40px;
+	margin-left: 0;
+}
+
+.cont {
+	max-width: 720px;
+	margin: 0 auto;
+}
+
+.cont p {
 	text-align: justify;
-	line-height: 1.6;
 }
 
-p.left {
-	text-align: left;
+img {
+	transition: 0.5s;
 }
 
-ul, ol {
-    display: block;
-	font-size: 16px;
-    margin-block-start: 16px;
-    margin-block-end: 16px;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-	text-align: left;
-	line-height: 1.75;
+.cont ul {
+	padding-left: 20px;
+}
+
+img.center {
+	margin: auto;
+	display: block;
+}
+
+div.info {
+	border-color: #3366dd;
+}
+
+div.warning {
+	border-color: #cc3333;
 }
 
 div.info, div.warning {
@@ -92,15 +284,7 @@ div.info, div.warning {
 	border-width: 4px;
 	text-align: justify;
 	line-height: 1.6;
-    background-color: #222222;
-}
-
-div.info {
-	border-color: #3366dd;
-}
-
-div.warning {
-	border-color: #cc3333;
+    background-color: #2d2d2d;
 }
 
 strong.red, em.red, code.red {
@@ -124,12 +308,45 @@ strong.oranje, em.oranje, code.oranje {
 }
 
 code {
-	font-size: 16px;
-    background-color: #2A2A2A;
+	font-size: 1.2em;
+    background-color: #2d2d2d;
 	word-break: break-word;
+	padding-right: 3px;
+	padding-left: 3px;
 }
 
-.button {
+.bottomnav {
+	padding-top: 10px;
+	display: inline-block;
+	width: 100%;
+}
+
+a.previous, a.next {
+	text-decoration: none;
+	padding: 6px 14px 8px 14px;
+	border-radius: 4px;
+}
+
+a.previous:hover, a.next:hover {
+	background-color: #bbbbbb;
+	color: black;
+}
+
+a.previous {
+	position: relative;
+	background-color: #e1e1e1;
+	color: black;
+	float: left;
+}
+
+a.next {
+	position: relative;
+	background-color: #0055aa;
+	color: white;
+	float: right;
+}
+
+.button, .button_click {
 	background-color: #0a2b55;
 	border: none;
 	color: white;
@@ -140,24 +357,7 @@ code {
 	font-size: 16px;
 }
 
-.button:hover {
-	background-color: #0a2b80;
-	color: white;
-	text-decoration: none;
-}
-
-.button_click {
-	background-color: #0a2b55;
-	border: none;
-	color: white;
-	padding: 15px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-}
-
-.button_click:hover {
+.button:hover, .button_click:hover {
 	background-color: #0a2b80;
 	color: white;
 	text-decoration: none;
@@ -166,25 +366,6 @@ code {
 .button_click:active {
   background-color: #800a0a;
   transform: translateY(1px);
-}
-
-a {
-    cursor: pointer;
-    color: #6688dd;
-    text-decoration: none;
-    -webkit-transition-duration: .2s;
-    -o-transition-duration: .2s;
-    transition-duration: .2s;
-}
-
-a:hover {
-	color: #88aaff;
-	text-decoration: underline;
-}
-
-a.external {
-	background: url(Images/external.png) center right no-repeat;
-    padding-right: 20px;
 }
 
 .link {
@@ -200,320 +381,121 @@ a.external {
 	text-decoration: underline;
 }
 
-img.center {
-	margin: auto;
-	display: block;
-}
-
 .vertical_padding {
 	height: 80vh;
-}
-
-#bars {
-  cursor: pointer;
-  position: fixed;
-  display: none;
-  height: 32px;
-  width: 32px;
-  top: 3px;
-  left: 0;
-  padding: 0;
-  margin: 0;
-  color: #ffffff;
-  background-color: #222222;
-  border: 1px solid #444444;
-  z-index: 3;
-}
-
-#overlay {
-  cursor: pointer;
-  display: none;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 2;
-}
-
-#sidebar {
-  position: fixed;
-  display: none;
-  height: 100%;
-  width: 280px;
-  background-color: #222222;
-  z-index: 3;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-#sidebar_toggle {
-  position: absolute;
-  cursor: pointer;
-  height: 32px;
-  width: 32px;
-  top: 3px;
-  right: 0;
-  padding: 0;
-  margin: 0;
-  color: #ffffff;
-  background-color: #222222;
-  border: 1px solid #444444;
-}
-
-#sidetitle {
-  position: absolute;
-  top: 40px;
-  left: 24px;
-  background-color: transparent;
-}
-
-#sidetitle p {
-  height: auto;
-  width: 232px;
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-  text-align: center;
-  font-size: 26px;
-  background-color: transparent;
-}
-
-#sidenav {
-  position: absolute;
-  height: auto;
-  width: 280px;
-  top: 150px;
-  left: 0;
-  background-color: #222222;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
-
-#sidenav a, .dropdown-btn {
-  padding: 6px 8px 6px 40px;
-  text-decoration: none;
-  font-size: 21px;
-  color: #a0a0a0;
-  display: block;
-  border: none;
-  background: none;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-  outline: none;
-}
-
-#sidenav a.large, .dropdown-btn.large {
-  font-size: 19px;
-}
-
-.dropdown-btn:after {
-  content: '+';
-  float: right;
-  margin-left: 5px;
-}
-
-#sidenav a:hover, .dropdown-btn:hover {
-  color: #f0f0f0;
-  background-color: #333333;
-}
-
-#sidenav a.active {
-  color: #f0f0f0;
-  background-color: #0a2b55;
-}
-
-.active {
-  background-color: #333333;
-  color: #a0a0a0;
-}
-
-.dropdown-btn.active:after {
-  content: '-';
-}
-
-.dropdown-container {
-  display: none;
-  background-color: #282828;
-  padding-left: 8px;
-}
-
-.popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 11.7%;
-  text-align: center;
-}
-
-.popup .popuptext {
-  visibility: hidden;
-  width: 180px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 152%;
-  left: 50%;
-  margin-left: -90px;
-}
-
-.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-.popup .show {
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s;
-}
-
-@-webkit-keyframes fadeIn {
-  from {opacity: 0;} 
-  to {opacity: 1;}
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:1 ;}
-}
-
-.tiramisu_topnav {
-  width: 100%;
-  text-align: center;
-}
-
-.line {
-  background-color: #0055aa;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  float: none;
-  position: relative;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 13px;
-  width: 73%;
-}
-
-.circle {
-  border-radius: 50%;
-  border: 3px solid #0055aa;
-  background-color: #444444;
-  padding: 4px 12px;
-  
-}
-
-.circle.active {
-  background-color: #0055aa;
-}
-
-.bottomnav {
-  padding-top: 10px;
-  height: 26px;
-}
-
-a.previous, a.next {
-  text-decoration: none;
-  padding: 7px 14px;
-  border-radius: 4px;
-}
-
-a.previous:hover, a.next:hover {
-  background-color: #bbbbbb;
-  color: black;
-}
-
-.previous {
-  position: relative;
-  background-color: #e1e1e1;
-  color: black;
-  float: left;
-}
-
-.next {
-  position: relative;
-  background-color: #0055aa;
-  color: white;
-  float: right;
 }
 </style>
 </head>
 <body onload="loadContent()">
-<div id="bars" onclick="openSidebar()"><img src="Images/bars.png"></div>
-<div id="overlay" onclick="closeSidebar()"></div>
 <div id="sidebar">
-  <div id="sidebar_toggle" onclick="closeSidebar()"><img src="Images/close.png"></div>
-  <div id="sidetitle">
-    <p>Guía de Piloncillo para Wii U</p>
-  </div>
-  <div id="sidenav">
-    <a href="?s=main" id="main_link" class="tablinks">Inicio</a>
-	<button id="install_hack" class="dropdown-btn">Instalar hack</button>
-	<div class="dropdown-container">
-      <a href="?s=tiramisu&p=sd" id="tiramisu_sd_link" class="tablinks">Prepara la tarjeta SD</a>
-	  <a href="?s=tiramisu&p=files" id="tiramisu_files_link" class="tablinks">Coloca los archivos</a>
-      <a href="?s=tiramisu&p=nand_backup_browser_exploit" id="tiramisu_nand_backup_browser_exploit_link" class="tablinks">Exploit del navegador</a>
-      <a href="?s=tiramisu&p=nand_backup" id="tiramisu_nand_backup_link" class="tablinks">Copia de la NAND</a>
-  	  <a href="?s=tiramisu&p=payloadloader" id="tiramisu_payloadloader_link" class="tablinks">PayloadLoader</a>
-	  <a href="?s=tiramisu&p=autobooting" id="tiramisu_autobooting_link" class="tablinks">Autobooting</a>
-	  <a href="?s=tiramisu&p=config" id="tiramisu_config_link" class="tablinks">Configurar Tiramisu</a>
-	  <a href="?s=tiramisu&p=apps" id="tiramisu_apps_link" class="tablinks">Añadir aplicaciones</a>
-    </div>
-    <!--a href="?s=entry" id="entry_link" class="tablinks">Instalar un hack anterior</a-->
-	<button id="test_hack" class="dropdown-btn">Identificar hack</button>
-    <div class="dropdown-container">
-	  <a href="?s=test" id="test_link" class="tablinks">Identificación</a>
-	  <a href="?s=test&p=payloadloader" id="test_payloadloader_link" class="tablinks">PayloadLoader</a>
-	  <a href="?s=test&p=autobooting" id="test_autobooting_link" class="tablinks">Autobooting</a>
-	  <a href="?s=test&p=haxchi" id="test_haxchi_link" class="tablinks">Haxchi</a>
-	  <a href="?s=test&p=indexiine" id="test_indexiine_link" class="tablinks">Indexiine</a>
-    </div>
-    <button id="uninstall_hack" class="dropdown-btn">Desinstalar hack</button>
-    <div class="dropdown-container">
-      <a href="?s=uninstall_webhack" id="uninstall_webhack_link" class="tablinks">Webhack</a>
-      <a href="?s=uninstall_indexiine" id="uninstall_indexiine_link" class="tablinks">Indexiine</a>
-      <a href="?s=uninstall_haxchi" id="uninstall_haxchi_link" class="tablinks">Haxchi</a>
-  	  <a href="?s=uninstall_cbhc" id="uninstall_cbhc_link" class="tablinks">Coldboot Haxchi</a>
-	  <a href="?s=uninstall_payloadloader" id="uninstall_payloadloader_link" class="tablinks">Tiramisu o Aroma</a>
-    </div>
-	<a href="?s=update_tiramisu" id="update_tiramisu_link">Actualizar Tiramisu</a>
-	<a href="?s=aroma_beta" id="aroma_beta_link">Probar Aroma beta</a>
-    <a href="?s=games" id="games_link" class="tablinks">Descarga de juegos</a>
-    <a href="?s=install_games" id="install_games_link" class="tablinks">Instalación de juegos</a>
-	<a href="?s=standby_functions" id="?s=standby_functions_link" class="tablinks large">Desactivar modo reposo</a>
-	<a href="?s=block_updates" id="block_updates_link" class="tablinks large">Bloquear actualizaciones</a>
-    <a href="?s=custom_haxchi" id="custom_haxchi_link" class="tablinks">Personalizar Haxchi</a>
-    <!--a href="?s=config_payload" id="config_payload_link" class="tablinks">Personalizar payload</a-->
-    <a href="?s=glossary" id="glossary_link" class="tablinks">Glosario</a>
-    <a href="?s=questions" id="questions_link" class="tablinks">Preguntas frecuentes</a>
-    <a href="?s=homebrew" id="homebrew_link" class="tablinks">Homebrew destacado</a>
-	<a href="?s=homebrew_aroma" id="homebrew_aroma_link" class="tablinks">Homebrew Aroma</a>
-    <a href="?s=about" id="about_link" class="tablinks">Acerca de</a>
-  </div>
+<div id="sidebar_close" onclick="closeSidebar()">&#215;</div>  
+<div id="sidebar_content">
+<div id="logo"><img id="pilon_logo" src="Images/logo.png" /></div>
+<ul class="sidenav">
+<li><a href="?s=main" class="selectable" id="main_link" title="Inicio">Inicio</a></li>
+<li><span class="caret selectable" id="install_hack" title="Instalar hack">Instalar hack</span>
+	<ul class="nested">
+	<li><a class="selectable" href="?s=tiramisu&p=sd" id="tiramisu_sd_link" title="Prepara la tarjeta SD">Prepara la tarjeta SD</a></li>
+	<li><a class="selectable" href="?s=tiramisu&p=files" id="tiramisu_files_link" title="Coloca los archivos">Coloca los archivos</a></li>
+	<li><a class="selectable" href="?s=tiramisu&p=nand_backup_browser_exploit" id="tiramisu_nand_backup_browser_exploit_link" title="Exploit del navegador">Exploit del navegador</a></li>
+	<li><a class="selectable" href="?s=tiramisu&p=nand_backup" id="tiramisu_nand_backup_link" title="Copia de la NAND">Copia de la NAND</a></li>
+	<li><a class="selectable" href="?s=tiramisu&p=payloadloader" id="tiramisu_payloadloader_link" title="PayloadLoader">PayloadLoader</a></li>
+	<li><a class="selectable" href="?s=tiramisu&p=autobooting" id="tiramisu_autobooting_link" title="Autobooting PayloadLoader">Autobooting</a></li>
+	<li><a class="selectable" href="?s=tiramisu&p=config" id="tiramisu_config_link" title="Configurar Tiramisu">Configurar Tiramisu</a></li>
+	<li><a class="selectable" href="?s=tiramisu&p=apps" id="tiramisu_apps_link" title="Añadir aplicaciones">Añadir aplicaciones</a></li>
+	</ul>
+</li>
+<li><span class="caret" id="test_hack"><a class="selectable" href="?s=test" id="test_link" title="Identificar hack">Identificar hack</a></span>
+	<ul class="nested">
+	<li><a class="selectable" href="?s=test&p=payloadloader" id="test_payloadloader_link" title="Identificar PayloadLoader">PayloadLoader</a></li>
+	<li><a class="selectable" href="?s=test&p=autobooting" id="test_autobooting_link" title="Identificar Autobooting">Autobooting</a></li>
+	<li><a class="selectable" href="?s=test&p=haxchi" id="test_haxchi_link" title="Identificar Haxchi">Haxchi</a></li>
+	<li><a class="selectable" href="?s=test&p=indexiine" id="test_indexiine_link" title="Identificar Indexiine">Indexiine</a></li>
+	</ul>
+</li>
+<li><span class="caret selectable" id="uninstall_hack" title="Desinstalar hack">Desinstalar hack</span>
+	<ul class="nested">
+	<li><a class="selectable" href="?s=uninstall_webhack" id="uninstall_webhack_link" title="Desinstalar Webhack">Webhack</a></li>
+	<li><a class="selectable" href="?s=uninstall_indexiine" id="uninstall_indexiine_link" title="Desinstalar Indexiine">Indexiine</a></li>
+	<li><a class="selectable" href="?s=uninstall_haxchi" id="uninstall_haxchi_link" title="Desinstalar Haxchi">Haxchi</a></li>
+	<li><a class="selectable" href="?s=uninstall_cbhc" id="uninstall_cbhc_link" title="Desinstalar Coldboot Haxchi">Coldboot Haxchi</a></li>
+	<li><a class="selectable" href="?s=uninstall_payloadloader" id="uninstall_payloadloader_link" title="Desinstalar Tiramisu o Aroma">Tiramisu o Aroma</a></li>
+	</ul>
+</li>
+<li><a class="selectable" href="?s=update_tiramisu" id="update_tiramisu_link" title="Actualizar Tiramisu">Actualizar Tiramisu</a></li>
+<li><a class="selectable" href="?s=aroma_beta" id="aroma_beta_link" title="Probar Aroma beta">Probar Aroma beta</a></li>
+<li><span class="caret selectable" id="download_games" title="Descarga de juegos">Descarga de juegos</span>
+	<ul class="nested">
+	<li><a class="selectable" href="?s=games&p=download_usb_helper" id="games_download_usb_helper_link" title="Descargar Wii U USB Helper">Descargar Wii U USB Helper</a></li>
+	<li><a class="selectable" href="?s=games&p=install_usb_helper" id="games_install_usb_helper_link" title="Instalar Wii U USB Helper">Instalar Wii U USB Helper</a></li>
+	<li><a class="selectable" href="?s=games&p=config_usb_helper" id="games_config_usb_helper_link" title="Configurar Wii U USB Helper">Configurar Wii U USB Helper</a></li>
+	<li><a class="selectable" href="?s=games&p=interface_usb_helper" id="games_interface_usb_helper_link" title="Interfaz de Wii U USB Helper">Interfaz de Wii U USB Helper</a></li>
+	<li><a class="selectable" href="?s=games&p=usb_helper" id="games_usb_helper_link" title="Descargar juegos con Wii U USB Helper">Descargar juegos</a></li>
+	</ul>
+</li>
+<li><span class="caret selectable" id="install_games_caret" title="Instalación de juegos">Instalación de juegos</span>
+	<ul class="nested">
+	<li><a class="selectable" href="?s=install_games" id="install_games_link" title="Transferir juegos a la tarjeta SD">Transferir juegos a la tarjeta SD</a></li>
+	<li><a class="selectable" href="?s=install_games&p=wup_installer_gx2" id="install_games_wup_installer_gx2_link" title="Instalar juegos con WUP Installer GX2">Instalar juegos con WUP Installer GX2</a></li>
+	</ul>
+</li>
+<li><span class="caret selectable" id="extras" title="Extras">Extras</span>
+	<ul class="nested">
+	<li><a class="selectable" href="?s=standby_functions" id="standby_functions_link" title="Desactivar modo de reposo">Desactivar modo de reposo</a></li>
+	<li><a class="selectable" href="?s=block_updates" id="block_updates_link" title="Bloquear actualizaciones">Bloquear actualizaciones</a></li>
+	<li><a class="selectable" href="?s=unblock_updates" id="unblock_updates_link" title="Desbloquear actualizaciones">Desbloquear actualizaciones</a></li>
+	<li><a class="selectable" href="?s=tiramisu_speedrun" id="tiramisu_speedrun_link" title="Resumen de la instalación de Tiramisu">Resumen de la instalación de Tiramisu</a></li>
+	</ul>
+</li>
+<li><span class="caret" id="glossary_caret"><a class="selectable" href="?s=glossary" id="glossary_link" title="Glosario">Glosario</a></span>
+	<ul class="nested">
+	<li><a class="selectable" href="?s=glossary#hack_t" title="Hack">Hack</a></li>
+	<li><a class="selectable" href="?s=glossary#exploit_t" title="Exploit">Exploit</a></li>
+	<li><a class="selectable" href="?s=glossary#entry_point_t" title="Punto de entrada">Punto de entrada</a></li>
+	<li><a class="selectable" href="?s=glossary#fw_t" title="Firmware">Firmware</a></li>
+	<li><a class="selectable" href="?s=glossary#cfw_t" title="Custom Firmware">Custom Firmware</a></li>
+	<li><a class="selectable" href="?s=glossary#environment_t" title="Environment">Environment</a></li>
+	<li><a class="selectable" href="?s=glossary#homebrew_t" title="Homebrew">Homebrew</a></li>
+	<li><a class="selectable" href="?s=glossary#payload_t" title="Payload">Payload</a></li>
+	<li><a class="selectable" href="?s=glossary#ticket_t" title="Ticket">Ticket</a></li>
+	<li><a class="selectable" href="?s=glossary#brick_t" title="Brick">Brick</a></li>
+	<li><a class="selectable" href="?s=glossary#dlc_t" title="DLC">DLC</a></li>
+	<li><a class="selectable" href="?s=glossary#title_id_t" title="Title ID">Title ID</a></li>
+	<li><a class="selectable" href="?s=glossary#hacks_t" title="Principales hacks de Wii U">Principales hacks de Wii U</a></li>
+	</ul>
+</li>
+<li><a class="selectable" href="?s=questions" id="questions_link" title="Preguntas frecuentes">Preguntas frecuentes</a></li>
+<li><a class="selectable" href="?s=homebrew" id="homebrew_link" title="Homebrew destacado">Homebrew destacado</a></li>
+<li><a class="selectable" href="?s=homebrew_aroma" id="homebrew_aroma_link" title="Homebrew para Aroma">Homebrew para Aroma</a></li>
+<li><span class="caret selectable" id="archive_caret" title="Archivo">Archivo</span>
+	<ul class="nested">
+	<li><span class="caret selectable" id="previous_methods_caret" title="Métodos anteriores">Métodos anteriores</span>
+		<ul class="nested">
+		<li><a class="selectable" href="?s=webhack&p=sd" id="install_webhack_link" title="Instalar Webhack">Webhack</a></li>
+		<li><a class="selectable" href="?s=indexiine&p=sd" id="install_indexiine_link" title="Instalar Indexiine">Indexiine</a></li>
+		<li><a class="selectable" href="?s=haxchi&p=ds_game" id="install_haxchi_link" title="Instalar Haxchi">Haxchi</a></li>
+		<li><a class="selectable" href="?s=cbhc&p=ds_game" id="install_cbhc_link" title="Instalar Coldboot Haxchi">Coldboot Haxchi</a></li>
+		</ul>
+	</li>
+	<li><a class="selectable" href="?s=custom_haxchi" id="custom_haxchi_link" title="Personalizar Haxchi">Personalizar Haxchi</a></li>
+	<li><a class="selectable" href="?s=config_payload" id="config_payload_link" title="Configurable Payload">Configurable Payload</a></li>
+	</ul>
+</li>
+<li><span class="caret selectable" id="links" title="Enlaces">Enlaces</span>
+	<ul class="nested">
+	<li><a class="selectable" href="https://github.com/piloncillo/piloncillo.github.io" id="github_link" title="GitHub">GitHub</a></li>
+	<!--li><a class="selectable" href="#" id="discord_link" title="Discord">Discord</a></li-->
+	<li><a class="selectable" href="?s=about" id="about_link" title="Acerca de">Acerca de</a></li>
+	</ul>
+</li>
+</ul>
 </div>
+</div>
+<div id="sidebar_toggle" onclick="toggleSidebar()">&#9776;</div>  
 <div id="content">
 <div id="main" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>La Guía de Piloncillo para Wii U</h2>
+<h1>Guía de Piloncillo para Wii U</h1>
 <br>
 <p>Esta guía te enseña paso a paso desde cero a instalar aplicaciones y juegos en tu consola. No importa si es nueva o si fue modificada previamente.</p>
 <p>Hackear la Wii U, entre otras cosas, <ins>te permite</ins> hacer lo siguiente:</p>
@@ -531,7 +513,7 @@ a.previous:hover, a.next:hover {
 <li>Un dispositivo para colocar archivos en la tarjeta SD.</li>
 </ul>
 <p>Esta guía funcionará en todas las Wii U de todas las regiones con firmware 5.5.5 o 5.5.6. Lo ideal es que actualices a la última versión antes de modificar la consola.</p>
-<h3>Antes de empezar</h3>
+<h2>Antes de empezar</h2>
 <p>Debes saber que modificar cualquier sistema implica la posibilidad de producir un falló irreversible (brick). En el caso de la Wii U son muy especificos y lejanos los escenarios de un falló irreversible, pero sigue siendo una posibilidad.</p>
 <div class="warning"><strong class="red">Para un hackeo completo y exitoso sigue TODAS las instrucciones EXACTAMENTE como se indican hasta el final. Si es necesario lee la guía completa de principio a fin una o más veces antes de usarla en tu Wii U.</strong></div>
 <p>Si completas la guía correctamente <strong class="green">no perderás ningún juego</strong> y la consola terminará con todo lo que tenía al comienzo (juegos de Wii U, partidas guardadas, NNID, etc., se conservarán).</p>
@@ -546,9 +528,9 @@ a.previous:hover, a.next:hover {
 </ul>
 <div class="warning"><strong class="red">Puedes dejar la tarjeta SD tal cual sin borrar nada y sólo sobrescribir los archivos del anterior hack con los archivos del nuevo hack así no necesitas volver a colocar cada cosa, pero lo ideal es hacer una instalación en limpio.</strong></div>
 <div class="info">Puedes consultar terminología como <em>homebrew</em>, <em>exploit</em>, <em>mocha</em>, etc. en el <a href="?s=glossary">glosario</a>. Si tienes alguna duda puedes ir a la sección de <a href="?s=questions">preguntas frecuentes</a>.</div>
-<div class="bottomnav">
+<!--div class="bottomnav">
 <a href="?s=intro_tiramisu" class="next">Introducción a Tiramisu &#8250;</a>
-</div>
+</div-->
 <div class="bottomnav">
 <a href="?s=tiramisu&p=sd" class="next">Comenzar a instalar Tiramisu &#8250;</a>
 </div>
@@ -556,11 +538,11 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="standby_functions" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Desactivar las funciones en modo de reposo</h2>
+<h1>Desactivar las funciones en modo de reposo</h1>
 <br>
 <p>La consola indica que está trabajando en modo de reposo cuando el LED de POWER cambia de <strong class="red">rojo</strong> a <strong class="oranje">naranja</strong>. Una consola con las funciones en modo de reposo activadas se activa periódicamente para descargar información de utilidad y actualizaciones del sistema, además permite usar el menú de inicio rápido en el GamePad.</p>
 <p>Aunque el fin del soporte de la Wii U por parte de Nintendo está próximo es posible que la compañía aún lance actualizaciones para la consola. Las actualizaciones 5.5.3 a 5.5.6 se lanzaron después de que se descontinuó la fabricación de la Wii U, por lo que desactivar las funciones en modo de reposo para impedir la actualización automática de la consola es una acción recomendada. Además, <strong class="yellow">desactivar el menú de inicio rápido facilita la identificación de Autobooting PayloadLoader</strong>.</p>
-<h3>Para desactivar las funciones en modo de reposo</h3>
+<h2>Para desactivar las funciones en modo de reposo</h2>
 <ul>
 <li>Entra en la Configuración de la consola</li>
 <li>Selecciona Ajustes de apagado.</li>
@@ -576,16 +558,16 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="block_updates" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Bloquear las actualizaciones</h2>
+<h1>Bloquear las actualizaciones</h1>
 <br>
 <p>Todos los exploits de Wii U actualmente conocidos pueden ser parcheados por una actualización del sistema. Aunque el fin del soporte de la Wii U por parte de Nintendo está próximo es posible que la compañía aún lance actualizaciones para la consola. Las actualizaciones 5.5.3 a 5.5.6 se lanzaron después de que se descontinuó la fabricación de la Wii U, por lo que bloquear las actualizaciones sigue siendo una acción recomendada.</p>
-<p>Si bien Tiramisu ya tiene una funcionalidad de bloqueo de actualizaciones, se recomienda eliminar la carpeta update del sistema de la Wii U para bloquear de manera definitiva las actualizaciones del sistema de consola. Si llegaste a ver una pantalla de advertencia roja mientras Tiramisu iniciaba, quiere decir que la carpeta <em>update</em> aún existe y se recomienda eliminarla utilizando la guía de a continuación, los mismos pasos se aplican para restaurar la carpeta <em>update</em> si deseas actualizar la Wii U posteriormente. Si en un futuro sale una actualización para el sistema de la Wii U, el proceso de descarga de la actualización se detendrá con un código de error <strong class="yellow">105-301X</strong>.</p>
+<p>Si bien Tiramisu ya tiene una funcionalidad de bloqueo de actualizaciones, se recomienda eliminar la carpeta update del sistema de la Wii U para bloquear de manera definitiva las actualizaciones del sistema de consola. Si llegaste a ver una pantalla de advertencia roja mientras Tiramisu iniciaba, quiere decir que la carpeta <em>update</em> aún existe y se recomienda eliminarla utilizando la guía de a continuación. Si en un futuro sale una actualización para el sistema de la Wii U, el proceso de descarga de la actualización se detendrá con un código de error <strong class="yellow">105-301X</strong>.</p>
 <br>
-<h3>Eliminar la carpeta update del sistema de la Wii U</h3>
+<h2>Eliminar la carpeta update del sistema de la Wii U</h2>
 <div class="info">Este método de bloqueo de actualizaciones es un poco más avanzado que el bloqueo por DNS, utiliza una aplicación <em>homebrew</em> para modificar la carpeta <em>update</em> del sistema y tiene la ventaja de que la funcionalidad de la eShop no estará restringida.</div>
 <ul>
 <li>Conecta la tarjeta SD de la Wii U a una PC (o teléfono inteligente).</li>
-<li>Descarga la versión más actual de <a href="https://github.com/GaryOderNichts/UFDiine/releases">UFDiine</a>.</li>
+<li>Con Tiramisu o hacks anetriores descarga la versión 1.1 de <a href="https://github.com/GaryOderNichts/UFDiine/releases/tag/v1.1">UFDiine</a>.</li>
 <ul>
 <li>Debes descargar el archivo <code>ufdiine.zip</code>.</li>
 </ul>
@@ -599,10 +581,36 @@ a.previous:hover, a.next:hover {
 <li>Navega a través del Homebrew Launcher y carga UFDiine.</li>
 <li>Presiona el <strong class="green">botón A</strong> para eliminar la carpeta de actualización.</li>
 <li>UFDiine debe indicar que <em>Update folder is deleted</em> confirmando que la carpeta <em>update</em> fue eliminada.</li>
-<ul>
-<li>UFDiine indica que <em>Update folder exists</em> cuando la carpeta <em>update</em> es restaurada.</li>
-</ul>
 <li>Con <em>Update folder is deleted</em> están completamente bloqueadas las actualizaciones.</li>
+<li>Presiona el <strong class="green">botón HOME</strong> para salir de UFDiine.</li>
+</ul>
+<p><a onclick="window.history.back()">Regresar</a></p>
+</div>
+</div>
+<div id="unblock_updates" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Desbloquear las actualizaciones</h1>
+<br>
+<p>Si el proceso de descarga de la actualización se detiene con un código de error <strong class="yellow">105-301X</strong> prueba restaurar la carpeta <em>update</em> del sistema de la Wii U.</p>
+<br>
+<h2>Restaurar la carpeta update del sistema de la Wii U</h2>
+<ul>
+<li>Conecta la tarjeta SD de la Wii U a una PC (o teléfono inteligente).</li>
+<li>Con Tiramisu o hacks anetriores descarga la versión 1.1 de <a href="https://github.com/GaryOderNichts/UFDiine/releases/tag/v1.1">UFDiine</a>.</li>
+<ul>
+<li>Debes descargar el archivo <code>ufdiine.zip</code>.</li>
+</ul>
+<li>Descomprime el archivo <code>ufdiine.zip</code>, copia la carpeta <code>wiiu</code> a la raíz de la tarjeta SD.</li>
+</ul>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
+<ul>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U.</li>
+<li>Enciende la Wii U y abre el Homebrew Launcher.</li>
+<li>Navega a través del Homebrew Launcher y carga UFDiine.</li>
+<li>Presiona el <strong class="green">botón A</strong> para restaurar la carpeta de actualización.</li>
+<li>UFDiine indica que <em>Update folder exists</em> cuando la carpeta <em>update</em> es restaurada.</li>
+<li>Con <em>Update folder exists</em> están desbloqueadas las actualizaciones.</li>
 <li>Presiona el <strong class="green">botón HOME</strong> para salir de UFDiine.</li>
 </ul>
 <p><a onclick="window.history.back()">Regresar</a></p>
@@ -610,11 +618,11 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="aroma_beta" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Probar la beta de Aroma</h2>
+<h1>Probar la beta de Aroma</h1>
 <br>
 <p><strong class="red">¡¡Importante!!</strong> Antes de instalar la beta de Aroma debes tener Tiramisu instalado y actualizado, si no estás seguro de tener Tiramisu actualizado entonces primero sigue los pasos para <a href="?s=update_tiramisu">actualizar Tiramisu</a> y después regresa aquí.</p>
 <br>
-<h3>Necesitas los archivos más recientes de Aroma</h3>
+<h2>Necesitas los archivos más recientes de Aroma</h2>
 <ul>
 <li>Este enlace lleva al sitio oficial: <a href="https://aroma.foryour.cafe/">Aroma para tu café</a>.</li>
 <ul>
@@ -625,18 +633,18 @@ a.previous:hover, a.next:hover {
 <li>Estas utilizando la versión más reciente del Environment Loader.</li>
 <li>Aroma recibirá actualizaciones frecuentes por lo cual debes mantenerte informado por vías oficiales para conocer las últimas noticias sobre su desarrollo.</li>
 </ul>
-<img src="Images/Aroma/01.png" class="auto_size_li">
+<img src="Images/Aroma/01.png" class="auto_size_li_li">
 <li>Al palomear la última casilla el sitio muestra los botones de descarga. Los bloques de la sección Base no nos interesan porque ya tenemos Tiramisu instalado y actualizado.</li>
 <li>Toca en el botón <em class="green">Download Base Aroma</em> para iniciar la descarga del archivo <code>base-aroma.zip</code>.</li>
 <li>Seleciona <em class="green">Bloopair</em> y <em class="green">SDCafiine Plugin</em>, el resto de plugins no son necesarios para un usuario común, son útiles para desarrolladores o testers.</li>
-<li>Toca en el botón <em class="green">Download Additional Plugin and Modules</em> para iniciar la descarga del archivo <code>bloopair+sdcafiine.zip</code>.<br><img src="Images/Aroma/02.png" class="auto_size_li"></li>
+<li>Toca en el botón <em class="green">Download Additional Plugin and Modules</em> para iniciar la descarga del archivo <code>bloopair+sdcafiine.zip</code>.<br><img src="Images/Aroma/02.png" class="auto_size_li_li"></li>
 </ul>
 <li>Además, necesitas la versión más actual del <a href="https://github.com/marco-calautti/SigpatchesModuleWiiU/releases">módulo Sigpatches</a>.</li>
 <ul>
-<li>Únicamente necesitas el archivo <code>01_sigpatches.rpx</code>.<br><img src="Images/Aroma/sigpatches_repo.png" class="auto_size_li"></li>
+<li>Únicamente necesitas el archivo <code>01_sigpatches.rpx</code>.<br><img src="Images/Aroma/sigpatches_repo.png" class="auto_size_li_li"></li>
 </ul>
 </ul>
-<h3>Instalación</h3>
+<h2>Instalación</h2>
 <div class="info">Si la PC te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
 <div class="info">Si la PC te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
 <ul>
@@ -649,7 +657,7 @@ a.previous:hover, a.next:hover {
 <ul>
 <li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
 </ul>
-<h3>Configurar el arranque del EnvironmentLoader y Aroma</h3>
+<h2>Configurar el arranque del EnvironmentLoader y Aroma</h2>
 <ul>
 <li>Si activaste el <strong class="blue">arranque automático</strong> del <em>PayloadLoader</em>: <strong class="green">Enciende la consola</strong> y <strong class="green">mantén presionado el botón X</strong> hasta que salga el <em>EnvironmentLoader</em>.</li>
 <li>Si tu consola tiene <em>PayloadLoader</em> de <strong class="yellow">arranque manual</strong>: Enciende la consola, accede al menú de Wii U, <strong class="green">abre Información sobre salud y seguridad</strong> y <strong class="green">mantén presionado el botón X</strong> del GamePad para abrir el <em>EnvironmentLoader</em>.</li>
@@ -667,25 +675,25 @@ a.previous:hover, a.next:hover {
 <div class="info">Si activaste el <strong class="blue">arranque automático</strong> del <em>PayloadLoader</em> puedes abrir el menú <em>Boot Selector</em> si enciendes la consola y mantienes presionado el botón <em>START</em> (+).</div>
 <div class="info">Si activaste el <strong class="blue">arranque automático</strong> del <em>PayloadLoader</em> puedes impedir que cargue el <em>EnvironmentLoader</em>, Tiramisu y Aroma sacando la tarjeta SD de la consola antes de encenderla. De esta forma la consola iniciará sin modificaciones. La siguiente vez que enciendas la consola con la tarjeta SD con los archivos del <em>EnvironmentLoader</em>, Tiramisu y Aroma cargará estos normalmente.</div>
 <div class="bottomnav">
-<a href="?s=main" class="previous">&#8249; Inicio</a><a href="?s=Homebrew_aroma" class="next">Homebrew para Aroma &#8250;</a>
+<a href="?s=main" class="previous">&#8249; Inicio</a><a href="?s=homebrew_aroma" class="next">Homebrew para Aroma &#8250;</a>
 </div>
 </div>
 </div>
 <div id="intro_tiramisu" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Introducción a Tiramisu</h2>
+<h1>Introducción a Tiramisu</h1>
 <br>
 <p><img src="Images/Tiramisu/logo.png" class="auto_size"></p>
-<h3>¿Qué es Tiramisu?</h3>
+<h2>¿Qué es Tiramisu?</h2>
 <p>Tiramisu es un environment (entorno) homebrew para Wii U. Sus módulos permiten cargar un CFW (versión modificada de Mocha CFW), instalar el Homebrew Launcher en <em>Mii Maker</em> (Editor de Mii) y proporciona un menú de inicio automático.</p>
 <p>Junto con PayloadLoader, es una alternativa a Coldboot Haxchi (CBHC) segura y gratuita, con algunas características adicionales como soporte completo para el menú de inicio rápido del GamePad y bloqueo parcial de actualizaciones.</p>
 <p>Tiramisu es un entorno que debe cargarse por medio del Environment Loader.</p>
 <p>Se recomienda realizar un arranque automático de Environment Loader a través de Autobooting PayloadLoader.</p>
 <p>Tiramisu no es un hack. El hack formalmente sería "Autobooting PayloadLoader → Environment Loader → Tiramisu" (o "PayloadLoader → Environment Loader → Tiramisu").</p>
-<h3>¿Conviene actualizar de un hack anterior a Tiramisu?</h3>
+<h2>¿Conviene actualizar de un hack anterior a Tiramisu?</h2>
 <p>Sí. En conjunto Environment Loader, PayloadLoader y Tiramisu tienen casi todas las ventajas de los anteriores hacks y ninguna de sus desventajas.</p>
 <p><a target="_blank" href="Images/Identificar/comparative.png"><img src="Images/Identificar/comparative.png" class="auto_size"></a></p>
-<h3>Paginas "oficiales" del proyecto</h3>
+<h2>Paginas "oficiales" del proyecto</h2>
 <ul>
 <li><a href="https://gbatemp.net/threads/release-tiramisu-environment-free-cbhc.605381/">[RELEASE] Tiramisu Environment | Free CBHC</a></li>
 <li><a href="https://tiramisu.foryour.cafe/">Tiramisu para tu café</a></li>
@@ -693,7 +701,7 @@ a.previous:hover, a.next:hover {
 <li><a href="https://maschell.github.io/homebrew/2020/12/02/failst.html">FailST aka contenthax 2.0</a></li>
 <li><a href="https://maschell.github.io/homebrew/2021/12/31/tiramisu.html">Tiramisu</a></li>
 </ul>
-<h3>Registro de cambios</h3>
+<h2>Registro de cambios</h2>
 <p>31 de diciembre de 2021 - 10:09 p.m.</p>
 <ul>
 <li>Lanzamiento.</li>
@@ -736,7 +744,7 @@ a.previous:hover, a.next:hover {
 <ul>
 <li>AutobootModule: Corrige el arranque en otras versiones de vWii HBL distintas al <a href="https://github.com/FIX94/hbc">The Homebrew Channel - open source edition</a> (Gracias @GaryOderNichts).</li>
 </ul>
-<h3>Créditos</h3>
+<h2>Créditos</h2>
 <ul>
 <li>Maschell (EnvironmentLoader, HBLInstallerWrapper, MochaPayload, PayloadLoader + PayloadLoaderInstaller, AutobootModule, ...)</li>
 <li>GaryOderNichts (AutobootModule, PayloadLoaderInstaller)</li>
@@ -750,10 +758,10 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="update_tiramisu" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Actualizar Tiramisu</h2>
+<h1>Actualizar Tiramisu</h1>
 <br>
 <p>Tiramisu es extremadamente simple de actualizar, sólo debes descargar los archivos más recientes y remplazar los anteriores en la tarjeta SD.</p>
-<h3>Necesitas los archivos más recientes de Tiramisu</h3>
+<h2>Necesitas los archivos más recientes de Tiramisu</h2>
 <ul>
 <li>Este enlace lleva al sitio oficial: <a href="https://tiramisu.foryour.cafe/">Tiramisu para tu café</a>.</li>
 <ul>
@@ -764,7 +772,7 @@ a.previous:hover, a.next:hover {
 <li>Únicamente necesitas el archivo <code>01_sigpatches.rpx</code>.</li>
 </ul>
 </ul>
-<h3>Instalación</h3>
+<h2>Instalación</h2>
 <div class="info">Si la PC te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
 <div class="info">Si la PC te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
 <ul>
@@ -776,14 +784,16 @@ a.previous:hover, a.next:hover {
 <ul>
 <li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
 <li>En este punto ya finalizaste la actualización de <em>EnvironmentLoader</em> y Tiramisu. La próxima vez que cargue el entorno de Tiramisu cargará con los archivos más actuales.</li>
-<p><a href="?s=main">Inicio</a></p>
+<div class="bottomnav">
+<a href="?s=main" class="previous">Inicio</a>
+</div>
 </ul>
 </div>
 </div>
 <div id="tiramisu_sd" class="tabcontent" style="display:none;">
 <div class="cont">
 <br>
-<h2>Prepara la tarjeta SD</h2>
+<h1>Prepara la tarjeta SD</h1>
 <br>
 <p>La Wii U sólo reconoce tarjetas SD formateadas en FAT32, así que el primer paso es formatear la tarjeta SD en FAT32. Se recomienda un tamaño de unidad de asignación (<em>allocation unit size</em>) de 32 kilobytes (32768). Deja la etiqueta del volumen (volume label) en blanco ya que poner una puede causar problemas con algunas aplicaciones. Para tarjetas SD mayores a 32 GB debes formatear usando <a href="http://ridgecrop.co.uk/guiformat.exe">GUIFormat</a>.</p>
 <p>La primea imagen corresponde a la aplicación de formateo de Windows, para tarjetas SD de 4 GB hasta 32 GB. La segunda imagen corresponde a la aplicación GUIFormat, para tarjetas SD de 4 GB hasta 2 TB.</p>
@@ -797,7 +807,7 @@ a.previous:hover, a.next:hover {
 <div id="tiramisu_files" class="tabcontent" style="display:none;">
 <div class="cont">
 <br>
-<h2>Coloca los archivos de Tiramisu</h2>
+<h1>Coloca los archivos de Tiramisu</h1>
 <br>
 <p>Tiramisu es fácil de colocar, sólo debes descargar los archivos más recientes y remplazar los anteriores en la tarjeta SD.</p>
 <ul>
@@ -810,7 +820,7 @@ a.previous:hover, a.next:hover {
 <li>Únicamente necesitas el archivo <code>01_sigpatches.rpx</code>.</li>
 </ul>
 </ul>
-<h3>Instalación</h3>
+<h2>Instalación</h2>
 <div class="info">Si la PC te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
 <div class="info">Si la PC te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
 <ul>
@@ -834,7 +844,7 @@ a.previous:hover, a.next:hover {
 <div id="tiramisu_nand_backup_browser_exploit" class="tabcontent" style="display:none;">
 <div class="cont">
 <br>
-<h2>Exploit del navegador</h2>
+<h1>Exploit del navegador</h1>
 <br>
 <p>El exploit del navegador es el <strong>punto de entrada</strong> ideal para hacer una copia de seguridad en limpio de la NAND (memoria interna de la consola). Con la tarjeta SD preparada ya tienes lo necesario para ejecutar el exploit.</p>
 <ul>
@@ -862,7 +872,7 @@ a.previous:hover, a.next:hover {
 <div id="tiramisu_nand_backup" class="tabcontent" style="display:none;">
 <div class="cont">
 <br>
-<h2>Hacer una copia de seguridad de la NAND (memoria interna) de la Wii U</h2>
+<h1>Hacer una copia de seguridad de la NAND (memoria interna) de la Wii U</h1>
 <br>
 <p>En el caso de que algo salga muy mal restaurar la copia de la memoria interna puede solucionarlo.</p>
 <ul>
@@ -910,11 +920,11 @@ a.previous:hover, a.next:hover {
 <div id="tiramisu_payloadloader" class="tabcontent" style="display:none;">
 <div class="cont">
 <br>
-<h2>Instalación de PayloadLoader</h2>
+<h1>Instalación de PayloadLoader</h1>
 <br>
 <p>PayloadLoader es un <strong>punto de entrada</strong> que te permite acceder al <em>EnvironmentLoader</em> (Cargador de Entorno) y a Tiramisu al abrir la aplicación Información sobre salud y seguridad.</p>
 <div class="warning">Restablecer la configuración de fábrica de la consola (formatear la Wii U) no desinstalará <em>PayloadLoader</em> de la aplicación Información sobre salud y seguridad. Si quieres desinstalar <em>PayloadLoader</em> consulta como <a href="?s=uninstall_payloadloader">desinstalar <em>PayloadLoader</em> correctamente</a>.</div>
-<h3>Instrucciones</h3>
+<h2>Instrucciones</h2>
 <ul>
 <li>En este punto debes tener la Wii U apagada con la tarjeta SD introducida.</li>
 <li>Enciende la consola y accede al menú de Wii U. Asegúrate de que la consola tenga acceso a internet para este paso.</li>
@@ -947,11 +957,11 @@ a.previous:hover, a.next:hover {
 <div id="tiramisu_autobooting" class="tabcontent" style="display:none;">
 <div class="cont">
 <br>
-<h2>Autobooting PayloadLoader (PayloadLoader de arranque automático)</h2>
+<h1>Autobooting PayloadLoader (PayloadLoader de arranque automático)</h1>
 <br>
 <div class="info">Si no deseas arrancar automáticamente Tiramisu cuando la consola enciende, puedes omitir esta parte de la guía, pero debes tener en cuenta que las actualizaciones del sistema no se bloquearán. Bloquear las actualizaciones no es obligatorio, pero se recomienda encarecidamente.</div>
 <p>Actualmente tu consola tiene <em>PayloadLoader</em> de arranque manual, es decir, cada vez que quieres iniciar Tiramisu debes abrir la aplicación <strong class="yellow">Información sobre salud y seguridad</strong>. Si deseas iniciar automáticamente Tiramisu cada que la consola enciende debes activar el arranque automático del <em>PayloadLoader</em>.</p>
-<h3>Instrucciones</h3>
+<h2>Instrucciones</h2>
 <ul>
 <li>En este punto debes tener la Wii U apagada con la tarjeta SD introducida.</li>
 <li>Enciende la consola y accede al menú de Wii U.<br><img src="Images/Identificar/health_and_safety_information_icon.jpg" class="auto_size_li"></li>
@@ -975,7 +985,7 @@ a.previous:hover, a.next:hover {
 <div id="tiramisu_config" class="tabcontent" style="display:none;">
 <div class="cont">
 <br>
-<h2>Configurar el arranque del EnvironmentLoader y de Tiramisu</h2>
+<h1>Configurar el arranque del EnvironmentLoader y de Tiramisu</h1>
 <br>
 <p>Con la configuración actual cada que arranca <em>PayloadLoader</em> debes seleccionar y abrir manualmente Tiramisu en el <em>EnvironmentLoader</em>, y luego, seleccionar y abrir manualmente el menú de Wii U en Tiramisu. Vamos a hacer que el <em>EnvironmentLoader</em> cargue automáticamente Tiramisu y que Tiramisu cargue automáticamente el menú de Wii U.</p>
 <ul>
@@ -1000,13 +1010,13 @@ a.previous:hover, a.next:hover {
 <div id="tiramisu_apps" class="tabcontent" style="display:none;">
 <div class="cont">
 <br>
-<h2 id="hbl">Añadir aplicaciones y módulos</h2>
+<h1 id="hbl">Añadir aplicaciones y módulos</h1>
 <p>Ya tienes la consola con un hack, pero para aprovecharlo hay que agregar aplicaciones. En caso de que quieras añadir alguna aplicación que no está aquí o que quieras actualizar alguna aplicación es impórtate que aprendas a colocarlas por tu cuenta.</p>
 <p>En general las aplicaciones para Wii U se colocan en la carpeta <code>sd:/wiiu/apps</code>, observa la ruta de carpetas en las imágenes de referencia. Si tienes dudas usa las imágenes para comprobar que ubicaste cada aplicación correctamente.</p>
 <p>Las aplicaciones se abren usando el menú del <em>Homebrew Launcher</em> ("lanzador de aplicaciones hechas en casa"). En la imagen de abajo el <em>Homebrew Launcher</em> tiene tres aplicaciones: <em>Homebrew App Store</em>, <em>SaveMii Mod</em> y <em>WUP Installer GX2</em>.</p>
 <p><a target="_blank" href="Images/Identificar/hbl.jpg"><img src="Images/Identificar/hbl.jpg" class="auto_size center"></a></p>
 <br>
-<h3>Añadir aplicaciones al <em>Homebrew Launcher</em></h3>
+<h2>Añadir aplicaciones al <em>Homebrew Launcher</em></h2>
 <ul>
 <li>Si tienes encendida la consola apágala.</li>
 <li>Saca la tarjeta SD de la Wii U y ponla en tu PC (o teléfono inteligente) para poner archivos.</li>
@@ -1026,48 +1036,47 @@ a.previous:hover, a.next:hover {
 <li>Descomprime el archivo <code>wup_installer_gx2.zip</code></li>
 <ul>
 <li>Entra en la carpeta <code>wiiu</code> y luego entra en la carpeta <code>apps</code>.</li>
-<li>Copia la carpeta <code>wup_installer_gx2</code> y pégala en la carpeta <code>sd:/wiiu/apps</code>.<br><img src="Images/Tiramisu/wup_installer_gx2_ins.png" class="auto_size_li"></li>
+<li>Copia la carpeta <code>wup_installer_gx2</code> y pégala en la carpeta <code>sd:/wiiu/apps</code>.<br><img src="Images/Tiramisu/wup_installer_gx2_ins.png" class="auto_size_li_li"></li>
 </ul>
 <li>Descomprime el archivo <code>SaveMiiModWUTPort.zip</code></li>
 <ul>
 <li>Entra en la carpeta <code>wiiu</code> y luego entra en la carpeta <code>apps</code>.</li>
-<li>Copia la carpeta <code>SaveMiiModWUTPort</code> y pégala en la carpeta <code>sd:/wiiu/apps</code>.<br><img src="Images/Tiramisu/savemii_ins.png" class="auto_size_li"></li>
+<li>Copia la carpeta <code>SaveMiiModWUTPort</code> y pégala en la carpeta <code>sd:/wiiu/apps</code>.<br><img src="Images/Tiramisu/savemii_ins.png" class="auto_size_li_li"></li>
 </ul>
 <li>Descomprime el archivo <code>wiiu-extracttosd.zip</code></li>
 <ul>
 <li>Entra en la carpeta <code>wiiu</code> y luego entra en la carpeta <code>apps</code>.</li>
-<li>Copia la carpeta <code>appstore</code> y pégala en la carpeta <code>sd:/wiiu/apps</code>.<br><img src="Images/Tiramisu/appstore_ins.png" class="auto_size_li"></li>
+<li>Copia la carpeta <code>appstore</code> y pégala en la carpeta <code>sd:/wiiu/apps</code>.<br><img src="Images/Tiramisu/appstore_ins.png" class="auto_size_li_li"></li>
 </ul>
 <li>Descomprime el archivo <code>Bloopair_v#.#.#.zip</code></li>
 <ul>
 <li>Entra en la carpeta <code>wiiu</code> y luego entra en la carpeta <code>apps</code>.</li>
-<li>Copia la carpeta <code>Bloopair_pair_menu</code> y pégala en la carpeta <code>sd:/wiiu/apps</code>.<br><img src="Images/Tiramisu/bloopair_pair_menu_ins.png" class="auto_size_li"></li>
+<li>Copia la carpeta <code>Bloopair_pair_menu</code> y pégala en la carpeta <code>sd:/wiiu/apps</code>.<br><img src="Images/Tiramisu/bloopair_pair_menu_ins.png" class="auto_size_li_li"></li>
 </ul>
 <li>Descomprime el archivo <code>NUSspli-#.###-HBL.zip</code></li>
 <ul>
-<li>Copia la carpeta <code>NUSspli</code> y pégala en la carpeta <code>sd:/wiiu/apps</code>.<br><img src="Images/Tiramisu/nusspli_ins.png" class="auto_size_li"></li>
+<li>Copia la carpeta <code>NUSspli</code> y pégala en la carpeta <code>sd:/wiiu/apps</code>.<br><img src="Images/Tiramisu/nusspli_ins.png" class="auto_size_li_li"></li>
 </ul>
 </ul>
 <p>Las aplicaciones que acabas de instalar sirven para:</p>
 <ul>
-<li><strong>WUP Installer GX2</strong> (Wii U Public title Installer) es un instalador de juegos y aplicaciones en formato <strong class="green">NUS Content cifrado</strong> (archivos <code>.app</code>, <code>.h3</code>, <code>title.tmd</code>, <code>title.cert</code> y <code>title.tik</code>).</li>
+<li><strong>WUP Installer GX2</strong> (Wii U Public title Installer) es un instalador de juegos y aplicaciones en formato <strong class="green">NUS Content cifrado de Wii U</strong> (archivos <code>.app</code>, <code>.h3</code>, <code>title.tmd</code>, <code>title.cert</code> y <code>title.tik</code>).</li>
 <li><strong>SaveMii mod WUT Port</strong> permite administrar los archivos de datos guardado de juegos de Wii U y Wii.</li>
 <li>La <strong>Homebrew Appstore</strong> permite buscar y descargar aplicaciones homebrew directamente desde tu Wii U.</li>
 <li><strong>Bloopair</strong> permite conectar de forma inalámbrica los controles Bluetooth más populares. Consulta <a href="https://gbatemp.net/threads/bloopair-connect-controllers-from-other-consoles-natively.594289/">el hilo oficial de la aplicación</a> para más detalles.</li>
 <li><strong>NUSspli</strong> permite descargar e instalar juegos de forma rápida y simple directamente desde la Wii U.</li>
 </ul>
-<button type="button" class="dropdown-btn">Toca aquí para ver las imágenes que muestran la ubicación de cada aplicación. Puedes usarlas para comprobar que las aplicaciones están correctamente colocadas.</button>
-<div class="dropdown-container">
+<div class="accordion">Toca aquí para ver las imágenes que muestran la ubicación de cada aplicación. Puedes usarlas para comprobar que las aplicaciones están correctamente colocadas.</div>
+<div class="panel">
 <ul>
-<li>La aplicación <strong>WUP Installer GX2</strong> se encuentra en <code>sd:/wiiu/apps/wup_installer_gx2/wup_installer_gx2.elf</code>.<br><img src="Images/Tiramisu/wup_installer_gx2.png" class="auto_size_li"></li>
-<li>La aplicación <strong>HB App Store</strong> se encuentra en <code>sd:/wiiu/apps/appstore/appstore.rpx</code>.<br><img src="Images/Tiramisu/appstore.png" class="auto_size_li"></li>
-<li>La aplicación <strong>SaveMii mod WUT Port</strong> se encuentra en <code>sd:/wiiu/apps/SaveMiiModWUTPort/savemii.rpx</code>.<br><img src="Images/Tiramisu/savemii.png" class="auto_size_li"></li>
-<li>La aplicación <strong>Bloopair pair menu</strong> se encuentra en <code>sd:/wiiu/apps/Bloopair_pair_menu/Bloopair_pair_menu.rpx</code>.<br><img src="Images/Tiramisu/bloopair_pair_menu.png" class="auto_size_li"></li>
-<li>La aplicación <strong>NUSspli</strong> se encuentra en <code>sd:/wiiu/apps/NUSspli/NUSspli.rpx</code>.<br><img src="Images/Tiramisu/nusspli.png" class="auto_size_li"></li>
+<li>La aplicación <strong>WUP Installer GX2</strong> se encuentra en <code>sd:/wiiu/apps/wup_installer_gx2/wup_installer_gx2.elf</code>.<br><img src="Images/Tiramisu/wup_installer_gx2_ci.png" class="auto_size_li_li"></li>
+<li>La aplicación <strong>HB App Store</strong> se encuentra en <code>sd:/wiiu/apps/appstore/appstore.rpx</code>.<br><img src="Images/Tiramisu/appstore.png" class="auto_size_li_li"></li>
+<li>La aplicación <strong>SaveMii mod WUT Port</strong> se encuentra en <code>sd:/wiiu/apps/SaveMiiModWUTPort/savemii.rpx</code>.<br><img src="Images/Tiramisu/savemii.png" class="auto_size_li_li"></li>
+<li>La aplicación <strong>Bloopair pair menu</strong> se encuentra en <code>sd:/wiiu/apps/Bloopair_pair_menu/Bloopair_pair_menu.rpx</code>.<br><img src="Images/Tiramisu/bloopair_pair_menu.png" class="auto_size_li_li"></li>
+<li>La aplicación <strong>NUSspli</strong> se encuentra en <code>sd:/wiiu/apps/NUSspli/NUSspli.rpx</code>.<br><img src="Images/Tiramisu/nusspli.png" class="auto_size_li_li"></li>
 </ul>
 </div>
-<br>
-<h3 id="modules">Añadir módulos a Tiramisu</h3>
+<h2 id="modules">Añadir módulos a Tiramisu</h2>
 <p>Los módulos deben estar hechos explícitamente para ser usados en el entorno de Tiramisu, tienen formato <code>.rpx</code>.</p>
 <ul>
 <li>Si seguiste las instrucciones para añadir aplicaciones al Homebrew Launcher debes tener el archivo <code>Bloopair_v#.#.#.zip</code></li>
@@ -1075,7 +1084,7 @@ a.previous:hover, a.next:hover {
 </ul>
 <div class="info">El archivo <code>30_bloopair.rpx</code> es Bloopair en sí mismo. Cargará junto con el resto de módulos cuando inicie el entorno de Tiramisu.</div>
 <br>
-<h3><strong class="yellow">Importante recuerda que:</strong></h3>
+<h2><strong class="yellow">Importante recuerda que:</strong></h2>
 <ul>
 <li>A partir de ahora accedes al <em>Homebrew Launcher</em> desde el <strong>Editor de Mii</strong>.</li>
 <li>Desde el menú del <em>Homebrew Launcher</em> abres las aplicaciones <em>homebrew</em> de Wii U como <strong>WUP Instaler GX2</strong>, <strong>NUSspli</strong>, <strong>SaveMii</strong>, etc.</li>
@@ -1091,7 +1100,7 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="tiramisu_speedrun" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Resumen de la instalación de Tiramisu</h2>
+<h1>Resumen de la instalación de Tiramisu</h1>
 <br>
 <p>Los siguientes pasos son los esenciales para instalar Tiramisu de forma correcta. Si tienes dudas consulta <a href="?s=tiramisu&p=sd">la guía detallada de instalación de Tiramisu</a>.</p>
 <ul>
@@ -1133,7 +1142,7 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="entry" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Elige un punto de entrada</h2>
+<h1>Elige un punto de entrada</h1>
 <br>
 <p>Lo único que cambia entre un método y otro es la forma como lo ejecutas. Elije el punto de entrada que más te convenga según tus necesidades. Sin importar cual elijas, una vez dentro podrás hacer lo mismo y usar las mismas aplicaciones.</p>
 <p><strong><a href="?s=tiramisu&p=sd">PayloadLoader</a></strong>: Requiere parchar una aplicación legitima de la consola (por ejemplo, Información sobre salud y seguridad), una vez instalado bastará con abrir el icono de la aplicación modificada en el menú de la Wii U (similar a Haxchi).</p>
@@ -1145,13 +1154,13 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="webhack" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2></h2>
+<h1></h1>
 <p></p>
 </div>
 </div>
 <div id="webhack_sd" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Prepara la tarjeta SD para Webhack</h2>
+<h1>Prepara la tarjeta SD para Webhack</h1>
 <br>
 <p>La tarjeta SD debe ser formateada en FAT32 con tamaño de unidad de asignación (allocation unit size) de 32 kilobytes (32768). Se recomienda dejar la etiqueta del volumen (volume label) en blanco ya que poner una puede causar problemas con algunas aplicaciones. Para tarjetas SD mayores a 32 GB debes formatear usando <a href="http://ridgecrop.co.uk/index.htm?guiformat.htm">GUIFormat</a>.</p>
 <ul>
@@ -1164,10 +1173,10 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="webhack_files" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Prepara los archivos para la tarjeta SD para Webhack</h2>
+<h1>Prepara los archivos para la tarjeta SD para Webhack</h1>
 <br>
 <p>Los siguientes enlaces dirigen a los lanzamientos oficiales de los desarrolladores de cada aplicación, son las versiones estables más recientes.</p>
-<h3>Descarga</h3>
+<h2>Descarga</h2>
 <ul>
 <li><a href="https://github.com/GaryOderNichts/configurable-payload/releases/tag/v1">Configurable Payload</a> (descarga el archivo <code>payload.elf</code>).</li>
 <li><a href="https://github.com/wiiu-controller-mods/homebrew_launcher/releases/tag/v2">Homebrew Launcher</a> (descarga el archivo <code>homebrew_launcher.elf</code>).</li>
@@ -1180,7 +1189,7 @@ a.previous:hover, a.next:hover {
 <li>Archivo <a href="https://drive.google.com/uc?id=1NtEDE9luP0vjQg6-ysQWjQSO0txAGUya">payload.cfg</a> (para la configuración del payload).</li>
 <li>Archivo <a href="https://drive.google.com/uc?id=1Ieus834XA7f5vwA5G6u6z6Xh3HQ7qjvl">wiiu.zip</a> (como base para la estructura de archivos).</li>
 </ul>
-<h3>Colocación</h3>
+<h2>Colocación</h2>
 <p>Nota: Los archivos <code>info.json</code> y <code>manifest.install</code> no son necesarios, los puedes omitir o eliminar sin ningún problema.</p>
 <ul>
 <li>Crea una carpeta llamada <code>install</code> en la raíz de la tarjeta SD.</li>
@@ -1200,7 +1209,7 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="webhack_webhack" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Webhack</h2>
+<h1>Webhack</h1>
 <br>
 <p>Con la tarjeta SD preparada ya tienes instalado Webhack sólo falta ejecutar el exploit. Ahora puedes encender la Wii U. Asegúrate de que la consola tenga acceso a internet para este paso.</p>
 <ul>
@@ -1218,7 +1227,7 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="webhack_exploit" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Páginas con el exploit para el navegador</h2>
+<h1>Páginas con el exploit para el navegador</h1>
 <br>
 <ul>
 <li><a href="http://u.wiidb.de/">http://u.wiidb.de/</a> Toca en <strong class="blue">HAXX</strong>.</li>
@@ -1230,7 +1239,7 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="webhack_nand_backup" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Haz un respaldo de la memoria interna de la Wii U</h2>
+<h1>Haz un respaldo de la memoria interna de la Wii U</h1>
 <br>
 <p>Este paso es opcional si usas Webhack.</p>
 <p>En el caso de que algo salga muy mal y la Wii U termine brickeada, restaurar la copia de la memoria interna puede solucionarlo.</p>
@@ -1258,7 +1267,7 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="webhack_cfw" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Cargar Mocha CFW</h2>
+<h1>Cargar Mocha CFW</h1>
 <br>
 <p>A diferencia de sistemas como DSi, 3DS o Wii, el CFW de la Wii U es temporal. Esto significa que cuando la consola se reinicia, pierde el CFW y tendrás que usar un punto de entrada para cargar un CFW nuevamente. Esto se puede automatizar instalando Coldboot Haxchi (CBHC).</p>
 <p>Desde este momento para cargar Mocha CFW:</p>
@@ -1276,13 +1285,13 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="indexiine" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2></h2>
+<h1></h1>
 <p></p>
 </div>
 </div>
 <div id="indexiine_sd" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Prepara la tarjeta SD para Indexiine</h2>
+<h1>Prepara la tarjeta SD para Indexiine</h1>
 <br>
 <p>La tarjeta SD debe ser formateada en FAT32 con tamaño de unidad de asignación (allocation unit size) de 32 kilobytes (32768). Se recomienda dejar la etiqueta del volumen (volume label) en blanco ya que poner una puede causar problemas con algunas aplicaciones. Para tarjetas SD mayores a 32 GB debes formatear usando <a href="http://ridgecrop.co.uk/index.htm?guiformat.htm">GUIFormat</a>.</p>
 <ul>
@@ -1295,10 +1304,10 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="indexiine_files" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Prepara los archivos para la tarjeta SD para Indexiine</h2>
+<h1>Prepara los archivos para la tarjeta SD para Indexiine</h1>
 <br>
 <p>Los siguientes enlaces dirigen a los lanzamientos oficiales de los desarrolladores de cada aplicación, son las versiones estables más recientes.</p>
-<h3>Descarga</h3>
+<h2>Descarga</h2>
 <ul>
 <li><a href="https://github.com/GaryOderNichts/configurable-payload/releases/tag/v1">Configurable Payload</a> (descarga el archivo <code>payload.elf</code>).</li>
 <li><a href="https://github.com/wiiu-controller-mods/homebrew_launcher/releases/tag/v2">Homebrew Launcher</a> (descarga el archivo <code>homebrew_launcher.elf</code>).</li>
@@ -1313,7 +1322,7 @@ a.previous:hover, a.next:hover {
 <li>Archivo <a href="https://drive.google.com/uc?id=10pbqPIwj_povKD05ML7CGf1-lCOYy7DX">payload.cfg</a> (para la configuración del payload).</li>
 <li>Archivo <a href="https://drive.google.com/uc?id=1Ieus834XA7f5vwA5G6u6z6Xh3HQ7qjvl">wiiu.zip</a> (como base para la estructura de archivos).</li>
 </ul>
-<h3>Colocación</h3>
+<h2>Colocación</h2>
 <p>Nota: Los archivos <code>info.json</code> y <code>manifest.install</code> no son necesarios, los puedes omitir o eliminar sin ningún problema.</p>
 <ul>
 <li>Crea una carpeta llamada <code>install</code> en la raíz de la tarjeta SD.</li>
@@ -1335,7 +1344,7 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="indexiine_webhack" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Webhack</h2>
+<h1>Webhack</h1>
 <br>
 <ul>
 <li>Abre el navegador de internet de la consola.</li>
@@ -1355,7 +1364,7 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="indexiine_nand_backup" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Haz un respaldo de la memoria interna de la Wii U</h2>
+<h1>Haz un respaldo de la memoria interna de la Wii U</h1>
 <br>
 <p>Este paso es opcional si usas Indexiine.</p>
 <p>En el caso de que algo salga muy mal y la Wii U termine brickeada, restaurar la copia de la memoria interna puede solucionarlo.</p>
@@ -1383,7 +1392,7 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="indexiine_install" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Instalación de Indexiine</h2>
+<h1>Instalación de Indexiine</h1>
 <br>
 <p>Ya cargado el Homebrew Launcher como se explicó <a href="?s=indexiine&p=webhack">anteriormente</a>.</p>
 <ul>
@@ -1399,7 +1408,7 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="indexiine_install_hbl_channel" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Instalación de Homebrew Launcher Channel</h2>
+<h1>Instalación de Homebrew Launcher Channel</h1>
 <br>
 <p>Instalar Homebrew Launcher Channel (icono en el menú de la Wii U) facilita el acceso para usuarios de Indexiine.</p>
 <ul>
@@ -1419,7 +1428,7 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="indexiine_cfw" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Cargar Mocha CFW</h2>
+<h1>Cargar Mocha CFW</h1>
 <br>
 <p>A diferencia de sistemas como DSi, 3DS o Wii, el CFW de la Wii U es temporal. Esto significa que cuando la consola se reinicia, pierde el CFW y tendrás que usar un punto de entrada para cargar un CFW nuevamente. Esto se puede automatizar instalando Coldboot Haxchi (CBHC).</p>
 <p>Desde este momento para cargar Mocha CFW:</p>
@@ -1436,13 +1445,13 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="haxchi" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2></h2>
+<h1></h1>
 <p></p>
 </div>
 </div>
 <div id="haxchi_ds_game" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Elige un juego de la Consola Virtual de Nintendo DS</h2>
+<h1>Elige un juego de la Consola Virtual de Nintendo DS</h1>
 <br>
 <p>Ten en cuenta que no podrás jugar el juego en el que instales Haxchi (a menos que desinstales Haxchi y vuelvas a instalar el juego desde la eShop).</p>
 <p>Los residentes de países donde la versión limitada de la eShop cerró deberán cambiar el país de residencia desde configuración de la consola. Si la consola es región USA puedes cambar el país de residencia a Estados Unidos de América, Canadá o México. Deberán hacer una cuenta de usuario con el nuevo país de residencia para tener acceso a la eShop.</p>
@@ -1475,7 +1484,7 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="haxchi_sd" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Prepara la tarjeta SD para Haxchi</h2>
+<h1>Prepara la tarjeta SD para Haxchi</h1>
 <br>
 <p>La tarjeta SD debe ser formateada en FAT32 con tamaño de unidad de asignación (allocation unit size) de 32 kilobytes (32768). Se recomienda dejar la etiqueta del volumen (volume label) en blanco ya que poner una puede causar problemas con algunas aplicaciones. Para tarjetas SD mayores a 32 GB debes formatear usando <a href="http://ridgecrop.co.uk/index.htm?guiformat.htm">GUIFormat</a>.</p>
 <ul>
@@ -1488,10 +1497,10 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="haxchi_files" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Prepara los archivos para la tarjeta SD para Haxchi</h2>
+<h1>Prepara los archivos para la tarjeta SD para Haxchi</h1>
 <br>
 <p>Los siguientes enlaces dirigen a los lanzamientos oficiales de los desarrolladores de cada aplicación, son las versiones estables más recientes.</p>
-<h3>Descarga</h3>
+<h2>Descarga</h2>
 <ul>
 <li><a href="https://github.com/GaryOderNichts/configurable-payload/releases/tag/v1">Configurable Payload</a> (descarga el archivo <code>payload.elf</code>).</li>
 <li><a href="https://github.com/wiiu-controller-mods/homebrew_launcher/releases/tag/v2">Homebrew Launcher</a> (descarga el archivo <code>homebrew_launcher.elf</code>).</li>
@@ -1504,7 +1513,7 @@ a.previous:hover, a.next:hover {
 <li>Archivo <a href="https://drive.google.com/uc?id=1NtEDE9luP0vjQg6-ysQWjQSO0txAGUya">payload.cfg</a> (para la configuración del payload).</li>
 <li>Archivo <a href="https://drive.google.com/uc?id=1Ieus834XA7f5vwA5G6u6z6Xh3HQ7qjvl">wiiu.zip</a> (como base para la estructura de archivos).</li>
 </ul>
-<h3>Colocación</h3>
+<h2>Colocación</h2>
 <p>Nota: Los archivos <code>info.json</code> y <code>manifest.install</code> no son necesarios, los puedes omitir o eliminar sin ningún problema.</p>
 <ul>
 <li>Crea una carpeta llamada <code>install</code> en la raíz de la tarjeta SD.</li>
@@ -1524,7 +1533,7 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="haxchi_webhack" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Webhack</h2>
+<h1>Webhack</h1>
 <br>
 <p>Webhack es el punto de entrada para instalar Haxchi desde cero.</p>
 <p>Con la tarjeta SD preparada ya tienes instalado Webhack, sólo falta ejecutar el exploit. Ahora puedes encender la Wii U. Asegúrate de que la consola tenga acceso a internet para este paso.</p>
@@ -1542,7 +1551,7 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="haxchi_nand_backup" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Haz un respaldo de la memoria interna de la Wii U</h2>
+<h1>Haz un respaldo de la memoria interna de la Wii U</h1>
 <br>
 <p>Este paso es opcional si usas Haxchi.</p>
 <p>En el caso de que algo salga muy mal y la Wii U termine brickeada, restaurar la copia de la memoria interna puede solucionarlo.</p>
@@ -1570,7 +1579,7 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="haxchi_install" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Instalación de Haxchi</h2>
+<h1>Instalación de Haxchi</h1>
 <br>
 <p>Ya cargado el Homebrew Launcher como se explicó <a href="?s=haxchi&p=webhack">anteriormente</a>.</p>
 <ul>
@@ -1586,7 +1595,7 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="haxchi_install_hbl_channel" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Instalación de Homebrew Launcher Channel</h2>
+<h1>Instalación de Homebrew Launcher Channel</h1>
 <br>
 <p>Instalar Homebrew Launcher Channel (icono en el menú de la Wii U) facilita el acceso para usuarios de Haxchi.</p>
 <ul>
@@ -1606,7 +1615,7 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="haxchi_cfw" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Cargar Haxchi CFW</h2>
+<h1>Cargar Haxchi CFW</h1>
 <br>
 <p>A diferencia de sistemas como DSi, 3DS o Wii, el CFW de la Wii U es temporal. Esto significa que cuando la consola se reinicia, pierde el CFW y tendrás que usar un punto de entrada para cargar un CFW nuevamente. Esto se puede automatizar instalando Coldboot Haxchi (CBHC).</p>
 <p>Desde este momento para cargar Haxchi CFW:</p>
@@ -1622,15 +1631,15 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="cbhc" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2></h2>
+<h1></h1>
 <p></p>
 </div>
 </div>
 <div id="cbhc_ds_game" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Elige un juego de la Consola Virtual de Nintendo DS</h2>
+<h1>Elige un juego de la Consola Virtual de Nintendo DS</h1>
 <br>
-<p>Ten en cuenta que no podrás jugar el juego en el que instales Haxchi (a menos que desinstales Haxchi y vuelvas a instalar el juego desde la eShop).</p>
+<p>Ten en cuenta que no podrás jugar el juego en el que instales Coldboot Haxchi (a menos que desinstales Coldboot Haxchi y vuelvas a instalar el juego desde la eShop).</p>
 <p>Los residentes de países donde la versión limitada de la eShop cerró deberán cambiar el país de residencia desde configuración de la consola. Si la consola es región USA puedes cambar el país de residencia a Estados Unidos de América, Canadá o México. Deberán hacer una cuenta de usuario con el nuevo país de residencia para tener acceso a la eShop.</p>
 <p>Estos son los juegos compatibles:</p>
 <ul>
@@ -1656,12 +1665,30 @@ a.previous:hover, a.next:hover {
 </ul>
 <p>Big Brain Academy y Brain Age / Brain Training tienen un costo de 7 dólares estadounidenses, el resto de juegos tienen un consto de 10 dólares estadounidenses.</p>
 <p>Una vez comprado el juego asegúrate de descárgalo en la memoria interna de la Wii U.</p>
+<p><a href="?s=cbhc&p=standby_functions">Desactiva las funciones en modo de reposo</a></p>
+</div>
+</div>
+<div id="cbhc_standby_functions" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Desactiva las funciones en modo de reposo</h1>
+<br>
+<p>Si tienes activadas las funciones en modo de reposo puedes tener problemas al usar Coldboot Haxchi (CBHC). Desactiva dichas funciones antes de continuar con la instalación y no las actives mientras tengas instalado Coldboot Haxchi (CBHC).</p>
+<ul>
+<li>Entra en la Configuración de la consola</li>
+<li>Selecciona Ajustes de apagado.</li>
+<li>Toca en el bloque de Funciones en modo de reposo.</li>
+<li>Toca en No y después en Aceptar.</li>
+<li>Toca en Aceptar.</li>
+<li>Toca en Atrás o presiona B.</li>
+<li>Toca en Salir o persona B.</li>
+</ul>
+<p>Ahora al apagar la consola no trabajará en modo de reposo y el LED de POWER no cambiará de <strong class="red">rojo</strong> a <strong class="oranje">naranja</strong>.</p>
 <p><a href="?s=cbhc&p=sd">Preparar la tarjeta SD</a></p>
 </div>
 </div>
 <div id="cbhc_sd" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Prepara la tarjeta SD para Coldboot Haxchi (CBHC)</h2>
+<h1>Prepara la tarjeta SD para Coldboot Haxchi (CBHC)</h1>
 <br>
 <p>La tarjeta SD debe ser formateada en FAT32 con tamaño de unidad de asignación (allocation unit size) de 32 kilobytes (32768). Se recomienda dejar la etiqueta del volumen (volume label) en blanco ya que poner una puede causar problemas con algunas aplicaciones. Para tarjetas SD mayores a 32 GB debes formatear usando <a href="http://ridgecrop.co.uk/index.htm?guiformat.htm">GUIFormat</a>.</p>
 <ul>
@@ -1674,10 +1701,10 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="cbhc_files" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Prepara los archivos para la tarjeta SD para Coldboot Haxchi</h2>
+<h1>Prepara los archivos para la tarjeta SD para Coldboot Haxchi</h1>
 <br>
 <p>Los siguientes enlaces dirigen a los lanzamientos oficiales de los desarrolladores de cada aplicación, son las versiones estables más recientes.</p>
-<h3>Descarga</h3>
+<h2>Descarga</h2>
 <ul>
 <li><a href="https://github.com/GaryOderNichts/configurable-payload/releases/tag/v1">Configurable Payload</a> (descarga el archivo <code>payload.elf</code>).</li>
 <li><a href="https://github.com/wiiu-controller-mods/homebrew_launcher/releases/tag/v2">Homebrew Launcher</a> (descarga el archivo <code>homebrew_launcher.elf</code>).</li>
@@ -1691,7 +1718,7 @@ a.previous:hover, a.next:hover {
 <li>Archivo <a href="https://drive.google.com/uc?id=1NtEDE9luP0vjQg6-ysQWjQSO0txAGUya">payload.cfg</a> (para la configuración del payload).</li>
 <li>Archivo <a href="https://drive.google.com/uc?id=1Ieus834XA7f5vwA5G6u6z6Xh3HQ7qjvl">wiiu.zip</a> (como base para la estructura de archivos).</li>
 </ul>
-<h3>Colocación</h3>
+<h2>Colocación</h2>
 <p>Nota: Los archivos <code>info.json</code> y <code>manifest.install</code> no son necesarios, los puedes omitir o eliminar sin ningún problema.</p>
 <ul>
 <li>Crea una carpeta llamada <code>install</code> en la raíz de la tarjeta SD.</li>
@@ -1712,7 +1739,7 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="cbhc_webhack" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Webhack</h2>
+<h1>Webhack</h1>
 <br>
 <p>Webhack es el punto de entrada para instalar Coldboot Haxchi (CBHC) desde cero.</p>
 <p>Con la tarjeta SD preparada ya tienes instalado Webhack, sólo falta ejecutar el exploit. Ahora puedes encender la Wii U. Coldboot Haxchi no es compatible con el inicio rápido de la Wii U, si estás utilizando el menú inicio rápido, deshabilítalo. Asegúrate de que la consola tenga acceso a internet para este paso.</p>
@@ -1729,7 +1756,7 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="cbhc_nand_backup" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Haz un respaldo de la memoria interna de la Wii U</h2>
+<h1>Haz un respaldo de la memoria interna de la Wii U</h1>
 <br>
 <p><strong class="red">¡Este paso es obligatorio si usas Coldboot Haxchi (CBHC)!</strong></p>
 <p>En el caso de que algo salga muy mal y la Wii U termine brickeada, restaurar la copia de la memoria interna puede solucionarlo.</p>
@@ -1757,7 +1784,7 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="cbhc_warning" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Advertencias para Coldboot Haxchi (CBHC)</h2>
+<h1>Advertencias para Coldboot Haxchi (CBHC)</h1>
 <br>
 <p>Coldboot Haxchi puede dañar irreversiblemente la Wii U. Sigue al pie de la letra las siguientes reglas:</p>
 <ul>
@@ -1775,7 +1802,7 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="cbhc_install" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Instalación de Coldboot Haxchi (CBHC)</h2>
+<h1>Instalación de Coldboot Haxchi (CBHC)</h1>
 <br>
 <p>Ya cargado el Homebrew Launcher como se explicó <a href="?s=cbhc&p=webhack">anteriormente</a>.</p>
 <ul>
@@ -1801,7 +1828,7 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="cbhc_install_hbl_channel" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Instalación de Homebrew Launcher Channel</h2>
+<h1>Instalación de Homebrew Launcher Channel</h1>
 <br>
 <p>Instalar Homebrew Launcher Channel (icono en el menú de la Wii U) facilita el acceso para usuarios de Coldboot Haxchi (CBHC).</p>
 <ul>
@@ -1821,7 +1848,7 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="cbhc_cfw" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Cargar Haxchi CFW</h2>
+<h1>Cargar Haxchi CFW</h1>
 <br>
 <p>Desde este momento en cada reinicio la Wii U automáticamente carga Haxchi CFW.</p>
 <p>Con un CFW cargado puedes instalar y correr juegos con tickets falsos (todo el contenido exclusivo de la eShop como DLCs y juegos de la Consola Virtual) así como juegos de otra región y aplicaciones como emuladores.</p>
@@ -1832,27 +1859,27 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="test" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Identificación y diagnostico</h2>
+<h1>Identificación y diagnostico</h1>
 <br>
-<p>Usa esta sección para determinar y analizar el estado del hack de tu consola. Al contestar las preguntas de los 4 apartados obtendrás información que puede ser de utilidad, esta información es difícil de encontrar en otros sitios.</p>
-<p>Si usas el navegador de Internet para cargar el "hack" entonces tu consola tiene <strong class="green">Webhack</strong> o tiene <strong class="green">Indexiine</strong>. Si debes entrar en una página web y tocar un enlace o botón para poder ejecutar el "hack" entonces tienes <strong class="green">Webhack</strong>. Si sólo debes abrir el navegador de Internet y esperar sin tocar nada a que cargue el "hack" entonces tienes <strong class="green">Indexiine</strong>.</p>
-<p>Si compraste tu consola de segunda mano y no sabes cómo instalaron los juegos en la consola (o en el dispositivo USB de la misma) lo más probable es que usaron <strong class="green">Webhack</strong> más WUP Installer GX2 para instalar los juegos. Hay un conjunto de juegos que puedes abrir sin ejecutar ningún hack (funcionan igual que juegos legítimos), estos juegos cuentan con una versión en físico. De los discos originales se han extraído los tickets siempre válidos y se han colocado en las copias digitales, eso se llama <strong class="red">método brasileño</strong>. Por otra parte, el contenido exclusivo de la eShop (juegos de Consola Virtual y DLCs) requieren de aplicar un parche de firmas (signature patch) para poder abrirlos o para ser instados, a menos que compres legítimamente el contenido en la eShop.</p>
-<p>La forma más fácil para identificar el "hack" de tu Wii U es reconocer el <strong class="green">punto de entrada</strong> que da acceso a ejecutar aplicaciones "caseras". Puedes tener más de un punto de entrada en tu consola así que contesta las preguntas de todas las secciones.</p>
-<p><a href="?s=test&p=payloadloader" id="payloadloader_a"><strong>PayloadLoader</strong></a>: <span id="payloadloader_result">La pregunta de esta sección te permitirá detectar si tienes PayloadLoader en tu consola.</span></p>
-<p><a href="?s=test&p=autobooting" id="autobooting_a"><strong>Autobooting</strong></a>: <span id="autobooting_result">Para detectar Coldboot Haxchi o Autobooting PayloadLoader. Contesta la pregunta de esta sección para determinar si tu consola inicia de forma automática un "hack".</span></p>
-<p><a href="?s=test&p=haxchi" id="haxchi_a"><strong>Haxchi</strong></a>: <span id="haxchi_result">Al contestar la(s) pregunta(s) de esta sección podrás determinar si tu consola tiene Haxchi correctamente instalado.</span></p>
-<p><a href="?s=test&p=indexiine" id="indexiine_a"><strong>Indexiine</strong></a>: <span id="indexiine_result">Contesta la pregunta de esta sección para detectar Indexiine en tu consola.</span></p>
-<p><strong class="green">Webhack</strong>: <span id="webhack_result">Contesta todas las preguntas de las secciones anteriores para determinar si el exploit del navegador es el único punto de entrada de tu consola.</span></p>
+<p>Usa esta sección para determinar y analizar el estado del hack de tu consola. Al contestar las preguntas de los 4 apartados (PayloadLoader, Autobooting, Haxchi e Indexiine) obtendrás información que puede ser de mucha utilidad, esta información es difícil de encontrar en otros sitios.</p>
+<p>Si usas el navegador de Internet para cargar el "hack" entonces tu consola tiene <strong class="green">Webhack</strong> o tiene <strong class="green">Indexiine</strong>. Si debes entrar en una página web y tocar un enlace o botón en la pantalla del GamePad de Wii U para poder ejecutar el "hack" entonces tienes <strong class="green">Webhack</strong>. Si sólo debes abrir el navegador de Internet y esperar sin tocar nada a que cargue el "hack" entonces tienes <strong class="green">Indexiine</strong>.</p>
+<p>Si compraste tu consola de segunda mano y no sabes cómo instalaron los juegos en la consola (o en el dispositivo USB de la misma) lo más probable es que usaron <strong class="green">Webhack</strong> más WUP Installer GX2 para instalar los juegos. <ins>Hay un conjunto de juegos que puedes abrir sin ejecutar ningún hack</ins> (funcionan igual que juegos legítimos), estos juegos cuentan con una versión en físico. De los discos originales se han extraído los tickets siempre válidos y se han colocado en las copias digitales, eso se llama <strong class="red">método brasileño</strong>. Por otra parte, el contenido exclusivo de la eShop (juegos de Consola Virtual y DLCs) requieren de aplicar un parche de firmas (signature patch) para poder abrirlos o para ser instados.</p>
+<p>La forma más fácil para identificar el "hack" de tu Wii U es reconocer el <strong class="green">punto de entrada</strong> que da acceso a ejecutar aplicaciones "caseras". Puedes tener más de un punto de entrada en tu consola así que contesta las preguntas de todos los apartados.</p>
+<p><a href="?s=test&p=payloadloader" id="payloadloader_a"><strong>PayloadLoader</strong></a>: <span id="payloadloader_result">La pregunta de este apartado te permitirá detectar si tienes PayloadLoader en tu consola.</span></p>
+<p><a href="?s=test&p=autobooting" id="autobooting_a"><strong>Autobooting</strong></a>: <span id="autobooting_result">Para detectar Coldboot Haxchi o Autobooting PayloadLoader. Contesta la pregunta de este apartado para determinar si tu consola inicia de forma automática un "hack".</span></p>
+<p><a href="?s=test&p=haxchi" id="haxchi_a"><strong>Haxchi</strong></a>: <span id="haxchi_result">Al contestar la(s) pregunta(s) de este apartado podrás determinar si tu consola tiene Haxchi correctamente instalado.</span></p>
+<p><a href="?s=test&p=indexiine" id="indexiine_a"><strong>Indexiine</strong></a>: <span id="indexiine_result">Contesta la pregunta de este apartado para detectar Indexiine en tu consola.</span></p>
+<p><strong class="green">Webhack</strong>: <span id="webhack_result">Contesta todas las preguntas de los apartados anteriores para determinar si el exploit del navegador es el único punto de entrada de tu consola. Todas las Wii U, incluidas las que nunca has sido hackeadas, tienen con este punto de entrada.</span></p>
 <p><a href="?s=test"><button class="button_click" onclick="resetTest()">Resetear respuestas</button></a></p>
 <p id="sd_result"></p>
-<h3>¿La Wii U tiene tarjeta SD?</h3>
+<h2>¿La Wii U tiene tarjeta SD?</h2>
 <form id="f_sd" onclick="updateFormSD()">
 <input type="radio" id="sd_yes" value="sd_yes" name="default" style="display:none;">
 <label class="link" for="sd_yes">Sí, la consola tiene tarjeta SD.</label><br><br>
 <input type="radio" id="sd_no" value="sd_no" name="default" style="display:none;">
 <label class="link" for="sd_no">No, la consola no tiene tarjeta SD.</label><br>
 </form>
-<div id="d_folder" style="display:none;"><h3>¿En la raíz de la tarjeta SD hay una carpeta <code>wiiu</code>?</h3>
+<div id="d_folder" style="display:none;"><h2>¿En la raíz de la tarjeta SD hay una carpeta <code>wiiu</code>?</h2>
 <form id="f_folder" onclick="updateFormFolder()">
 <input type="radio" id="folder_yes" value="folder_yes" name="default" style="display:none;">
 <label class="link" for="folder_yes">Sí, la tarjeta SD tiene la carpeta <code>wiiu</code>.</label><br><br>
@@ -1863,12 +1890,12 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="test_payloadloader" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>PayloadLoader</h2>
+<h1>PayloadLoader</h1>
 <br>
 <p>El "hack" Tiramisu (o Aroma) es fácil de detectar ya que se instala el PayloadLoader en el icono de Información sobre salud y seguridad.</p>
 <p>PayloadLoader es el punto de entrada que se usa para cargar el Environment Loader y a su vez el Environment Loader se usa para cargar Tiramisu (o Aroma). Dependiendo de la configuración de Tiramisu (o Aroma) se puede cargar determinada cosa, pero lo más común es que automáticamente cargue el menú de Wii U.</p>
 <p>Enciende la consola con la tarjeta SD puesta, accede al menú de Wii U, abre el icono de Información sobre salud y seguridad, y observa que ocurre en la pantalla del GamePad, no presiones ningún botón.<br><img src="Images/Identificar/health_and_safety_information_icon.jpg" class="auto_size"></p>
-<h3>¿Al abrir el icono de Información sobre salud y seguridad carga algo especial?</h3>
+<h2>¿Al abrir el icono de Información sobre salud y seguridad carga algo especial?</h2>
 <form id="f_payloadloader" onclick="updateFormPayloadLoader()">
 <input type="radio" id="payloadloader_no" value="payloadloader_no" name="default" style="display:none;">
 <label class="link" for="payloadloader_no">No, al abrir el icono no carga nada especial, no se congela y puedo consultar información sobre salud y seguridad con normalidad.<br><img src="Images/Identificar/health_and_safety_information.jpg" class="auto_size"></label><br><br>
@@ -1897,19 +1924,19 @@ a.previous:hover, a.next:hover {
 <input type="radio" id="payloadloader_twice" value="payloadloader_twice" name="default" style="display:none;">
 <label class="link" for="payloadloader_twice">Sí, al abrir el icono la consola se congela con el mensaje <code>Don't run EnvironmentLoader twice. If you want to open the Homebrew Launcher, launch the Mii Maker instead</code>.<br><img src="Images/Identificar/dont_run_the_environment_loader_twice.jpg" class="auto_size"></label><br><br>
 </form>
-<div id="payloadloader_next" style="display:none;"><h3>Apaga la consola.</h3>
+<div id="payloadloader_next" style="display:none;"><h2>Apaga la consola.</h2>
 <p><a id="payloadloader_next_button" href="?s=test" class="button">Siguiente</a></p></div>
 </div>
 </div>
 <div id="test_autobooting" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Autobooting (Arranque Automático)</h2>
+<h1>Autobooting (Arranque Automático)</h1>
 <br>
 <p>Un par de "hacks" pueden iniciar de forma automática al encender la Wii U, estos "hacks" son: Coldboot Haxchi y Autobooting PayloadLoader.</p>
 <p>Para lograr el arranque automático se configura la consola para que en lugar de cargar el menú de Wii U cargue la aplicacion "hackeada", en el caso de Coldboot Haxchi carga el juego de Nintendo DS "hackeado" con Haxchi y en el caso de Autobooting PayloadLoader se carga la aplicación Información sobre salud y seguridad "hackeada" con PayloadLoader.</p>
 <p>Dependiendo de la configuración del "hack" se puede cargar otra cosa después del "autobooting", pero lo más común es que automáticamente cargue el menú de Wii U.</p>
 <p>Para determinar si hay un "hack" de arranque automático en tu Wii U vigila lo que pasa al encender la consola. Enciende la consola con la tarjeta SD puesta y observa que ocurre en la pantalla del GamePad, no presiones ningún botón. <ins>Selecciona lo que muestre primero la consola</ins>.</p>
-<h3>¿Al encender la consola se muestra algo en particular?</h3>
+<h2>¿Al encender la consola se muestra algo en particular?</h2>
 <form id="f_autobooting" onclick="updateFormAutobooting()">
 <input type="radio" id="autobooting_cbhc" value="autobooting_cbhc" name="default" style="display:none;">
 <label class="link" for="autobooting_cbhc">Sí, al encender la consola muestra el mensaje <code>CBHC v1.6 by FIX94 (DS Title 10179B00) Autobooting...</code><br><img src="Images/Identificar/cbhc_autobooting.jpg" class="auto_size"></label><br><br>
@@ -1943,20 +1970,20 @@ a.previous:hover, a.next:hover {
 <label class="link" for="autobooting_quick_start">No, al encender la consola no muestra nada en particular, carga el menú de inicio rápido con normalidad.<br><img src="Images/Identificar/quick_start_menu.jpg" class="auto_size"></label><br><br>
 </form>
 <div id="fmr" style="display:none;"><p>Usar el menú de inicio rápido impide observar la carga del PayloadLoader al encender la consola, para comprobar al 100% que la consola no tenga Autobooting PayloadLoader es necesario <a href="?s=standby_functions">desactivar las funciones en modo de reposo</a> y volver a contestar la pregunta de está sección.</p></div>
-<div id="autobooting_next" style="display:none;"><h3>Apaga la consola.</h3>
+<div id="autobooting_next" style="display:none;"><h2>Apaga la consola.</h2>
 <p><a id="autobooting_next_button" href="?s=test" class="button">Siguiente</a></p></div>
 </div>
 </div>
 <div id="test_haxchi" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Haxchi</h2>
+<h1>Haxchi</h1>
 <br>
 <p>Este "hack" no es tan fácil de detectar sin algo de experiencia. El problema es que <a href="?s=custom_haxchi">Haxchi puede ser personalizado para que muestre cualquier icono y título, además Haxchi se puede configurar para cargar cualquier aplicación homebrew</a>. La forma más simple de determinar que una consola tiene Haxchi correctamente instado es encendiendo la consola, abriendo directamente el icono de Haxchi en el menú de Wii U y observando que pasa.</p>
 <p>Para evitar confusiones la siguiente lista explica que cosas <strong class="red">no</strong> son tener Haxchi en la Wii U:</p>
 <p>· Tener Haxchi en el Homebrew Launcher no es tener Haxchi instalado en la consola. La aplicación que se muestra en el Homebrew Launcher es el instalador (y actualizador) de Haxchi.<br><img src="Images/Identificar/hbl_with_haxchi.jpg" class="auto_size"></p>
 <p>· Tener alguna carpeta <code>haxchi</code> en la tarjeta SD no es tener Haxchi instalado en la consola. La carpeta <code>haxchi</code> en la raíz de la tarjeta SD es parte del instalador (y actualizador) de Haxchi.<br><img src="Images/Identificar/haxchi_folder.png" class="auto_size"></p>
 <p>· Tener un icono de Haxchi en el menú de Wii U no necesariamente es tener Haxchi correctamente instalado en la consola. El icono de Haxchi en el menú de Wii U puede estar presente, pero sólo se puede comprobar si es Haxchi correctamente instalado si no requiere de algo más para abrirlo, es decir debes poder abrirlo directamente despues de encender la consola sin que salga ningún mensaje de error.<br><img src="Images/Identificar/haxchi_icon.jpg" class="auto_size"></p>
-<h3>¿Tienes un icono de Haxchi (cualquiera) en el menú de Wii U?</h3>
+<h2>¿Tienes un icono de Haxchi (cualquiera) en el menú de Wii U?</h2>
 <form id="f_haxchi_icon" onclick="updateFormHaxchiIcon()">
 <input type="radio" id="haxchi_icon_yes" value="haxchi_icon_yes" name="default" style="display:none;">
 <label class="link" for="haxchi_icon_yes">Sí, hay un icono de Haxchi en el menú de Wii U.</label><br><br>
@@ -1964,7 +1991,7 @@ a.previous:hover, a.next:hover {
 <label class="link" for="haxchi_icon_no">No, no hay ningún icono de Haxchi en el menú de Wii U.</label><br><br>
 </form>
 <div id="d_haxchi" style="display:none;"><p>Enciende la consola con la tarjeta SD puesta, accede al menú de Wii U, abre el icono de Haxchi y observa que ocurre en la pantalla del GamePad, no presiones ningún botón.</p>
-<h3>¿Pudiste abrir el icono de Haxchi en el menú de Wii U?</h3>
+<h2>¿Pudiste abrir el icono de Haxchi en el menú de Wii U?</h2>
 <form id="f_haxchi" onclick="updateFormHaxchi()">
 <input type="radio" id="haxchi_no" value="haxchi_no" name="default" style="display:none;">
 <label class="link" for="haxchi_no">No, la consola muestra el mensaje "No se puede usar este programa. El identificador de Nintendo Network que se usó para adquirirlo se ha borrado".<br><img src="Images/Identificar/this_software_cannot_be_used.jpg" class="auto_size"></label><br><br>
@@ -1987,19 +2014,19 @@ a.previous:hover, a.next:hover {
 <input type="radio" id="haxchi_ohb" value="haxchi_ohb" name="default" style="display:none;">
 <label class="link" for="haxchi_ohb">Sí, carga automáticamente una aplicación.</label><br><br>
 </form></div>
-<div id="haxchi_next" style="display:none;"><h3>Apaga la consola.</h3>
+<div id="haxchi_next" style="display:none;"><h2>Apaga la consola.</h2>
 <p><a id="haxchi_next_button" href="?s=test" class="button">Siguiente</a></p></div>
 </div>
 </div>
 <div id="test_indexiine" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Indexiine</h2>
+<h1>Indexiine</h1>
 <br>
 <p>Existen dos "hacks" que usan el mismo exploit del navegador. Con Webhack debes entrar en una página web y tocar en un enlace o botón para ejecutar el exploit, por otro lado, con Indexiine no necesitas entrar en ninguna página ni tocar nada ya que se ejecuta automáticamente después de unos segundos de abrir el navegador.</p>
 <p>El exploit del navegador es un punto de entrada muy versátil ya que se puede usar para cargar cualquier aplicación homebrew. Sin embargo, también es fácil bloquear el navegador si es que se desconfiguran los ajustes correctos del propio navegador teniendo Indexiine instalado.</p>
 <p>Para evitar confusiones debes saber que tener la aplicación Indexiine Installer en el Homebrew Launcher <strong class="red">no</strong> es tener Indexiine instalado en la consola. La aplicación que se muestra en el Homebrew Launcher es el instalador de Indexiine, puedes tener la aplicación Indexiine Installer en el Homebrew Launcher sin tener realmente instalado Indexiine en la consola.<br><img src="Images/Identificar/hbl_with_indexiine_installer.jpg" class="auto_size"></p>
 <p>Enciende la consola con la tarjeta SD puesta, accede al menú de Wii U, abre el navegador de Internet y observa que ocurre en la pantalla del GamePad, espera unos segundos, no presiones ningún botón.<br><img src="Images/Identificar/internet_browser.jpg" class="auto_size"></p>
-<h3>¿Al abrir el navegador carga algo especial?</h3>
+<h2>¿Al abrir el navegador carga algo especial?</h2>
 <form id="f_indexiine" onclick="updateFormIndexiine()">
 <input type="radio" id="indexiine_no" value="indexiine_no" name="default" style="display:none;">
 <label class="link" for="indexiine_no">No, el navegador no carga nada especial, muestra su página de inicio, no se congela y lo puedo usar para navegar con normalidad.<br><img src="Images/Identificar/browser_index.jpg" class="auto_size"></label><br><br>
@@ -2041,22 +2068,22 @@ a.previous:hover, a.next:hover {
 <input type="radio" id="indexiine_ohb" value="indexiine_ohb" name="default" style="display:none;">
 <label class="link" for="indexiine_ohb">Sí, el navegador carga automáticamente una aplicación.</label><br><br>
 </form>
-<div id="indexiine_next" style="display:none;"><h3>Apaga la consola.</h3>
+<div id="indexiine_next" style="display:none;"><h2>Apaga la consola.</h2>
 <p><a id="indexiine_next_button" href="?s=test" class="button">Siguiente</a></p></div>
 </div>
 </div>
 <div id="uninstall_payloadloader" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Desinstalar PayloadLoader correctamente</h2>
+<h1>Desinstalar PayloadLoader correctamente</h1>
 <br>
-<h3>Necesitas los archivos más recientes de Tiramisu</h3>
+<h2>Necesitas los archivos más recientes de Tiramisu</h2>
 <ul>
 <li>Este enlace lleva al sitio oficial: <a href="https://tiramisu.foryour.cafe/">Tiramisu para tu café</a>.</li>
 <ul>
 <li>Dentro del sitio debes tocar en el botón <em class="green">Download Tiramisu</em> para iniciar la descarga de un archivo <code>.zip</code>.</li>
 </ul>
 </ul>
-<h3>Instalación</h3>
+<h2>Instalación</h2>
 <div class="info">Si la PC te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
 <div class="info">Si la PC te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
 <ul>
@@ -2068,7 +2095,7 @@ a.previous:hover, a.next:hover {
 <li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
 </ul>
 <div class="info">Si ya tienes desactivado el arranque automático salta a <a href="#upl">desinstalar PayloadLoader</a>.</div>
-<h3>Desactivar el arranque automático de PayloadLoader</h3>
+<h2>Desactivar el arranque automático de PayloadLoader</h2>
 <ul>
 <li><strong class="green">Enciende la consola</strong> y <strong class="green">mantén presionado el botón X</strong> hasta que salga el <em>EnvironmentLoader</em>.</li>
 <li>Navega por el menú usando las flechas del D-Pad del GamePad, <strong class="green">selecciona</strong> <em class="green">installer</em> y presiona el <strong class="green">botón A</strong> para iniciarlo.<br><img src="Images/EnvironmentLoader/installer_default_tiramisu.jpg" class="auto_size_li"></li>
@@ -2082,7 +2109,7 @@ a.previous:hover, a.next:hover {
 <li>Después de que la instalación termine, presiona <strong class="green">botón A</strong> para apagar la consola.<br><img src="Images/PayloadLoader_Installer/boot_updated.jpg" class="auto_size_li"></li>
 </ul>
 <p>Ahora el <em>PayloadLoader</em> <strong class="red">no</strong> arrancará automáticamente cada que enciendas la Wii U.</p>
-<h3 id="upl">Desinstalar PayloadLoader</h3>
+<h2 id="upl">Desinstalar PayloadLoader</h2>
 <ul>
 <li>Enciende la consola y accede al menú de Wii U.<br><img src="Images/Identificar/health_and_safety_information_icon.jpg" class="auto_size_li"></li>
 <li><strong class="green">Abre Información sobre salud y seguridad</strong> y <strong class="green">mantén presionado el botón X</strong> hasta que salga el menú <em>EnvironmentLoader</em>.</li>
@@ -2099,47 +2126,49 @@ a.previous:hover, a.next:hover {
 <p>Haz una copia de todo el contenido de la tarjeta SD en la PC (o el teléfono inteligente) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo. Con eso ya haz desinstalado el <em>EnvironmentLoader</em> y Tiramisu correctamente.</p>
 <p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola, sin ningún problema.</p>
 <p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. <strong class="red">No es necesario que formatees la consola</strong>.</p>
-<p><a href="?s=main">Inicio</a></p>
-<p><a href="?s=delete">Formatear la consola</a></p>
+<div class="bottomnav">
+<a href="?s=main" class="previous">Inicio</a><a href="?s=delete" class="next">Formatear la consola</a>
+</div>
 </div>
 </div>
 <div id="uninstall_webhack" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Desinstalar Webhack correctamente</h2>
+<h1>Desinstalar Webhack correctamente</h1>
 <br>
 <p>Webhack no modifica nada en la consola por eso desinstalar Webhack es simplemente borrar el payload dentro de la carpeta <code>wiiu</code> de la tarjeta SD de la consola.</p>
 <p>Haz una copia de todo el contenido de la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo. Con eso ya haz desinstalado Webhack correctamente.</p>
 <p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola sin ningún problema.</p>
 <p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. <strong class="red">No es necesario formatear la consola</strong>.</p>
-<p><a href="?s=main">Inicio</a></p>
-<p><a href="?s=delete">Formatear la consola</a></p>
+<div class="bottomnav">
+<a href="?s=main" class="previous">Inicio</a><a href="?s=delete" class="next">Formatear la consola</a>
+</div>
 </div>
 </div>
 <div id="uninstall_indexiine" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Desinstalar Indexiine correctamente</h2>
+<h1>Desinstalar Indexiine correctamente</h1>
 <br>
 <p>Recuerda que al momento de instalar Indexiine se remplaza el archivo <code>index.html</code> dentro del navegador de la consola por eso desinstalar Indexiine es restaurar el archivo <code>index.html</code> original del navegador, después de restaurarlo puedes volver a ocupar el navegador de forma normal.</p>
 <p>Desinstalar Indexiine se resume en ejecutar Indexiine Installer desde el Homebrew Launcher.</p>
 <p>Si tienes acceso al Homebrew Launcher y puedes abrir aplicaciones desde ahí entonces es muy fácil desinstalar Indexiine, pero si no tienes acceso al Homebrew Launcher entonces hay que seguir un procedimiento algo más complicado.</p>
-<h3>¿Puedes abrir el Homebrew Launcher?</h3>
+<h2>¿Puedes abrir el Homebrew Launcher?</h2>
 <p><a href="?s=uninstall_indexiine&p=hbl">Sí</a></p>
 <p><a href="?s=uninstall_indexiine&p=ext">No</a></p>
 </div>
 </div>
 <div id="uninstall_indexiine_hbl" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Desinstalar Indexiine correctamente</h2>
+<h1>Desinstalar Indexiine correctamente</h1>
 <br>
 <p>Aquí se asume que sabes cómo entrar en el Homebrew Launcher para iniciar aplicaciones.</p>
 <p>Para asegurar que todo salga bien debes preparar y revisar algunos archivos en la tarjeta SD. Así que apaga la consola, saca la tarjeta SD de la Wii U y ponla a tu dispositivo (computadora o teléfono móvil) para copiar archivos.</p>
-<h3>Descarga</h3>
+<h2>Descarga</h2>
 <div class="info">Los siguientes enlaces dirigen a los lanzamientos oficiales de los desarrolladores de cada aplicación, son las versiones estables más recientes.</div>
 <ul>
 <li><a href="https://github.com/GaryOderNichts/indexiine-installer/releases/tag/v2">Indexiine-Installer</a> (descarga el archivo <code>indexiine-installer.zip</code>).</li>
 <li>Archivo <a href="https://drive.google.com/uc?id=149g4RisXhqjAZe3K0VDbTGZtpvt8-oyq">backup-index.html</a> (es el respaldo del archivo original del navegador).</li>
 </ul>
-<h3>Colocación</h3>
+<h2>Colocación</h2>
 <ul>
 <li>Si no tienes Indexiine Installer en el Homebrew Launcher descomprime el archivo <code>indexiine-installer.zip</code> y copia la carpeta <code>wiiu</code> a la raíz de la tarjeta SD.</li>
 </ul>
@@ -2152,7 +2181,7 @@ a.previous:hover, a.next:hover {
 <li>Si no tienes el archivo <code>backup-index.html</code> en dicha carpeta entonces coloca el respaldo que descargaste.</li>
 </ul>
 </ul>
-<h3>Procedimiento de desinstalación</h3>
+<h2>Procedimiento de desinstalación</h2>
 <ul>
 <li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
 <li>Enciende la consola y accede al menú de Wii U.</li>
@@ -2165,17 +2194,18 @@ a.previous:hover, a.next:hover {
 <p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola sin ningún problema.</p>
 <p>Haz una copia de todo el contenido de la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo.</p>
 <p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. <strong class="red">No es necesario formatear la consola</strong>.</p>
-<p><a href="?s=main">Inicio</a></p>
-<p><a href="?s=delete">Formatear la consola</a></p>
+<div class="bottomnav">
+<a href="?s=main" class="previous">Inicio</a><a href="?s=delete" class="next">Formatear la consola</a>
+</div>
 </div>
 </div>
 <div id="uninstall_indexiine_ext" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Desinstalar Indexiine correctamente</h2>
+<h1>Desinstalar Indexiine correctamente</h1>
 <br>
 <p>Aquí se asume que no puedes abrir el Homebrew Launcher, posiblemente tengas el navegador bloqueado (por inestabilidad de Indexiine) lo cual te impide cargar el CFW o el mismo Homebrew Launcher.</p>
 <p>Para asegurar que todo salga bien debes preparar y revisar algunos archivos en la tarjeta SD. Así que apaga la consola, saca la tarjeta SD de la Wii U y ponla a tu dispositivo (computadora o teléfono móvil) para copiar archivos.</p>
-<h3>Descarga</h3>
+<h2>Descarga</h2>
 <div class="info">Los siguientes enlaces dirigen a los lanzamientos oficiales de los desarrolladores de cada aplicación, son las versiones estables más recientes.</div>
 <ul>
 <li><a href="https://github.com/GaryOderNichts/configurable-payload/releases/tag/v1">Configurable Payload</a> (descarga el archivo <code>payload.elf</code>).</li>
@@ -2183,7 +2213,7 @@ a.previous:hover, a.next:hover {
 <li><a href="https://github.com/GaryOderNichts/indexiine-installer/releases/tag/v2">Indexiine-Installer</a> (descarga el archivo <code>indexiine-installer.zip</code>).</li>
 <li>Archivo <a href="https://drive.google.com/uc?id=149g4RisXhqjAZe3K0VDbTGZtpvt8-oyq">backup-index.html</a> (es el respaldo del archivo original del navegador).</li>
 </ul>
-<h3>Colocación</h3>
+<h2>Colocación</h2>
 <ul>
 <li>Descomprime el archivo <code>indexiine-installer.zip</code> y copia la carpeta <code>wiiu</code> a la raíz de la tarjeta SD.</li>
 </ul>
@@ -2206,7 +2236,7 @@ a.previous:hover, a.next:hover {
 <li>Si no tienes el archivo <code>payload.elf</code> en dicha carpeta entonces coloca el respaldo que descargaste.</li>
 </ul>
 </ul>
-<h3>Procedimiento de desinstalación</h3>
+<h2>Procedimiento de desinstalación</h2>
 <ul>
 <li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
 <li>Enciende la consola y accede al menú de Wii U.</li>
@@ -2231,13 +2261,14 @@ a.previous:hover, a.next:hover {
 <p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola sin ningún problema.</p>
 <p>Haz una copia de todo el contenido de la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo.</p>
 <p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. <strong class="red">No es necesario formatear la consola</strong>.</p>
-<p><a href="?s=main">Inicio</a></p>
-<p><a href="?s=delete">Formatear la consola</a></p>
+<div class="bottomnav">
+<a href="?s=main" class="previous">Inicio</a><a href="?s=delete" class="next">Formatear la consola</a>
+</div>
 </div>
 </div>
 <div id="uninstall_haxchi" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Desinstalar Haxchi correctamente</h2>
+<h1>Desinstalar Haxchi correctamente</h1>
 <br>
 <p>Recuerda que al momento de instalar Haxchi se inyecta dentro de un juego de Nintendo DS por eso desinstalar Haxchi es como desinstalar cualquier juego. Después de borrarlo puedes volver a descargar el juego de Nintendo DS desde la eShop y usarlo de forma normal.</p>
 <ul>
@@ -2251,23 +2282,24 @@ a.previous:hover, a.next:hover {
 <p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola sin ningún problema.</p>
 <p>Haz una copia de todo el contenido de la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo.</p>
 <p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. <strong class="red">No es necesario formatear la consola</strong>.</p>
-<p><a href="?s=main">Inicio</a></p>
-<p><a href="?s=delete">Formatear la consola</a></p>
+<div class="bottomnav">
+<a href="?s=main" class="previous">Inicio</a><a href="?s=delete" class="next">Formatear la consola</a>
+</div>
 </div>
 </div>
 <div id="uninstall_cbhc" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Desinstalar Coldboot Haxchi correctamente</h2>
+<h1>Desinstalar Coldboot Haxchi correctamente</h1>
 <br>
 <p>Recuerda que al momento de instalar Coldboot Haxchi se remplaza el menú de Wii U por Haxchi por eso desinstalar Coldboot Haxchi es restaurar el menú de Wii U y desinstalar Haxchi después de eso puedes volver a usar la consola de forma normal.</p>
 <p>Se asume que sabes entrar en el Homebrew Launcher para iniciar aplicaciones ya que desinstalar Coldboot Haxchi se resume en ejecutar CBHC Installer desde el Homebrew Launcher.</p>
 <p>Debes preparar los archivos para la tarjeta SD tú mismo. Los siguientes enlaces dirigen a los lanzamientos oficiales de los desarrolladores de cada aplicación, son las versiones estables más recientes.</p>
-<h3>Descarga</h3>
+<h2>Descarga</h2>
 <ul>
 <li><a href="https://apps.fortheusers.org/wiiu/cbhc">CBHC</a> (instalador de Coldboot Haxchi, clic en el botón <strong>Download</strong>).</li>
 <li><a href="https://apps.fortheusers.org/wiiu/nanddumper">Wii U NAND Dumper</a> (clic en el botón <strong>Download</strong>).</li>
 </ul>
-<h3>Colocación</h3>
+<h2>Colocación</h2>
 <p>Nota: Los archivos <code>info.json</code> y <code>manifest.install</code> no son necesarios, los puedes omitir y eliminar sin ningún problema.</p>
 <ul>
 <li>Copia el contenido del archivo <code>cbhc.zip</code> a la raíz de la tarjeta SD.</li>
@@ -2279,13 +2311,17 @@ a.previous:hover, a.next:hover {
 <li>Entra en el Homebrew Launcher como ya sabes hacerlo.</li>
 </ul>
 <p>Una vez dentro del Homebrew Launcher y antes de hacer cualquier modificación en la consola es obligatorio tener un respaldo de la memoria interna.</p>
-<p><a href="?s=uninstall_cbhc&p=nand_backup">Hacer respaldo</a></p>
-<p><a href="?s=uninstall_cbhc&p=process&console=on">Ya tengo respaldo, continuar con la desinstalación de Coldboot Haxchi</a></p>
+<div class="bottomnav">
+<a href="?s=main" class="previous">Inicio</a><a href="?s=uninstall_cbhc&p=nand_backup" class="next">Hacer respaldo</a>
+</div>
+<div class="bottomnav">
+<a href="?s=uninstall_cbhc&p=process&console=on" class="next">Ya tengo respaldo, continuar con la desinstalación de Coldboot Haxchi</a>
+</div>
 </div>
 </div>
 <div id="uninstall_cbhc_nand_backup" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Haz una copia de seguridad de la NAND (memoria interna) de la Wii U</h2>
+<h1>Haz una copia de seguridad de la NAND (memoria interna) de la Wii U</h1>
 <br>
 <p><strong class="red">¡Este paso es obligatorio si usas Coldboot Haxchi (CBHC)!</strong></p>
 <p>En el caso de que algo salga muy mal restaurar la copia de la memoria interna puede solucionarlo.</p>
@@ -2312,12 +2348,14 @@ a.previous:hover, a.next:hover {
 </ul>
 <div class="info">El respaldo de la memoria interna es único para cada consola, las copias de respaldo de otras consolas no funcionarán en tu Wii U.</div>
 <div class="info">Puedes hacer varias copias en servicios de la nube de internet para evitar perder la valiosa copia de seguridad de la NAND de tu Wii U.</div>
-<p><a href="?s=uninstall_cbhc&p=process&console=off">Continuar con la desinstalación de Coldboot Haxchi</a></p>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a><a href="?s=uninstall_cbhc&p=process&console=off" class="next">Continuar con la desinstalación de Coldboot Haxchi</a>
+</div>
 </div>
 </div>
 <div id="uninstall_cbhc_process" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Desinstalar Coldboot Haxchi correctamente</h2>
+<h1>Desinstalar Coldboot Haxchi correctamente</h1>
 <br>
 <p>La desinstalación incorrecta de Coldboot Haxchi puede brickear la Wii U. Sigue al pie de la letra las siguientes instrucciones.</p>
 <ul>
@@ -2342,15 +2380,16 @@ a.previous:hover, a.next:hover {
 <p>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U puedes borrarla desde gestión de datos dentro de la configuración de la consola sin ningún problema.</p>
 <p>Haz una copia de todo el contenido de la tarjeta SD (en una computadora o teléfono móvil) y borra definitivamente el contenido de la tarjeta SD, puedes formatear la tarjeta SD para borrar absolutamente todo.</p>
 <p>Con los pasos anteriores ya puedes instalar en limpio cualquier otro hack de Wii U. <strong class="red">No es necesario formatear la consola</strong>.</p>
-<p><a href="?s=main">Inicio</a></p>
-<p><a href="?s=delete">Formatear la consola</a></p>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a><a href="?s=delete" class="next">Formatear la consola</a>
+</div>
 </div>
 </div>
 <div id="delete" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Formatear la Wii U</h2>
+<h1>Formatear la Wii U</h1>
 <br>
-<h3>Avisos</h3>
+<h2>Avisos</h2>
 <ul>
 <li>Esto eliminará todo el contenido y ajustes de la consola (juegos, archivos de guardado y cuentas de usuario), pero <strong class="red">no restaurará archivos del sistema</strong>. <ins>Asegúrate de desinstalar correctamente cualquier hack que modifique archivos del sistema de la consola antes de formatear.</ins></li>
 <li>Los juegos preinstalados estarán disponibles para volverlos a descargar en la consola sin tener que vincular un identificador de Nintendo Network.</li>
@@ -2359,7 +2398,7 @@ a.previous:hover, a.next:hover {
 <li>Formatear la Wii U no hará que la consola vuelva a una versión anterior de firmware.</li>
 <li>Cuando termine el proceso tendrás que volver a sincronizar el GamePad con la consola.</li>
 </ul>
-<h3>Procedimiento</h3>
+<h2>Procedimiento</h2>
 <ul>
 <li>Desde el menú de Wii U abre Configuración de la consola.</li>
 <li>Desplázate hasta la última opción.</li>
@@ -2369,12 +2408,14 @@ a.previous:hover, a.next:hover {
 <li>La consola iniciara el proceso de formateo.</li>
 </ul>
 <p>El formateo puede durar una hora o más. No apegues la consola.</p>
-<p><a href="?s=main">Inicio</a></p>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a><a href="?s=main" class="next">Inicio</a>
+</div>
 </div>
 </div>
 <div id="games" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Descarga de juegos para Wii U</h2>
+<h1>Descarga de juegos para Wii U</h1>
 <br>
 <p>Wii U USB Helper te permite descargar juegos para la Wii U en formato para WUP Installer GX2.</p>
 <p>En esta guía veras como instalar la aplicación en tu PC, como descargar un juego con actualización y DLC, y como colocar los archivos en la tarjeta SD para que WUP Installer GX2 los reconozca.</p>
@@ -2383,18 +2424,20 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="games_download_usb_helper" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Descargar Wii U USB Helper</h2>
+<h1>Descargar Wii U USB Helper</h1>
 <br>
 <p>Para empezar, debemos descargar el programa desde el GitHub oficial del desarrollador:</p>
 <p><a href="https://github.com/FailedShack/USBHelperInstaller/releases">https://github.com/FailedShack/USBHelperInstaller/releases</a></p>
 <p>Sólo necesitamos el ejecutable "USBHelperInstaller.exe".</p>
 <p><a target="_blank" href="Images/USB_Helper/01.png"><img src="Images/USB_Helper/01.png" class="auto_size center"></a></p>
-<p><a href="?s=games&p=install_usb_helper">Instalar Wii U USB Helper</a></p>
+<div class="bottomnav">
+<a href="?s=main" class="previous">Inicio</a><a href="?s=games&p=install_usb_helper" class="next">Instalar Wii U USB Helper</a>
+</div>
 </div>
 </div>
 <div id="games_install_usb_helper" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Instalar Wii U USB Helper</h2>
+<h1>Instalar Wii U USB Helper</h1>
 <br>
 <p>Una vez descargado le damos doble clic para ejecutarlo.</p>
 <p>Si sale un mensaje de advertencia le damos en el botón Ejecutar.</p>
@@ -2410,12 +2453,14 @@ a.previous:hover, a.next:hover {
 </ul>
 <p><a target="_blank" href="Images/USB_Helper/03.png"><img src="Images/USB_Helper/03.png" class="auto_size center"></a></p>
 <p>Después de darle al botón Finish deberá empezar a cargar el programa, eso tardará un momento. Si sale un mensaje del Firewall permite el acceso para el programa.</p>
-<p><a href="?s=games&p=config_usb_helper">Configurar Wii U USB Helper</a></p>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a><a href="?s=games&p=config_usb_helper" class="next">Configurar Wii U USB Helper</a>
+</div>
 </div>
 </div>
 <div id="games_config_usb_helper" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Configurar Wii U USB Helper</h2>
+<h1>Configurar Wii U USB Helper</h1>
 <br>
 <p>Si el programa ha cargado correctamente debe aparecer la ventana de bienvenida.</p>
 <ol>
@@ -2435,24 +2480,28 @@ a.previous:hover, a.next:hover {
 <p>Clic en el botón Ok.</p>
 <p>Ahora empezará a cargar los tickets.</p>
 <p><a target="_blank" href="Images/USB_Helper/06.png"><img src="Images/USB_Helper/06.png" class="auto_size center"></a></p>
-<p><a href="?s=games&p=interface_usb_helper">Interface de Wii U USB Helper</a></p>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a><a href="?s=games&p=interface_usb_helper" class="next">Interface de Wii U USB Helper</a>
+</div>
 </div>
 </div>
 <div id="games_tickets" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Páginas con Tickets</h2>
+<h1>Páginas con Tickets</h1>
 <br>
 <ul>
 <li>https://wiiu-keys.netlify.app/</li>
 <li>http://vault.titlekeys.ovh/</li>
 <li>https://wiikeys.web.app/</li>
 </ul>
-<p><a onclick="window.history.back()">Regresar</a></p>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a>
+</div>
 </div>
 </div>
 <div id="games_interface_usb_helper" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Interfaz de Wii U USB Helper</h2>
+<h1>Interfaz de Wii U USB Helper</h1>
 <br>
 <p>Finalmente carga la interface principal, si sale un mensaje del Firewall permite el acceso para el programa.</p>
 <p><a target="_blank" href="Images/USB_Helper/07.png"><img src="Images/USB_Helper/07.png" class="auto_size center"></a></p>
@@ -2460,12 +2509,14 @@ a.previous:hover, a.next:hover {
 <p><a target="_blank" href="Images/USB_Helper/08.png"><img src="Images/USB_Helper/08.png" class="auto_size center"></a></p>
 <p>En la sección Filters puedes seleccionar los juegos según la consola para la que salieron.</p>
 <p><a target="_blank" href="Images/USB_Helper/09.png"><img src="Images/USB_Helper/09.png" class="auto_size center"></a></p>
-<p><a href="?s=games&p=usb_helper">Descargar juegos</a></p>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a><a href="?s=games&p=usb_helper" class="next">Descargar juegos</a>
+</div>
 </div>
 </div>
 <div id="games_usb_helper" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Descargar juegos con Wii U USB Helper</h2>
+<h1>Descargar juegos con Wii U USB Helper</h1>
 <br>
 <p>Ahora vamos a probar descargar Breath of the Wild con actualización y DLC.</p>
 <p>En donde indica la flecha hay un buscador, escribe "Zelda" para que se muestren todos los juegos de la saga.</p>
@@ -2482,12 +2533,14 @@ a.previous:hover, a.next:hover {
 <p><a target="_blank" href="Images/USB_Helper/15.png"><img src="Images/USB_Helper/15.png" class="auto_size center"></a></p>
 <p>Ya descargado el juego nos aparecerá en el apartado de juegos descargados (el juego engloba su actualización y DLC).</p>
 <p><a target="_blank" href="Images/USB_Helper/16.png"><img src="Images/USB_Helper/16.png" class="auto_size center"></a></p>
-<p><a href="?s=install_games">Transferir juegos a la tarjeta SD</a></p>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a><a href="?s=install_games" class="next">Transferir juegos a la tarjeta SD</a>
+</div>
 </div>
 </div>
 <div id="install_games" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Transferir juegos a la tarjeta SD</h2>
+<h1>Transferir juegos a la tarjeta SD</h1>
 <br>
 <p>Vamos a la carpeta donde descargamos el juego, DLC o actualización.</p>
 <p><ins>En WUP Installer GX2 sólo podemos ver carpetas que tengan <strong class="green">NUS Content cifrado</strong> (archivos <code>title.cert</code>, <code>title.tik</code>, <code>title.tmd</code>, <code>*.app</code> y <code>*.h3</code>)</ins> y que tengan nombres <ins>sin caracteres especiales</ins> como acentos (usa sólo letras, números y espacios para nombrar las carpetas). Por eso, para evitar conflictos y confusiones es mejor renombrar las capetas después de copiar cada una a la carpeta <code>install</code> de la tarjeta SD.</p>
@@ -2500,12 +2553,14 @@ a.previous:hover, a.next:hover {
 </ul>
 <p>Así deben quedar las carpetas dentro de la carpeta <code>install</code> de la tarjeta SD (no las metas en subcarpetas porque WUP Installer GX2 no las reconocerá).</p>
 <p><a target="_blank" href="Images/USB_Helper/18.png"><img src="Images/USB_Helper/18.png" class="auto_size center"></a></p>
-<p><a href="?s=install_games&p=wup_installer_gx2">Instalar juegos con WUP Installer GX2</a></p>
+<div class="bottomnav">
+<a href="?s=main" class="previous">Inicio</a><a href="?s=install_games&p=wup_installer_gx2" class="next">Instalar juegos con WUP Installer GX2</a>
+</div>
 </div>
 </div>
 <div id="install_games_wup_installer_gx2" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Instalar juegos con WUP Installer GX2</h2>
+<h1>Instalar juegos con WUP Installer GX2</h1>
 <br>
 <p>Con el juego en la carpeta <code>install</code> de la tarjeta SD ya podemos colocar la tarjeta SD en la Wii U, pender la consola y abrir WUP Installer GX2 por el método que tengamos (Webhack, Haxchi, Indexiine o Coldboot Haxchi).</p>
 <p>WUP Installer GX2 lo puedes abrir desde el Homebrew Launcher.</p>
@@ -2523,12 +2578,14 @@ a.previous:hover, a.next:hover {
 <p>Una vez instalado todo podemos regresar al menú principal de la consola presionando el botón Home del GamePad. El icono del juego deberá estar junto a los demás en el menú.</p>
 <p>Nota 1: Si al abrir un juego te pide actualizar la consola puedes hacerlo sin ningún riesgo (algunos juegos indican la actualización propia como actualización de la consola), <ins>no pierdes el hack</ins> que tengas ni los juegos ya instalados.</p>
 <p>Nota 2: Podemos borrar las carpetas que tenemos en de la carpeta <code>install</code> después de instalar el juego para liberar espacio en la tarjeta SD.</p>
-<p><a href="?s=main">Inicio</a></p>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a><a href="?s=main" class="next">Inicio</a>
+</div>
 </div>
 </div>
 <div id="custom_haxchi" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Personalizar Haxchi</h2>
+<h1>Personalizar Haxchi</h1>
 <br>
 <p>La estructura de archivos del instalador de Haxchi se divide en dos capetas.</p>
 <ul>
@@ -2536,7 +2593,7 @@ a.previous:hover, a.next:hover {
 <li><code>sd:/haxchi</code> Contiene los archivos de imagen y configuración que se inyectarán en el juego de DS.</li>
 </ul>
 <br>
-<h3>Editar el archivo de configuración (<code>config.txt</code>)</h3>
+<h2>Editar el archivo de configuración (<code>config.txt</code>)</h2>
 <p>Esté archivo se puede editar con el Bloc de notas, cada línea corresponde a un atajo de botón y tiene la estructura:</p>
 <p><code>Botón=Ruta/De/Aplicación.elf</code></p>
 <p>Los botones disponibles son:</p>
@@ -2558,12 +2615,12 @@ a.previous:hover, a.next:hover {
 <li>Si presionas R cargará SWAP DRC Lite.</li>
 </ul>
 <br>
-<h3>Editar el archivo de título (<code>title.txt</code>)</h3>
+<h2>Editar el archivo de título (<code>title.txt</code>)</h2>
 <p>Al igual que el archivo de configuración esté archivo se puede editar con el Bloc de notas. Cuando pasas sobre el icono de Haxchi, verás su título personalizado. Puedes usar esto para recordar los accesos directos que configuraste o simplemente para poner el texto que quieras.</p>
 <p>Por ejemplo:</p>
 <p><a target="_blank" href="Images/Personalizar_Haxchi/title.png"><img src="Images/Personalizar_Haxchi/title.png" class="auto_size center"></a></p>
 <br>
-<h3>Editar el archivo del icono (<code>iconTex.tga</code>)</h3>
+<h2>Editar el archivo del icono (<code>iconTex.tga</code>)</h2>
 <p>Este archivo lo puedes editar con Photoshop. Puedes usar cualquier imagen como icono, incluso con transparencia, pero debes respetar dos cosas:</p>
 <ul>
 <li>La imagen debe ser de 128x128 pixeles, ni uno más, ni uno menos.</li>
@@ -2571,7 +2628,7 @@ a.previous:hover, a.next:hover {
 </ul>
 <p><a target="_blank" href="Images/Personalizar_Haxchi/icon.png"><img src="Images/Personalizar_Haxchi/icon.png" class="auto_size center"></a></p>
 <br>
-<h3>Editar el archivo de imagen para la TV (bootTvTex.tga)</h3>
+<h2>Editar el archivo de imagen para la TV (bootTvTex.tga)</h2>
 <p>Este archivo lo puedes editar con Photoshop. Puedes usar cualquier imagen, pero en esté caso el resultado no debe tener transparencia de fondo, debes respetar dos cosas:</p>
 <ul>
 <li>La imagen debe ser de 1280x720 pixeles, ni uno más, ni uno menos.</li>
@@ -2579,7 +2636,7 @@ a.previous:hover, a.next:hover {
 </ul>
 <p><a target="_blank" href="Images/Personalizar_Haxchi/tv.png"><img src="Images/Personalizar_Haxchi/tv.png" class="auto_size center"></a></p>
 <br>
-<h3>Editar el archivo de imagen para el GamePad (<code>bootDrcTex.tga</code>)</h3>
+<h2>Editar el archivo de imagen para el GamePad (<code>bootDrcTex.tga</code>)</h2>
 <p>Este archivo lo puedes editar con Photoshop. Igual que la imagen para TV, puedes usar cualquier imagen, pero el resultado no debe tener transparencia de fondo y debes respetar dos cosas:</p>
 <ul>
 <li>La imagen debe ser de 854x480 pixeles, ni uno más, ni uno menos.</li>
@@ -2587,7 +2644,7 @@ a.previous:hover, a.next:hover {
 </ul>
 <p><a target="_blank" href="Images/Personalizar_Haxchi/drc.png"><img src="Images/Personalizar_Haxchi/drc.png" class="auto_size center"></a></p>
 <br>
-<h3>Aplicar la personalización</h3>
+<h2>Aplicar la personalización</h2>
 <p>Para cambiar la configuración de Haxchi no es necesario desinstalar y reinstalar todo. Simplemente debes reinstalar Haxchi, el instalador inyectará la nueva configuración e imágenes en el juego de DS, luego bastará con reiniciar la consola para probar los cambios.</p>
 <p>Con la tarjeta SD preparada con los archivos personalizados.</p>
 <ul>
@@ -2597,11 +2654,14 @@ a.previous:hover, a.next:hover {
 <li>Presiona el botón A para instalar Haxchi.</li>
 <li>Completada la instalación, la consola cargará el menú de la Wii U.</li>
 </ul>
+<div class="bottomnav">
+<a href="?s=main" class="previous">&#8249; Inicio</a>
+</div>
 </div>
 </div>
 <div id="config_payload" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Personalizar Payload</h2>
+<h1>Personalizar Payload</h1>
 <br>
 <p>Los archivos de Configurable Payload son dos.</p>
 <ul>
@@ -2609,7 +2669,7 @@ a.previous:hover, a.next:hover {
 <li><code>sd:/wiiu/payload.cfg</code> Es el archivo de configuración del payload.</li>
 </ul>
 <br>
-<h3>Editar el archivo de configuración (<code>payload.cfg</code>)</h3>
+<h2>Editar el archivo de configuración (<code>payload.cfg</code>)</h2>
 <p>Este archivo se puede editar con el Bloc de notas, cada línea corresponde a un atajo de botón y tiene la estructura:</p>
 <p><code>Botón=Ruta/De/Aplicación.elf</code></p>
 <p>Los botones disponibles son:</p>
@@ -2630,16 +2690,19 @@ a.previous:hover, a.next:hover {
 <li>Si presionas R cargará SWAP DRC Lite.</li>
 </ul>
 <br>
-<h3>Aplicar la personalización</h3>
+<h2>Aplicar la personalización</h2>
 <p>La nueva configuración del Payload funcionará la siguiente vez que inicies la consola con la tarjeta SD preparada con el archivo personalizado y ejecutes Indexiine o Webhack.</p>
+<div class="bottomnav">
+<a href="?s=main" class="previous">&#8249; Inicio</a>
+</div>
 </div>
 </div>
 <div id="glossary" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Glosario</h2>
+<h1>Glosario</h1>
 <br>
-<p><strong class="blue">Hack</strong>: Modificación del funcionamiento de un objeto o sistema. Para realizar un hack en la Wii U se requiere ejecutar un <strong class="green">exploit</strong> que permita cargar un <strong class="red">CFW</strong> o que permita cargar un <strong class="red">Environment</strong>.</p>
-<p><strong class="blue">Exploit</strong>: Vulnerabilidad de seguridad explotable (aprovechable) de un sistema informático. Ejemplos de <strong class="green">exploits</strong> de Wii U son:</p>
+<p id="hack_t"><strong class="blue">Hack</strong>: Modificación del funcionamiento de un objeto o sistema. Para realizar un hack en la Wii U se requiere ejecutar un <strong class="green">exploit</strong> que permita cargar un <strong class="red">CFW</strong> o que permita cargar un <strong class="red">Environment</strong>.</p>
+<p id="exploit_t"><strong class="blue">Exploit</strong>: Vulnerabilidad de seguridad explotable (aprovechable) de un sistema informático. Ejemplos de <strong class="green">exploits</strong> de Wii U son:</p>
 <ul>
 <li><a href="https://gbatemp.net/threads/webhack-on-5-5-2-jstypehax.480938/">JsTypeHax</a>.</li>
 <li><a href="https://gbatemp.net/threads/contenthax-a-vulnerability-in-wii-u-file-system-verification.447688/">Contenthax</a>.</li>
@@ -2647,7 +2710,7 @@ a.previous:hover, a.next:hover {
 <li><a href="https://maschell.github.io/homebrew/2020/02/11/mk8-exploit.html">MK8 exploit</a>.</li>
 <li><a href="https://gbatemp.net/threads/bluubomb-a-primary-wii-u-entrypoint-via-bluetooth.588522/">BluUBomb</a>.</li>
 </ul>
-<p><strong class="blue">Punto de entrada</strong>: Es el procedimiento que tienes que hacer cada que enciendes la Wii U para establecer el hack en la consola. El punto de entrada ejecuta un <strong class="green">exploit</strong> que permite acceder a los recursos de un sistema. Ejemplos de puntos de entrada de Wii U son:</p>
+<p id="entry_point_t"><strong class="blue">Punto de entrada</strong>: Es el procedimiento que tienes que hacer cada que enciendes la Wii U para establecer el hack en la consola. El punto de entrada ejecuta un <strong class="green">exploit</strong> que permite acceder a los recursos de un sistema. Ejemplos de puntos de entrada de Wii U son:</p>
 <ul>
 <li><a href="https://gbatemp.net/threads/more-stable-webhack-for-5-5-2-5-5-3-5-5-4-5-5-5-released.528757/">Webhack</a> (usa una versión mejorada de JsTypeHax).</li>
 <li><a href="https://gbatemp.net/threads/release-indexiine-installer.561332/">Indexiine</a> (usa una versión mejorada de JsTypeHax).</li>
@@ -2656,26 +2719,26 @@ a.previous:hover, a.next:hover {
 <li><a href="https://github.com/wiiu-env/PayloadLoaderInstaller">PayloadLoader</a> (es un tipo de Contenthax 2.0, factible gracias a FailST).</li>
 <li><a href="https://github.com/wiiu-env/PayloadLoaderInstaller">Autobooting PayloadLoader</a> (es un derivado de PayloadLoader).</li>
 </ul>
-<p><strong class="blue">Firmware (FW)</strong>: Software que controla directamente al hardware. Es la parte del sistema de la consola que se encarga de las funciones básicas, por ejemplo, la validación de tickets de los juegos. Sobre el firmware se construyen los drivers, programas de usuario o el sistema operativo de la consola.</p>
-<p><strong class="blue">Custom Firmware (CFW)</strong>: Firmware personalizado (custom) hecho por desarrolladores independientes, permite habilitar o agregar funciones no soportadas por el firmware original admitiendo, por ejemplo, validar tickets falsos. Ejemplos de <strong class="red">CFW</strong> para Wii U son:</p>
+<p id="fw_t"><strong class="blue">Firmware (FW)</strong>: Software que controla directamente al hardware. Es la parte del sistema de la consola que se encarga de las funciones básicas, por ejemplo, la validación de tickets de los juegos. Sobre el firmware se construyen los drivers, programas de usuario o el sistema operativo de la consola.</p>
+<p id="cfw_t"><strong class="blue">Custom Firmware (CFW)</strong>: Firmware personalizado (custom) hecho por desarrolladores independientes, permite habilitar o agregar funciones no soportadas por el firmware original admitiendo, por ejemplo, validar tickets falsos. Ejemplos de <strong class="red">CFW</strong> para Wii U son:</p>
 <ul>
 <li><a href="https://gbatemp.net/threads/mocha-cfw-the-sweet-chocolate-to-your-latte.452940/">Mocha CFW</a>.</li>
 <li><a href="https://github.com/dimok789/sign_patcher">SigPatcher</a>.</li>
 <li><a href="https://gbatemp.net/threads/what-is-iosuhax.481166/">IOSUHAX</a>.</li>
 <li><a href="https://gbatemp.net/threads/haxchi-v2-5u2-a-persistent-wiiu-hack.451071/">Haxchi CFW</a> (Haxchi comes with its own sysnand CFW included).</li>
 </ul>
-<p><strong class="blue">Environment (entorno)</strong>: En Wii U se refiere a las aplicaciones que se cargan y ejecutan para dar funcionalidad a la consola. Por ejemplo, el entorno por defecto de Wii U consiste en su firmware de original, aplicaciones oficiales en segundo plano y el menú de Wii U. Un entorno hecho por desarrolladores independientes puede cumplir el mismo propósito que un CFW, pero además cuenta con módulos, plugins y bibliotecas que trabajan en conjunto ofreciendo funciones que el sistema de la consola no ofrece originalmente. Ejemplos de <strong class="red">Environments</strong> para Wii U son:</p>
+<p id="environment_t"><strong class="blue">Environment (entorno)</strong>: En Wii U se refiere a las aplicaciones que se cargan y ejecutan para dar funcionalidad a la consola. Por ejemplo, el entorno por defecto de Wii U consiste en su firmware de original, aplicaciones oficiales en segundo plano y el menú de Wii U. Un entorno hecho por desarrolladores independientes puede cumplir el mismo propósito que un CFW, pero además cuenta con módulos, plugins y bibliotecas que trabajan en conjunto ofreciendo funciones que el sistema de la consola no ofrece originalmente. Ejemplos de <strong class="red">Environments</strong> para Wii U son:</p>
 <ul>
 <li><a href="https://gbatemp.net/threads/release-tiramisu-environment-free-cbhc.605381/">Tiramisu</a>.</li>
 <li><a href="https://gbatemp.net/threads/release-aroma-environment-for-wii-u.618474/">Aroma</a>.</li>
 </ul>
-<p><strong class="blue">Homebrew</strong>: Software "hecho en casa" por desarrolladores independientes, suele requerir de un hack para ser ejecutado ya que no cuenta con certificación del fabricante del hardware.</p>
-<p><strong class="blue">Payload</strong>: Carga útil o código que se ejecuta al provocar un exploit, sin la carga útil no se realiza ninguna acción. Un mismo exploit puede utilizar varios payloads y un payload puede ser utilizado por varios exploits.</p>
-<p><strong class="blue">Ticket</strong>: Contiene la firma de validación de un software en la Wii U, entre otras cosas, sin esa clave la Wii U no puede ejecutar el software, a menos que previamente se le aplique un hack a la consola.</p>
-<p><strong class="blue">Brick</strong>: Literalmente ladrillo en inglés. Se refiere a dañar un dispositivo al punto de sólo servir como pisapapeles.</p>
-<p><strong class="blue">Downloadable Content (DLC)</strong>: Contenido descargable, se refiere al material adicional creado por los desarrolladores de un videojuego y que se publica por separado, no incluido en el producto base.</p>
-<p><strong class="blue">Title ID</strong>: El identificador de título es un número de 16 dígitos que usa la Wii U para reconocer un juego o aplicacion en su sistema de archivos. El Title ID se usa para asignar una carpeta a un juego o aplicación. Los primeros 8 dígitos identifican el tipo de contenido (juego, DLC, demo, actualización, aplicación del sistema, etc.).</p>
-<p>Según las definiciones anteriores y simplificando las cosas un hack de Wii U es la suma de un "punto de entrada" y un CFW. Un hack de Wii U también es la suma de un "punto de entrada" y un Environment. Sin un punto de entrada no puedes cargar un CFW. Así que un CFW por sí mismo no es un hack de Wii U. A continuación, una lista de los principales hacks de Wii U:</p>
+<p id="homebrew_t"><strong class="blue">Homebrew</strong>: Software "hecho en casa" por desarrolladores independientes, suele requerir de un hack para ser ejecutado ya que no cuenta con certificación del fabricante del hardware.</p>
+<p id="payload_t"><strong class="blue">Payload</strong>: Carga útil o código que se ejecuta al provocar un exploit, sin la carga útil no se realiza ninguna acción. Un mismo exploit puede utilizar varios payloads y un payload puede ser utilizado por varios exploits.</p>
+<p id="ticket_t"><strong class="blue">Ticket</strong>: Contiene la firma de validación de un software en la Wii U, entre otras cosas, sin esa clave la Wii U no puede ejecutar el software, a menos que previamente se le aplique un hack a la consola.</p>
+<p id="brick_t"><strong class="blue">Brick</strong>: Literalmente ladrillo en inglés. Se refiere a dañar un dispositivo al punto de sólo servir como pisapapeles.</p>
+<p id="dlc_t"><strong class="blue">Downloadable Content (DLC)</strong>: Contenido descargable, se refiere al material adicional creado por los desarrolladores de un videojuego y que se publica por separado, no incluido en el producto base.</p>
+<p id="title_id_t"><strong class="blue">Title ID</strong>: El identificador de título es un número de 16 dígitos que usa la Wii U para reconocer un juego o aplicacion en su sistema de archivos. El Title ID se usa para asignar una carpeta a un juego o aplicación. Los primeros 8 dígitos identifican el tipo de contenido (juego, DLC, demo, actualización, aplicación del sistema, etc.).</p>
+<p id="hacks_t">Según las definiciones anteriores y simplificando las cosas un hack de Wii U es la suma de un "punto de entrada" y un CFW. Un hack de Wii U también es la suma de un "punto de entrada" y un Environment. Sin un punto de entrada no puedes cargar un CFW. Así que un CFW por sí mismo no es un hack de Wii U. A continuación, una lista de los principales hacks de Wii U:</p>
 <ul>
 <li>Webhack + Mocha CFW</li>
 <li>Webhack + IOSUHAX</li>
@@ -2700,53 +2763,44 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="questions" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Preguntas frecuentes</h2>
+<h1>Preguntas frecuentes</h1>
 <br>
-<p><a href="?s=questions#ban">¿Hackear la Wii U tiene algún riesgo de baneo?</a><br>
-<a href="?s=questions#updates">¿Hay algún riesgo si tengo un hack y actualizo la consola?</a><br>
-<a href="?s=questions#usb_mem_hack">¿Puedo realizar el hackeo desde una memoria USB en lugar de la tarjeta SD?</a><br>
-<a href="?s=questions#usb_mem_install_games">¿Puedo instalar juegos desde una memoria USB en lugar de la tarjeta SD?</a><br>
-<a href="?s=questions#sd_mem">¿Qué tarjeta SD se recomienda?</a><br>
-<a href="?s=questions#needed_hack_install_games_in_usb">¿Es necesario hackear la consola para instalar juegos en un dispositivo USB externo?</a><br>
-<a href="?s=questions#usb_mem_stores_games">¿Puedo usar una memoria USB como dispositivo USB externo para almacenar juegos?</a><br>
-<a href="?s=questions#hdd">¿Qué disco duro se recomienda como dispositivo USB externo para almacenar juegos?</a><br>
-<a href="?s=questions#wiiu_usb_device">¿Qué es un dispositivo USB formateado por la Wii U?</a><br>
-<a href="?s=questions#multi_usb_device">¿Puedo usar dos dispositivos USB externos para almacenar juegos de Wii U?</a><br>
-<a href="?s=questions#wii_usb_device_on_wiiu">¿Puedo usar el dispositivo USB que usaba en la Wii y que ya tiene juegos de Wii en la Wii U?</a><br>
-<a href="?s=questions#backup_disks">¿La Wii U puede leer discos piratas?</a><br>
-<a href="?s=questions#needed_gamepad">¿Puedo instalar un hack sin el GamePad de la consola?</a><br>
-<a href="?s=questions#loadiine_gx2">¿Puedo cargar juegos de Wii U desde la tarjeta SD?</a><br>
-<a href="?s=questions#wiiu_game_formats">¿En qué formato están los juegos de Wii U?</a><br>
-<a href="?s=questions#delete_nnid_without_pass">¿Cómo puedo eliminar un usuario (NNID) de la consola si no tengo la contraseña de ese usuario?</a></p>
-<br id="ban">
-<h3>¿Hackear la Wii U tiene algún riesgo de baneo?</h3>
+<div class="accordion">¿Hackear la Wii U tiene algún riesgo de baneo?</div>
+<div class="panel">
 <p>Actualmente, hackear la Wii U no supone riesgo de baneo, puedes jugar en línea y usar la eShop sin problema aun teniendo la consola hackeada. Sólo no debes usar aplicaciones como TCPGecko (cheats o trampas) o SDCafiine (mods) en modos de juego en línea.</p>
-<br id="updates">
-<h3>¿Hay algún riesgo si tengo un hack y actualizo la consola?</h3>
+</div>
+<div class="accordion">¿Hay algún riesgo si tengo un hack y actualizo la consola?</div>
+<div class="panel">
 <p>No. Puedes actualizar la Wii U y los juegos sin preocupación. De hecho, es recomendable actualizar a la última versión tanto del sistema la consola como de los juegos.</p>
-<br id="usb_mem_hack">
-<h3>¿Puedo realizar el hackeo desde una memoria USB en lugar de la tarjeta SD?</h3>
+</div>
+<div class="accordion">¿Puedo realizar el hackeo desde una memoria USB en lugar de la tarjeta SD?</div>
+<div class="panel">
 <p>No. Por defecto la Wii U usa la tarjeta SD, este comportamiento sólo se puede cambiar temporalmente después de aplicar un hackeo.</p>
-<br id="usb_mem_install_games">
-<h3>¿Puedo instalar juegos desde una memoria USB en lugar de la tarjeta SD?</h3>
+</div>
+<div class="accordion">¿Puedo instalar juegos desde una memoria USB en lugar de la tarjeta SD?</div>
+<div class="panel">
 <p>Sí. Sin embargo, es más complicado que instalar juegos desde la tarjeta SD.</p>
-<br id="sd_mem">
-<h3>¿Qué tarjeta SD se recomienda?</h3>
+</div>
+<div class="accordion">¿Qué tarjeta SD se recomienda?</div>
+<div class="panel">
 <p>Si bien la Wii U soporta tarjetas SD de hasta 2 TB, se recomienda una tarjeta SD de 32 GB ya que los juegos más pesados tienen un tamaño de 20 GB.</p>
 <p>Si sólo vas a ejecutar aplicaciones homebrew, una tarjeta SD de 4 GB basta y sobra.</p>
 <p>Si vas a usar emuladores (RetroArch, etc.) posiblemente necesites espacio adicional, dependiendo de tu colección de ROMs.</p>
 <p>Para ejecutar mods de juegos (SDCafiine) 8 GB bastan.</p>
 <p>Evita las tarjetas SD de clase 4, de preferencia usa tarjetas SD de clase 10.</p>
 <p>Las marcas recomendadas son: SanDisk o Samsung.</p>
-<br id="needed_hack_install_games_in_usb">
-<h3>¿Es necesario hackear la consola para instalar juegos en un dispositivo USB externo?</h3>
+</div>
+<div class="accordion">¿Es necesario hackear la consola para instalar juegos en un dispositivo USB externo?</div>
+<div class="panel">
 <p>No. Una Wii U sin hack o con cualquier hack puede tener juegos instalados en un disco duro externo.</p>
 <p>Los juegos legales se instalan desde la eShop, las copias de juegos se instalan usando una aplicación homebrew llamada WUP Installer GX2.</p>
-<br id="usb_mem_stores_games">
-<h3>¿Puedo usar una memoria USB como dispositivo USB externo para almacenar juegos?</h3>
+</div>
+<div class="accordion">¿Puedo usar una memoria USB como dispositivo USB externo para almacenar juegos?</div>
+<div class="panel">
 <p>Sí, pero se recomienda un disco duro sobre una memoria USB ya que las memorias USB tarde o temprano terminan teniendo errores de lectura. El tiempo que tardan en presentar fallos depende de la calidad de la memoria.</p>
-<br id="hdd">
-<h3>¿Qué disco duro se recomienda como dispositivo USB externo para almacenar juegos?</h3>
+</div>
+<div class="accordion">¿Qué disco duro se recomienda como dispositivo USB externo para almacenar juegos?</div>
+<div class="panel">
 <p>Si bien la Wii U soporta discos duros de hasta 2 TB, se recomienda uno acorde a los juegos que vayas a jugar frecuentemente, considera que los juegos más pesados tienen un tamaño de 20 GB.</p>
 <p>Si quieres tener 250 juegos, <ins>un disco duro de 750 GB basta y sobra</ins>. Ten en cuenta que el menú de la Wii U tiene un límite de 300 iconos incluyendo los que se encuentran dentro de carpetas.</p>
 <p>Se recomienda el uso de discos duros externos con su propia fuente de alimentación.</p>
@@ -2754,40 +2808,49 @@ a.previous:hover, a.next:hover {
 <p>Toma en cuenta que los discos duros externos internamente son idénticos a los discos duros internos de PCs y Laptops, por lo que únicamente cambia la carcasa (enclosure, case, shell o gabinete) que los protege.</p>
 <p>Sobre la versión de USB, no importa si el disco duro externo tiene conexión USB 3, esta versión es compatible con los puertos USB 2 de la Wii U, simplemente no se aprovecharán las altas velocidades de la versión USB 3.</p>
 <p>Las marcas recomendadas son: Western Digital, Seagate o Toshiba.</p>
-<br id="wiiu_usb_device">
-<h3>¿Qué es un dispositivo USB formateado por la Wii U?</h3>
+</div>
+<div class="accordion">¿Qué es un dispositivo USB formateado por la Wii U?</div>
+<div class="panel">
 <p>Es un dispositivo USB que no puede ser leído por ningún aparato excepto por la Wii U que la formateó originalmente. Si alguna vez quieres usarlo con otra consola Wii U o en cualquier otro aparato, tendrás que reformatearlo.</p>
 <p>No importa el formato original del dispositivo USB (NTFS, FAT32, exFAT, etc.), al conectarlo a la Wii U, está le da un formato único (cifrado) apropiándose de todo el espacio de almacenamiento.</p>
-<br id="multi_usb_device">
-<h3>¿Puedo usar dos dispositivos USB externos para almacenar juegos de Wii U?</h3>
+</div>
+<div class="accordion">¿Puedo usar dos dispositivos USB externos para almacenar juegos de Wii U?</div>
+<div class="panel">
 <p>Sí, pero no puedes usarlos simultáneamente.</p>
 <p>Si conectas dos dispositivos USB externos al mismo tiempo, la Wii U entra en modo trasferencia para mover datos entre un dispositivo y otro. Debes conectar sólo un dispositivo USB externo a la vez.</p>
-<br id="wii_usb_device_on_wiiu">
-<h3>¿Puedo usar el dispositivo USB que usaba en la Wii y que ya tiene juegos de Wii en la Wii U?</h3>
+</div>
+<div class="accordion">¿Puedo usar el dispositivo USB que usaba en la Wii y que ya tiene juegos de Wii en la Wii U?</div>
+<div class="panel">
 <p>Sí, la Wii U cuenta con el modo virtual Wii que se puede hackear para usar un Loader como en una Wii normal. Adicionalmente se puede ocultar el dispositivo USB que ya tiene juegos de Wii para que la Wii U no pida formatearlo en cada reinicio usando UStealth. No podrás usar ese dispositivo USB para almacenar juegos de Wii U.</p>
-<br id="backup_disks">
-<h3>¿La Wii U puede leer discos piratas?</h3>
+</div>
+<div class="accordion">¿La Wii U puede leer discos piratas?</div>
+<div class="panel">
 <p>No. La Wii U sólo puede leer discos originales de Wii y Wii U.</p>
-<br id="needed_gamepad">
-<h3>¿Puedo instalar un hack sin el GamePad de la consola?</h3>
+</div>
+<div class="accordion">¿Puedo instalar un hack sin el GamePad de la consola?</div>
+<div class="panel">
 <p>No. El GamePad es indispensable para la Wii U.</p>
-<br id="loadiine_gx2">
-<h3>¿Puedo cargar juegos de Wii U desde la tarjeta SD?</h3>
+</div>
+<div class="accordion">¿Puedo cargar juegos de Wii U desde la tarjeta SD?</div>
+<div class="panel">
 <p>Sí. Usando la aplicación Loadiine GX2 puedes cargar juegos desde la tarjeta SD, pero no todos los juegos funcionan correctamente debido a que los tiempos de carga aumentan considerablemente.</p>
 <p>Lo mejor es instalar los juegos en la memoria interna de la consola o en un disco duro externo.</p>
-<br id="wiiu_game_formats">
-<h3>¿En qué formato están los juegos de Wii U?</h3>
+</div>
+<div class="accordion">¿En qué formato están los juegos de Wii U?</div>
+<div class="panel">
 <p>El formato más común es el <strong class="green">NUS Content cifrado de Wii U</strong> (archivos <code>.app</code>, <code>.h3</code>, <code>title.tmd</code>, <code>title.cert</code> y <code>title.tik</code>) usado por WUP Installer GX2.</p>
 <p>Existen otros formatos como el <strong>NUS Content descifrado de Wii U</strong> (carpetas <code>code</code>, <code>content</code> y <code>meta</code>) usado por la aplicación Loadiine GX2 y el emulador CEMU, el formato <strong>WUD</strong> (Wii U Disc image) y el formato <strong>WUX</strong> (Wii U Compressed image).</p>
-<br id="delete_nnid_without_pass">
-<h3>¿Cómo puedo eliminar un usuario (NNID) de la consola si no tengo la contraseña de ese usuario?</h3>
+</div>
+<div class="accordion">¿Cómo puedo eliminar un usuario (NNID) de la consola si no tengo la contraseña de ese usuario?</div>
+<div class="panel">
 <p>La única forma de eliminar un usuario en esas condiciones es formateando la consola.</p>
+</div>
 <div class="vertical_padding"></div>
 </div>
 </div>
 <div id="homebrew" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Homebrew destacado</h2>
+<h1>Homebrew destacado</h1>
 <br>
 <p><a href="https://apps.fortheusers.org/wiiu/homebrew_launcher">Homebrew Launcher</a> Permite cargar aplicaciones "hechas en casa" por desarrolladores independientes para la Wii U, colocadas en la carpeta <code>sd:/wiiu/apps</code>.</p>
 <p><a href="https://apps.fortheusers.org/wiiu/vwii-compat-installer">Homebrew Channel</a> Permite cargar aplicaciones "hechas en casa" por desarrolladores independientes para la Wii (usa el modo virtual Wii de la Wii U). vWii Compat Installer facilita instalar el Homebrew Channel en el modo virtual Wii de la Wii U.</p>
@@ -2824,7 +2887,7 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="homebrew_aroma" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Homebrew para Aroma</h2>
+<h1>Homebrew para Aroma</h1>
 <br>
 <p><a href="https://github.com/wiiu-env/AromaUpdater/releases">Aroma Updater</a> Facilita actualizar (o instalar) "paquetes" desde https://aroma.foryour.cafe/ directamente en la consola.</p>
 <p><a href="https://apps.fortheusers.org/wiiu/wup_installer_gx2_wuhb">WUP Installer GX2</a> Wii U Public title Installer es un instalador de contenido para la Wii U. El contenido (juegos, aplicaciones, multimedia, etc.) debe estar en formato <strong class="green">NUS Content cifrado de Wii U</strong>, archivos <code>.app</code>, <code>.h3</code>, <code>title.tmd</code>, <code>title.cert</code> y <code>title.tik</code>.</p>
@@ -2841,10 +2904,10 @@ a.previous:hover, a.next:hover {
 </div>
 <div id="about" class="tabcontent" style="display:none;">
 <div class="cont">
-<h2>Acerca de esta guía</h2>
+<h1>Acerca de esta guía</h1>
 <br>
-<h3>Versión: 4.14 (14 de febrero de 2023)</h3>
-<p>Esta guía fue hecha por <strong>Fran AC</strong> basado en la guía de los miembros de <a href="https://wiiu.hacks.guide/#/about">Nintendo Homebrew Discord Server</a>.</p>
+<h2>Versión: 5.0 (1 de marzo de 2023)</h2>
+<p>Esta guía fue hecha por <strong>Fran AC</strong> basado en la guía de los miembros de <a href="https://wiiu.hacks.guide/">Nintendo Homebrew Discord Server</a>.</p>
 <p>Puedes descargar la guía completa desde <a href="https://github.com/piloncillo/piloncillo.github.io/releases">esté enlace</a>.</p>
 <p>Créditos a los desarrolladores de las herramientas</p>
 <ul>
@@ -2882,247 +2945,266 @@ a.previous:hover, a.next:hover {
 </div>
 </div>
 <script>
-function loadContent() {
-  var i, tabcontent, tablinks;
-  
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  
-  var url = new URL(document.URL);
-  var section = url.searchParams.get("s");
-  var page = url.searchParams.get("p");
-  var directory = url.searchParams.get("directory");
-  var eshop_game = url.searchParams.get("eshop_game");
-  var console_status = url.searchParams.get("console");
-  //var sidebar = url.searchParams.get("sidebar");
-  var content = null;
-  
-  if (section != null && section != "") {
-    if (page != null && page != "")
-	  content = document.getElementById(section + "_" + page);
-    if (content == null)
-	  content = document.getElementById(section);
-  }
-	
-  if (content != null) {
-	if (section == "webhack" ||
-	  section == "indexiine" ||
-	  section == "haxchi" ||
-	  section == "cbhc")
-	  section = "entry";
-	if (document.getElementById(section + "_" + page + "_link") != null)
-      document.getElementById(section + "_" + page + "_link").className += " active";
-	else if (document.getElementById(section + "_link") != null)
-      document.getElementById(section + "_link").className += " active";
-    else
-	  document.getElementById("main_link").className += " active";
-    content.style.display = "block";
-  } else {
-	document.getElementById("main_link").className += " active";
-    document.getElementById("main").style.display = "block";
-  }
-  
-  if (section == "tiramisu")
-    document.getElementById("install_hack").click();
-
-  if (section == "test")
-    document.getElementById("test_hack").click();
-	
-  if (section == "uninstall_payloadloader" ||
-  section == "uninstall_webhack" ||
-  section == "uninstall_indexiine" ||
-  section == "uninstall_haxchi" ||
-  section == "uninstall_cbhc")
-    document.getElementById("uninstall_hack").click();
-	
-  if (eshop_game != null && (eshop_game == "yes" || eshop_game == "no")) {
-    var eshop_game_elements = document.getElementsByClassName("eshop_game_" + eshop_game);
-	if (eshop_game_elements != null) {
-	  for (i = 0; i < eshop_game_elements.length; i++)
-	    eshop_game_elements[i].style.display = "block";
-	}
-  }
-
-  if (directory != null && (directory == "yes" || directory == "no" || directory == "no_sd")) {
-    var directory_elements = document.getElementsByClassName("directory_" + directory);
-	if (directory_elements != null){
-	  for (i = 0; i < directory_elements.length; i++)
-	    directory_elements[i].style.display = "block";
-	}
-  }
-  
-  if (console_status != null && (console_status == "on" || console_status == "off")) {
-    var console_elements = document.getElementsByClassName("console_status");
-	if (console_status == "off") {
-	  for (i = 0; i < console_elements.length; i++)
-	    console_elements[i].style.display = "";
-	}
-  }
-  
-  const links = document.querySelectorAll("a[href]");
-  var linksArray = [...links];
-  linksArray = linksArray.filter(l => l.hostname != location.hostname);
-  for (i = 0; i < linksArray.length; i++) {
-	linksArray[i].classList.add("external");
-	linksArray[i].setAttribute("target", "_blank");
-  }
-
-  var sidebar = localStorage.getItem("sidebar status");
-  if (sidebar != null) {
-    if (sidebar == "open")
-      openSidebar();
-    else if (sidebar == "close")
-      closeSidebar();
-    else
-	  defaultSidebar();
-  } else
-    defaultSidebar();
-
-  //addTestParams();
-  testResults();
-}
-
-var dropdown = document.getElementsByClassName("dropdown-btn");
-var j;
-for (j = 0; j < dropdown.length; j++) {
-  dropdown[j].addEventListener("click", function() {
-  this.classList.toggle("active");
-  var dropdownContent = this.nextElementSibling;
-  if (dropdownContent.style.display === "block") {
-    dropdownContent.style.display = "none";
-  } else {
-    dropdownContent.style.display = "block";
-  }
-  });
-}
+var selectable = document.getElementsByClassName("selectable");
+var toggler = document.getElementsByClassName("caret");
+var accordion = document.getElementsByClassName("accordion");
+var imgs = document.getElementsByClassName("auto_size");
+var imgs_li = document.getElementsByClassName("auto_size_li");
+var imgs_li_li = document.getElementsByClassName("auto_size_li_li");
+var i;
 
 window.addEventListener("resize", contentResize);
 
-function contentResize() {
-  var sidebarWidth = document.getElementById("sidebar").style.display == "block" ? 280 : 17;
-  var scrollBarWidth = window.innerWidth - document.body.offsetWidth;
-  if (scrollBarWidth == 0) scrollBarWidth = 17;
-  var contents = document.getElementsByClassName("cont");
-  const availableWidth = window.innerWidth - sidebarWidth - scrollBarWidth;
-  var imgs = document.getElementsByClassName("auto_size");
-  var imgs_li = document.getElementsByClassName("auto_size_li");
-  var vids = document.getElementsByClassName("auto_size_video");
+function loadContent() {	
+	var tabcontent = document.getElementsByClassName("tabcontent");
+	for (i = 0; i < tabcontent.length; i++) {
+		tabcontent[i].style.display = "none";
+	}
+  	
+	var url = new URL(document.URL);
+	var section = url.searchParams.get("s");
+	var page = url.searchParams.get("p");
+	var directory = url.searchParams.get("directory");
+	var eshop_game = url.searchParams.get("eshop_game");
+	var console_status = url.searchParams.get("console");
+	var content = null;
+	
+	if (console_status != null && (console_status == "on" || console_status == "off")) {
+		var console_elements = document.getElementsByClassName("console_status");
+		if (console_status == "off") {
+			for (i = 0; i < console_elements.length; i++)
+				console_elements[i].style.display = "";
+		}
+	}
+  
+	if (section != null && section != "") {
+		if (page != null && page != "")
+			content = document.getElementById(section + "_" + page);
+		if (content == null)
+			content = document.getElementById(section);
+	}
+	
+	if (section == "tiramisu")
+		document.getElementById("install_hack").click();
+		
+	if (section == "test")
+		document.getElementById("test_hack").click();
+		
+	if (section == "games")
+		document.getElementById("download_games").click();
+		
+	if (section == "glossary")
+		document.getElementById("glossary_caret").click();
+		
+	if (section == "install_games")
+		document.getElementById("install_games_caret").click();
+		
+	if (section == "uninstall_payloadloader" ||
+		section == "uninstall_webhack" ||
+		section == "uninstall_indexiine" ||
+		section == "uninstall_haxchi" ||
+		section == "uninstall_cbhc")
+		document.getElementById("uninstall_hack").click();
+	
+	if (section == "standby_functions" ||
+		section == "block_updates" ||
+		section == "unblock_updates" ||
+		section == "tiramisu_speedrun")
+		document.getElementById("extras").click();
+		
+	if (section == "custom_haxchi" ||
+		section == "config_payload")
+		document.getElementById("archive_caret").click();
+		
+	if (section == "webhack" ||
+		section == "indexiine"||
+		section == "haxchi"||
+		section == "cbhc") {
+		document.getElementById("archive_caret").click();
+		document.getElementById("previous_methods_caret").click();
+	}
+		
+	if (section == "github" ||
+		section == "discord" ||
+		section == "about")
+		document.getElementById("links").click();
+		
+	removeSelected();
+	
+	if (content != null) {
+		if (section == "webhack" ||
+			section == "indexiine" ||
+			section == "haxchi" ||
+			section == "cbhc")
+			document.getElementById("install_" + section + "_link").classList.add("selected");
+		if (document.getElementById(section + "_" + page + "_link") != null)
+			document.getElementById(section + "_" + page + "_link").classList.add("selected");
+		else if (document.getElementById(section + "_link") != null)
+			document.getElementById(section + "_link").classList.add("selected");
+		else
+			document.getElementById("main_link").classList.add("selected");
+		content.style.display = "block";
+	} else {
+		document.getElementById("main_link").classList.add("selected");
+		document.getElementById("main").style.display = "block";
+	}
 
-  if (availableWidth < 900) {
-    for (i = 0; i < contents.length; i++) {
-      contents[i].style.width = (availableWidth - 50) + "px";
-    }
-	for (i = 0; i < imgs.length; i++) {
-      imgs[i].style.width = imgs[i].naturalWidth + "px";
-      if (parseInt(imgs[i].style.width) > availableWidth)
-	    imgs[i].style.width = (availableWidth - 50) + "px";
+	const links = document.querySelectorAll("a[href]");
+	var linksArray = [...links];
+	linksArray = linksArray.filter(l => l.hostname != location.hostname);
+	for (i = 0; i < linksArray.length; i++) {
+		linksArray[i].classList.add("external");
+		linksArray[i].setAttribute("target", "_blank");
 	}
-	for (i = 0; i < imgs_li.length; i++) {
-      imgs_li[i].style.width = imgs_li[i].naturalWidth + "px";
-      if (parseInt(imgs_li[i].style.width) > availableWidth - 90)
-	    imgs_li[i].style.width = (availableWidth - 90) + "px";
-	}
-	for (i = 0; i < vids.length; i++) {
-      vids[i].style.width = vids[i].videoWidth + "px";
-      if (parseInt(vids[i].style.width) > availableWidth)
-	    vids[i].style.width = (availableWidth - 50) + "px";
-	}
-  } else {
-    for (i = 0; i < contents.length; i++) {
-      contents[i].style.width = "870px";
-    }
-	for (i = 0; i < imgs.length; i++) {
-      imgs[i].style.width = imgs[i].naturalWidth + "px";
-      if (parseInt(imgs[i].style.width) > 870)
-		imgs[i].style.width = "870px";
-    }
-	for (i = 0; i < imgs_li.length; i++) {
-      imgs_li[i].style.width = imgs_li[i].naturalWidth + "px";
-      if (parseInt(imgs_li[i].style.width) > 870)
-		imgs_li[i].style.width = "870px";
-    }
-  }
+	
+	var sidebar = localStorage.getItem("sidebar");
+	if (sidebar != null) {
+		if (sidebar == "open")
+			openSidebar();
+		else if (sidebar == "close")
+			closeSidebar();
+		else
+			defaultSidebar();
+	} else
+		defaultSidebar();
+		
+	testResults();
 }
 
-function defaultSidebar() {
-  if (window.innerWidth > 576) 
-    openSidebar();
-  else
-	closeSidebar();
+function contentResize(overlay) {
+	var sidebarWidth = 0;
+	
+	if (localStorage.getItem("sidebar") == "open" && (typeof overlay == "object" || !overlay)) {
+		if (window.innerWidth < 640) {
+			document.getElementById("sidebar").style.width = "0px";
+			document.getElementById("sidebar_toggle").style.marginLeft = "0px";
+			document.getElementById("content").style.marginLeft = "0px";
+			document.body.style.overflow = "auto";
+			localStorage.setItem("sidebar", "close");
+		}
+		else
+			sidebarWidth = 250;
+	}
+
+	const scrollBarWidth = window.innerWidth - document.body.offsetWidth;
+	const availableWidth = window.innerWidth - sidebarWidth - scrollBarWidth - 80;
+	
+	if (availableWidth < 720) {
+		for (i = 0; i < imgs.length; i++) {
+			imgs[i].style.width = imgs[i].naturalWidth + "px";
+			if (imgs[i].naturalWidth > availableWidth)
+				imgs[i].style.width = availableWidth + "px";
+		}
+		for (i = 0; i < imgs_li.length; i++) {
+			imgs_li[i].style.width = imgs_li[i].naturalWidth + "px";
+			if (imgs_li[i].naturalWidth > availableWidth - 40)
+				imgs_li[i].style.width = (availableWidth - 40)+ "px";
+		}
+		for (i = 0; i < imgs_li_li.length; i++) {
+			imgs_li_li[i].style.width = imgs_li_li[i].naturalWidth + "px";
+			if (imgs_li_li[i].naturalWidth > availableWidth - 80)
+				imgs_li_li[i].style.width = (availableWidth - 80)+ "px";
+		}
+	} else {
+		for (i = 0; i < imgs.length; i++) {
+			imgs[i].style.width = imgs[i].naturalWidth + "px";
+			if (imgs[i].naturalWidth > 720)
+				imgs[i].style.width = "720px";
+		}
+		for (i = 0; i < imgs_li.length; i++) {
+			imgs_li[i].style.width = imgs_li[i].naturalWidth + "px";
+			if (imgs_li[i].naturalWidth > 680)
+				imgs_li[i].style.width = "680px";
+		}
+		for (i = 0; i < imgs_li_li.length; i++) {
+			imgs_li_li[i].style.width = imgs_li_li[i].naturalWidth + "px";
+			if (imgs_li_li[i].naturalWidth > 640)
+				imgs_li_li[i].style.width = "640px";
+		}
+	}
 }
 
 function openSidebar() {
-  document.getElementById("sidebar").style.display = "block";
-  document.getElementById("bars").style.display = "none";
-  document.getElementById("content").style.marginLeft = "280px";
-  
-  localStorage.setItem("sidebar status", "open");
-  /*const links = document.querySelectorAll("a[href]");
-  var linksArray = [...links];
-  linksArray = linksArray.filter(l => l.hostname == window.location.hostname);
-  var url;
-  var i;
-  for (i = 0; i < linksArray.length; i++) {
-	url = new URL(linksArray[i].href);
-	url.searchParams.delete("sidebar");
-    url.searchParams.append("sidebar", "open");
-	linksArray[i].href = url;
-  }*/
-  
-  contentResize();
+	localStorage.setItem("sidebar", "open");
+	if (window.innerWidth < 640) {
+		document.getElementById("sidebar_close").style.visibility = "visible";
+		document.getElementById("sidebar").style.width = "100%";
+		document.getElementById("sidebar_toggle").style.marginLeft = "0px";
+		document.getElementById("content").style.marginLeft = "0px";
+		document.body.style.overflow = "hidden";
+		contentResize(true);
+	}
+	else {
+		document.getElementById("sidebar_close").style.visibility = "hidden";
+		document.getElementById("sidebar").style.width = "250px";
+		document.getElementById("sidebar_toggle").style.marginLeft = "250px";
+		document.getElementById("content").style.marginLeft = "250px";
+		contentResize(false);
+	}
 }
- 
+
 function closeSidebar() {
-  document.getElementById("sidebar").style.display = "none";
-  document.getElementById("bars").style.display = "block";
-  document.getElementById("content").style.marginLeft = "6px";
-
-  localStorage.setItem("sidebar status", "close");
-  /*const links = document.querySelectorAll("a[href]");
-  var linksArray = [...links];
-  linksArray = linksArray.filter(l => l.hostname == window.location.hostname);
-  var url;
-  var i;
-  for (i = 0; i < linksArray.length; i++) {
-	url = new URL(linksArray[i].href);
-	url.searchParams.delete("sidebar");
-    url.searchParams.append("sidebar", "close");
-	linksArray[i].href = url;
-  }*/
-  
-  contentResize();
+	localStorage.setItem("sidebar", "close");
+	document.getElementById("sidebar").style.width = "0px";
+	document.getElementById("sidebar_toggle").style.marginLeft = "0px";
+	document.getElementById("content").style.marginLeft = "0px";
+	if (window.innerWidth < 640) {
+		document.body.style.overflow = "auto";
+		contentResize(true);
+	}
+	else
+		contentResize(false);
 }
 
-/*function addTestParams() {
-  var url = new URL(document.URL);
-  var directory = url.searchParams.get("directory");
-  var eshop_game = url.searchParams.get("eshop_game");
-  var linksArray = document.getElementsByClassName("add_test_params");
-  var url;
-  var i;
-  for (i = 0; i < linksArray.length; i++) {
-	href = new URL(linksArray[i].href);
-	
-	if (eshop_game != null && (eshop_game == "yes" || eshop_game == "no")) {
-      href.searchParams.delete("eshop_game");
-	  href.searchParams.append("eshop_game", eshop_game);
-	}
+function defaultSidebar() {
+	if (window.innerWidth < 640)
+		closeSidebar();
+	else
+		openSidebar();
+}
 
-    if (directory != null && (directory == "yes" || directory == "no" || directory == "no_sd")) {
-	  href.searchParams.delete("directory");
-	  href.searchParams.append("directory", directory);
+function toggleSidebar() {
+	if (localStorage.getItem("sidebar") == "open")
+		closeSidebar();
+	else
+		openSidebar();
+}
+
+
+for (i = 0; i < selectable.length; i++) {
+	selectable[i].addEventListener("click", function() {
+		removeSelected();
+		this.classList.toggle("selected");
+	});
+}
+
+for (i = 0; i < toggler.length; i++) {
+	toggler[i].addEventListener("click", function() {
+		this.parentElement.querySelector(".nested").classList.toggle("active_nav");
+		this.classList.toggle("caret-down");
+	});
+}
+
+for (i = 0; i < accordion.length; i++) {
+	accordion[i].addEventListener("click", function() {
+		this.classList.toggle("active_acco");
+		var panel = this.nextElementSibling;
+		if (panel.style.maxHeight) {
+			panel.style.maxHeight = null;
+		} else {
+			panel.style.maxHeight = panel.scrollHeight + "px";
+		} 
+	});
+}
+
+function removeSelected() {
+	var j;
+	for (j = 0; j < selectable.length; j++) {
+		selectable[j].classList.remove("selected");
 	}
-	
-	linksArray[i].href = href;
-  }
-}*/
+}
+
+/* Test functions */
 
 function testResults() {
   var autobooting = localStorage.getItem("autobooting");
@@ -3168,7 +3250,7 @@ function testResults() {
     document.getElementById("autobooting_result").innerHTML = 'Autobooting PayloadLoader detectado. Si te aparece el mensaje de alerta <code>the update folder current exists</code> quiere decir que tu consola no está bloqueando las actualizaciones del sistema apropiadamente. Presiona el botón B para no volver a ver el mensaje de alerta. Consulta la información de <a href="?s=block_updates">aquí</a> si quieres bloquear completamente las actualizaciones del sistema de la consola.';
   }
   else if (autobooting == "quick_start") {
-    document.getElementById("autobooting_result").innerHTML = 'Usar el menú de inicio rápido impide observar la carga del PayloadLoader al encender la consola, para comprobar al 100% que la consola no tenga Autobooting PayloadLoader es necesario <a href="?s=standby_functions">desactivar las funciones en modo de reposo</a> y volver a contestar la pregunta de está sección.';
+    document.getElementById("autobooting_result").innerHTML = 'Usar el menú de inicio rápido impide observar la carga del PayloadLoader al encender la consola, para comprobar al 100% que la consola no tenga Autobooting PayloadLoader es necesario <a href="?s=standby_functions">desactivar las funciones en modo de reposo</a> y volver a contestar la pregunta de este apartado.';
   }
   else if (autobooting == "wiiu" || autobooting == "user") {
     document.getElementById("autobooting_result").innerHTML = 'No detectaste ningún "hack" que inicie de forma automática al encender la consola.';
@@ -3391,7 +3473,7 @@ function testSDResults() {
       document.getElementById("sd_result").innerHTML = 'Consigue una tarjeta SD. La tarjeta SD es esencial ya que ahí se almacena "Webhack", las aplicaciones homebrew y los archivos del "hack" de la consola. Sin la tarjeta SD y descartados los puntos de entrada se considera que <strong class="green">la consola no está hackeada</strong>.';
     }
     else {
-      document.getElementById("sd_result").innerHTML = 'Consigue una tarjeta SD. La tarjeta SD es esencial ya que ahí se almacenan las aplicaciones homebrew y los archivos del "hack" de la consola.';
+      document.getElementById("sd_result").innerHTML = 'Consigue una tarjeta SD. La tarjeta SD es esencial ya que ahí se almacenan las aplicaciones homebrew y los archivos del "hack" de la consola. Contesta las preguntas de los apartados anteriores para identificar el "hack" de tu consola.';
     }
 	getLabelByControlId("sd_yes").style.color = "#cccccc";
 	getLabelByControlId("sd_no").style.color = "#bbffbb";
@@ -3400,11 +3482,11 @@ function testSDResults() {
 	document.getElementById("d_folder").style.display = "none";
   }
   else {
-    document.getElementById("sd_result").innerHTML = 'Contesta la(s) pregunta(s) de abajo para tener un diagnostico básico de la situación de "los archivos del hack" de tu consola.';
+    document.getElementById("sd_result").innerHTML = 'Contesta la(s) pregunta(s) de abajo para tener un diagnostico básico de la situación de "los archivos del hack" de tu consola. Contesta las preguntas de los apartados anteriores para identificar el "hack" de tu consola.';
   }
   
   if (autobooting == null || indexiine == null || (haxchiIcon == null && haxchi == null) || payloadloader == null) {
-    document.getElementById("webhack_result").innerHTML = 'Contesta todas las preguntas de las secciones anteriores para determinar si el exploit del navegador es el único punto de entrada de tu consola.';
+    document.getElementById("webhack_result").innerHTML = 'Contesta todas las preguntas de los apartados anteriores para determinar si el exploit del navegador es el único punto de entrada de tu consola. Todas las Wii U, incluidas las que nunca has sido hackeadas, tienen con este punto de entrada.';
   }
   else if ((autobooting == "wiiu" || autobooting == "user") && indexiine == "no" && (haxchiIcon == "no" || haxchi == "no") && payloadloader == "no") {
     if (sd == "yes" && folder == "yes") {
@@ -3430,16 +3512,16 @@ function testSDResults() {
   }
   
   if (autobooting != null) {
-    document.getElementById("autobooting_a").style.color = "#808080";
+    document.getElementById("autobooting_a").style.color = "#999999";
   }
   if (indexiine != null) {
-    document.getElementById("indexiine_a").style.color = "#808080";
+    document.getElementById("indexiine_a").style.color = "#999999";
   }
   if (haxchiIcon != null || haxchi != null) {
-    document.getElementById("haxchi_a").style.color = "#808080";
+    document.getElementById("haxchi_a").style.color = "#999999";
   }
   if (payloadloader != null) {
-    document.getElementById("payloadloader_a").style.color = "#808080";
+    document.getElementById("payloadloader_a").style.color = "#999999";
   }
 }
 
@@ -3845,16 +3927,11 @@ function resetForm(id) {
 
 function getLabelByControlId(id) {
   labels = document.getElementsByTagName('label');
-  for (var i = 0; i < labels.length; i++) {
+  for (i = 0; i < labels.length; i++) {
     if (labels[i].htmlFor == id)
       return labels[i];
   }
 }
-
-function popupFunction(id) {
-  var popup = document.getElementById(id);
-  popup.classList.toggle("show");
-}
 </script>
 </body>
-</html> 
+</html>
