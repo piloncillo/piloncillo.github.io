@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title itemprop="name">Piloncillo para Wii U</title>
+<meta property="og:title" content="Piloncillo para Wii U" />
+<meta name="twitter:title" content="Piloncillo para Wii U" />
+<meta itemprop="name" content="Piloncillo para Wii U" />
+<meta name="application-name" content="Piloncillo para Wii U" />
+<meta property="og:site_name" content="Piloncillo para Wii U" />
+<link rel='icon' href='Images/favicon.png'>
+<meta name='google-site-verification' content='qzgxLiPkLZqct4OizWs3vUrabLQxt_L2CdA_bYOS2XI' />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta itemprop="image" property="og:image" content="Images/favicon.png"/>
+<meta name="twitter:image" content="Images/favicon.png" />
+<link rel="image_src" href="Images/favicon.png"/>
+<style>
+body {
+	font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+	font-size: 0.9em;
+	line-height: 1.7;
+	background-color: #393939;
+	color: #d3d3d3;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+h1 {
+	font-size: 2.4em;
+	font-weight: 400;
+	color: #ffffff;
+}
+
+h2 {
+	font-size: 1.4em;
+	font-weight: 500;
+	color: #ffffff;
+}
+
+#sidebar a:link {
+	color: #d3d3d3;
+	text-decoration: none;
+}
+
+#sidebar a:visited {
+	color: #d3d3d3;
+	text-decoration: none;
+}
+
+#sidebar a:hover {
+	color: #d3d3d3;
+	text-decoration: underline;
+}
+
+#sidebar a:active {
+	color: #0B87DA;
+	text-decoration: none;
+}
+
+#sidebar .selected, #sidebar a.selected {
+	color: #0B87DA;
+}
+
+a {
+    cursor: pointer;
+    color: #6688dd;
+    text-decoration: none;
+    -webkit-transition-duration: .2s;
+    -o-transition-duration: .2s;
+    transition-duration: .2s;
+}
+
+a:hover {
+	color: #88aaff;
+	text-decoration: underline;
+}
+
+a.external {
+	background: url(Images/external.png) no-repeat right center;
+    padding-right: 14px;
+}
+
+.caret {
+	cursor: pointer;
+	user-select: none;
+}
+
+.caret:hover {
+	text-decoration: underline;
+}
+
+.caret::before {
+	content: "\276F";
+	display: inline-block;
+	margin-right: 6px;
+}
+
+.caret-down::before {
+	transform: rotate(90deg);
+	color: #0B87DA;
+}
+
+.nested {
+	display: none;
+}
+
+.active_nav {
+	display: block;
+}
+
+.accordion {
+	font-size: 0.9em;
+	line-height: 1.7;
+	cursor: pointer;
+	padding: 18px;
+	max-width: 720px;
+	text-align: left;
+	color: #d3d3d3;
+	background-color: #333333;
+}
+
+.active_acco, .accordion:hover {
+	background-color: #2a2a2a;
+}
+
+.accordion:after {
+	content: '\25BC';
+	font-weight: bold;
+	float: right;
+	padding: 0;
+	color: #0B87DA;
+}
+
+.active_acco:after {
+	content: "\25B2";
+	color: #0B87DA;
+}
+
+.panel {
+	border-bottom: 1px solid #2a2a2a;
+	padding: 0 18px;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.5s ease-out;
+}
+
+body::-webkit-scrollbar, #sidebar::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+	background-color: #494949;
+}
+
+body::-webkit-scrollbar-thumb, #sidebar::-webkit-scrollbar-thumb {
+	background: #666666;
+}
+
+#sidebar {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: rgba(40, 40, 40, 0.9);
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding: 0;
+}
+
+#sidebar_close {
+	position: absolute;
+	top: 4px;
+	right: 20px;
+	margin: 0;
+	padding: 0;
+	font-size: 36px;
+	cursor: pointer;
+	text-decoration: none;
+	color: white;
+	padding: 0px 6px 0px 6px;
+	visibility: hidden;
+}
+
+#sidebar_toggle {
+	font-size: 20px;
+	cursor: pointer;
+	background-color: rgba(40, 40, 40, 0.9);
+	color: white;
+	padding: 0px 9px 2px 9px;
+	border: none;
+	transition: margin-left .5s;
+	position: fixed;
+	top: 20px;
+	left: 0px;
+	margin-left: 0;
+}
+
+#sidebar_toggle:hover {
+	background-color: rgba(40, 40, 40, 0.45);
+}
+
+#sidebar_content {
+	max-width: 250px;
+	margin: 0 auto;
+}
+
+.sidenav ul, .sidenav {
+	list-style-type: none;
+}
+
+.sidenav {
+	position: absolute;
+	margin: 0 0 0 25px;
+	padding: 10px 0;
+	width: 350px;
+}
+
+.sidenav li {
+	margin: 0;
+	padding: 4px 0px;
+}
+
+.sidenav ul {
+	margin: 0 0 0 30px;
+	padding: 0;
+}
+
+.sidenav ul ul {
+	margin: 0 0 0 30px;
+	padding: 0;
+}
+
+#logo {
+	padding: 25px;
+	height: 40px;
+	text-align: center;
+}
+
+#content {
+	transition: margin-left .5s;
+	margin: 0;
+	padding: 40px 40px 120px 40px;
+	margin-left: 0;
+}
+
+.cont {
+	max-width: 720px;
+	margin: 0 auto;
+}
+
+.cont p {
+	text-align: justify;
+}
+
+img {
+	transition: 0.5s;
+}
+
+.cont ul, .cont ol {
+	padding-left: 20px;
+}
+
+img.center {
+	margin: auto;
+	display: block;
+}
+
+div.info {
+	border-color: #3366dd;
+}
+
+div.warning {
+	border-color: #cc3333;
+}
+
+div.info, div.warning {
+	margin-top: 6px;
+	margin-bottom: 6px;
+	padding-top: 6px;
+	padding-right: 20px;
+	padding-bottom: 6px;
+	padding-left: 16px;
+	border-style: none none none solid;
+	border-width: 4px;
+	text-align: justify;
+	line-height: 1.6;
+    background-color: #2d2d2d;
+}
+
+strong.red, em.red, code.red {
+    color: #e3b3b3;
+}
+
+strong.green, em.green, code.green {
+    color: #b3d3b3;
+}
+
+strong.blue, em.blue, code.blue {
+    color: #a3c3e3;
+}
+
+strong.yellow, em.yellow, code.yellow {
+    color: #d3d3b3;
+}
+
+strong.oranje, em.oranje, code.oranje {
+    color: #d3b3a3;
+}
+
+code {
+	font-size: 1.2em;
+    background-color: #2d2d2d;
+	word-break: break-word;
+	padding-right: 3px;
+	padding-left: 3px;
+}
+
+.bottomnav {
+	padding-top: 10px;
+	display: inline-block;
+	width: 100%;
+}
+
+a.previous, a.next {
+	text-decoration: none;
+	padding: 6px 14px 8px 14px;
+	border-radius: 4px;
+}
+
+a.previous:hover, a.next:hover {
+	background-color: #bbbbbb;
+	color: black;
+}
+
+a.previous {
+	position: relative;
+	background-color: #e1e1e1;
+	color: black;
+	float: left;
+}
+
+a.next {
+	position: relative;
+	background-color: #0055aa;
+	color: white;
+	float: right;
+}
+
+.button, .button_click {
+	background-color: #0a2b55;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
+.button:hover, .button_click:hover {
+	background-color: #0a2b80;
+	color: white;
+	text-decoration: none;
+}
+
+.button_click:active {
+  background-color: #800a0a;
+  transform: translateY(1px);
+}
+
+.link {
+    cursor: pointer;
+    color: #cccccc;
+    text-decoration: none;
+    -webkit-transition-duration: .2s;
+    -o-transition-duration: .2s;
+    transition-duration: .2s;
+}
+
+.link:hover {
+	text-decoration: underline;
+}
+
+.vertical_padding {
+	height: 80vh;
+}
+</style>
+</head>
+<body onload="loadContent()">
+<div id="sidebar">
+<div id="sidebar_close" onclick="closeSidebar()">&#215;</div>  
+<div id="sidebar_content">
+<div id="logo"><img id="pilon_logo" src="Images/logo.png" /></div>
+<ul class="sidenav">
+<li><a href="index.html?s=main" class="selectable" id="main_link" title="Inicio">Inicio</a></li>
+<li><span class="caret selectable" id="install_hack" title="Instalar hack">Instalar hack</span>
+	<ul class="nested">
+	<li><a class="selectable" href="index.html?s=tiramisu&p=sd" id="tiramisu_sd_link" title="Prepara la tarjeta SD">Prepara la tarjeta SD</a></li>
+	<li><a class="selectable" href="index.html?s=tiramisu&p=files" id="tiramisu_files_link" title="Coloca los archivos">Coloca los archivos</a></li>
+	<li><a class="selectable" href="index.html?s=tiramisu&p=nand_backup_browser_exploit" id="tiramisu_nand_backup_browser_exploit_link" title="Exploit del navegador">Exploit del navegador</a></li>
+	<li><a class="selectable" href="index.html?s=tiramisu&p=nand_backup" id="tiramisu_nand_backup_link" title="Copia de la NAND">Copia de la NAND</a></li>
+	<li><a class="selectable" href="index.html?s=tiramisu&p=payloadloader" id="tiramisu_payloadloader_link" title="PayloadLoader">PayloadLoader</a></li>
+	<li><a class="selectable" href="index.html?s=tiramisu&p=autobooting" id="tiramisu_autobooting_link" title="Autobooting PayloadLoader">Autobooting</a></li>
+	<li><a class="selectable" href="index.html?s=tiramisu&p=config" id="tiramisu_config_link" title="Configurar Tiramisu">Configurar Tiramisu</a></li>
+	<li><a class="selectable" href="index.html?s=tiramisu&p=apps" id="tiramisu_apps_link" title="Añadir aplicaciones">Añadir aplicaciones</a></li>
+	</ul>
+</li>
+<li><span class="caret" id="test_hack"><a class="selectable" href="index.html?s=test" id="test_link" title="Identificar hack">Identificar hack</a></span>
+	<ul class="nested">
+	<li><a class="selectable" href="index.html?s=test&p=payloadloader" id="test_payloadloader_link" title="Identificar PayloadLoader">PayloadLoader</a></li>
+	<li><a class="selectable" href="index.html?s=test&p=autobooting" id="test_autobooting_link" title="Identificar Autobooting">Autobooting</a></li>
+	<li><a class="selectable" href="index.html?s=test&p=haxchi" id="test_haxchi_link" title="Identificar Haxchi">Haxchi</a></li>
+	<li><a class="selectable" href="index.html?s=test&p=indexiine" id="test_indexiine_link" title="Identificar Indexiine">Indexiine</a></li>
+	</ul>
+</li>
+<li><span class="caret selectable" id="uninstall_hack" title="Desinstalar hack">Desinstalar hack</span>
+	<ul class="nested">
+	<li><a class="selectable" href="index.html?s=uninstall_webhack" id="uninstall_webhack_link" title="Desinstalar Webhack">Webhack</a></li>
+	<li><a class="selectable" href="index.html?s=uninstall_indexiine" id="uninstall_indexiine_link" title="Desinstalar Indexiine">Indexiine</a></li>
+	<li><a class="selectable" href="index.html?s=uninstall_haxchi" id="uninstall_haxchi_link" title="Desinstalar Haxchi">Haxchi</a></li>
+	<li><a class="selectable" href="index.html?s=uninstall_cbhc" id="uninstall_cbhc_link" title="Desinstalar Coldboot Haxchi">Coldboot Haxchi</a></li>
+	<li><a class="selectable" href="index.html?s=uninstall_payloadloader" id="uninstall_payloadloader_link" title="Desinstalar Tiramisu o Aroma">Tiramisu o Aroma</a></li>
+	</ul>
+</li>
+<li><a class="selectable" href="index.html?s=update_tiramisu" id="update_tiramisu_link" title="Actualizar Tiramisu">Actualizar Tiramisu</a></li>
+<li><a class="selectable" href="index.html?s=aroma_beta" id="aroma_beta_link" title="Probar Aroma beta">Probar Aroma beta</a></li>
+<li><span class="caret selectable" id="download_games" title="Descarga de juegos">Descarga de juegos</span>
+	<ul class="nested">
+	<li><a class="selectable" href="download.html?s=games&p=download_usb_helper" id="games_download_usb_helper_link" title="Descargar Wii U USB Helper">Descargar Wii U USB Helper</a></li>
+	<li><a class="selectable" href="download.html?s=games&p=install_usb_helper" id="games_install_usb_helper_link" title="Instalar Wii U USB Helper">Instalar Wii U USB Helper</a></li>
+	<li><a class="selectable" href="download.html?s=games&p=config_usb_helper" id="games_config_usb_helper_link" title="Configurar Wii U USB Helper">Configurar Wii U USB Helper</a></li>
+	<li><a class="selectable" href="download.html?s=games&p=interface_usb_helper" id="games_interface_usb_helper_link" title="Interfaz de Wii U USB Helper">Interfaz de Wii U USB Helper</a></li>
+	<li><a class="selectable" href="download.html?s=games&p=usb_helper" id="games_usb_helper_link" title="Descargar juegos con Wii U USB Helper">Descargar juegos</a></li>
+	</ul>
+</li>
+<li><span class="caret selectable" id="install_games_caret" title="Instalación de juegos">Instalación de juegos</span>
+	<ul class="nested">
+	<li><a class="selectable" href="index.html?s=install_games" id="install_games_link" title="Transferir juegos a la tarjeta SD">Transferir juegos a la tarjeta SD</a></li>
+	<li><a class="selectable" href="index.html?s=install_games&p=wup_installer_gx2" id="install_games_wup_installer_gx2_link" title="Instalar juegos con WUP Installer GX2">Instalar juegos con WUP Installer GX2</a></li>
+	</ul>
+</li>
+<li><span class="caret selectable" id="extras" title="Extras">Extras</span>
+	<ul class="nested">
+	<li><a class="selectable" href="index.html?s=detect_sd" id="detect_sd_link" title="Revisar que la Wii U detecta la tarjeta SD">Revisar que detecta la SD</a></li>
+	<li><a class="selectable" href="index.html?s=write_to_sd" id="write_to_sd_link" title="Revisar que la Wii U puede escribir datos en la tarjeta SD">Revisar que puede escribir en la SD</a></li>
+	<li><a class="selectable" href="index.html?s=standby_functions" id="standby_functions_link" title="Desactivar modo de reposo">Desactivar modo de reposo</a></li>
+	<li><a class="selectable" href="index.html?s=block_updates" id="block_updates_link" title="Bloquear actualizaciones">Bloquear actualizaciones</a></li>
+	<li><a class="selectable" href="index.html?s=unblock_updates" id="unblock_updates_link" title="Desbloquear actualizaciones">Desbloquear actualizaciones</a></li>
+	<li><a class="selectable" href="index.html?s=tiramisu_speedrun" id="tiramisu_speedrun_link" title="Resumen de la instalación de Tiramisu">Resumen de la instalación de Tiramisu</a></li>
+	</ul>
+</li>
+<li><span class="caret" id="glossary_caret"><a class="selectable" href="?s=glossary" id="glossary_link" title="Glosario">Glosario</a></span>
+	<ul class="nested">
+	<li><a class="selectable" href="index.html?s=glossary#hack_t" title="Hack">Hack</a></li>
+	<li><a class="selectable" href="index.html?s=glossary#exploit_t" title="Exploit">Exploit</a></li>
+	<li><a class="selectable" href="index.html?s=glossary#entry_point_t" title="Punto de entrada">Punto de entrada</a></li>
+	<li><a class="selectable" href="index.html?s=glossary#fw_t" title="Firmware">Firmware</a></li>
+	<li><a class="selectable" href="index.html?s=glossary#cfw_t" title="Custom Firmware">Custom Firmware</a></li>
+	<li><a class="selectable" href="index.html?s=glossary#environment_t" title="Environment">Environment</a></li>
+	<li><a class="selectable" href="index.html?s=glossary#homebrew_t" title="Homebrew">Homebrew</a></li>
+	<li><a class="selectable" href="index.html?s=glossary#payload_t" title="Payload">Payload</a></li>
+	<li><a class="selectable" href="index.html?s=glossary#ticket_t" title="Ticket">Ticket</a></li>
+	<li><a class="selectable" href="index.html?s=glossary#brick_t" title="Brick">Brick</a></li>
+	<li><a class="selectable" href="index.html?s=glossary#dlc_t" title="DLC">DLC</a></li>
+	<li><a class="selectable" href="index.html?s=glossary#title_id_t" title="Title ID">Title ID</a></li>
+	<li><a class="selectable" href="index.html?s=glossary#hacks_t" title="Principales hacks de Wii U">Principales hacks de Wii U</a></li>
+	</ul>
+</li>
+<li><a class="selectable" href="index.html?s=questions" id="questions_link" title="Preguntas frecuentes">Preguntas frecuentes</a></li>
+<li><a class="selectable" href="index.html?s=homebrew" id="homebrew_link" title="Homebrew destacado">Homebrew destacado</a></li>
+<li><a class="selectable" href="index.html?s=homebrew_aroma" id="homebrew_aroma_link" title="Homebrew para Aroma">Homebrew para Aroma</a></li>
+<li><span class="caret selectable" id="archive_caret" title="Archivo">Archivo</span>
+	<ul class="nested">
+	<li><span class="caret selectable" id="previous_methods_caret" title="Métodos anteriores">Métodos anteriores</span>
+		<ul class="nested">
+		<li><a class="selectable" href="archive.html?s=webhack&p=sd" id="install_webhack_link" title="Instalar Webhack">Webhack</a></li>
+		<li><a class="selectable" href="archive.html?s=indexiine&p=sd" id="install_indexiine_link" title="Instalar Indexiine">Indexiine</a></li>
+		<li><a class="selectable" href="archive.html?s=haxchi&p=ds_game" id="install_haxchi_link" title="Instalar Haxchi">Haxchi</a></li>
+		<li><a class="selectable" href="archive.html?s=cbhc&p=ds_game" id="install_cbhc_link" title="Instalar Coldboot Haxchi">Coldboot Haxchi</a></li>
+		</ul>
+	</li>
+	<li><a class="selectable" href="archive.html?s=custom_haxchi" id="custom_haxchi_link" title="Personalizar Haxchi">Personalizar Haxchi</a></li>
+	<li><a class="selectable" href="archive.html?s=config_payload" id="config_payload_link" title="Configurable Payload">Configurable Payload</a></li>
+	</ul>
+</li>
+<li><span class="caret selectable" id="links" title="Enlaces">Enlaces</span>
+	<ul class="nested">
+	<li><a class="selectable" href="https://github.com/piloncillo/piloncillo.github.io" id="github_link" title="GitHub">GitHub</a></li>
+	<!--li><a class="selectable" href="#" id="discord_link" title="Discord">Discord</a></li-->
+	<li><a class="selectable" href="index.html?s=about" id="about_link" title="Acerca de">Acerca de</a></li>
+	</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="sidebar_toggle" onclick="toggleSidebar()">&#9776;</div>  
+<div id="content">
+<div id="games" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Descarga de juegos para Wii U</h1>
+<br>
+<p>Wii U USB Helper te permite descargar juegos para la Wii U en formato para WUP Installer GX2.</p>
+<p>En esta guía veras como instalar la aplicación en tu PC, como descargar un juego con actualización y DLC, y como colocar los archivos en la tarjeta SD para que WUP Installer GX2 los reconozca.</p>
+<p><a href="?s=games&p=download_usb_helper">Descargar Wii U USB Helper</a></p>
+</div>
+</div>
+<div id="games_download_usb_helper" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Descargar Wii U USB Helper</h1>
+<br>
+<p>Para empezar, debemos descargar el programa desde el GitHub oficial del desarrollador:</p>
+<p><a href="https://github.com/FailedShack/USBHelperInstaller/releases">https://github.com/FailedShack/USBHelperInstaller/releases</a></p>
+<p>Sólo necesitamos el ejecutable "USBHelperInstaller.exe".</p>
+<p><a target="_blank" href="Images/USB_Helper/01.png"><img src="Images/USB_Helper/01.png" class="auto_size center"></a></p>
+<div class="bottomnav">
+<a href="index.html?s=main" class="previous">Inicio</a><a href="?s=games&p=install_usb_helper" class="next">Instalar Wii U USB Helper</a>
+</div>
+</div>
+</div>
+<div id="games_install_usb_helper" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Instalar Wii U USB Helper</h1>
+<br>
+<p>Una vez descargado le damos doble clic para ejecutarlo.</p>
+<p>Si sale un mensaje de advertencia le damos en el botón Ejecutar.</p>
+<p><a target="_blank" href="Images/USB_Helper/02.png"><img src="Images/USB_Helper/02.png" class="auto_size center"></a></p>
+<p>Estas son todas las pantallas del instalador, no hace falta cambiar ninguna cosa, básicamente dar clics:</p>
+<ul>
+<li>Next</li>
+<li>I Agree</li>
+<li>Next</li>
+<li>Install</li>
+<li>Esperar a que descargué…</li>
+<li>Finish</li>
+</ul>
+<p><a target="_blank" href="Images/USB_Helper/03.png"><img src="Images/USB_Helper/03.png" class="auto_size center"></a></p>
+<p>Después de darle al botón Finish deberá empezar a cargar el programa, eso tardará un momento. Si sale un mensaje del Firewall permite el acceso para el programa.</p>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a><a href="?s=games&p=config_usb_helper" class="next">Configurar Wii U USB Helper</a>
+</div>
+</div>
+</div>
+<div id="games_config_usb_helper" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Configurar Wii U USB Helper</h1>
+<br>
+<p>Si el programa ha cargado correctamente debe aparecer la ventana de bienvenida.</p>
+<ol>
+<li>Primero debes marcar la casilla para aceptar los términos donde liberas de toda responsabilidad al autor del programa.</li>
+<li>Clic en el botón correspondiente a la región de la consola.</li>
+<li>Clic al botón OK del "Disclaimer".</li>
+<li>Por favor selecciona la carpeta donde vas almacenar los juegos. No uses una carpeta que requiera privilegios de administrador. Clic al botón OK.</li>
+<li>Navegar hasta la carpeta donde quieras almacenar los juegos. Clic en el botón Seleccionar carpeta.</li>
+</ol>
+<p><a target="_blank" href="Images/USB_Helper/04.png"><img src="Images/USB_Helper/04.png" class="auto_size center"></a></p>
+<p>Después de seleccionar la carpeta deberá aparecer la ventana Ticket.</p>
+<p><a target="_blank" href="Images/USB_Helper/05.png"><img src="Images/USB_Helper/05.png" class="auto_size center"></a></p>
+<p id="window_tickets">En la ventana Ticket vamos a usar el método 1 para agregar los tickets (los archivos que contienen la información necesaria para descargar cada juego).</p>
+<p>Aquí debes ir a Google y buscar <a href="https://www.google.com/search?q=wiiu+tik">wiiu tik</a> para encontrar una página con tickets.</p>
+<p>Aunque <a href="?s=games&p=tickets">aquí</a> dejo una lista de sitios que actualmente (julio 2023) están en funcionamiento.</p>
+<p>Debes escribir la URL completa. Si la página ya no está en funcionamiento o la escribes mal te saldrá un error, deberás cerrar el programa y volverlo a abrir.</p>
+<p>Clic en el botón Ok.</p>
+<p>Ahora empezará a cargar los tickets.</p>
+<p><a target="_blank" href="Images/USB_Helper/06.png"><img src="Images/USB_Helper/06.png" class="auto_size center"></a></p>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a><a href="?s=games&p=interface_usb_helper" class="next">Interface de Wii U USB Helper</a>
+</div>
+</div>
+</div>
+<div id="games_tickets" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Páginas con Tickets</h1>
+<br>
+<ul>
+<li>https://wiiu-keys.netlify.app/</li>
+<li>http://vault.titlekeys.ovh/</li>
+<li>https://wiikeys.web.app/</li>
+</ul>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a>
+</div>
+</div>
+</div>
+<div id="games_interface_usb_helper" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Interfaz de Wii U USB Helper</h1>
+<br>
+<p>Finalmente carga la interface principal, si sale un mensaje del Firewall permite el acceso para el programa.</p>
+<p><a target="_blank" href="Images/USB_Helper/07.png"><img src="Images/USB_Helper/07.png" class="auto_size center"></a></p>
+<p>Aquí tenemos la interface principal.</p>
+<p><a target="_blank" href="Images/USB_Helper/08.png"><img src="Images/USB_Helper/08.png" class="auto_size center"></a></p>
+<p>En la sección Filters puedes seleccionar los juegos según la consola para la que salieron.</p>
+<p><a target="_blank" href="Images/USB_Helper/09.png"><img src="Images/USB_Helper/09.png" class="auto_size center"></a></p>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a><a href="?s=games&p=usb_helper" class="next">Descargar juegos</a>
+</div>
+</div>
+</div>
+<div id="games_usb_helper" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Descargar juegos con Wii U USB Helper</h1>
+<br>
+<p>Ahora vamos a probar descargar Breath of the Wild con actualización y DLC.</p>
+<p>En donde indica la flecha hay un buscador, escribe "Zelda" para que se muestren todos los juegos de la saga.</p>
+<p><a target="_blank" href="Images/USB_Helper/10.png"><img src="Images/USB_Helper/10.png" class="auto_size center"></a></p>
+<p>Seleccionamos el juego del lado izquierdo, en el lado derecho cargará la información. Hay que darle clic al botón Add para que lo agregue a la lista de descarga.</p>
+<p><a target="_blank" href="Images/USB_Helper/11.png"><img src="Images/USB_Helper/11.png" class="auto_size center"></a></p>
+<p>El programa pregunta si queremos agregar la actualización del juego a la lista de descarga. Clic en el botón Yes.</p>
+<p><a target="_blank" href="Images/USB_Helper/12.png"><img src="Images/USB_Helper/12.png" class="auto_size center"></a></p>
+<p>Pregunta si queremos agregar el DLC del juego a la lista de descarga. Clic en el botón Yes.</p>
+<p><a target="_blank" href="Images/USB_Helper/13.png"><img src="Images/USB_Helper/13.png" class="auto_size center"></a></p>
+<p>El juego, la actualización y el DLC deben aparecer en la lista de descarga. Sólo falta darle clic al botón Start downloading para que empiece a descargar.</p>
+<p><a target="_blank" href="Images/USB_Helper/14.png"><img src="Images/USB_Helper/14.png" class="auto_size center"></a></p>
+<p>Nos mostrará una gráfica con la velocidad de descarga y un tiempo estimado de descarga. Puedes pausar la descarga en cualquier momento, cerrar el programa y retomar la descarga cuando gustes.</p>
+<p><a target="_blank" href="Images/USB_Helper/15.png"><img src="Images/USB_Helper/15.png" class="auto_size center"></a></p>
+<p>Ya descargado el juego nos aparecerá en el apartado de juegos descargados (el juego engloba su actualización y DLC).</p>
+<p><a target="_blank" href="Images/USB_Helper/16.png"><img src="Images/USB_Helper/16.png" class="auto_size center"></a></p>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a><a href="?s=install_games" class="next">Transferir juegos a la tarjeta SD</a>
+</div>
+</div>
+</div>
+</div>
+<script>
+var selectable = document.getElementsByClassName("selectable");
+var toggler = document.getElementsByClassName("caret");
+var accordion = document.getElementsByClassName("accordion");
+var imgs = document.getElementsByClassName("auto_size");
+var imgs_li = document.getElementsByClassName("auto_size_li");
+var imgs_li_li = document.getElementsByClassName("auto_size_li_li");
+var i;
+
+window.addEventListener("resize", contentResize);
+
+function loadContent() {	
+	var tabcontent = document.getElementsByClassName("tabcontent");
+	for (i = 0; i < tabcontent.length; i++) {
+		tabcontent[i].style.display = "none";
+	}
+  	
+	var url = new URL(document.URL);
+	var section = url.searchParams.get("s");
+	var page = url.searchParams.get("p");
+	var directory = url.searchParams.get("directory");
+	var eshop_game = url.searchParams.get("eshop_game");
+	var console_status = url.searchParams.get("console");
+	var content = null;
+	
+	if (console_status != null && (console_status == "on" || console_status == "off")) {
+		var console_elements = document.getElementsByClassName("console_status");
+		if (console_status == "off") {
+			for (i = 0; i < console_elements.length; i++)
+				console_elements[i].style.display = "";
+		}
+	}
+  
+	if (section != null && section != "") {
+		if (page != null && page != "")
+			content = document.getElementById(section + "_" + page);
+		if (content == null)
+			content = document.getElementById(section);
+	}
+	
+	if (section == "tiramisu")
+		document.getElementById("install_hack").click();
+		
+	if (section == "test")
+		document.getElementById("test_hack").click();
+		
+	if (section == "games")
+		document.getElementById("download_games").click();
+		
+	if (section == "glossary")
+		document.getElementById("glossary_caret").click();
+		
+	if (section == "install_games")
+		document.getElementById("install_games_caret").click();
+		
+	if (section == "uninstall_payloadloader" ||
+		section == "uninstall_webhack" ||
+		section == "uninstall_indexiine" ||
+		section == "uninstall_haxchi" ||
+		section == "uninstall_cbhc")
+		document.getElementById("uninstall_hack").click();
+	
+	if (section == "detect_sd" ||
+		section == "write_to_sd" ||
+		section == "standby_functions" ||
+		section == "block_updates" ||
+		section == "unblock_updates" ||
+		section == "tiramisu_speedrun")
+		document.getElementById("extras").click();
+		
+	if (section == "custom_haxchi" ||
+		section == "config_payload")
+		document.getElementById("archive_caret").click();
+		
+	if (section == "webhack" ||
+		section == "indexiine"||
+		section == "haxchi"||
+		section == "cbhc") {
+		document.getElementById("archive_caret").click();
+		document.getElementById("previous_methods_caret").click();
+	}
+		
+	if (section == "github" ||
+		section == "discord" ||
+		section == "about")
+		document.getElementById("links").click();
+		
+	removeSelected();
+	
+	if (content != null) {
+		if (section == "webhack" ||
+			section == "indexiine" ||
+			section == "haxchi" ||
+			section == "cbhc")
+			document.getElementById("install_" + section + "_link").classList.add("selected");
+		if (document.getElementById(section + "_" + page + "_link") != null)
+			document.getElementById(section + "_" + page + "_link").classList.add("selected");
+		else if (document.getElementById(section + "_link") != null)
+			document.getElementById(section + "_link").classList.add("selected");
+		else
+			document.getElementById("main_link").classList.add("selected");
+		content.style.display = "block";
+	} else {
+		window.location.href = "index.html";
+	}
+
+	const links = document.querySelectorAll("a[href]");
+	var linksArray = [...links];
+	linksArray = linksArray.filter(l => l.hostname != location.hostname);
+	for (i = 0; i < linksArray.length; i++) {
+		linksArray[i].classList.add("external");
+		linksArray[i].setAttribute("target", "_blank");
+	}
+	
+	var sidebar = localStorage.getItem("sidebar");
+	if (sidebar != null) {
+		if (sidebar == "open")
+			openSidebar();
+		else if (sidebar == "close")
+			closeSidebar();
+		else
+			defaultSidebar();
+	} else
+		defaultSidebar();
+		
+	testResults();
+}
+
+function contentResize(overlay) {
+	var sidebarWidth = 0;
+	
+	if (localStorage.getItem("sidebar") == "open" && (typeof overlay == "object" || !overlay)) {
+		if (window.innerWidth < 640) {
+			document.getElementById("sidebar").style.width = "0px";
+			document.getElementById("sidebar_toggle").style.marginLeft = "0px";
+			document.getElementById("content").style.marginLeft = "0px";
+			document.body.style.overflow = "auto";
+			localStorage.setItem("sidebar", "close");
+		}
+		else
+			sidebarWidth = 250;
+	}
+
+	const scrollBarWidth = window.innerWidth - document.body.offsetWidth;
+	const availableWidth = window.innerWidth - sidebarWidth - scrollBarWidth - 80;
+	
+	if (availableWidth < 720) {
+		for (i = 0; i < imgs.length; i++) {
+			imgs[i].style.width = imgs[i].naturalWidth + "px";
+			if (imgs[i].naturalWidth > availableWidth)
+				imgs[i].style.width = availableWidth + "px";
+		}
+		for (i = 0; i < imgs_li.length; i++) {
+			imgs_li[i].style.width = imgs_li[i].naturalWidth + "px";
+			if (imgs_li[i].naturalWidth > availableWidth - 40)
+				imgs_li[i].style.width = (availableWidth - 40)+ "px";
+		}
+		for (i = 0; i < imgs_li_li.length; i++) {
+			imgs_li_li[i].style.width = imgs_li_li[i].naturalWidth + "px";
+			if (imgs_li_li[i].naturalWidth > availableWidth - 80)
+				imgs_li_li[i].style.width = (availableWidth - 80)+ "px";
+		}
+	} else {
+		for (i = 0; i < imgs.length; i++) {
+			imgs[i].style.width = imgs[i].naturalWidth + "px";
+			if (imgs[i].naturalWidth > 720)
+				imgs[i].style.width = "720px";
+		}
+		for (i = 0; i < imgs_li.length; i++) {
+			imgs_li[i].style.width = imgs_li[i].naturalWidth + "px";
+			if (imgs_li[i].naturalWidth > 680)
+				imgs_li[i].style.width = "680px";
+		}
+		for (i = 0; i < imgs_li_li.length; i++) {
+			imgs_li_li[i].style.width = imgs_li_li[i].naturalWidth + "px";
+			if (imgs_li_li[i].naturalWidth > 640)
+				imgs_li_li[i].style.width = "640px";
+		}
+	}
+}
+
+function openSidebar() {
+	localStorage.setItem("sidebar", "open");
+	if (window.innerWidth < 640) {
+		document.getElementById("sidebar_close").style.visibility = "visible";
+		document.getElementById("sidebar").style.width = "100%";
+		document.getElementById("sidebar_toggle").style.marginLeft = "0px";
+		document.getElementById("content").style.marginLeft = "0px";
+		document.body.style.overflow = "hidden";
+		contentResize(true);
+	}
+	else {
+		document.getElementById("sidebar_close").style.visibility = "hidden";
+		document.getElementById("sidebar").style.width = "250px";
+		document.getElementById("sidebar_toggle").style.marginLeft = "250px";
+		document.getElementById("content").style.marginLeft = "250px";
+		contentResize(false);
+	}
+}
+
+function closeSidebar() {
+	localStorage.setItem("sidebar", "close");
+	document.getElementById("sidebar").style.width = "0px";
+	document.getElementById("sidebar_toggle").style.marginLeft = "0px";
+	document.getElementById("content").style.marginLeft = "0px";
+	if (window.innerWidth < 640) {
+		document.body.style.overflow = "auto";
+		contentResize(true);
+	}
+	else
+		contentResize(false);
+}
+
+function defaultSidebar() {
+	if (window.innerWidth < 640)
+		closeSidebar();
+	else
+		openSidebar();
+}
+
+function toggleSidebar() {
+	if (localStorage.getItem("sidebar") == "open")
+		closeSidebar();
+	else
+		openSidebar();
+}
+
+
+for (i = 0; i < selectable.length; i++) {
+	selectable[i].addEventListener("click", function() {
+		removeSelected();
+		this.classList.toggle("selected");
+	});
+}
+
+for (i = 0; i < toggler.length; i++) {
+	toggler[i].addEventListener("click", function() {
+		this.parentElement.querySelector(".nested").classList.toggle("active_nav");
+		this.classList.toggle("caret-down");
+	});
+}
+
+for (i = 0; i < accordion.length; i++) {
+	accordion[i].addEventListener("click", function() {
+		this.classList.toggle("active_acco");
+		var panel = this.nextElementSibling;
+		if (panel.style.maxHeight) {
+			panel.style.maxHeight = null;
+		} else {
+			panel.style.maxHeight = panel.scrollHeight + "px";
+		} 
+	});
+}
+
+function removeSelected() {
+	var j;
+	for (j = 0; j < selectable.length; j++) {
+		selectable[j].classList.remove("selected");
+	}
+}
+</script>
+</body>
+</html>
