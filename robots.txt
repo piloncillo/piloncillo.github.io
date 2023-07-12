@@ -1,5 +1,7 @@
 User-agent: *
 Disallow: /archive.html
 Disallow: /download.html
+Disallow: /archive/
+Disallow: /download/
 
 Sitemap: https://piloncillo.github.io/sitemap.xml
