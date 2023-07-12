@@ -2081,7 +2081,7 @@ a.next {
 <div class="cont">
 <h1>Acerca de esta guía</h1>
 <br>
-<h2>Versión: 5.7 (11 de julio de 2023)</h2>
+<h2>Versión: 5.7.1 (11 de julio de 2023)</h2>
 <p>Esta guía fue hecha por <strong><a href="https://twitter.com/Fran1AC">FranAC</a></strong> basado en la guía de los miembros de <a href="https://wiiu.hacks.guide/">Nintendo Homebrew Discord Server</a>.</p>
 <p>Puedes descargar la guía completa desde <a href="https://github.com/piloncillo/piloncillo.github.io/releases">esté enlace</a>.</p>
 <p>Créditos a los desarrolladores de las herramientas</p>
@@ -2153,6 +2153,9 @@ function loadContent() {
 	}
   
 	if (section != null && section != "") {
+		if (section == "games")
+			window.location.href = "download/?" + url.searchParams.toString();
+		
 		if (page != null && page != "")
 			content = document.getElementById(section + "_" + page);
 		if (content == null)
