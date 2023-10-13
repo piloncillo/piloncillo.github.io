@@ -710,11 +710,6 @@ a.next {
 <ul>
 <li>Únicamente necesitas el archivo <code>01_sigpatches.rpx</code>.<br><img src="images/aroma/sigpatches_repo.png" class="auto_size_li_li"></li>
 </ul>
-<li>Descarga también la aplicación <a href="https://github.com/wiiu-env/AromaUpdater/releases/tag/v0.2.2">Aroma Updater</a>.</li>
-<ul>
-<li>Únicamente necesitas el archivo <code>AromaUpdater_v0_2_2.zip
-</code>.<br><img src="images/aroma/updater_repo.png" class="auto_size_li_li"></li>
-</ul>
 </ul>
 <h2>Instalación</h2>
 <div class="info">Si la PC te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
@@ -725,8 +720,6 @@ a.next {
 <li>Descomprime el archivo <code>bloopair+ftpiiu+sdcafiine+screenshotplugin+swipswapme.zip</code>.</li>
 <li>Copia la carpeta <code>wiiu</code> a la raíz de la tarjeta SD.</li>
 <li>Copia el archivo <code>01_sigpatches.rpx</code> a la carpeta <code>sd:/wiiu/environments/aroma/modules/setup</code>.<br><img src="images/aroma/sigpatches.png" class="auto_size_li"></li>
-<li>Descomprime el archivo <code>AromaUpdater_v0_2_2.zip</code>.</li>
-<li>Copia el archivo <code>AromaUpdater.wuhb</code> a la carpeta <code>sd:/wiiu/apps</code>.<br><img src="images/aroma/updater.png" class="auto_size_li"></li>
 </ul>
 <ul>
 <li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
@@ -1897,7 +1890,7 @@ a.next {
 </div>
 <div class="accordion">¿Cuál es la mejor modificación, la más estable y segura?</div>
 <div class="panel">
-<p><strong>Tiramisu</strong> (a la fecha, septiembre 2023). En general todas las modificaciones de Wii U son muy estables, incluso haciendo malas configuraciones son estables por igual. Esto llega a confundir a las personas que usan videos de YouTube para modificar sus consolas o llevan mucho tiempo usando modificaciones actualmente abandonadas por los desarrolladores. La escena de Wii U sigue avanzando, las modificaciones más actuales son igual (o incluso un poco más) estables y seguras que opciones anteriores, además ofrecen comodidad al momento de cargar cada que se enciende la consola, cargan automáticamente. En un futuro, <strong>Aroma</strong> será la "modificación" definitiva para Wii U ofreciendo multitud de funciones integradas, actualmente se encuentra en desarrollo, en fase beta.</p>
+<p><strong>Tiramisu</strong> (a la fecha, octubre 2023). En general todas las modificaciones de Wii U son muy estables, incluso haciendo malas configuraciones son estables por igual. Esto llega a confundir a las personas que usan videos de YouTube para modificar sus consolas o llevan mucho tiempo usando modificaciones actualmente abandonadas por los desarrolladores. La escena de Wii U sigue avanzando, las modificaciones más actuales son igual (o incluso un poco más) estables y seguras que opciones anteriores, además ofrecen comodidad al momento de cargar cada que se enciende la consola, cargan automáticamente. En un futuro, <strong>Aroma</strong> será la "modificación" definitiva para Wii U ofreciendo multitud de funciones integradas, actualmente se encuentra en desarrollo, en fase beta.</p>
 </div>
 <div class="accordion">¿Hay algún riesgo si tengo una modificación y actualizo la consola?</div>
 <div class="panel">
@@ -2043,6 +2036,7 @@ a.next {
 <p><a href="https://apps.fortheusers.org/wiiu/wup_installer_gx2_wuhb">WUP Installer GX2</a> Wii U Public title Installer es un instalador de contenido para la Wii U. El contenido (juegos, aplicaciones, multimedia, etc.) debe estar en formato <strong class="green">NUS Content cifrado de Wii U</strong>, archivos <code>.app</code>, <code>.h3</code>, <code>title.tmd</code>, <code>title.cert</code> y <code>title.tik</code>.</p>
 <p><a href="https://apps.fortheusers.org/wiiu/SaveMiiModWUTPort">SaveMii mod WUT Port</a> Gestor de archivos de guardado de juegos de Wii U y de Wii.</p>
 <p><a href="https://github.com/V10lator/NUSspli/releases">NUSspli</a> Permite descargar e instalar juegos de forma rápida y simple directamente usando la Wii U.</p>
+<p><a href="https://github.com/Xpl0itU/vwii-compat-installer/releases">vWii Compat Installer</a> Facilita instalar el Homebrew Channel en el modo virtual Wii de la Wii U. El Homebrew Channel permite cargar aplicaciones "hechas en casa" por desarrolladores independientes para la Wii (usando el modo virtual Wii de la Wii U).</p>
 <p><a href="https://github.com/libretro/RetroArch/pull/14925">Retroarch</a> <strong class="red">¡En desarrollo!</strong> Es un proyecto modular que sirve de envoltura para cargar diferentes núcleos emuladores y que tiene versiones para una gran cantidad de plataformas (incluida la Wii U).</p>
 <p><a href="https://apps.fortheusers.org/wiiu/WiiU-Shell">WiiU-Shell</a> Administrador de archivos para la Wii U.</p>
 <p><a href="https://apps.fortheusers.org/wiiu/UFDiine-wuhb">UFDiine</a> Wii U Update Folder Deleter permite eliminar o crear la carpeta update del sistema de la Wii U (<code>vol/storage_mlc01/sys/update</code>), esto bloquea o habilita la descarga de actualizaciones del sistema de la Wii U.</p>
@@ -2054,34 +2048,50 @@ a.next {
 <p><a href="https://github.com/Fangal-Airbag/WiiUReboot/releases">WiiuReboot</a> Reinicia la consola.</p>
 <p><a href="https://github.com/GaryOderNichts/WiiUIdent/releases">Wiiuident</a> Permite comprobar el fabricante del Chip NAND de la consola.</p>
 <p><a href="https://github.com/wiiu-env/WiiUCrashLogDumper/releases">WiiU Crash Log Dumper</a> Permite copiar los registros de fallos de la consola en la tarjeta SD.</p>
+<div><p><a href="https://github.com/TraceEntertains/EnvSwap">EnvSwap (Wii U Environment Swapper)</a> <strong class="yellow">¡Mucho cuidado con esta aplicación!</strong> Reinicia la Wii U e intercambia automáticamente el entorno, con el propósito de ejecutar aplicaciones que por el momento sólo funcionan en Tiramisu. Esta aplicación evita tener que reiniciar manualmente la Wii U, manteniendo presionado el botón X y seleccionado el entorno manualmente en el Environment Loader.</p>
+<ul>
+<li>Debes tener correctamente instalado Tiramisu y Aroma.</li>
+<li>Debes saber cómo funciona el Environment Loader y los Boot Selectors de Tiramisu y de Aroma para poder corregir algún problema derivado del uso de EnvSwap.</li>
+<li>Al abrir EnvSwap en Tiramisu, se reinicia la consola en el menú de Wii U de Aroma.</li>
+<li>Al abrir EnvSwap en Aroma sin presionar ningún botón, se reinicia la consola en el HBL (Tiramisu).</li>
+<li>Al abrir EnvSwap en Aroma con el botón B presionado, se reinicia la consola en el menú de Wii U de Tiramisu.</li>
+</ul>
+</div>
 <br>
 <h2>Plugins</h2>
 <p><a href="https://github.com/GaryOderNichts/Bloopair/releases">Bloopair</a> Permite conectar de forma inalámbrica los controles Bluetooth más populares. Consulta <a href="https://gbatemp.net/threads/bloopair-connect-controllers-from-other-consoles-natively.594289/">el hilo oficial de la aplicación</a> para más detalles.</p>
 <p><a href="https://github.com/wiiu-env/sdcafiine_plugin/releases/tag/v0.1.2">SDCafiine</a> Permite usar mods en algunos juegos de Wii U. Puedes ir a esté enlace para obtener mods y más información al respecto. Puedes ir a <a href="https://gamebanana.com/games/6289">esté enlace</a> para obtener mods y más información al respecto.</p>
 <p><a href="https://gbatemp.net/attachments/hidtovpad-rar.365203/">HID to VPAD</a> <strong class="red">¡En desarrollo!</strong> Permite conectar controles de otras compañías vía USB a la Wii U.</p>
 <p><a href="https://github.com/GaryOderNichts/re_nfpii">re_nfpii</a> Es un módulo y un plugin que tiene por objetivo la investigación y la emulación de amiibo. <strong class="yellow">¡Es todavía experimental y está en progreso de desarrollo!</strong> Consulta la <a href="https://github.com/GaryOderNichts/re_nfpii/wiki/Compatibility-List">lista de compatibilidad</a> para ver los juegos que funcionan. Las figuras oficiales actualmente no se pueden usar mientras el módulo está cargado. Coloca los <code>.bin</code> de los amiibo en la carpeta <code>sd:/wiiu/re_nfpii</code>, por ejemplo: <code>sd:/wiiu/re_nfpii/Peach.bin</code>. Recuerda que abres el menú de plugins con <code>L</code> + <code>Abajo</code> + <code>SELECT</code>.</p>
+<p><a href="https://github.com/PretendoNetwork/Inkay/releases">Inkay (Parche de Pretendo Network)</a> <strong class="red">¡En desarrollo!</strong> Parcha varias URLs de Nintendo Network para usar Pretendo Network en su lugar. Para mayor información entra en <a href="https://pretendo.network/">https://pretendo.network/</a>.</p>
+<p><a href="https://github.com/Fangal-Airbag/Better-Settings/releases">Better-Settings</a> Permite visualizar la configuración de la consola en la TV y agrega soporte para el control Pro de Wii U y el control Classic de Wii.</p>
 <p><a href="https://apps.fortheusers.org/wiiu/GiveMiiYouTube">GiveMiiYouTube</a> Este plugin hace que la solicitud de servicio de la aplicación de YouTube devuelva siempre el éxito y, por lo tanto, permite que la aplicación de YouTube continúe funcionando.</p>
 <p><a href="https://gbatemp.net/attachments/drc_spoofer-rar.365198/">DRC Spoofer</a> La consola siempre reconoce que el GamePad está encendido permitiendo jugar con el control Pro cuando el GamePad está apagado.</p>
 <p><a href="https://github.com/wiiu-env/ScreenshotWUPS/releases">Screenshot Plugin</a> Este plugin permite tomar capturas de pantalla en cualquier momento.</p>
 <p><a href="https://github.com/WiiDatabase/Padcon-Plugin-Mod/releases">Padcon Plugin</a> Este plugin permite apagar la pantalla del GamePad, pero seguir usándolo como control.</p>
 <p><a href="https://github.com/wiiu-env/SwipSwapMe/releases">SwipSwapMe</a> Permite intercambiar la visualización entre la TV y el GamePad.</p>
 <p><a href="https://github.com/Fangal-Airbag/Gamepad-Volume-Changer/releases">Gamepad Volume Changer</a> Permite cambiar en el volumen del GamePad (útil cuando el control deslizante del volumen está roto).</p>
+<p><a href="https://github.com/Nightkingale/Wii-U-Time-Sync/releases">Wii U Time Sync</a> Sincroniza automáticamente el reloj de la Wii U con Internet.</p>
 <p><a href="https://gbatemp.net/attachments/br-rar.365438/">BR</a> <strong class="red">¡En desarrollo!</strong> Invierte el eje X y el eje Y del stick derecho (útil para juegos de Wii U que no permiten invertir el eje de la cámara). No hay forma de habilitarlo o deshabilitarlo, así que coloca el archivo sólo cuando desees usar este plugin.</p>
 <p><a href="https://github.com/Lynx64/GamepadAutoStandby/releases">GamePad Auto Standby</a> Apaga el GamePad después de unos minutos y además permite iniciar el modo vWii con la pantalla del GamePad apagada.</p>
 <p><a href="https://github.com/WiiDatabase/DRC-Sensorbar/releases">DRC Sensorbar</a> Habilita la barra de sensores del GamePad de forma permanente.</p>
 <p><a href="https://github.com/wiiu-env/ftpiiu_plugin/releases">FTPiiU</a> Habilita un servidor FTP que corre en segundo plano (sirve para tener acceso archivos en la tarjeta SD principalmente).</p>
 <p><a href="https://github.com/V10lator/c2w_patcher/releases">C2W Patcher</a> Su principal uso es habilitar el overclock del modo virtual Wii de la Wii U.</p>
+<p><a href="https://github.com/Lynx64/WiiVCLaunch/releases">Wii VC Launch</a> Inicia el modo vWii con la configuración de pantalla que especifiques. Puedes configurarlo para no tener que pasar por los cuadros de dialogo de configuración cada que abres algo que funciona en el modo vWii.</p>
 <p><a href="https://github.com/GaryOderNichts/evwii/releases">evWii</a> Habilita forzar el apagado de la consola, mientras está en modo vWii, al mantener presionado el botón de encendido 4 segundos. Además, permite deshacer el recorte forzado de overscan en el modo vWii.</p>
+<p><a href="https://github.com/RiiConnect24/UTag/releases">UTag</a> Permite compartir que juegos juegas en Wii U por medio de <a href="https://tag.rc24.xyz/">RiiTag</a>.</p>
+<p><a href="https://github.com/shutterbug2000/HaltFix/releases">HaltFix</a> <strong class="red">¡En desarrollo!</strong> Reinicia la Wii U automáticamente después de una falla en el juego.</p>
+<p><a href="https://github.com/PretendoNetwork/rce_patches/releases">RCE_patches</a> Corrige la vulnerabilidad <a href="https://github.com/PabloMK7/ENLBufferPwn">RCE</a> en los juegos de Wii U.</p>
 <p><a href="https://github.com/wiiu-env/wiiload_plugin/releases">Wiiload</a> Permite cargar aplicaciones homebrew y plugins vía red local.</p>
 <p><a href="https://github.com/wiiu-env/USBSerialLogger/releases">USB Serial logging</a> (Para desarrolladores) Habilita la depuración vía USB. Es necesito también el correspondiente <a href="https://github.com/wiiu-env/USBSerialLoggingModule/releases">módulo</a>.</p>
-<p><a href="https://github.com/PretendoNetwork/rce_patches/releases">RCE_patches</a> Corrige la vulnerabilidad <a href="https://github.com/PabloMK7/ENLBufferPwn">RCE</a> en los juegos de Wii U.</p>
+<p><a href="https://github.com/wiiu-env/drc_region_free_plugin/releases">DRC Region Free Plugin</a> Permite usar un GamePad de cualquier región.</p>
 </div>
 </div>
 <div id="about" class="tabcontent" style="display:none;">
 <div class="cont">
 <h1>Acerca de esta guía</h1>
 <br>
-<h2>Versión: 5.8 (24 de septiembre de 2023)</h2>
+<h2>Versión: 5.9 (12 de octubre de 2023)</h2>
 <p>Esta guía fue hecha por <strong><a href="https://twitter.com/Fran1AC">FranAC</a></strong> basado en la guía de los miembros de <a href="https://wiiu.hacks.guide/">Nintendo Homebrew Discord Server</a>.</p>
 <p>Puedes descargar la guía completa desde <a href="https://github.com/piloncillo/piloncillo.github.io/releases">esté enlace</a>.</p>
 <p>Créditos a los desarrolladores de las herramientas</p>
