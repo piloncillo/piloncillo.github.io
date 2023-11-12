@@ -15,378 +15,7 @@
 <meta itemprop="image" property="og:image" content="images/favicon.png" />
 <meta name="twitter:image" content="images/favicon.png" />
 <link rel="image_src" href="images/favicon.png" />
-<style>
-body {
-	font-family: "Segoe UI", Helvetica, Arial, sans-serif;
-	font-size: 0.9em;
-	line-height: 1.7;
-	background-color: #393939;
-	color: #d3d3d3;
-	margin: 0;
-	padding: 0;
-	overflow-x: hidden;
-}
-
-h1 {
-	font-size: 2.4em;
-	font-weight: 400;
-	color: #ffffff;
-}
-
-h2 {
-	font-size: 1.4em;
-	font-weight: 500;
-	color: #ffffff;
-}
-
-#sidebar a:link {
-	color: #d3d3d3;
-	text-decoration: none;
-}
-
-#sidebar a:visited {
-	color: #d3d3d3;
-	text-decoration: none;
-}
-
-#sidebar a:hover {
-	color: #d3d3d3;
-	text-decoration: underline;
-}
-
-#sidebar a:active {
-	color: #0B87DA;
-	text-decoration: none;
-}
-
-#sidebar .selected, #sidebar a.selected {
-	color: #0B87DA;
-}
-
-a {
-    cursor: pointer;
-    color: #6688dd;
-    text-decoration: none;
-    -webkit-transition-duration: .2s;
-    -o-transition-duration: .2s;
-    transition-duration: .2s;
-}
-
-a:hover {
-	color: #88aaff;
-	text-decoration: underline;
-}
-
-a.external {
-	background: url(images/external.png) no-repeat right center;
-    padding-right: 14px;
-}
-
-.caret {
-	cursor: pointer;
-	user-select: none;
-}
-
-.caret:hover {
-	text-decoration: underline;
-}
-
-.caret::before {
-	content: "\276F";
-	display: inline-block;
-	margin-right: 6px;
-}
-
-.caret-down::before {
-	transform: rotate(90deg);
-	color: #0B87DA;
-}
-
-.nested {
-	display: none;
-}
-
-.active_nav {
-	display: block;
-}
-
-.accordion {
-	font-size: 0.9em;
-	line-height: 1.7;
-	cursor: pointer;
-	padding: 18px;
-	max-width: 720px;
-	text-align: left;
-	color: #d3d3d3;
-	background-color: #333333;
-}
-
-.active_acco, .accordion:hover {
-	background-color: #2a2a2a;
-}
-
-.accordion:after {
-	content: '\25BC';
-	font-weight: bold;
-	float: right;
-	padding: 0;
-	color: #0B87DA;
-}
-
-.active_acco:after {
-	content: "\25B2";
-	color: #0B87DA;
-}
-
-.panel {
-	border-bottom: 1px solid #2a2a2a;
-	padding: 0 18px;
-	max-height: 0;
-	overflow: hidden;
-	transition: max-height 0.5s ease-out;
-}
-
-body::-webkit-scrollbar, #sidebar::-webkit-scrollbar {
-	width: 5px;
-	height: 5px;
-	background-color: #494949;
-}
-
-body::-webkit-scrollbar-thumb, #sidebar::-webkit-scrollbar-thumb {
-	background: #666666;
-}
-
-#sidebar {
-	height: 100%;
-	width: 0;
-	position: fixed;
-	z-index: 1;
-	top: 0;
-	left: 0;
-	background-color: rgba(40, 40, 40, 0.9);
-	overflow-x: hidden;
-	transition: 0.5s;
-	padding: 0;
-}
-
-#sidebar_close {
-	position: absolute;
-	top: 4px;
-	right: 20px;
-	margin: 0;
-	padding: 0;
-	font-size: 36px;
-	cursor: pointer;
-	text-decoration: none;
-	color: white;
-	padding: 0px 6px 0px 6px;
-	visibility: hidden;
-}
-
-#sidebar_toggle {
-	font-size: 20px;
-	cursor: pointer;
-	background-color: rgba(40, 40, 40, 0.9);
-	color: white;
-	padding: 0px 9px 2px 9px;
-	border: none;
-	transition: margin-left .5s;
-	position: fixed;
-	top: 20px;
-	left: 0px;
-	margin-left: 0;
-}
-
-#sidebar_toggle:hover {
-	background-color: rgba(40, 40, 40, 0.45);
-}
-
-#sidebar_content {
-	max-width: 250px;
-	margin: 0 auto;
-}
-
-.sidenav ul, .sidenav {
-	list-style-type: none;
-}
-
-.sidenav {
-	position: absolute;
-	margin: 0 0 0 25px;
-	padding: 10px 0;
-	width: 350px;
-}
-
-.sidenav li {
-	margin: 0;
-	padding: 4px 0px;
-}
-
-.sidenav ul {
-	margin: 0 0 0 30px;
-	padding: 0;
-}
-
-.sidenav ul ul {
-	margin: 0 0 0 30px;
-	padding: 0;
-}
-
-#logo {
-	padding: 25px;
-	height: 40px;
-	text-align: center;
-}
-
-#content {
-	transition: margin-left .5s;
-	margin: 0;
-	padding: 40px 40px 120px 40px;
-	margin-left: 0;
-}
-
-.cont {
-	max-width: 720px;
-	margin: 0 auto;
-}
-
-.cont p {
-	text-align: justify;
-}
-
-img {
-	transition: 0.5s;
-}
-
-.cont ul, .cont ol {
-	padding-left: 20px;
-}
-
-img.center {
-	margin: auto;
-	display: block;
-}
-
-div.info {
-	border-color: #3366dd;
-}
-
-div.warning {
-	border-color: #cc3333;
-}
-
-div.info, div.warning {
-	margin-top: 6px;
-	margin-bottom: 6px;
-	padding-top: 6px;
-	padding-right: 20px;
-	padding-bottom: 6px;
-	padding-left: 16px;
-	border-style: none none none solid;
-	border-width: 4px;
-	text-align: justify;
-	line-height: 1.6;
-    background-color: #2d2d2d;
-}
-
-strong.red, em.red, code.red {
-    color: #e3b3b3;
-}
-
-strong.green, em.green, code.green {
-    color: #b3d3b3;
-}
-
-strong.blue, em.blue, code.blue {
-    color: #a3c3e3;
-}
-
-strong.yellow, em.yellow, code.yellow {
-    color: #d3d3b3;
-}
-
-strong.oranje, em.oranje, code.oranje {
-    color: #d3b3a3;
-}
-
-code {
-	font-size: 1.2em;
-    background-color: #2d2d2d;
-	word-break: break-word;
-	padding-right: 3px;
-	padding-left: 3px;
-}
-
-.bottomnav {
-	padding-top: 10px;
-	display: inline-block;
-	width: 100%;
-}
-
-a.previous, a.next {
-	text-decoration: none;
-	padding: 6px 14px 8px 14px;
-	border-radius: 4px;
-}
-
-a.previous:hover, a.next:hover {
-	background-color: #bbbbbb;
-	color: black;
-}
-
-a.previous {
-	position: relative;
-	background-color: #e1e1e1;
-	color: black;
-	float: left;
-}
-
-a.next {
-	position: relative;
-	background-color: #0055aa;
-	color: white;
-	float: right;
-}
-
-.button, .button_click {
-	background-color: #0a2b55;
-	border: none;
-	color: white;
-	padding: 15px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-}
-
-.button:hover, .button_click:hover {
-	background-color: #0a2b80;
-	color: white;
-	text-decoration: none;
-}
-
-.button_click:active {
-  background-color: #800a0a;
-  transform: translateY(1px);
-}
-
-.link {
-    cursor: pointer;
-    color: #cccccc;
-    text-decoration: none;
-    -webkit-transition-duration: .2s;
-    -o-transition-duration: .2s;
-    transition-duration: .2s;
-}
-
-.link:hover {
-	text-decoration: underline;
-}
-
-.vertical_padding {
-	height: 80vh;
-}
-</style>
+<link rel="stylesheet" href="default_style.css" />
 </head>
 <body onload="loadContent()">
 <div id="sidebar">
@@ -424,6 +53,7 @@ a.next {
 	<li><a class="selectable" href="?s=uninstall_payloadloader" id="uninstall_payloadloader_link" title="Desinstalar Tiramisu o Aroma">Tiramisu o Aroma</a></li>
 	</ul>
 </li>
+<!--li><a class="selectable" href="vwii/?s=mod" id="vwii_mod_link" title="Modificar el modo virtual Wii">Modificar el modo vWii</a></li-->
 <li><a class="selectable" href="?s=update_tiramisu" id="update_tiramisu_link" title="Actualizar Tiramisu">Actualizar Tiramisu</a></li>
 <li><a class="selectable" href="?s=aroma_beta" id="aroma_beta_link" title="Probar Aroma beta">Probar Aroma beta</a></li>
 <li><span class="caret selectable" id="download_games" title="Descarga de juegos">Descarga de juegos</span>
@@ -443,8 +73,10 @@ a.next {
 </li>
 <li><span class="caret selectable" id="extras" title="Extras">Extras</span>
 	<ul class="nested">
+	<li><a class="selectable" href="?s=sd_format" id="sd_format_link" title="Formatear una tarjeta SD en FAT32">Formatear tarjeta SD en FAT32</a></li>
 	<li><a class="selectable" href="?s=detect_sd" id="detect_sd_link" title="Revisar que la Wii U detecta la tarjeta SD">Revisar que detecta la SD</a></li>
 	<li><a class="selectable" href="?s=write_to_sd" id="write_to_sd_link" title="Revisar que la Wii U puede escribir datos en la tarjeta SD">Revisar que puede escribir en la SD</a></li>
+	<li><a class="selectable" href="?s=nand_backup" id="nand_backup_link" title="Hacer una copia de seguridad de la memoria interna de la Wii U">Hacer respaldo de la NAND</a></li>
 	<li><a class="selectable" href="?s=standby_functions" id="standby_functions_link" title="Desactivar modo de reposo">Desactivar modo de reposo</a></li>
 	<li><a class="selectable" href="?s=block_updates" id="block_updates_link" title="Bloquear actualizaciones">Bloquear actualizaciones</a></li>
 	<li><a class="selectable" href="?s=unblock_updates" id="unblock_updates_link" title="Desbloquear actualizaciones">Desbloquear actualizaciones</a></li>
@@ -544,6 +176,204 @@ a.next {
 </div>
 </div>
 </div>
+<div id="nand_backup" class="tabcontent" style="display:none;">
+<div class="cont">
+<br>
+<h1>Hacer una copia de seguridad de la memoria interna (NAND) de la Wii U</h1>
+<br>
+<p>En general las memorias tipo NAND flash tienen una vida útil limitada, con el paso de los años la información almacenada en este tipo de memorias va degradándose hasta desaparecer, por eso tener un respaldo de la memoria interna de la Wii U es una buena práctica a largo plazo. En caso de que algo malo pase restaurar la copia de la memoria interna puede solucionarlo.</p>
+<div class="warning">El respaldo de la memoria interna es único para cada consola, las copias de respaldo de otras consolas no funcionarán en tu Wii U.</div>
+<p>El respaldo de la NAND se hace usando la aplicación NAND Dumper, el respaldo se puede hacer sin importar cuál sea la modificación de la Wii U o incluso si la consola no se encuentra modificada, pero los pasos para abrir NAND Dumper varían dependiendo de cuál es la situación de la consola.</p>
+<h2>¿Cuál es la situación de la consola?</h2>
+<p><a href="?s=nand_backup&p=apl">Usa Tiramisu o Aroma de arranque automático.</a></p>
+<p><a href="?s=nand_backup&p=mpl">Usa Tiramisu o Aroma de arranque manual.</a></p>
+<p><a href="?s=nand_backup&p=old">Usa una modificación que no es Tiramisu o Aroma.</a></p>
+<p><a href="?s=nand_backup&p=nmwu_sd">No tiene una modificación (necesitas conectar la consola a Internet, una tarjeta SD de 4 GB o mayor, no se modificará nada en la Wii U).</a></p>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a>
+</div>
+</div>
+</div>
+<div id="nand_backup_apl" class="tabcontent" style="display:none;">
+<div class="cont">
+<br>
+<h1>Abrir NAND Dumper</h1>
+<br>
+<p>Si la consola ya tiene Tiramisu o Aroma de arranque automático:</p>
+<ul>
+<li>Si tienes el menú de inicio rápido activado <a href="?s=standby_functions">desactiva las funciones en modo de reposo</a> para hacer fácilmente a los pasos de abajo. Si no tienes el menú de inicio rápido activado continua con los siguientes pasos.<br><img src="images/detect/quick_start_menu.jpg" class="auto_size_li"></li>
+<li>En este punto debes tener la Wii U apagada con la tarjeta SD introducida.</li>
+<li>Enciende la consola y <strong class="green">mantén presionado el botón B</strong> hasta que salga el menú <em>Please choose your payload</em>. Acceder a ese menú es necesario para poder hacer el respaldo de la NAND.</li>
+<li>Ya en el menú <em>Please choose your payload</em> usa las flechas del D-Pad del GamePad para <strong class="green">seleccionar</strong> <code class="green">nanddumper</code> y presiona el <strong class="green">botón A</strong> para iniciar la aplicación.<br><img src="images/nanddumper/choose_payload.jpg" class="auto_size_li"></li>
+</ul>
+<div class="bottomnav">
+<a href="?s=nand_backup" class="previous">&#8249; ¿Cuál es la situación de la consola?</a><a href="?s=nand_backup&p=dump" class="next">Usar NAND Dumper &#8250;</a>
+</div>
+</div>
+</div>
+<div id="nand_backup_mpl" class="tabcontent" style="display:none;">
+<div class="cont">
+<br>
+<h1>Abrir NAND Dumper</h1>
+<br>
+<p>Si la consola tiene Tiramisu o Aroma de arranque manual:</p>
+<ul>
+<li>En este punto debes tener la Wii U apagada con la tarjeta SD introducida.</li>
+<li>Enciende la consola y accede al menú de Wii U.<br><img src="images/detect/health_and_safety_information_icon.jpg" class="auto_size_li"></li>
+<li><strong class="green">Abre Información sobre salud y seguridad</strong> y <strong class="green">mantén presionado el botón B</strong> hasta que salga el menú <em>Please choose your payload</em>. Acceder a ese menú es necesario para poder hacer el respaldo de la NAND.</li>
+<li>Ya en el menú <em>Please choose your payload</em> usa las flechas del D-Pad del GamePad para <strong class="green">seleccionar</strong> <code class="green">nanddumper</code> y presiona el <strong class="green">botón A</strong> para iniciar la aplicación.<br><img src="images/nanddumper/choose_payload.jpg" class="auto_size_li"></li>
+</ul>
+<div class="bottomnav">
+<a href="?s=nand_backup" class="previous">&#8249; ¿Cuál es la situación de la consola?</a><a href="?s=nand_backup&p=dump" class="next">Usar NAND Dumper &#8250;</a>
+</div>
+</div>
+</div>
+<div id="nand_backup_old" class="tabcontent" style="display:none;">
+<div class="cont">
+<br>
+<h1>Abrir NAND Dumper</h1>
+<br>
+<p>Si la consola tiene una modificación que no es Tiramisu o Aroma:</p>
+<ul>
+<li>Si no tienes la aplicación NAND Dumper:</li>
+<ul>
+<li>Saca la tarjeta SD de la Wii U y ponla en tu PC (o teléfono inteligente) para poner archivos.</li>
+<li>Descarga <a href="https://wiiu.cdn.fortheusers.org/zips/nanddumper.zip">NAND Dumper</a>.</li>
+<li>Descomprime el archivo <code>nanddumper.zip</code></li>
+<li>Entra en la carpeta <code>wiiu</code> y luego entra en la carpeta <code>apps</code> del archivo descomprimido.</li>
+<li>Copia la carpeta <code>nanddumper</code> y pégala en la carpeta <code>sd:/wiiu/apps</code>.<br><a target="_blank" href="images/nanddumper/ins.png"><img src="images/nanddumper/ins.png" class="auto_size_li_li"></a></li>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
+</ul>
+<li>En este punto debes tener la Wii U apagada con la tarjeta SD introducida.</li>
+<li>Enciende la consola y carga la modificación que tengas instalada, debes cargar un CFW.</li>
+<li>Accede al Homebrew Launcher y carga NAND Dumper.</li>
+</ul>
+<div class="bottomnav">
+<a href="?s=nand_backup" class="previous">&#8249; ¿Cuál es la situación de la consola?</a><a href="?s=nand_backup&p=dump" class="next">Usar NAND Dumper &#8250;</a>
+</div>
+</div>
+</div>
+<div id="nand_backup_nmwu_sd" class="tabcontent" style="display:none;">
+<div class="cont">
+<br>
+<h1>Prepara la tarjeta SD</h1>
+<br>
+<p>La tarjeta SD colocada en el puerto SD de la Wii U debe estar formateada en FAT32 ya que la Wii U sólo reconoce tarjetas SD formateadas en FAT32.</p>
+<p>Para tener la mejor estabilidad y compatibilidad se recomienda un tamaño de unidad de asignación (<em>allocation unit size</em>) de 32 kilobytes (32768) y dejar la etiqueta del volumen (volume label) en blanco ya que poner una etiqueta del volumen puede causar problemas con algunas aplicaciones homebrew.</p>
+<div class="info">Si no dispones de una PC puedes usar un teléfono inteligente, pero ten en cuenta que por defecto formatean las tarjetas SD de 32 GB o menos en FAT32, mientras que las tarjetas SD mayores a 32 GB son formateadas en exFAT, formato que no reconoce la Wii U.</div>
+<div class="info">Para asegúrate que una tarjeta SD se encuentra formateada en FAT32 debes usar una PC.</div>
+<ul>
+<li>Conecta la tarjeta SD a una PC para formatearla.</li>
+<li>Para tarjetas SD de 4 GB hasta 32 GB puedes usar la aplicación de formateo de Windows:<br><a target="_blank" href="images/misc/WinFormat.png"><img src="images/misc/WinFormat.png" class="auto_size"></a></li>
+<li>Para tarjetas SD de 4 GB hasta 2 TB puedes usar la aplicación <a href="http://ridgecrop.co.uk/index.htm?guiformat.htm">GUIFormat</a>:<br><a target="_blank" href="images/misc/GUIFormat.png"><img src="images/misc/GUIFormat.png" class="auto_size"></a></li>
+</ul>
+<a href="?s=nand_backup" class="previous">&#8249; ¿Cuál es la situación de la consola?</a><a href="?s=nand_backup&p=nmwu_files" class="next">Coloca los archivos necesarios &#8250;</a>
+</div>
+</div>
+<div id="nand_backup_nmwu_files" class="tabcontent" style="display:none;">
+<div class="cont">
+<br>
+<h1>Coloca los archivos de necesarios</h1>
+<br>
+<div class="warning">Aquí se asume que tienes la tarjeta SD sin archivos, vacía.</div>
+<p>No vamos a modificar nada en la Wii U, todo se queda en la tarjeta SD. En la instalación correcta de Tiramisu se hace el respaldo de la NAND antes de instalar algo en la consola, por eso los archivos de Tiramisu tienen todo lo necesario para hacer el respaldo de la NAND sin necesidad de modificar la Wii U.</p>
+<p>Tiramisu es fácil de colocar, sólo debes descargar los archivos más recientes y ponerlos en la tarjeta SD.</p>
+<ul>
+<li>Este enlace lleva al sitio oficial: <a href="https://tiramisu.foryour.cafe/">Tiramisu para tu café</a>.</li>
+<ul>
+<li>Dentro del sitio debes tocar en el botón <em class="green">Download Tiramisu</em> para iniciar la descarga de un archivo <code>.zip</code>.</li>
+</ul>
+</ul>
+<h2>Colocar los archivos</h2>
+<ul>
+<li>En este punto debes tener la tarjeta SD conectada a una PC (o teléfono inteligente) para colocar los archivos.</li>
+<li>Descomprime el archivo <code>.zip</code> de Tiramisu.</li>
+<li>Copia la carpeta <code>wiiu</code> y el archivo <code>versions.json</code> a la raíz de la tarjeta SD.</li>
+<li>Tu tarjeta SD debe quedar como esta imagen:<br><img src="images/tiramisu/wiiu_folder.png" class="auto_size_li"></li>
+</ul>
+<ul>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
+</ul>
+<div class="bottomnav">
+<a href="?s=nand_backup&p=nmwu_sd" class="previous">&#8249; Preparar la tarjeta SD</a><a href="?s=nand_backup&p=nmwu_browser_exploit" class="next">Abrir NAND Dumper &#8250;</a>
+</div>
+</div>
+</div>
+<div id="nand_backup_nmwu_browser_exploit" class="tabcontent" style="display:none;">
+<div class="cont">
+<br>
+<h1>Abrir NAND Dumper</h1>
+<br>
+<p>El exploit del navegador es el <strong>punto de entrada</strong> ideal para hacer una copia de seguridad de la NAND sin modificar la consola. Con los archivos de Tiramisu en la tarjeta SD ya tienes lo necesario para ejecutar el exploit.</p>
+<ul>
+<li>Enciende la consola y accede al menú de Wii U. Asegúrate de que la consola tenga acceso a internet para este paso.</li>
+<li>Abre el navegador de internet de la consola.</li>
+<li>Introduce la URL: <a href="http://u.wiidb.de">u.wiidb.de</a> (puedes consultar paginas alternativas <a href="?s=webhack&p=exploit">aquí</a>).<br><img src="images/browser_exploit/url_u_wiidb_de.jpg" class="auto_size_li"></li>
+<li>Al cargar la página por completo mostrará en grande el enlace <strong class="blue">HAXX</strong>.<br><img src="images/browser_exploit/u_wiidb_de.jpg" class="auto_size_li"></li>
+<li><strong class="green">Toca el enlace HAXX</strong>, cuando la pantalla del GamePad se ponga completamente en blanco <strong class="green">mantén presionado el botón B</strong> hasta que salga el menú <em>Please choose your payload</em>.</li>
+<li>Acceder a ese menú es necesario para poder hacer el respaldo de la NAND. Si no lograste entrar a ese menú sigue los pasos de <a href="#notas_nbnbe">las notas de abajo</a>.</li>
+<li>Ya en el menú <em>Please choose your payload</em> usa las flechas del D-Pad del GamePad para <strong class="green">seleccionar</strong> <code class="green">nanddumper</code> y presiona el <strong class="green">botón A</strong> para iniciar la aplicación.<br><img src="images/nanddumper/choose_payload.jpg" class="auto_size_li"></li>
+</ul>
+<div class="bottomnav">
+<a href="?s=nand_backup&p=nmwu_files" class="previous">&#8249; Coloca los archivos necesarios</a><a href="?s=nand_backup&p=dump" class="next">Usar NAND Dumper &#8250;</a>
+</div>
+<br>
+<br>
+<br>
+<div class="info" id="notas_nbnbe">Si la Wii U se atascó en una pantalla blanca o se congeló de alguna otra forma, espera unos segundos. Si no sucede nada, mantén presionado el botón <em>POWER</em> de la consola hasta que se apague, vuelve prender la consola, abre el navegador, entra en Ajustes, selecciona un motor de búsqueda, borra las cookies del navegador y vuelve a intentar el exploit del navegador.</div>
+<div class="info">Si aparece el mensaje <em>FSGetMountSource falied. Please insert a FAT32 formatted sd card.</em> quiere decir que la consola no está detectando la tarjeta SD. Mantén presionado el botón <em>POWER</em> de la consola hasta que se apague, limpia los contactos de la SD y de la consola, si estas usando una microSD prueba con otro adaptador a SD y vuelve a intentar el exploit del navegador. Puedes ir <a href="?s=detect_sd">aquí para revisar si la Wii U detecta la tarjeta SD</a>.</div>
+<div class="info">Si aparece el mensaje <em>FSOpenFile falied. File missing /vol/external01/wiiu/payload.elf.</em> quiere decir que la consola sí está detectando la tarjeta SD, pero no encontró el archivo <code>sd:/wiiu/payload.elf</code>. Mantén presionado el botón <em>POWER</em> de la consola hasta que se apague, <a href="?s=tiramisu&p=files">revisa los archivos en la tarjeta SD</a> y vuelve a intentar el exploit del navegador.</div>
+<div class="info"><p>Si aparece el menú del <em>Environment Loader</em> navega por el menú usando las flechas del D-Pad del GamePad, <strong class="green">selecciona</strong> <em class="green">installer</em> y presiona el <strong class="green">botón A</strong> para iniciarlo.<br><img src="images/environment_loader/installer.jpg" class="auto_size"></p>
+<p>Ahora debes estar en el <em>PayloadLoader Installer</em>, usando las flechas del D-Pad <strong class="green">selecciona</strong> <em class="green">Exit</em> y presiona el <strong class="green">botón A</strong> para salir. La consola volverá al menú de Wii U, <u>apaga la consola</u> y vuelve a intentar el exploit del navegador.<br><img src="images/payloadloader_Installer/exit.jpg" class="auto_size"></p></div>
+</div>
+</div>
+<div id="nand_backup_dump" class="tabcontent" style="display:none;">
+<div class="cont">
+<br>
+<h1>NAND Dumper</h1>
+<br>
+<ul>
+<li>En este punto debes estar dentro de la aplicación NAND Dumper.<br><img src="images/nanddumper/menu.jpg" class="auto_size_li"></li>
+<li>Usa las flechas del D-Pad del Wii U GamePad para ingresar la configuración deseada.</li>
+<ul>
+<li>Dump SLC (528MB): yes</li>
+<li>Dump SLCCMPT (528MB): yes</li>
+<li>Dump MLC (8GB/32GB): Opcional</li>
+<li>Dump OTP (1KB): yes</li>
+<li>Dump SEEPROM (1KB): yes</li>
+</ul>
+</ul>
+<div class="info">Para el respaldo del modo virtual Wii sólo necesitas de SLCCMPT y OTP.</div>
+<div class="info"><ul>
+<li>SLC: IOSU y Cafe OS, sistemas operativos del modo Wii U.</li>
+<li>SLCCMPT: IOS, sistema operativo del modo virtual Wii.</li>
+<li>MLC: Juegos, actualizaciones de los juegos, DLCs y archivos de guardado.</li>
+<li>OTP: Valores y keys (claves) de fábrica.</li>
+<li>SEEPROM: Valores y keys (claves) del sistema.</li>
+<p><a href="images/misc/Wii_U_Memories.jpg" target="_blank">Aquí puedes ver una imagen de los chips de memoria de la consola.</a></p>
+</ul></div>
+<div class="info">El respaldo de SLC, SLCCMPT, OPT y SEEPROM es obligatorio para restaurar por completo la Wii U en caso de algún problema. No importa si la consola es de 8 GB o de 32 GB se requieren de 1.04 GB de espacio libre en la tarjeta SD para completar el respaldo de SLC, SLCCMPT, OPT y SEEPROM.</div>
+<div class="info">El proceso de copiado de SLC, SLCCMPT, OTP y SEEPROM en conjunto tarda menos de 5 minutos con una tarjeta SD clase 10.</div>
+<div class="warning">El respaldo de la memoria MLC es opcional, no es necesario para restaurar la consola en caso de algún problema. Si la consola es el modelo de 8 GB se requiere una tarjeta SD de 16 GB para completar el respaldo del MLC. Si la consola es el modelo de 32 GB se requiere una tarjeta SD de 64 GB para completar el respaldo del MLC.</div>
+<div class="warning">El proceso de copiado del MLC del modelo de 8 GB tarda alrededor de 35 minutos con una tarjeta SD clase 10. El proceso de copiado del MLC del modelo de 32 GB tarda alrededor de 2 horas con una tarjeta SD clase 10.</div>
+<ul>
+<li>Presiona el <strong class="green">botón A</strong> para iniciar el proceso de copia.</li>
+<li>Aparentemente la consola carga el menú de Wii U, pero en unos instantes mostrará el proceso de copiado.<br><img src="images/nanddumper/progress_slc.jpg" class="auto_size_li"></li>
+<li>Cuando se complete el proceso la consola cargará el menú de Wii U.<br><img src="images/nanddumper/complete.jpg" class="auto_size_li"></li>
+<li>Apaga la consola, saca la tarjeta SD de la Wii U y conéctala a una PC (o teléfono inteligente) para mover los archivos del respaldo.</li>
+<li>Copia los archivos <code>otp.bin</code>, <code>seeprom.bin</code>, <code>slc.bin</code> y <code>slccmpt.bin</code> de la raíz de la tarjeta SD a una ubicación segura en la PC (o teléfono inteligente).</li>
+<li>Si elegiste realizar la copia de MLC, copia los archivos <code>mlc.bin.part##</code> de la raíz de la tarjeta SD a una ubicación segura en la PC (o teléfono inteligente).</li>
+<li>Elimina los archivos <code>otp.bin</code>, <code>seeprom.bin</code>, <code>slc.bin</code> y <code>slccmpt.bin</code> de la tarjeta SD para liberar espacio.</li>
+<li>Si elegiste realizar la copia de MLC, elimina los archivos <code>mlc.bin.part##</code> de la tarjeta SD para liberar espacio.</li>
+<li>Para seguir usando la modificación de la consola como siempre, extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos y ponla de regreso en la Wii U.</li>
+</ul>
+<div class="info">Puedes hacer varias copias en servicios de la nube de internet para evitar perder la valiosa copia de seguridad de la NAND de tu Wii U.</div>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">&#8249; Regresar</a><a href="?s=main" class="next">Inicio</a>
+</div>
+<p></p>
+</div>
+</div>
 <div id="standby_functions" class="tabcontent" style="display:none;">
 <div class="cont">
 <h1>Desactivar las funciones en modo de reposo</h1>
@@ -561,7 +391,9 @@ a.next {
 <li>Toca en Salir o persona B.</li>
 </ul>
 <p>Ahora al apagar la consola no trabajará en modo de reposo y el LED de POWER no cambiará de <strong class="red">rojo</strong> a <strong class="oranje">naranja</strong>.</p>
-<p><a onclick="window.history.back()">Regresar</a></p>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a>
+</div>
 </div>
 </div>
 <div id="block_updates" class="tabcontent" style="display:none;">
@@ -592,7 +424,9 @@ a.next {
 <li>Con <em>Update folder is deleted</em> están completamente bloqueadas las actualizaciones.</li>
 <li>Presiona el <strong class="green">botón HOME</strong> para salir de UFDiine.</li>
 </ul>
-<p><a onclick="window.history.back()">Regresar</a></p>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a>
+</div>
 </div>
 </div>
 <div id="unblock_updates" class="tabcontent" style="display:none;">
@@ -621,7 +455,29 @@ a.next {
 <li>Con <em>Update folder exists</em> están desbloqueadas las actualizaciones.</li>
 <li>Presiona el <strong class="green">botón HOME</strong> para salir de UFDiine.</li>
 </ul>
-<p><a onclick="window.history.back()">Regresar</a></p>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a>
+</div>
+</div>
+</div>
+<div id="sd_format" class="tabcontent" style="display:none;">
+<div class="cont">
+<br>
+<h1>Formatear una tarjeta SD en FAT32</h1>
+<br>
+<p>El GameCube, la Wii, la Wii U y la familia de consolas DSi y 3DS reconocen tarjetas SD formateadas en FAT32. En general el formato FAT32 es el más compatible.</p>
+<p>Una tarjeta SD colocada en el puerto SD de la Wii o la Wii U debe estar formateada en FAT32 ya que la Wii o la Wii U en particular sólo reconocen tarjetas SD formateadas en FAT32.</p>
+<p>Para tener la mejor estabilidad y compatibilidad se recomienda un tamaño de unidad de asignación (<em>allocation unit size</em>) de 32 kilobytes (32768) y dejar la etiqueta del volumen (volume label) en blanco ya que poner una etiqueta del volumen puede causar problemas con algunas aplicaciones homebrew.</p>
+<div class="info">Si no dispones de una PC puedes usar un teléfono inteligente, pero ten en cuenta que por defecto formatean las tarjetas SD de 32 GB o menos en FAT32, mientras que las tarjetas SD mayores a 32 GB son formateadas en exFAT, formato que no reconoce la Wii o la Wii U.</div>
+<div class="info">Para asegúrate que una tarjeta SD se encuentra formateada en FAT32 debes usar una PC.</div>
+<ul>
+<li>Conecta la tarjeta SD a una PC para formatearla.</li>
+<li>Para tarjetas SD de 4 GB hasta 32 GB puedes usar la aplicación de formateo de Windows:<br><a target="_blank" href="images/misc/WinFormat.png"><img src="images/misc/WinFormat.png" class="auto_size"></a></li>
+<li>Para tarjetas SD de 4 GB hasta 2 TB puedes usar la aplicación <a href="http://ridgecrop.co.uk/index.htm?guiformat.htm">GUIFormat</a>:<br><a target="_blank" href="images/misc/GUIFormat.png"><img src="images/misc/GUIFormat.png" class="auto_size"></a></li>
+</ul>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a>
+</div>
 </div>
 </div>
 <div id="detect_sd" class="tabcontent" style="display:none;">
@@ -629,7 +485,7 @@ a.next {
 <br>
 <h1>Como revisar que la Wii U detecta la tarjeta SD</h1>
 <br>
-<p>La tarjeta SD debe estar formateada en FAT32 para que la consola pueda detectarla. Se recomienda un tamaño de unidad de asignación (<em>allocation unit size</em>) de 32 kilobytes (32768). Deja la etiqueta del volumen (volume label) en blanco ya que poner una puede causar problemas con algunas aplicaciones. Para tarjetas SD mayores a 32 GB debes formatear usando <a href="http://ridgecrop.co.uk/index.htm?guiformat.htm">GUIFormat</a>.</p>
+<p>La tarjeta SD debe estar <a href="?s=sd_format">formateada en FAT32</a> para que la consola pueda detectarla.</p>
 <h2>Procedimiento</h2>
 <ul>
 <li>Con la consola apagada introduce la tarjeta SD en el puerto SD de la Wii U.</li>
@@ -646,7 +502,9 @@ a.next {
 <li>Vuelve a introducir la tarjeta SD en el puerto SD de la Wii U, si el mensaje que te pide introducir una tarjeta SD desaparece entonces lograste que la consola detectara la tarjeta SD. Toca en Cancelar, Atrás y Salir para regresar al menú de Wii U.</li>
 <li>Si no logras que la consola detecte la tarjeta SD entonces vuelve revisar que esté formateada en FAT32 o prueba con otra tarjeta SD, si aun así ninguna tarjeta SD es detectada por la consola entonces es posible que el puerto SD de la Wii U se encuentre dañado, en ese caso debes llevar la consola con un técnico para que la revise.</li>
 </ul>
-<p><a onclick="window.history.back()">Regresar</a></p>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a>
+</div>
 </div>
 </div>
 <div id="write_to_sd" class="tabcontent" style="display:none;">
@@ -670,7 +528,9 @@ a.next {
 </ul>
 <li>Si no logras que la consola escriba datos en la tarjeta SD entonces prueba con otra tarjeta SD (o con otro adaptador de microSD a SD), si la consola no puede escribir datos en ninguna tarjeta SD entonces es posible que el mecanismo de la Wii U que detecta el bloqueo de la tarjeta SD se encuentre dañado, en ese caso debes llevar la consola con un técnico para que la revise.</li>
 </ol>
-<p><a onclick="window.history.back()">Regresar</a></p>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a>
+</div>
 </div>
 </div>
 <div id="webhack_exploit" class="tabcontent" style="display:none;">
@@ -682,7 +542,9 @@ a.next {
 <li><a href="http://wiiuexploit.xyz/">http://wiiuexploit.xyz/</a> Toca en el botón <q><strong class="blue">Run Exploit!</strong></q>.</li>
 <li>Actualmente la página <strong class="red">http://loadiine.ovh/</strong> ha dejado de dar servicio.</li>
 </ul>
-<p><a onclick="window.history.back()">Regresar</a></p>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a>
+</div>
 </div>
 </div>
 <div id="aroma_beta" class="tabcontent" style="display:none;">
@@ -861,7 +723,7 @@ a.next {
 <li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
 <li>En este punto ya finalizaste la actualización de <em>Environment Loader</em> y Tiramisu. La próxima vez que cargue el entorno de Tiramisu cargará con los archivos más actuales.</li>
 <div class="bottomnav">
-<a href="?s=main" class="previous">Inicio</a>
+<a onclick="window.history.back()" class="previous">Regresar</a>
 </div>
 </ul>
 </div>
@@ -871,10 +733,15 @@ a.next {
 <br>
 <h1>Prepara la tarjeta SD</h1>
 <br>
-<p>La Wii U sólo reconoce tarjetas SD formateadas en FAT32, así que lo primero es formatear la tarjeta SD en FAT32. Se recomienda un tamaño de unidad de asignación (<em>allocation unit size</em>) de 32 kilobytes (32768). Deja la etiqueta del volumen (volume label) en blanco ya que poner una puede causar problemas con algunas aplicaciones. Para tarjetas SD mayores a 32 GB debes formatear usando <a href="http://ridgecrop.co.uk/index.htm?guiformat.htm">GUIFormat</a>.</p>
-<p>La primera imagen corresponde a la aplicación de formateo de Windows, para tarjetas SD de 4 GB hasta 32 GB. La segunda imagen corresponde a la aplicación GUIFormat, para tarjetas SD de 4 GB hasta 2 TB.</p>
-<p><a target="_blank" href="images/misc/WinFormat.png"><img src="images/misc/WinFormat.png" class="auto_size"></a> <a target="_blank" href="images/misc/GUIFormat.png"><img src="images/misc/GUIFormat.png" class="auto_size"></a></p>
-<div class="info">La mayoría de los teléfonos inteligentes por defecto formatean las tarjetas SD de 32 GB o menores en FAT32, las tarjetas SD mayores a 32 GB son formateadas en exFAT, formato que no reconoce la Wii U. Para asegúrate de que una tarjeta SD se encuentra formateada en FAT32 debes usar una PC.</div>
+<p>La tarjeta SD colocada en el puerto SD de la Wii U debe estar formateada en FAT32 ya que la Wii U sólo reconoce tarjetas SD formateadas en FAT32.</p>
+<p>Para tener la mejor estabilidad y compatibilidad se recomienda un tamaño de unidad de asignación (<em>allocation unit size</em>) de 32 kilobytes (32768) y dejar la etiqueta del volumen (volume label) en blanco ya que poner una etiqueta del volumen puede causar problemas con algunas aplicaciones homebrew.</p>
+<div class="info">Si no dispones de una PC puedes usar un teléfono inteligente, pero ten en cuenta que por defecto formatean las tarjetas SD de 32 GB o menos en FAT32, mientras que las tarjetas SD mayores a 32 GB son formateadas en exFAT, formato que no reconoce la Wii U.</div>
+<div class="info">Para asegúrate que una tarjeta SD se encuentra formateada en FAT32 debes usar una PC.</div>
+<ul>
+<li>Conecta la tarjeta SD a una PC para formatearla.</li>
+<li>Para tarjetas SD de 4 GB hasta 32 GB puedes usar la aplicación de formateo de Windows:<br><a target="_blank" href="images/misc/WinFormat.png"><img src="images/misc/WinFormat.png" class="auto_size"></a></li>
+<li>Para tarjetas SD de 4 GB hasta 2 TB puedes usar la aplicación <a href="http://ridgecrop.co.uk/index.htm?guiformat.htm">GUIFormat</a>:<br><a target="_blank" href="images/misc/GUIFormat.png"><img src="images/misc/GUIFormat.png" class="auto_size"></a></li>
+</ul>
 <div class="bottomnav">
 <a href="?s=main" class="previous">&#8249; Inicio</a><a href="?s=tiramisu&p=files" class="next">Coloca los archivos de Tiramisu &#8250;</a>
 </div>
@@ -908,7 +775,6 @@ a.next {
 </ul>
 <ul>
 <li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
-<li>Opcionalmente desconecta el dispositivo USB de la Wii U antes de continuar, puedes volver a conectar el dispositivo USB en cualquier momento después de instalar PayloadLoader en la consola.</li>
 </ul>
 <div class="bottomnav">
 <a href="?s=tiramisu&p=sd" class="previous">&#8249; Preparar la tarjeta SD</a><a href="?s=tiramisu&p=nand_backup_browser_exploit" class="next">Hacer una copia de seguridad (recomendado) &#8250;</a>
@@ -923,13 +789,13 @@ a.next {
 <br>
 <h1>Exploit del navegador</h1>
 <br>
-<p>El exploit del navegador es el <strong>punto de entrada</strong> ideal para hacer una copia de seguridad en limpio de la NAND (memoria interna de la consola). Con los archivos de Tiramisu en la tarjeta SD ya tienes lo necesario para ejecutar el exploit.</p>
+<p>El exploit del navegador es el <strong>punto de entrada</strong> ideal para hacer una copia de seguridad de la NAND sin modificar la consola. Con los archivos de Tiramisu en la tarjeta SD ya tienes lo necesario para ejecutar el exploit.</p>
 <ul>
 <li>Enciende la consola y accede al menú de Wii U. Asegúrate de que la consola tenga acceso a internet para este paso.</li>
 <li>Abre el navegador de internet de la consola.</li>
 <li>Introduce la URL: <a href="http://u.wiidb.de">u.wiidb.de</a> (puedes consultar paginas alternativas <a href="?s=webhack&p=exploit">aquí</a>).<br><img src="images/browser_exploit/url_u_wiidb_de.jpg" class="auto_size_li"></li>
 <li>Al cargar la página por completo mostrará en grande el enlace <strong class="blue">HAXX</strong>.<br><img src="images/browser_exploit/u_wiidb_de.jpg" class="auto_size_li"></li>
-<li><strong class="green">Toca el enlace HAXX</strong>, cuando la pantalla del GamePad se ponga completamente en blanco <strong class="green">mantén presionado el botón B</strong> hasta que salga un menú (<em>Please choose your payload</em>).</li>
+<li><strong class="green">Toca el enlace HAXX</strong>, cuando la pantalla del GamePad se ponga completamente en blanco <strong class="green">mantén presionado el botón B</strong> hasta que salga el menú <em>Please choose your payload</em>.</li>
 <li>Acceder a ese menú es necesario para poder hacer el respaldo de la NAND. Si no lograste entrar a ese menú sigue los pasos de <a href="#notas_nbbe">las notas de abajo</a>.</li>
 <li>Ya en el menú <em>Please choose your payload</em> usa las flechas del D-Pad del GamePad para <strong class="green">seleccionar</strong> <code class="green">nanddumper</code> y presiona el <strong class="green">botón A</strong> para iniciar la aplicación.<br><img src="images/nanddumper/choose_payload.jpg" class="auto_size_li"></li>
 </ul>
@@ -949,9 +815,9 @@ a.next {
 <div id="tiramisu_nand_backup" class="tabcontent" style="display:none;">
 <div class="cont">
 <br>
-<h1>Hacer una copia de seguridad de la NAND (memoria interna) de la Wii U</h1>
+<h1>Hacer una copia de seguridad de la memoria interna (NAND) de la Wii U</h1>
 <br>
-<p>En general las memorias tipo NAND flash tienen una vida útil limitada, con el paso de los años la información almacenada en este tipo de memorias va degradándose hasta desaparecer, por tener un respaldo de la memoria interna de la Wii U es una buena práctica a largo plazo. En caso de que algo malo pase restaurar la copia de la memoria interna puede solucionarlo. La configuración del Autobooting de PayloadLoader tiene un riego casi nulo de dañar la consola.</p>
+<p>En general las memorias tipo NAND flash tienen una vida útil limitada, con el paso de los años la información almacenada en este tipo de memorias va degradándose hasta desaparecer, por eso tener un respaldo de la memoria interna de la Wii U es una buena práctica a largo plazo. En caso de que algo malo pase restaurar la copia de la memoria interna puede solucionarlo. La configuración del Autobooting de PayloadLoader tiene un riesgo casi nulo de dañar la consola.</p>
 <div class="warning">El respaldo de la memoria interna es único para cada consola, las copias de respaldo de otras consolas no funcionarán en tu Wii U.</div>
 <ul>
 <li>En este punto debes estar dentro de la aplicación NAND Dumper.<br><img src="images/nanddumper/menu.jpg" class="auto_size_li"></li>
@@ -972,7 +838,7 @@ a.next {
 <li>SEEPROM: Valores y keys (claves) del sistema.</li>
 <p><a href="images/misc/Wii_U_Memories.jpg" target="_blank">Aquí puedes ver una imagen de los chips de memoria de la consola.</a></p>
 </ul></div>
-<div class="info">El respaldo de SLC, SLCCMPT, OPT y SEEPROM es obligatorio para restaurar la consola en caso de algún problema. No importa si la consola es de 8 GB o de 32 GB se requieren de 1.04 GB de espacio libre en la tarjeta SD para completar el respaldo de SLC, SLCCMPT, OPT y SEEPROM.</div>
+<div class="info">El respaldo de SLC, SLCCMPT, OPT y SEEPROM es obligatorio para restaurar por completo la Wii U en caso de algún problema. No importa si la consola es de 8 GB o de 32 GB se requieren de 1.04 GB de espacio libre en la tarjeta SD para completar el respaldo de SLC, SLCCMPT, OPT y SEEPROM.</div>
 <div class="info">El proceso de copiado de SLC, SLCCMPT, OTP y SEEPROM en conjunto tarda menos de 5 minutos con una tarjeta SD clase 10.</div>
 <div class="warning">El respaldo de la memoria MLC es opcional, no es necesario para restaurar la consola en caso de algún problema. Si la consola es el modelo de 8 GB se requiere una tarjeta SD de 16 GB para completar el respaldo del MLC. Si la consola es el modelo de 32 GB se requiere una tarjeta SD de 64 GB para completar el respaldo del MLC.</div>
 <div class="warning">El proceso de copiado del MLC del modelo de 8 GB tarda alrededor de 35 minutos con una tarjeta SD clase 10. El proceso de copiado del MLC del modelo de 32 GB tarda alrededor de 2 horas con una tarjeta SD clase 10.</div>
@@ -1116,26 +982,27 @@ a.next {
 <ul>
 <li>Descomprime el archivo <code>wup_installer_gx2.zip</code></li>
 <ul>
-<li>Entra en la carpeta <code>wiiu</code> y luego entra en la carpeta <code>apps</code>.</li>
+<li>Entra en la carpeta <code>wiiu</code> y luego entra en la carpeta <code>apps</code> del archivo descomprimido.</li>
 <li>Copia la carpeta <code>wup_installer_gx2</code> y pégala en la carpeta <code>sd:/wiiu/apps</code>.<br><a target="_blank" href="images/tiramisu/wup_installer_gx2_ins.png"><img src="images/tiramisu/wup_installer_gx2_ins.png" class="auto_size_li_li"></a></li>
 </ul>
 <li>Descomprime el archivo <code>SaveMiiModWUTPort.zip</code></li>
 <ul>
-<li>Entra en la carpeta <code>wiiu</code> y luego entra en la carpeta <code>apps</code>.</li>
+<li>Entra en la carpeta <code>wiiu</code> y luego entra en la carpeta <code>apps</code> del archivo descomprimido.</li>
 <li>Copia la carpeta <code>SaveMiiModWUTPort</code> y pégala en la carpeta <code>sd:/wiiu/apps</code>.<br><a target="_blank" href="images/tiramisu/savemii_ins.png"><img src="images/tiramisu/savemii_ins.png" class="auto_size_li_li"></a></li>
 </ul>
 <li>Descomprime el archivo <code>wiiu-extracttosd.zip</code></li>
 <ul>
-<li>Entra en la carpeta <code>wiiu</code> y luego entra en la carpeta <code>apps</code>.</li>
+<li>Entra en la carpeta <code>wiiu</code> y luego entra en la carpeta <code>apps</code> del archivo descomprimido.</li>
 <li>Copia la carpeta <code>appstore</code> y pégala en la carpeta <code>sd:/wiiu/apps</code>.<br><a target="_blank" href="images/tiramisu/appstore_ins.png"><img src="images/tiramisu/appstore_ins.png" class="auto_size_li_li"></a></li>
 </ul>
 <li>Descomprime el archivo <code>Bloopair_v#.#.#.zip</code></li>
 <ul>
-<li>Entra en la carpeta <code>wiiu</code> y luego entra en la carpeta <code>apps</code>.</li>
+<li>Entra en la carpeta <code>wiiu</code> y luego entra en la carpeta <code>apps</code> del archivo descomprimido.</li>
 <li>Copia la carpeta <code>Bloopair_pair_menu</code> y pégala en la carpeta <code>sd:/wiiu/apps</code>.<br><a target="_blank" href="images/tiramisu/bloopair_pair_menu_ins.png"><img src="images/tiramisu/bloopair_pair_menu_ins.png" class="auto_size_li_li"></a></li>
 </ul>
 <li>Descomprime el archivo <code>NUSspli-#.###-HBL.zip</code></li>
 <ul>
+<li>Entra en la carpeta del archivo descomprimido.</li>
 <li>Copia la carpeta <code>NUSspli</code> y pégala en la carpeta <code>sd:/wiiu/apps</code>.<br><a target="_blank" href="images/tiramisu/nusspli_ins.png"><img src="images/tiramisu/nusspli_ins.png" class="auto_size_li_li"></a></li>
 </ul>
 </ul>
@@ -1143,7 +1010,7 @@ a.next {
 <ul>
 <li><strong>WUP Installer GX2</strong> (Wii U Public title Installer) es un instalador de juegos y aplicaciones en formato <strong class="green">NUS Content cifrado de Wii U</strong> (archivos <code>.app</code>, <code>.h3</code>, <code>title.tmd</code>, <code>title.cert</code> y <code>title.tik</code>).</li>
 <li><strong>SaveMii mod WUT Port</strong> permite administrar los archivos de datos guardado de juegos de Wii U y Wii.</li>
-<li>La <strong>Homebrew Appstore</strong> permite buscar y descargar aplicaciones homebrew directamente desde tu Wii U.</li>
+<li>La <strong>Homebrew Appstore</strong> permite buscar y descargar aplicaciones homebrew de Wii U directamente desde la Wii U.</li>
 <li><strong>Bloopair</strong> permite conectar de forma inalámbrica los controles Bluetooth más populares. Consulta <a href="https://gbatemp.net/threads/bloopair-connect-controllers-from-other-consoles-natively.594289/">el hilo oficial de la aplicación</a> para más detalles.</li>
 <li><strong>NUSspli</strong> permite descargar e instalar juegos de forma rápida y simple directamente desde la Wii U.</li>
 </ul>
@@ -1164,6 +1031,9 @@ a.next {
 <li>Descomprime el archivo <code>Bloopair_v#.#.#.zip</code> y copia el archivo <code>30_bloopair.rpx</code> a la carpeta <code>sd:/wiiu/environments/tiramisu/modules/setup</code>.<br><a target="_blank" href="images/tiramisu/bloopair.png"><img src="images/tiramisu/bloopair.png" class="auto_size_li"></a></li>
 </ul>
 <div class="info">El archivo <code>30_bloopair.rpx</code> es Bloopair en sí mismo. Cargará junto con el resto de módulos cuando inicie el entorno de Tiramisu.</div>
+<ul>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
+</ul>
 <br>
 <h2><strong class="yellow">Importante recuerda que:</strong></h2>
 <ul>
@@ -1173,7 +1043,7 @@ a.next {
 </ul>
 <p>Aquí termina la guía de Tiramisu. Puedes continuar con la siguiente guía o volver al inicio.</p>
 <div class="bottomnav">
-<a href="?s=tiramisu&p=config" class="previous">&#8249; Configurar Tiramisu</a><a href="download/?s=games" class="next">Guía de descarga e instalación de juegos &#8250;</a>
+<a href="?s=tiramisu&p=config" class="previous">&#8249; Configurar Tiramisu</a><a href="download/?s=games&p=download_usb_helper" class="next">Guía de descarga e instalación de juegos &#8250;</a>
 </div>
 <div class="bottomnav">
 <a href="?s=main" class="next">Inicio</a>
@@ -1215,8 +1085,9 @@ a.next {
 </ul>
 <div class="info">Con el entorno de Tiramisu cargado en la consola debes abrir el Editor de Mii para acceder al <em>Homebrew Launcher</em>. El <em>Homebrew Launcher</em> del Editor de Mii está hecho para funcionar con Tiramisu, otros <em>Homebrew Launcher</em> no están garantizados para funcionar correctamente con Tiramisu, no se recomienda usarlos.</div>
 <div class="info">Para ir al Editor de Mii, simplemente presiona el botón <em>HOME</em> mientras estás en el <em>Homebrew Launcher</em>.</div>
-<div class="info">Puedes abrir el menú <em>Boot Selector</em> si enciendes la consola y mantienes presionado el botón <em>START</em> (+).</div>
-<div class="info">Puedes impedir que cargue el <em>Environment Loader</em> y Tiramisu sacando la tarjeta SD de la consola antes de encenderla. De esta forma la consola iniciará sin modificaciones. La siguiente vez que enciendas la consola con la tarjeta SD con los archivos del <em>Environment Loader</em> y Tiramisu cargará estos normalmente.</div>
+<div class="info">Si activaste el <strong class="blue">arranque automático</strong> del <em>PayloadLoader</em> puedes abrir el <em>Environment Loader</em> si enciendes la consola y mantienes presionado el botón X.</div>
+<div class="info">Si activaste el <strong class="blue">arranque automático</strong> del <em>PayloadLoader</em> puedes abrir el menú <em>Boot Selector</em> si enciendes la consola y mantienes presionado el botón <em>START</em> (+).</div>
+<div class="info">Si activaste el <strong class="blue">arranque automático</strong> del <em>PayloadLoader</em> puedes impedir que cargue el <em>Environment Loader</em> y Tiramisu sacando la tarjeta SD de la consola antes de encenderla. De esta forma la consola iniciará sin modificaciones. La siguiente vez que enciendas la consola con la tarjeta SD con los archivos del <em>Environment Loader</em> y Tiramisu cargará estos normalmente.</div>
 <div class="bottomnav">
 <a href="?s=main" class="previous">&#8249; Inicio</a><a href="?s=tiramisu&p=apps" class="next">Añadir aplicaciones y módulos &#8250;</a>
 </div>
@@ -1456,6 +1327,7 @@ a.next {
 <div class="info">Si la PC te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
 <div class="info">Si la PC te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
 <ul>
+<li>En este punto debes tener la tarjeta SD conectada a una PC (o teléfono inteligente) para colocar los archivos.</li>
 <li>Descomprime el archivo <code>.zip</code> de Tiramisu.</li>
 <li>Copia la carpeta <code>wiiu</code> y el archivo <code>versions.json</code> a la raíz de la tarjeta SD.</li>
 <li>Tu tarjeta SD debe quedar como esta imagen:<br><img src="images/tiramisu/wiiu_folder.png" class="auto_size_li"></li>
@@ -2114,7 +1986,7 @@ a.next {
 <div class="cont">
 <h1>Acerca de esta guía</h1>
 <br>
-<h2>Versión: 6.0 (1 de noviembre de 2023)</h2>
+<h2>Versión: 6.1 (11 de noviembre de 2023)</h2>
 <p>Esta guía fue hecha por <strong><a href="https://twitter.com/Fran1AC">FranAC</a></strong> basado en la guía de los miembros de <a href="https://wiiu.hacks.guide/">Nintendo Homebrew Discord Server</a>.</p>
 <p>Puedes descargar la guía completa desde <a href="https://github.com/piloncillo/piloncillo.github.io/releases">esté enlace</a>.</p>
 <p>Créditos a los desarrolladores de las herramientas</p>
@@ -2132,11 +2004,16 @@ a.next {
 <li><strong>koolkdev</strong> y <strong>Maschell</strong> por <a href="https://github.com/wiiu-env/wiiu-nanddumper-payload">Wii U NAND Dumper payload</a>.</li>
 <li><strong>dimok789</strong> por <a href="https://github.com/dimok789/mocha/blob/master/ios_mcp/wupclient.py">wupclient.py</a>.</li>
 <li><strong>FIX94</strong> por <a href="https://github.com/FIX94/wuphax">Wuphax</a>.</li>
-<li><strong>dragbe</strong> y <strong>FIX94</strong> por d2x cIOS Installer.</li>
-<li><strong>TheLordScruffy</strong> y <strong>GaryOderNichts</strong> por <a href="https://github.com/TheLordScruffy/vwii-compat-installer">vWii Compat Installer</a>.</li>
+<li><strong>TheLordScruffy/mkwcat</strong>, <strong>Ingunar</strong> y <strong>Xpl0itU</strong> por <a href="https://github.com/Xpl0itU/vwii-compat-installer">vWii Compat Installer</a>.</li>
+<li><strong>davebaol</strong> y <strong>wiidev</strong> por <a href="https://github.com/wiidev/d2x-cios">d2x cIOS</a>.</li>
+<li><strong>davebaol</strong>, <strong>xabby666</strong> y <strong>XFlak</strong> por <a href="https://code.google.com/archive/p/d2x-cios-installer/">d2x cIOS Installer</a>.</li>
+<li><strong>cyan06</strong>, <strong>dimok789</strong> y <strong>wiidev/blackb0x</strong> por <a href="https://github.com/wiidev/usbloadergx">USB Loader GX</a>.</li>
+<li><strong>Hibernatus</strong>, <strong>Fix94</strong> y <strong>Fledge68</strong> por <a href="https://github.com/Fledge68/WiiFlow_Lite">WiiFlow Lite</a>.</li>
+<li><strong>jskyboo</strong> y <strong>kkline38</strong> por <a href="https://github.com/RiiConnect24/Wii-Mod-Lite">WiiMod Lite</a>.</li>
+<li><strong>damysteryman</strong> por <a href="https://gbatemp.net/threads/patched-ios80-installer-for-vwii-allows-sd-menu-custom-channels.344882/">Patched IOS 80 Installer for vWii</a>.</li>
 <li><strong>Maschell</strong> y <strong>GaryOderNichts</strong> por <a href="https://github.com/wiiu-env/AutobootModule">AutobootModule</a>.</li>
 <li><strong>GaryOderNichts</strong> por <a href="https://github.com/GaryOderNichts/configurable-payload">Configurable Payload</a>, <a href="https://github.com/GaryOderNichts/indexiine-installer">Indexiine-Installer</a>, <a href="https://github.com/GaryOderNichts/UFDiine">UFDiine</a>, <a href="https://github.com/GaryOderNichts/vWii-Decaffeinator">vWii Decaffeinator</a>, <a href="https://github.com/GaryOderNichts/DumpsterU">DumpsterU</a>, <a href="https://github.com/GaryOderNichts/Bloopair">Bloopair</a> y <a href="https://github.com/wiiu-controller-mods">las versiones controller mod del Homebrew Launcher, WUP Installer GX2 y SaveMii</a>.</li>
-<li><strong>GabyPCgeeK</strong> y <strong>Ryuzaki-MrL</strong> por <a href="https://github.com/GabyPCgeeK/savemii">SaveMii Mod</a>.</li>
+<li><strong>GabyPCgeeK</strong>, <strong>Ryuzaki-MrL</strong> y <strong>Xpl0itU</strong> por <a href="https://github.com/Xpl0itU/savemii">SaveMii WUT</a>.</li>
 <li><strong>Maschell</strong> por <a href="https://github.com/Maschell/hid_to_vpad">HID to VPAD</a>, <a href="https://github.com/Maschell/WiiUPluginSystem">Wii U Plugin System</a>, <a href="https://github.com/wiiu-env/CustomRPXLoader">CustomRPXLoader</a>, <a href="https://maschell.github.io/homebrew/2020/12/02/failst.html">FailST</a>, <a href="https://github.com/wiiu-env/Environment Loader">Environment Loader</a>, <a href="https://github.com/wiiu-env/HBLInstallerWrapper">HBLInstallerWrapper</a>, <a href="https://github.com/wiiu-env/LaunchInstaller">LaunchInstaller</a>, <a href="https://github.com/wiiu-env/MochaPayload">MochaPayload</a>, <a href="https://github.com/wiiu-env/PayloadFromRPX">PayloadFromRPX</a>, <a href="https://github.com/wiiu-env/PayloadLoaderInstaller">PayloadLoaderInstaller</a>, <a href="https://github.com/wiiu-env/PayloadLoaderInstallerEnvironment">PayloadLoaderInstallerEnvironment</a>, <a href="https://github.com/wiiu-env/PayloadloaderPayload">PayloadloaderPayload</a>, <a href="https://tiramisu.foryour.cafe/">Tiramisu Downloader</a> y <a href="https://aroma.foryour.cafe/">Aroma Downloader</a>.</li>
 <li><strong>Chadderz</strong> y <strong>Maschell</strong> por <a href="https://github.com/Maschell/SDCafiine">SDCafiine</a>.</li>
 <li><strong>OatmealDome</strong> y <strong>Yahya14</strong> por <a href="https://gbatemp.net/threads/swap-drc-for-tv-only-wii-u-games.478026/">SwapDRC Lite</a>.</li>
@@ -2152,1007 +2029,6 @@ a.next {
 </div>
 </div>
 </div>
-<script>
-var selectable = document.getElementsByClassName("selectable");
-var toggler = document.getElementsByClassName("caret");
-var accordion = document.getElementsByClassName("accordion");
-var imgs = document.getElementsByClassName("auto_size");
-var imgs_li = document.getElementsByClassName("auto_size_li");
-var imgs_li_li = document.getElementsByClassName("auto_size_li_li");
-var i;
-
-window.addEventListener("resize", contentResize);
-
-function loadContent() {	
-	var tabcontent = document.getElementsByClassName("tabcontent");
-	for (i = 0; i < tabcontent.length; i++) {
-		tabcontent[i].style.display = "none";
-	}
-  	
-	var url = new URL(document.URL);
-	var section = url.searchParams.get("s");
-	var page = url.searchParams.get("p");
-	var directory = url.searchParams.get("directory");
-	var eshop_game = url.searchParams.get("eshop_game");
-	var console_status = url.searchParams.get("console");
-	var content = null;
-	
-	if (console_status != null && (console_status == "on" || console_status == "off")) {
-		var console_elements = document.getElementsByClassName("console_status");
-		if (console_status == "off") {
-			for (i = 0; i < console_elements.length; i++)
-				console_elements[i].style.display = "";
-		}
-	}
-  
-	if (section != null && section != "") {
-		if (section == "games")
-			window.location.href = "download/?" + url.searchParams.toString();
-		
-		if (page != null && page != "")
-			content = document.getElementById(section + "_" + page);
-		if (content == null)
-			content = document.getElementById(section);
-	}
-	
-	if (section == "tiramisu")
-		document.getElementById("install_hack").click();
-		
-	if (section == "test")
-		document.getElementById("test_hack").click();
-		
-	if (section == "games")
-		document.getElementById("download_games").click();
-		
-	if (section == "glossary")
-		document.getElementById("glossary_caret").click();
-		
-	if (section == "install_games")
-		document.getElementById("install_games_caret").click();
-		
-	if (section == "uninstall_payloadloader" ||
-		section == "uninstall_webhack" ||
-		section == "uninstall_indexiine" ||
-		section == "uninstall_haxchi" ||
-		section == "uninstall_cbhc")
-		document.getElementById("uninstall_hack").click();
-	
-	if (section == "detect_sd" ||
-		section == "write_to_sd" ||
-		section == "standby_functions" ||
-		section == "block_updates" ||
-		section == "unblock_updates" ||
-		section == "tiramisu_speedrun")
-		document.getElementById("extras").click();
-		
-	if (section == "custom_haxchi" ||
-		section == "config_payload")
-		document.getElementById("archive_caret").click();
-		
-	if (section == "webhack" ||
-		section == "indexiine"||
-		section == "haxchi"||
-		section == "cbhc") {
-		document.getElementById("archive_caret").click();
-		document.getElementById("previous_methods_caret").click();
-	}
-		
-	if (section == "github" ||
-		section == "discord" ||
-		section == "about")
-		document.getElementById("links").click();
-		
-	removeSelected();
-	
-	if (content != null) {
-		if (section == "webhack" ||
-			section == "indexiine" ||
-			section == "haxchi" ||
-			section == "cbhc")
-			document.getElementById("install_" + section + "_link").classList.add("selected");
-		if (document.getElementById(section + "_" + page + "_link") != null)
-			document.getElementById(section + "_" + page + "_link").classList.add("selected");
-		else if (document.getElementById(section + "_link") != null)
-			document.getElementById(section + "_link").classList.add("selected");
-		else
-			document.getElementById("main_link").classList.add("selected");
-		content.style.display = "block";
-	} else {
-		document.getElementById("main_link").classList.add("selected");
-		document.getElementById("main").style.display = "block";
-	}
-
-	const links = document.querySelectorAll("a[href]");
-	var linksArray = [...links];
-	linksArray = linksArray.filter(l => l.hostname != location.hostname);
-	for (i = 0; i < linksArray.length; i++) {
-		linksArray[i].classList.add("external");
-		linksArray[i].setAttribute("target", "_blank");
-	}
-	
-	var sidebar = localStorage.getItem("sidebar");
-	if (sidebar != null) {
-		if (sidebar == "open")
-			openSidebar();
-		else if (sidebar == "close")
-			closeSidebar();
-		else
-			defaultSidebar();
-	} else
-		defaultSidebar();
-		
-	testResults();
-}
-
-function contentResize(overlay) {
-	var sidebarWidth = 0;
-	
-	if (localStorage.getItem("sidebar") == "open" && (typeof overlay == "object" || !overlay)) {
-		if (window.innerWidth < 640) {
-			document.getElementById("sidebar").style.width = "0px";
-			document.getElementById("sidebar_toggle").style.marginLeft = "0px";
-			document.getElementById("content").style.marginLeft = "0px";
-			document.body.style.overflow = "auto";
-			localStorage.setItem("sidebar", "close");
-		}
-		else
-			sidebarWidth = 250;
-	}
-
-	const scrollBarWidth = window.innerWidth - document.body.offsetWidth;
-	const availableWidth = window.innerWidth - sidebarWidth - scrollBarWidth - 80;
-	
-	if (availableWidth < 720) {
-		for (i = 0; i < imgs.length; i++) {
-			imgs[i].style.width = imgs[i].naturalWidth + "px";
-			if (imgs[i].naturalWidth > availableWidth)
-				imgs[i].style.width = availableWidth + "px";
-		}
-		for (i = 0; i < imgs_li.length; i++) {
-			imgs_li[i].style.width = imgs_li[i].naturalWidth + "px";
-			if (imgs_li[i].naturalWidth > availableWidth - 40)
-				imgs_li[i].style.width = (availableWidth - 40)+ "px";
-		}
-		for (i = 0; i < imgs_li_li.length; i++) {
-			imgs_li_li[i].style.width = imgs_li_li[i].naturalWidth + "px";
-			if (imgs_li_li[i].naturalWidth > availableWidth - 80)
-				imgs_li_li[i].style.width = (availableWidth - 80)+ "px";
-		}
-	} else {
-		for (i = 0; i < imgs.length; i++) {
-			imgs[i].style.width = imgs[i].naturalWidth + "px";
-			if (imgs[i].naturalWidth > 720)
-				imgs[i].style.width = "720px";
-		}
-		for (i = 0; i < imgs_li.length; i++) {
-			imgs_li[i].style.width = imgs_li[i].naturalWidth + "px";
-			if (imgs_li[i].naturalWidth > 680)
-				imgs_li[i].style.width = "680px";
-		}
-		for (i = 0; i < imgs_li_li.length; i++) {
-			imgs_li_li[i].style.width = imgs_li_li[i].naturalWidth + "px";
-			if (imgs_li_li[i].naturalWidth > 640)
-				imgs_li_li[i].style.width = "640px";
-		}
-	}
-}
-
-function openSidebar() {
-	localStorage.setItem("sidebar", "open");
-	if (window.innerWidth < 640) {
-		document.getElementById("sidebar_close").style.visibility = "visible";
-		document.getElementById("sidebar").style.width = "100%";
-		document.getElementById("sidebar_toggle").style.marginLeft = "0px";
-		document.getElementById("content").style.marginLeft = "0px";
-		document.body.style.overflow = "hidden";
-		contentResize(true);
-	}
-	else {
-		document.getElementById("sidebar_close").style.visibility = "hidden";
-		document.getElementById("sidebar").style.width = "250px";
-		document.getElementById("sidebar_toggle").style.marginLeft = "250px";
-		document.getElementById("content").style.marginLeft = "250px";
-		contentResize(false);
-	}
-}
-
-function closeSidebar() {
-	localStorage.setItem("sidebar", "close");
-	document.getElementById("sidebar").style.width = "0px";
-	document.getElementById("sidebar_toggle").style.marginLeft = "0px";
-	document.getElementById("content").style.marginLeft = "0px";
-	if (window.innerWidth < 640) {
-		document.body.style.overflow = "auto";
-		contentResize(true);
-	}
-	else
-		contentResize(false);
-}
-
-function defaultSidebar() {
-	if (window.innerWidth < 640)
-		closeSidebar();
-	else
-		openSidebar();
-}
-
-function toggleSidebar() {
-	if (localStorage.getItem("sidebar") == "open")
-		closeSidebar();
-	else
-		openSidebar();
-}
-
-
-for (i = 0; i < selectable.length; i++) {
-	selectable[i].addEventListener("click", function() {
-		removeSelected();
-		this.classList.toggle("selected");
-	});
-}
-
-for (i = 0; i < toggler.length; i++) {
-	toggler[i].addEventListener("click", function() {
-		this.parentElement.querySelector(".nested").classList.toggle("active_nav");
-		this.classList.toggle("caret-down");
-	});
-}
-
-for (i = 0; i < accordion.length; i++) {
-	accordion[i].addEventListener("click", function() {
-		this.classList.toggle("active_acco");
-		var panel = this.nextElementSibling;
-		if (panel.style.maxHeight) {
-			panel.style.maxHeight = null;
-		} else {
-			panel.style.maxHeight = panel.scrollHeight + "px";
-		} 
-	});
-}
-
-function removeSelected() {
-	var j;
-	for (j = 0; j < selectable.length; j++) {
-		selectable[j].classList.remove("selected");
-	}
-}
-
-/* Test functions */
-
-function testResults() {
-  var autobooting = localStorage.getItem("autobooting");
-  var indexiine = localStorage.getItem("indexiine");
-  var haxchiIcon = localStorage.getItem("haxchi icon");
-  var haxchi = localStorage.getItem("haxchi");
-  var payloadloader = localStorage.getItem("payloadloader");
-  
-  if (autobooting == "cbhc") {
-    document.getElementById("autobooting_result").innerHTML = 'Coldboot Haxchi detectado. Tienes un "hack" que tiene el riesgo de brickear la consola si no eres cuidadoso, sigue las reglas de <a href="?s=cbhc&p=warning">aquí</a> para prevenir un brick.';
-  }
-  else if (autobooting == "payload_loader") {
-    document.getElementById("autobooting_result").innerHTML = 'Autobooting PayloadLoader detectado.';
-  }
-  else if (autobooting == "payload_loader_old") {
-    document.getElementById("autobooting_result").innerHTML = 'Autobooting PayloadLoader detectado. Tienes una versión vieja de Tiramisu, <a href="?s=update_tiramisu">actualiza "los archivos del hack"</a>';
-  }
-  else if (autobooting == "hbl") {
-    document.getElementById("autobooting_result").innerHTML = 'Autobooting PayloadLoader detectado. Tiramisu está configurado para cargar el Homebrew Launcher, es una configuración extraña, si quieres cambiarla consulta como <a href="?s=tiramisu&p=config">configurar Tiramisu</a>.';
-  }
-  else if (autobooting == "wii") {
-    document.getElementById("autobooting_result").innerHTML = 'Autobooting PayloadLoader detectado. Tiramisu (o Aroma) está configurado para cargar el menú de Wii (vWii System Menu), es una configuración extraña, si quieres cambiarla consulta como <a href="?s=tiramisu&p=config">configurar Tiramisu</a>.';
-  }
-  else if (autobooting == "hbc") {
-    document.getElementById("autobooting_result").innerHTML = 'Autobooting PayloadLoader detectado. Tiramisu (o Aroma) está configurado para cargar el Homebrew Channel (vWii), es una configuración extraña, si quieres cambiarla consulta como <a href="?s=tiramisu&p=config">configurar Tiramisu</a>.';
-  }
-  else if (autobooting == "el") {
-    document.getElementById("autobooting_result").innerHTML = 'Autobooting PayloadLoader detectado. Está configurado para cargar el Environment Loader (Cargador de Entorno), si quieres cambiarlo consulta como <a href="?s=tiramisu&p=config">configurar Tiramisu</a>.';
-  }
-  else if (autobooting == "tbs") {
-    document.getElementById("autobooting_result").innerHTML = 'Autobooting PayloadLoader detectado. Está configurado para cargar el Tiramisu Boot Selector (Selector de Arranque de Tiramisu), si quieres cambiarlo consulta como <a href="?s=tiramisu&p=config">configurar Tiramisu</a>.';
-  }
-  else if (autobooting == "failed") {
-    document.getElementById("autobooting_result").innerHTML = 'Autobooting PayloadLoader detectado. El PayloadLoader no está detectando la tarjeta SD o no encontró el archivo <code>sd:/wiiu/payload.elf</code>. Limpia los contactos de la tarjeta SD, si estas usando una microSD prueba cambiar el adaptador, revisa que tengas "los archivos del hack" en la tarjeta SD. Si no tienes los archivos de Tiramisu en la tarjeta SD puedes colocarlos siguiendo <a href="?s=update_tiramisu">las instrucciones para actualizar Tiramisu</a>.';
-  }
-  else if (autobooting == "rpx_failed") {
-    document.getElementById("autobooting_result").innerHTML = 'Autobooting PayloadLoader detectado. La consola no encontró el archivo <code>sd:/wiiu/payload.rpx</code>. Para recuperar el archivo vuelve a poner todos los archivos de Tiramisu en la tarjeta SD siguiendo <a href="?s=update_tiramisu">las instrucciones para actualizar Tiramisu</a>.';
-  }
-  else if (autobooting == "mocha_failed") {
-    document.getElementById("autobooting_result").innerHTML = 'Autobooting PayloadLoader detectado. Si estas usando Tiramisu la consola no encontró el archivo <code>sd:/wiiu/environments/tiramisu/modules/setup/00_mocha.rpx</code>. Para recuperar el archivo vuelve a poner todos los archivos de Tiramisu en la tarjeta SD siguiendo <a href="?s=update_tiramisu">las instrucciones para actualizar Tiramisu</a>. Si estas usando Aroma La consola no encontró el archivo <code>sd:/wiiu/environments/aroma/modules/setup/00_mocha.rpx</code>. Para recuperar el archivo vuelve a poner todos los archivos de Aroma en la tarjeta SD.';
-  }
-  else if (autobooting == "warning") {
-    document.getElementById("autobooting_result").innerHTML = 'Autobooting PayloadLoader detectado. Si te aparece el mensaje de alerta <code>the update folder current exists</code> quiere decir que tu consola no está bloqueando las actualizaciones del sistema apropiadamente. Presiona el botón B para no volver a ver el mensaje de alerta. Consulta la información de <a href="?s=block_updates">aquí</a> si quieres bloquear completamente las actualizaciones del sistema de la consola.';
-  }
-  else if (autobooting == "quick_start") {
-    document.getElementById("autobooting_result").innerHTML = 'Usar el menú de inicio rápido impide observar la carga del PayloadLoader al encender la consola, para comprobar al 100% que la consola no tenga Autobooting PayloadLoader es necesario <a href="?s=standby_functions">desactivar las funciones en modo de reposo</a> y volver a contestar la pregunta de este apartado.';
-  }
-  else if (autobooting == "wiiu" || autobooting == "user") {
-    document.getElementById("autobooting_result").innerHTML = 'No detectaste ningún "hack" que inicie de forma automática al encender la consola.';
-  }
-  
-  if (indexiine == "hbl") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. Está configurado para cargar el Homebrew Launcher.';
-  }
-  else if (indexiine == "iosuhax") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. Está configurado para cargar el "obsoleto" IOSUHAX. Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
-  }
-  else if (indexiine == "mocha") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. Está configurado para cargar Mocha CFW. Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
-  }
-  else if (indexiine == "wiiu" || indexiine == "user") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. Está configurado para cargar una aplicación o un CFW que a su vez redirige al menú de Wii U. Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
-  }
-  else if (indexiine == "el") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. Carga el Environment Loader (Cargador de Entorno), seguramente tienes los archivos de Tiramisu en la tarjeta SD. Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
-  }
-  else if (indexiine == "tbs") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. Carga el Tiramisu Boot Selector (Selector de Arranque de Tiramisu), seguramente tienes los archivos de Tiramisu en la tarjeta SD. Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
-  }
-  else if (indexiine == "warning") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. Si te aparece el mensaje de alerta <code>the update folder current exists</code>, seguramente tienes los archivos de Tiramisu en la tarjeta SD. Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
-  }
-  else if (indexiine == "wii") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. Carga el menú de Wii (vWii System Menu), seguramente tienes los archivos de Tiramisu en la tarjeta SD. Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
-  }
-  else if (indexiine == "hbc") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. Carga el Homebrew Channel (vWii), seguramente tienes los archivos de Tiramisu en la tarjeta SD. Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
-  }
-  else if (indexiine == "ohb") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. Está configurado para cargar una aplicación homebrew. Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
-  }
-  else if (indexiine == "q") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. Se trata de un mod de Indexiine que permite omitir la carga del mismo para poder usar el navegador (involucra el riesgo de desconfigurar los ajustes correctos del propio navegador). Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
-  }
-  else if (indexiine == "twice") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. El mensaje <code>Don\'t run Environment Loader twice</code> indica que antes de ejecutar Indexiine ya habías cargado el Environment Loader. Si tienes Autobooting PayloadLoader el Environment Loader se carga cuando enciendes la consola. El Environment Loader también se puede cargar usando el exploit del navegador de Internet o se puede cargar al abrir el icono de Información sobre salud y seguridad.';
-  }
-  else if (indexiine == "msf") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. El mensaje <code>FSGetMountSource falied</code> quiere decir que la consola no está detectando la tarjeta SD, limpia los contactos, si estas usando una microSD prueba cambiar el adaptador.';
-  }
-  else if (indexiine == "fm") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. El mensaje <code>FSOpenFile falied</code> quiere decir que la consola sí está detectando la tarjeta SD, pero no encontró el archivo <code>payload.elf</code> dentro de la carpeta <code>sd:/wiiu</code>.';
-  }
-  else if (indexiine == "rpx_failed") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. Está intentando cargar el Environment Loader (Cargador de Entorno), seguramente tienes los archivos de Tiramisu en la tarjeta SD. Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
-  }
-  else if (indexiine == "mocha_failed") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. Está intentando cargar Tiramisu (o Aroma), seguramente tienes los archivos de Tiramisu (o Aroma) en la tarjeta SD. Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
-  }
-  else if (indexiine == "freeze") {
-    document.getElementById("indexiine_result").innerHTML = 'Detectado. Si se bloquea el navegador lo más probable es que se perdieron los ajustes correctos para ejecutar Indexiine. Prueba <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a> para volver a ocupar el navegador de forma normal.';
-  }
-  else if (indexiine == "no") {
-    document.getElementById("indexiine_result").innerHTML = 'No detectado. Puedes usar el navegador de forma normal.';
-  }
-	
-  if (haxchiIcon == "yes") {
-    document.getElementById("haxchi_result").innerHTML = 'Icono de Haxchi detectado, pero no has indicado que pasa al abrir el icono.';
-  }
-  else if (haxchiIcon == "no") {
-    document.getElementById("haxchi_result").innerHTML = 'Icono de Haxchi no detectado.';
-  }
-	
-  if (haxchi == "hbl") {
-    document.getElementById("haxchi_result").innerHTML = 'Detectado. Está configurado para cargar el Homebrew Launcher.';
-  }
-  else if (haxchi == "iosuhax") {
-    document.getElementById("haxchi_result").innerHTML = 'Detectado. Está configurado para cargar el "obsoleto" IOSUHAX.';
-  }
-  else if (haxchi == "mocha") {
-    document.getElementById("haxchi_result").innerHTML = 'Detectado. Está configurado para cargar Mocha CFW.';
-  }
-  else if (haxchi == "wiiu" || haxchi == "user") {
-    document.getElementById("haxchi_result").innerHTML = 'Detectado. Está configurado para cargar una aplicación o un CFW que a su vez redirige al menú de Wii U.';
-  }
-  else if (haxchi == "ohb") {
-    document.getElementById("haxchi_result").innerHTML = 'Detectado. Está configurado para cargar una aplicación homebrew.';
-  }
-  else if (haxchi == "-3") {
-    document.getElementById("haxchi_result").innerHTML = 'Detectado. El mensaje <code>-3</code> quiere decir que la consola no está detectando la tarjeta SD, limpia los contactos, si estas usando una microSD prueba cambiar el adaptador.';
-  }
-  else if (haxchi == "-5") {
-    document.getElementById("haxchi_result").innerHTML = 'Detectado. El mensaje <code>-5</code> quiere decir que la consola sí está detectando la tarjeta SD, pero no encontró la aplicación configurada para cargar por defecto en la tarjeta SD.';
-  }
-  else if (haxchi == "freeze") {
-    document.getElementById("haxchi_result").innerHTML = 'Detectado. Es raro que Haxchi se bloquee, lo más probable es que antes de ejecutar Haxchi hayas cargado Tiramisu (o Aroma). No puedes cargar el CFW interno de Haxchi si tienes cargado el entorno de Tiramisu (o Aroma). Prueba <a href="?s=uninstall_haxchi">desinstalar Haxchi correctamente</a> para volver a ocupar el juego de Nintendo DS de forma normal o <a >personaliza Haxchi</a> para que no cargue su CFW interno.';
-  }
-  else if (haxchi == "no") {
-    document.getElementById("haxchi_result").innerHTML = 'Icono de Haxchi detectado, pero requiere de algo más para abrirlo. La consola no tiene instalado correctamente Haxchi.';
-  }
-	
-  if (payloadloader == "wiiu" || payloadloader == "user") {
-    document.getElementById("payloadloader_result").innerHTML = 'Detectado.';
-  }
-  else if (payloadloader == "hbl") {
-    document.getElementById("payloadloader_result").innerHTML = 'Detectado. Tiramisu está configurado para cargar el Homebrew Launcher, es una configuración extraña, si quieres cambiarla consulta como <a href="?s=tiramisu&p=config">configurar Tiramisu</a>.';
-  }
-  else if (payloadloader == "wii") {
-    document.getElementById("payloadloader_result").innerHTML = 'Detectado. Tiramisu (o Aroma) está configurado para cargar el menú de Wii (vWii System Menu), es una configuración extraña, si quieres cambiarla consulta como <a href="?s=tiramisu&p=config">configurar Tiramisu</a>.';
-  }
-  else if (payloadloader == "hbc") {
-    document.getElementById("payloadloader_result").innerHTML = 'Detectado. Tiramisu (o Aroma) está configurado para cargar el Homebrew Channel (vWii), es una configuración extraña, si quieres cambiarla consulta como <a href="?s=tiramisu&p=config">configurar Tiramisu</a>.';
-  }
-  else if (payloadloader == "el") {
-    document.getElementById("payloadloader_result").innerHTML = 'Detectado. Está configurado para cargar el Environment Loader (Cargador de Entorno), si quieres cambiarlo consulta como <a href="?s=tiramisu&p=config">configurar Tiramisu</a>.';
-  }
-  else if (payloadloader == "tbs") {
-    document.getElementById("payloadloader_result").innerHTML = 'Detectado. Está configurado para cargar el Tiramisu Boot Selector (Selector de Arranque de Tiramisu), si quieres cambiarlo consulta como <a href="?s=tiramisu&p=config">configurar Tiramisu</a>.';
-  }
-  else if (payloadloader == "warning") {
-    document.getElementById("payloadloader_result").innerHTML = 'Detectado. Si te aparece el mensaje de alerta <code>the update folder current exists</code> quiere decir que tu consola no está bloqueando las actualizaciones del sistema apropiadamente. Presiona el botón B para no volver a ver el mensaje de alerta. Consulta la información de <a href="?s=block_updates">aquí</a> si quieres bloquear completamente las actualizaciones del sistema de la consola.';
-  }
-  else if (payloadloader == "failed") {
-    document.getElementById("payloadloader_result").innerHTML = 'Detectado. No está detectando la tarjeta SD o no encontró el archivo <code>sd:/wiiu/payload.elf</code>. Limpia los contactos de la tarjeta SD, si estas usando una microSD prueba cambiar el adaptador, revisa que tengas "los archivos del hack" en la tarjeta SD. Si no tienes los archivos de Tiramisu en la tarjeta SD puedes colocarlos siguiendo <a href="?s=update_tiramisu">las instrucciones de como actualizar Tiramisu</a>.';
-  }
-  else if (payloadloader == "rpx_failed") {
-    document.getElementById("payloadloader_result").innerHTML = 'Detectado. La consola no encontró el archivo <code>sd:/wiiu/payload.rpx</code>. Para recuperar el archivo vuelve a poner todos los archivos de Tiramisu en la tarjeta SD siguiendo <a href="?s=update_tiramisu">las instrucciones para actualizar Tiramisu</a>.';
-  }
-  else if (payloadloader == "mocha_failed") {
-    document.getElementById("payloadloader_result").innerHTML = 'Detectado. Si estas usando Tiramisu la consola no encontró el archivo <code>sd:/wiiu/environments/tiramisu/modules/setup/00_mocha.rpx</code>. Para recuperar el archivo vuelve a poner todos los archivos de Tiramisu en la tarjeta SD siguiendo <a href="?s=update_tiramisu">las instrucciones para actualizar Tiramisu</a>. Si estas usando Aroma La consola no encontró el archivo <code>sd:/wiiu/environments/aroma/modules/setup/00_mocha.rpx</code>. Para recuperar el archivo vuelve a poner todos los archivos de Aroma en la tarjeta SD.';
-  }
-  else if (payloadloader == "twice") {
-    document.getElementById("payloadloader_result").innerHTML = 'Detectado. El mensaje <code>Don\'t run Environment Loader twice</code> indica que antes de abrir el icono de Información sobre salud y seguridad ya habías cargado el Environment Loader (ya tenías cargado Tiramisu o Aroma). Si tienes Autobooting PayloadLoader el Environment Loader se carga automáticamente cuando enciendes la consola. El Environment Loader también lo pudiste haber cargado usando el exploit del navegador de Internet o al abrir el icono de Información sobre salud y seguridad anteriormente. Más información: <a target="_blank" href="https://www.youtube.com/watch?v=SJ0oCedYJzk">https://www.youtube.com/watch?v=SJ0oCedYJzk</a>';
-  }
-  else if (payloadloader == "no") {
-    document.getElementById("payloadloader_result").innerHTML = 'No detectado.';
-  }
-  
-  testSDResults();
-}
-
-function testSDResults() {
-  var sd = localStorage.getItem("sd");
-  var folder = localStorage.getItem("folder");
-  var autobooting = localStorage.getItem("autobooting");
-  var indexiine = localStorage.getItem("indexiine");
-  var haxchiIcon = localStorage.getItem("haxchi icon");
-  var haxchi = localStorage.getItem("haxchi");
-  var payloadloader = localStorage.getItem("payloadloader");
-  
-  if (sd == "yes" && folder == "yes") {
-    if (autobooting == "failed" ||
-	autobooting == "rpx_failed" ||
-	autobooting == "mocha_failed" ||
-	indexiine == "msf" ||
-	indexiine == "fm" ||
-	indexiine == "rpx_failed" ||
-	indexiine == "mocha_failed" ||
-	haxchi == "-3" ||
-	haxchi == "-5" ||
-	payloadloader == "failed" ||
-	payloadloader == "rpx_failed" ||
-	payloadloader == "mocha_failed") {
-      document.getElementById("sd_result").innerHTML = 'Aunque tienes la carpeta <code>sd:/wiiu</code> la consola no esta detectando la tarjeta SD o los archivos del "hack" de la consola. Revisa las recomendaciones de arriba según sea el caso.';
-    }
-    else {
-      document.getElementById("sd_result").innerHTML = 'Aparentemente tienes "los archivos del hack" bien colocados.';
-    }
-	getLabelByControlId("sd_yes").style.color = "#bbffbb";
-	getLabelByControlId("sd_no").style.color = "#cccccc";
-	getLabelByControlId("folder_yes").style.color = "#bbffbb";
-	getLabelByControlId("folder_no").style.color = "#cccccc";
-	document.getElementById("d_folder").style.display = "inline";
-  }
-  else if (sd == "yes" && folder == "no") {
-    if (autobooting == "payload_loader" || autobooting == "payload_loader_old" || autobooting == "hbl" || autobooting == "wii" || autobooting == "hbc" || autobooting == "el" || autobooting == "tbs" || autobooting == "warning" ||
-	indexiine == "hbl" || indexiine == "iosuhax" || indexiine == "mocha" || indexiine == "wiiu" || indexiine == "user" || indexiine == "el" || indexiine == "tbs" || indexiine == "warning" || indexiine == "wii" || indexiine == "hbc" || indexiine == "ohb" || indexiine == "twice" ||
-	haxchi == "hbl" || haxchi == "iosuhax" || haxchi == "mocha" || haxchi == "ohb" ||
-	payloadloader == "wiiu" || payloadloader == "user" || payloadloader == "hbl" || payloadloader == "wii" || payloadloader == "hbc" || payloadloader == "el" || payloadloader == "tbs" || payloadloader == "warning" || payloadloader == "twice") {
-      document.getElementById("sd_result").innerHTML = 'Hay una contradicción en tus respuestas, señalaste que PayloadLoader, Indexiine y/o Haxchi carga una aplicacion homebrew o un CFW, pero la tarjeta SD no tiene la carpeta <code>wiiu</code>. La carpeta <code>sd:/wiiu</code> es esencial ya que ahí se almacenan las aplicaciones homebrew y los archivos del "hack" de la consola. Revisa tus respuestas.';
-    }
-	else if (autobooting == "rpx_failed" || autobooting == "mocha_failed" || indexiine == "rpx_failed" || indexiine == "mocha_failed" || payloadloader == "rpx_failed" || payloadloader == "mocha_failed") {
-      document.getElementById("sd_result").innerHTML = 'Hay una contradicción en tus respuestas, señalaste que PayloadLoader y/o Indexiine muestra un mensaje que requiere de la presencia de la carpeta <code>wiiu</code>. Revisa tus respuestas.';
-    }
-	else if (indexiine == "msf" || haxchi == "-3") {
-      document.getElementById("sd_result").innerHTML = 'La consola no esta detectando la tarjeta SD. Revisa las recomendaciones de arriba según sea el caso.';
-    }
-	else if (autobooting == "failed" ||
-	indexiine == "fm" ||
-	haxchi == "-5" ||
-	payloadloader == "failed") {
-      document.getElementById("sd_result").innerHTML = 'Ya que no tienes en la tarjeta SD la carpeta <code>wiiu</code> es de esperar que la consola te muestre un mensaje de error al ejecutar PayloadLoader, Indexiine o Haxchi. La carpeta <code>sd:/wiiu</code> es esencial ya que ahí se almacenan las aplicaciones homebrew y los archivos del "hack" de la consola. Revisa las recomendaciones de arriba según sea el caso.';
-    }
-	else if ((autobooting == "wiiu" || autobooting == "user") && indexiine == "no" && (haxchiIcon == "no" || haxchi == "no") && payloadloader == "no") {
-      document.getElementById("sd_result").innerHTML = 'La carpeta <code>sd:/wiiu</code> es esencial ya que ahí se almacena "Webhack", las aplicaciones homebrew y los archivos del "hack" de la consola. Sin la carpeta <code>sd:/wiiu</code> y descartados los puntos de entrada se considera que <strong class="green">la consola no está hackeada</strong>.';
-    }
-    else {
-      document.getElementById("sd_result").innerHTML = 'La carpeta <code>sd:/wiiu</code> es esencial ya que ahí se almacenan las aplicaciones homebrew y los archivos del "hack" de la consola.';
-    }
-	getLabelByControlId("sd_yes").style.color = "#bbffbb";
-	getLabelByControlId("sd_no").style.color = "#cccccc";
-	getLabelByControlId("folder_yes").style.color = "#cccccc";
-	getLabelByControlId("folder_no").style.color = "#bbffbb";
-	document.getElementById("d_folder").style.display = "inline";
-  }
-  else if (sd == "no") {
-    if (autobooting == "payload_loader" || autobooting == "payload_loader_old" || autobooting == "hbl" || autobooting == "wii" || autobooting == "hbc" || autobooting == "el" || autobooting == "tbs" || autobooting == "warning" ||
-	indexiine == "hbl" || indexiine == "iosuhax" || indexiine == "mocha" || indexiine == "wiiu" || indexiine == "user" || indexiine == "el" || indexiine == "tbs" || indexiine == "warning" || indexiine == "wii" || indexiine == "hbc" || indexiine == "ohb" || indexiine == "twice" ||
-	haxchi == "hbl" || haxchi == "iosuhax" || haxchi == "mocha" || haxchi == "ohb" ||
-	payloadloader == "wiiu" || payloadloader == "user" || payloadloader == "hbl" || payloadloader == "wii" || payloadloader == "hbc" || payloadloader == "el" || payloadloader == "tbs" || payloadloader == "twice") {
-      document.getElementById("sd_result").innerHTML = 'Hay una contradicción en tus respuestas, señalaste que PayloadLoader, Indexiine y/o Haxchi carga una aplicacion homebrew o un CFW, pero la consola no tiene tarjeta SD. La tarjeta SD es esencial ya que ahí se almacenan las aplicaciones homebrew y los archivos del "hack" de la consola. Revisa tus respuestas.';
-    }
-	else if (autobooting == "rpx_failed" || autobooting == "mocha_failed" || indexiine == "rpx_failed" || indexiine == "mocha_failed" || payloadloader == "rpx_failed" || payloadloader == "mocha_failed") {
-      document.getElementById("sd_result").innerHTML = 'Hay una contradicción en tus respuestas, señalaste que PayloadLoader y/o Indexiine muestra un mensaje que requiere de la presencia de la tarjeta SD. Revisa tus respuestas.';
-    }
-	else if (indexiine == "fm" || haxchi == "-5") {
-      document.getElementById("sd_result").innerHTML = 'Hay una contradicción en tus respuestas, señalaste que Indexiine o Haxchi muestra un error que indica que sí está detectando la tarjeta SD, pero la consola no tiene tarjeta SD. Revisa tus respuestas.';
-    }
-	else if (autobooting == "failed" ||
-	indexiine == "msf" ||
-	haxchi == "-3" ||
-	payloadloader == "failed") {
-      document.getElementById("sd_result").innerHTML = 'Ya que no tienes la tarjeta SD de la consola es de esperar que te muestre un mensaje de error al intentar ejecutar PayloadLoader, Indexiine o Haxchi. La tarjeta SD es esencial ya que ahí se almacenan las aplicaciones homebrew y los archivos del "hack" de la consola. Consigue una tarjeta SD y revisa las recomendaciones de arriba según sea el caso.';
-    }
-	else if ((autobooting == "wiiu" || autobooting == "user") && indexiine == "no" && (haxchiIcon == "no" || haxchi == "no") && payloadloader == "no") {
-      document.getElementById("sd_result").innerHTML = 'Consigue una tarjeta SD. La tarjeta SD es esencial ya que ahí se almacena "Webhack", las aplicaciones homebrew y los archivos del "hack" de la consola. Sin la tarjeta SD y descartados los puntos de entrada se considera que <strong class="green">la consola no está hackeada</strong>.';
-    }
-    else {
-      document.getElementById("sd_result").innerHTML = 'Consigue una tarjeta SD. La tarjeta SD es esencial ya que ahí se almacenan las aplicaciones homebrew y los archivos del "hack" de la consola. Contesta las preguntas de los apartados anteriores para identificar el "hack" de tu consola.';
-    }
-	getLabelByControlId("sd_yes").style.color = "#cccccc";
-	getLabelByControlId("sd_no").style.color = "#bbffbb";
-	getLabelByControlId("folder_yes").style.color = "#cccccc";
-	getLabelByControlId("folder_no").style.color = "#cccccc";
-	document.getElementById("d_folder").style.display = "none";
-  }
-  else {
-    document.getElementById("sd_result").innerHTML = 'Contesta la(s) pregunta(s) de abajo para tener un diagnostico básico de la situación de "los archivos del hack" de tu consola. Contesta las preguntas de los apartados anteriores para identificar el "hack" de tu consola.';
-  }
-  
-  if (autobooting == null || indexiine == null || (haxchiIcon == null && haxchi == null) || payloadloader == null) {
-    document.getElementById("webhack_result").innerHTML = 'Contesta todas las preguntas de los apartados anteriores para determinar si el exploit del navegador es el único punto de entrada de tu consola. Todas las Wii U, incluidas las que nunca has sido hackeadas, tienen con este punto de entrada.';
-  }
-  else if ((autobooting == "wiiu" || autobooting == "user") && indexiine == "no" && (haxchiIcon == "no" || haxchi == "no") && payloadloader == "no") {
-    if (sd == "yes" && folder == "yes") {
-      document.getElementById("webhack_result").innerHTML = 'Detectado. El exploit del navegador es el punto de entrada principal de tu consola.';
-	}
-	else if (sd == "no" || (sd == "yes" && folder == "no")) {
-      document.getElementById("webhack_result").innerHTML = 'No detectado. El exploit del navegador es el punto de entrada principal de tu consola, pero no tienes "los archivos del hack" en la tarjeta SD. En esta situación se considera que <strong class="green">la consola no está hackeada</strong>.';
-	}
-	else {
-      document.getElementById("webhack_result").innerHTML = 'El exploit del navegador es un punto de entrada principal de tu consola, pero no has indicado la situación de "los archivos del hack" de tu consola. Contesta la(s) pregunta(s) de abajo.';
-    }
-  }
-  else {
-    if (sd == "yes" && folder == "yes") {
-      document.getElementById("webhack_result").innerHTML = 'Detectado. Puede funcionar como un punto de entrada secundario de tu consola.';
-	}
-	else if (sd == "no" || (sd == "yes" && folder == "no")) {
-      document.getElementById("webhack_result").innerHTML = 'No detectado. Puede funcionar como un punto de entrada secundario de tu consola, pero no tienes "los archivos del hack" en la tarjeta SD.';
-	}
-	else {
-      document.getElementById("webhack_result").innerHTML = 'Puede funcionar como un punto de entrada secundario de tu consola, pero no has indicado la situación de "los archivos del hack" de tu consola. Contesta la(s) pregunta(s) de abajo.';
-    }
-  }
-  
-  if (autobooting != null) {
-    document.getElementById("autobooting_a").style.color = "#999999";
-  }
-  if (indexiine != null) {
-    document.getElementById("indexiine_a").style.color = "#999999";
-  }
-  if (haxchiIcon != null || haxchi != null) {
-    document.getElementById("haxchi_a").style.color = "#999999";
-  }
-  if (payloadloader != null) {
-    document.getElementById("payloadloader_a").style.color = "#999999";
-  }
-}
-
-function resetTest() {
-  localStorage.removeItem("sd");
-  localStorage.removeItem("folder");
-  localStorage.removeItem("autobooting");
-  localStorage.removeItem("indexiine");
-  localStorage.removeItem("haxchi icon");
-  localStorage.removeItem("haxchi");
-  localStorage.removeItem("payloadloader");
-}
-
-function updateFormSD() {
-  var form = document.getElementById("f_sd");
-  var value = form["default"].value;
-
-  if (value != null && value != '') {
-    var labels = form.getElementsByTagName("label");
-    for (i = 0; i < labels.length; i++)
-      labels[i].style.color = "#cccccc";
-    getLabelByControlId(value).style.color = "#bbffbb";
-	
-	if (value == "sd_yes") {
-	  localStorage.setItem("sd", "yes");
-      document.getElementById("d_folder").style.display = "inline";
-	}
-	else if (value == "sd_no") {
-	  //resetForm("f_folder");
-	  localStorage.setItem("sd", "no");
-	  localStorage.removeItem("folder");
-      document.getElementById("d_folder").style.display = "none";
-	}
-	else {
-	  resetForm("f_folder");
-	  localStorage.removeItem("sd");
-      document.getElementById("d_folder").style.display = "none";
-	}
-	
-	testSDResults();
-  }
-}
-
-function updateFormFolder() {
-  var form = document.getElementById("f_folder");
-  var value = form["default"].value;
-
-  if (value != null && value != '') {
-    var labels = form.getElementsByTagName("label");
-    for (i = 0; i < labels.length; i++)
-      labels[i].style.color = "#cccccc";
-    getLabelByControlId(value).style.color = "#bbffbb";
-	
-	if (value == "folder_yes") {
-	  localStorage.setItem("folder", "yes");
-	}
-	else if (value == "folder_no") {
-	  localStorage.setItem("folder", "no");
-	}
-	else {
-	  localStorage.removeItem("folder");
-	}
-	
-	testSDResults();
-  }
-}
-
-function updateFormAutobooting() {
-  var form = document.getElementById("f_autobooting");
-  var value = form["default"].value;
-
-  if (value != null && value != "") {
-    var labels = form.getElementsByTagName("label");
-    for (i = 0; i < labels.length; i++)
-      labels[i].style.color = "#cccccc";
-    getLabelByControlId(value).style.color = "#bbffbb";
-
-	if (value == "autobooting_cbhc") {
-	  localStorage.setItem("autobooting", "cbhc");
-	  document.getElementById("autobooting_next").style.display = "inline";
-	  document.getElementById("fmr").style.display = "none";
-	  document.getElementById("autobooting_result").innerHTML = "Coldboot Haxchi detectado.";
-	}
-	else if (value == "autobooting_payload_loader") {
-	  localStorage.setItem("autobooting", "payload_loader");
-	  document.getElementById("autobooting_next").style.display = "inline";
-	  document.getElementById("fmr").style.display = "none";
-	}
-	else if (value == "autobooting_payload_loader_old") {
-	  localStorage.setItem("autobooting", "payload_loader_old");
-	  document.getElementById("autobooting_next").style.display = "inline";
-	  document.getElementById("fmr").style.display = "none";
-	}
-	else if (value == "autobooting_hbl") {
-	  localStorage.setItem("autobooting", "hbl");
-	  document.getElementById("autobooting_next").style.display = "inline";
-	  document.getElementById("fmr").style.display = "none";
-	}
-	else if (value == "autobooting_wii") {
-	  localStorage.setItem("autobooting", "wii");
-      document.getElementById("autobooting_next").style.display = "inline";
-	  document.getElementById("fmr").style.display = "none";
-	}
-	else if (value == "autobooting_hbc") {
-	  localStorage.setItem("autobooting", "hbc");
-      document.getElementById("autobooting_next").style.display = "inline";
-	  document.getElementById("fmr").style.display = "none";
-	}
-	else if (value == "autobooting_el") {
-	  localStorage.setItem("autobooting", "el");
-      document.getElementById("autobooting_next").style.display = "inline";
-	  document.getElementById("fmr").style.display = "none";
-	}
-	else if (value == "autobooting_tbs") {
-	  localStorage.setItem("autobooting", "tbs");
-      document.getElementById("autobooting_next").style.display = "inline";
-	  document.getElementById("fmr").style.display = "none";
-	}
-	else if (value == "autobooting_failed") {
-	  localStorage.setItem("autobooting", "failed");
-      document.getElementById("autobooting_next").style.display = "inline";
-	  document.getElementById("fmr").style.display = "none";
-	}
-	else if (value == "autobooting_rpx_failed") {
-	  localStorage.setItem("autobooting", "rpx_failed");
-      document.getElementById("autobooting_next").style.display = "inline";
-	  document.getElementById("fmr").style.display = "none";
-	}
-	else if (value == "autobooting_mocha_failed") {
-	  localStorage.setItem("autobooting", "mocha_failed");
-      document.getElementById("autobooting_next").style.display = "inline";
-	  document.getElementById("fmr").style.display = "none";
-	}
-	else if (value == "autobooting_warning") {
-	  localStorage.setItem("autobooting", "warning");
-      document.getElementById("autobooting_next").style.display = "inline";
-	  document.getElementById("fmr").style.display = "none";
-	}
-	else if (value == "autobooting_quick_start") {
-	  localStorage.setItem("autobooting", "quick_start");
-      document.getElementById("autobooting_next").style.display = "none";
-	  document.getElementById("fmr").style.display = "inline";
-	}
-	else if (value == "autobooting_user") {
-	  localStorage.setItem("autobooting", "user");
-      document.getElementById("autobooting_next").style.display = "inline";
-	  document.getElementById("fmr").style.display = "none";
-	}
-	else if (value == "autobooting_wiiu") {
-	  localStorage.setItem("autobooting", "wiiu");
-      document.getElementById("autobooting_next").style.display = "inline";
-	  document.getElementById("fmr").style.display = "none";
-	}
-	else {
-	  localStorage.removeItem("autobooting");
-	  document.getElementById("autobooting_next").style.display = "none";
-	  document.getElementById("fmr").style.display = "none";
-	}
-  }
-}
-
-function updateFormIndexiine() {
-  var form = document.getElementById("f_indexiine");
-  var value = form["default"].value;
-
-  if (value != null && value != '') {
-    var labels = form.getElementsByTagName("label");
-    for (i = 0; i < labels.length; i++)
-      labels[i].style.color = "#cccccc";
-    getLabelByControlId(value).style.color = "#bbffbb";
-
-	if (value == "indexiine_hbl") {
-	  localStorage.setItem("indexiine", "hbl");
-	  document.getElementById("indexiine_next").style.display = "inline";
-	}
-	else if (value == "indexiine_iosuhax") {
-	  localStorage.setItem("indexiine", "iosuhax");
-	  document.getElementById("indexiine_next").style.display = "inline";
-	}
-	else if (value == "indexiine_mocha") {
-	  localStorage.setItem("indexiine", "mocha");
-	  document.getElementById("indexiine_next").style.display = "inline";
-	}
-	else if (value == "indexiine_wiiu") {
-	  localStorage.setItem("indexiine", "wiiu");
-	  document.getElementById("indexiine_next").style.display = "inline";
-	}
-	else if (value == "indexiine_user") {
-	  localStorage.setItem("indexiine", "user");
-	  document.getElementById("indexiine_next").style.display = "inline";
-	}
-	else if (value == "indexiine_el") {
-	  localStorage.setItem("indexiine", "el");
-	  document.getElementById("indexiine_next").style.display = "inline";
-	}
-	else if (value == "indexiine_tbs") {
-	  localStorage.setItem("indexiine", "tbs");
-	  document.getElementById("indexiine_next").style.display = "inline";
-	}
-	else if (value == "indexiine_warning") {
-	  localStorage.setItem("indexiine", "warning");
-	  document.getElementById("indexiine_next").style.display = "inline";
-	}
-	else if (value == "indexiine_wii") {
-	  localStorage.setItem("indexiine", "wii");
-	  document.getElementById("indexiine_next").style.display = "inline";
-	}
-	else if (value == "indexiine_hbc") {
-	  localStorage.setItem("indexiine", "hbc");
-	  document.getElementById("indexiine_next").style.display = "inline";
-	}
-	else if (value == "indexiine_ohb") {
-	  localStorage.setItem("indexiine", "ohb");
-	  document.getElementById("indexiine_next").style.display = "inline";
-	}
-	else if (value == "indexiine_q") {
-	  localStorage.setItem("indexiine", "q");
-	  document.getElementById("indexiine_next").style.display = "inline";
-	}
-	else if (value == "indexiine_twice") {
-	  localStorage.setItem("indexiine", "twice");
-	  document.getElementById("indexiine_next").style.display = "inline";
-	}
-	else if (value == "indexiine_msf") {
-	  localStorage.setItem("indexiine", "msf");
-	  document.getElementById("indexiine_next").style.display = "inline";
-	}
-	else if (value == "indexiine_fm") {
-	  localStorage.setItem("indexiine", "fm");
-	  document.getElementById("indexiine_next").style.display = "inline";
-	}
-	else if (value == "indexiine_freeze") {
-	  localStorage.setItem("indexiine", "freeze");
-	  document.getElementById("indexiine_next").style.display = "inline";
-	}
-	else if (value == "indexiine_no") {
-	  localStorage.setItem("indexiine", "no");
-	  document.getElementById("indexiine_next").style.display = "inline";
-	}
-	else {
-	  localStorage.removeItem("indexiine");
-	  document.getElementById("indexiine_next").style.display = "none";
-	}
-  }
-}
-
-function updateFormHaxchiIcon() {
-  var form = document.getElementById("f_haxchi_icon");
-  var value = form["default"].value;
-  localStorage.removeItem("haxchi");
-
-  if (value != null && value != '') {
-    var labels = form.getElementsByTagName("label");
-    for (i = 0; i < labels.length; i++)
-      labels[i].style.color = "#cccccc";
-    getLabelByControlId(value).style.color = "#bbffbb";
-	
-	if (value == "haxchi_icon_yes") {
-	  localStorage.setItem("haxchi icon", "yes");
-	  document.getElementById("haxchi_next").style.display = "none";
-      document.getElementById("d_haxchi").style.display = "inline";
-	}
-	else if (value == "haxchi_icon_no") {
-	  resetForm("f_haxchi");
-	  localStorage.setItem("haxchi icon", "no");
-	  document.getElementById("haxchi_next").style.display = "inline";
-      document.getElementById("d_haxchi").style.display = "none";
-	}
-	else {
-	  resetForm("f_haxchi");
-	  localStorage.removeItem("haxchi icon");
-	  document.getElementById("haxchi_next").style.display = "none";
-      document.getElementById("d_haxchi").style.display = "none";
-	}
-  }
-}
-
-function updateFormHaxchi() {
-  var form = document.getElementById("f_haxchi");
-  var value = form["default"].value;
-
-  if (value != null && value != '') {
-    var labels = form.getElementsByTagName("label");
-    for (i = 0; i < labels.length; i++)
-      labels[i].style.color = "#cccccc";
-    getLabelByControlId(value).style.color = "#bbffbb";
-
-	if (value == "haxchi_hbl") {
-	  localStorage.setItem("haxchi", "hbl");
-	  document.getElementById("haxchi_next").style.display = "inline";
-	}
-	else if (value == "haxchi_iosuhax") {
-	  localStorage.setItem("haxchi", "iosuhax");
-	  document.getElementById("haxchi_next").style.display = "inline";
-	}
-	else if (value == "haxchi_mocha") {
-	  localStorage.setItem("haxchi", "mocha");
-	  document.getElementById("haxchi_next").style.display = "inline";
-	}
-	else if (value == "haxchi_wiiu") {
-	  localStorage.setItem("haxchi", "wiiu");
-	  document.getElementById("haxchi_next").style.display = "inline";
-	}
-	else if (value == "haxchi_user") {
-	  localStorage.setItem("haxchi", "user");
-	  document.getElementById("haxchi_next").style.display = "inline";
-	}
-	else if (value == "haxchi_ohb") {
-	  localStorage.setItem("haxchi", "ohb");
-	  document.getElementById("haxchi_next").style.display = "inline";
-	}
-	else if (value == "haxchi_3") {
-	  localStorage.setItem("haxchi", "-3");
-	  document.getElementById("haxchi_next").style.display = "inline";
-	}
-	else if (value == "haxchi_5") {
-	  localStorage.setItem("haxchi", "-5");
-	  document.getElementById("haxchi_next").style.display = "inline";
-	}
-	else if (value == "haxchi_freeze") {
-	  localStorage.setItem("haxchi", "freeze");
-	  document.getElementById("haxchi_next").style.display = "inline";
-	}
-	else if (value == "haxchi_no") {
-	  localStorage.setItem("haxchi", "no");
-	  document.getElementById("haxchi_next").style.display = "inline";
-	}
-	else {
-	  localStorage.removeItem("haxchi");
-	  document.getElementById("haxchi_next").style.display = "none";
-	}
-  }
-}
-
-function updateFormPayloadLoader() {
-  var form = document.getElementById("f_payloadloader");
-  var value = form["default"].value;
-
-  if (value != null && value != '') {
-    var labels = form.getElementsByTagName("label");
-    for (i = 0; i < labels.length; i++)
-      labels[i].style.color = "#cccccc";
-    getLabelByControlId(value).style.color = "#bbffbb";
-
-	if (value == "payloadloader_wiiu") {
-	  localStorage.setItem("payloadloader", "wiiu");
-	  document.getElementById("payloadloader_next").style.display = "inline";
-	}
-	else if (value == "payloadloader_user") {
-	  localStorage.setItem("payloadloader", "user");
-	  document.getElementById("payloadloader_next").style.display = "inline";
-	}
-	else if (value == "payloadloader_hbl") {
-	  localStorage.setItem("payloadloader", "hbl");
-	  document.getElementById("payloadloader_next").style.display = "inline";
-	}
-	else if (value == "payloadloader_wii") {
-	  localStorage.setItem("payloadloader", "wii");
-	  document.getElementById("payloadloader_next").style.display = "inline";
-	}
-	else if (value == "payloadloader_hbc") {
-	  localStorage.setItem("payloadloader", "hbc");
-	  document.getElementById("payloadloader_next").style.display = "inline";
-	}
-	else if (value == "payloadloader_el") {
-	  localStorage.setItem("payloadloader", "el");
-	  document.getElementById("payloadloader_next").style.display = "inline";
-	}
-	else if (value == "payloadloader_tbs") {
-	  localStorage.setItem("payloadloader", "tbs");
-	  document.getElementById("payloadloader_next").style.display = "inline";
-	}
-	else if (value == "payloadloader_warning") {
-	  localStorage.setItem("payloadloader", "warning");
-	  document.getElementById("payloadloader_next").style.display = "inline";
-	}
-	else if (value == "payloadloader_failed") {
-	  localStorage.setItem("payloadloader", "failed");
-	  document.getElementById("payloadloader_next").style.display = "inline";
-	}
-	else if (value == "payloadloader_rpx_failed") {
-	  localStorage.setItem("payloadloader", "rpx_failed");
-	  document.getElementById("payloadloader_next").style.display = "inline";
-	}
-	else if (value == "payloadloader_mocha_failed") {
-	  localStorage.setItem("payloadloader", "mocha_failed");
-	  document.getElementById("payloadloader_next").style.display = "inline";
-	}
-	else if (value == "payloadloader_twice") {
-	  localStorage.setItem("payloadloader", "twice");
-	  document.getElementById("payloadloader_next").style.display = "inline";
-	}
-	else if (value == "payloadloader_no") {
-	  localStorage.setItem("payloadloader", "no");
-	  document.getElementById("payloadloader_next").style.display = "inline";
-	}
-	else {
-	  localStorage.removeItem("payloadloader");
-	  document.getElementById("payloadloader_next").style.display = "none";
-	}
-  }
-}
-
-function resetForm(id) {
-  var form = document.getElementById(id);
-  form.reset();
-  var labels = form.getElementsByTagName("label");
-  for (i = 0; i < labels.length; i++)
-    labels[i].style.color = "#cccccc";
-}
-
-function getLabelByControlId(id) {
-  labels = document.getElementsByTagName('label');
-  for (i = 0; i < labels.length; i++) {
-    if (labels[i].htmlFor == id)
-      return labels[i];
-  }
-}
-</script>
+<script src="base_script.js"></script>
 </body>
 </html>

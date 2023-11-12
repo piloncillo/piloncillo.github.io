@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title itemprop="name">Piloncillo para Wii U</title>
+<link rel="canonical" href="https://piloncillo.github.io/" />
+<meta property="og:title" content="Piloncillo para Wii U" />
+<meta name="twitter:title" content="Piloncillo para Wii U" />
+<meta itemprop="name" content="Piloncillo para Wii U" />
+<meta name="application-name" content="Piloncillo para Wii U" />
+<meta property="og:site_name" content="Piloncillo para Wii U" />
+<link rel="icon" href="images/favicon.png" />
+<meta name='google-site-verification' content='qzgxLiPkLZqct4OizWs3vUrabLQxt_L2CdA_bYOS2XI' />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta itemprop="image" property="og:image" content="images/favicon.png" />
+<meta name="twitter:image" content="images/favicon.png" />
+<link rel="image_src" href="images/favicon.png" />
+<link rel="stylesheet" href="../default_style.css" />
+</head>
+<body onload="loadContent()">
+<div id="sidebar">
+<div id="sidebar_close" onclick="closeSidebar()">&#215;</div>  
+<div id="sidebar_content">
+<div id="logo"><img id="pilon_logo" src="../images/logo.png" /></div>
+<ul class="sidenav">
+<li><a href="../?s=main" class="selectable" id="main_link" title="Inicio">Inicio</a></li>
+<li><span class="caret selectable" id="install_hack" title="Instalar hack">Instalar hack</span>
+	<ul class="nested">
+	<li><a class="selectable" href="../?s=tiramisu&p=sd" id="tiramisu_sd_link" title="Prepara la tarjeta SD">Prepara la tarjeta SD</a></li>
+	<li><a class="selectable" href="../?s=tiramisu&p=files" id="tiramisu_files_link" title="Coloca los archivos">Coloca los archivos</a></li>
+	<li><a class="selectable" href="../?s=tiramisu&p=nand_backup_browser_exploit" id="tiramisu_nand_backup_browser_exploit_link" title="Exploit del navegador">Exploit del navegador</a></li>
+	<li><a class="selectable" href="../?s=tiramisu&p=nand_backup" id="tiramisu_nand_backup_link" title="Copia de la NAND">Copia de la NAND</a></li>
+	<li><a class="selectable" href="../?s=tiramisu&p=payloadloader" id="tiramisu_payloadloader_link" title="PayloadLoader">PayloadLoader</a></li>
+	<li><a class="selectable" href="../?s=tiramisu&p=autobooting" id="tiramisu_autobooting_link" title="Autobooting PayloadLoader">Autobooting</a></li>
+	<li><a class="selectable" href="../?s=tiramisu&p=config" id="tiramisu_config_link" title="Configurar Tiramisu">Configurar Tiramisu</a></li>
+	<li><a class="selectable" href="../?s=tiramisu&p=apps" id="tiramisu_apps_link" title="Añadir aplicaciones">Añadir aplicaciones</a></li>
+	</ul>
+</li>
+<li><span class="caret" id="test_hack"><a class="selectable" href="../?s=test" id="test_link" title="Identificar hack">Identificar hack</a></span>
+	<ul class="nested">
+	<li><a class="selectable" href="../?s=test&p=payloadloader" id="test_payloadloader_link" title="Identificar PayloadLoader">PayloadLoader</a></li>
+	<li><a class="selectable" href="../?s=test&p=autobooting" id="test_autobooting_link" title="Identificar Autobooting">Autobooting</a></li>
+	<li><a class="selectable" href="../?s=test&p=haxchi" id="test_haxchi_link" title="Identificar Haxchi">Haxchi</a></li>
+	<li><a class="selectable" href="../?s=test&p=indexiine" id="test_indexiine_link" title="Identificar Indexiine">Indexiine</a></li>
+	</ul>
+</li>
+<li><span class="caret selectable" id="uninstall_hack" title="Desinstalar hack">Desinstalar hack</span>
+	<ul class="nested">
+	<li><a class="selectable" href="../?s=uninstall_webhack" id="uninstall_webhack_link" title="Desinstalar Webhack">Webhack</a></li>
+	<li><a class="selectable" href="../?s=uninstall_indexiine" id="uninstall_indexiine_link" title="Desinstalar Indexiine">Indexiine</a></li>
+	<li><a class="selectable" href="../?s=uninstall_haxchi" id="uninstall_haxchi_link" title="Desinstalar Haxchi">Haxchi</a></li>
+	<li><a class="selectable" href="../?s=uninstall_cbhc" id="uninstall_cbhc_link" title="Desinstalar Coldboot Haxchi">Coldboot Haxchi</a></li>
+	<li><a class="selectable" href="../?s=uninstall_payloadloader" id="uninstall_payloadloader_link" title="Desinstalar Tiramisu o Aroma">Tiramisu o Aroma</a></li>
+	</ul>
+</li>
+<li><a class="selectable" href="?s=mod" id="mod_link" title="Modificar el modo virtual Wii">Modificar el modo vWii</a></li>
+<li><a class="selectable" href="../?s=update_tiramisu" id="update_tiramisu_link" title="Actualizar Tiramisu">Actualizar Tiramisu</a></li>
+<li><a class="selectable" href="../?s=aroma_beta" id="aroma_beta_link" title="Probar Aroma beta">Probar Aroma beta</a></li>
+<li><span class="caret selectable" id="download_games" title="Descarga de juegos">Descarga de juegos</span>
+	<ul class="nested">
+	<li><a class="selectable" href="../download/?s=games&p=download_usb_helper" id="games_download_usb_helper_link" title="Descargar Wii U USB Helper">Descargar Wii U USB Helper</a></li>
+	<li><a class="selectable" href="../download/?s=games&p=install_usb_helper" id="games_install_usb_helper_link" title="Instalar Wii U USB Helper">Instalar Wii U USB Helper</a></li>
+	<li><a class="selectable" href="../download/?s=games&p=config_usb_helper" id="games_config_usb_helper_link" title="Configurar Wii U USB Helper">Configurar Wii U USB Helper</a></li>
+	<li><a class="selectable" href="../download/?s=games&p=interface_usb_helper" id="games_interface_usb_helper_link" title="Interfaz de Wii U USB Helper">Interfaz de Wii U USB Helper</a></li>
+	<li><a class="selectable" href="../download/?s=games&p=usb_helper" id="games_usb_helper_link" title="Descargar juegos con Wii U USB Helper">Descargar juegos</a></li>
+	</ul>
+</li>
+<li><span class="caret selectable" id="install_games_caret" title="Instalación de juegos">Instalación de juegos</span>
+	<ul class="nested">
+	<li><a class="selectable" href="../?s=install_games" id="install_games_link" title="Transferir juegos a la tarjeta SD">Transferir juegos a la tarjeta SD</a></li>
+	<li><a class="selectable" href="../?s=install_games&p=wup_installer_gx2" id="install_games_wup_installer_gx2_link" title="Instalar juegos con WUP Installer GX2">Instalar juegos con WUP Installer GX2</a></li>
+	</ul>
+</li>
+<li><span class="caret selectable" id="extras" title="Extras">Extras</span>
+	<ul class="nested">
+	<li><a class="selectable" href="../?s=sd_format" id="sd_format_link" title="Formatear una tarjeta SD en FAT32">Formatear tarjeta SD en FAT32</a></li>
+	<li><a class="selectable" href="../?s=detect_sd" id="detect_sd_link" title="Revisar que la Wii U detecta la tarjeta SD">Revisar que detecta la SD</a></li>
+	<li><a class="selectable" href="../?s=write_to_sd" id="write_to_sd_link" title="Revisar que la Wii U puede escribir datos en la tarjeta SD">Revisar que puede escribir en la SD</a></li>
+	<li><a class="selectable" href="../?s=nand_backup" id="nand_backup_link" title="Hacer una copia de seguridad de la memoria interna de la Wii U">Hacer respaldo de la NAND</a></li>
+	<li><a class="selectable" href="../?s=standby_functions" id="standby_functions_link" title="Desactivar modo de reposo">Desactivar modo de reposo</a></li>
+	<li><a class="selectable" href="../?s=block_updates" id="block_updates_link" title="Bloquear actualizaciones">Bloquear actualizaciones</a></li>
+	<li><a class="selectable" href="../?s=unblock_updates" id="unblock_updates_link" title="Desbloquear actualizaciones">Desbloquear actualizaciones</a></li>
+	<li><a class="selectable" href="../?s=tiramisu_speedrun" id="tiramisu_speedrun_link" title="Resumen de la instalación de Tiramisu">Resumen de la instalación de Tiramisu</a></li>
+	</ul>
+</li>
+<li><span class="caret" id="glossary_caret"><a class="selectable" href="?s=glossary" id="glossary_link" title="Glosario">Glosario</a></span>
+	<ul class="nested">
+	<li><a class="selectable" href="../?s=glossary#hack_t" title="Hack">Hack</a></li>
+	<li><a class="selectable" href="../?s=glossary#exploit_t" title="Exploit">Exploit</a></li>
+	<li><a class="selectable" href="../?s=glossary#entry_point_t" title="Punto de entrada">Punto de entrada</a></li>
+	<li><a class="selectable" href="../?s=glossary#fw_t" title="Firmware">Firmware</a></li>
+	<li><a class="selectable" href="../?s=glossary#cfw_t" title="Custom Firmware">Custom Firmware</a></li>
+	<li><a class="selectable" href="../?s=glossary#environment_t" title="Environment">Environment</a></li>
+	<li><a class="selectable" href="../?s=glossary#homebrew_t" title="Homebrew">Homebrew</a></li>
+	<li><a class="selectable" href="../?s=glossary#payload_t" title="Payload">Payload</a></li>
+	<li><a class="selectable" href="../?s=glossary#ticket_t" title="Ticket">Ticket</a></li>
+	<li><a class="selectable" href="../?s=glossary#brick_t" title="Brick">Brick</a></li>
+	<li><a class="selectable" href="../?s=glossary#dlc_t" title="DLC">DLC</a></li>
+	<li><a class="selectable" href="../?s=glossary#title_id_t" title="Title ID">Title ID</a></li>
+	<li><a class="selectable" href="../?s=glossary#hacks_t" title="Principales hacks de Wii U">Principales hacks de Wii U</a></li>
+	</ul>
+</li>
+<li><a class="selectable" href="../?s=questions" id="questions_link" title="Preguntas frecuentes">Preguntas frecuentes</a></li>
+<li><a class="selectable" href="../?s=homebrew" id="homebrew_link" title="Homebrew destacado">Homebrew destacado</a></li>
+<li><a class="selectable" href="../?s=homebrew_aroma" id="homebrew_aroma_link" title="Homebrew para Aroma">Homebrew para Aroma</a></li>
+<li><span class="caret selectable" id="archive_caret" title="Archivo">Archivo</span>
+	<ul class="nested">
+	<li><span class="caret selectable" id="previous_methods_caret" title="Métodos anteriores">Métodos anteriores</span>
+		<ul class="nested">
+		<li><a class="selectable" href="../archive/?s=webhack&p=sd" id="install_webhack_link" title="Instalar Webhack">Webhack</a></li>
+		<li><a class="selectable" href="../archive/?s=indexiine&p=sd" id="install_indexiine_link" title="Instalar Indexiine">Indexiine</a></li>
+		<li><a class="selectable" href="../archive/?s=haxchi&p=ds_game" id="install_haxchi_link" title="Instalar Haxchi">Haxchi</a></li>
+		<li><a class="selectable" href="../archive/?s=cbhc&p=ds_game" id="install_cbhc_link" title="Instalar Coldboot Haxchi">Coldboot Haxchi</a></li>
+		</ul>
+	</li>
+	<li><a class="selectable" href="../archive/?s=custom_haxchi" id="custom_haxchi_link" title="Personalizar Haxchi">Personalizar Haxchi</a></li>
+	<li><a class="selectable" href="../archive/?s=config_payload" id="config_payload_link" title="Configurable Payload">Configurable Payload</a></li>
+	</ul>
+</li>
+<li><span class="caret selectable" id="links" title="Enlaces">Enlaces</span>
+	<ul class="nested">
+	<li><a class="selectable" href="https://github.com/piloncillo/piloncillo.github.io" id="github_link" title="GitHub">GitHub</a></li>
+	<!--li><a class="selectable" href="#" id="discord_link" title="Discord">Discord</a></li-->
+	<li><a class="selectable" href="../?s=about" id="about_link" title="Acerca de">Acerca de</a></li>
+	</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="sidebar_toggle" onclick="toggleSidebar()">&#9776;</div>  
+<div id="content">
+<div id="mod" class="tabcontent" style="display:none;">
+<div class="cont">
+<br>
+<h1>Modificar el modo virtual Wii (vWii)</h1>
+<br>
+<p>Para usar esta guía con éxito necesitas:</p>
+<ul>
+<li>Una Wii U con su GamePad.</li>
+<li>Un Wii Remote ya sincronizado con la Wii U (no importa si tiene Motion Plus o no).</li>
+<li>Una tarjeta SD de 4 GB o mayor.</li>
+<li>Un dispositivo (PC o teléfono inteligente) para colocar archivos en la tarjeta SD.</li>
+</ul>
+<p>Antes de modificar el modo virtual Wii debes tener una copia de seguridad de la memoria interna (NAND) de la Wii U. Si ya tienes un respaldo de la NAND puedes continuar, de lo contrario haz una copia de seguridad de la NAND de la Wii U.</p>
+<p><a href="../?s=nand_backup"><button class="button_click">Hacer respaldo de la NAND</button></a></p>
+<p>Modificar el modo virtual Wii se puede hacer sin importar cuál sea la modificación del modo Wii U o incluso si la consola no se encuentra modificada, pero los pasos varían un poco dependiendo de cuál es la situación de la consola.</p>
+<h2>¿Cuál es la situación de la consola?</h2>
+<p><a href="?s=mod&p=hbl">Usa Tiramisu o una modificación que no es Aroma.</a></p>
+<p><a href="?s=mod&p=aroma">Usa Aroma.</a></p>
+<p><a href="?s=mod&p=nmwu_sd">No tiene una modificación (necesitas conectar la consola a Internet, no se modificará nada en el modo Wii U).</a></p>
+</div>
+</div>
+<div id="mod_hbl" class="tabcontent" style="display:none;">
+<div class="cont">
+<br>
+<h1>Archivos para modificar el modo virtual Wii</h1>
+<br>
+<p>Recuerda que debes tener un <a href="../?s=nand_backup">respaldo de la NAND</a> antes de continuar con la modificación del modo virtual Wii.</p>
+<p>Para instalar el Homebrew Channel en el modo virtual Wii se usa la aplicacion vWii Compat Installer. Ese es el único paso que realizas en el modo Wii U, todo lo demás se realiza en el modo virtual Wii. En Tiramisu o cualquier modificación que no sea Aroma abres la aplicación vWii Compat Installer desde el Homebrew Launcher.</p>
+<h2>Descarga los archivos de necesarios</h2>
+<div class="info">No necesitas descargar ningún source code (código fuente).</div>
+<ul>
+<li>Descarga <a href="https://github.com/Xpl0itU/vwii-compat-installer/releases">vWii Compat Installer</a>:</li>
+<ul>
+<li>Descarga el archivo <code>compat_installer-HBL.zip</code>.</li>
+</ul>
+<li>Descarga <a href="https://wiiu.hacks.guide/docs/files/Patched_IOS80_Installer_for_vWii.zip">Patched IOS 80 Installer for vWii</a>. (<a href="https://github.com/Lazr1026/Patched-IOS80-Installer-for-vWii">Código fuente</a>)</li>
+<li>Descarga <a href="https://wiiu.hacks.guide/docs/files/d2x_cIOS_Installer.zip">d2x cIOS Installer</a>.</li>
+</ul>
+<h2>Coloca los archivos</h2>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
+<ul>
+<li>En este punto debes tener la tarjeta SD conectada a una PC (o teléfono inteligente) para colocar los archivos.</li>
+<li>Descomprime el archivo <code>Patched_IOS80_Installer_for_vWii.zip</code>.</li>
+<li>Copia la carpeta <code>apps</code> a la raíz de la tarjeta SD.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Descomprime el archivo <code>d2x_cIOS_Installer.zip</code>.</li>
+<li>Copia la carpeta <code>d2x-cios-installer</code> a la carpeta <code>sd:/apps</code>.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Descomprime el archivo <code>compat_installer-HBL.zip</code>.</li>
+<li>Copia la carpeta <code>compat_installer</code> a la carpeta <code>sd:/wiiu/apps</code>.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
+</ul>
+<h2>Instala el Homebrew Channel (vWii)</h2>
+<p>Recuerda que en Tiramisu o cualquier modificación que no sea Aroma abres vWii Compat Installer desde el Homebrew Launcher.</p>
+<ul>
+<li>En este punto debes tener la Wii U apagada con la tarjeta SD introducida.</li>
+<li>Enciende la consola y carga la modificación que tengas instalada.</li>
+<li>Accede al Homebrew Launcher y carga vWii Compat Installer.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Presiona el <strong class="green">botón A</strong> para instalar el <em>Homebrew Channel</em>.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Cuando la instalación termine presiona el <strong class="green">botón HOME</strong> para regresar al <em>Homebrew Launcher</em>.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Presiona el <strong class="green">botón HOME</strong> y luego <strong class="green">toca en Salir</strong> para regresar al menú de Wii U.</li>
+<li>Accede al modo virtual Wii (icono Menú de Wii).<!--br><img src="images/.png" class="auto_size_li"--></li>
+</ul>
+<div class="bottomnav">
+<a href="?s=mod" class="previous">&#8249; ¿Cuál es la situación de la consola?</a><a href="?s=mod&p=cios" class="next">Instalar cIOS &#8250;</a>
+</div>
+</div>
+</div>
+<div id="mod_aroma" class="tabcontent" style="display:none;">
+<div class="cont">
+<br>
+<h1>Archivos para modificar el modo virtual Wii</h1>
+<br>
+<p>Recuerda que debes tener un <a href="../?s=nand_backup">respaldo de la NAND</a> antes de continuar con la modificación del modo virtual Wii.</p>
+<p>Para instalar el Homebrew Channel en el modo virtual Wii se usa la aplicacion vWii Compat Installer. Ese es el único paso que realizas en el modo Wii U, todo lo demás se realiza en el modo virtual Wii. En Aroma abres la aplicación vWii Compat Installer en el menú de Wii U.</p>
+<h2>Descarga los archivos de necesarios</h2>
+<div class="info">No necesitas descargar ningún source code (código fuente).</div>
+<ul>
+<li>Descarga <a href="https://github.com/Xpl0itU/vwii-compat-installer/releases">vWii Compat Installer</a>:</li>
+<ul>
+<li>Descarga el archivo <code>compat_installer-Aroma.zip</code>.</li>
+</ul>
+<li>Descarga <a href="https://wiiu.hacks.guide/docs/files/Patched_IOS80_Installer_for_vWii.zip">Patched IOS 80 Installer for vWii</a>. (<a href="https://github.com/Lazr1026/Patched-IOS80-Installer-for-vWii">Código fuente</a>)</li>
+<li>Descarga <a href="https://wiiu.hacks.guide/docs/files/d2x_cIOS_Installer.zip">d2x cIOS Installer</a>.</li>
+</ul>
+<h2>Coloca los archivos</h2>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
+<ul>
+<li>En este punto debes tener la tarjeta SD conectada a una PC (o teléfono inteligente) para colocar los archivos.</li>
+<li>Descomprime el archivo <code>Patched_IOS80_Installer_for_vWii.zip</code>.</li>
+<li>Copia la carpeta <code>apps</code> a la raíz de la tarjeta SD.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Descomprime el archivo <code>d2x_cIOS_Installer.zip</code>.</li>
+<li>Copia la carpeta <code>d2x-cios-installer</code> a la carpeta <code>sd:/apps</code>.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Descomprime el archivo <code>compat_installer-Aroma.zip</code>.</li>
+<li>Copia el archivo <code>compat_installer.wuhb</code> a la carpeta <code>sd:/wiiu/apps</code>.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
+</ul>
+<h2>Instala el Homebrew Channel (vWii)</h2>
+<p>Recuerda que en Aroma abres vWii Compat Installer desde el menú de Wii U.</p>
+<ul>
+<li>En este punto debes tener la Wii U apagada con la tarjeta SD introducida.</li>
+<li>Enciende la consola y carga Aroma.</li>
+<li>Accede al menú de Wii U y abre el icono de vWii Compat Installer.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Presiona el <strong class="green">botón A</strong> para instalar el <em>Homebrew Channel</em>.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Cuando la instalación termine presiona el <strong class="green">botón HOME</strong> y luego <strong class="green">toca en Cerrar programa</strong> para regresar al menú de Wii U.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Accede el modo virtual Wii (icono Menú de Wii).<!--br><img src="images/.png" class="auto_size_li"--></li>
+</ul>
+<div class="bottomnav">
+<a href="?s=mod" class="previous">&#8249; ¿Cuál es la situación de la consola?</a><a href="?s=mod&p=cios" class="next">Instalar cIOS &#8250;</a>
+</div>
+</div>
+</div>
+<div id="mod_nmwu_sd" class="tabcontent" style="display:none;">
+<div class="cont">
+<br>
+<h1>Prepara la tarjeta SD</h1>
+<br>
+<p>Recuerda que debes tener un <a href="../?s=nand_backup">respaldo de la NAND</a> antes de continuar con la modificación del modo virtual Wii.</p>
+<p>La tarjeta SD colocada en el puerto SD de la Wii U debe estar formateada en FAT32 ya que la Wii U sólo reconoce tarjetas SD formateadas en FAT32.</p>
+<p>Para tener la mejor estabilidad y compatibilidad se recomienda un tamaño de unidad de asignación (<em>allocation unit size</em>) de 32 kilobytes (32768) y dejar la etiqueta del volumen (volume label) en blanco ya que poner una etiqueta del volumen puede causar problemas con algunas aplicaciones homebrew.</p>
+<div class="info">Si no dispones de una PC puedes usar un teléfono inteligente, pero ten en cuenta que por defecto formatean las tarjetas SD de 32 GB o menos en FAT32, mientras que las tarjetas SD mayores a 32 GB son formateadas en exFAT, formato que no reconoce la Wii U.</div>
+<div class="info">Para asegúrate que una tarjeta SD se encuentra formateada en FAT32 debes usar una PC.</div>
+<ul>
+<li>Conecta la tarjeta SD a una PC para formatearla.</li>
+<li>Para tarjetas SD de 4 GB hasta 32 GB puedes usar la aplicación de formateo de Windows:<br><a target="_blank" href="../images/misc/WinFormat.png"><img src="../images/misc/WinFormat.png" class="auto_size"></a></li>
+<li>Para tarjetas SD de 4 GB hasta 2 TB puedes usar la aplicación <a href="http://ridgecrop.co.uk/index.htm?guiformat.htm">GUIFormat</a>:<br><a target="_blank" href="../images/misc/GUIFormat.png"><img src="../images/misc/GUIFormat.png" class="auto_size"></a></li>
+</ul>
+<a href="?s=mod" class="previous">&#8249; ¿Cuál es la situación de la consola?</a><a href="?s=mod&p=nmwu_files" class="next">Coloca los archivos necesarios &#8250;</a>
+</div>
+</div>
+<div id="mod_nmwu_files" class="tabcontent" style="display:none;">
+<div class="cont">
+<br>
+<h1>Archivos para modificar el modo virtual Wii</h1>
+<br>
+<div class="warning">Aquí se asume que tienes la tarjeta SD sin archivos, vacía.</div>
+<p>No vamos a modificar nada en el modo Wii U, todo se queda en la tarjeta SD. Los archivos de Tiramisu tienen todo lo necesario para ejecutar el exploit del navegador y abrir el Homebrew Launcher, de esta forma es posible modificar el modo virtual Wii sin modificar nada en el modo Wii U (principal).</p>
+<p>Tiramisu es fácil de colocar, sólo debes descargar los archivos más recientes y ponerlos en la tarjeta SD.</p>
+<p>Para instalar el Homebrew Channel en el modo virtual Wii se usa la aplicacion vWii Compat Installer. Ese es el único paso que realizas en el modo Wii U, todo lo demás se realiza en el modo virtual Wii. En Tiramisu o cualquier modificación que no sea Aroma abres la aplicación vWii Compat Installer desde el Homebrew Launcher.</p>
+<h2>Descarga los archivos de necesarios</h2>
+<div class="info">No necesitas descargar ningún source code (código fuente).</div>
+<ul>
+<li>Este enlace lleva al sitio oficial: <a href="https://tiramisu.foryour.cafe/">Tiramisu para tu café</a>.</li>
+<ul>
+<li>Dentro del sitio debes tocar en el botón <em class="green">Download Tiramisu</em> para iniciar la descarga de un archivo <code>.zip</code>.</li>
+</ul>
+<li>Descarga <a href="https://github.com/Xpl0itU/vwii-compat-installer/releases">vWii Compat Installer</a>:</li>
+<ul>
+<li>Descarga el archivo <code>compat_installer-HBL.zip</code>.</li>
+</ul>
+<li>Descarga <a href="https://wiiu.hacks.guide/docs/files/Patched_IOS80_Installer_for_vWii.zip">Patched IOS 80 Installer for vWii</a>. (<a href="https://github.com/Lazr1026/Patched-IOS80-Installer-for-vWii">Código fuente</a>)</li>
+<li>Descarga <a href="https://wiiu.hacks.guide/docs/files/d2x_cIOS_Installer.zip">d2x cIOS Installer</a>.</li>
+</ul>
+<h2>Coloca los archivos</h2>
+<ul>
+<li>En este punto debes tener la tarjeta SD conectada a una PC (o teléfono inteligente) para colocar los archivos.</li>
+<li>Descomprime el archivo <code>.zip</code> de Tiramisu.</li>
+<li>Copia la carpeta <code>wiiu</code> y el archivo <code>versions.json</code> a la raíz de la tarjeta SD.</li>
+<li>Tu tarjeta SD debe quedar como esta imagen:<br><img src="../images/tiramisu/wiiu_folder.png" class="auto_size_li"></li>
+<li>Descomprime el archivo <code>Patched_IOS80_Installer_for_vWii.zip</code>.</li>
+<li>Copia la carpeta <code>apps</code> a la raíz de la tarjeta SD.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Descomprime el archivo <code>d2x_cIOS_Installer.zip</code>.</li>
+<li>Copia la carpeta <code>d2x-cios-installer</code> a la carpeta <code>sd:/apps</code>.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Descomprime el archivo <code>compat_installer-HBL.zip</code>.</li>
+<li>Copia la carpeta <code>compat_installer</code> a la carpeta <code>sd:/wiiu/apps</code>.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
+</ul>
+<div class="bottomnav">
+<a href="?s=mod&p=nmwu_sd" class="previous">&#8249; Preparar la tarjeta SD</a><a href="?s=mod&p=nmwu_browser_exploit" class="next">Instalar cIOS &#8250;</a>
+</div>
+</div>
+</div>
+<div id="mod_nmwu_browser_exploit" class="tabcontent" style="display:none;">
+<div class="cont">
+<br>
+<h1>Instala el Homebrew Channel (vWii)</h1>
+<br>
+<p>Con los archivos correctos en la tarjeta SD puedes ejecutar el exploit del navegador y abrir el Homebrew Launcher desde el cual puedes cargar la aplicación vWii Compat Installer para instalar el Homebrew Channel en el modo virtual Wii sin modificar nada el modo Wii U (principal).</p>
+<ul>
+<li>En este punto debes tener la Wii U apagada con la tarjeta SD introducida.</li>
+<li>Enciende la consola y accede al menú de Wii U. Asegúrate de que la consola tenga acceso a internet para este paso.</li>
+<li>Abre el navegador de internet de la consola.</li>
+<li>Introduce la URL: <a href="http://u.wiidb.de">u.wiidb.de</a> (puedes consultar paginas alternativas <a href="?s=webhack&p=exploit">aquí</a>).<br><img src="../images/browser_exploit/url_u_wiidb_de.jpg" class="auto_size_li"></li>
+<li>Al cargar la página por completo mostrará en grande el enlace <strong class="blue">HAXX</strong>.<br><img src="../images/browser_exploit/u_wiidb_de.jpg" class="auto_size_li"></li>
+<li><strong class="green">Toca el enlace HAXX</strong>, cuando la pantalla del GamePad se ponga completamente en blanco <strong class="green">mantén presionado el botón X</strong> hasta que salga el menú <em>Environment Loader</em>.</li>
+<li>Acceder a ese menú es necesario para abrir el <em>Homebrew Launcher</em>. Si no lograste entrar a ese menú sigue los pasos de <a href="#notas_mnbe">las notas de abajo</a>.</li>
+<li>Navega por el menú usando las flechas del D-Pad del GamePad, <strong class="green">selecciona</strong> <em class="green">tiramisu</em> y presiona el <strong class="green">botón A</strong>.<!--br><img src="images/.jpg" class="auto_size_li"--></li>
+<li>Presiona el <strong class="green">botón B</strong> para ignorar el mensaje de alerta.<br><img src="../images/tiramisu/warning.jpg" class="auto_size_li"></li>
+<li>Ahora debes estar en el <em>Boot Selector</em> de Tiramisu, navega por el menú usando las flechas del D-Pad del GamePad, <strong class="green">selecciona</strong> <em class="green">Homebrew Launcher</em> y presiona el <strong class="green">botón A</strong> para abrirlo.<!--br><img src="images/.jpg" class="auto_size_li"--></li>
+<li>Ahora debes estar en el <em>Homebrew Launcher</em>, carga vWii Compat Installer.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Presiona el <strong class="green">botón A</strong> para instalar el <em>Homebrew Channel</em>.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Cuando la instalación termine presiona el <strong class="green">botón HOME</strong> para regresar al <em>Homebrew Launcher</em>.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Presiona el <strong class="green">botón HOME</strong> y luego <strong class="green">toca en Salir</strong> para regresar al menú de Wii U.</li>
+<li>Accede al modo virtual Wii (icono Menú de Wii).<!--br><img src="images/.png" class="auto_size_li"--></li>
+</ul>
+<div class="bottomnav">
+<a href="?s=mod&p=nmwu_files" class="previous">&#8249; Coloca los archivos necesarios</a><a href="?s=mod&p=cios" class="next">Instalar cIOS &#8250;</a>
+</div>
+<br>
+<br>
+<br>
+<div class="info" id="notas_mnbe">Si la Wii U se atascó en una pantalla blanca o se congeló de alguna otra forma, espera unos segundos. Si no sucede nada, mantén presionado el botón <em>POWER</em> de la consola hasta que se apague, vuelve prender la consola, abre el navegador, entra en Ajustes, selecciona un motor de búsqueda, borra las cookies del navegador y vuelve a intentar el exploit del navegador.</div>
+<div class="info">Si aparece el mensaje <em>FSGetMountSource falied. Please insert a FAT32 formatted sd card.</em> quiere decir que la consola no está detectando la tarjeta SD. Mantén presionado el botón <em>POWER</em> de la consola hasta que se apague, limpia los contactos de la SD y de la consola, si estas usando una microSD prueba con otro adaptador a SD y vuelve a intentar el exploit del navegador. Puedes ir <a href="?s=detect_sd">aquí para revisar si la Wii U detecta la tarjeta SD</a>.</div>
+<div class="info">Si aparece el mensaje <em>FSOpenFile falied. File missing /vol/external01/wiiu/payload.elf.</em> quiere decir que la consola sí está detectando la tarjeta SD, pero no encontró el archivo <code>sd:/wiiu/payload.elf</code>. Mantén presionado el botón <em>POWER</em> de la consola hasta que se apague, <a href="?s=tiramisu&p=files">revisa los archivos en la tarjeta SD</a> y vuelve a intentar el exploit del navegador.</div>
+</div>
+</div>
+<div id="mod_cios" class="tabcontent" style="display:none;">
+<div class="cont">
+<br>
+<h1>Instalar cIOS en el modo virtual Wii</h1>
+<br>
+<p>Los custom IOS (cIOS) constituyen el CFW del modo virtual Wii. Los cIOS quedan instalados en la memoria interna de la Wii U (SLCCMPT) y no dependen de ninguna forma de la modificación del modo Wii U (principal) ni de archivos en la tarjeta SD después de ser instalados.</p>
+<div class="warning">Instalar cualquier IOS o cIOS hecho para la Wii clásica en el modo virtual Wii causará un brick en el modo virtual Wii.</div>
+<div class="warning">Asegúrate de no tener archivos <code>.wad</code> en ningún otro lugar que no sea la carpeta <code>sd:/app</code>.</div>
+<ul>
+<li>En este punto debes tener la Wii U encendida en el modo virtual Wii con la tarjeta SD introducida. El Homebrew Channel debe estar en el menú de Wii.</li>
+<li>Abre el Homebrew Channel.</li>
+<li>Carga d2x cIOS Installer.</li>
+<li>Ajusta todo para que coincida con lo siguiente:</li>
+<ul>
+<li>Select cIOS: <code>d2x-v11-beta1-vWii</code></li>
+<li>Select cIOS base: <code>56</code></li>
+<li>Select cIOS slot: <code>249</code></li>
+</ul>
+<li>Presiona el <strong class="green">botón A</strong> para instalar.</li>
+<li>Ajusta todo para que coincida con lo siguiente:</li>
+<ul>
+<li>Select cIOS: <code>d2x-v11-beta1-vWii</code></li>
+<li>Select cIOS base: <code>56</code></li>
+<li>Select cIOS slot: <code>249</code></li>
+</ul>
+<li>Presiona el <strong class="green">botón A</strong> para instalar.</li>
+<li>Ajusta todo para que coincida con lo siguiente:</li>
+<ul>
+<li>Select cIOS: <code>d2x-v11-beta1-vWii</code></li>
+<li>Select cIOS base: <code>56</code></li>
+<li>Select cIOS slot: <code>249</code></li>
+</ul>
+<li>Presiona el <strong class="green">botón A</strong> para instalar.</li>
+<li>Presiona el <strong class="green">botón B</strong> para salir.</li>
+</ul>
+<h2>Parchar el IOS 80</h2>
+<div class="warning">Si por alguna razón, la Wii U se apaga mientras se aplica el parche al IOS 80, el modo virtual Wii quedará bloqueado (brick). Esto se puede solucionar extrayendo el IOS 80 de la copia de seguridad la NAND realizada anteriormente y luego reemplazando los archivos vía de FTP o restaurando el modo virtual Wii por completo.</div>
+<ul>
+<li>En este punto debes estar en el Homebrew Channel.</li>
+<li>Carga Patched IOS80 Installer for vWii.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Lee la advertencia y espera 30 segundos.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Presiona cualquier botón para instalar.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Espera hasta que se muestre el mensaje <code>IOS80 Installation is complete!</code>.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Presiona cualquier botón para salir.</li>
+</ul>
+<div class="bottomnav">
+<a href="?s=mod" class="previous">&#8249; Regresar</a><a href="?s=mod&p=apps" class="next">Añadir aplicaciones &#8250;</a>
+</div>
+</div>
+</div>
+<div id="mod_apps" class="tabcontent" style="display:none;">
+<div class="cont">
+<br>
+<h1 id="hbl">Añadir aplicaciones heredadas de Wii</h1>
+<p>Ya tienes el modo virtual Wii modificado, pero para aprovecharlo hay que agregar aplicaciones. En caso de que quieras añadir alguna aplicación que no está aquí o que quieras actualizar alguna aplicación es impórtate que aprendas a colocarlas por tu cuenta.</p>
+<p>En general las aplicaciones heredadas de Wii se colocan en la carpeta <code>sd:/apps</code>, observa la ruta de carpetas en las imágenes de referencia. Si tienes dudas usa las imágenes para comprobar que ubicaste cada aplicación correctamente.</p>
+<p>Las aplicaciones se abren usando el menú del <em>Homebrew Channel</em> ("canal de aplicaciones hechas en casa").</p><!--En la imagen de abajo el <em>Homebrew Channel</em> tiene tres aplicaciones: <em>Homebrew Browser</em>, <em>USB Loader GX</em> y <em>Wii Mod Lite</em>.</p>
+<p><a target="_blank" href="images/misc/hbc_empty.jpg"><img src="images/misc/hbc_empty.jpg" class="auto_size center"></a></p-->
+<br>
+<h2>Añadir aplicaciones al <em>Homebrew Channel</em></h2>
+<ul>
+<li>Si tienes encendida la consola apágala.</li>
+<li>Saca la tarjeta SD de la Wii U y ponla en tu PC (o teléfono inteligente) para poner archivos.</li>
+</ul>
+<p>Vamos a descargar los archivos de las siguientes aplicaciones:</p>
+<ul>
+<li><a href="https://hbb1.oscwii.org/api/v3/contents/usbloader_gx/usbloader_gx.zip">USB Loader GX</a>.</li>
+<li><a href="https://wii.guide/assets/files/homebrew_browser_v0.3.9e.zip">Homebrew Browser</a>.</li>
+<li><a href="https://hbb1.oscwii.org/api/v3/contents/wiiflow/wiiflow.zip">Wiiflow Lite</a>.</li>
+<li><a href="https://hbb1.oscwii.org/api/v3/contents/WiiModLite/WiiModLite.zip">Wii Mod Lite</a>.</li>
+</ul>
+<p>Ahora vamos a instalar las aplicaciones:</p>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
+<ul>
+<li>Descomprime el archivo <code>usbloader_gx.zip</code></li>
+<ul>
+<li>Entra en la carpeta <code>apps</code> del archivo descomprimido.</li>
+<li>Copia la carpeta <code>usbloader_gx</code> y pégala en la carpeta <code>sd:/apps</code>.<!--br><a target="_blank" href="images/.png"><img src="images/.png" class="auto_size_li_li"></a--></li>
+</ul>
+<li>Descomprime el archivo <code>homebrew_browser_v0.3.9e.zip</code></li>
+<ul>
+<li>Entra en la carpeta del archivo descomprimido.</li>
+<li>Copia la carpeta <code>homebrew_browser</code> y pégala en la carpeta <code>sd:/apps</code>.<!--br><a target="_blank" href="images/.png"><img src="images/.png" class="auto_size_li_li"></a--></li>
+</ul>
+<li>Descomprime el archivo <code>wiiflow.zip</code></li>
+<ul>
+<li>Entra en la carpeta del archivo descomprimido.</li>
+<li>Copia la carpeta <code>wiiflow</code> y pégala en la raíz de la tarjeta SD.<!--br><a target="_blank" href="images/.png"><img src="images/.png" class="auto_size_li_li"></a--></li>
+<li>Entra en la carpeta <code>apps</code> del archivo descomprimido.</li>
+<li>Copia la carpeta <code>wiiflow</code> y pégala en la carpeta <code>sd:/apps</code>.<!--br><a target="_blank" href="images/.png"><img src="images/.png" class="auto_size_li_li"></a--></li>
+</ul>
+<li>Descomprime el archivo <code>WiiModLite.zip</code></li>
+<ul>
+<li>Entra en la carpeta <code>apps</code> del archivo descomprimido.</li>
+<li>Copia la carpeta <code>WiiModLite</code> y pégala en la carpeta <code>sd:/apps</code>.<!--br><a target="_blank" href="images/.png"><img src="images/.png" class="auto_size_li_li"></a--></li>
+</ul>
+</ul>
+<p>Las aplicaciones que acabas de instalar sirven para:</p>
+<ul>
+<li><strong>USB Loader GX</strong> es un cargador de juegos en formato WBFS. Usa <a href="https://static.wiidatabase.de/Wii-Backup-Manager.zip">Wii Backup Manager</a> para colocar juegos de Wii (ISO o WBFS) desde una PC a la tarjeta SD o dispositivo USB compatible.</li>
+<li>El <strong>Homebrew Browser</strong> permite buscar y descargar aplicaciones homebrew heredadas de Wii directamente desde la Wii U.</li>
+<li><strong>Wiiflow Lite</strong> es un cargador de juegos en formato WBFS. Usa <a href="https://static.wiidatabase.de/Wii-Backup-Manager.zip">Wii Backup Manager</a> para colocar juegos de Wii (ISO o WBFS) desde una PC a la tarjeta SD o dispositivo USB compatible.</li>
+<li><strong>Wii Mod Lite</strong> permite instalar archivos WAD. Existen otros instaladores de WADs que puedes usar en el modo virtual Wii, como por ejemplo <a href="https://oscwii.org/library/app/some-yawmm-mod">Some YAWMM Mod</a>, pero en cualquier caso, actualmente no se usa WAD Manager ni en una Wii clásica ni mucho menos en el modo virtual Wii de la Wii U.</li>
+</ul>
+<div class="warning">Instalar WADs tiene riesgo de bloquear (brick) el modo virtual Wii, debes tener una copia de seguridad de la NAND antes de instalar uno, pero sí se hace correctamente, no bloqueará el modo virtual Wii. Solamente instala WADs oficiales de la misma región que la consola o instala WADs hechos explícitamente para el modo virtual Wii (vWii).</div>
+<!--div class="accordion">Toca aquí para ver las imágenes que muestran la ubicación de cada aplicación. Puedes usarlas para comprobar que las aplicaciones están correctamente colocadas.</div>
+<div class="panel">
+<ul>
+<li>La aplicación <strong>USB Loader GX</strong> se encuentra en <code>sd:/apps/usbloader_gx/boot.dol</code>.<br><a target="_blank" href="images/.png"><img src="images/.png" class="auto_size_li_li"></a></li>
+<li>La aplicación <strong>Homebrew Browser</strong> se encuentra en <code>sd:/apps/homebrew_browser/boot.dol</code>.<br><a target="_blank" href="images/.png"><img src="images/.png" class="auto_size_li_li"></a></li>
+<li>La aplicación <strong>Wiiflow Lite</strong> se encuentra en <code>sd:/apps/wiiflow/boot.dol</code>.<br><a target="_blank" href="images/.png"><img src="images/.png" class="auto_size_li_li"></a></li>
+<li>La aplicación <strong>Wii Mod Lite</strong> se encuentra en <code>sd:/apps/WiiModLite/boot.dol</code>.<br><a target="_blank" href="images/.png"><img src="images/.png" class="auto_size_li_li"></a></li>
+</ul>
+</div-->
+<ul>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
+</ul>
+<br>
+<h2><strong class="yellow">Importante recuerda que:</strong></h2>
+<ul>
+<li>Desde el menú del <em>Homebrew Channel</em> abres las aplicaciones <em>homebrew</em> heredadas de Wii como <strong>USB Loader GX</strong>, <strong>Wiiflow Lite</strong>, <strong>Wii Mod Lite</strong>, etc.</li>
+<li>Ocasionalmente haz una copia de seguridad de todos los archivos de la tarjeta SD, si en algún momento se daña o pierde la tarjeta SD puedes reponer los archivos fácilmente.</li>
+</ul>
+<p>Aquí termina la guía de modificación del modo virtual Wii.</p>
+<div class="bottomnav">
+<a href="?s=mod&p=cios" class="previous">&#8249; Instalar cIOS</a><a href="../?s=main" class="next">Inicio</a>
+</div>
+</div>
+</div>
+</div>
+<script src="../base_script.js"></script>
+</body>
+</html>
