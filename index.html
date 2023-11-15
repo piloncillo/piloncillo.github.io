@@ -77,6 +77,8 @@
 	<li><a class="selectable" href="?s=detect_sd" id="detect_sd_link" title="Revisar que la Wii U detecta la tarjeta SD">Revisar que detecta la SD</a></li>
 	<li><a class="selectable" href="?s=write_to_sd" id="write_to_sd_link" title="Revisar que la Wii U puede escribir datos en la tarjeta SD">Revisar que puede escribir en la SD</a></li>
 	<li><a class="selectable" href="?s=nand_backup" id="nand_backup_link" title="Hacer una copia de seguridad de la memoria interna de la Wii U">Hacer respaldo de la NAND</a></li>
+	<li><a class="selectable" href="?s=enable_autobooting" id="enable_autobooting_link" title="Activar el arranque automático del PayloadLoader">Activar autobooting</a></li>
+	<li><a class="selectable" href="?s=disable_autobooting" id="disable_autobooting_link" title="Desactivar el arranque automático del PayloadLoader">Desactivar autobooting</a></li>
 	<li><a class="selectable" href="?s=standby_functions" id="standby_functions_link" title="Desactivar modo de reposo">Desactivar modo de reposo</a></li>
 	<li><a class="selectable" href="?s=block_updates" id="block_updates_link" title="Bloquear actualizaciones">Bloquear actualizaciones</a></li>
 	<li><a class="selectable" href="?s=unblock_updates" id="unblock_updates_link" title="Desbloquear actualizaciones">Desbloquear actualizaciones</a></li>
@@ -533,6 +535,57 @@
 </div>
 </div>
 </div>
+<div id="disable_autobooting" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Desactivar el arranque automático del PayloadLoader</h1>
+<br>
+<p>Actualmente tu consola tiene <strong class="blue">PayloadLoader de arranque automático</strong>, es decir, cada vez que enciendes la consola se carga Tiramisu automáticamente sin que tengas que hacer nada. Si deseas que Tiramisu no inicie automáticamente cada que la consola enciende debes desactivar el arranque automático del <em>PayloadLoader</em>.</p>
+<p>Para desactivar el arranque automático hay que usar la aplicación <em>PayloadLoader Installer</em> para cambiar el arranque de la consola de <em>Health and Safety Information</em> (Información sobre salud y seguridad) a <em>Wii U Menu</em> (menú de Wii U).</p>
+<ul>
+<li>En este punto debes tener la Wii U apagada con la tarjeta SD introducida.</li>
+<li><strong class="green">Enciende la consola</strong> y <strong class="green">mantén presionado el botón X</strong> hasta que salga el <em>Environment Loader</em>.</li>
+<li>Navega por el menú usando las flechas del D-Pad del GamePad, <strong class="green">selecciona</strong> <em class="green">installer</em> y presiona el <strong class="green">botón A</strong> para iniciarlo.<br><img src="images/environment_loader/installer_default_tiramisu.jpg" class="auto_size_li"></li>
+<li>Ahora debes estar en el <em>PayloadLoader Installer</em>, con la opción <em class="green">Check</em> seleccionada.<br><img src="images/payloadloader_installer/check.jpg" class="auto_size_li"></li>
+<li>Presiona el <strong class="green">botón A</strong> para verificar.</li>
+<li>El instalador debe indicar que <em>PayloadLoader</em> está instalado en la aplicación <em>Health and Safety Information</em> (Información sobre salud y seguridad).</li>
+<li>Usa las flechas del D-Pad del GamePad para seleccionar <em class="green">Boot options</em> y presiona el <strong class="green">botón A</strong>.<br><img src="images/payloadloader_installer/boot_options.jpg" class="auto_size_li"></li>
+<li>El instalador debe indicar que el sistema de la Wii U actualmente inicia con la aplicación <em>Health and Safety Information</em>.</li>
+<li>La opción <em class="green">Switch back to Wii U Menu</em> debe estar seleccionada.</li>
+<li>Presiona el <strong class="green">botón A</strong>. Esto hará que <em>Wii U Menu</em> sea la aplicación con la que inicia la Wii U.<br><img src="images/payloadloader_installer/switch_back_to_wii_u_menu.jpg" class="auto_size_li"></li>
+<li>Después de que la instalación termine, presiona <strong class="green">botón A</strong> para apagar la consola.<br><img src="images/payloadloader_installer/boot_updated.jpg" class="auto_size_li"></li>
+</ul>
+<p>Ahora el <em>PayloadLoader</em> <strong class="red">no</strong> arrancará automáticamente cada que enciendas la Wii U.</p>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a>
+</div>
+</div>
+</div>
+<div id="enable_autobooting" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Activar el arranque automático del PayloadLoader</h1>
+<br>
+<p>Actualmente tu consola tiene <strong class="blue">PayloadLoader de arranque manual</strong>, es decir, cada vez que quieres iniciar Tiramisu debes abrir la aplicación Información sobre salud y seguridad. Si deseas iniciar automáticamente Tiramisu cada que la consola enciende debes activar el arranque automático del <em>PayloadLoader</em>.</p>
+<p>Para activar el arranque automático hay que usar la aplicación <em>PayloadLoader Installer</em> para cambiar el arranque de la consola de <em>Wii U Menu</em> (menú de Wii U) a <em>Health and Safety Information</em> (Información sobre salud y seguridad).</p>
+<ul>
+<li>En este punto debes tener la Wii U apagada con la tarjeta SD introducida.</li>
+<li>Enciende la consola y accede al menú de Wii U.<br><img src="images/detect/health_and_safety_information_icon.jpg" class="auto_size_li"></li>
+<li><strong class="green">Abre Información sobre salud y seguridad</strong> y <strong class="green">mantén presionado el botón X</strong> hasta que salga el menú <em>Environment Loader</em>.</li>
+<li>Navega por el menú usando las flechas del D-Pad del GamePad, <strong class="green">selecciona</strong> <em class="green">installer</em> y presiona el <strong class="green">botón A</strong> para iniciarlo.<br><img src="images/environment_loader/installer.jpg" class="auto_size_li"></li>
+<li>Ahora debes estar en el <em>PayloadLoader Installer</em>, con la opción <em class="green">Check</em> seleccionada.<br><img src="images/payloadloader_installer/check.jpg" class="auto_size_li"></li>
+<li>Presiona el <strong class="green">botón A</strong> para verificar.</li>
+<li>El instalador debe indicar que <em>PayloadLoader</em> está instalado en la aplicación <em>Health and Safety Information</em> (Información sobre salud y seguridad).</li>
+<li>Usa las flechas del D-Pad del GamePad para seleccionar <em class="green">Boot options</em> y presiona el <strong class="green">botón A</strong>.<br><img src="images/payloadloader_installer/boot_options.jpg" class="auto_size_li"></li>
+<li>El instalador debe indicar que el sistema de la Wii U actualmente inicia con la aplicación <em>Wii U Menu</em>.</li>
+<li>La opción <em class="green">Switch to PayloadLoader</em> debe estar seleccionada.</li>
+<li>Presiona el <strong class="green">botón A</strong>. Esto hará que <em>PayloadLoader</em> sea la aplicación con la que inicia la Wii U.<br><img src="images/payloadloader_installer/switch_to_payloadloader.jpg" class="auto_size_li"></li>
+<li>Después de que la instalación termine, presiona <strong class="green">botón A</strong> para apagar la consola.<br><img src="images/payloadloader_installer/boot_updated.jpg" class="auto_size_li"></li>
+</ul>
+<p>Ahora el <em>PayloadLoader</em> arrancará automáticamente cada que enciendas la Wii U.</p>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a>
+</div>
+</div>
+</div>
 <div id="webhack_exploit" class="tabcontent" style="display:none;">
 <div class="cont">
 <h1>Páginas con el exploit para el navegador</h1>
@@ -722,10 +775,10 @@
 <ul>
 <li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
 <li>En este punto ya finalizaste la actualización de <em>Environment Loader</em> y Tiramisu. La próxima vez que cargue el entorno de Tiramisu cargará con los archivos más actuales.</li>
+</ul>
 <div class="bottomnav">
 <a onclick="window.history.back()" class="previous">Regresar</a>
 </div>
-</ul>
 </div>
 </div>
 <div id="tiramisu_sd" class="tabcontent" style="display:none;">
@@ -1336,7 +1389,7 @@
 <li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
 </ul>
 <div class="info">Si ya tienes desactivado el arranque automático salta a <a href="#upl">desinstalar PayloadLoader</a>.</div>
-<h2>Desactivar el arranque automático de PayloadLoader</h2>
+<h2>Desactivar el arranque automático del PayloadLoader</h2>
 <ul>
 <li><strong class="green">Enciende la consola</strong> y <strong class="green">mantén presionado el botón X</strong> hasta que salga el <em>Environment Loader</em>.</li>
 <li>Navega por el menú usando las flechas del D-Pad del GamePad, <strong class="green">selecciona</strong> <em class="green">installer</em> y presiona el <strong class="green">botón A</strong> para iniciarlo.<br><img src="images/environment_loader/installer_default_tiramisu.jpg" class="auto_size_li"></li>
@@ -1986,7 +2039,7 @@
 <div class="cont">
 <h1>Acerca de esta guía</h1>
 <br>
-<h2>Versión: 6.1 (11 de noviembre de 2023)</h2>
+<h2>Versión: 6.2 (14 de noviembre de 2023)</h2>
 <p>Esta guía fue hecha por <strong><a href="https://twitter.com/Fran1AC">FranAC</a></strong> basado en la guía de los miembros de <a href="https://wiiu.hacks.guide/">Nintendo Homebrew Discord Server</a>.</p>
 <p>Puedes descargar la guía completa desde <a href="https://github.com/piloncillo/piloncillo.github.io/releases">esté enlace</a>.</p>
 <p>Créditos a los desarrolladores de las herramientas</p>

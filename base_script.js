@@ -65,6 +65,8 @@ function loadContent() {
 		section == "detect_sd" ||
 		section == "write_to_sd" ||
 		section == "nand_backup" ||
+		section == "enable_autobooting" ||
+		section == "disable_autobooting" ||
 		section == "standby_functions" ||
 		section == "block_updates" ||
 		section == "unblock_updates" ||
