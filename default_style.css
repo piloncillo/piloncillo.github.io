@@ -257,7 +257,11 @@ div.warning {
 	border-color: #cc3333;
 }
 
-div.info, div.warning {
+div.subblock {
+	border-color: #b3b3b3;
+}
+
+div.info, div.warning, div.subblock {
 	margin-top: 6px;
 	margin-bottom: 6px;
 	padding-top: 6px;
@@ -305,13 +309,13 @@ code {
 	width: 100%;
 }
 
-a.previous, a.next {
+a.previous, a.next, a.green_btn {
 	text-decoration: none;
 	padding: 6px 14px 8px 14px;
 	border-radius: 4px;
 }
 
-a.previous:hover, a.next:hover {
+a.previous:hover, a.next:hover, a.green_btn:hover {
 	background-color: #bbbbbb;
 	color: black;
 }
@@ -328,6 +332,13 @@ a.next {
 	background-color: #0055aa;
 	color: white;
 	float: right;
+}
+
+a.green_btn {
+	position: relative;
+	background-color: #005544;
+	color: white;
+	float: left;
 }
 
 .button, .button_click {

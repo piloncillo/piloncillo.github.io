@@ -73,6 +73,11 @@ function loadContent() {
 		section == "tiramisu_speedrun")
 		document.getElementById("extras").click();
 		
+	if (section == "mod" ||
+		section == "res" ||
+		section == "homebrew_inherited")
+		document.getElementById("vwii").click();
+		
 	if (section == "custom_haxchi" ||
 		section == "config_payload")
 		document.getElementById("archive_caret").click();
@@ -105,7 +110,8 @@ function loadContent() {
 		else
 			document.getElementById("main_link").classList.add("selected");
 		content.style.display = "block";
-	} else if (main == null && vwii != null) {
+	} else if (main == null && vwii != null && section == null) {
+		document.getElementById("vwii").click();
 		document.getElementById("mod_link").classList.add("selected");
 		document.getElementById("mod").style.display = "block";
 	} else if (main == null) {
@@ -547,11 +553,11 @@ function testSDResults() {
 	getLabelByControlId("folder_no").style.color = "#cccccc";
 	document.getElementById("d_folder").style.display = "none";
   }
-  else {
+  else if (document.getElementById("sd_result") != null) {
     document.getElementById("sd_result").innerHTML = 'Contesta la(s) pregunta(s) de abajo para tener un diagnostico básico de la situación de "los archivos del hack" de tu consola. Contesta las preguntas de los apartados anteriores para identificar el "hack" de tu consola.';
   }
   
-  if (autobooting == null || indexiine == null || (haxchiIcon == null && haxchi == null) || payloadloader == null) {
+  if ((autobooting == null || indexiine == null || (haxchiIcon == null && haxchi == null) || payloadloader == null) && document.getElementById("webhack_result") != null) {
     document.getElementById("webhack_result").innerHTML = 'Contesta todas las preguntas de los apartados anteriores para determinar si el exploit del navegador es el único punto de entrada de tu consola. Todas las Wii U, incluidas las que nunca has sido hackeadas, tienen con este punto de entrada.';
   }
   else if ((autobooting == "wiiu" || autobooting == "user") && indexiine == "no" && (haxchiIcon == "no" || haxchi == "no") && payloadloader == "no") {
@@ -572,7 +578,7 @@ function testSDResults() {
 	else if (sd == "no" || (sd == "yes" && folder == "no")) {
       document.getElementById("webhack_result").innerHTML = 'No detectado. Puede funcionar como un punto de entrada secundario de tu consola, pero no tienes "los archivos del hack" en la tarjeta SD.';
 	}
-	else {
+	else if (document.getElementById("webhack_result") != null) {
       document.getElementById("webhack_result").innerHTML = 'Puede funcionar como un punto de entrada secundario de tu consola, pero no has indicado la situación de "los archivos del hack" de tu consola. Contesta la(s) pregunta(s) de abajo.';
     }
   }
