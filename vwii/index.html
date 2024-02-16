@@ -52,7 +52,13 @@
 	<li><a class="selectable" href="../?s=uninstall_payloadloader" id="uninstall_payloadloader_link" title="Desinstalar Tiramisu o Aroma">Tiramisu o Aroma</a></li>
 	</ul>
 </li>
-<li><a class="selectable" href="?s=mod" id="mod_link" title="Modificar el modo virtual Wii">Modificar el modo vWii</a></li>
+<li><span class="caret selectable" id="vwii" title="Virtual Wii">Virtual Wii</span>
+	<ul class="nested">
+	<li><a class="selectable" href="?s=mod" id="mod_link" title="Modificar el modo virtual Wii">Modificar el modo vWii</a></li>
+	<li><a class="selectable" href="?s=res" id="res_link" title="Restaurar el modo virtual Wii">Restaurar el modo vWii</a></li>
+	<!--li><a class="selectable" href="?s=homebrew_inherited" id="homebrew_inherited_link" title="Homebrew en modo vWii">Homebrew heredado</a></li-->
+	</ul>
+</li>
 <li><a class="selectable" href="../?s=update_tiramisu" id="update_tiramisu_link" title="Actualizar Tiramisu">Actualizar Tiramisu</a></li>
 <li><a class="selectable" href="../?s=aroma_beta" id="aroma_beta_link" title="Probar Aroma beta">Probar Aroma beta</a></li>
 <li><span class="caret selectable" id="download_games" title="Descarga de juegos">Descarga de juegos</span>
@@ -158,7 +164,7 @@
 <br>
 <p>Recuerda que debes tener un <a href="../?s=nand_backup">respaldo de la NAND</a> antes de continuar con la modificación del modo virtual Wii.</p>
 <p>Para instalar el Homebrew Channel en el modo virtual Wii se usa la aplicacion vWii Compat Installer. Ese es el único paso que realizas en el modo Wii U, todo lo demás se realiza en el modo virtual Wii. En Tiramisu o cualquier modificación que no sea Aroma abres la aplicación vWii Compat Installer desde el Homebrew Launcher.</p>
-<h2>Descarga los archivos de necesarios</h2>
+<h2>Descarga los archivos necesarios</h2>
 <div class="info">No necesitas descargar ningún source code (código fuente).</div>
 <ul>
 <li>Descarga <a href="https://github.com/Xpl0itU/vwii-compat-installer/releases">vWii Compat Installer</a>:</li>
@@ -189,7 +195,11 @@
 <li>Accede al Homebrew Launcher y carga vWii Compat Installer.<!--br><img src="images/.png" class="auto_size_li"--></li>
 <li>Presiona el <strong class="green">botón A</strong> para instalar el <em>Homebrew Channel</em>.<!--br><img src="images/.png" class="auto_size_li"--></li>
 <li>Cuando la instalación termine presiona el <strong class="green">botón HOME</strong> para regresar al <em>Homebrew Launcher</em>.<!--br><img src="images/.png" class="auto_size_li"--></li>
-<li>Presiona el <strong class="green">botón HOME</strong> y luego <strong class="green">toca en Salir</strong> para regresar al menú de Wii U.</li>
+<li>En el <em>Homebrew Launcher</em> presiona el <strong class="green">botón HOME</strong> para salir.</li>
+<ul>
+<li>Si te encuentras en el Editor de Mii <strong class="green">toca en Salir</strong> para regresar al menú de Wii U.</li>
+</ul>
+<li>En el menú de Wii U, <strong class="green">apaga la consola</strong>.</li>
 <li>Accede al modo virtual Wii (icono Menú de Wii).<!--br><img src="images/.png" class="auto_size_li"--></li>
 </ul>
 <div class="bottomnav">
@@ -204,7 +214,7 @@
 <br>
 <p>Recuerda que debes tener un <a href="../?s=nand_backup">respaldo de la NAND</a> antes de continuar con la modificación del modo virtual Wii.</p>
 <p>Para instalar el Homebrew Channel en el modo virtual Wii se usa la aplicacion vWii Compat Installer. Ese es el único paso que realizas en el modo Wii U, todo lo demás se realiza en el modo virtual Wii. En Aroma abres la aplicación vWii Compat Installer en el menú de Wii U.</p>
-<h2>Descarga los archivos de necesarios</h2>
+<h2>Descarga los archivos necesarios</h2>
 <div class="info">No necesitas descargar ningún source code (código fuente).</div>
 <ul>
 <li>Descarga <a href="https://github.com/Xpl0itU/vwii-compat-installer/releases">vWii Compat Installer</a>:</li>
@@ -269,7 +279,7 @@
 <p>No vamos a modificar nada en el modo Wii U, todo se queda en la tarjeta SD. Los archivos de Tiramisu tienen todo lo necesario para ejecutar el exploit del navegador y abrir el Homebrew Launcher, de esta forma es posible modificar el modo virtual Wii sin modificar nada en el modo Wii U (principal).</p>
 <p>Tiramisu es fácil de colocar, sólo debes descargar los archivos más recientes y ponerlos en la tarjeta SD.</p>
 <p>Para instalar el Homebrew Channel en el modo virtual Wii se usa la aplicacion vWii Compat Installer. Ese es el único paso que realizas en el modo Wii U, todo lo demás se realiza en el modo virtual Wii. En Tiramisu o cualquier modificación que no sea Aroma abres la aplicación vWii Compat Installer desde el Homebrew Launcher.</p>
-<h2>Descarga los archivos de necesarios</h2>
+<h2>Descarga los archivos necesarios</h2>
 <div class="info">No necesitas descargar ningún source code (código fuente).</div>
 <ul>
 <li>Este enlace lleva al sitio oficial: <a href="https://tiramisu.foryour.cafe/">Tiramisu para tu café</a>.</li>
@@ -348,27 +358,33 @@
 <li>En este punto debes tener la Wii U encendida en el modo virtual Wii con la tarjeta SD introducida. El Homebrew Channel debe estar en el menú de Wii.</li>
 <li>Abre el Homebrew Channel.</li>
 <li>Carga d2x cIOS Installer.</li>
-<li>Ajusta todo para que coincida con lo siguiente:</li>
+<li>Presiona cualquier botón para continuar.</li>
+<li>Usa las flechas del D-Pad para que coincida con lo siguiente:</li>
 <ul>
 <li>Select cIOS: <code>d2x-v11-beta1-vWii</code></li>
 <li>Select cIOS base: <code>56</code></li>
 <li>Select cIOS slot: <code>249</code></li>
 </ul>
 <li>Presiona el <strong class="green">botón A</strong> para instalar.</li>
-<li>Ajusta todo para que coincida con lo siguiente:</li>
+<li>Espera a que el cIOS se instale.</li>
+<li>Presiona el <strong class="green">botón A</strong> para continuar.</li>
+<li>Usa las flechas del D-Pad para que coincida con lo siguiente:</li>
 <ul>
 <li>Select cIOS: <code>d2x-v11-beta1-vWii</code></li>
 <li>Select cIOS base: <code>57</code></li>
 <li>Select cIOS slot: <code>250</code></li>
 </ul>
 <li>Presiona el <strong class="green">botón A</strong> para instalar.</li>
-<li>Ajusta todo para que coincida con lo siguiente:</li>
+<li>Espera a que el cIOS se instale.</li>
+<li>Presiona el <strong class="green">botón A</strong> para continuar.</li>
+<li>Usa las flechas del D-Pad para que coincida con lo siguiente:</li>
 <ul>
 <li>Select cIOS: <code>d2x-v11-beta1-vWii</code></li>
 <li>Select cIOS base: <code>58</code></li>
 <li>Select cIOS slot: <code>251</code></li>
 </ul>
 <li>Presiona el <strong class="green">botón A</strong> para instalar.</li>
+<li>Espera a que el cIOS se instale.</li>
 <li>Presiona el <strong class="green">botón B</strong> para salir.</li>
 </ul>
 <h2>Parchar el IOS 80</h2>
@@ -464,6 +480,281 @@
 <div class="bottomnav">
 <a href="?s=mod&p=cios" class="previous">&#8249; Instalar cIOS</a><a href="../?s=main" class="next">Inicio</a>
 </div>
+</div>
+</div>
+<div id="res" class="tabcontent" style="display:none;">
+<div class="cont">
+<br>
+<h1>Restaurar el modo virtual Wii (vWii)</h1>
+<br>
+<p>Existen dos formas de restaurar el modo virtual Wii. La forma más simple es usar la aplicación vWii NAND Restorer con la copia de seguridad de la NAND, pero si no se dispone de una copia de seguridad de la NAND se puede usar la aplicación vWii Decaffenaitor, aunque el proceso es mucho más complicado y requiere "actualizar" la consola.</p>
+<p>Para usar vWii NAND Restorer o para usar vWii Decaffenaitor es necesario abrir las aplicaciones desde el Homebrew Launcher, estas dos aplicaciones actualmente no funcionan al 100% en Aroma.</p>
+<p>Restaurar el modo virtual Wii se puede hacer sin importar cuál sea la modificación del modo Wii U o incluso si el modo Wii U no se encuentra modificado, pero los pasos varían un poco dependiendo de cuál es la situación de la consola.</p>
+<h2>¿Cuál es la situación de la consola?</h2>
+<p><a href="?s=res&p=nand_hbl">Tiene respaldo de la NAND y usa Tiramisu o una modificación que no es Aroma.</a></p>
+<!--p><a href="?s=res&p=nand_nmwu_sd">Tiene respaldo de la NAND y no tiene una modificación (necesitas conectar la consola a Internet, una tarjeta SD de 4 GB o mayor, no se modificará nada en el modo Wii U).</a></p-->
+<p><a href="?s=res&p=hbl">No tiene respaldo de la NAND y usa Tiramisu o una modificación que no es Aroma (necesitas conectar la consola a Internet).</a></p>
+<!--p><a href="?s=res&p=nmwu_sd">No tiene respaldo de la NAND y no tiene una modificación (necesitas conectar la consola a Internet, una tarjeta SD de 4 GB o mayor, no se modificará nada en el modo Wii U).</a></p-->
+</div>
+</div>
+<div id="res_nand_hbl" class="tabcontent" style="display:none;">
+<div class="cont">
+<br>
+<h1>Archivos para restaurar el modo virtual Wii</h1>
+<br>
+<p>Para restaurar el modo virtual Wii <ins>con el respaldo de la NAND</ins> se usa la aplicacion vWii NAND Restorer. En Tiramisu o cualquier modificación que no sea Aroma abres la aplicación vWii NAND Restorer desde el <em>Homebrew Launcher</em>.</p>
+<h2>Descarga los archivos necesarios</h2>
+<ul>
+<li>Descarga <a href="https://wiiu.cdn.fortheusers.org/zips/vWii-NAND-Restorer.zip">vWii NAND Restorer</a>.</li>
+</ul>
+<h2>Coloca los archivos</h2>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
+<ul>
+<li>En este punto debes tener la tarjeta SD conectada a una PC (o teléfono inteligente) para colocar los archivos.</li>
+<li>Descomprime el archivo <code>vWii-NAND-Restorer.zip</code>.</li>
+<li>Copia la carpeta <code>wiiu</code> de <code>vWii-NAND-Restorer</code> a la raíz de la tarjeta SD.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<ul>
+<li>El objetivo es combinar está carpeta <code>wiiu</code> con la carpeta <code>wiiu</code> que ya tienes en la raíz de la tarjeta SD.</li>
+<li>Ignora el archivo <code>info.json</code> y el archivo <code>manifest.install</code>.</li>
+</ul>
+<li>Crea la carpeta <code>vwiinandrestorer</code> en la raíz de la tarjeta SD.</li>
+<li>Copia el archivo <code>otp.bin</code> del respaldo de la NAND a la carpeta <code>sd:/vwiinandrestorer</code>.</li>
+<li>Copia el archivo <code>slccmpt.bin</code> del respaldo de la NAND a la carpeta <code>sd:/vwiinandrestorer</code>.</li>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
+</ul>
+<div class="bottomnav">
+<a href="?s=res" class="previous">&#8249; ¿Cuál es la situación de la consola?</a><a href="?s=res&p=vwnr" class="next">Restaura el modo virtual Wii &#8250;</a>
+</div>
+</div>
+</div>
+<div id="res_vwnr" class="tabcontent" style="display:none;">
+<div class="cont">
+<br>
+<h1>Restaura el modo virtual Wii</h1>
+<br>
+<p>Recuerda que en Tiramisu o cualquier modificación que no sea Aroma abres vWii NAND Restorer desde el <em>Homebrew Launcher</em>.</p>
+<ul>
+<li>En este punto debes tener la Wii U apagada con la tarjeta SD introducida.</li>
+<li>Enciende la consola y carga la modificación que tengas instalada, si no tienes Tiramisu debes cargar un CFW.</li>
+<li>Accede al <em>Homebrew Launcher</em> y <strong class="green">carga vWii NAND Restorer</strong>.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>La opción <em class="green">Restore NAND</em> debe estar seleccionada.</li>
+<li>Presiona el <strong class="green">botón A</strong> para iniciar el proceso.</li>
+<li>Espera a que termine el proceso de restauración, esto tomará unos 20 minutos.</li>
+<li>Cuando la restauración concluya <strong class="green">selecciona</strong> <em class="green">Exit</em> y presiona el <strong class="green">botón A</strong> para salir.</li>
+<li>En el <em>Homebrew Launcher</em> presiona el <strong class="green">botón HOME</strong> para salir.</li>
+<ul>
+<li>Si te encuentras en el Editor de Mii <strong class="green">toca en Salir</strong> para regresar al menú de Wii U.</li>
+</ul>
+<li>En el menú de Wii U, <strong class="green">apaga la consola</strong>.</li>
+<li>Ya tienes el modo virtual Wii restaurado.</li>
+</ul>
+<p>Aquí termina la guía de restauración del modo virtual Wii. La siguiente vez que enciendas la consola entra al modo virtual Wii para asegúrate que funciona.</p>
+<div class="bottomnav">
+<a href="?s=res&p=nand_hbl" class="previous">&#8249; Regresar</a><a href="../?s=main" class="next">Inicio</a>
+</div>
+</div>
+</div>
+<div id="res_hbl" class="tabcontent" style="display:none;">
+<div class="cont">
+<br>
+<h1>Archivos para restaurar el modo virtual Wii</h1>
+<br>
+<p>Para restaurar el modo virtual Wii <ins>sin tener el respaldo de la NAND</ins> se usa la aplicacion vWii Decaffeinator. En Tiramisu o cualquier modificación que no sea Aroma abres la aplicación vWii Decaffeinator desde el <em>Homebrew Launcher</em>.</p>
+<p>Para completar la restauración del modo virtual Wii sin tener el respaldo de la NAND es necesario eliminar parcial o totalmente el modo virtual Wii, desactivar bloqueos de actualizaciones, actualizar la consola y volver a activar los bloqueos de las actualizaciones. Para todo esto <ins>es necesario apagar en múltiples ocasiones la Wii U</ins> ya que así es más estable iniciar y finalizar los procedimientos.</p>
+<p>vWii Decaffeinator funciona eliminando parcial o totalmente el sistema operativo del modo virtual Wii y al mismo tiempo forzando actualizar la consola. La Wii U en realidad no va a descargar una actualizacion, lo que va a descargar son los elementos del sistema operativo del modo virtual Wii que fueron eliminados, de esa forma es posible la restauración del modo virtual Wii sin tener el respaldo de la NAND de la consola y también por eso es necesario completar el proceso de "actualización" de lo contrario el modo virtual Wii quedará inservible.</p>
+<h2>Descarga los archivos necesarios</h2>
+<ul>
+<li>Descarga <a href="https://wiiu.cdn.fortheusers.org/zips/vWii_decaffeinator.zip">vWii Decaffeinator</a>.</li>
+</ul>
+<h2>Coloca los archivos</h2>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
+<ul>
+<li>En este punto debes tener la tarjeta SD conectada a una PC (o teléfono inteligente) para colocar los archivos.</li>
+<li>Descomprime el archivo <code>vWii_decaffeinator.zip</code>.</li>
+<li>Copia la carpeta <code>wiiu</code> de <code>vWii_decaffeinator</code> a la raíz de la tarjeta SD.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<ul>
+<li>El objetivo es combinar está carpeta <code>wiiu</code> con la carpeta <code>wiiu</code> que ya tienes en la raíz de la tarjeta SD.</li>
+<li>Ignora el archivo <code>info.json</code> y el archivo <code>manifest.install</code>.</li>
+</ul>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
+</ul>
+<div class="bottomnav">
+<a href="?s=res" class="previous">&#8249; ¿Cuál es la situación de la consola?</a><a href="?s=res&p=vwd" class="next">Eliminar el sistema del modo virtual Wii &#8250;</a>
+</div>
+</div>
+</div>
+<div id="res_vwd" class="tabcontent" style="display:none;">
+<div class="cont">
+<br>
+<h1>Eliminar el sistema del modo virtual Wii</h1>
+<br>
+<p>Recuerda que en Tiramisu o cualquier modificación que no sea Aroma abres vWii Decaffeinator desde el <em>Homebrew Launcher</em>.</p>
+<p>Para eliminar parcial o totalmente el sistema modo virtual Wii, vWii Decaffeinator ofrece varias opciones según lo que quieras borrar y conservar. Después, al "actualizar" la consola se restablecerán en limpio todos los elementos del sistema del modo virtual Wii que hayan sido eliminados. Los elementos que el usuario haya instalado y que vWii Decaffeinator elimine no serán restablecidos, estos pueden ser: los mensajes del tablón de Wii, los canales que no vienen de fábrica con la consola, los archivos de guardado de los juegos y los cIOS.</p>
+<h4>Light mode</h4>
+<ul>
+<li>Borra las aplicaciones del sistema, los mensajes del tablón de Wii, los IOS y los cIOS.</li>
+<li>Se conservarán los canales y los datos de guardado de los juegos.</li>
+<li>Se restablecerán las aplicaciones del sistema y los IOS.</li>
+<li>Está opción se recomienda si quieres borrar los cIOS sin perder nada más. Por ejemplo, para instalar unos cIOS más actuales.</li>
+</ul>
+<h4>Aggressive mode</h4>
+<ul>
+<li>Borra las aplicaciones del sistema, los mensajes del tablón de Wii, todos los canales, todos los datos de guardado de los juegos, los IOS y los cIOS.</li>
+<li>Se restablecerán las aplicaciones del sistema y los IOS.</li>
+<li>Está opción se recomienda si quieres volver el modo virtual Wii a su forma original.</li>
+</ul>
+<h4>Force Update</h4>
+<ul>
+<li>Esto forzará una actualización, así puedes volver a descargar cualquier archivo faltante. En la práctica es raro que algún archivo falte al completar la "actualizacion" de la consola así que puedes ignorar esta opción.</li>
+</ul>
+<h4>Regenerate setting.txt</h4>
+<ul>
+<li>Esto regenerará el archivo settings.txt, este archivo el único que no se puede recuperar mediante ninguna de las otras opciones. Muy útil si es que modificaste el archivo con alguna aplicación como SettingEdit.</li>
+<li><ins>Regenerar el archivo settings.txt no requiere "actualizar" la consola así que vWii Decaffeinator no cargará la configuración de la consola después de usar esta opción</ins>.</li>
+</ul>
+<h4>Advanced options</h4>
+<ul>
+<li>Permite borrar las aplicaciones del sistema y los IOS especificados.</li>
+<li>Se conservarán los mensajes del tablón de Wii, los canales, los datos de guardado de los juegos y los cIOS.</li>
+<li>Está opción se recomienda si quieres restablecer algún IOS en específico. Por ejemplo, para restablecer el IOS 80 si quedó dañado después de intentar parcharlo.</li>
+</ul>
+<h2>Instrucciones</h2>
+<ul>
+<li>En este punto debes tener la Wii U apagada con la tarjeta SD introducida.</li>
+<li>Desconecta los dispositivos USB conectados a la Wii U antes de continuar.</li>
+<li>Enciende la consola.</li>
+<li>Si tienes un disco en la lectora de discos ópticos la Wii U expúlsalo antes de continuar.</li>
+<li>Carga la modificación que tengas instalada, si no tienes Tiramisu debes cargar un CFW.</li>
+<ul>
+<li>Para usuarios de Tiramisu, si no tienes el arranque automático de Tiramisu activado puedes cargar Tiramisu manualmente abriendo el icono de Información sobre salud y seguridad. Basta con abrirlo una sola vez, cuando Información sobre salud y seguridad regresa al menú de Wii U ya tiene Tiramisu cargado.</li>
+</ul>
+<li>Accede al <em>Homebrew Launcher</em> y <strong class="green">carga vWii Decaffeinator</strong>.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Selecciona la opción que consideres adecuada:</li>
+<ul>
+<li><strong class="yellow">Light mode</strong>. Se eliminarán las aplicaciones del sistema y los IOS <strong class="blue">conservando los canales y los archivos de guardado</strong>.</li>
+<li><strong class="yellow">Agressive mode</strong>. Un mensaje advierte que <strong class="red">será eliminado todo el sistema del modo vWii</strong>.</li>
+<li><strong class="yellow">Force Update</strong>. Forzar la actualización de la consola.</li>
+<li><strong class="yellow">Regenerate setting.txt</strong>. Después de regenerar el archivo settings.txt puedes seleccionar otra opción.</li>
+<li><strong class="yellow">Advanced options</strong>. Usa las flechas del D-Pad para moverte por la lista y <strong class="green">poner en</strong> <em class="green">yes</em> <strong class="green">lo que quieres eliminar</strong>.</li>
+<li><strong class="yellow">Exit</strong>. Cerrar vWii Decaffeinator. Si usas esta opción debes regresar el menú de Wii U y <strong class="green">pagar la consola</strong>.</li>
+</ul>
+<li>Presiona el <strong class="green">botón A</strong>.</li>
+<li>Presiona el <strong class="green">botón START (+)</strong> para iniciar el proceso o presiona <strong>cualquier otro botón para seleccionar otra opción</strong>.</li>
+<li><ins>Cuando la eliminación concluya presiona cualquier botón para salir, por defecto vWii Decaffeinator cargará la configuración de la consola.</ins></li>
+<li><strong class="green">Toca en Salir</strong> para regresar al menú de Wii U.</li>
+<li>En el menú de Wii U, <strong class="green">apaga la consola</strong>.</li>
+</ul>
+<div class="warning">Es muy importante apagar la consola aquí para continuar.</div>
+<br>
+<br>
+<div class="bottomnav">
+<a href="?s=res&p=hbl" class="previous">&#8249; Regresar</a><a href="?s=res&p=unblock_updates" class="next">Quitar cualquier bloqueo de actualizaciones &#8250;</a>
+</div>
+</div>
+</div>
+<div id="res_unblock_updates" class="tabcontent" style="display:none;">
+<div class="cont">
+<br>
+<h1>Quitar cualquier bloqueo de actualizaciones</h1>
+<br>
+<h2>Bloqueo por DNS</h2>
+<p>Si tienes configurados DNS que bloquean las actualizaciones basta con poner los DNS en modo automático para quitar este bloqueo:</p>
+<ul>
+<li>Enciende la consola y abre la configuración de la consola.</li>
+<li>Toca en Internet.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Tocan en Conexión a internet.</li>
+<li>Presiona el botón X o toca en Lista de conexiones.</li>
+<li>Toca en la conexión que estás usando.</li>
+<li>Desplázate a la derecha, en el bloque DNS debe decir Modo automático.</li>
+<ul>
+<li>Si el bloque DNS no dice Modo automático toca el bloque y selecciona Modo automático.</li>
+</ul>
+<li>Persona el botón B o toca Atrás y repite hasta salir de la configuración de la consola.</li>
+<li>En el menú de Wii U, apaga la consola.</li>
+</ul>
+<h2>Bloqueo por eliminación de la carpeta <em>update</em></h2>
+<p>Si la carpeta <em>update</em> del sistema de la Wii U fue eliminada entonces al intentar "actualizar" obtendrás un error <strong class="yellow">105-301X</strong>. <a href="../?s=unblock_updates">Es necesario restaurar la carpeta <em>update</em> siguiendo los pasos este enlace</a>, después debes regresar y continuar aquí mismo.</p>
+<h2>Bloqueo por Autobooting PayloadLoader</h2>
+<p>Si haces uso de Tiramisu de arranque automático (al encender la Wii U automáticamente carga Tiramisu) debes desactivar temporalmente ese arranque automático para poder "actualizar" la consola. <a href="../?s=disable_autobooting">Sigue los pasos este enlace para desactivar el arranque automático</a>, después debes regresar y continuar aquí mismo.</p>
+<br>
+<div class="info">Si no tienes ningún bloqueo de actualizaciones puedes continuar con la restauración del modo virtual Wii.</div>
+<br>
+<br>
+<div class="bottomnav">
+<a href="?s=res&p=vwd" class="previous">&#8249; Eliminar el sistema del modo virtual Wii</a><a href="?s=res&p=update" class="next">Restaura el modo virtual Wii &#8250;</a>
+</div>
+</div>
+</div>
+<div id="res_update" class="tabcontent" style="display:none;">
+<div class="cont">
+<br>
+<h1>Restaura el modo virtual Wii</h1>
+<br>
+<p>Recuerda que la Wii U en realidad no va a descargar una actualizacion, lo que va a descargar son los elementos del sistema operativo del modo virtual Wii que fueron previamente eliminados con vWii Decaffeinator.</p>
+<ul>
+<li>En este punto debes tener la Wii U apagada con la tarjeta SD introducida.</li>
+<li>Enciende la Wii U y <strong class="green">abre la configuración de la consola</strong>.</li>
+<li>Asegúrate de que la consola tenga acceso a internet para este paso.</li>
+<li>Ve a la sección de actualización y <strong class="green">toca el botón Actualización</strong>.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>La Wii U te pregunta si quieres conectarte a internet para actualizar la consola, <strong class="green">toca en Sí</strong>.</li>
+<li>La Wii U empezará a descargar datos de actualización.</li>
+<ul>
+<li>La descarga tomará unos 10 minutos o más dependiendo de la velocidad de tu conexión a internet.</li>
+</ul>
+<li>Al terminar la descarga inicia de forma automática la instalación de la actualización.</li>
+<ul>
+<li>La instalación tomará unos 5 minutos.</li>
+</ul>
+<li>Al terminar la instalación <strong class="green">toca en Aceptar</strong> para que la consola reinicie.</li>
+<li>Espera a que la consola reinicie y después <strong class="green">apaga la Wii U</strong>.</li>
+<li>Ya tienes el modo virtual Wii restaurado.</li>
+</ul>
+<div class="warning">Es muy importante apagar la consola aquí para continuar.</div>
+<br>
+<div class="subblock">
+<ul>
+<li><strong class="yellow">Enciende la Wii U y entra al modo virtual Wii para asegúrate que funciona.</strong></li>
+<ul>
+<li>Si el modo virtual Wii no carga entonces es necesario volver a usar vWii Decaffeinator y probar con el modo agresivo (<em>aggressive mode</em>) así como regenerar el archivo <code>setting.txt</code>, esto antes de volver a poner bloqueos de actualizaciones.</li>
+<li>Si el modo virtual Wii carga entonces continua adelante para volver a poner bloqueos de actualizaciones y finalizar.</li>
+</ul>
+<li><strong class="green">Apaga la Wii U</strong>.</li>
+</ul>
+<div class="warning">En cualquier caso, es muy importante apagar la consola antes de continuar.</div>	
+<div class="bottomnav">
+<a href="?s=res&p=vwd" class="green_btn">Clic aquí si el modo virtual Wii no carga, volver a usar vWii Decaffeinator</a>
+</div>
+</div>
+<br>
+<br>
+<div class="bottomnav">
+<a href="?s=res&p=unblock_updates" class="previous">&#8249; Quitar cualquier bloqueo de actualizaciones</a><a href="?s=res&p=block_updates" class="next">Volver a poner bloqueos de actualizaciones &#8250;</a>
+</div>
+</div>
+</div>
+<div id="res_block_updates" class="tabcontent" style="display:none;">
+<div class="cont">
+<br>
+<h1>Volver a poner bloqueos de actualizaciones</h1>
+<br>
+<p>Si haces uso de Tiramisu ahora puedes <a href="../?s=enable_autobooting">volver a activar el arranque automático siguiendo los pasos de este enlace</a>, después debes regresar y continuar aquí mismo.</p>
+<p>Puedes eliminar la carpeta <em>update</em> del sistema de la Wii U para bloquear por completo las actualizaciones del sistema de la consola siguiendo los pasos de <a href="../?s=block_updates">este enlace</a>, después debes regresar y continuar aquí mismo.</p>
+<br>
+<div class="info">Con lo anterior no es necesario volver a poner DNS que bloquean las actualizaciones.</div>
+<div class="info">En este punto puedes volver a conectar los dispositivos USB que hayas desconectado de la Wii U.</div>
+<br>
+<p>Aquí termina la guía de restauración del modo virtual Wii.</p>
+<br>
+<div class="warning">
+<p>Es recomendable hacer un respaldo de la NAND para poder solucionar fácilmente posibles problemas futuros.</p>
+<p><a href="../?s=nand_backup"><button class="button_click">Hacer respaldo de la NAND</button></a></p>
+</div>
+<br>
+<br>
+<div class="bottomnav">
+<a href="?s=res&p=update" class="previous">&#8249; Restaura el modo virtual Wii</a><a href="../?s=main" class="next">Inicio</a>
 </div>
 </div>
 </div>
