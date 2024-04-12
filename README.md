@@ -1,6 +1,10 @@
+# Enlace a la guía
+
+https://piloncillo.github.io/
+
 # Acerca de esta guía
 
-Versión: 6.3 (16 de febrero de 2024)
+Versión: 6.3.4 (12 de abril de 2024)
 
 Esta guía fue hecha por FranAC basado en la guía de los miembros de [Nintendo Homebrew Discord Server](https://wiiu.hacks.guide/#/about).
 
