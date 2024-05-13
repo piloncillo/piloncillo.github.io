@@ -1,0 +1,48 @@
+<div class="cont_body">
+<ul>
+<li>Este enlace lleva al sitio oficial: <a href="https://aroma.foryour.cafe/">Aroma para tu café</a>.</li>
+<ul>
+<li>Dentro del sitio debes ir hasta abajo y palomear las 4 checkbox. Al hacerlo estás dando por entendido que:</li>
+<ul>
+<li><strong class="red">Conoces el alcance y las limitaciones de la versión beta de Aroma.</strong></li>
+<li><a href="?s=write_to_sd">La tarjeta SD no está protegida contra escritura</a>, de lo contrario, va a salir el código de error <strong class="yellow">150-3030</strong>.</li>
+<li>Estas utilizando la versión más reciente del Environment Loader.</li>
+<li>Aroma recibirá actualizaciones frecuentes por lo cual debes mantenerte informado por vías oficiales para conocer las últimas noticias sobre su desarrollo.</li>
+<li>Al palomear la última casilla el sitio muestra los botones de descarga.</li>
+</ul>
+<img src="images/aroma/01.png" class="auto_size_li_li">
+<li>Hay que descargar los bloques de la sección Base.</li>
+<li>Clic en el botón <em class="green">Download Payloads</em> para iniciar la descarga del archivo <code>environmentloader+wiiu-nanddumper-payload.zip</code>.</li>
+<img src="images/aroma/02.png" class="auto_size_li_li">
+<li>También hay que descargar Aroma, los plugins y módulos adicionales.</li>
+<li>Clic en el botón <em class="green">Download Base Aroma (1)</em> para iniciar la descarga del archivo <code>aroma-beta-20.zip</code>.</li>
+<li>Ya está seleccionado <em class="green">Bloopair</em>, seleciona <em class="green">FTPiiU Plugin (2)</em>, <em class="green">SDCafiine Plugin (3)</em>, <em class="green">Screenshot Plugin (4)</em> y <em class="green">SwipSwapMe (5)</em>, el resto de plugins no son necesarios para un usuario común, son útiles para desarrolladores o testers.</li>
+<li>Clic en el botón <em class="green">Download Additional Plugin and Modules (6)</em> para iniciar la descarga del archivo <code>bloopair+ftpiiu+sdcafiine+screenshotplugin+swipswapme.zip</code>.</li>
+<img src="images/aroma/03.png" class="auto_size_li_li">
+</ul>
+</ul>
+<div class="warning"><strong class="red">Importante descargar el módulo de Sigpatches.</strong></div>
+<ul>
+<li>Descarga la versión más actual del <a href="https://github.com/marco-calautti/SigpatchesModuleWiiU/releases">módulo Sigpatches</a>.</li>
+<ul>
+<li>Únicamente necesitas el archivo <code>01_sigpatches.rpx</code>.<br><img src="images/aroma/sigpatches_repo.png" class="auto_size_li_li"></li>
+</ul>
+</ul>
+<h2>Instalación</h2>
+<p><ins>En toda la tarjeta sólo debe existir una sola carpeta <code>wiiu</code>.</ins> En general siempre se combina la carpeta <code>wiiu</code> del archivo <code>.zip</code> que acabas de descargar con la carpeta <code>wiiu</code> que ya tienes en la raíz de la tarjeta SD, excepto si es la primera vez que colocas una carpeta <code>wiiu</code> en la raíz de la tarjeta SD.</p>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
+<ul>
+<li>En este punto debes tener la tarjeta SD conectada a una PC para colocar los archivos.</li>
+<li>Descomprime el archivo <code>environmentloader+wiiu-nanddumper-payload.zip</code>.</li>
+<li>Copia la carpeta <code>wiiu</code> a la raíz de la tarjeta SD.</li>
+<li>Descomprime el archivo <code>base-aroma-20.zip</code>.</li>
+<li>Copia la carpeta <code>wiiu</code> a la raíz de la tarjeta SD.</li>
+<li>Descomprime el archivo <code>bloopair+ftpiiu+sdcafiine+screenshotplugin+swipswapme.zip</code>.</li>
+<li>Copia la carpeta <code>wiiu</code> a la raíz de la tarjeta SD.</li>
+</ul>
+<div class="warning"><strong class="red">Importante colocar el módulo de Sigpatches de lo contrario no podrás abrir juegos con tickets falsos en el entorno de Aroma (error 199-9999 o mensaje "no se puede usar este programa").</strong></div>
+<ul>
+<li>Copia el archivo <code>01_sigpatches.rpx</code> a la carpeta <code>sd:/wiiu/environments/aroma/modules/setup</code>.<br><img src="images/aroma/sigpatches.png" class="auto_size_li"></li>
+</ul>
+</div>
