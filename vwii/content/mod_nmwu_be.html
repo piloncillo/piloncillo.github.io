@@ -1,0 +1,32 @@
+<div class="cont">
+<br>
+<h1>Instala el Homebrew Channel (vWii)</h1>
+<br>
+<p>Con los archivos correctos en la tarjeta SD puedes ejecutar el exploit del navegador y abrir el Homebrew Launcher desde el cual puedes cargar la aplicación vWii Compat Installer para instalar el Homebrew Channel en el modo virtual Wii sin modificar nada el modo Wii U (principal).</p>
+<ul>
+<li>En este punto debes tener la Wii U apagada con la tarjeta SD introducida.</li>
+<li>Enciende la consola y accede al menú de Wii U. Asegúrate de que la consola tenga acceso a internet para este paso.</li>
+<li>Abre el navegador de internet de la consola.</li>
+<li>Introduce la URL: <a href="http://u.wiidb.de">u.wiidb.de</a> (puedes consultar paginas alternativas <a href="?s=webhack&p=exploit">aquí</a>).<br><img src="../images/browser_exploit/url_u_wiidb_de.jpg" class="auto_size_li"></li>
+<li>Al cargar la página por completo mostrará en grande el enlace <strong class="blue">HAXX</strong>.<br><img src="../images/browser_exploit/u_wiidb_de.jpg" class="auto_size_li"></li>
+<li><strong class="green">Toca el enlace HAXX</strong>, cuando la pantalla del GamePad se ponga completamente en blanco <strong class="green">mantén presionado el botón X</strong> hasta que salga el menú <em>Environment Loader</em>.</li>
+<li>Acceder a ese menú es necesario para abrir el <em>Homebrew Launcher</em>. Si no lograste entrar a ese menú sigue los pasos de <a href="#notas_mnbe">las notas de abajo</a>.</li>
+<li>Navega por el menú usando las flechas del D-Pad del GamePad, <strong class="green">selecciona</strong> <em class="green">tiramisu</em> y presiona el <strong class="green">botón A</strong>.<!--br><img src="images/.jpg" class="auto_size_li"--></li>
+<li>Presiona el <strong class="green">botón B</strong> para ignorar el mensaje de alerta.<br><img src="../images/tiramisu/warning.jpg" class="auto_size_li"></li>
+<li>Ahora debes estar en el <em>Boot Selector</em> de Tiramisu, navega por el menú usando las flechas del D-Pad del GamePad, <strong class="green">selecciona</strong> <em class="green">Homebrew Launcher</em> y presiona el <strong class="green">botón A</strong> para abrirlo.<!--br><img src="images/.jpg" class="auto_size_li"--></li>
+<li>Ahora debes estar en el <em>Homebrew Launcher</em>, carga vWii Compat Installer.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Presiona el <strong class="green">botón A</strong> para instalar el <em>Homebrew Channel</em>.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Cuando la instalación termine presiona el <strong class="green">botón HOME</strong> para regresar al <em>Homebrew Launcher</em>.<!--br><img src="images/.png" class="auto_size_li"--></li>
+<li>Presiona el <strong class="green">botón HOME</strong> y luego <strong class="green">toca en Salir</strong> para regresar al menú de Wii U.</li>
+<li>Accede al modo virtual Wii (icono Menú de Wii).<!--br><img src="images/.png" class="auto_size_li"--></li>
+</ul>
+<div class="bottomnav">
+<a href="?s=mod&p=nmwu_files" class="previous">&#8249; Coloca los archivos necesarios</a><a href="?s=mod&p=cios" class="next">Instalar cIOS &#8250;</a>
+</div>
+<br>
+<br>
+<br>
+<div class="info" id="notas_mnbe">Si la Wii U se atascó en una pantalla blanca o se congeló de alguna otra forma, espera unos segundos. Si no sucede nada, mantén presionado el botón <em>POWER</em> de la consola hasta que se apague, vuelve prender la consola, abre el navegador, entra en Ajustes, selecciona un motor de búsqueda, borra las cookies del navegador y vuelve a intentar el exploit del navegador.</div>
+<div class="info">Si aparece el mensaje <em>FSGetMountSource falied. Please insert a FAT32 formatted sd card.</em> quiere decir que la consola no está detectando la tarjeta SD. Mantén presionado el botón <em>POWER</em> de la consola hasta que se apague, limpia los contactos de la SD y de la consola, si estas usando una microSD prueba con otro adaptador a SD y vuelve a intentar el exploit del navegador. Puedes ir <a href="?s=detect_sd">aquí para revisar si la Wii U detecta la tarjeta SD</a>.</div>
+<div class="info">Si aparece el mensaje <em>FSOpenFile falied. File missing /vol/external01/wiiu/payload.elf.</em> quiere decir que la consola sí está detectando la tarjeta SD, pero no encontró el archivo <code>sd:/wiiu/payload.elf</code>. Mantén presionado el botón <em>POWER</em> de la consola hasta que se apague, <a href="?s=tiramisu&p=files">revisa los archivos en la tarjeta SD</a> y vuelve a intentar el exploit del navegador.</div>
+</div>
