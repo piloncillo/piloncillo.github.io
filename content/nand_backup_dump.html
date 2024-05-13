@@ -1,0 +1,38 @@
+<div class="cont_body">
+<ul>
+<li>En este punto debes estar dentro de la aplicación NAND Dumper.<br><img src="images/nanddumper/menu.jpg" class="auto_size_li"></li>
+<li>Usa las flechas del D-Pad del Wii U GamePad para ingresar la configuración deseada.</li>
+<ul>
+<li>Dump SLC (528MB): yes</li>
+<li>Dump SLCCMPT (528MB): yes</li>
+<li>Dump MLC (8GB/32GB): Opcional</li>
+<li>Dump OTP (1KB): yes</li>
+<li>Dump SEEPROM (1KB): yes</li>
+</ul>
+</ul>
+<div class="info">Para el respaldo del modo virtual Wii sólo necesitas de SLCCMPT y OTP.</div>
+<div class="info"><ul>
+<li>SLC: IOSU y Cafe OS, sistemas operativos del modo Wii U.</li>
+<li>SLCCMPT: IOS, sistema operativo del modo virtual Wii.</li>
+<li>MLC: Juegos, actualizaciones de los juegos, DLCs y archivos de guardado.</li>
+<li>OTP: Valores y keys (claves) de fábrica.</li>
+<li>SEEPROM: Valores y keys (claves) del sistema.</li>
+<p><a href="images/misc/Wii_U_Memories.jpg" target="_blank">Aquí puedes ver una imagen de los chips de memoria de la consola.</a></p>
+</ul></div>
+<div class="info">El respaldo de SLC, SLCCMPT, OPT y SEEPROM es obligatorio para restaurar por completo la Wii U en caso de algún problema. No importa si la consola es de 8 GB o de 32 GB se requieren de 1.04 GB de espacio libre en la tarjeta SD para completar el respaldo de SLC, SLCCMPT, OPT y SEEPROM.</div>
+<div class="info">El proceso de copiado de SLC, SLCCMPT, OTP y SEEPROM en conjunto tarda menos de 5 minutos con una tarjeta SD clase 10.</div>
+<div class="warning">El respaldo de la memoria MLC es opcional, no es necesario para restaurar la consola en caso de algún problema. Si la consola es el modelo de 8 GB se requiere una tarjeta SD de 16 GB para completar el respaldo del MLC. Si la consola es el modelo de 32 GB se requiere una tarjeta SD de 64 GB para completar el respaldo del MLC.</div>
+<div class="warning">El proceso de copiado del MLC del modelo de 8 GB tarda alrededor de 35 minutos con una tarjeta SD clase 10. El proceso de copiado del MLC del modelo de 32 GB tarda alrededor de 2 horas con una tarjeta SD clase 10.</div>
+<ul>
+<li>Presiona el <strong class="green">botón A</strong> para iniciar el proceso de copia.</li>
+<li>Aparentemente la consola carga el menú de Wii U, pero en unos instantes mostrará el proceso de copiado.<br><img src="images/nanddumper/progress_slc.jpg" class="auto_size_li"></li>
+<li>Cuando se complete el proceso la consola cargará el menú de Wii U.<br><img src="images/nanddumper/complete.jpg" class="auto_size_li"></li>
+<li>Apaga la consola, saca la tarjeta SD de la Wii U y conéctala a una PC (o teléfono inteligente) para mover los archivos del respaldo.</li>
+<li>Copia los archivos <code>otp.bin</code>, <code>seeprom.bin</code>, <code>slc.bin</code> y <code>slccmpt.bin</code> de la raíz de la tarjeta SD a una ubicación segura en la PC (o teléfono inteligente).</li>
+<li>Si elegiste realizar la copia de MLC, copia los archivos <code>mlc.bin.part##</code> de la raíz de la tarjeta SD a una ubicación segura en la PC (o teléfono inteligente).</li>
+<li>Elimina los archivos <code>otp.bin</code>, <code>seeprom.bin</code>, <code>slc.bin</code> y <code>slccmpt.bin</code> de la tarjeta SD para liberar espacio.</li>
+<li>Si elegiste realizar la copia de MLC, elimina los archivos <code>mlc.bin.part##</code> de la tarjeta SD para liberar espacio.</li>
+<li>Para seguir usando la modificación de la consola como siempre, extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos y ponla de regreso en la Wii U.</li>
+</ul>
+<div class="info">Puedes hacer varias copias en servicios de la nube de internet para evitar perder la valiosa copia de seguridad de la NAND de tu Wii U.</div>
+</div>

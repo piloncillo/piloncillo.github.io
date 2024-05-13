@@ -1,0 +1,44 @@
+<div class="cont_body">
+<h1>Autobooting (Arranque Automático)</h1>
+<br>
+<p>Un par de modificaciones pueden iniciar de forma automática al encender la Wii U, estas modificaciones son: Coldboot Haxchi (CBHC) y Autobooting PayloadLoader.</p>
+<p>Para lograr el arranque automático se configura la consola para que en lugar de cargar el menú de Wii U cargue una aplicación modificada, en el caso de Coldboot Haxchi carga el juego de Nintendo DS modificado con Haxchi y en el caso de Autobooting PayloadLoader se carga la aplicación Información sobre salud y seguridad modificada con PayloadLoader.</p>
+<p>Dependiendo de la configuración del "hack" se puede cargar una u otra cosa después del "autobooting", pero lo más común es que automáticamente cargue el menú de Wii U.</p>
+<p>Para determinar si hay una modificación de arranque automático en tu Wii U vigila lo que pasa al encender la consola. Enciende la consola <ins><strong>SIN</strong> la tarjeta SD puesta</ins> y observa lo que ocurre en la pantalla del GamePad, no presiones ningún botón.</p>
+<h2>¿Al encender la consola se muestra algo en particular?</h2>
+<form id="f_autobooting" onclick="updateFormAutobooting()">
+<input type="radio" id="autobooting_cbhc" value="autobooting_cbhc" name="default" style="display:none;">
+<label class="link" for="autobooting_cbhc">Sí, al encender la consola muestra el mensaje <code>CBHC v1.6 by FIX94 (DS Title 10179B00) Autobooting...</code><br><img src="images/detect/cbhc_autobooting.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="autobooting_failed" value="autobooting_failed" name="default" style="display:none;">
+<label class="link" for="autobooting_failed">Sí, al encender la consola muestra el mensaje <code>Failed to load sd:/wiiu/payload.elf Starting the console without any modifications</code>.<br><img src="images/detect/payload_loader_failed_to_load.jpg" class="auto_size"></label><br><br>
+<!--input type="radio" id="autobooting_rpx_failed" value="autobooting_rpx_failed" name="default" style="display:none;">
+<label class="link" for="autobooting_rpx_failed">Sí, al encender la consola muestra el mensaje <code>Failed to load "fs:/vol/external01/wiiu/payload.rpx"</code>.<br><img src="images/detect/payload_loader_failed_to_load_rpx.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="autobooting_mocha_failed" value="autobooting_mocha_failed" name="default" style="display:none;">
+<label class="link" for="autobooting_mocha_failed">Sí, al encender la consola muestra el mensaje <code>AutobootModule: Mocha_InitLibrary failed</code>.<br><img src="images/detect/mocha_initlibrary_failed.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="autobooting_payload_loader_old" value="autobooting_payload_loader_old" name="default" style="display:none;">
+<label class="link" for="autobooting_payload_loader_old">Sí, al encender la consola muestra un glitch gráfico, una línea negra que cruza de izquierda a derecha en la pantalla del GamePad.<br><img src="images/detect/autobooting_payload_loader_old.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="autobooting_payload_loader" value="autobooting_payload_loader" name="default" style="display:none;">
+<label class="link" for="autobooting_payload_loader">Sí, al encender la consola muestra un glitch gráfico, una línea blanca que cruza de izquierda a derecha en la pantalla del GamePad.<br><img src="images/detect/autobooting_payload_loader.gif" class="auto_size"></label><br><br>
+<input type="radio" id="autobooting_el" value="autobooting_el" name="default" style="display:none;">
+<label class="link" for="autobooting_el">Sí, al encender la consola carga el Environment Loader (Cargador de Entorno).<br><img src="images/environment_loader/installer.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="autobooting_tbs" value="autobooting_tbs" name="default" style="display:none;">
+<label class="link" for="autobooting_tbs">Sí, al encender la consola carga el Tiramisu Boot Selector (Selector de Arranque de Tiramisu).<br><img src="images/tiramisu/wii_u_menu.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="autobooting_warning" value="autobooting_warning" name="default" style="display:none;">
+<label class="link" for="autobooting_warning">Sí, al encender la consola carga el mensaje <code>The update folder current exists</code>.<br><img src="images/aroma/warning.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="autobooting_hbl" value="autobooting_hbl" name="default" style="display:none;">
+<label class="link" for="autobooting_hbl">Sí, al encender la consola carga el Homebrew Launcher.<br><img src="images/detect/hbl.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="autobooting_hbc" value="autobooting_hbc" name="default" style="display:none;">
+<label class="link" for="autobooting_hbc">Sí, al encender la consola carga el Homebrew Channel (vWii).<br><img src="images/detect/hbc.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="autobooting_wii" value="autobooting_wii" name="default" style="display:none;">
+<label class="link" for="autobooting_wii">Sí, al encender la consola carga el menú de Wii (vWii System Menu).<br><img src="images/detect/wii_menu.jpg" class="auto_size"></label><br><br-->
+<input type="radio" id="autobooting_wiiu" value="autobooting_wiiu" name="default" style="display:none;">
+<label class="link" for="autobooting_wiiu">No, al encender la consola no muestra nada en particular, carga el menú de Wii U con normalidad.<br><img src="images/detect/wii_u_menu.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="autobooting_user" value="autobooting_user" name="default" style="display:none;">
+<label class="link" for="autobooting_user">No, al encender la consola no muestra nada en particular, carga el menú de selección de usuario con normalidad.<br><img src="images/detect/start_with_this_user.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="autobooting_quick_start" value="autobooting_quick_start" name="default" style="display:none;">
+<label class="link" for="autobooting_quick_start">No, al encender la consola no muestra nada en particular, carga el menú de inicio rápido con normalidad.<br><img src="images/detect/quick_start_menu.jpg" class="auto_size"></label><br><br>
+</form>
+<div id="fmr" style="display:none;"><p>Usar el menú de inicio rápido impide observar la carga del PayloadLoader al encender la consola, para comprobar al 100% que la consola no tenga Autobooting PayloadLoader es necesario <a href="?s=standby_functions">desactivar las funciones en modo de reposo</a> y volver a contestar la pregunta de está sección.</p></div>
+<div id="autobooting_next" style="display:none;"><h2>Apaga la consola.</h2>
+<p><a id="autobooting_next_button" href="?s=test" class="button">Siguiente</a></p></div>
+</div>

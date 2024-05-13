@@ -1,0 +1,42 @@
+<div class="cont_body">
+<h1>Haxchi</h1>
+<br>
+<p>Esta modificación no es tan fácil de detectar sin algo de experiencia. El problema es que <a href="?s=custom_haxchi">Haxchi puede ser personalizado para que muestre cualquier icono y título, además Haxchi se puede configurar para cargar cualquier aplicación homebrew</a>. La forma más simple de determinar que una consola tiene Haxchi correctamente instado es encendiendo la consola, abriendo directamente el icono de Haxchi en el menú de Wii U y observando que pasa.</p>
+<p>Para evitar confusiones la siguiente lista explica que cosas <strong class="red">NO</strong> son tener Haxchi en la Wii U:</p>
+<p>· Tener Haxchi en el Homebrew Launcher no es tener Haxchi instalado en la consola. La aplicación que se muestra en el Homebrew Launcher es el instalador (y actualizador) de Haxchi.<br><img src="images/detect/hbl_with_haxchi.jpg" class="auto_size"></p>
+<p>· Tener alguna carpeta <code>haxchi</code> en la tarjeta SD no es tener Haxchi instalado en la consola. La carpeta <code>haxchi</code> en la raíz de la tarjeta SD es parte del instalador (y actualizador) de Haxchi.<br><img src="images/detect/haxchi_folder.png" class="auto_size"></p>
+<p>· Tener un icono de Haxchi en el menú de Wii U no necesariamente es tener Haxchi correctamente instalado en la consola. El icono de Haxchi en el menú de Wii U puede estar presente, pero sólo se puede comprobar si es Haxchi correctamente instalado si no requiere de algo más para abrirlo, es decir debes poder abrirlo directamente despues de encender la consola sin que salga ningún mensaje de error.<br><img src="images/detect/haxchi_icon.jpg" class="auto_size"></p>
+<h2>¿Tienes un icono de Haxchi (cualquiera) en el menú de Wii U?</h2>
+<form id="f_haxchi_icon" onclick="updateFormHaxchiIcon()">
+<input type="radio" id="haxchi_icon_yes" value="haxchi_icon_yes" name="default" style="display:none;">
+<label class="link" for="haxchi_icon_yes">Sí, hay un icono de Haxchi en el menú de Wii U.</label><br><br>
+<input type="radio" id="haxchi_icon_no" value="haxchi_icon_no" name="default" style="display:none;">
+<label class="link" for="haxchi_icon_no">No, no hay ningún icono de Haxchi en el menú de Wii U.</label><br><br>
+</form>
+<div id="d_haxchi" style="display:none;"><p>Enciende la consola <ins><strong>SIN</strong> la tarjeta SD puesta</ins>, accede al menú de Wii U, abre el icono de Haxchi y observa que ocurre en la pantalla del GamePad, no presiones ningún botón.</p>
+<h2>¿Pudiste abrir el icono de Haxchi en el menú de Wii U?</h2>
+<form id="f_haxchi" onclick="updateFormHaxchi()">
+<input type="radio" id="haxchi_no" value="haxchi_no" name="default" style="display:none;">
+<label class="link" for="haxchi_no">No, la consola muestra el mensaje "No se puede usar este programa. El identificador de Nintendo Network que se usó para adquirirlo se ha borrado".<br><img src="images/detect/this_software_cannot_be_used.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="haxchi_wiiu" value="haxchi_wiiu" name="default" style="display:none;">
+<label class="link" for="haxchi_wiiu">Sí, carga automáticamente el menú de Wii U.<br><img src="images/detect/wii_u_menu.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="haxchi_user" value="haxchi_user" name="default" style="display:none;">
+<label class="link" for="haxchi_user">Sí, carga automáticamente el menú de selección de usuario.<br><img src="images/detect/start_with_this_user.jpg" class="auto_size"></label><br><br>
+<!--input type="radio" id="haxchi_hbl" value="haxchi_hbl" name="default" style="display:none;">
+<label class="link" for="haxchi_hbl">Sí, carga automáticamente el Homebrew Launcher.<br><img src="images/detect/hbl.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="haxchi_mocha" value="haxchi_mocha" name="default" style="display:none;">
+<label class="link" for="haxchi_mocha">Sí, carga automáticamente Mocha CFW.<br><img src="images/detect/mocha.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="haxchi_iosuhax" value="haxchi_iosuhax" name="default" style="display:none;">
+<label class="link" for="haxchi_iosuhax">Sí, carga automáticamente IOSUHAX.<br><img src="images/detect/iosuhax.jpg" class="auto_size"></label><br><br-->
+<input type="radio" id="haxchi_3" value="haxchi_3" name="default" style="display:none;">
+<label class="link" for="haxchi_3">Sí, pero se congela con el mensaje -3.<br><img src="images/detect/-3.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="haxchi_5" value="haxchi_5" name="default" style="display:none;">
+<!--label class="link" for="haxchi_5">Sí, pero se congela con el mensaje -5. (La consola sí detectó la tarjeta SD, pero no encontró la aplicación en la tarjeta SD).<br><img src="images/detect/-5.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="haxchi_freeze" value="haxchi_freeze" name="default" style="display:none;">
+<label class="link" for="haxchi_freeze">Sí, pero se congela sin mostrar ningún mensaje.</label><br><br-->
+<input type="radio" id="haxchi_ohb" value="haxchi_ohb" name="default" style="display:none;">
+<!--label class="link" for="haxchi_ohb">Sí, carga automáticamente una aplicación.</label><br><br-->
+</form></div>
+<div id="haxchi_next" style="display:none;"><h2>Apaga la consola.</h2>
+<p><a id="haxchi_next_button" href="?s=test" class="button">Siguiente</a></p></div>
+</div>

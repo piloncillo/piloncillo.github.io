@@ -1,0 +1,33 @@
+<div class="cont_body">
+<h1>Identificación y diagnostico</h1>
+<br>
+<p>Usa esta sección para determinar y analizar el estado del hack de tu consola. Al contestar las preguntas de los 4 apartados (<a href="?s=test#payloadloader_a"><strong>PayloadLoader</strong></a>, <a href="?s=test#autobooting_a"><strong>Autobooting</strong></a>, <a href="?s=test#haxchi_a"><strong>Haxchi</strong></a> e <a href="?s=test#indexiine_a"><strong>Indexiine</strong></a>) obtendrás información que puede ser de mucha utilidad, esta información es difícil de encontrar en otros sitios.</p>
+<p>La forma más fácil para identificar el "hack" de tu Wii U es reconocer el <a href="?s=glossary#entry_point_t">punto de entrada</a> que da acceso a ejecutar aplicaciones "caseras". Puedes tener más de un punto de entrada en tu consola así que contesta las preguntas de todos los siguientes apartados.</p>
+<p>➤ <a href="?s=test&p=payloadloader" id="payloadloader_a"><strong>PayloadLoader</strong></a>: <span id="payloadloader_result">La pregunta de este apartado te permitirá detectar si tienes PayloadLoader en tu consola.</span></p>
+<p>➤ <a href="?s=test&p=autobooting" id="autobooting_a"><strong>Autobooting</strong></a>: <span id="autobooting_result">Para detectar Coldboot Haxchi o Autobooting PayloadLoader. Contesta la pregunta de este apartado para determinar si tu consola inicia de forma automática un "hack".</span></p>
+<p>➤ <a href="?s=test&p=haxchi" id="haxchi_a"><strong>Haxchi</strong></a>: <span id="haxchi_result">Al contestar la(s) pregunta(s) de este apartado podrás determinar si tu consola tiene Haxchi correctamente instalado.</span></p>
+<p>➤ <a href="?s=test&p=indexiine" id="indexiine_a"><strong>Indexiine</strong></a>: <span id="indexiine_result">Contesta la pregunta de este apartado para detectar Indexiine en tu consola.</span></p>
+<p><strong class="green">Webhack</strong>: <span id="webhack_result">Contesta todas las preguntas de los apartados anteriores para determinar si el exploit del navegador es el único punto de entrada de tu consola. Todas las Wii U, incluidas las que nunca has sido hackeadas, tienen con este punto de entrada.</span></p>
+<p><a href="?s=test"><button class="button_click" onclick="resetTest()">Resetear respuestas</button></a></p>
+<p id="sd_result"></p>
+<h2>¿La Wii U tiene tarjeta SD?</h2>
+<form id="f_sd" onclick="updateFormSD()">
+<input type="radio" id="sd_yes" value="sd_yes" name="default" style="display:none;">
+<label class="link" for="sd_yes">Sí, la consola tiene tarjeta SD.</label><br><br>
+<input type="radio" id="sd_no" value="sd_no" name="default" style="display:none;">
+<label class="link" for="sd_no">No, la consola no tiene tarjeta SD.</label><br>
+</form>
+<div id="d_folder" style="display:none;"><h2>¿En la raíz de la tarjeta SD hay una carpeta <code>wiiu</code>?</h2>
+<form id="f_folder" onclick="updateFormFolder()">
+<input type="radio" id="folder_yes" value="folder_yes" name="default" style="display:none;">
+<label class="link" for="folder_yes">Sí, la tarjeta SD tiene la carpeta <code>wiiu</code>.</label><br><br>
+<input type="radio" id="folder_no" value="folder_no" name="default" style="display:none;">
+<label class="link" for="folder_no">No, la tarjeta SD no tiene la carpeta <code>wiiu</code>.</label><br>
+</form></div>
+<br>
+<br>
+<h2 id="test_info_t">Información adicional sobre la identificación</h2>
+<p>¿Por qué en la identificación del hack no aparece <a href="?s=glossary#cfw_t">Mocha</a>, <a href="?s=glossary#cfw_t">IOSUHAX</a>, <a href="?s=homebrew">Loadiine</a>, <a href="?s=glossary#environment_t">Tiramisu</a>, etc.? Mocha no es un "hack", Mocha es un CFW, igualmente IOSUHAX es un CFW, por otro lado Loadiine es una aplicación y Tiramisu es un Environment. Para poder cargar cualquiera de estos elementos se hace uso de un procedimiento, es ese procedimiento lo que en verdad importa, ese procedimiento es el <a href="?s=glossary#entry_point_t">punto de entrada</a> del hack.</p>
+<p>Si usas el navegador de Internet para cargar el "hack" entonces tu consola tiene <strong class="green">Webhack</strong> o tiene <strong class="green">Indexiine</strong>. Si debes entrar en una página web y tocar un enlace o botón en la pantalla del GamePad de Wii U para poder ejecutar el "hack" entonces tienes <strong class="green">Webhack</strong>. Si sólo debes abrir el navegador de Internet y esperar sin tocar nada a que cargue el "hack" entonces tienes <strong class="green">Indexiine</strong>.</p>
+<p>Si compraste tu consola de segunda mano y no sabes cómo instalaron los juegos en la consola (o en el dispositivo USB de la misma) lo más probable es que usaron <strong class="green">Webhack</strong> más WUP Installer GX2 para instalar los juegos. <ins>Hay un conjunto de juegos que puedes abrir sin ejecutar ningún hack</ins> (funcionan igual que juegos legítimos), estos juegos cuentan con una versión en físico. De los discos originales se han extraído los tickets siempre válidos y se han colocado en las copias digitales, eso se llama <strong class="red">método brasileño</strong>. Por otra parte, el contenido exclusivo de la eShop (juegos de Consola Virtual y DLCs) requieren de aplicar un parche de firmas (signature patch) para poder abrirlos o para ser instados.</p>
+</div>

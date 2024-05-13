@@ -1,0 +1,52 @@
+<div class="cont_body">
+<h1>Indexiine</h1>
+<br>
+<p>Existen dos modificaciones que usan el mismo exploit del navegador. Con Webhack debes entrar en una página web y tocar en un enlace o botón para ejecutar el exploit, por otro lado, con Indexiine no necesitas entrar en ninguna página ni tocar nada ya que se ejecuta automáticamente después de unos segundos de abrir el navegador.</p>
+<p>El exploit del navegador es un punto de entrada muy versátil ya que se puede usar para cargar cualquier aplicación homebrew. Sin embargo, también es fácil bloquear el navegador si es que se desconfiguran los ajustes correctos del propio navegador teniendo Indexiine instalado.</p>
+<p>Para evitar confusiones debes saber que tener la aplicación Indexiine Installer en el Homebrew Launcher <strong class="red">no</strong> es tener Indexiine instalado en la consola. La aplicación que se muestra en el Homebrew Launcher es el instalador de Indexiine, puedes tener la aplicación Indexiine Installer en el Homebrew Launcher sin tener realmente instalado Indexiine en la consola.<br><img src="images/detect/hbl_with_indexiine_installer.jpg" class="auto_size"></p>
+<p>Enciende la consola <ins><strong>SIN</strong> la tarjeta SD puesta</ins>, accede al menú de Wii U, abre el navegador de Internet y observa que ocurre en la pantalla del GamePad, espera 20 segundos, no presiones ningún botón, después de los 20 segundos puedes probar usar el navegador con normalidad.<br><img src="images/detect/internet_browser.jpg" class="auto_size"></p>
+<h2>¿Al abrir el navegador carga algo especial?</h2>
+<form id="f_indexiine" onclick="updateFormIndexiine()">
+<input type="radio" id="indexiine_no" value="indexiine_no" name="default" style="display:none;">
+<label class="link" for="indexiine_no">No, el navegador no carga nada especial, muestra su página de inicio, no se congela y lo puedo usar para navegar con normalidad.<br><img src="images/detect/browser_index.jpg" class="auto_size"></label><br><br>
+<!--input type="radio" id="indexiine_mocha" value="indexiine_mocha" name="default" style="display:none;">
+<label class="link" for="indexiine_mocha">Sí, el navegador carga automáticamente Mocha CFW.<br><img src="images/detect/mocha.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="indexiine_iosuhax" value="indexiine_iosuhax" name="default" style="display:none;">
+<label class="link" for="indexiine_iosuhax">Sí, el navegador carga automáticamente IOSUHAX.<br><img src="images/detect/iosuhax.jpg" class="auto_size"></label><br><br-->
+<input type="radio" id="indexiine_q" value="indexiine_q" name="default" style="display:none;">
+<label class="link" for="indexiine_q">Sí, el navegador muestra un mensaje preguntando si quiero cargar Indexiine.<br><img src="images/detect/indexiine_mod.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="indexiine_msf" value="indexiine_msf" name="default" style="display:none;">
+<label class="link" for="indexiine_msf">Sí, el navegador se congela con el mensaje <code>FSGetMountSource falied. Please insert a FAT32 formatted sd card</code>.<br><img src="images/detect/fs_get_mount_source.jpg" class="auto_size"></label><br><br>
+<!--input type="radio" id="indexiine_fm" value="indexiine_fm" name="default" style="display:none;">
+<label class="link" for="indexiine_fm">Sí, el navegador se congela con el mensaje <code>FSOpenFile falied. File missing /vol/external01/wiiu/payload.elf</code>.<br><img src="images/detect/fs_open_file.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="indexiine_failed" value="indexiine_failed" name="default" style="display:none;">
+<input type="radio" id="indexiine_rpx_failed" value="indexiine_rpx_failed" name="default" style="display:none;">
+<label class="link" for="indexiine_rpx_failed">Sí, el navegador se congela con el mensaje <code>Failed to load "fs:/vol/external01/wiiu/payload.rpx"</code>.<br><img src="images/detect/payload_loader_failed_to_load_rpx.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="indexiine_mocha_failed" value="indexiine_mocha_failed" name="default" style="display:none;">
+<label class="link" for="indexiine_mocha_failed">Sí, el navegador se congela con el mensaje <code>AutobootModule: Mocha_InitLibrary failed</code>.<br><img src="images/detect/mocha_initlibrary_failed.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="indexiine_el" value="indexiine_el" name="default" style="display:none;">
+<label class="link" for="indexiine_el">Sí, el navegador carga automáticamente el Environment Loader (Cargador de Entorno).<br><img src="images/environment_loader/installer.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="indexiine_tbs" value="indexiine_tbs" name="default" style="display:none;">
+<label class="link" for="indexiine_tbs">Sí, el navegador carga automáticamente el Tiramisu Boot Selector (Selector de Arranque de Tiramisu).<br><img src="images/tiramisu/wii_u_menu.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="indexiine_warning" value="indexiine_warning" name="default" style="display:none;">
+<label class="link" for="indexiine_warning">Sí, el navegador carga automáticamente el mensaje <code>The update folder current exists</code>.<br><img src="images/aroma/warning.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="indexiine_hbl" value="indexiine_hbl" name="default" style="display:none;">
+<label class="link" for="indexiine_hbl">Sí, el navegador carga automáticamente el Homebrew Launcher.<br><img src="images/detect/hbl.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="indexiine_hbc" value="indexiine_hbc" name="default" style="display:none;">
+<label class="link" for="indexiine_hbc">Sí, el navegador carga automáticamente el Homebrew Channel (vWii).<br><img src="images/detect/hbc.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="indexiine_wii" value="indexiine_wii" name="default" style="display:none;">
+<label class="link" for="indexiine_wii">Sí, el navegador carga automáticamente el menú de Wii (vWii System Menu).<br><img src="images/detect/wii_menu.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="indexiine_wiiu" value="indexiine_wiiu" name="default" style="display:none;">
+<label class="link" for="indexiine_wiiu">Sí, el navegador carga automáticamente el menú de Wii U.<br><img src="images/detect/wii_u_menu.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="indexiine_user" value="indexiine_user" name="default" style="display:none;">
+<label class="link" for="indexiine_user">Sí, el navegador carga automáticamente el menú de selección de usuario.<br><img src="images/detect/start_with_this_user.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="indexiine_twice" value="indexiine_twice" name="default" style="display:none;">
+<label class="link" for="indexiine_twice">Sí, el navegador se congela con el mensaje <code>Don't run Environment Loader twice. If you want to open the Homebrew Launcher, launch the Mii Maker instead</code>.<br><img src="images/detect/dont_run_the_environment_loader_twice.jpg" class="auto_size"></label><br><br-->
+<input type="radio" id="indexiine_freeze" value="indexiine_freeze" name="default" style="display:none;">
+<label class="link" for="indexiine_freeze">El navegador se congela por otro motivo y no lo puedo usar para navegar.</label><br><br>
+<!--input type="radio" id="indexiine_ohb" value="indexiine_ohb" name="default" style="display:none;">
+<label class="link" for="indexiine_ohb">Sí, el navegador carga automáticamente una aplicación.</label><br><br-->
+</form>
+<div id="indexiine_next" style="display:none;"><h2>Apaga la consola.</h2>
+<p><a id="indexiine_next_button" href="?s=test" class="button">Siguiente</a></p></div>
+</div>

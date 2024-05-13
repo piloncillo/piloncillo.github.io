@@ -1,0 +1,38 @@
+<div class="cont_body">
+<h1>PayloadLoader</h1>
+<br>
+<p>La modificación que se usa para cargar Aroma (o Tiramisu) es fácil de detectar ya que se instala el PayloadLoader en el icono de Información sobre salud y seguridad.</p>
+<p>PayloadLoader es el punto de entrada que se usa para cargar el Environment Loader y a su vez el Environment Loader se usa para cargar Aroma (o Tiramisu). Dependiendo de la configuración de Aroma (o de Tiramisu) se puede cargar determinada cosa, pero lo más común es que automáticamente cargue el menú de Wii U.</p>
+<p>Enciende la consola <ins><strong>SIN</strong> la tarjeta SD puesta</ins>, accede al menú de Wii U, abre el icono de Información sobre salud y seguridad, y observa lo que ocurre en la pantalla del GamePad.<br><img src="images/detect/health_and_safety_information_icon.jpg" class="auto_size"></p>
+<h2>¿Al abrir el icono de Información sobre salud y seguridad carga algo especial?</h2>
+<form id="f_payloadloader" onclick="updateFormPayloadLoader()">
+<input type="radio" id="payloadloader_no" value="payloadloader_no" name="default" style="display:none;">
+<label class="link" for="payloadloader_no">No, al abrir el icono no carga nada especial, no se congela y puedo consultar información sobre salud y seguridad con normalidad.<br><img src="images/detect/health_and_safety_information.jpg" class="auto_size"></label><br><br>
+<!--input type="radio" id="payloadloader_twice" value="payloadloader_twice" name="default" style="display:none;">
+<label class="link" for="payloadloader_twice">Sí, al abrir el icono la consola se congela con el mensaje <code>Don't run Environment Loader twice. If you want to open the Homebrew Launcher, launch the Mii Maker instead</code>.<br><img src="images/detect/dont_run_the_environment_loader_twice.jpg" class="auto_size"></label><br><br-->
+<input type="radio" id="payloadloader_failed" value="payloadloader_failed" name="default" style="display:none;">
+<label class="link" for="payloadloader_failed">Sí, al abrir el icono muestra el mensaje <code>Failed to load sd:/wiiu/payload.elf Starting the console without any modifications</code>.<br><img src="images/detect/payload_loader_failed_to_load.jpg" class="auto_size"></label><br><br>
+<!--input type="radio" id="payloadloader_rpx_failed" value="payloadloader_rpx_failed" name="default" style="display:none;">
+<label class="link" for="payloadloader_rpx_failed">Sí, al abrir el icono muestra el mensaje <code>Failed to load "fs:/vol/external01/wiiu/payload.rpx"</code>.<br><img src="images/detect/payload_loader_failed_to_load_rpx.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="payloadloader_mocha_failed" value="payloadloader_mocha_failed" name="default" style="display:none;">
+<label class="link" for="payloadloader_mocha_failed">Sí, al abrir el icono muestra el mensaje <code>AutobootModule: Mocha_InitLibrary failed</code>.<br><img src="images/detect/mocha_initlibrary_failed.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="payloadloader_el" value="payloadloader_el" name="default" style="display:none;">
+<label class="link" for="payloadloader_el">Sí, al abrir el icono carga el Environment Loader (Cargador de Entorno).<br><img src="images/environment_loader/installer.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="payloadloader_tbs" value="payloadloader_tbs" name="default" style="display:none;">
+<label class="link" for="payloadloader_tbs">Sí, al abrir el icono carga el Tiramisu Boot Selector (Selector de Arranque de Tiramisu).<br><img src="images/tiramisu/wii_u_menu.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="payloadloader_warning" value="payloadloader_warning" name="default" style="display:none;">
+<label class="link" for="payloadloader_warning">Sí, al abrir el icono carga el mensaje <code>The update folder current exists</code>.<br><img src="images/aroma/warning.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="payloadloader_hbl" value="payloadloader_hbl" name="default" style="display:none;">
+<label class="link" for="payloadloader_hbl">Sí, al abrir el icono carga el Homebrew Launcher.<br><img src="images/detect/hbl.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="payloadloader_hbc" value="payloadloader_hbc" name="default" style="display:none;">
+<label class="link" for="payloadloader_hbc">Sí, al abrir el icono carga el Homebrew Channel (vWii).<br><img src="images/detect/hbc.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="payloadloader_wii" value="payloadloader_wii" name="default" style="display:none;">
+<label class="link" for="payloadloader_wii">Sí, al abrir el icono carga el menú de Wii (vWii System Menu).<br><img src="images/detect/wii_menu.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="payloadloader_wiiu" value="payloadloader_wiiu" name="default" style="display:none;">
+<label class="link" for="payloadloader_wiiu">Sí, al abrir el icono carga el menú de Wii U.<br><img src="images/detect/wii_u_menu.jpg" class="auto_size"></label><br><br>
+<input type="radio" id="payloadloader_user" value="payloadloader_user" name="default" style="display:none;">
+<label class="link" for="payloadloader_user">Sí, al abrir el icono carga el menú de selección de usuario.<br><img src="images/detect/start_with_this_user.jpg" class="auto_size"></label><br><br-->
+</form>
+<div id="payloadloader_next" style="display:none;"><h2>Apaga la consola.</h2>
+<p><a id="payloadloader_next_button" href="?s=test" class="button">Siguiente</a></p></div>
+</div>
