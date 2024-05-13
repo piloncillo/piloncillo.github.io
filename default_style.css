@@ -21,6 +21,12 @@ h2 {
 	color: #ffffff;
 }
 
+hr {
+	height: 1px;
+	border-width: 0;
+	background-color: #404040;
+}
+
 #sidebar a:link {
 	color: #d3d3d3;
 	text-decoration: none;
@@ -244,9 +250,13 @@ img {
 	padding-left: 20px;
 }
 
-img.center {
+img.center, iframe.youtube_video {
 	margin: auto;
 	display: block;
+}
+
+.youtube_video {
+	border: 1px solid #808080;
 }
 
 div.info {
