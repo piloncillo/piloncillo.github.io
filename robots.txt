@@ -3,6 +3,7 @@ Disallow: /archive.html
 Disallow: /download.html
 Disallow: /archive/
 Disallow: /download/
+Disallow: /content/
 Disallow: /vwii/
 
 Sitemap: https://piloncillo.github.io/sitemap.xml
