@@ -1,74 +1,79 @@
 <div class="cont">
 <br>
 <h1 id="hbl">Añadir aplicaciones heredadas de Wii</h1>
-<p>Ya tienes el modo virtual Wii modificado, pero para aprovecharlo hay que agregar aplicaciones. En caso de que quieras añadir alguna aplicación que no está aquí o que quieras actualizar alguna aplicación es impórtate que aprendas a colocarlas por tu cuenta.</p>
-<p>En general las aplicaciones heredadas de Wii se colocan en la carpeta <code>sd:/apps</code>, observa la ruta de carpetas en las imágenes de referencia. Si tienes dudas usa las imágenes para comprobar que ubicaste cada aplicación correctamente.</p>
-<p>Las aplicaciones se abren usando el menú del <em>Homebrew Channel</em> ("canal de aplicaciones hechas en casa").</p><!--En la imagen de abajo el <em>Homebrew Channel</em> tiene tres aplicaciones: <em>Homebrew Browser</em>, <em>USB Loader GX</em> y <em>Wii Mod Lite</em>.</p>
-<p><a target="_blank" href="images/misc/hbc_empty.jpg"><img src="images/misc/hbc_empty.jpg" class="auto_size center"></a></p-->
+<p>Ya tienes la consola modificada, pero para aprovecharla hay que agregar aplicaciones.</p>
+<p>Es posible colocar los archivos usando un teléfono inteligente sólo debes organizar los archivos respetando las estructuras de carpetas.</p>
+<p>Cuando quieras actualizar alguna aplicación manualmente sólo debes descargar los archivos más recientes y remplazar los anteriores en la tarjeta SD.</p>
 <br>
 <h2>Añadir aplicaciones al <em>Homebrew Channel</em></h2>
+<p>En el modo virtual Wii las aplicaciones se abren usando el menú del Homebrew Channel ("canal de aplicaciones hechas en casa"). Es importante que aprendas a colocar aplicaciones en el Homebrew Channel por tu cuenta en caso de necesitar añadir o actualizar alguna aplicación manualmente.</p>
+<p>Las aplicaciones para el Homebrew Channel se colocan en la carpeta <code>sd:/apps</code>, examina la ruta de carpetas en las imágenes de referencia. Si no colocas correctamente los archivos no van a aparecer las aplicaciones en el Homebrew Channel.</p>
+<!--p>En la imagen de abajo el Homebrew Channel pasa de no tener aplicaciones puestas a tener tres aplicaciones correctamente puestas: Homebrew Browser, USB Loader GX y YAWM ModMii Edition.</p-->
+<h2>Estructura</h2>
+<a target="_blank" href="../images/vwii/general.png"><img src="../images/vwii/general_50.png" class="auto_size center"></a>
+<ul>
+<li class="green">La estructura correcta es: <code>sd:/apps/AppName/boot.dol</code>.</li>
+<li class="red">Es incorrecto: <code>sd:/wiiu/apps/AppName/boot.dol</code>.</li>
+</ul>
+<h2>Procedimiento</h2>
 <ul>
 <li>Si tienes encendida la consola apágala.</li>
-<li>Saca la tarjeta SD de la Wii U y ponla en tu PC (o teléfono inteligente) para poner archivos.</li>
-</ul>
-<p>Vamos a descargar los archivos de las siguientes aplicaciones:</p>
+<li>Saca la tarjeta SD de la Wii U y ponla en tu PC para colocar los archivos.</li>
+<li>Descarga las siguientes aplicaciones:</li>
 <ul>
-<li><a href="https://hbb1.oscwii.org/api/v3/contents/usbloader_gx/usbloader_gx.zip">USB Loader GX</a>.</li>
-<li><a href="https://wii.guide/assets/files/homebrew_browser_v0.3.9e.zip">Homebrew Browser</a>.</li>
-<li><a href="https://hbb1.oscwii.org/api/v3/contents/wiiflow/wiiflow.zip">Wiiflow Lite</a>.</li>
-<li><a href="https://hbb1.oscwii.org/api/v3/contents/WiiModLite/WiiModLite.zip">Wii Mod Lite</a>.</li>
+<li>Descarga <a target="_blank" href="https://oscwii.org/library/app/homebrew_browser">Homebrew Browser (.ZIP)</a>. Permite buscar y descargar aplicaciones homebrew heredadas de Wii directamente desde la Wii U.</li>
+<li>Descarga <a target="_blank" href="https://oscwii.org/library/app/usbloader_gx">USB Loader GX (.ZIP)</a>. Es un cargador de juegos en formato WBFS. <a href="https://www.gamebrew.org/wiki/USB_Loader_GX_Wii">Más información aquí.</a> Usa <a href="https://static.wiidatabase.de/Wii-Backup-Manager.zip">Wii Backup Manager</a> para colocar juegos de Wii (ISO o WBFS) desde una PC a la tarjeta SD o dispositivo USB compatible.</li>
+<li>Descarga <a target="_blank" href="https://oscwii.org/library/app/wiiflow">WiiFlow WFL (.ZIP)</a>. Es un cargador de juegos en formato WBFS. <a href="https://www.gamebrew.org/wiki/WiiFlow_Lite">Más información aquí.</a> Usa <a href="https://static.wiidatabase.de/Wii-Backup-Manager.zip">Wii Backup Manager</a> para colocar juegos de Wii (ISO o WBFS) desde una PC a la tarjeta SD o dispositivo USB compatible.</li>
+<li>Descarga <a target="_blank" href="https://oscwii.org/library/app/yawmME">YAWM ModMii Edition (.ZIP)</a>. Permite instalar archivos WAD. Actualmente no se usa el viejo WAD Manager ni en una Wii clásica ni mucho menos en el modo virtual Wii de la Wii U.</li>
 </ul>
-<p>Ahora vamos a instalar las aplicaciones:</p>
+</ul>
 <div class="info">Si la PC te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
 <div class="info">Si la PC te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
+<div class="tip">En general siempre se combina la carpeta <code>apps</code> del archivo <code>.zip</code> que acabas de descargar con la carpeta <code>apps</code> que ya tienes en la raíz de la tarjeta SD, excepto si es la primera vez que colocas una carpeta <code>apps</code> en la raíz de la tarjeta SD.</div>
 <ul>
-<li>Descomprime el archivo <code>usbloader_gx.zip</code></li>
-<ul>
-<li>Entra en la carpeta <code>apps</code> del archivo descomprimido.</li>
-<li>Copia la carpeta <code>usbloader_gx</code> y pégala en la carpeta <code>sd:/apps</code>.<!--br><a target="_blank" href="images/.png"><img src="images/.png" class="auto_size_li_li"></a--></li>
+<li>Descomprime el archivo <code>homebrew_browser.zip</code>.</li>
+<a target="_blank" href="../images/vwii/homebrew_browser_zip.png"><img src="../images/vwii/homebrew_browser_zip.png" class="auto_size_li_li"></a>
+<li>Copia la carpeta <code>apps</code> de <code>homebrew_browser.zip</code> y pégala en la raíz de la tarjeta SD.</li>
+<li>Ignora la carpeta <code>Homebrew Browser Guide and Help</code> de <code>homebrew_browser.zip</code>.</li>
+<li>Así debe quedar Homebrew Browser en la tarjeta SD:</li>
+<a target="_blank" href="../images/vwii/homebrew_browser.png"><img src="../images/vwii/homebrew_browser.png" class="auto_size_li_li"></a>
+<li class="green">Es correcto: <code>sd:/apps/homebrew_browser/boot.dol</code>.</li>
+<li class="red">Es incorrecto: <code>sd:/wiiu/apps/homebrew_browser/boot.dol</code>.</li>
 </ul>
-<li>Descomprime el archivo <code>homebrew_browser_v0.3.9e.zip</code></li>
 <ul>
-<li>Entra en la carpeta del archivo descomprimido.</li>
-<li>Copia la carpeta <code>homebrew_browser</code> y pégala en la carpeta <code>sd:/apps</code>.<!--br><a target="_blank" href="images/.png"><img src="images/.png" class="auto_size_li_li"></a--></li>
+<li>Descomprime el archivo <code>usbloader_gx.zip</code>.</li>
+<a target="_blank" href="../images/vwii/usbloader_gx_zip.png"><img src="../images/vwii/usbloader_gx_zip.png" class="auto_size_li_li"></a>
+<li>Copia la carpeta <code>apps</code> de <code>usbloader_gx.zip</code> y pégala en la raíz de la tarjeta SD.</li>
+<li>Así debe quedar USB Loader GX en la tarjeta SD:</li>
+<a target="_blank" href="../images/vwii/usbloader_gx.png"><img src="../images/vwii/usbloader_gx.png" class="auto_size_li_li"></a>
+<li class="green">Es correcto: <code>sd:/apps/usbloader_gx/boot.dol</code>.</li>
+<li class="red">Es incorrecto: <code>sd:/wiiu/apps/usbloader_gx/boot.dol</code>.</li>
 </ul>
-<li>Descomprime el archivo <code>wiiflow.zip</code></li>
 <ul>
-<li>Entra en la carpeta del archivo descomprimido.</li>
-<li>Copia la carpeta <code>wiiflow</code> y pégala en la raíz de la tarjeta SD.<!--br><a target="_blank" href="images/.png"><img src="images/.png" class="auto_size_li_li"></a--></li>
-<li>Entra en la carpeta <code>apps</code> del archivo descomprimido.</li>
-<li>Copia la carpeta <code>wiiflow</code> y pégala en la carpeta <code>sd:/apps</code>.<!--br><a target="_blank" href="images/.png"><img src="images/.png" class="auto_size_li_li"></a--></li>
+<li>Descomprime el archivo <code>wiiflow.zip</code>.</li>
+<a target="_blank" href="../images/vwii/wiiflow_zip.png"><img src="../images/vwii/wiiflow_zip.png" class="auto_size_li_li"></a>
+<li>Copia las carpetas <code>apps</code> y <code>wiiflow</code> de <code>wiiflow.zip</code> y pégalas en la raíz de la tarjeta SD.</li>
+<li>Así debe quedar WiiFlow WFL en la tarjeta SD:</li>
+<a target="_blank" href="../images/vwii/wiiflow.png"><img src="../images/vwii/wiiflow.png" class="auto_size_li_li"></a>
+<li class="green">Es correcto: <code>sd:/apps/wiiflow/boot.dol</code>.</li>
+<li class="red">Es incorrecto: <code>sd:/wiiu/apps/wiiflow/boot.dol</code>.</li>
 </ul>
-<li>Descomprime el archivo <code>WiiModLite.zip</code></li>
 <ul>
-<li>Entra en la carpeta <code>apps</code> del archivo descomprimido.</li>
-<li>Copia la carpeta <code>WiiModLite</code> y pégala en la carpeta <code>sd:/apps</code>.<!--br><a target="_blank" href="images/.png"><img src="images/.png" class="auto_size_li_li"></a--></li>
-</ul>
-</ul>
-<p>Las aplicaciones que acabas de instalar sirven para:</p>
-<ul>
-<li><strong>USB Loader GX</strong> es un cargador de juegos en formato WBFS. Usa <a href="https://static.wiidatabase.de/Wii-Backup-Manager.zip">Wii Backup Manager</a> para colocar juegos de Wii (ISO o WBFS) desde una PC a la tarjeta SD o dispositivo USB compatible.</li>
-<li>El <strong>Homebrew Browser</strong> permite buscar y descargar aplicaciones homebrew heredadas de Wii directamente desde la Wii U.</li>
-<li><strong>Wiiflow Lite</strong> es un cargador de juegos en formato WBFS. Usa <a href="https://static.wiidatabase.de/Wii-Backup-Manager.zip">Wii Backup Manager</a> para colocar juegos de Wii (ISO o WBFS) desde una PC a la tarjeta SD o dispositivo USB compatible.</li>
-<li><strong>Wii Mod Lite</strong> permite instalar archivos WAD. Existen otros instaladores de WADs que puedes usar en el modo virtual Wii, como por ejemplo <a href="https://oscwii.org/library/app/some-yawmm-mod">Some YAWMM Mod</a>, pero en cualquier caso, actualmente no se usa WAD Manager ni en una Wii clásica ni mucho menos en el modo virtual Wii de la Wii U.</li>
-</ul>
-<div class="warning">Instalar WADs tiene riesgo de bloquear (brick) el modo virtual Wii, debes tener una copia de seguridad de la NAND antes de instalar uno, pero sí se hace correctamente, no bloqueará el modo virtual Wii. Solamente instala WADs oficiales de la misma región que la consola o instala WADs hechos explícitamente para el modo virtual Wii (vWii).</div>
-<!--div class="accordion">Toca aquí para ver las imágenes que muestran la ubicación de cada aplicación. Puedes usarlas para comprobar que las aplicaciones están correctamente colocadas.</div>
-<div class="panel">
-<ul>
-<li>La aplicación <strong>USB Loader GX</strong> se encuentra en <code>sd:/apps/usbloader_gx/boot.dol</code>.<br><a target="_blank" href="images/.png"><img src="images/.png" class="auto_size_li_li"></a></li>
-<li>La aplicación <strong>Homebrew Browser</strong> se encuentra en <code>sd:/apps/homebrew_browser/boot.dol</code>.<br><a target="_blank" href="images/.png"><img src="images/.png" class="auto_size_li_li"></a></li>
-<li>La aplicación <strong>Wiiflow Lite</strong> se encuentra en <code>sd:/apps/wiiflow/boot.dol</code>.<br><a target="_blank" href="images/.png"><img src="images/.png" class="auto_size_li_li"></a></li>
-<li>La aplicación <strong>Wii Mod Lite</strong> se encuentra en <code>sd:/apps/WiiModLite/boot.dol</code>.<br><a target="_blank" href="images/.png"><img src="images/.png" class="auto_size_li_li"></a></li>
-</ul>
-</div-->
-<ul>
+<li>Descomprime el archivo <code>yawmME.zip</code>.</li>
+<a target="_blank" href="../images/vwii/yawmME_zip.png"><img src="../images/vwii/yawmME_zip.png" class="auto_size_li_li"></a>
+<li>Copia la carpeta <code>apps</code> de <code>yawmME.zip</code> y pégala en la raíz de la tarjeta SD.</li>
+<li>Así debe quedar YAWM ModMii Edition en la tarjeta SD:</li>
+<a target="_blank" href="../images/vwii/yawmME.png"><img src="../images/vwii/yawmME.png" class="auto_size_li_li"></a>
+<li class="green">Es correcto: <code>sd:/apps/yawmME/boot.dol</code>.</li>
+<li class="red">Es incorrecto: <code>sd:/wiiu/apps/yawmME/boot.dol</code>.</li>
 <li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
 </ul>
 <br>
+<div class="warning">Instalar WADs tiene riesgo de bloquear (brick) el modo virtual Wii, debes tener una copia de seguridad de la NAND antes de instalar alguno, si se hace correctamente no bloqueará el modo virtual Wii. Solamente instala WADs oficiales de la misma región que la consola o instala WADs hechos explícitamente para el modo virtual Wii (vWii).</div>
+<br>
 <h2><strong class="yellow">Importante recuerda que:</strong></h2>
 <ul>
-<li>Desde el menú del <em>Homebrew Channel</em> abres las aplicaciones <em>homebrew</em> heredadas de Wii como <strong>USB Loader GX</strong>, <strong>Wiiflow Lite</strong>, <strong>Wii Mod Lite</strong>, etc.</li>
+<li>Desde el menú del <em>Homebrew Channel</em> abres las aplicaciones <em>homebrew</em> heredadas de Wii como <strong>USB Loader GX</strong>, <strong>Wiiflow WFL</strong>, <strong>YAWM ModMii Edition</strong>, etc.</li>
 <li>Ocasionalmente haz una copia de seguridad de todos los archivos de la tarjeta SD, si en algún momento se daña o pierde la tarjeta SD puedes reponer los archivos fácilmente.</li>
 </ul>
 <p>Aquí termina la guía de modificación del modo virtual Wii.</p>
