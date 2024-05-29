@@ -1,0 +1,44 @@
+<div class="cont_body">
+<div class="apps_nav">
+  <a href="?s=tiramisu&p=apps">General</a>
+  <a href="?s=tiramisu&p=apps_hbl">Aplicaciones para el HBL</a>
+  <a class="active" href="?s=tiramisu&p=modules_setup">Módulos setup</a>
+</div>
+<br>
+<h2>Añadir "módulos setup" a Tiramisu</h2>
+<p>Los "módulos setup" son modificaciones o parches que se aplican directamente al firmware original de la consola. Para Tiramisu se colocan en la carpeta <code>sd:/wiiu/environments/tiramisu/modules/setup</code>, examina la ruta de carpetas en las imágenes de referencia.</p>
+<h2>Estructura</h2>
+<a target="_blank" href="images/tiramisu/setup.png"><img src="images/tiramisu/setup_50.png" class="auto_size center"></a>
+<ul>
+<li class="green">La estructura correcta es: <code>sd:/wiiu/environments/tiramisu/modules/setup/##_module_name.rpx</code>.</li>
+</ul>
+<h2>Procedimiento</h2>
+<div class="tip">Si recién descargaste alguno de los siguientes archivos no es necesario que lo vuelvas a descargar.</div>
+<ul>
+<li>Si tienes encendida la consola apágala.</li>
+<li>Saca la tarjeta SD de la Wii U y ponla en tu PC para colocar los archivos.</li>
+<li>Descarga <a target="_blank" href="https://github.com/GaryOderNichts/Bloopair/releases">Bloopair Pair Menu y el módulo Bloopair</a>. El módulo Bloopair es Bloopair en sí mismo, permite conectar de forma inalámbrica controles Bluetooth compatibles. <ins>La sincronización de los controles compatibles se hace usando la propia interfaz de la Wii U.</ins> <a target="_blank" href="https://gbatemp.net/threads/bloopair-connect-controllers-from-other-consoles-natively.594289/">Consulta el hilo oficial para más detalles.</a></li>
+<ul>
+<li>Únicamente necesitas el archivo <code>Bloopair_v#.#.#.zip</code>.</li>
+</ul>
+</ul>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
+<ul>
+<li>Descomprime el archivo <code>Bloopair_v#.#.#.zip</code>.</li>
+<a target="_blank" href="images/tiramisu/bloopair_zip.png"><img src="images/tiramisu/bloopair_zip.png" class="auto_size_li_li"></a>
+<li>Copia el archivo <code>30_bloopair.rpx</code> de <code>Bloopair_v#.#.#.zip</code> y pégalo en la carpeta <code>sd:/wiiu/environments/tiramisu/modules/setup</code>.</li>
+<li>Ignora la carpeta <code>wiiu</code> de <code>Bloopair_v#.#.#.zip</code>.</li>
+<li>Así debe quedar el módulo Bloopair en la tarjeta SD:</li>
+<a target="_blank" href="images/tiramisu/bloopair.png"><img src="images/tiramisu/bloopair.png" class="auto_size_li_li"></a>
+<li class="green">Es correcto: <code>sd:/wiiu/environments/tiramisu/modules/setup/30_bloopair.rpx</code>.</li>
+<li class="red">Es incorrecto: <code>sd:/wiiu/apps/Bloopair_v#.#.#/30_bloopair.rpx</code>.</li>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
+</ul>
+<br>
+<div class="apps_nav">
+  <a href="?s=tiramisu&p=apps">General</a>
+  <a href="?s=tiramisu&p=apps_hbl">Aplicaciones para el HBL</a>
+  <a class="active" href="?s=tiramisu&p=modules_setup">Módulos setup</a>
+</div>
+</div>

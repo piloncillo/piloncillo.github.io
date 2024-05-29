@@ -1,0 +1,84 @@
+<div class="cont_body">
+<div class="apps_nav hidde1">
+  <a href="?s=tiramisu&p=apps">General</a>
+  <a class="active" href="?s=tiramisu&p=apps_hbl">Aplicaciones para el HBL</a>
+  <a href="?s=tiramisu&p=modules_setup">Módulos setup</a>
+</div>
+<br>
+<h2>Añadir aplicaciones al <em>Homebrew Launcher</em></h2>
+<p>En Tiramisu y modificaciones anteriores las aplicaciones se abren usando el menú del Homebrew Launcher ("lanzador de aplicaciones hechas en casa"). Es importante que aprendas a colocar aplicaciones en el Homebrew Launcher por tu cuenta en caso de necesitar añadir o actualizar alguna aplicación manualmente.</p>
+<p>Las aplicaciones para el Homebrew Launcher se colocan en la carpeta <code>sd:/wiiu/apps</code>, examina la ruta de carpetas en las imágenes de referencia. Si no colocas correctamente los archivos no van a aparecer las aplicaciones en el Homebrew Launcher. <ins>En toda la tarjeta sólo debe existir una sola carpeta <code>wiiu</code></ins>.</p>
+<p>En la imagen de abajo el Homebrew Launcher pasa de no tener aplicaciones puestas a tener tres aplicaciones correctamente puestas: Homebrew App Store, SaveMii Mod WUT Port y WUP Installer GX2.</p>
+<a target="_blank" href="images/misc/hbl_empty.jpg"><img src="images/misc/hbl_empty.jpg" class="auto_size center"></a>
+<h2>Estructura</h2>
+<p>Las aplicaciones para el Homebrew Launcher tienen formato .elf o formato .rpx. El formato .wuhb no es para el Homebrew Launcher, es para Aroma.</p>
+<a target="_blank" href="images/tiramisu/hbl.png"><img src="images/tiramisu/hbl_50.png" class="auto_size center"></a>
+<ul>
+<li class="green">La estructura correcta es: <code>sd:/wiiu/apps/AppName/AppName.elf</code>.</li>
+<li class="red">Es incorrecto: <code>sd:/wiiu/apps/AppName/wiiu/apps/AppName/AppName.elf</code>.</li>
+</ul>
+<h2>Procedimiento</h2>
+<div class="tip">Si recién descargaste alguno de los siguientes archivos no es necesario que lo vuelvas a descargar.</div>
+<ul>
+<li>Si tienes encendida la consola apágala.</li>
+<li>Saca la tarjeta SD de la Wii U y ponla en tu PC para colocar los archivos.</li>
+<li>Descarga las siguientes aplicaciones:</li>
+<ul>
+<li>Descarga <a target="_blank" href="https://hb-app.store/wiiu/appstore">Homebrew App Store</a>. Permite buscar y descargar aplicaciones homebrew de Wii U directamente desde la Wii U.</li>
+<li>Descarga <a target="_blank" href="https://hb-app.store/wiiu/SaveMiiModWUTPort">SaveMii mod WUT Port</a>. Permite administrar los archivos de datos guardado de juegos de Wii y de Wii U.</li>
+<li>Descarga <a target="_blank" href="https://hb-app.store/wiiu/wup_installer_gx2">WUP Installer GX2</a> (Wii U Public title Installer). Permite instalar juegos y aplicaciones en formato NUS Content cifrado de Wii U (archivos <code>.app</code>, <code>.h3</code>, <code>title.tmd</code>, <code>title.cert</code> y <code>title.tik</code>).</li>
+<li>Descarga <a target="_blank" href="https://github.com/GaryOderNichts/Bloopair/releases">Bloopair Pair Menu y el módulo Bloopair</a>. El Bloopair Pair Menu no es Bloopair en sí mismo sólo es una aplicación que facilita conectar controles de PS3. <a target="_blank" href="https://gbatemp.net/threads/bloopair-connect-controllers-from-other-consoles-natively.594289/">Consulta el hilo oficial para más detalles.</a></li>
+<ul>
+<li>Únicamente necesitas el archivo <code>Bloopair_v#.#.#.zip</code>.</li>
+</ul>
+</ul>
+</ul>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
+<div class="info">Ignora los archivos <code>info.json</code> y <code>manifest.install</code>.</div>
+<div class="tip">En general siempre se combina la carpeta <code>wiiu</code> del archivo <code>.zip</code> que acabas de descargar con la carpeta <code>wiiu</code> que ya tienes en la raíz de la tarjeta SD.</div>
+<ul>
+<li>Descomprime el archivo <code>appstore.zip</code>.</li>
+<a target="_blank" href="images/aroma/appstore_zip.png"><img src="images/aroma/appstore_zip.png" class="auto_size_li_li"></a>
+<li>Copia la carpeta <code>wiiu</code> de <code>appstore.zip</code> y pégala en la raíz de la tarjeta SD.</li>
+<li>Así debe quedar Homebrew App Store en la tarjeta SD:</li>
+<a target="_blank" href="images/tiramisu/appstore.png"><img src="images/tiramisu/appstore.png" class="auto_size_li_li"></a>
+<li class="green">Es correcto: <code>sd:/wiiu/apps/appstore/appstore.rpx</code>.</li>
+<li class="red">Es incorrecto: <code>sd:/wiiu/apps/appstore/wiiu/apps/appstore/appstore.rpx</code>.</li>
+</ul>
+<ul>
+<li>Descomprime el archivo <code>SaveMiiModWUTPort.zip</code>.</li>
+<a target="_blank" href="images/aroma/savemii_zip.png"><img src="images/aroma/savemii_zip.png" class="auto_size_li_li"></a>
+<li>Copia la carpeta <code>wiiu</code> de <code>SaveMiiModWUTPort.zip</code> y pégala en la raíz de la tarjeta SD.</li>
+<li>Así debe quedar SaveMii Mod WUT Port en la tarjeta SD:</li>
+<a target="_blank" href="images/tiramisu/savemii.png"><img src="images/tiramisu/savemii.png" class="auto_size_li_li"></a>
+<li class="green">Es correcto: <code>sd:/wiiu/apps/SaveMiiModWUTPort/savemii.rpx</code>.</li>
+<li class="red">Es incorrecto: <code>sd:/wiiu/apps/SaveMiiModWUTPort/wiiu/apps/SaveMiiModWUTPort/savemii.rpx</code>.</li>
+</ul>
+<ul>
+<li>Descomprime el archivo <code>wup_installer_gx2.zip</code>.</li>
+<a target="_blank" href="images/tiramisu/wup_installer_gx2_zip.png"><img src="images/tiramisu/wup_installer_gx2_zip.png" class="auto_size_li_li"></a>
+<li>Copia la carpeta <code>wiiu</code> de <code>wup_installer_gx2.zip</code> y pégala en la raíz de la tarjeta SD.</li>
+<li>Así debe quedar WUP Installer GX2 en la tarjeta SD:</li>
+<a target="_blank" href="images/tiramisu/wup_installer_gx2.png"><img src="images/tiramisu/wup_installer_gx2.png" class="auto_size_li_li"></a>
+<li class="green">Es correcto: <code>sd:/wiiu/apps/wup_installer_gx2/wup_installer_gx2.elf</code>.</li>
+<li class="red">Es incorrecto: <code>sd:/wiiu/apps/wup_installer_gx2/wiiu/apps/wup_installer_gx2/wup_installer_gx2.elf</code>.</li>
+</ul>
+<ul>
+<li>Descomprime el archivo <code>Bloopair_v#.#.#.zip</code>.</li>
+<a target="_blank" href="images/tiramisu/bloopair_zip_pair_menu.png"><img src="images/tiramisu/bloopair_zip_pair_menu.png" class="auto_size_li_li"></a>
+<li>Copia la carpeta <code>wiiu</code> de <code>Bloopair_v#.#.#.zip</code> y pégala en la raíz de la tarjeta SD.</li>
+<li>Ignora el archivo <code>30_bloopair.rpx</code> de <code>Bloopair_v#.#.#.zip</code>.</li>
+<li>Así debe quedar Bloopair Pair Menu en la tarjeta SD:</li>
+<a target="_blank" href="images/tiramisu/pair_menu.png"><img src="images/tiramisu/pair_menu.png" class="auto_size_li_li"></a>
+<li class="green">Es correcto: <code>sd:/wiiu/apps/Bloopair_pair_menu/Bloopair_pair_menu.rpx</code>.</li>
+<li class="red">Es incorrecto: <code>sd:/wiiu/apps/Bloopair_v#.#.#/wiiu/apps/Bloopair_pair_menu/Bloopair_pair_menu.rpx</code>.</li>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
+</ul>
+<br>
+<div class="apps_nav hidde1">
+  <a href="?s=tiramisu&p=apps">General</a>
+  <a class="active" href="?s=tiramisu&p=apps_hbl">Aplicaciones para el HBL</a>
+  <a href="?s=tiramisu&p=modules_setup">Módulos setup</a>
+</div>
+</div>
