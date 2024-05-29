@@ -267,11 +267,15 @@ div.warning {
 	border-color: #cc3333;
 }
 
+div.tip {
+	border-color: #33dd66;
+}
+
 div.subblock {
 	border-color: #b3b3b3;
 }
 
-div.info, div.warning, div.subblock {
+div.info, div.warning, div.tip, div.subblock {
 	margin-top: 6px;
 	margin-bottom: 6px;
 	padding-top: 6px;
@@ -285,23 +289,23 @@ div.info, div.warning, div.subblock {
     background-color: #2d2d2d;
 }
 
-strong.red, em.red, code.red {
+div.red, p.red, strong.red, em.red, code.red, li.red {
     color: #e3b3b3;
 }
 
-strong.green, em.green, code.green {
+div.green, p.green, strong.green, em.green, code.green, li.green {
     color: #b3d3b3;
 }
 
-strong.blue, em.blue, code.blue {
+div.blue, p.blue, strong.blue, em.blue, code.blue, li.blue {
     color: #a3c3e3;
 }
 
-strong.yellow, em.yellow, code.yellow {
+div.yellow, p.yellow, strong.yellow, em.yellow, code.yellow, li.yellow {
     color: #d3d3b3;
 }
 
-strong.oranje, em.oranje, code.oranje {
+div.oranje, p.oranje, strong.oranje, em.oranje, code.oranje, li.oranje {
     color: #d3b3a3;
 }
 
@@ -388,4 +392,30 @@ a.green_btn {
 
 .vertical_padding {
 	height: 80vh;
+}
+
+.apps_nav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+.apps_nav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.apps_nav a:hover {
+  background-color: #ddd;
+  text-decoration: none;
+  color: black;
+}
+
+.apps_nav a.active {
+  background-color: #0055aa;
+  text-decoration: none;
+  color: white;
 }
