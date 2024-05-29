@@ -1,0 +1,87 @@
+<div class="cont_body">
+<div class="apps_nav">
+  <a href="?s=aroma&p=apps">General</a>
+  <a class="active" href="?s=aroma&p=apps_wuhb">Aplicaciones WUHB</a>
+  <a href="?s=aroma&p=modules_setup">Módulos setup</a>
+  <a href="?s=aroma&p=modules">Módulos WMS</a>
+  <a href="?s=aroma&p=plugins">Plugins WPS</a>
+</div>
+<br>
+<h2>Añadir aplicaciones WUHB al menú de Wii U</h2>
+<p>En Aroma las aplicaciones WUHB (Wii U HomeBrew) aparecen directamente en el menú de Wii U. Es importante que aprendas a colocar aplicaciones WUHB por tu cuenta en caso de necesitar añadir o actualizar alguna aplicación manualmente.</p>
+<p>Las aplicaciones WUHB se colocan en la carpeta <code>sd:/wiiu/apps</code>, examina la ruta de carpetas en las imágenes de referencia. Si no colocas correctamente los archivos no van a aparecer las aplicaciones en el menú de Wii U. <ins>En toda la tarjeta sólo debe existir una sola carpeta <code>wiiu</code></ins>.</p>
+<!--p>En la imagen de abajo el menú de Wii U pasa de no tener aplicaciones puestas a tener tres aplicaciones WUHB correctamente puestas: Homebrew App Store, SaveMii Mod WUT Port y WUP Installer GX2.</p-->
+<h2>Estructura</h2>
+<a target="_blank" href="images/aroma/wuhb.png"><img src="images/aroma/wuhb_50.png" class="auto_size center"></a>
+<ul>
+<li class="green">La estructura correcta es: <code>sd:/wiiu/apps/AppName.wuhb</code>.</li>
+<li class="red">Es incorrecto: <code>sd:/wiiu/apps/AppName/wiiu/apps/AppName.wuhb</code>.</li>
+<li class="green">También es correcto: <code>sd:/wiiu/apps/AppName/AppName.wuhb</code>.</li>
+<li class="red">Es incorrecto: <code>sd:/wiiu/apps/AppName/wiiu/apps/AppName/AppName.wuhb</code>.</li>
+</ul>
+<h2>Procedimiento</h2>
+<div class="tip">Si recién descargaste alguno de los siguientes archivos no es necesario que lo vuelvas a descargar.</div>
+<ul>
+<li>Si tienes encendida la consola apágala.</li>
+<li>Saca la tarjeta SD de la Wii U y ponla en tu PC para colocar los archivos.</li>
+<li>Descarga las siguientes aplicaciones:</li>
+<ul>
+<li>Descarga <a target="_blank" href="https://hb-app.store/wiiu/appstore">Homebrew App Store</a>. Permite buscar y descargar aplicaciones homebrew de Wii U directamente desde la Wii U.</li>
+<li>Descarga <a target="_blank" href="https://hb-app.store/wiiu/SaveMiiModWUTPort">SaveMii mod WUT Port</a>. Permite administrar los archivos de datos guardado de juegos de Wii y de Wii U.</li>
+<li>Descarga <a target="_blank" href="https://hb-app.store/wiiu/wup_installer_gx2_wuhb">WUP Installer GX2</a> (Wii U Public title Installer). Permite instalar juegos y aplicaciones en formato NUS Content cifrado de Wii U (archivos <code>.app</code>, <code>.h3</code>, <code>title.tmd</code>, <code>title.cert</code> y <code>title.tik</code>).</li>
+<li>Descarga <a target="_blank" href="https://github.com/V10lator/NUSspli/releases">NUSspli Aroma</a>. Permite descargar e instalar juegos y aplicaciones en formato NUS Content cifrado de Wii U (archivos <code>.app</code>, <code>.h3</code>, <code>title.tmd</code>, <code>title.cert</code> y <code>title.tik</code>).</li>
+<ul>
+<li>Únicamente necesitas el archivo <code>NUSspli-1.###-Aroma.zip</code>.</li>
+</ul>
+</ul>
+</ul>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona que <strong class="green">sí</strong> quieres combinar las carpetas.</div>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona que <strong class="green">sí</strong> quieres reemplazar los archivos.</div>
+<div class="info">Ignora los archivos <code>info.json</code> y <code>manifest.install</code>.</div>
+<div class="tip">En general siempre se combina la carpeta <code>wiiu</code> del archivo <code>.zip</code> que acabas de descargar con la carpeta <code>wiiu</code> que ya tienes en la raíz de la tarjeta SD.</div>
+<ul>
+<li>Descomprime el archivo <code>appstore.zip</code>.</li>
+<a target="_blank" href="images/aroma/appstore_zip.png"><img src="images/aroma/appstore_zip.png" class="auto_size_li_li"></a>
+<li>Copia la carpeta <code>wiiu</code> de <code>appstore.zip</code> y pégala en la raíz de la tarjeta SD.</li>
+<li>Así debe quedar Homebrew App Store en la tarjeta SD:</li>
+<a target="_blank" href="images/aroma/appstore.png"><img src="images/aroma/appstore.png" class="auto_size_li_li"></a>
+<li class="green">Es correcto: <code>sd:/wiiu/apps/appstore/appstore.wuhb</code>.</li>
+<li class="red">Es incorrecto: <code>sd:/wiiu/apps/appstore/wiiu/apps/appstore/appstore.wuhb</code>.</li>
+</ul>
+<ul>
+<li>Descomprime el archivo <code>SaveMiiModWUTPort.zip</code>.</li>
+<a target="_blank" href="images/aroma/savemii_zip.png"><img src="images/aroma/savemii_zip.png" class="auto_size_li_li"></a>
+<li>Copia la carpeta <code>wiiu</code> de <code>SaveMiiModWUTPort.zip</code> y pégala en la raíz de la tarjeta SD.</li>
+<li>Así debe quedar SaveMii Mod WUT Port en la tarjeta SD:</li>
+<a target="_blank" href="images/aroma/savemii.png"><img src="images/aroma/savemii.png" class="auto_size_li_li"></a>
+<li class="green">Es correcto: <code>sd:/wiiu/apps/SaveMiiModWUTPort/savemii.wuhb</code>.</li>
+<li class="red">Es incorrecto: <code>sd:/wiiu/apps/SaveMiiModWUTPort/wiiu/apps/SaveMiiModWUTPort/savemii.wuhb</code>.</li>
+</ul>
+<ul>
+<li>Descomprime el archivo <code>wup_installer_gx2_wuhb.zip</code>.</li>
+<a target="_blank" href="images/aroma/wup_installer_gx2_zip.png"><img src="images/aroma/wup_installer_gx2_zip.png" class="auto_size_li_li"></a>
+<li>Copia la carpeta <code>wiiu</code> de <code>wup_installer_gx2_wuhb.zip</code> y pégala en la raíz de la tarjeta SD.</li>
+<li>Así debe quedar WUP Installer GX2 en la tarjeta SD:</li>
+<a target="_blank" href="images/aroma/wup_installer_gx2.png"><img src="images/aroma/wup_installer_gx2.png" class="auto_size_li_li"></a>
+<li class="green">Es correcto: <code>sd:/wiiu/apps/wup_installer_gx2/wup_installer_gx2.wuhb</code>.</li>
+<li class="red">Es incorrecto: <code>sd:/wiiu/apps/wup_installer_gx2_wuhb/wiiu/apps/wup_installer_gx2/wup_installer_gx2.wuhb</code>.</li>
+</ul>
+<ul>
+<li>Descomprime el archivo <code>NUSspli-1.###-Aroma.zip</code>.</li>
+<a target="_blank" href="images/aroma/nusspli_zip.png"><img src="images/aroma/nusspli_zip.png" class="auto_size_li_li"></a>
+<li>Copia el archivo <code>NUSspli.wuhb</code> de <code>NUSspli-1.###-Aroma.zip</code> y pégalo en la carpeta <code>sd:/wiiu/apps</code>.</li>
+<li>Así debe quedar NUSspli en la tarjeta SD:</li>
+<a target="_blank" href="images/aroma/nusspli.png"><img src="images/aroma/nusspli.png" class="auto_size_li_li"></a>
+<li class="green">Es correcto: <code>sd:/wiiu/apps/NUSspli.wuhb</code>.</li>
+<li class="red">Es incorrecto: <code>sd:/wiiu/apps/NUSspli-1.###-Aroma/NUSspli.wuhb</code>.</li>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
+</ul>
+<br>
+<div class="apps_nav">
+  <a href="?s=aroma&p=apps">General</a>
+  <a class="active" href="?s=aroma&p=apps_wuhb">Aplicaciones WUHB</a>
+  <a href="?s=aroma&p=modules_setup">Módulos setup</a>
+  <a href="?s=aroma&p=modules">Módulos WMS</a>
+  <a href="?s=aroma&p=plugins">Plugins WPS</a>
+</div>
+</div>
