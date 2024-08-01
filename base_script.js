@@ -230,10 +230,20 @@ function loadContent() {
 			loadContentFile("content/nand_backup.html");
 	}
 	else if (section == "enable_autobooting") {
-		loadContentFiles("content/enable_apl_h.html", "content/apl.html", "content/enable_apl_f.html");
+		if (page == "aroma")
+			loadContentFiles("content/enable_apl_h.html", "content/aroma/apl.html", "content/enable_apl_f.html");
+		else if (page == "tiramisu")
+			loadContentFiles("content/enable_apl_h.html", "content/tiramisu/apl.html", "content/enable_apl_f.html");
+		else
+			loadContentFiles("content/enable_autobooting.html");
 	}
 	else if (section == "disable_autobooting") {
-		loadContentFile("content/disable_autobooting.html");
+		if (page == "aroma")
+			loadContentFiles("content/disable_apl_h.html", "content/aroma/disable_apl.html", "content/disable_apl_f.html");
+		else if (page == "tiramisu")
+			loadContentFiles("content/disable_apl_h.html", "content/tiramisu/disable_apl.html", "content/disable_apl_f.html");
+		else
+			loadContentFile("content/disable_autobooting.html");
 	}
 	else if (section == "standby_functions") {
 		loadContentFile("content/standby_functions.html");
@@ -266,7 +276,7 @@ function loadContent() {
 	}
 	else if (section == "aroma_files") {
 		if (page == "put")
-			loadContentFiles("content/aroma/files_h.html", "content/aroma/files.html", "content/aroma/put_files_f.html");
+			loadContentFiles("content/aroma/put_files_h.html", "content/aroma/files.html", "content/aroma/put_files_f.html");
 		else if (page == "config")
 			loadContentFiles("content/aroma/config_h.html", "content/aroma/config_a.html", "content/aroma/put_config_f.html");
 		else if (page == "apps")
@@ -276,7 +286,7 @@ function loadContent() {
 	}
 	else if (section == "tiramisu_files") {
 		if (page == "put")
-			loadContentFiles("content/tiramisu/files_h.html", "content/tiramisu/files.html", "content/tiramisu/put_files_f.html");
+			loadContentFiles("content/tiramisu/put_files_h.html", "content/tiramisu/files.html", "content/tiramisu/put_files_f.html");
 		else if (page == "config")
 			loadContentFiles("content/tiramisu/config_h.html", "content/tiramisu/config_a.html", "content/tiramisu/put_config_f.html");
 		else if (page == "apps")
@@ -718,6 +728,8 @@ function accordions() {
 /* Test functions */
 
 function testResults() {
+  const sd = localStorage.getItem("sd");
+  const folder = localStorage.getItem("folder");
   const autobooting = localStorage.getItem("autobooting");
   const indexiine = localStorage.getItem("indexiine");
   const haxchiIcon = localStorage.getItem("haxchi icon");
@@ -750,10 +762,15 @@ function testResults() {
   }
   else if (autobooting == "failed") {
 	  if (payloadloader == "failed") {
-		document.getElementById("autobooting_result").innerHTML = 'Autobooting PayloadLoader detectado.';//El PayloadLoader no está detectando la tarjeta SD o no encontró el archivo <code>sd:/wiiu/payload.elf</code>. Limpia los contactos de la tarjeta SD, si estas usando una microSD prueba cambiar el adaptador, revisa que tengas "los archivos del hack" en la tarjeta SD. Si no tienes los archivos de Tiramisu en la tarjeta SD puedes colocarlos siguiendo <a href="?s=update_tiramisu">las instrucciones para actualizar Tiramisu</a>.';
+		  if (sd == "yes" && folder == "yes") {
+			document.getElementById("autobooting_result").innerHTML = 'Autobooting PayloadLoader detectado. Tiramisu y Aroma son básicamente un determinado conjunto de archivos en la tarjeta SD de la consola. Se usa Autobooting PayloadLoader para cargar esos archivos almacenados en la tarjeta SD. Puedes saber si la consola usa Tiramisu y/o Aroma si revisas los archivos de la tarjeta SD de la consola, revisa el contenido de la carpeta <code>sd:/wiiu/environments</code>. Otra forma es <ins>colocar la tarjeta SD en el puerto SD de la Wii U y mantener presionado el <strong class="green">botón X</strong> mientras la consola enciende y carga</ins>, si la consola detecta la tarjeta SD con los archivos de Tiramisu y/o de Aroma debe aparecer el menú del Environment Loader.';
+		  }
+		  else {
+			document.getElementById("autobooting_result").innerHTML = 'Autobooting PayloadLoader detectado. Si no tienes la tarjeta SD de la consola con la carpeta <code>sd:/wiiu</code> entonces no tienes Tiramisu ni Aroma, puedes tomar cualquier tarjeta SD formateada en FAT32 y colocar los archivos de Tiramisu y/o de Aroma, no es necesario instalar nada en la consola, cuando Autobooting PayloadLoader detecta los archivos correctamente puestos va a cargar Tiramisu y/o Aroma en la consola. Consulta <a href="?s=tiramisu_files&p=put">Colocar los archivos de Tiramisu</a> para colocar correctamente los archivos de Tiramisu y consulta <a href="?s=aroma_files&p=put">Colocar los archivos de Aroma</a> para colocar correctamente los archivos de Aroma.';
+		  }
 	  }
 	  else {
-		  document.getElementById("autobooting_result").innerHTML = 'Autobooting PayloadLoader detectado. Hay una contradicción en tus respuestas, señalaste que NO detectaste PayloadLoader, pero Sí detectaste Autobooting PayloadLoader, esto no es posible ya que para tener Autobooting PayloadLoader es necesario primero tener PayloadLoader.';
+		  document.getElementById("autobooting_result").innerHTML = 'Autobooting PayloadLoader detectado. Hay una contradicción en tus respuestas, señalaste que NO detectaste PayloadLoader, pero SÍ detectaste Autobooting PayloadLoader, esto no es posible ya que para tener Autobooting PayloadLoader es necesario primero tener PayloadLoader.';
 	  }
   }
   else if (autobooting == "rpx_failed") {
@@ -884,7 +901,17 @@ function testResults() {
     document.getElementById("payloadloader_result").innerHTML = 'Detectado. Si te aparece el mensaje de alerta <code>the update folder current exists</code> quiere decir que tu consola no está bloqueando las actualizaciones del sistema apropiadamente. Presiona el botón B para no volver a ver el mensaje de alerta. Consulta la información de <a href="?s=block_updates">aquí</a> si quieres bloquear completamente las actualizaciones del sistema de la consola.';
   }
   else if (payloadloader == "failed") {
-    document.getElementById("payloadloader_result").innerHTML = 'Detectado.';//No está detectando la tarjeta SD o no encontró el archivo <code>sd:/wiiu/payload.elf</code>. Limpia los contactos de la tarjeta SD, si estas usando una microSD prueba cambiar el adaptador, revisa que tengas "los archivos del hack" en la tarjeta SD. Si no tienes los archivos de Tiramisu en la tarjeta SD puedes colocarlos siguiendo <a href="?s=update_tiramisu">las instrucciones de como actualizar Tiramisu</a>.';
+	  if (autobooting == "failed") {
+		  document.getElementById("payloadloader_result").innerHTML = 'Autobooting PayloadLoader detectado.';
+	  }
+	  else {
+		  if (sd == "yes" && folder == "yes") {
+			document.getElementById("payloadloader_result").innerHTML = 'Detectado. Tiramisu y Aroma son básicamente un determinado conjunto de archivos en la tarjeta SD de la consola. Se usa PayloadLoader para cargar esos archivos almacenados en la tarjeta SD. Puedes saber si la consola usa Tiramisu y/o Aroma si revisas los archivos de la tarjeta SD de la consola, revisa el contenido de la carpeta <code>sd:/wiiu/environments</code>. Otra forma es <ins>encender la consola, despues colocar la tarjeta SD en el puerto SD de la Wii U, abrir la aplciación de Información sobre salud y seguridad en el menú de Wii U y mantener presionado el <strong class="green">botón X</strong> mientras carga la aplicación</ins>, si la consola detecta la tarjeta SD con los archivos de Tiramisu y/o de Aroma debe aparecer el menú del Environment Loader.';
+		  }
+		  else {
+			document.getElementById("payloadloader_result").innerHTML = 'Detectado. Si no tienes la tarjeta SD de la consola con la carpeta <code>sd:/wiiu</code> entonces no tienes Tiramisu ni Aroma, puedes tomar cualquier tarjeta SD formateada en FAT32 y colocar los archivos de Tiramisu y/o de Aroma, no es necesario instalar nada en la consola, cuando Autobooting PayloadLoader detecta los archivos correctamente puestos va a cargar Tiramisu y/o Aroma en la consola. Consulta <a href="?s=tiramisu_files&p=put">Colocar los archivos de Tiramisu</a> para colocar correctamente los archivos de Tiramisu y consulta <a href="?s=aroma_files&p=put">Colocar los archivos de Aroma</a> para colocar correctamente los archivos de Aroma.';
+		  }
+	  }
   }
   else if (payloadloader == "rpx_failed") {
     document.getElementById("payloadloader_result").innerHTML = 'Detectado. La consola no encontró el archivo <code>sd:/wiiu/payload.rpx</code>. Para recuperar el archivo vuelve a poner todos los archivos de Tiramisu en la tarjeta SD siguiendo <a href="?s=update_tiramisu">las instrucciones para actualizar Tiramisu</a>.';
@@ -1077,7 +1104,7 @@ function updateFormSD() {
       document.getElementById("d_folder").style.display = "none";
 	}
 	
-	testSDResults();
+	testResults();
   }
 }
 
@@ -1101,7 +1128,7 @@ function updateFormFolder() {
 	  localStorage.removeItem("folder");
 	}
 	
-	testSDResults();
+	testResults();
   }
 }
 
