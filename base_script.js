@@ -1029,28 +1029,28 @@ function testSDResults() {
   }
   
   if ((autobooting == null || indexiine == null || (haxchiIcon == null && haxchi == null) || payloadloader == null) && document.getElementById("webhack_result") != null) {
-    document.getElementById("webhack_result").innerHTML = 'Todas las Wii U, incluidas las que nunca has sido modificadas, tienen con este punto de entrada. Contesta todas las preguntas de los apartados anteriores para determinar si el exploit del navegador es el único punto de entrada de la consola o si existe otro punto de entrada.';
+    document.getElementById("webhack_result").innerHTML = 'Todas las Wii U, incluidas las que nunca han sido modificadas, tienen con este punto de entrada. Contesta todas las preguntas de los apartados anteriores para determinar si el exploit del navegador es el único punto de entrada de la consola o si existe otro punto de entrada.';
   }
   else if ((autobooting == "wiiu" || autobooting == "user") && indexiine == "no" && (haxchiIcon == "no" || haxchi == "no") && payloadloader == "no") {
     if (sd == "yes" && folder == "yes") {
-      document.getElementById("webhack_result").innerHTML = 'Detectado. El exploit del navegador es el punto de entrada principal de la consola. <strong class="green">La Wii U no está modificada</strong>. Recuerda que todas las Wii U, incluidas las que nunca has sido modificadas, tienen con este punto de entrada. <a href="?s=uninstall_webhack">Estos son los pasos para "desinstalar" Webhack correctamente.</a>';
+      document.getElementById("webhack_result").innerHTML = 'Detectado. El exploit del navegador es el punto de entrada principal de la consola. <strong class="green">La Wii U no está modificada</strong>. Recuerda que todas las Wii U, incluidas las que nunca han sido modificadas, tienen con este punto de entrada. <a href="?s=uninstall_webhack">Estos son los pasos para "desinstalar" Webhack correctamente.</a>';
 	}
 	else if (sd == "no" || (sd == "yes" && folder == "no")) {
-      document.getElementById("webhack_result").innerHTML = 'No detectado. El exploit del navegador es el punto de entrada principal de la consola, pero no tienes "los archivos del hack" en la tarjeta SD. <strong class="green">La Wii U no está modificada</strong>. Recuerda que todas las Wii U, incluidas las que nunca has sido modificadas, tienen con este punto de entrada.';
+      document.getElementById("webhack_result").innerHTML = 'No detectado. El exploit del navegador es el punto de entrada principal de la consola, pero no tienes "los archivos del hack" en la tarjeta SD. <strong class="green">La Wii U no está modificada</strong>. Recuerda que todas las Wii U, incluidas las que nunca han sido modificadas, tienen con este punto de entrada.';
 	}
 	else {
-      document.getElementById("webhack_result").innerHTML = 'El exploit del navegador es un punto de entrada principal de tu consola, pero no has indicado la situación de "los archivos del hack" de tu consola. Contesta la(s) pregunta(s) de abajo. <strong class="green">La Wii U no está modificada</strong>. Recuerda que todas las Wii U, incluidas las que nunca has sido modificadas, tienen con este punto de entrada.';
+      document.getElementById("webhack_result").innerHTML = 'El exploit del navegador es un punto de entrada principal de tu consola, pero no has indicado la situación de "los archivos del hack" de tu consola. Contesta la(s) pregunta(s) de abajo. <strong class="green">La Wii U no está modificada</strong>. Recuerda que todas las Wii U, incluidas las que nunca han sido modificadas, tienen con este punto de entrada.';
     }
   }
   else {
     if (sd == "yes" && folder == "yes") {
-      document.getElementById("webhack_result").innerHTML = 'Detectado. Puede funcionar como un punto de entrada secundario de tu consola. Recuerda que todas las Wii U, incluidas las que nunca has sido modificadas, tienen con este punto de entrada. Recuerda que todas las Wii U, incluidas las que nunca has sido modificadas, tienen con este punto de entrada. <a href="?s=uninstall_webhack">Estos son los pasos para "desinstalar" Webhack correctamente.</a>';
+      document.getElementById("webhack_result").innerHTML = 'Detectado. Puede funcionar como un punto de entrada secundario de tu consola. Recuerda que todas las Wii U, incluidas las que nunca han sido modificadas, tienen con este punto de entrada. Recuerda que todas las Wii U, incluidas las que nunca han sido modificadas, tienen con este punto de entrada. <a href="?s=uninstall_webhack">Estos son los pasos para "desinstalar" Webhack correctamente.</a>';
 	}
 	else if (sd == "no" || (sd == "yes" && folder == "no")) {
-      document.getElementById("webhack_result").innerHTML = 'No detectado. Puede funcionar como un punto de entrada secundario de tu consola, pero no tienes "los archivos del hack" en la tarjeta SD. Recuerda que todas las Wii U, incluidas las que nunca has sido modificadas, tienen con este punto de entrada.';
+      document.getElementById("webhack_result").innerHTML = 'No detectado. Puede funcionar como un punto de entrada secundario de tu consola, pero no tienes "los archivos del hack" en la tarjeta SD. Recuerda que todas las Wii U, incluidas las que nunca han sido modificadas, tienen con este punto de entrada.';
 	}
 	else if (document.getElementById("webhack_result") != null) {
-      document.getElementById("webhack_result").innerHTML = 'Puede funcionar como un punto de entrada secundario de tu consola, pero no has indicado la situación de "los archivos del hack" de tu consola. Contesta la(s) pregunta(s) de abajo. Recuerda que todas las Wii U, incluidas las que nunca has sido modificadas, tienen con este punto de entrada.';
+      document.getElementById("webhack_result").innerHTML = 'Puede funcionar como un punto de entrada secundario de tu consola, pero no has indicado la situación de "los archivos del hack" de tu consola. Contesta la(s) pregunta(s) de abajo. Recuerda que todas las Wii U, incluidas las que nunca han sido modificadas, tienen con este punto de entrada.';
     }
   }
   
