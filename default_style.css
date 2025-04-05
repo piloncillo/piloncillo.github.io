@@ -290,23 +290,27 @@ div.info, div.warning, div.tip, div.subblock {
 }
 
 div.red, p.red, strong.red, em.red, code.red, li.red {
-    color: #e3b3b3;
+    color: #e0a5a5;
 }
 
 div.green, p.green, strong.green, em.green, code.green, li.green {
-    color: #b3d3b3;
+    color: #a5c5a6;
 }
 
 div.blue, p.blue, strong.blue, em.blue, code.blue, li.blue {
-    color: #a3c3e3;
+    color: #94bce2;
 }
 
 div.yellow, p.yellow, strong.yellow, em.yellow, code.yellow, li.yellow {
-    color: #d3d3b3;
+    color: #c8c892;
 }
 
 div.oranje, p.oranje, strong.oranje, em.oranje, code.oranje, li.oranje {
-    color: #d3b3a3;
+    color: #e8a46c;
+}
+
+div.purple, p.purple, strong.purple, em.purple, code.purple, li.purple {
+    color: #875fcf;
 }
 
 code {
