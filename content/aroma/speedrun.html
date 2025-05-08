@@ -9,13 +9,14 @@
 <li><strong class="green">Dentro del sitio palomea las 4 checkbox</strong>. Al hacerlo el sitio muestra los botones de descarga.</li>
 <li>Clic en <em class="green">Download Payloads</em> para descargar el archivo <code>environmentloader+wiiu-nanddumper-payload.zip</code>.</li>
 <li>Clic en <em class="green">Download Base Aroma</em> para descargar el archivo <code>aroma-beta-20.zip</code>.</li>
-<li>Ya está seleccionado <em class="green">Bloopair</em>, seleciona <em class="green">FTPiiU Plugin</em>, <em class="green">SDCafiine Plugin</em>, <em class="green">Screenshot Plugin</em> y <em class="green">SwipSwapMe</em>, el resto de plugins no son necesarios.</li>
-<li>Clic en <em class="green">Download Additional Plugin and Modules</em> para descargar el archivo <code>bloopair+ftpiiu+sdcafiine+screenshotplugin+swipswapme.zip</code>.</li>
+<li>Ya está seleccionado <em class="green">Bloopair</em>, seleciona <em class="green">Inkay</em>,
+<em class="green">FTPiiU Plugin</em>, <em class="green">SDCafiine Plugin</em>, <em class="green">Screenshot Plugin</em> y <em class="green">SwipSwapMe</em>, el resto de plugins no son necesarios.</li>
+<li>Clic en <em class="green">Download Additional Plugin and Modules</em> para descargar el archivo <code>bloopair+inkay+ftpiiu+sdcafiine+screenshotplugin+swipswapme.zip</code>.</li>
 </ul>
 <li>Descarga el <a href="https://github.com/marco-calautti/SigpatchesModuleWiiU/releases">módulo Sigpatches</a>.</li>
 <li>Copia el contenido del archivo <code>environmentloader+wiiu-nanddumper-payload.zip</code> a la raíz de la tarjeta SD.</li>
-<li>Copia el contenido del archivo <code>base-aroma-20.zip</code> a la raíz de la tarjeta SD.</li>
-<li>Copia el contenido del archivo <code>bloopair+ftpiiu+sdcafiine+screenshotplugin+swipswapme.zip</code> a la raíz de la tarjeta SD.</li>
+<li>Copia el contenido del archivo <code>base-aroma-24.zip</code> a la raíz de la tarjeta SD.</li>
+<li>Copia el contenido del archivo <code>bloopair+inkay+ftpiiu+sdcafiine+screenshotplugin+swipswapme.zip</code> a la raíz de la tarjeta SD.</li>
 <li>Copia el archivo <code>01_sigpatches.rpx</code> a la carpeta <code>sd:/wiiu/environments/aroma/modules/setup</code>.</li>
 <li>Enciende la consola con la tarjeta SD puesta.</li>
 <li>Abre el navegador de internet de la consola.</li>
@@ -38,15 +39,37 @@
 <li>Selecciona <em class="green">Boot options</em> y presiona el <strong class="green">botón A</strong>.</li>
 <li>Con la opción <em class="green">Switch to PayloadLoader</em> seleccionada presiona el <strong class="green">botón A</strong>.</li>
 <li>Presiona el <strong class="green">botón A</strong> para apagar la consola.</li>
+<li><ins>En la siguiente página vamos a añadir aplicaciones, módulos y plugins que agregan funcionalidad a Aroma.</ins></li>
 <li>En este punto ya finalizaste la instalación de <em>PayloadLoader</em>, del <em>Environment Loader</em> y de Aroma, tu consola iniciará con Aroma de forma predeterminada.</li>
-<li><ins>Con el entorno de Aroma cargado el menú de Wii U puede no verse diferente al menú de Wii U normal.</ins></li>
+<li>Con el entorno de Aroma cargado el menú de Wii U puede no verse diferente al menú de Wii U normal.</li>
 <li><strong class="green">¡Importante!</strong> Abres el menú de plugins de Aroma presionado <code>L</code> + <code>Abajo</code> + <code>SELECT &#x229D;</code>.</li>
 <li><strong class="red">Toma nota de los cuadros de información de abajo para usar correctamente Aroma.</strong></li>
 </ul>
 <div class="info">Con el entorno de Aroma cargado en la consola no se usa el <em>Homebrew Launcher</em>. Las aplicaciones <em>homebrew</em> compatibles con Aroma (aplicaciones WUHB) aparecen directamente en el menú de Wii U, actualmente no todas las aplicaciones están garantizadas para funcionar correctamente con Aroma.</div>
 <div class="info">Si activaste el <strong class="blue">arranque automático del <em>PayloadLoader</em></strong> puedes abrir el <em>Environment Loader</em> si enciendes la consola y mantienes presionado el botón X.</div>
 <div class="info">Si activaste el <strong class="blue">arranque automático del <em>PayloadLoader</em></strong> puedes abrir el menú <em>Boot Selector</em> si enciendes la consola y mantienes presionado el botón <em>START</em> &#x2295;&#xfe00;.</div>
-<div class="info">Si activaste el <strong class="blue">arranque automático del <em>PayloadLoader</em></strong> puedes impedir que cargue el <em>Environment Loader</em> y Aroma sacando la tarjeta SD de la consola antes de encenderla. De esta forma la consola iniciará sin modificaciones. La siguiente vez que enciendas la consola con la tarjeta SD con los archivos del <em>Environment Loader</em> y Aroma cargará estos normalmente.</div>
+<div class="info">Si activaste el <strong class="blue">arranque automático del <em>PayloadLoader</em></strong> puedes impedir que cargue el <em>Environment Loader</em> y Aroma sacando la tarjeta SD de la consola antes de encenderla. De esta forma la consola iniciará sin modificaciones:
+<br><img src="images/detect/payload_loader_failed_to_load.jpg" class="auto_size"><br>
+La siguiente vez que enciendas la consola con la tarjeta SD con los archivos del <em>Environment Loader</em> y Aroma cargará estos normalmente.</div>
+<div class="info">El módulo Bloopair permite conectar de forma inalámbrica controles Bluetooth <ins>compatibles</ins>. La sincronización de los controles compatibles se hace usando la propia interfaz de la Wii U.
+<br/>
+<br/>
+Koopair es una aplicación que facilita gestionar los controles sincronizados con la consola y permite sincronizar controles de PS3.
+<br/>
+<br/>
+<a href="https://gbatemp.net/threads/bloopair-connect-controllers-from-other-consoles-natively.594289/">Consulta el hilo oficial de Bloopair para más detalles</a>.</div>
+<div class="warning"><ins>Si <strong class="red">NO</strong> vas a usar <strong class="purple">Pretendo Network</strong> desactívalo en el menú de plugins de Aroma.</ins> Las cuentas de usuario de la Wii U que tienen vinculado un <strong>Identificador de Nintendo Network (<strong class="oranje">NNID</strong>)</strong> te van a pedir que ingreses la contraseña en cada oportunidad si estás conectado a <strong class="purple">Pretendo Network</strong>.
+<br/>
+<br/>
+<ins>Para poder jugar online usando <strong class="purple">Pretendo Network</strong> es obligatorio crear una nueva cuenta de usuario en la Wii U ya estando conectado a <strong class="purple">Pretendo Network</strong> en ese momento creas o vinculas un <strong>Identificador de Pretendo Network (<strong class="purple">PNID</strong>)</strong> para esa nueva cuenta de usuario de la Wii U.</ins>
+<br/>
+<br/>
+<ins>Los textos se la Wii U siempre van a poner "<strong>Identificador de Nintendo Network (<strong class="oranje">NNID</strong>)</strong>".</ins> La Wii U por sí misma no puede diferenciar entre un <strong class="oranje">NNID</strong> y un <strong class="purple">PNID</strong>, pero el servicio de <strong class="oranje">Nintendo Network</strong> y el servicio de <strong class="purple">Pretendo Network</strong> sí distinguen entre una cuenta de usuario con un <strong class="oranje">NNID</strong> y otra cuenta de usuario con un <strong class="purple">PNID</strong>, por eso:
+<ul>
+<li>Si la cuenta de usuario de la consola tiene vinculado un <strong class="oranje">NNID</strong> y estás conectado a <strong class="purple">Pretendo Network</strong> la consola te va a pedir una contraseña.</li>
+<li>Si la cuenta de usuario de la consola tiene vinculado un <strong class="purple">PNID</strong> y estás conectado a <strong class="oranje">Nintendo Network</strong> la consola te va a pedir una contraseña.</li>
+</ul>
+Más información en el <a href="https://pretendo.network/#about">sitio oficial de Pretendo Network</a>.</div>
 <div class="bottomnav">
 <a href="?s=main" class="previous">&#8249; Inicio</a><a href="?s=add_apps_aroma" class="next">Añadir aplicaciones, plugins y módulos &#8250;</a>
 </div>
