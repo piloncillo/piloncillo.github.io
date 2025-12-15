@@ -1,0 +1,41 @@
+<div class="cont_body">
+<h1>Aprender más sobre Aroma y Tiramisu</h1>
+<br>
+<h2>Lo basico</h2>
+<p>Aroma y Tiramisu son environments, es decir son "entornos de trabajo".</p>
+<p>Aroma y Tiramisu nunca están realmente instalados en la Wii U, normalmente Aroma o Tiramisu se carga al encender la Wii U, se cargan sobre el "entorno de trabajo original" de la Wii U. </p>
+<p>Aroma y Tiramisu son básicamente archivos en la tarjeta SD. Si la Wii U no detecta la tarjeta SD entonces no se carga Aroma o Tiramisu, se carga el "entorno de trabajo original" de la Wii U.</p>
+<ul>
+<li>Aroma en sí mismo se encuentra en la carpeta <code>sd:/wiiu/environments/aroma</code>.</li>
+<li>Tiramisu en sí mismo se encuentra en la carpeta <code>sd:/wiiu/environments/tiramisu</code>.</li>
+</ul>
+<p>Para que Aroma o Tiramisu se cargue al encender la Wii U se hace uso del <strong>Autobooting PayloadLoader</strong>.</p>
+<p>El <strong>PayloadLoader</strong> es un "punto de entrada" instalado en la aplicación Información sobre salud y seguridad (H&S). Este punto de entrada se puede configurar para que cargue automáticamente al encender la consola, a este <strong class="blue">arranque automático</strong> se le llama <strong>autobooting</strong>.</p>
+<p>La principal diferencia entre Aroma y Tiramisu son las aplicaciones que puedes usar.</p>
+<p>En Aroma se abandona el uso del Homebrew Launcher, se abandona el soporte a aplicaciones en formato <code>.elf</code>. Las aplicaciones para Aroma tienen formato WUHB y aparecen directamente en el menú de Wii U sin tener que ser instaladas. Además, en Aroma existen los módulos y los plugins. Los módulos añaden funcionalidades y los plugins son pequeñas aplicaciones que se ejecutan en segundo plano.
+<p>Tiramisu da soporte a las aplicaciones "legacy" (aplicaciones "antiguas"), es decir a las aplicaciones que funcionan por medio del Homebrew Launcher, aplicaciones en formato <code>.elf</code> y en formato <code>.rpx</code>. Hay muchas aplicaciones que vienen de modificaciones anteriores a Tiramisu y que no tienen una versión disponible para Aroma.</p>
+<p>Es importante saber que no todos los archivos <code>.rpx</code> son aplicaciones. El formato RPX es un formato contenedor, es decir puede tender dentro sí desde bibliotecas de funciones para otras aplicaciones hasta imágenes (<code>.png</code>, <code>.tga</code>, <code>.bmp</code>, etc.).</p>
+<br>
+<h2>Cadena de carga</h2>
+<p><a target="_blank" href="images/misc/boot_chain.png"><img src="images/misc/boot_chain.png" class="auto_size center"></a></p>
+<p>Al ejecutar <strong>PayloadLoader</strong> la Wii U intenta cargar un archivo en la tarjeta SD, intenta cargar el archivo <code>sd:/wiiu/payload.elf</code>.</p>
+<p>El archivo <code>payload.elf</code> es una carga útil, es decir un archivo con código para sacar provecho de la consola. El archivo <code>payload.elf</code> que se incluye tanto en Aroma como en Tiramisu carga por defecto otro archivo <code>sd:/wiiu/payloads/default/payload.elf</code> y este otro archivo carga un tercer archivo <code>sd:/wiiu/payload.rpx</code>.</p>
+<p>El archivo <code>payload.rpx</code> que se incluye tanto en Aroma como en Tiramisu se trata del <strong>Environment Loader</strong> (cargador de entorno) en sí mismo. El <strong>Environment Loader</strong> es la instancia que finalmente carga el "núcleo" de Aroma o que carga el "núcleo" de Tiramisu.</p>
+<ul>
+<li>El "núcleo" o "corazón" de Aroma se ubica en la carpeta: <code>sd:/wiiu/environments/aroma/modules/setup</code>.<br><img src="images/aroma/setup_50.png" class="auto_size_li center"></li>
+<li>El "núcleo" o "corazón" de Tiramisu se ubica en la carpeta: <code>sd:/wiiu/environments/tiramisu/modules/setup</code>.<br><img src="images/tiramisu/setup_50.png" class="auto_size_li center"></li>
+</ul>
+<p>La carga del "núcleo" de Aroma o de Tiramisu sigue el orden indicado por los números de los archivos. Inicia con el archivo <code>00_mocha.rpx</code> y finaliza con el archivo <code>99_autoboot.rpx</code>, (tener dos archivos con el mismo número no causa conflictos).</p>
+<p>El archivo <code>99_autoboot.rpx</code> es en sí mismo el <strong>Boot Selector</strong> (selector de arranque) de Aroma o de Tiramisu, permite elegir si quieres cargar el menú de Wii U (Wii U Menu), el menú de Wii (vWii System Menu), el Homebrew Launcher o el vWii Homebrew Channel, estos dos últimos sólo si están "cargados" en la consola.</p>
+<p>En la Wii U se usa el concepto de sesión de uso, una sesión es encender la Wii U, usarla y apagarla. La sesión de uso más simple es:</p>
+<p>Encender la Wii U -> Menú de Wii U -> Apagar la Wii U.</p>
+<p>La sesión de uso más simple que incluye la carga de Aroma es así:</p>
+<p>Encender la Wii U -> Autobooting PayloadLoader -> Payloads -> Default Payload -> Environment Loader -> Aroma (Mocha … Boot Selector) -> Menú de Wii U -> Apagar la Wii U.</p>
+<p>O de forma resumida:</p>
+<p>Encender la Wii U -> Autobooting PayloadLoader -> Aroma -> Menú de Wii U -> Apagar la Wii U.</p>
+<p>Recuerda que si la Wii U no detecta la tarjeta SD entonces no se carga Aroma o Tiramisu, se carga el "entorno de trabajo original" de la Wii U. De esta forma puedes tener diferentes sesiones, en una sesión puedes cargar Aroma, en otra sesión puedes cargar Tiramisu y en otra sesión puedes no cargar ni Aroma ni Tiramisu:</p>
+<p>Encender la Wii U -> Autobooting PayloadLoader -> (no detecta la tarjeta SD) -> Menú de Wii U -> Apagar la Wii U.</p>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a>
+</div>
+</div>
