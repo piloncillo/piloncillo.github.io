@@ -309,6 +309,9 @@ function loadContent() {
 	else if (section == "delete") {
 		loadContentFile("content/delete.html");
 	}
+	else if (section == "how_mod_works") {
+		loadContentFile("content/how_mod_works.html");
+	}
 	else if (section == "glossary") {
 		loadContentFile("content/glossary.html");
 	}
