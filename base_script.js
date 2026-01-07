@@ -881,7 +881,7 @@ function testResults() {
     document.getElementById("haxchi_result").innerHTML = 'Detectado. Está configurado para cargar una aplicación homebrew. <a href="?s=uninstall_haxchi">Estos son los pasos para desinstalar Haxchi correctamente.</a>';
   }
   else if (haxchi == "-3") {
-    document.getElementById("haxchi_result").innerHTML = 'Detectado. El mensaje <code>-3</code> quiere decir que la consola no está detectando la tarjeta SD. No es correcto que salga el código <code>-3</code> ya que Haxchi correctamente instalado no depende de la tarjeta SD para cargar su CFW interno. <a href="?s=uninstall_haxchi">Estos son los pasos para desinstalar Haxchi correctamente.</a>';
+    document.getElementById("haxchi_result").innerHTML = 'Detectado. El mensaje <code>-3</code> quiere decir que la consola no está detectando la tarjeta SD. No es correcto que salga el código <code>-3</code> ya que Haxchi correctamente configurado no depende de la tarjeta SD para cargar su CFW interno. <a href="?s=uninstall_haxchi">Estos son los pasos para desinstalar Haxchi correctamente.</a>';
   }
   else if (haxchi == "-5") {
     document.getElementById("haxchi_result").innerHTML = 'Detectado. El mensaje <code>-5</code> quiere decir que la consola sí está detectando la tarjeta SD, pero no encontró la aplicación configurada para cargar por defecto en la tarjeta SD. <a href="?s=uninstall_haxchi">Estos son los pasos para desinstalar Haxchi correctamente.</a>';
