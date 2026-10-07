@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title itemprop="name">Piloncillo para tu Wii U</title>
+<meta property="og:title" content="Piloncillo para tu Wii U" />
+<meta name="twitter:title" content="Piloncillo para tu Wii U" />
+<meta itemprop="name" content="Piloncillo para tu Wii U" />
+<meta name="application-name" content="Piloncillo para tu Wii U" />
+<meta property="og:site_name" content="Piloncillo para tu Wii U" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<link rel="icon" href="Images/favicon.png" />
+<meta itemprop="image" property="og:image" content="Images/favicon.png" />
+<meta name="twitter:image" content="Images/favicon.png" />
+<link rel="image_src" href="Images/favicon.png" />
+<link rel="stylesheet" href="default_style.css" />
+</head>
+<body>
+<div id="sidebar">
+<div id="sidebar_close" onclick="closeSidebar()">&#215;</div>  
+<div id="sidebar_content"></div>
+</div>
+<div id="sidebar_toggle" onclick="toggleSidebar()">&#9776;</div>  
+<div id="content">
+
+<div class="cont">
+
+<div class="cont_body">
+<h1>Preguntas frecuentes</h1>
+<h2>Sobre la modificación</h2>
+<div id="q_disadvantage" class="accordion">¿Modificar la Wii U tiene alguna desventaja?</div>
+<div class="panel">
+<p><strong>No. Modificar la Wii U con lo más actual no tiene desventajas</strong>, por el contrario, puede ayudar a recuperar la consola en caso de algún fallo. Los juegos que ya tienes siguen funcionando exactamente igual, no es necesario reinstalarlos ni hacer nada adicional.</p>
+<p>Incluso puedes jugar en línea con la consola modificada (solo no debes usar aplicaciones como TCPGecko para cheats o trampas ni usar SDCafiine para paquetes de *mods* en los modos de juego en línea).</p>
+</div>
+<div id="q_what_are" class="accordion">¿Cuáles son las modificaciones de la Wii U?</div>
+<div class="panel">
+<p>Las modificaciones que realmente se instalan en la Wii U son: Indexiine, Coldboot Haxchi (CBHC), Haxchi (normal), PayloadLoader e ISFShax.</p>
+<p>Aroma, Tiramisu, Mocha, SigPatcher, IOSUHAX, Loadiine, Homebrew Launcher, WUP Installer GX2 y NUSspli, entre otros elementos de la escena de Wii U, no son modificaciones por sí solas.</p>
+</div>
+<div id="q_what_has" class="accordion">¿Cómo puedo saber qué modificación tiene la Wii U?</div>
+<div class="panel">
+<p>Esta guía tiene una serie de páginas dedicadas a la identificación de las modificaciones de la consola.</p>
+<p><a href="Test/">Usa la información de este enlace para identificar las posibles modificaciones.</a></p>
+</div>
+<div id="q_can_be_uninstalled" class="accordion">¿Se pueden desinstalar las modificaciones de la Wii U?</div>
+<div class="panel">
+<p>Restablecer la configuración de fábrica de la Wii U o formatear la tarjeta SD o dispositivo USB no elimina las modificaciones de la consola. Sin embargo, es posible devolver la consola a su estado original de fábrica siguiendo los pasos adecuados según las modificaciones que tenga la consola.</p>
+</div>
+<div id="q_best_mod" class="accordion">¿Cuál es la mejor modificación?</div>
+<div class="panel">
+<p><strong>ISFShax más Stroopwafel más Aroma.</strong></p>
+<p>Actualmente, lo mejor es instalar ISFShax para proteger la Wii U ante casi cualquier *brick*. Con este punto de entrada se puede cargar Stroopwafel para aplicar diversos parches, por ejemplo, para usar una tarjeta SD real como un dispositivo USB emulado o usar un dispositivo USB real como tarjeta SD emulada, además de permitir cargar Aroma.</p>
+<p>Aroma permite ejecutar aplicaciones homebrew y utilizar plugins a nivel de usuario.</p>
+</div>
+<div id="q_aroma_vs_tiramisu" class="accordion">¿Cuál es la diferencia entre Aroma y Tiramisu? ¿Cuál es mejor?</div>
+<div class="panel">
+<p>Aroma y Tiramisu son “entornos de trabajo” (environments). Si tienes ambos puedes elegir uno para que cargue como predeterminado, pero también puedes elegir con cuál de los dos trabajar al encender la consola.</p>
+<p>La principal diferencia entre Aroma y Tiramisu son las aplicaciones que puedes usar:</p>
+<ul>
+<li>Tiramisu es para aplicaciones “antiguas” (legacy), es decir aplicaciones que se cargan desde el Homebrew Launcher. En Tiramisu no hay módulos ni plugins.</li>
+<li><ins>En Aroma <strong>no</strong> se usa el Homebrew Launcher.</ins> Las aplicaciones para Aroma tienen formato WUHB (Wii U HomeBrew) y aparecen directamente en el menú de Wii U sin necesidad de instalarlas. Aroma dispone de módulos (WMS) y plugins (WPS).</li>
+</ul>
+<p>Algunas aplicaciones tienen versiones tanto para Aroma como para Tiramisu, pero hay cosas que solamente se pueden usar en Aroma, por ejemplo, la emulación de figuras amiibo requiere el uso del módulo/plugin re_nfpii.</p>
+</div>
+<div id="q_games_needs_mod" class="accordion">¿Es necesario modificar la Wii U para instalar juegos?</div>
+<div class="panel">
+<p>Sí. Aunque cualquier Wii U, con o sin modificación, puede tener juegos instalados en un dispositivo USB (juegos comprados en la eShop), si quieres instalar las copias de tus juegos es necesario modificar la consola.</p>
+<p>Para instalar las copias de tus juegos necesitas usar WUP Installer GX2 o NUSspli.</p>
+</div>
+<div id="q_games" class="accordion">¿Cómo se instalan los juegos?</div>
+<div class="panel">
+<p>El procedimiento tradicional es colocar las copias de tus juegos en la carpeta <code>install</code> en la raíz de la tarjeta SD (real o emulada), si no tienes esa capeta puedes crearla manualmente. Luego en la Wii U abres la aplicación WUP Installer GX2. Si colocaste correctamente los archivos del juego debe aparecer el bloque del juego en la interfaz de WUP Installer GX2. A momento de instalar seleccionas si quieres instalar en la memoria interna (NAND) de la consola o en el dispositivo USB formateado por la Wii U (real o emulado).</p>
+</div>
+<div id="q_usb_install_mod" class="accordion">¿Puedo realizar la modificación usando un dispositivo USB en lugar de una tarjeta SD?</div>
+<div class="panel">
+<p>Sí, usando Wafel Installer.</p>
+</div>
+<div id="q_mod_needs_gamepad" class="accordion">¿Puedo modificar la consola sin el Wii U GamePad?</div>
+<div class="panel">
+<p>Sí, pero para modificar la Wii U de la forma más simple lo más práctico es usar un Wii U GamePad.</p>
+<p>Otras formas para modificar la consola, sin el Wii U GamePad, son más complicadas y requieren determinados dispositivos:</p>
+<ul>
+<li><strong>UDPIH</strong> requiere un Raspberry Pi Pico o una Switch modificada.</li>
+<li><strong>BluUBomb</strong> requiere una PC con Linux con un módulo Bluetooth compatible.</li>
+<li>Usar la aplicación <strong>Vanilla Wii U</strong> para simular un Wii U GamePad requiere una PC con Linux con un modem Wi-Fi compatible o una Switch modificada.</li>
+</ul>
+<p>Además, muchas funciones de la Wii U dependen del Wii U GamePad para funcionar. Después de modificar la consola es posible disminuir su dependencia al Wii U GamePad. La gran mayoría de los juegos no necesitan del Wii U GamePad para jugarlos, pero para algunos juegos es obligatorio.</p>
+</div>
+<div id="q_update_danger" class="accordion">¿Hay algún riesgo si actualizo la consola con una modificación instalada?</div>
+<div class="panel">
+<p>Actualmente, no hay riesgo alguno, sin embargo, actualizar la consola puede desactivar la carga automática de Coldboot Haxchi (CBHC) y de Autobooting PayloadLoader, pero puedes volver a activar la carga automática de la modificación en cualquier momento.</p>
+<p>Lo ideal es que primero actualices la Wii U a su versión más reciente (5.5.6 U / 5.5.5 E / 5.5.5 J) antes de modificar la consola y después de modificar la consola bloquear por completo las actualizaciones.</p>
+<p>Si en algún momento te apareció el error <strong class="yellow">160-0103</strong> no debes actualizar la Wii U. En lugar de actualizar instala <strong>ISFShax</strong> lo antes posible.</p>
+</div>
+<div id="q_restore_danger" class="accordion">¿Hay algún riesgo si formateo la consola con una modificación instalada?</div>
+<div class="panel">
+<p>Depende de la modificación.</p>
+<p>En general formatear (restablecer la configuración de fábrica) no restaura archivos del sistema de la Wii U. </p>
+<p>Si la consola tiene algún problema formatear no ayuda a solucionar el problema, por el contrario, puede terminar complicando más las cosas. Si la Wii U (o su modificación) tiene algún problema hay que solucionar el problema directamente en lugar de intentar rodear el problema formateando.</p>
+<p>Si la Wii U tiene <strong>Coldboot Haxchi (CBHC)</strong>, restablecer la configuración de fábrica no restaura el archivo <code>system.xml</code> original, en consecuencia, la Wii U termina brickeada con el error <strong class="yellow">160-0101</strong> (no confundir con el error <strong class="yellow">160-0103</strong>, no es lo mismo). El error <strong class="yellow">160-0101</strong> se puede solucionar usando el <strong>Recovery Menu</strong> de <strong>UDPIH</strong>.</p>
+<p>Si tiene <strong>Indexiine</strong>, restablecer la configuración de fábrica de la Wii U no restaura el archivo <code>index.html</code> original del navegador de Internet de la consola, en consecuencia, el navegador termina bloqueado, esto se puede solucionar aunque puede resultar un poco complicado.</p>
+<p>Restablecer la configuración de fábrica de la Wii U desactiva el arranque automático (autobooting) del PayloadLoader, pero no elimina <strong>PayloadLoader</strong> de la aplicación Información sobre salud y seguridad.</p>
+<p>Solamente en el caso de <strong>Haxchi</strong> normal, restablecer la configuración de fábrica de la Wii U sí elimina Haxchi sin ninguna consecuencia.</p>
+<p>Formatear la Wii U no elimina el exploit del navegador de Internet.</p>
+<p>Formatear la Wii U no elimina <strong>ISFShax</strong>.</p>
+<p>Si en algún momento te apareció el error  <strong class="yellow">160-0103</strong> no debes formatear la Wii U. En lugar de intentar formatear instala <strong>ISFShax</strong> lo antes posible.</p>
+</div>
+<h2>Sobre el funcionamiento de la Wii U</h2>
+<div id="q_backup_discs" class="accordion">¿La Wii U puede leer discos piratas?</div>
+<div class="panel">
+<p>No. El lector de discos de la Wii U sólo puede leer discos originales de Wii y Wii U.</p>
+</div>
+<div id="q_games_format" class="accordion">¿En qué formato deben ser instalados los juegos de Wii U?</div>
+<div class="panel">
+<p>WUP Installer GX2 y NUSspli usan el formato <strong class="green">NUS Content cifrado de Wii U</strong> que se compone de archivos <code>.app</code>, <code>.h3</code>, <code>title.tmd</code>, <code>title.cert</code> y <code>title.tik</code>).</p>
+<p><strong>Existen otros formatos que NO son compatibles con WUP Installer GX2 o con NUSspli</strong> como el formato NUS Content descifrado de Wii U (carpetas <code>code</code>, <code>content</code> y <code>meta</code>) usado por la aplicación Loadiine GX2 y el emulador CEMU, el formato WUD (Wii U Disc image), el formato WUX (Wii U Compressed image) y el formato WUA (Wii U Archive).</p>
+</div>
+<div id="q_wfs_format" class="accordion">¿Qué es el formato Wii U File System (WFS)?</div>
+<div class="panel">
+<p>La Wii U usa un sistema de archivos (file system) cifrado para su memoria interna y para los dispositivos de almacenamiento formateados por el sistema de la propia Wii U. Ese sistema de archivos cifrado es el formato WFS.</p>
+<p>Cada Wii U usa una clave de cifrado diferente, solo la Wii U que formatea tiene libre acceso a los datos almacenados, una PC u otras Wii U no tienen libre acceso a los datos. Si alguna vez quieres usar un dispositivo formateado por el sistema de la Wii U en otro aparato (o en otra Wii U) tendrás que reformatearlo.</p>
+<p>El cifrado de la Wii U es la razón por la que debes instalar los juegos usando la propia consola y solo puedes instalar contenido en formato <strong class="green">NUS Content cifrado de Wii U</strong> (archivos <code>.app</code>, <code>.h3</code>, <code>title.tmd</code>, <code>title.cert</code> y <code>title.tik</code>).</p>
+<p>En la Wii U también es posible usar dispositivos formateados en FAT32. En estos dispositivos no puedes instalar *juegos de Wii U*, pero sí puedes colocar *archivos homebrew*, además de paquetes de *mods*, juegos de Wii y de GameCube, así como ROMs de N64, SNES, NES, GBA, GB/GBC y demás consolas retro.</p>
+<p>Por lo anterior es que existen dos tipos de almacenamiento para la Wii U:</p>
+<ul>
+<li>FAT32 para *archivos homebrew*, es decir para los archivos de la modificación y aplicaciones "hechas en casa" (aplicaciones homebrew), además de *mods* para juegos de Wii U, juegos de Wii en formato WBFS, juegos de GameCube en formato ISO y ROMs de consolas retro.</li>
+<li>WFS para *juegos de Wii U*, es decir para los propios juegos de la consola, actualizaciones de esos juegos, contenido descargable adicional (DLC) y los archivos de guardado de los juegos.</li>
+</ul>
+</div>
+<div id="q_double_usb" class="accordion">¿Puedo usar dos dispositivos para almacenar juegos de Wii U?</div>
+<div class="panel">
+<p>Sí, pero no puedes usarlos simultáneamente.</p>
+<p>Si conectas dos dispositivos formateados por la Wii U al mismo tiempo, la consola no te va a permitir jugar, solamente vas a poder transferir datos entre un dispositivo y otro. Para poder jugar debes conectar solo un dispositivo formateado por la Wii U a la vez.</p>
+</div>
+<h2>Sobre la tarjeta SD</h2>
+<div id="q_sd" class="accordion">¿Para qué sirve la tarjeta SD en la Wii U?</div>
+<div class="panel">
+<p>Originalmente, la tarjeta SD en la ranura frontal de la Wii U solamente servía para almacenar *archivos homebrew*, es decir para los archivos de la modificación y aplicaciones "hechas en casa" (aplicaciones homebrew). No servía para ampliar el almacenamiento de la consola para *juegos de Wii U*.</p>
+<p>Actualmente usando Stroopwafel una tarjeta SD en la ranura frontal de la Wii U puede servir tanto para almacenar *archivos homebrew* (en una partición FAT32) como para almacenar *juegos de Wii U* (emulando un dispositivo USB en una partición WFS).</p>
+</div>
+<div id="q_best_sd" class="accordion">¿Qué tarjeta SD se recomienda?</div>
+<div class="panel">
+<p>Para solamente almacenar *archivos homebrew* cualquier tarjeta SD o microSD clase 10 (C10, U1 o V10) o superior sirve. El tamaño mínimo recomendado es de 32 GB, pero en realidad puedes elegir cualquier tamaño hasta 2 TB.</p>
+<p>Las marcas recomendadas son SanDisk y Samsung, en segundo lugar Lexar o Kingston originales.</p>
+<p>Para almacenar *juegos de Wii U* no se recomienda usar cualquier tarjeta SD o microSD, incluso las de marcas reconocidas son poco confiables si no cumplen con las características de resistencia/durabilidad necesarias. El tamaño mínimo recomendado es de 64 GB, el límite máximo son 2 TB.</p>
+<p>Los modelos recomendados son:</p>
+<ul>
+<li>SanDisk MAX Endurance (For Home Security Cameras | Dash Cams).</li>
+<li>Samsung PRO Endurance (For Monitoring Devices | Security Cameras).</li>
+</ul>
+</div>
+<div id="q_sd_change" class="accordion">¿Puedo cambiar la tarjeta SD de la Wii U por otra tarjeta SD?</div>
+<div class="panel">
+<p>Sí. En cualquier momento puedes cambiar la tarjeta SD, no necesitas volver a instalar nada en la Wii U, basta con formatear la nueva tarjeta SD en FAT32 y después copiar y pegar todos los *archivos homebrew* de la vieja tarjeta SD a la nueva tarjeta SD para continuar usando la modificación de la consola.</p>
+<p>Si perdiste los *archivos homebrew* de la vieja tarjeta SD puedes volver a descargarlos desde los sitios web y repositorios oficiales y ponerlos correctamente en la nueva tarjeta SD. Eso es todo.</p>
+</div>
+<div id="q_usb_install_games" class="accordion">¿Puedo pasar juegos desde la PC a la Wii U usando un dispositivo USB en lugar de usar la tarjeta SD?</div>
+<div class="panel">
+<p>Sí. Usando Stroopwafel y teniendo particionado el dispositivo USB para almacenar *archivos homebrew* (emulando una tarjeta SD en una partición FAT32).</p>
+</div>
+<h2>Sobre los dispositivos USB</h2>
+<div id="q_usb" class="accordion">¿Para qué sirve el dispositivo de almacenamiento USB en la Wii U?</div>
+<div class="panel">
+<p>Originalmente, un dispositivo de almacenamiento USB en cualquiera de los cuatro puertos USB de la Wii U solamente servía para almacenar *juegos de Wii U*, es decir para los propios juegos de la consola, actualizaciones de esos juegos, contenido descargable adicional (DLC) y los archivos de guardado de los juegos. No servía para almacenar *archivos homebrew*.</p>
+<p>Actualmente usando Stroopwafel un dispositivo USB en cualquiera de los cuatro puertos USB de la Wii U puede servir tanto para almacenar *juegos de Wii U* (en una partición WFS) como para almacenar *archivos homebrew* (emulando una tarjeta SD en una partición FAT32).</p>
+</div>
+<div id="q_best_usb" class="accordion">¿Qué dispositivo de almacenamiento USB se recomienda?</div>
+<div class="panel">
+<p>Un dispositivo de almacenamiento USB puede ser un disco duro (HDD), una unidad de estado sólido (SSD), una memoria Flash USB, una tarjeta SD en un adaptador USB o cualquier otro dispositivo de almacenamiento con conector de datos USB.</p>
+<p>Para almacenar *juegos de Wii U* no se recomienda usar cualquier dispositivo USB, incluso los de marcas reconocidas son poco confiables si no cumplen con las características de resistencia/durabilidad necesarias. El tamaño mínimo recomendado es de 64 GB, el límite máximo son 2 TB.</p>
+<p>Lo recomendado es usar un disco duro (cualquier marca) o una unidad de estado sólido (SSD) de buena calidad (Western Digital, Samsung o Kingston). No uses unidades de estado sólido de mala calidad. Evita usar memorias USB o tarjetas SD comunes en un adaptador USB. Otra opción recomendable, si el precio no es un problema para ti, es usar una tarjeta SD de alta resistencia/durabilidad en un adaptador USB.</p>
+<p>Para solamente almacenar *archivos homebrew* cualquier dispositivo USB sirve. El tamaño mínimo recomendado es de 32 GB, pero en realidad puedes elegir cualquier tamaño hasta 2 TB.</p>
+</div>
+<div id="q_usb_change" class="accordion">¿Puedo cambiar el dispositivo de almacenamiento USB de la Wii U por otro?</div>
+<div class="panel">
+<p>Sí. En cualquier momento puedes cambiar el dispositivo USB.</p>
+<p>Con la Wii U apagada desconecta el viejo dispositivo USB y conecta el nuevo dispositivo USB. Enciende la consola y formatea el nuevo dispositivo USB. Con la consola apagada conecta ambos dispositivos USB, enciende la consola y transfiere el contenido del viejo dispositivo USB al nuevo. Al finalizar la transferencia apaga la Wii U y desconecta el viejo dispositivo USB. Eso es todo.</p>
+</div>
+<div id="q_usb_flash" class="accordion">¿Por qué se recomienda evitar usar memorias USB en la Wii U?</div>
+<div class="panel">
+<p>Las memorias USB (pendrive, USB Stick, tarjeta SD común en adaptador USB, etc.), tienen más probabilidades de presentar errores de lectura/escritura de datos al ser usadas en la Wii U. El tiempo que tardan en presentar fallos depende de la calidad del chip NAND Flash de la memoria.</p>
+<p>Al cargar los juegos y salvar archivos de guardado la Wii U realiza frecuentemente lectura y escritura de datos. Las memorias NAND Flash tienen un límite de escritura de datos, su vida útil se mide en TeraBytes escritos (TBW). Los chips de memoria NAND Flash de excelente calidad cuentan con controladores internos que gestionan el desgaste de las celdas de memoria y realizan correcciones de errores, en contraparte los chips de memoria NAND Flash de baja calidad no cuentan con ese tipo de controladores internos. Por eso algunas memorias USB duran unas pocas semanas y otras memorias USB pueden llegar a durar varios años de uso en la Wii U.</p>
+</div>
+<div id="q_hdd" class="accordion">¿Cualquier disco duro funciona en la Wii U?</div>
+<div class="panel">
+<p>Sí, pero el disco duro debe recibir el voltaje (V) y la corriente (A) necesaria para funcionar.</p>
+<p>Cada puerto USB de la Wii U da 5V con 0.5A.</p>
+<p>Por lo regular los discos duros de 2.5 pulgadas necesitan de 5V con 1.0A, por esa razón se suele recomendar el uso de un “cable Y” (también conocido como cable USB de doble alimentación). Un cable Y tiene un conector USB principal para datos y energía, y un segundo conector USB auxiliar que aporta energía adicional para evitar que el dispositivo se desconecte o falle por falta de corriente. El cable Y suma la corriente de dos puertos USB de la Wii U para obtener en total 5V con 1.0A.</p>
+<p>Los discos duros de 3.5 pulgadas necesitan una fuente de alimentación de 12V con 2.0A, esto no se puede conseguir usando un cable Y. Para estos discos duros es necesario usar una fuente de alimentación eléctrica independiente. Por esa razón las carcasas (gabinetes, shells, enclosures, etc.) para discos duros de 3.5 pulgadas incluyen una fuente de 12V con 2.0A.</p>
+<p>Algunos discos duros de 2.5 pulgadas necesitan 5V con más de 1.0A para funcionar (lo indica la etiqueta del disco duro) en esos casos aplica lo mismo que para los discos duros de 3.5. Cualquier adaptador de discos duros a USB que incluya una fuente de alimentación de 12V convierte una parte en 5V con más de 1.0A (hasta 2.0A) al mismo tiempo que permanecen los 12V con más de 1.0A (hasta 2.0A). Si el disco duro no necesita de 12V no hay problema, solamente toma de la fuente y el adaptador a USB los 5V con más de 1.0A que necesita.</p>
+<p>La capacidad de almacenamiento del disco duro puede ser de varios terabytes, pero la Wii U solo puede usar hasta 2 TB el resto del almacenamiento no va a ser aprovechado por la consola.</p>
+<p>El tamaño máximo recomendado es de 1 TB, ya que el menú de Wii U tiene un límite de unos 300 iconos, cuando ese límite se rebasa ya no aparecen más iconos de juegos en el menú de Wii U obligándote a borrar juegos. Incluso instalando los juegos más pesados solo llegarías a ocupar unos 800 GB.</p>
+</div>
+<div id="q_y_cable" class="accordion">¿Las memorias USB y las unidades de estado sólido (SSD) necesitan un “cable Y” en la Wii U?</div>
+<div class="panel">
+<p>Las memorias USB no necesitan un cable Y para funcionar en la Wii U.</p>
+<p>Por lo regular las unidades de estado sólido (SSD) funcionan con un cable USB normal, pero algunos SSD sí necesitan de un “cable Y” o incluso de una fuente de alimentación eléctrica independiente para funcionar en la Wii U, igual que los discos duros.</p>
+<p>Recuerda que cada puerto USB de la Wii U da 5V con 0.5A y que la Wii U tiene puertos USB 2.0.</p>
+<p>Con las memorias USB y los SSD la velocidad de transferencia de datos afecta su consumo de corriente. A mayor velocidad mayor consumo de corriente, menor velocidad menor consumo de corriente.</p>
+<p>La lenta velocidad de transferencia de datos de los puertos USB 2.0 no permite un alto consumo de corriente en las memorias USB (sean USB 2.0 o USB 3.0). Las memorias USB funcionan a 5V con 0.3A.</p>
+<p>Con las unidades de estado sólido (SSD) pasa lo mismo que con las memorias USB, la lenta velocidad de transferencia de datos de los puertos USB 2.0 no permite un alto consumo de corriente, por eso los SSD pueden funcionar con un cable USB normal.</p>
+<p>Usar un “cable Y” con un SSD no va a aumentar la velocidad de transferencia de datos. Los SSD de buena calidad/eficientes funcionan a 5V con 0.5A a la máxima velocidad de transferencia de datos de los puertos USB 2.0, añadir otros 0.5A no va a hacer que superen el límite de velocidad de los puertos USB 2.0.</p>
+<p>La razón para necesitar usar un “cable Y” o una fuente de alimentación eléctrica independiente en un SSD es que no sea de buena calidad/eficiente. Existen SSD que son ineficientes en su consumo eléctrico independientemente de la velocidad de transferencia de datos. Suelen ser unidades de estado sólido baratas de marcas genéricas.</p>
+</div>
+<div id="q_usb_3" class="accordion">¿Se pueden usar dispositivos USB 3.0 en Wii U?</div>
+<div class="panel">
+<p>Sí. Todos los dispositivos de almacenamiento USB 3.0 son retrocompatibles con USB 2.0.</p>
+<p>Al conectar un dispositivo USB 3.0 a un puerto USB 2.0, los conectores adicionales de USB 3.0 quedan desconectados mientras que los conectores básicos de USB 2.0 quedan conectados. De esta forma no se aprovecha la alta velocidad de la versión USB 3.0, solo se usa la baja velocidad de USB 2.0.</p>
+<p><a target="_blank" href="Images/misc/USB_3.0_Type-A.png"><img src="Images/misc/USB_3.0_Type-A.png" class="auto_size_li center"></a></p>
+</div>
+</div>
+<div class="vertical_padding"></div>
+
+
+</div>
+
+</div>
+<script src="base_script.js"></script>
+<script>setAspect();</script>
+</body>
+</html>

@@ -1,9 +1,8 @@
 User-agent: *
-Disallow: /archive.html
-Disallow: /download.html
-Disallow: /archive/
-Disallow: /download/
-Disallow: /content/
-Disallow: /vwii/
+Disallow: /Archive/
+Disallow: /Files/
+Disallow: /Images/
+Disallow: /OldContent/
+Disallow: /Videos/
 
 Sitemap: https://piloncillo.github.io/sitemap.xml
