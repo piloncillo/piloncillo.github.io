@@ -1,0 +1,21 @@
+<div class="cont_body">
+<h1>Identificar PayloadLoader</h1>
+<p>PayloadLoader se instala en el icono de Información sobre salud y seguridad. PayloadLoader se puede configurar para que cargue automáticamente al encender la consola, a este se le llama PayloadLoader de arranque automático (Autobooting PayloadLoader). El autobooting puede ser desactivado y dejar unicamente PayloadLoader de arranque manual el cual carga hasta abrir manualmente el icono de Información sobre salud y seguridad.</p>
+<p>Para una correcta identificación debes quitar la tarjeta SD de la ranura frontal de la Wii U y desconectar todos los dispositivos USB de la consola, y desactivar las funciones en modo de reposo. Después de hacer la prueba puedes volver a activar las funciones en modo de reposo y volver a conectar los dispositivos USB y la tarjeta SD en la ranura frontal, no se pierden los juegos ni nada de lo que ya tienes instalado.</p>
+<h3>Instrucciones</h3>
+<ul>
+<li><a href="?s=standby_functions">Desactiva las funciones en modo de reposo siguiendo los pasos de este enlace.</a> Si ya tienes desactivadas las funciones en modo de reposo continúa con los pasos de abajo.</li>
+<img src="Images/detect/quick_start_menu.jpg" class="auto_size_li">
+<li>Con la consola apagada quita la tarjeta SD de la ranura frontal de la Wii U y desconecta todos los dispositivos USB de la consola.</li>
+<li>Enciende la Wii U y observa con atención la pantalla de la TV y/o la pantalla del Wii U GamePad si aparece el mensaje <code>Failed to load sd:/wiiu/payload.elf Starting the console without any modifications</code> entonces <ins>la Wii U tiene PayloadLoader de arranque automático</ins>.</li>
+<img src="Images/detect/payload_loader_failed_to_load.jpg" class="auto_size">
+<li>Si no apareció el mensaje al encender la consola entonces <ins>la Wii U no tiene PayloadLoader de arranque automático</ins>, pero aún es posible tener PayloadLoader de arranque manual. Abre el icono de Información sobre salud y seguridad en el menú de Wii U.</li>
+<img src="Images/detect/health_and_safety_information_icon.jpg" class="auto_size">
+<li>Si solamente al abrir el icono de Información sobre salud y seguridad aparece el mensaje <code>Failed to load sd:/wiiu/payload.elf Starting the console without any modifications</code> entonces <ins>la Wii U tiene PayloadLoader de arranque manual</ins>.</li>
+<li>Si no apareció el mensaje al encender la consola ni al abrir el icono de Información sobre salud y seguridad entonces <ins>la Wii U no tiene PayloadLoader en ninguna de sus formas</ins>.</li>
+<li>Apaga la consola y vuelve a conectar los dispositivos USB y la tarjeta SD.</li>
+</ul>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a>
+</div>
+</div>
