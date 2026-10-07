@@ -4,7 +4,7 @@ https://piloncillo.github.io/
 
 # Acerca de esta guía
 
-Versión: v8.0 (6 de octubre de 2026)
+Versión: v8.0.1 (7 de octubre de 2026)
 
 Esta guía fue hecha por FranAC basado en la guía de Wafel Installer [Wafel Installer](https://wafel.xyz/guide/index.html).
 
