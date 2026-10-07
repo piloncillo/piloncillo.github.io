@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title itemprop="name">Piloncillo para tu Wii U</title>
+<meta property="og:title" content="Piloncillo para tu Wii U" />
+<meta name="twitter:title" content="Piloncillo para tu Wii U" />
+<meta itemprop="name" content="Piloncillo para tu Wii U" />
+<meta name="application-name" content="Piloncillo para tu Wii U" />
+<meta property="og:site_name" content="Piloncillo para tu Wii U" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<link rel="icon" href="../Images/favicon.png" />
+<meta itemprop="image" property="og:image" content="../Images/favicon.png" />
+<meta name="twitter:image" content="../Images/favicon.png" />
+<link rel="image_src" href="../Images/favicon.png" />
+<link rel="stylesheet" href="../default_style.css" />
+</head>
+<body>
+<div id="sidebar">
+<div id="sidebar_close" onclick="closeSidebar()">&#215;</div>  
+<div id="sidebar_content"></div>
+</div>
+<div id="sidebar_toggle" onclick="toggleSidebar()">&#9776;</div>  
+<div id="content">
+
+<div class="cont">
+
+<div class="cont_body">
+<h1>Añadir aplicaciones a Aroma</h1>
+<div class="apps_nav">
+<a class="active">General</a>
+<a href="AddAromaWUHB.html">Aplicaciones WUHB</a>
+<a href="AddAromaPlugins.html">Plugins WPS</a>
+<a href="AddAromaModules.html">Módulos WMS</a>
+<a href="AddAromaModulesSetup.html">Módulos setup</a>
+</div>
+<h2>Estructura general</h2>
+<p>Los archivos <code>.wuhb</code> dentro de la carpeta <code>sd:/wiiu/apps</code> son aplicaciones para Aroma.</p>
+<p>Los archivos <code>.wps</code> dentro de la carpeta <code>sd:/wiiu/environments/aroma/plugins</code> son plugins de Aroma.</p>
+<p>Los archivos <code>.json</code> dentro de la carpeta <code>sd:/wiiu/environments/aroma/plugins/config</code> son archivos de configuración de los plugins de Aroma.</p>
+<p>Los archivos <code>.wms</code> dentro de la carpeta <code>sd:/wiiu/environments/aroma/modules</code> son módulos de Aroma.</p>
+<p>Los archivos <code>.rpx</code> dentro de la carpeta <code>sd:/wiiu/environments/aroma/modules/setup</code> son "módulos setup" de Aroma.</p>
+<p><a target="_blank" href="../Images/aroma/general.png"><img src="../Images/aroma/general_50.png" class="auto_size center"></a></p>
+<p>En la imagen de arriba:</p>
+<ul>
+<li><code>AppName.wuhb</code> es en general cualquier aplicación para Aroma.</li>
+<li><code>PluginName.wps</code> es cualquier plugin para Aroma.</li>
+<li><code>ModuleName.wms</code> es cualquier módulo para Aroma.</li>
+<li><code>##_module_name.rpx</code> es cualquier "módulo setup".</li>
+</ul>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a>
+</div>
+</div>
+
+</div>
+
+</div>
+<script src="../base_script.js"></script>
+<script>setAspect();</script>
+</body>
+</html>
+

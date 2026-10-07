@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title itemprop="name">Piloncillo para tu Wii U</title>
+<meta property="og:title" content="Piloncillo para tu Wii U" />
+<meta name="twitter:title" content="Piloncillo para tu Wii U" />
+<meta itemprop="name" content="Piloncillo para tu Wii U" />
+<meta name="application-name" content="Piloncillo para tu Wii U" />
+<meta property="og:site_name" content="Piloncillo para tu Wii U" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<link rel="icon" href="../Images/favicon.png" />
+<meta itemprop="image" property="og:image" content="../Images/favicon.png" />
+<meta name="twitter:image" content="../Images/favicon.png" />
+<link rel="image_src" href="../Images/favicon.png" />
+<link rel="stylesheet" href="../default_style.css" />
+</head>
+<body>
+<div id="sidebar">
+<div id="sidebar_close" onclick="closeSidebar()">&#215;</div>  
+<div id="sidebar_content"></div>
+</div>
+<div id="sidebar_toggle" onclick="toggleSidebar()">&#9776;</div>  
+<div id="content">
+
+<div class="cont">
+
+<h1 class="wafel">Desinstalar ISFShax</h1>
+<p>Si deseas eliminar por completo Aroma, Stroopwafel e <ins>ISFShax</ins> de tu consola, puedes utilizar la opción <strong>guided uninstall</strong> (desinstalación guiada) dentro de Wafel Installer.</p>
+<p>Para garantizar que la consola pueda arrancar de forma segura y sin modificaciones, el proceso de desinstalación se divide en dos fases. La primera fase elimina Stroopwafel, mientras que la segunda completa la desinstalación con opciones para formatear la tarjeta SD y eliminar ISFShax.</p>
+<div class="warning"><strong class="red">¡¡Importante!!</strong> Asegúrate de haber revertido cualquier tema visual o teclado personalizado instalado en el sistema de la Wii U antes de continuar. ¡No hacerlo podría provocar un *brick* de la consola!</div>
+<h2 class="wafel">Desinstalar modificación del modo virtual Wii (vWii)</h2>
+<p>Si no modifícate el modo vWii o deseas mantener la modificación, puedes omitir este paso.</p>
+<p><a href="../vWii/UninstallMod.html">Sigue los pasos de este enlace para desinstalar la modificación del modo vWii.</a></p>
+<h2 class="wafel">Fase 1: Eliminación de Stroopwafel</h2>
+<ol>
+<li>Enciende la consola e inicia la aplicación Wafel Installer (ya sea desde el menú de Wii U, el Homebrew Launcher o a través de <code>https://wafel.xyz</code> en el navegador de Internet de la consola).</li>
+<li>Si Wafel Installer muestra comprobaciones iniciales, cancélalas o aborta el proceso para acceder al menú principal de la aplicación.</li>
+<li>En el menú principal, selecciona la opción Guided Uninstall (desinstalación guiada).</li>
+<div class="wafel_screen"><img class="wafel_img" src="../Images/wafel_installer/main_menu_guided_uninstall.jpg"><pre class="wafel_txt_mini">
+Wafel Installer
+  Stroopwafel Plugin Manager
+  Load custom fw.img
+  Stroopwafel by shinyquagsire23
+  ISFShax by rw_r_r_0644
+  Download Aroma by Maschell
+  Configure Minute Autoboot
+  SDUSB
+  USB Partition
+  Format and Partition
+  Guided Uninstall
+  Check NAND Health
+</pre></div>
+<li>Verás una advertencia inicial:</li>
+<div class="wafel_screen"><img class="wafel_img" src="../Images/wafel_installer/please_read_carefully.jpg"><pre class="wafel_txt_mini">
+Please read carefully:
+ 
+Reinstalling ISFShax won't fix issues. Keeping it is recommended.
+ 
+This will undo all modifications this tool made, turning it stock.
+It will also offer to reset the SD card if partitioned.
+Modifications made by other tools might still persist.
+ 
+IMPORTANT: If you use redNAND, do NOT proceed.
+If you installed custom keyboards or themes, you MUST
+undo these changes BEFORE uninstalling. Removing
+stroopwafel/isfshax otherwise might cause a BRICK.
+
+[I have undone everything, continue]
+[Cancel]
+</pre></div>
+<li><strong>Le atentamente la advertencia.</strong> Asegúrese de haber eliminado por completo cualquier tema visual o teclado personalizado instalado en el sistema antes de continuar. Si utilizas redNAND, NO continúes. Si procedes con estas modificaciones activas, tu consola podría quedar inutilizable (*brickeada*). Unicamente si estás totalmente seguro de que es seguro hacerlo selecciona la opción <strong>[I have undone everything, continue]</strong>.</li>
+<li>A continuación, el Wafel Installer realizará automáticamente una <strong>Comprobación de Integridad del Sistema</strong> para asegurarse de que es seguro desinstalar Stroopwafel de la consola.</li>
+<ul>
+<li>Si la comprobación falla (por ejemplo, debido a archivos del sistema faltantes o modificados, a la detección de múltiples carpetas de región o a que USBMLC/redNAND está activo), la desinstalación se cancelará para evitar que la consola quede inutilizable (*brickeada*).</li>
+</ul>
+<li><strong>Recreación de la carpeta <em>update</em> del sistema:</strong> Si tu consola tenía bloqueadas las actualizaciones del sistema (por ejemplo, al reemplazar la carpeta de actualizaciones por un archivo ficticio o al eliminarla), Wafel Installer lo detectará y ofrecerá restaurar la carpeta <em>update</em> original para que las actualizaciones oficiales del sistema puedan funcionar con normalidad:</li>
+<div class="wafel_screen"><img class="wafel_img" src="../Images/wafel_installer/recreate_update_folder.jpg"><pre class="wafel_txt">
+The update folder currently exists as a file (system updates blocked).
+Do you want to restore it as a real folder?
+
+[Yes, recreate folder]
+[No, keep as is]
+</pre></div>
+<p>Selecciona <strong>[Yes, recreate folder]</strong> para restaurar la carpeta.</p>
+<li>Si la comprobación de integridad se supera con éxito, Wafel Installer buscará los archivos de Stroopwafel en la memoria interna (SLC) de la consola y en la tarjeta SD. Dependiendo de dónde se encuentren, se te pedirá que los elimines. Por ejemplo, si se encuentran en la memoria interna (SLC):</li>
+<div class="wafel_screen"><img class="wafel_img" src="../Images/wafel_installer/remove_stroopwafel.jpg"><pre class="wafel_txt">
+Stroopwafel files found on SLC.
+Do you want to remove them?
+
+[Yes]
+[Cancel]
+</pre></div>
+<p>Selecciona <strong>[Yes]</strong> (o <strong>[Both]</strong> si se te solicita elegir entre varias ubicaciones) para eliminar Stroopwafel por completo.</p>
+<li>Una vez eliminado Stroopwafel, el instalador te notificará que la consola se reiniciará. Selecciona <strong>[OK]</strong> y tu consola se reiniciará.</li>
+</ol>
+<h2 class="wafel">Fase 2: Finalización de la desinstalación (formatear la tarjeta SD y desinstalar ISFShax)</h2>
+<p>Al eliminar Stroopwafel primero, nos aseguramos de que la consola pueda arrancar correctamente sin cargar ningún *IOS plugin*. Si la consola no arranca tras completar la Fase 1, NO continúes. Puedes recuperar el sistema volviendo a colocar manualmente los archivos de Stroopwafel en la tarjeta SD.</p>
+<p>Si la consola arranca correctamente:</p>
+<ol>
+<li>Abre la aplicación del navegador de Internet en la Wii U.</li>
+<li>Toca la barra de direcciones, situada en la parte superior.</li>
+<li>Introduce la URL: <code>https://wafel.xyz</code></li>
+<li>Toca en Listo (botón en la parte  inferior derecha). Deberas ver la página web de Wafel Installer.</li>
+<li>Toca el botón <strong class="yellow">launch</strong> en la página web.</li>
+<li>Toca <strong class="yellow">launch</strong> de nuevo. Tras unos segundos, debe cargarse Wafel Installer.</li>
+<li>Durante las comprobaciones iniciales, Wafel Installer detectará la desinstalación incompleta y te mostrará un aviso:</li>
+<div class="wafel_screen"><img class="wafel_img" src="../Images/wafel_installer/incomplete_uninstall_detected.jpg"><pre class="wafel_txt">
+An incomplete uninstall was detected.
+Do you want to continue uninstalling?
+
+[Yes, continue uninstall]
+[No, cancel uninstall]
+</pre></div>
+<li>Selecciona <strong>[Yes, continue uninstall]</strong>.</li>
+</ol>
+<h3 class="wafel">Formateo de la tarjeta SD</h3>
+<p>Wafel Installer te preguntará si deseas formatear la tarjeta SD de nuevo a FAT32. Esto resulta útil si la habías particionado previamente para *juegos de Wii U* y quieres recuperar el espacio:</p>
+<div class="wafel_screen"><pre class="wafel_txt">
+Do you want to format the entire SD card to FAT32?
+This will delete ALL data on it.
+
+[Yes, format SD]
+[No, keep as is]
+</pre></div>
+<p>Selecciona <strong>[Yes, format SD]</strong> para restablecer toda la tarjeta SD al formato FAT32. Esto borrará todo su contenido, incluidos los *juegos de Wii U* y los *archivos homebrew*.</p>
+<h3 class="wafel">Desinstalación de ISFShax</h3>
+<p>Por último, se te preguntará si deseas desinstalar ISFShax. En general, se recomienda conservar ISFShax, ya que ofrece protección contra el bloqueo total del sistema (*brick*), pero puedes eliminarlo si deseas devolver la consola a su estado original de fábrica.</p>
+<div class="wafel_screen"><img class="wafel_img" src="../Images/wafel_installer/uninstall_isfshax.jpg"><pre class="wafel_txt">
+Do you want to uninstall ISFShax?
+ 
+WARNING: It is STRONGLY recommended to KEEP ISFShax installed.
+It provides brick protection
+There is usually no reason to uninstall it.
+
+[Yes, uninstall ISFShax]
+[No, keep ISFShax]
+</pre></div>
+<p>Si seleccionas <strong>[Yes, uninstall ISFShax]</strong>, verás una advertencia de confirmación final:</p>
+<div class="wafel_screen"><img class="wafel_img" src="../Images/wafel_installer/want_to_uninstall_isfshax.jpg"><pre class="wafel_txt">
+WARNING: You are about to make modifications to the console.
+This software comes with ABSOLUTELY NO WARRANTY!
+You are choosing to use this at your own risk.
+The author(s) will not be held liable for any damage.
+ 
+Do you want to proceed with Uninstall?
+
+[Yes]
+[No]
+</pre></div>
+<p>Selecciona <strong>[Yes]</strong> para finalizar la desinstalación. La consola se reiniciará cuando termine el proceso de desinstalación.</p>
+<h2 class="wafel">Video mostrando la desinstalación de ISFShax</h2>
+<video title="Desinstalación de ISFShax usando Wafel Installer" class="video" controls>
+<source src="../Videos/WafelInstaller/UninstallISFShax.mp4" type="video/mp4">
+</video>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a>
+</div>
+
+</div>
+
+</div>
+</div>
+<script src="../base_script.js"></script>
+<script>setAspect();</script>
+</body>
+</html>

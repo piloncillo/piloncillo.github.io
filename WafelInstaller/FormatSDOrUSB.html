@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title itemprop="name">Piloncillo para tu Wii U</title>
+<meta property="og:title" content="Piloncillo para tu Wii U" />
+<meta name="twitter:title" content="Piloncillo para tu Wii U" />
+<meta itemprop="name" content="Piloncillo para tu Wii U" />
+<meta name="application-name" content="Piloncillo para tu Wii U" />
+<meta property="og:site_name" content="Piloncillo para tu Wii U" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<link rel="icon" href="../Images/favicon.png" />
+<meta itemprop="image" property="og:image" content="../Images/favicon.png" />
+<meta name="twitter:image" content="../Images/favicon.png" />
+<link rel="image_src" href="../Images/favicon.png" />
+<link rel="stylesheet" href="../default_style.css" />
+</head>
+<body>
+<div id="sidebar">
+<div id="sidebar_close" onclick="closeSidebar()">&#215;</div>  
+<div id="sidebar_content"></div>
+</div>
+<div id="sidebar_toggle" onclick="toggleSidebar()">&#9776;</div>  
+<div id="content">
+
+<div class="cont">
+
+<h1 class="wafel">Formateo de SD o USB</h1>
+<p>En esta sección te puede apacer una de dos posibles pantallas dependiendo si la tarjeta SD o el dispositivo USB tiene o no una partición en formato MBR + FAT32.</p>
+<div class="info">
+<p>Ten en cuenta que existen dos tipos de almacenamiento para la Wii U:</p>
+<ul>
+<li>FAT32 para *archivos homebrew*, es decir para los archivos de la modificación y aplicaciones "hechas en casa" (aplicaciones homebrew), además de *mods* para juegos de Wii U, juegos de Wii en formato WBFS, juegos de GameCube en formato ISO y ROMs de consolas retro.</li>
+<li>WFS para *juegos de Wii U*, es decir para los propios juegos de la consola, actualizaciones de esos juegos, contenido descargable adicional (DLC) y los archivos de guardado de los juegos.</li>
+</ul>
+</div>
+<h2 class="wafel">Dispositivo sin partición FAT32</h2>
+<ul>
+<li><p><strong>Condición:</strong> Se muestra cuando se detecta físicamente una tarjeta SD o un dispositivo USB, pero no se encuentra en formato MBR + FAT32 o aún no contiene la carpeta <code>wiiu</code>.</p></li>
+<li><p><strong>Pantalla:</strong></p><div class="wafel_screen"><img class="wafel_img" src="../Images/wafel_installer/not_fat32_formatted.jpg"><pre class="wafel_txt">
+The SD / USB device isn't formatted for the Wii U.
+Do you want to format it for homebrew or also store Wii U games on it?
+
+[Homebrew only]
+[Homebrew + Games]
+[Cancel]
+</pre></div></li>
+</ul>
+<p>Aquí tienes la opción de formatear todo el dispositivo en FAT32 para usarlo únicamente para *archivos homebrew*, o bien dividirlo en dos particiones: una en FAT32  para *archivos homebrew* y otra en WFS para los *juegos de Wii U*. Independientemente de cuál de las dos opciones elijas se borrarán todos los datos almacenados en el dispositivo.</p>
+<p>Selecciona la opción <strong>[Homebrew only]</strong> si quieres que todo el almacenamiento de la tarjeta SD o del dispositivo USB sea para los *archivos homebrew*.</p>
+<p>Selecciona la opción <strong>[Homebrew + Games]</strong> si quieres dividir el almacenamiento de la tarjeta SD o del dispositivo USB, una parte para los *archivos homebrew* y otra parte para los *juegos de Wii U*.</p>
+<h2 class="wafel">Dispositivo con partición FAT32</h2>
+<ul>
+<li><p><strong>Condición:</strong> Se muestra cuando se detecta físicamente una tarjeta SD o un dispositivo USB y se encuentra en formato MBR + FAT32.</p></li>
+<li><p><strong>Pantalla:</strong></p><div class="wafel_screen"><img class="wafel_img" src="../Images/wafel_installer/fat32_formatted.jpg"><pre class="wafel_txt">
+How do you want to partition the SD card?
+
+Homebrew (FAT32): XX.X GB
+Wii U games: XXXX
+
+You need to repartition to install Wii U games.
+
+[Keep current partitioning]
+[Repartition]
+[Cancel]
+</pre></div></li>
+</ul>
+<p>Aquí tienes la opción de mantener las particiones actuales o reparticionar. Si eliges reparticionar se borrarán todos los datos almacenados en el dispositivo.</p>
+<p>Selecciona la opción <strong>[Keep current partitioning]</strong> si quieres conservar las particiones de la tarjeta SD o del dispositivo USB.</p>
+<p>Selecciona la opción <strong>[Repartition]</strong> si quieres redistribuir el almacenamiento de la tarjeta SD o del dispositivo USB, una parte para los *archivos homebrew* y otra parte para los *juegos de Wii U*.</p>
+<h2 class="wafel">Selector de tamaño de particiones</h2>
+<ul>
+<li><p><strong>Condición:</strong> Se muestra cuando el usuario elige la opción <strong>[Homebrew + Games]</strong> o la opción <strong>[Repartition]</strong>.</p></li>
+<li><p><strong>Pantalla:</strong></p><div class="wafel_screen"><img class="wafel_img" src="../Images/wafel_installer/partition_size_selector.jpg"><pre class="wafel_txt">
+FAT32: [ 50%] ( XX.XX GB)    Homebrew and vWii USB Loader
+WFS:    [ 50%] ( YY.YY GB)    Wii U games and Virtual Console
+
+Use Left/Right to adjust (1% increments)
+Use Up/Down to adjust (10% increments)
+Press A to confirm, B to cancel
+</pre></div></li>
+</ul>
+<p>Aquí puedes elegir cuánto espacio deseas asignar para la partición FAT32 (para los *archivos homebrew*) y para la partición WFS (para los *juegos de Wii U*). Se recomienda que la partición FAT32 sea como mínimo de 25 GB, ya que esta se usa como intermediaria temporal para el volcado y la posterior instalación de juegos de Wii U en la partición WFS, con este mínimo puedes instalar los juegos de Wii U más grandes. Puedes asignar más almacenamiento a la partición FAT32 si quieres añadir *mods* a tus juegos de Wii U, ya que estos se almacenarán aquí. Los juegos de Wii en formato WBFS también se pueden almacenar en la partición FAT32.</p>
+<p>Si dispones de espacio suficiente y planeas tener una gran colección de juegos de Wii en formato WBFS, así como utilizar varios paquetes de *mods* para juegos de Wii U deberías asignar un tamaño mayor a 25 GB a la partición FAT32.</p>
+<p>Esto no se puede modificar más adelante sin borrar el contenido de las particiones, así que elige con cuidado.</p>
+<div class="info">Es posible instalar los juegos de Wii y de GameCube en la partición WFS (junto con los juegos de Wii U) utilizando herramientas para PC como <strong>UWUVCI AIO</strong> o <strong>TeconMoon’s WiiVC Injector</strong>, pero este proceso requiere mucho más trabajo.</div>
+<br>
+<div class="wafel_screen"><img class="wafel_img" src="../Images/wafel_installer/warning_re-partition_delete_all_data.jpg"><pre class="wafel_txt">
+WARNING: This will RE-PARTITION the whole device
+and DELETE ALL DATA on it.
+Do you want to continue?
+
+[Yes]
+[No]
+</pre></div>
+<p>Una vez confirmada la selección del tamaño, debes confirmar de nuevo ya que se borrará todo el contenido de la tarjeta SD o del dispositivo USB. Aquí debes seleccionar <strong>[Yes]</strong>.</p>
+<div class="bottomnav">
+<a href="SDNotDetected.html" class="previous">&#8592; Tarjeta SD no detectada</a><a href="DownloadAroma.html" class="next">Descargar Aroma &#8594;</a>
+</div>
+
+</div>
+
+</div>
+<script src="../base_script.js"></script>
+<script>setAspect();</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title itemprop="name">Piloncillo para tu Wii U</title>
+<meta property="og:title" content="Piloncillo para tu Wii U" />
+<meta name="twitter:title" content="Piloncillo para tu Wii U" />
+<meta itemprop="name" content="Piloncillo para tu Wii U" />
+<meta name="application-name" content="Piloncillo para tu Wii U" />
+<meta property="og:site_name" content="Piloncillo para tu Wii U" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<link rel="icon" href="../Images/favicon.png" />
+<meta itemprop="image" property="og:image" content="../Images/favicon.png" />
+<meta name="twitter:image" content="../Images/favicon.png" />
+<link rel="image_src" href="../Images/favicon.png" />
+<link rel="stylesheet" href="../default_style.css" />
+</head>
+<body>
+<div id="sidebar">
+<div id="sidebar_close" onclick="closeSidebar()">&#215;</div>  
+<div id="sidebar_content"></div>
+</div>
+<div id="sidebar_toggle" onclick="toggleSidebar()">&#9776;</div>  
+<div id="content">
+
+<div class="cont">
+
+<h1 class="wafel">Tarjeta SD no detectada</h1>
+<ul>
+<li><p><strong>Condición:</strong> No se detecta ninguna tarjeta SD a nivel de hardware. (<code>/dev/sdcard01</code>)</p></li>
+<li><p><strong>Pantalla:</strong></p><div class="wafel_screen"><img class="wafel_img" src="../Images/wafel_installer/sd_not_detected.jpg"><pre class="wafel_txt">
+No SD card detected.
+
+[Retry SD]
+[Use USB (do NOT connect it just yet)]
+[Check NAND Health]
+[Abort]
+</pre></div></li>
+</ul>
+<p>Si la Wii U no tiene una tarjeta SD en la ranura frontal de la Wii U y quieres usar una tarjeta SD entonces insértala en este momento y selecciona <strong>[Retry SD]</strong> para detectar la tarjeta SD.</p>
+<p>Si la Wii U tiene una tarjeta SD insertada, quítala e intenta volver a insertarla o cambia el adaptador microSD (en caso de usar una tarjeta microSD). La tarjeta SD debe insertarse en la ranura frontal de la Wii U (no a través de un adaptador USB). Una tarjeta SD en un adaptador USB es tratada como un dispositivo de almacenamiento USB. Selecciona <strong>[Retry SD]</strong> para reintentar detectar la tarjeta SD en la ranura frontal de la Wii U.</p>
+<p>Si deseas utilizar un dispositivo USB para los *archivos homebrew*, esta pantalla es lo esperado. <ins>NO conectes el dispositivo USB todavía</ins>, simplemente selecciona la opción <strong>[Use USB (do NOT connect it just yet)]</strong>. Conecta el dispositivo USB únicamente cuando se te indique. La tarjeta SD será emulada en el dispositivo USB. En adelante si otras guías mencionan la tarjeta SD, deberás utilizar la tarjeta SD emulada en el dispositivo USB en su lugar.</p>
+<div class="wafel_screen"><img class="wafel_img" src="../Images/wafel_installer/remove_sd_and_usb.jpg"><pre class="wafel_txt">
+Remove ALL SD and USB storage devices NOW!
+
+[OK]
+[Cancel]
+</pre></div>
+<p>Si seleccionas la opción <strong>[Use USB (do NOT connect it just yet)]</strong> <ins>debes retirar todos los dispositivos de almacenamiento SD y USB en este momento</ins>. Después darle a <strong>[OK]</strong>.</p>
+<div class="wafel_screen"><img class="wafel_img" src="../Images/wafel_installer/plug_usb_device.jpg"><pre class="wafel_txt">
+Plug in ONLY the USB device you want to work with.
+Plugging in other devices may lead to DATA LOSS!
+
+Waiting for device…
+Press B to cancel
+</pre></div>
+<p>Ahora es cuando debes conectar el dispositivo USB que deseas utilizar. No conectes ningún otro dispositivo USB o tarjeta SD. Al detectar el dispositivo USB la aplicación pasa automáticamente a la pantalla de <strong>Formateo de SD o USB</strong>.</p>
+<div class="bottomnav">
+<a href="Load.html" class="previous">&#8592; Cargar Wafel Installer</a><a href="FormatSDOrUSB.html" class="next">Formateo de SD o USB &#8594;</a>
+</div>
+
+</div>
+
+</div>
+<script src="../base_script.js"></script>
+<script>setAspect();</script>
+</body>
+</html>

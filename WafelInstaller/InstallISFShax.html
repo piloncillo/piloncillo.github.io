@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title itemprop="name">Piloncillo para tu Wii U</title>
+<meta property="og:title" content="Piloncillo para tu Wii U" />
+<meta name="twitter:title" content="Piloncillo para tu Wii U" />
+<meta itemprop="name" content="Piloncillo para tu Wii U" />
+<meta name="application-name" content="Piloncillo para tu Wii U" />
+<meta property="og:site_name" content="Piloncillo para tu Wii U" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<link rel="icon" href="../Images/favicon.png" />
+<meta itemprop="image" property="og:image" content="../Images/favicon.png" />
+<meta name="twitter:image" content="../Images/favicon.png" />
+<link rel="image_src" href="../Images/favicon.png" />
+<link rel="stylesheet" href="../default_style.css" />
+</head>
+<body>
+<div id="sidebar">
+<div id="sidebar_close" onclick="closeSidebar()">&#215;</div>  
+<div id="sidebar_content"></div>
+</div>
+<div id="sidebar_toggle" onclick="toggleSidebar()">&#9776;</div>  
+<div id="content">
+
+<div class="cont">
+
+<h1 class="wafel">Instalar ISFShax</h1>
+<ul>
+<li><p><strong>Condición:</strong> Se muestra cuando ISFShax no está instalado en el sistema (verifica una ubicación de memoria, por lo que también lo detecta en fallback mode).</p></li>
+<li><p><strong>Pantalla:</strong></p><div class="wafel_screen"><img class="wafel_img" src="../Images/wafel_installer/install_isfshax.jpg"><pre class="wafel_txt">
+ISFShax is not detected.
+Do you want to install ISFShax by rw_r_r_0644?
+This is required for Stroopwafel.
+
+[Yes]
+[No]
+</pre></div></li>
+</ul>
+<p>ISFShax es un exploit de arranque en frío (coldboot) real, dirigido al cargador de arranque (boot1) de la Wii U, por lo que se ejecuta incluso antes de que se cargue el sistema operativo de usuario (CafeOS). Esto proporciona una protección muy sólida contra *bricks* (bloqueos "irreparables" de la consola), siempre que se la ranura para tarjetas SD de la consola funcione. En este caso, se utiliza para cargar Stroopwafel (*minute* e *IOS plugins*), el cual finalmente carga Aroma.</p>
+<p>Durante la instalación, se descarga temporalmente el instalador de ISFShax y la imagen del superbloque en la memoria SLC de la Wii U (<code>/storage_slc/hax/installer</code>). ISFShax en sí mismo se instala en 4 de los superbloques de la memoria SLC, no aparece visible en el sistema de archivos de la consola.</p>
+<div class="wafel_screen"><img class="wafel_img" src="../Images/wafel_installer/warning_install_isfshax.jpg"><pre class="wafel_txt">
+WARNING: You are about to make modifications to the console.
+This software comes with ABSOLUTELY NO WARRANTY!
+You are choosing to use this at your own risk.
+The author(s) will not be held liable for any damage.
+ 
+Do you want to proceed with Install?
+
+[Yes]
+[No]
+</pre></div>
+<p>Confirma la instalación seleccionando <strong>[Yes]</strong>. La consola se reiniciará en el instalador de ISFShax, instalará automáticamente ISFShax y se reiniciará de nuevo. Sé paciente.</p>
+<h2 class="wafel">Video mostrando la instalación de ISFShax</h2>
+<video title="Instalación de ISFShax usando Wafel Installer" class="video" controls>
+<source src="../Videos/WafelInstaller/InstallISFShax.mp4" type="video/mp4">
+</video>
+<div class="bottomnav">
+<a href="DownloadStroopwafel.html" class="previous">&#8592; Descargar Stroopwafel</a><a href="FirstBoot.html" class="next">Primer arranque &#8594;</a>
+</div>
+
+</div>
+
+</div>
+<script src="../base_script.js"></script>
+<script>setAspect();</script>
+</body>
+</html>

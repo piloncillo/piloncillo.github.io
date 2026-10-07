@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title itemprop="name">Piloncillo para tu Wii U</title>
+<meta property="og:title" content="Piloncillo para tu Wii U" />
+<meta name="twitter:title" content="Piloncillo para tu Wii U" />
+<meta itemprop="name" content="Piloncillo para tu Wii U" />
+<meta name="application-name" content="Piloncillo para tu Wii U" />
+<meta property="og:site_name" content="Piloncillo para tu Wii U" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<link rel="icon" href="../Images/favicon.png" />
+<meta itemprop="image" property="og:image" content="../Images/favicon.png" />
+<meta name="twitter:image" content="../Images/favicon.png" />
+<link rel="image_src" href="../Images/favicon.png" />
+<link rel="stylesheet" href="../default_style.css" />
+</head>
+<body>
+<div id="sidebar">
+<div id="sidebar_close" onclick="closeSidebar()">&#215;</div>  
+<div id="sidebar_content"></div>
+</div>
+<div id="sidebar_toggle" onclick="toggleSidebar()">&#9776;</div>  
+<div id="content">
+
+<div class="cont">
+
+<div class="cont_body">
+<h1>Bloquear las actualizaciones</h1>
+<p>Todos los exploits de Wii U actualmente conocidos pueden ser parcheados por una actualización del sistema. Aunque oficialmente la Wii U ya no tiene soporte por parte de Nintendo es posible que la compañía aún publique actualizaciones para la consola. Las actualizaciones 5.5.3 a 5.5.6 se lanzaron después de que se descontinuó la fabricación de la Wii U, por lo que bloquear las actualizaciones sigue siendo una acción recomendada.</p>
+<p>Si bien Aroma tiene una función de bloqueo de actualizaciones, se recomienda eliminar la carpeta <em>update</em> del sistema de la Wii U para bloquear por completo las actualizaciones del sistema de consola. Si en un futuro sale una actualización para el sistema de la Wii U, el proceso de descarga de la actualización se detendrá con un código de error <strong class="yellow">105-3012</strong>, <strong class="yellow">105-3015</strong> o <strong class="yellow">105-3029</strong>.</p>
+<div class="info">Bloquear las actualizaciones del sistema de la Wii U no afecta poder instalar las actualizaciones de los juegos.</div>
+<h3>Instrucciones</h3>
+<div class="warning">Asegúrate de tener la versión más actual de Aroma antes de continuar.</div>
+<ul>
+<li><a href="StandbyFunctions.html">Desactiva las funciones en modo de reposo siguiendo los pasos de este enlace.</a> Si ya tienes desactivadas las funciones en modo de reposo continúa con los pasos de abajo.</li>
+<img src="../Images/detect/quick_start_menu.jpg" class="auto_size_li">
+<li>En este punto debes tener la Wii U apagada con la tarjeta SD introducida.</li>
+<li>Enciende la consola y <strong class="green">mantén presionado el botón START &#x2295;&#xfe00;</strong> del Wii U GamePad hasta que salga un mensaje de advertencia en amarillo o hasta que salga el menú Boot Selector.</li>
+<li>Si aparece un mensaje de advertencia en amarillo, presiona el <strong class="green">botón X</strong> para bloquear por completo las actualizaciones del sistema de la consola. Eso es todo, ya tienes bloqueadas las actualizaciones.</li>
+<img src="../Images/aroma/warning.jpg" class="auto_size_li">
+<li>Si al encender la consola aparece el menú del Environment Loader <strong class="green">selecciona Aroma</strong> y <strong class="green">presiona el botón A e inmediatamente después mantén presionado el botón START &#x2295;&#xfe00;</strong> del Wii U GamePad hasta que salga el mensaje de advertencia en amarillo de arriba o hasta que salga el menú Boot Selector.</li>
+<li>Si aparece el Boot Selector, en la esquina inferior derecha se muestra el texto:</li>
+<ul>
+<li><code>Updates not blocked! Hold &#x2295;&#xfe00; + &#x229D; to delete Update folder</code> cuando <strong class="red">NO</strong> están bloqueadas las actualizaciones.</li>
+<li><code>Updates blocked! Hold &#x2295;&#xfe00; + &#x229D; to restore Update folder</code> cuando <strong class="blue">SÍ</strong> están bloqueadas las actualizaciones.</li>
+</ul>
+<li>Mantén presionados los <strong class="green">botones START &#x2295;&#xfe00; y SELECT &#x229D;</strong> del Wii U GamePad al mismo tiempo hasta que el mensaje de esquina inferior derecha cambie.</li>
+<img src="../Images/aroma/updates_blocked.jpg" class="auto_size_li">
+<li><ins>Debe quedar el mensaje <code>Updates blocked! Hold &#x2295;&#xfe00; + &#x229D; to restore Update folder</code> para que las actualizaciones queden completamente bloqueadas.<ins></li>
+<li>Recuerda que presionando el botón Y configuras la opción predeterminada del Boot Selector.</li>
+<li>Selecciona <strong class="green">Wii U Menu</strong> y luego presiona el <strong class="green">botón A</strong> para abrir el menú de Wii U.</li>
+<li>En el menú de Wii U, <strong class="green">apaga la consola</strong>.</li>
+</ul>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a>
+</div>
+</div>
+
+</div>
+
+</div>
+<script src="../base_script.js"></script>
+<script>setAspect();</script>
+</body>
+</html>

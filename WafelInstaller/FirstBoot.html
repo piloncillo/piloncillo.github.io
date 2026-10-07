@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title itemprop="name">Piloncillo para tu Wii U</title>
+<meta property="og:title" content="Piloncillo para tu Wii U" />
+<meta name="twitter:title" content="Piloncillo para tu Wii U" />
+<meta itemprop="name" content="Piloncillo para tu Wii U" />
+<meta name="application-name" content="Piloncillo para tu Wii U" />
+<meta property="og:site_name" content="Piloncillo para tu Wii U" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<link rel="icon" href="../Images/favicon.png" />
+<meta itemprop="image" property="og:image" content="../Images/favicon.png" />
+<meta name="twitter:image" content="../Images/favicon.png" />
+<link rel="image_src" href="../Images/favicon.png" />
+<link rel="stylesheet" href="../default_style.css" />
+</head>
+<body>
+<div id="sidebar">
+<div id="sidebar_close" onclick="closeSidebar()">&#215;</div>  
+<div id="sidebar_content"></div>
+</div>
+<div id="sidebar_toggle" onclick="toggleSidebar()">&#9776;</div>  
+<div id="content">
+
+<div class="cont">
+
+<h1 class="wafel">Primer arranque</h1>
+<p>Si todo ha funcionado correctamente, aparecerá el cargador de entorno (Environment Loader).</p>
+<h2 class="wafel">Environment Loader</h2>
+<img class="wafel_img" src="../Images/environment_loader/aroma.jpg">
+<p>Selecciona <em class="green">aroma</em>, pulsa <strong class="green">Y</strong> para marcarlo como predeterminado y luego <strong class="green">A</strong> para cargarlo.</p>
+<h2 class="wafel">Bloqueo de actualizaciones</h2>
+<p>Si aparece un mensaje de advertencia acerca del <em>update folder</em> quiere decir que tu consola no está bloqueando las actualizaciones del sistema completamente.</p>
+<img class="wafel_img" src="../Images/aroma/warning.jpg">
+<p>Pulsa <strong class="green">X</strong> para bloquear las actualizaciones.</p>
+<div class="info">También puedes omitir este paso pulsando <strong class="green">B</strong>. Es muy poco probable que se lance una nueva actualización para la Wii U, además ISFShax ya impide las actualizaciones de <em>boot1</em> (por lo que, aunque hubiera una actualización, ISFShax seguiría funcionando).</div>
+<h2 class="wafel">Boot Selector</h2>
+<img class="wafel_img" src="../Images/aroma/wiiu_menu.jpg">
+<p>Selecciona <em class="green">Wii U Menu</em>, pulsa <strong class="green">Y</strong> para marcarlo como predeterminado y luego <strong class="green">A</strong> para cargarlo.</p>
+<h2 class="wafel">Formateo del almacenamiento WFS</h2>
+<p>Si decidiste particionar la tarjeta SD o el dispositivo USB para *archivos homebrew* y para *juegos de Wii U*, la consola te preguntará si deseas formatear el "dispositivo USB de almacenamiento" conectado.</p>
+<div class="wiiu_message_screen"><img class="wafel_img" src="../Images/detect/formatting_wfs_storage.jpg"><pre class="wiiu_message_txt">
+Has conectado un dispositivo USB de
+almacenamiento que no está formateado
+para utilizarse con esta consola.
+¿Quieres formatear el dispositivo para
+poder usarlo?
+
+(No)        (Sí)
+</pre></div>
+<p>Solamente se formateará la partición reservada para los *juegos de Wii U*. Selecciona <strong>Sí</strong>.</p>
+<p>Si no aparece ese mensaje, a pesar de haber particionado para *juegos de Wii U*, haz lo siguiente:</p>
+<ul>
+<li>Abre la aplicación <strong>Configuración de la consola</strong> desde el menú de Wii U.</li>
+<li>Ve a <strong>Gestión de datos</strong> (segunda pestaña).</li>
+<li>Selecciona <strong>Formatear un dispositivo USB de almacenamiento</strong>.</li>
+<li>Pulsa <strong>Seguir</strong> hasta que que la consola pregunte <strong>¿Seguro que quieres formatearlo?</strong>.</li>
+<li>Pulsa <strong>Sí</strong> y espera a que finalice el formateo.</li>
+</ul>
+<div class="info">
+<p>Instalar PayloadLoader crea un conflicto con tu configuración actual.</p>
+<p>Si has consultado otras guías, es posible que hayas visto instrucciones para utilizar la aplicación PayloadLoader Installer. Con tu configuración actual no debes utilizar PayloadLoader Installer.</p>
+<p>Tradicionalmente, se usaba PayloadLoader para cargar Aroma, pero actualmente estás usando un método diferente (ISFShax + Stroopwafel) para cargar Aroma por lo que instalar PayloadLoader es completamente innecesario.</p>
+</div>
+<div class="bottomnav">
+<a href="InstallISFShax.html" class="previous">&#8592; Instalar ISFShax</a><a href="NextSteps.html" class="next">Siguientes pasos &#8594;</a>
+</div>
+
+</div>
+
+</div>
+<script src="../base_script.js"></script>
+<script>setAspect();</script>
+</body>
+</html>

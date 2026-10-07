@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title itemprop="name">Piloncillo para tu Wii U</title>
+<meta property="og:title" content="Piloncillo para tu Wii U" />
+<meta name="twitter:title" content="Piloncillo para tu Wii U" />
+<meta itemprop="name" content="Piloncillo para tu Wii U" />
+<meta name="application-name" content="Piloncillo para tu Wii U" />
+<meta property="og:site_name" content="Piloncillo para tu Wii U" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<link rel="icon" href="../Images/favicon.png" />
+<meta itemprop="image" property="og:image" content="../Images/favicon.png" />
+<meta name="twitter:image" content="../Images/favicon.png" />
+<link rel="image_src" href="../Images/favicon.png" />
+<link rel="stylesheet" href="../default_style.css" />
+</head>
+<body>
+<div id="sidebar">
+<div id="sidebar_close" onclick="closeSidebar()">&#215;</div>  
+<div id="sidebar_content"></div>
+</div>
+<div id="sidebar_toggle" onclick="toggleSidebar()">&#9776;</div>  
+<div id="content">
+
+<div class="cont">
+
+<div class="cont_body">
+<h1>Añadir aplicaciones a Aroma</h1>
+<div class="apps_nav">
+<a href="AddAromaApps.html">General</a>
+<a href="AddAromaWUHB.html">Aplicaciones WUHB</a>
+<a class="active">Plugins WPS</a>
+<a href="AddAromaModules.html">Módulos WMS</a>
+<a href="AddAromaModulesSetup.html">Módulos setup</a>
+</div>
+<h2>Añadir plugins WPS a Aroma</h2>
+<p>Los plugins WPS (Wii U Plugin System) son pequeñas aplicaciones y funciones complementarias para el entorno de Aroma. Se colocan en la carpeta <code>sd:/wiiu/environments/aroma/plugins</code>, examina la ruta de carpetas en las imágenes de referencia.</p>
+<h2>Estructura</h2>
+<a target="_blank" href="../Images/aroma/plugins.png"><img src="../Images/aroma/plugins_50.png" class="auto_size center"></a>
+<ul>
+<li class="green">La estructura correcta es: <code>sd:/wiiu/environments/aroma/plugins/PluginName.wps</code>.</li>
+<li class="red">Es incorrecto: <code>sd:/wiiu/environments/aroma/modules/PluginName.wps</code>.</li>
+</ul>
+<h3>Instrucciones</h3>
+<ul>
+<li>En este momento debes tener la Wii U apagada.</li>
+<li>Saca la tarjeta SD de la Wii U y ponla en tu PC para colocar los archivos.</li>
+<li>Descarga los siguientes plugins:</li>
+<ul>
+<li>Descarga <a target="_blank" href="https://github.com/GaryOderNichts/re_nfpii/releases">re_nfpii</a>. Permite configurar y usar la emulación de figuras amiibo.</li>
+<ul>
+<li>Únicamente necesitas el archivo <code>re_nfpii.zip</code>.</li>
+</ul>
+<li>Descarga <a target="_blank" href="https://hb-app.store/wiiu/StyleMiiU">StyleMiiU</a>. Permite usar temas en el menú de Wii U.</li>
+</ul>
+</ul>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona <strong class="green">sí</strong>.</div>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona <strong class="green">sí</strong>.</div>
+<ul>
+<li>Descomprime el archivo <code>re_nfpii.zip</code> y entra en la carpeta <code>plugins</code>.</li>
+<a target="_blank" href="../Images/aroma/re_nfpii_zip_plugin.png"><img src="../Images/aroma/re_nfpii_zip_plugin.png" class="auto_size_li_li"></a>
+<li>Copia el archivo <code>re_nfpii.wps</code> y pégalo en la carpeta <code>sd:/wiiu/environments/aroma/plugins</code>.</li>
+<li>Así debe quedar el plugin re_nfpii en la tarjeta SD:</li>
+<a target="_blank" href="../Images/aroma/re_nfpii_plugin.png"><img src="../Images/aroma/re_nfpii_plugin.png" class="auto_size_li_li"></a>
+<li class="green">Es correcto: <code>sd:/wiiu/environments/aroma/plugins/re_nfpii.wps</code>.</li>
+<li class="red">Es incorrecto: <code>sd:/wiiu/environments/aroma/modules/re_nfpii.wps</code>.</li>
+</ul>
+<div class="warning">Para poder usar el plugin de re_nfpii en la Wii U es obligatorio también <a href="AddAromaModules.html">colocar el módulo de re_nfpii</a>.</div>
+<div class="info">Las figuras oficiales actualmente no se pueden usar mientras re_nfpii está cargado. Coloca los <code>.bin</code> de los amiibo en la carpeta <code>sd:/wiiu/re_nfpii</code>, por ejemplo: <code>sd:/wiiu/re_nfpii/Peach.bin</code>.</div>
+<div class="tip">En general siempre se combina la carpeta <code>wiiu</code> del archivo <code>.zip</code> que acabas de descargar con la carpeta <code>wiiu</code> que ya tienes en la raíz de la tarjeta SD.</div>
+<div class="info">Ignora los archivos <code>info.json</code> y <code>manifest.install</code>.</div>
+<ul>
+<li>Descomprime el archivo <code>StyleMiiU.zip</code>.</li>
+<a target="_blank" href="../Images/aroma/stylemiiu_zip_plugin.png"><img src="../Images/aroma/stylemiiu_zip_plugin.png" class="auto_size_li_li"></a>
+<li>Copia la carpeta <code>wiiu</code> y pégala en la raíz de la tarjeta SD.</li>
+<li>Así debe quedar el plugin StyleMiiU en la tarjeta SD:</li>
+<a target="_blank" href="../Images/aroma/stylemiiu_plugin.png"><img src="../Images/aroma/stylemiiu_plugin.png" class="auto_size_li_li"></a>
+<li class="green">Es correcto: <code>sd:/wiiu/environments/aroma/plugins/stylemiiu.wps</code>.</li>
+<li class="red">Es incorrecto: <code>sd:/wiiu/wiiu/environments/aroma/plugins/stylemiiu.wps</code>.</li>
+<li>Extrae la tarjeta SD de forma segura y conecta a la Wii U con la consola apagada.</li>
+</ul>
+<p><a href="../HomebrewApps.html">En este enlace puedes encontrar una lista de plugins útiles.</a></p>
+
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a>
+</div>
+</div>
+
+</div>
+
+</div>
+<script src="../base_script.js"></script>
+<script>setAspect();</script>
+</body>
+</html>
+

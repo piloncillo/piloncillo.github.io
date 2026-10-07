@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title itemprop="name">Piloncillo para tu Wii U</title>
+<link rel="canonical" href="https://piloncillo.github.io/WafelInstaller/" />
+<meta property="og:title" content="Piloncillo para tu Wii U" />
+<meta name="twitter:title" content="Piloncillo para tu Wii U" />
+<meta itemprop="name" content="Piloncillo para tu Wii U" />
+<meta name="application-name" content="Piloncillo para tu Wii U" />
+<meta property="og:site_name" content="Piloncillo para tu Wii U" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<link rel="icon" href="../Images/favicon.png" />
+<meta itemprop="image" property="og:image" content="../Images/favicon.png" />
+<meta name="twitter:image" content="../Images/favicon.png" />
+<link rel="image_src" href="../Images/favicon.png" />
+<link rel="stylesheet" href="../default_style.css" />
+</head>
+<body>
+<div id="sidebar">
+<div id="sidebar_close" onclick="closeSidebar()">&#215;</div>  
+<div id="sidebar_content"></div>
+</div>
+<div id="sidebar_toggle" onclick="toggleSidebar()">&#9776;</div>  
+<div id="content">
+
+<div class="cont">
+
+<h1 class="wafel">Modificación con Wafel Installer</h1>
+<p>Para la modificación de Wii U esta guía usa una herramienta todo en uno llamada Wafel Installer.</p>
+<p>Aquí tienes un breve resumen de las funciones de Wafel Installer:</p>
+<ul>
+<li>Configuración de particiones en tarjetas SD y en dispositivos USB.</li>
+<li>Descarga e instalación de Aroma, Stroopwafel e ISFShax.</li>
+<li>Gestor de plugins de Stroopwafel.</li>
+<li>Comprobación del estado de salud del chip eMMC NAND.</li>
+</ul>
+<h2 class="wafel">Resumen</h2>
+<p>Al cargar Wafel Installer, esta aplicación detecta la tarjeta SD o un dispositivo de almacenamiento USB y comprueba su formato. También comprueba si ya hay determinadas cosas instaladas.</p>
+<p>La modificación de la Wii U con Wafel Installer se puede dividir en dos bloques:</p>
+<h3 class="wafel">1. Preparación del almacenamiento</h3>
+<p>Formatea una tarjeta SD o un dispositivo USB, para los *archivos homebrew*, o para los *archivos homebrew* y los *juegos de Wii U*.</p>
+<ul>
+<li>Formateando todo el dispositivo en FAT32 para los *archivos homebrew* (y juegos de Wii en formato WBFS).</li>
+<li>O dividiendo el dispositivo en una partición FAT32 para los *archivos homebrew* (y juegos de Wii en formato WBFS) y otra partición WFS (formateada por la Wii U) exclusivamente para *juegos de Wii U*.</li>
+</ul>
+<h3 class="wafel">2. Descarga e instalación de componentes</h3>
+<p>El instalador descarga automáticamente los archivos necesarios directamente desde GitHub y los coloca en las ubicaciones correctas. Si alguna vez necesitas actualizarlos o descargarlos manualmente, puedes encontrarlos aquí:</p>
+<ul>
+<li><strong>Aroma</strong> (<a href="https://aroma.foryour.cafe/">aroma.foryour.cafe</a>): Se descarga en la tarjeta SD (real o emulada). Este es el entorno principal para usar las aplicaciones homebrew de usuario.</li>
+<li><strong>Stroopwafel</strong> (<a href="https://isfsh.ax/">isfsh.ax</a>): Se descarga en la tarjeta SD real o en la memoria SLC de la Wii U. Consiste en *minute* + *IOS plugins* permitiendo cargar Aroma y usar un dispositivo USB real como una tarjeta SD emulada o usar una tarjeta SD real como un dispositivo USB emulado.</li>
+<li><strong>ISFShax</strong> (<a href="https://isfsh.ax/">isfsh.ax</a>): Instalado directamente en la memoria SLC de la Wii U a bajo nivel. Ofrece un punto de entrada de arranque en frio real y en consecuencia una protección sólida contra *bricks*.</li>
+</ul>
+<div class="bottomnav">
+<a href="../" class="previous">&#8592; Inicio</a><a href="Preparation.html" class="next">Preparación &#8594;</a>
+</div>
+
+</div>
+
+</div>
+</div>
+<script src="../base_script.js"></script>
+<script>setAspect();</script>
+</body>
+</html>
+

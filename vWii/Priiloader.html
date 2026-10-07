@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title itemprop="name">Piloncillo para tu Wii U</title>
+<meta property="og:title" content="Piloncillo para tu Wii U" />
+<meta name="twitter:title" content="Piloncillo para tu Wii U" />
+<meta itemprop="name" content="Piloncillo para tu Wii U" />
+<meta name="application-name" content="Piloncillo para tu Wii U" />
+<meta property="og:site_name" content="Piloncillo para tu Wii U" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<link rel="icon" href="../Images/favicon.png" />
+<meta itemprop="image" property="og:image" content="../Images/favicon.png" />
+<meta name="twitter:image" content="../Images/favicon.png" />
+<link rel="image_src" href="../Images/favicon.png" />
+<link rel="stylesheet" href="../default_style.css" />
+</head>
+<body>
+<div id="sidebar">
+<div id="sidebar_close" onclick="closeSidebar()">&#215;</div>  
+<div id="sidebar_content"></div>
+</div>
+<div id="sidebar_toggle" onclick="toggleSidebar()">&#9776;</div>  
+<div id="content">
+
+<div class="cont">
+
+<div class="cont_body">
+<h1>Instalación y uso básico de Priiloader</h1>
+<p>Priiloader es una herramienta desarrollada por <a href="https://github.com/DacoTaco">DacoTaco</a>. Esta herramienta permite aplicar configuraciones (hacks) para mejorar, desbloquear y corregir muchas funciones del menú de sistema de Wii en la Wii U. Priiloader se carga antes que el menú de sistema de Wii lo que permite proteger y cambiar el arranque del sistema Wii en la Wii U.</p>
+<h3>Para usar esta guía necesitas:</h3>
+<ul>
+<li>Una Wii U con el <em>Homebrew Channel</em> instalado en el modo virtual Wii.</li>
+<li>Un Wii Remote ya sincronizado con la Wii U (no importa si tiene Motion Plus o no).</li>
+<li>La tarjeta SD de la Wii U.</li>
+<li>Un dispositivo (PC o teléfono inteligente) para colocar archivos en la tarjeta SD.</li>
+</ul>
+<h2>Descarga los archivos necesarios</h2>
+<ul>
+<li>Descarga <a href="https://oscwii.org/library/app/priiloader">Priiloader Installer</a>:</li>
+<ul>
+<li>Descarga <code>Priiloader Installer (.ZIP)</code>.</li>
+</ul>
+<li>Descarga <a href="https://oscwii.org/library/app/loadpriiloader">Load Priiloader</a>.</li>
+<ul>
+<li>Descarga <code>Load Priiloader (.ZIP)</code>.</li>
+</ul>
+<li>Descarga <a href="https://github.com/DacoTaco/priiloader/releases/download/0.10.0/PriiloaderWiiUForwarder.zip">Priiloader Wii U Forwarder</a>. (Esto añade el icono <strong>Boot to Priiloader</strong> al menú de Wii U en Aroma.)</li>
+</ul>
+<h2>Coloca los archivos</h2>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona <strong class="green">sí</strong>.</div>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona <strong class="green">sí</strong>.</div>
+<ul>
+<li>En este punto debes tener la tarjeta SD conectada a una PC (o teléfono inteligente) para colocar los archivos.</li>
+<li>Descomprime el archivo <code>priiloader.zip</code>.</li>
+<li>Ignora el archivo <code>LICENSE</code>.</li>
+<li>Copia la carpeta <code>apps</code> a la raíz de la tarjeta SD.</li>
+<li>Descomprime el archivo <code>LoadPriiloader.zip</code>.</li>
+<li>Copia la carpeta <code>apps</code> a la raíz de la tarjeta SD.</li>
+<li>Descomprime el archivo <code>PriiloaderWiiUForwarder.zip</code>.</li>
+<li>Copia la carpeta <code>wiiu</code> a la raíz de la tarjeta SD.</li>
+<li>Extrae la tarjeta SD de forma segura y conecta a la Wii U con la consola apagada.</li>
+</ul>
+<h2>Instala Priiloader</h2>
+<ul>
+<li>En este punto debes tener la Wii U apagada con la tarjeta SD introducida.</li>
+<li>Enciende la consola y abre el icono de Wii en el menú de Wii U.</li>
+<img src="../Images/detect/wii_menu_icon.jpg" class="auto_size_li">
+<li>Accede al <em>Homebrew Channel</em>.</li>
+<img src="../Images/vWii/hbc/on_sys_menu.jpg" class="auto_size_li">
+<li>Carga <strong class="green"><em>Priiloader Installer</em></strong> (no confundir con <em>Load Priiloader</em>).</li>
+<img src="../Images/vWii/hbc/priiloader_installer.jpg" class="auto_size_li">
+<li>Presiona el botón <strong class="green">MAS ⊕︀</strong> del Wii Remote para instalar <em>Priiloader</em>.</li>
+<img src="../Images/vWii/priiloader/installer.jpg" class="auto_size_li">
+<li>Cuando la instalación termine presiona <strong class="green">A</strong> en el Wii Remote para regresar al <em>Homebrew Channel</em>.</li>
+<img src="../Images/vWii/priiloader/install_done.jpg" class="auto_size_li">
+</ul>
+<h2>Acceder a Priiloader</h2>
+<ul>
+<li>En este punto debes estar en el <em>Homebrew Channel</em> después de haber instalado <em>Priiloader</em>.</li>
+<img src="../Images/vWii/hbc/priiloader.jpg" class="auto_size_li">
+<li>En el <em>Homebrew Channel</em> presiona el <strong class="green">botón HOME</strong> del Wii Remote y selecciona <strong>Salir al menú del sistema</strong>.</li>
+<img src="../Images/vWii/hbc/exit_to_system_menu.jpg" class="auto_size_li">
+<li>La Wii U debe haber cargado el menú de <em>Priiloader</em>.</li>
+<img src="../Images/vWii/priiloader/menu.jpg" class="auto_size_li">
+</ul>
+<div class="info">Posteriormente puedes acceder al menú de <em>Priiloader</em> cargando <strong><em>Load Priiloader</em></strong> desde el <em>Homebrew Channel</em> o abriendo <strong>Boot to Priiloader</strong> (<em>Priiloader Wii U Forwarder</em>) desde el menú de Wii U en Aroma.<br><img src="../Images/detect/priiloader_forwarder.jpg" class="auto_size_li"></div>
+<h2>Uso básico de Priiloader</h2>
+<ul>
+<li>En este punto debes estar en el menú de <em>Priiloader</em>.</li>
+<li>Usa el D-Pad del Wii Remote para bajar hasta la opción <code>System Menu Hacks</code> y presiona <strong class="green">A</strong>.</li>
+<img src="../Images/vWii/priiloader/menu_sys_hx.jpg" class="auto_size_li">
+<li>Usa las flechas del D-Pad del Wii Remote para habilitar las siguientes opciones:</li>
+<ul>
+<li>Block Online Updates.</li>
+<img src="../Images/vWii/priiloader/hx01.jpg" class="auto_size_li_li">
+<li>Wii System Settings via Options Button.</li>
+<img src="../Images/vWii/priiloader/hx02.jpg" class="auto_size_li_li">
+<li>Remove Deflicker. (Si la Wii U está conectada a una <a href="https://www.google.com/search?udm=2&q=TV+CRT">TV CRT</a> entonces NO uses esta opción.)</li>
+<img src="../Images/vWii/priiloader/hx03.jpg" class="auto_size_li_li">
+</ul>
+<li>Usa las flechas del D-Pad del Wii Remote para bajar hasta la opción <code>save settings</code> y presiona <strong class="green">A</strong>.</li>
+<img src="../Images/vWii/priiloader/hx04.jpg" class="auto_size_li">
+<li>Presiona el <strong class="green">botón B</strong> para regresar el menú principal de <em>Priiloader</em>.</li>
+<li>Usa las flechas del D-Pad del Wii Remote para subir hasta la opción <code>System Menu</code> y presiona <strong class="green">A</strong>.</li>
+</ul>
+<p>Aquí termina la guía de instalación y uso básico de Priiloader.</p>
+<p><a href="https://dacotaco.github.io/priiloader/docs/HACKSLIST.html">En el enlace de aquí puedes revisar la lista detallada de las configuraciones (hacks) que permite aplicar Priiloader al menú de sistema de Wii.</a></p>
+<p><a href="https://dacotaco.github.io/priiloader/docs/FAQ.html">En el enlace de aquí puedes consultar preguntas frecuentes sobre el uso de Priiloader.</a></p>
+</div>
+
+</div>
+
+</div>
+<script src="../base_script.js"></script>
+<script>setAspect();</script>
+</body>
+</html>

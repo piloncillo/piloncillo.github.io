@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title itemprop="name">Piloncillo para tu Wii U</title>
+<meta property="og:title" content="Piloncillo para tu Wii U" />
+<meta name="twitter:title" content="Piloncillo para tu Wii U" />
+<meta itemprop="name" content="Piloncillo para tu Wii U" />
+<meta name="application-name" content="Piloncillo para tu Wii U" />
+<meta property="og:site_name" content="Piloncillo para tu Wii U" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<link rel="icon" href="../Images/favicon.png" />
+<meta itemprop="image" property="og:image" content="../Images/favicon.png" />
+<meta name="twitter:image" content="../Images/favicon.png" />
+<link rel="image_src" href="../Images/favicon.png" />
+<link rel="stylesheet" href="../default_style.css" />
+</head>
+<body>
+<div id="sidebar">
+<div id="sidebar_close" onclick="closeSidebar()">&#215;</div>  
+<div id="sidebar_content"></div>
+</div>
+<div id="sidebar_toggle" onclick="toggleSidebar()">&#9776;</div>  
+<div id="content">
+
+<div class="cont">
+
+<h1 class="wafel">Descargar Stroopwafel</h1>
+<ul>
+<li><p><strong>Condición:</strong> Se muestra cuando Stroopwafel no se está ejecutando en el sistema o es demasiado antiguo para usar la interfaz de comunicación entre procesos (IPC Interface).</p></li>
+<li><p><strong>Pantalla:</strong></p><div class="wafel_screen"><img class="wafel_img" src="../Images/wafel_installer/download_stroopwafel.jpg"><pre class="wafel_txt">
+Stroopwafel is missing, outdated or not running
+Do you want to download stroopwafel by shinyquagsire23?
+
+[Yes]
+[No]
+</pre></div></li>
+</ul>
+<p>Utilizaremos Stroopwafel para cargar Aroma, así que selecciona <strong>[Yes]</strong>. Este paso también es necesario para poder usar *archivos homebrew* desde una tarjeta SD emulada en un dispositivo USB.</p>
+<div class="wafel_screen"><img class="wafel_img" src="../Images/wafel_installer/where_download_stroopwafel.jpg"><pre class="wafel_txt">
+Where do you want to download Stroopwafel?
+SD card is recommended.
+
+[SD Card]
+[SLC]
+[Cancel]
+</pre></div>
+<p>Si usas una tarjeta SD real, se recomienda descargar Stroopwafel en la tarjeta SD, opción <strong>[SD Card]</strong>. De este modo, todos los *archivos homebrew* se encuentran en la tarjeta SD, lo que facilita la resolución de problemas.</p>
+<p>Si usas una tarjeta SD emulada en un dispositivo USB, debes descargar Stroopwafel en la memoria SLC de la Wii U, opción <strong>[SLC]</strong>, ya que no es posible cargar Stroopwafel desde una tarjeta SD emulada.</p>
+<p>Stroopwafel consta de dos elementos: *minute* e *IOS plugins*. Dependiendo de la opción que elijas estos elementos se almacenaran en determinadas carpetas en la tarjeta SD o en la memoria SLC de la Wii U.</p>
+<table class="wafel">
+<tr>
+<th><strong>Opción</strong></th>
+<th>minute</th>
+<th>IOS plugins</th>
+</tr>
+<tr>
+<td><strong>[SD Card]</strong></td>
+<td>sd:/fw.img</td>
+<td>sd:/wiiu/ios_plugins/*.ipx</td>
+</tr>
+<tr>
+<td><strong>[SLC]</strong></td>
+<td>/storage_slc/hax/fw.img</td>
+<td>/storage_slc/hax/ios_plugins/*.ipx</td>
+</tr>
+</table>
+<p>Al descargar Stroopwafel en la tarjeta SD, también se creará un archivo de configuración en la propia tarjeta SD (<code>sd:/minute/minute.ini</code>).</p>
+<div class="info">Los *IOS plugins* de Stroopwafel se pueden gestionar con Wafel Installer una vez finalizada la configuración.</div>
+<div class="bottomnav">
+<a href="DownloadAroma.html" class="previous">&#8592; Descargar Aroma</a><a href="InstallISFShax.html" class="next">Instalar ISFShax &#8594;</a>
+</div>
+
+</div>
+
+</div>
+<script src="../base_script.js"></script>
+<script>setAspect();</script>
+</body>
+</html>

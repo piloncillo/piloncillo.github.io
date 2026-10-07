@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title itemprop="name">Piloncillo para Wii U</title>
+<link rel="canonical" href="https://piloncillo.github.io/Archive/" />
+<meta property="og:title" content="Piloncillo para Wii U" />
+<meta name="twitter:title" content="Piloncillo para Wii U" />
+<meta itemprop="name" content="Piloncillo para Wii U" />
+<meta name="application-name" content="Piloncillo para Wii U" />
+<meta property="og:site_name" content="Piloncillo para Wii U" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<link rel='icon' href="../Images/favicon.png" />
+<meta itemprop="image" property="og:image" content="../Images/favicon.png" />
+<meta name="twitter:image" content="../Images/favicon.png" />
+<link rel="image_src" href="../Images/favicon.png" />
+<link rel="stylesheet" href="../default_style.css" />
+</head>
+<body onload="loadContent()">
+<div id="sidebar">
+<div id="sidebar_close" onclick="closeSidebar()">&#215;</div>  
+<div id="sidebar_content">
+<div id="logo"><img id="pilon_logo" src="../Images/logo.png" /></div>
+<ul class="sidenav">
+<li><a href="../index.html" class="selectable" id="main_link" title="Inicio">Inicio</a></li>
+<li><span class="caret selectable" id="uninstall_mod" title="Desinstalar modificación">Desinstalar modificación</span>
+	<ul class="nested">
+	<li><a class="selectable" href="../?s=uninstall_webhack" id="uninstall_webhack_link" title="Desinstalar Webhack">Webhack</a></li>
+	<li><a class="selectable" href="../?s=uninstall_indexiine" id="uninstall_indexiine_link" title="Desinstalar Indexiine">Indexiine</a></li>
+	<li><a class="selectable" href="../?s=uninstall_cbhc" id="uninstall_cbhc_link" title="Desinstalar Coldboot Haxchi">Coldboot Haxchi</a></li>
+	<li><a class="selectable" href="../?s=uninstall_haxchi" id="uninstall_haxchi_link" title="Desinstalar Haxchi">Haxchi (normal)</a></li>
+	<li><a class="selectable" href="../?s=uninstall_payloadloader" id="uninstall_payloadloader_link" title="Desinstalar PayloadLoader">PayloadLoader</a></li>
+	</ul>
+</li>
+<li><span class="caret selectable" id="archive_caret" title="Archivo">Archivo</span>
+	<ul class="nested">
+	<li><span class="caret selectable" id="previous_methods_caret" title="Métodos anteriores">Métodos anteriores</span>
+		<ul class="nested">
+		<li><a class="selectable" href="?s=webhack&p=sd" id="install_webhack_link" title="Instalar Webhack">Webhack</a></li>
+		<li><a class="selectable" href="?s=indexiine&p=sd" id="install_indexiine_link" title="Instalar Indexiine">Indexiine</a></li>
+		<li><a class="selectable" href="?s=haxchi&p=ds_game" id="install_haxchi_link" title="Instalar Haxchi">Haxchi (normal)</a></li>
+		<li><a class="selectable" href="?s=cbhc&p=ds_game" id="install_cbhc_link" title="Instalar Coldboot Haxchi">Coldboot Haxchi</a></li>
+		<li><a class="selectable" href="../?s=aroma&p=sd" id="install_cbhc_link" title="Instalar PayloadLoader usando Aroma">PayloadLoader (Aroma)</a></li>
+		</ul>
+	</li>
+	<li><a class="selectable" href="../?s=tiramisu_files&p=put" id="install_cbhc_link" title="Añadir Tiramisu a Aroma">Añadir Tiramisu a Aroma</a></li>
+	<li><a class="selectable" href="?s=custom_haxchi" id="custom_haxchi_link" title="Personalizar Haxchi">Personalizar Haxchi</a></li>
+	<li><a class="selectable" href="?s=config_payload" id="config_payload_link" title="Configurable Payload">Configurable Payload</a></li>
+	</ul>
+</li>
+<li><span class="caret selectable" id="links" title="Enlaces">Enlaces</span>
+	<ul class="nested">
+	<li><a class="selectable" href="../About.html" id="about_link" title="Acerca de">Acerca de</a></li>
+	</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="sidebar_toggle" onclick="toggleSidebar()">&#9776;</div>  
+<div id="content">
+<div id="entry" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Elige un punto de entrada</h1>
+<br>
+<p>Lo único que cambia entre un método y otro es la forma como lo ejecutas. Elije el punto de entrada que más te convenga según tus necesidades. Sin importar cual elijas, una vez dentro podrás hacer lo mismo y usar las mismas aplicaciones.</p>
+<p><strong><a href="../?s=tiramisu&p=sd">PayloadLoader</a></strong>: Requiere parchar una aplicación legitima de la consola (por ejemplo, Información sobre salud y seguridad), una vez instalado bastará con abrir el icono de la aplicación modificada en el menú de la Wii U (similar a Haxchi).</p>
+<p><strong><a href="?s=webhack&p=sd">Webhack</a></strong>: Deberás entrar a una página web en internet para ejecutarlo cada vez que se inicia la Wii U. No necesita de la compra de un juego, es el más simple de instalar y no modifica archivos de la consola. Recomendado para familiarizarse con el proceso de hackeo e instalación de juegos, es fácil pasar de Webhack a Indexiine o de Webhack a Haxchi posteriormente.</p>
+<p><strong><a href="?s=indexiine&p=sd">Indexiine</a></strong>: Sólo deberás abrir el navegador de internet para ejecutarlo cada vez que se inicia la Wii U. No necesita de internet o de la compra de un juego. Modifica un archivo del navegador, formatear la Wii U no restaurará ese archivo, debe ser restaurado manualmente. Tiene riesgo de bloquear el navegador de internet si no se desinstala correctamente, el bloqueo siempre se puede reparar.</p>
+<p><strong><a href="?s=haxchi&p=ds_game">Haxchi</a></strong>: Una vez instalado bastará con abrir su icono en el menú de la Wii U para ejecutarlo cada vez que se inicia la Wii U. Requiere de comprar un juego de Nintendo DS en la eShop de la Wii U. No necesita de internet, es el más práctico para el uso del día a día.</p>
+<p><strong><a href="?s=cbhc&p=ds_game">Coldboot Haxchi (CBHC)</a></strong>: Una vez instalado cargará Haxchi automáticamente al iniciar la Wii U. Es un derivado de Haxchi, por lo que requiere comprar un juego de Nintendo DS en la eShop de la Wii U. No necesita de internet. Es el único método que tiene riesgo de dañar la consola ya que modifica archivos importantes del sistema, si no eres cuidadoso y lo desinstalas incorrectamente brickearas la consola.</p>
+</div>
+</div>
+<div id="webhack" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1></h1>
+<p></p>
+</div>
+</div>
+<div id="webhack_sd" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Prepara la tarjeta SD para Webhack</h1>
+<br>
+<p>La tarjeta SD debe ser formateada en FAT32 con tamaño de unidad de asignación (allocation unit size) de 32 kilobytes (32768). Se recomienda dejar la etiqueta del volumen (volume label) en blanco ya que poner una puede causar problemas con algunas aplicaciones. Para tarjetas SD mayores a 32 GB debes formatear usando <a href="http://ridgecrop.co.uk/index.htm?guiformat.htm">GUIFormat</a>.</p>
+<ul>
+<li>Descomprime el archivo <a href="https://drive.google.com/uc?id=1-GKcQQa3Zxv1WOJLt4birUicGdRAZ7ot">Webhack.zip</a> y copia las carpetas <code>install</code> y <code>wiiu</code> en la raíz de la tarjeta SD. Una alternativa para usuarios avanzados es <a href="?s=webhack&p=files">preparar los archivos por cuenta propia</a>.</li>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
+<li>Cerciórate de no tener ningún dispositivo USB conectado en la Wii U antes de continuar.</li>
+</ul>
+<p><a href="?s=webhack&p=webhack">Entrar al Homebrew Launcher por primera vez</a></p>
+</div>
+</div>
+<div id="webhack_files" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Prepara los archivos para la tarjeta SD para Webhack</h1>
+<br>
+<p>Los siguientes enlaces dirigen a los lanzamientos oficiales de los desarrolladores de cada aplicación, son las versiones estables más recientes.</p>
+<h2>Descarga</h2>
+<ul>
+<li><a href="https://github.com/GaryOderNichts/configurable-payload/releases/tag/v1">Configurable Payload</a> (descarga el archivo <code>payload.elf</code>).</li>
+<li><a href="https://github.com/wiiu-controller-mods/homebrew_launcher/releases/tag/v2">Homebrew Launcher</a> (descarga el archivo <code>homebrew_launcher.elf</code>).</li>
+<li><a href="https://github.com/fortheusers/hb-appstore/releases/tag/2.2">Homebrew App Store</a> (descarga el archivo <code>wiiu-extracttosd.zip</code>).</li>
+<li><a href="https://github.com/wiiu-controller-mods/wup-installer-gx2/releases/tag/v1">WUP Installer GX2</a> (descarga el archivo <code>wup_installer_gx2.elf</code>).</li>
+<li><a href="https://apps.fortheusers.org/wiiu/nanddumper">Wii U NAND Dumper</a> (clic en el botón <strong>Download</strong>).</li>
+<li><a href="https://github.com/wiiu-controller-mods/savemii/releases/tag/v1">SaveMii</a> (descarga el archivo <code>savemii.elf</code>).</li>
+<li><a href="https://apps.fortheusers.org/wiiu/mocha">Mocha CFW</a> (clic en el botón <strong>Download</strong>).</li>
+<li>Archivo <a href="https://drive.google.com/uc?id=1zbvQYs0Iq4d3TMNNwtdH2Uu8TJpFGnci">config.ini</a> (para la configuración de Mocha CFW).</li>
+<li>Archivo <a href="https://drive.google.com/uc?id=1NtEDE9luP0vjQg6-ysQWjQSO0txAGUya">payload.cfg</a> (para la configuración del payload).</li>
+<li>Archivo <a href="https://drive.google.com/uc?id=1Ieus834XA7f5vwA5G6u6z6Xh3HQ7qjvl">wiiu.zip</a> (como base para la estructura de archivos).</li>
+</ul>
+<h2>Colocación</h2>
+<p>Nota: Los archivos <code>info.json</code> y <code>manifest.install</code> no son necesarios, los puedes omitir o eliminar sin ningún problema.</p>
+<ul>
+<li>Crea una carpeta llamada <code>install</code> en la raíz de la tarjeta SD.</li>
+<li>Copia el contenido del archivo <code>wiiu.zip</code> a la raíz de la tarjeta SD.</li>
+<li>Copia el contenido del archivo <code>mocha.zip</code> a la raíz de la tarjeta SD.</li>
+<li>Copia el contenido del archivo <code>nanddumper.zip</code> a la raíz de la tarjeta SD.</li>
+<li>Copia el contenido del archivo <code>wiiu-extracttosd.zip</code> a la raíz de la tarjeta SD.</li>
+<li>Copia el archivo <code>savemii.elf</code> en la carpeta <code>sd:/wiiu/apps/savemii</code>.</li>
+<li>Copia el archivo <code>wup_installer_gx2.elf</code> en la carpeta <code>sd:/wiiu/apps/wup_installer_gx2</code>.</li>
+<li>Copia el archivo <code>homebrew_launcher.elf</code> en la carpeta <code>sd:/wiiu/apps/homebrew_launcher</code>.</li>
+<li>Copia el archivo <code>payload.elf</code> en la carpeta <code>sd:/wiiu</code>.</li>
+<li>Copia el archivo <code>payload.cfg</code> en la carpeta <code>sd:/wiiu</code>.</li>
+<li>Copia el archivo <code>config.ini</code> en la carpeta <code>sd:/wiiu/apps/mocha</code>.</li>
+</ul>
+<p><a onclick="window.history.back()">Regresar</a></p>
+</div>
+</div>
+<div id="webhack_webhack" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Webhack</h1>
+<br>
+<p>Con la tarjeta SD preparada ya tienes instalado Webhack sólo falta ejecutar el exploit. Ahora puedes encender la Wii U. Asegúrate de que la consola tenga acceso a internet para este paso.</p>
+<ul>
+<li>Abre el navegador de internet de la consola.</li>
+<li>Introduce la URL: <a href="http://u.wiidb.de">u.wiidb.de</a> (puedes consultar paginas alternativas <a href="?s=webhack&p=exploit">aquí</a>).</li>
+<li>Para que no tengas que escribir la URL en cada ocasión añádela a favoritos. Al cargar la página toca en el Mii de la esquina inferior izquierda, después toca el botón para añadir la página a favoritos y luego toca el botón Atrás.</li>
+<li>Ahora toca en HAXX.</li>
+<li>Espera unos segundos, deberá cargar el Homebrew Launcher.</li>
+</ul>
+<p>Si la Wii U se congela de alguna forma, espera unos 20 segundos. Si no sucede nada, mantén presionado el botón Power de la consola hasta que se apague, vuelve prender la consola, abre el navegador, entra en Ajustes, selecciona un motor de búsqueda, borra las cookies del navegador y vuelve a intentarlo.</p>
+<p>Una vez dentro del Homebrew Launcher y antes de hacer cualquier modificación en la consola es recomendable hacer un respaldo de la memoria interna.</p>
+<p><a href="?s=webhack&p=nand_backup">Hacer respaldo</a></p>
+<p><a href="?s=webhack&p=cfw">Continuar sin hacer respaldo</a></p>
+</div>
+</div>
+<div id="webhack_exploit" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Páginas con el exploit para el navegador</h1>
+<br>
+<ul>
+<li><a href="http://u.wiidb.de/">http://u.wiidb.de/</a> Toca en <strong class="blue">HAXX</strong>.</li>
+<li><a href="http://wiiuexploit.xyz/">http://wiiuexploit.xyz/</a> Toca en el botón <q><strong class="blue">Run Exploit!</strong></q>.</li>
+<li>Actualmente la página <strong class="red">http://loadiine.ovh/</strong> ha dejado de dar servicio.</li>
+</ul>
+<p><a onclick="window.history.back()">Regresar</a></p>
+</div>
+</div>
+<div id="webhack_nand_backup" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Haz un respaldo de la memoria interna de la Wii U</h1>
+<br>
+<p>Este paso es opcional si usas Webhack.</p>
+<p>En el caso de que algo salga muy mal y la Wii U termine brickeada, restaurar la copia de la memoria interna puede solucionarlo.</p>
+<p>Restaurar la copia de respaldo de la Wii U requiere hardware especial y habilidades de micro soldadura. El respaldo de la memoria interna es único para cada consola, las copias de respaldo de otras consolas no funcionarán.</p>
+<ul>
+<li>Navega a través del Homebrew Launcher y abre Wii U NAND Dumper.</li>
+<li>Usa el D-Pad del Wii U GamePad para ingresar la siguiente configuración:</li>
+<ul>
+<li>Dump SLC (528MB) : yes</li>
+<li>Dump SLCCMPT (528MB) : yes</li>
+<li>Dump MLC (8GB/32GB) : Opcional</li>
+<li>Dump OTP (1KB) : yes</li>
+<li>Dump SEEPROM (1KB) : yes</li>
+</ul>
+<li>Presiona el botón A para iniciar el proceso de copia.</li>
+<li>Cuando se complete el proceso la consola cargará el menú de la Wii U.</li>
+<li>Apaga la consola, saca la tarjeta SD de la Wii U y conéctala a tu dispositivo para copiar los archivos.</li>
+<li>Copia los archivos <code>slc.bin</code>, <code>slccmpt.bin</code>, <code>seeprom.bin</code>, <code>otp.bin</code> y, si elegiste realizar una copia de seguridad completa, todos los archivos <code>mlc.bin.part</code> en tu dispositivo.</li>
+<li>Elimina los archivos de respaldo en la tarjeta SD para liberar espacio.</li>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
+</ul>
+<p>Puedes hacer varias copias de seguridad en servicios de la nube de internet para evitar perder el valioso respaldo de la Wii U.</p>
+<p><a href="?s=webhack&p=cfw">Cargar Mocha CFW</a></p>
+</div>
+</div>
+<div id="webhack_cfw" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Cargar Mocha CFW</h1>
+<br>
+<p>A diferencia de sistemas como DSi, 3DS o Wii, el CFW de la Wii U es temporal. Esto significa que cuando la consola se reinicia, pierde el CFW y tendrás que usar un punto de entrada para cargar un CFW nuevamente. Esto se puede automatizar instalando Coldboot Haxchi (CBHC).</p>
+<p>Desde este momento para cargar Mocha CFW:</p>
+<ul>
+<li>Abre el navegador de internet.</li>
+<li>Abre el Homebrew Launcher entrado en una página de internet con el exploit de Webhack.</li>
+<li>Navega a través del Homebrew Launcher y abre Mocha CFW.</li>
+<li>Inmediatamente cargará Mocha CFW en la consola y regresará al Homebrew Launcher.</li>
+</ul>
+<p>Con un CFW cargado puedes instalar y correr juegos con tickets falsos (todo el contenido exclusivo de la eShop como DLCs y juegos de la Consola Virtual) así como juegos de otra región y aplicaciones como emuladores.</p>
+<p>Aquí termina la guía de Webhack.</p>
+<p><a href="../?s=main">Inicio</a></p>
+</div>
+</div>
+<div id="indexiine" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1></h1>
+<p></p>
+</div>
+</div>
+<div id="indexiine_sd" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Prepara la tarjeta SD para Indexiine</h1>
+<br>
+<p>La tarjeta SD debe ser formateada en FAT32 con tamaño de unidad de asignación (allocation unit size) de 32 kilobytes (32768). Se recomienda dejar la etiqueta del volumen (volume label) en blanco ya que poner una puede causar problemas con algunas aplicaciones. Para tarjetas SD mayores a 32 GB debes formatear usando <a href="http://ridgecrop.co.uk/index.htm?guiformat.htm">GUIFormat</a>.</p>
+<ul>
+<li>Descomprime el archivo <a href="https://drive.google.com/uc?id=1VnhmX9DBta9quhmPbSlJAH4TsUU7UtSI">Indexiine.zip</a> y copia las carpetas <code>install</code> y <code>wiiu</code> en la raíz de la tarjeta SD. Una alternativa para usuarios avanzados es <a href="?s=indexiine&p=files">preparar los archivos por cuenta propia</a>.</li>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
+<li>Cerciórate de no tener ningún dispositivo USB conectado en la Wii U antes de continuar.</li>
+</ul>
+<p><a href="?s=indexiine&p=webhack">Entrar al Homebrew Launcher por primera vez</a></p>
+</div>
+</div>
+<div id="indexiine_files" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Prepara los archivos para la tarjeta SD para Indexiine</h1>
+<br>
+<p>Los siguientes enlaces dirigen a los lanzamientos oficiales de los desarrolladores de cada aplicación, son las versiones estables más recientes.</p>
+<h2>Descarga</h2>
+<ul>
+<li><a href="https://github.com/GaryOderNichts/configurable-payload/releases/tag/v1">Configurable Payload</a> (descarga el archivo <code>payload.elf</code>).</li>
+<li><a href="https://github.com/wiiu-controller-mods/homebrew_launcher/releases/tag/v2">Homebrew Launcher</a> (descarga el archivo <code>homebrew_launcher.elf</code>).</li>
+<li><a href="https://github.com/fortheusers/hb-appstore/releases/tag/2.2">Homebrew App Store</a> (descarga el archivo <code>wiiu-extracttosd.zip</code>).</li>
+<li><a href="https://github.com/wiiu-controller-mods/wup-installer-gx2/releases/tag/v1">WUP Installer GX2</a> (descarga el archivo <code>wup_installer_gx2.elf</code>).</li>
+<li><a href="https://apps.fortheusers.org/wiiu/nanddumper">Wii U NAND Dumper</a> (clic en el botón <strong>Download</strong>).</li>
+<li><a href="https://github.com/wiiu-controller-mods/savemii/releases/tag/v1">SaveMii</a> (descarga el archivo <code>savemii.elf</code>).</li>
+<li><a href="https://apps.fortheusers.org/wiiu/mocha">Mocha CFW</a> (clic en el botón <strong>Download</strong>).</li>
+<li>Archivo <a href="https://drive.google.com/uc?id=1YwPLz22IUejverUb6XTi-iKNZb-rRmFD">config.ini</a> (para la configuración de Mocha CFW).</li>
+<li><a href="https://github.com/GaryOderNichts/indexiine-installer/releases/tag/v2">Indexiine-Installer</a> (descarga el archivo <code>indexiine-installer.zip</code>).</li>
+<li><a href="https://github.com/wiiu-controller-mods/homebrew_launcher/releases/tag/channel_v2">Homebrew Launcher Channel</a> (descarga el archivo <code>install_channel.zip</code>).</li>
+<li>Archivo <a href="https://drive.google.com/uc?id=10pbqPIwj_povKD05ML7CGf1-lCOYy7DX">payload.cfg</a> (para la configuración del payload).</li>
+<li>Archivo <a href="https://drive.google.com/uc?id=1Ieus834XA7f5vwA5G6u6z6Xh3HQ7qjvl">wiiu.zip</a> (como base para la estructura de archivos).</li>
+</ul>
+<h2>Colocación</h2>
+<p>Nota: Los archivos <code>info.json</code> y <code>manifest.install</code> no son necesarios, los puedes omitir o eliminar sin ningún problema.</p>
+<ul>
+<li>Crea una carpeta llamada <code>install</code> en la raíz de la tarjeta SD.</li>
+<li>Copia el contenido del archivo <code>wiiu.zip</code> a la raíz de la tarjeta SD.</li>
+<li>Descomprime el archivo <code>install_channel.zip</code> y copia la carpeta <code>install_channel</code> en la carpeta <code>sd:/install</code> que creaste.</li>
+<li>Copia el contenido del archivo <code>indexiine-installer.zip</code> a la raíz de la tarjeta SD.</li>
+<li>Copia el contenido del archivo <code>mocha.zip</code> a la raíz de la tarjeta SD.</li>
+<li>Copia el contenido del archivo <code>nanddumper.zip</code> a la raíz de la tarjeta SD.</li>
+<li>Copia el contenido del archivo <code>wiiu-extracttosd.zip</code> a la raíz de la tarjeta SD.</li>
+<li>Copia el archivo <code>savemii.elf</code> en la carpeta <code>sd:/wiiu/apps/savemii</code>.</li>
+<li>Copia el archivo <code>wup_installer_gx2.elf</code> en la carpeta <code>sd:/wiiu/apps/wup_installer_gx2</code>.</li>
+<li>Copia el archivo <code>homebrew_launcher.elf</code> en la carpeta <code>sd:/wiiu/apps/homebrew_launcher</code>.</li>
+<li>Copia el archivo <code>payload.elf</code> en la carpeta <code>sd:/wiiu</code>.</li>
+<li>Copia el archivo <code>payload.cfg</code> en la carpeta <code>sd:/wiiu</code>.</li>
+<li>Copia el archivo <code>config.ini</code> en la carpeta <code>sd:/wiiu/apps/mocha</code>.</li>
+</ul>
+<p><a onclick="window.history.back()">Regresar</a></p>
+</div>
+</div>
+<div id="indexiine_webhack" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Webhack</h1>
+<br>
+<ul>
+<li>Abre el navegador de internet de la consola.</li>
+<li>Toca el botón de pestañas y cierra todas las pestañas hasta quedarte sólo con la Página de inicio.</li>
+<li>Entra en Ajustes, asegúrate de tener seleccionado un motor de búsqueda y después toca el botón Borrar cookies, toca en Sí y Aceptar. Toca el botón Atrás.</li>
+<li>En este punto mantén presionado el botón Power del GamePad para apagar la consola por completo, esto es para evitar que la consola cree un cache de archivos.</li>
+<li>Vuelve a prender la consola y vuelve a abrir el navegador de internet de la consola.</li>
+<li>Introduce la URL: <a href="http://u.wiidb.de">u.wiidb.de</a> (puedes consultar paginas alternativas <a href="?s=webhack&p=exploit">aquí</a>).</li>
+<li>Al cargar la página toca en HAXX.</li>
+<li>Espera unos segundos, cuando la pantalla se ponga en blanco mantén presionado el botón A, esto cargará el Homebrew Launcher (después de cargado suelta el botón A).</li>
+</ul>
+<p>Si la Wii U se congela de alguna forma, espera unos 20 segundos. Si no sucede nada, mantén presionado el botón Power de la consola hasta que se apague, vuelve prender la consola, abre el navegador, entra en Ajustes, selecciona un motor de búsqueda, borra las cookies del navegador y vuelve a intentarlo.</p>
+<p>Una vez dentro del Homebrew Launcher y antes de hacer cualquier modificación en la consola es recomendable hacer un respaldo de la memoria interna.</p>
+<p><a href="?s=indexiine&p=nand_backup">Hacer respaldo</a></p>
+<p><a href="?s=indexiine&p=install">Continuar sin hacer respaldo</a></p>
+</div>
+</div>
+<div id="indexiine_nand_backup" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Haz un respaldo de la memoria interna de la Wii U</h1>
+<br>
+<p>Este paso es opcional si usas Indexiine.</p>
+<p>En el caso de que algo salga muy mal y la Wii U termine brickeada, restaurar la copia de la memoria interna puede solucionarlo.</p>
+<p>Restaurar la copia de respaldo de la Wii U requiere hardware especial y habilidades de micro soldadura. El respaldo de la memoria interna es único para cada consola, las copias de respaldo de otras consolas no funcionarán.</p>
+<ul>
+<li>Navega a través del Homebrew Launcher y abre Wii U NAND Dumper.</li>
+<li>Usa el D-Pad del Wii U GamePad para ingresar la siguiente configuración:</li>
+<ul>
+<li>Dump SLC (528MB) : yes</li>
+<li>Dump SLCCMPT (528MB) : yes</li>
+<li>Dump MLC (8GB/32GB) : Opcional</li>
+<li>Dump OTP (1KB) : yes</li>
+<li>Dump SEEPROM (1KB) : yes</li>
+</ul>
+<li>Presiona el botón A para iniciar el proceso de copia.</li>
+<li>Cuando se complete el proceso la consola cargará el menú de la Wii U.</li>
+<li>Apaga la consola, saca la tarjeta SD de la Wii U y conéctala a tu dispositivo para copiar los archivos.</li>
+<li>Copia los archivos <code>slc.bin</code>, <code>slccmpt.bin</code>, <code>seeprom.bin</code>, <code>otp.bin</code> y, si elegiste realizar una copia de seguridad completa, todos los archivos <code>mlc.bin.part</code> en tu dispositivo.</li>
+<li>Elimina los archivos de respaldo en la tarjeta SD para liberar espacio.</li>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
+</ul>
+<p>Puedes hacer varias copias de seguridad en servicios de la nube de internet para evitar perder el valioso respaldo de la Wii U.</p>
+<p><a href="?s=indexiine&p=install">Instalación de Indexiine</a></p>
+</div>
+</div>
+<div id="indexiine_install" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Instalación de Indexiine</h1>
+<br>
+<p>Ya cargado el Homebrew Launcher como se explicó <a href="?s=indexiine&p=webhack">anteriormente</a>.</p>
+<ul>
+<li>Navega a través del Homebrew Launcher y abre Indexiine Installer.</li>
+<li>Presiona el botón A para instalar Indexiine.</li>
+<li>Cuando se complete el proceso, regresará automáticamente al Homebrew Launcher.</li>
+</ul>
+<p>Ahora Mocha CFW se iniciará cada vez que cargue la página de inicio del navegador de internet de la Wii U, incluso sin una conexión a internet activa.</p>
+<p>El Homebrew Launcher se iniciará cada vez que cargue la Página de inicio del navegador de internet de la Wii U y mantengas presionado el botón A cuando la pantalla se ponga en blanco, incluso sin una conexión a internet activa.</p>
+<p>En caso de que desees desinstalar Indexiine consulta como <a href="?s=uninstall_indexiine">desinstalar Indexiine correctamente</a>.</p>
+<p><a href="?s=indexiine&p=install_hbl_channel">Instalación del Homebrew Launcher Channel</a></p>
+</div>
+</div>
+<div id="indexiine_install_hbl_channel" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Instalación de Homebrew Launcher Channel</h1>
+<br>
+<p>Instalar Homebrew Launcher Channel (icono en el menú de la Wii U) facilita el acceso para usuarios de Indexiine.</p>
+<ul>
+<li>Navega a través del Homebrew Launcher y abre Mocha CFW.</li>
+<li>Inmediatamente cargará Mocha CFW en la consola y regresará al menú de la Wii U.</li>
+<li>Vuelve a abrir el navegador de internet.</li>
+<li>Espera unos segundos, cuando la pantalla se ponga en blanco mantén presionado el botón A, esto cargará el Homebrew Launcher.</li>
+<li>Navega a través del Homebrew Launcher y abre WUP Installer GX2.</li>
+<li>Presiona Install y confirma con Yes.</li>
+<li>Selecciona NAND como destino de la instalación.</li>
+<li>Finalizado el proceso de instalación presiona Ok y después el botón Home para regresar al Homebrew Launcher.</li>
+<li>Presiona el botón Home y luego toca el botón Salir para regresar al menú de la Wii U.</li>
+</ul>
+<p>Ahora tienes el Homebrew Launcher Channel instalado en el menú de la Wii U.</p>
+<p><a href="?s=indexiine&p=cfw">Cargar Mocha CFW</a></p>
+</div>
+</div>
+<div id="indexiine_cfw" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Cargar Mocha CFW</h1>
+<br>
+<p>A diferencia de sistemas como DSi, 3DS o Wii, el CFW de la Wii U es temporal. Esto significa que cuando la consola se reinicia, pierde el CFW y tendrás que usar un punto de entrada para cargar un CFW nuevamente. Esto se puede automatizar instalando Coldboot Haxchi (CBHC).</p>
+<p>Desde este momento para cargar Mocha CFW:</p>
+<ul>
+<li>Abre el icono del navegador de internet en la parte inferior del menú de la Wii U.</li>
+<li>Después de unos segundos cargará Mocha CFW en la consola y posteriormente regresará al menú de la Wii U.</li>
+</ul>
+<p><strong class="red">¡Advertencia!</strong> <ins>No uses el navegador de internet para otra cosa que no sea cargar Mocha CFW.</ins></p>
+<p>Con un CFW cargado puedes instalar y correr juegos con tickets falsos (todo el contenido exclusivo de la eShop como DLCs y juegos de la Consola Virtual) así como juegos de otra región y aplicaciones como emuladores.</p>
+<p>Aquí termina la guía de Indexiine.</p>
+<p><a href="../?s=main">Inicio</a></p>
+</div>
+</div>
+<div id="haxchi" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1></h1>
+<p></p>
+</div>
+</div>
+<div id="haxchi_ds_game" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Elige un juego de la Consola Virtual de Nintendo DS</h1>
+<br>
+<p>Ten en cuenta que no podrás jugar el juego en el que instales Haxchi (a menos que desinstales Haxchi y vuelvas a instalar el juego desde la eShop).</p>
+<p>Los residentes de países donde la versión limitada de la eShop cerró deberán cambiar el país de residencia desde configuración de la consola. Si la consola es región USA puedes cambar el país de residencia a Estados Unidos de América, Canadá o México. Deberán hacer una cuenta de usuario con el nuevo país de residencia para tener acceso a la eShop.</p>
+<p>Estos son los juegos compatibles:</p>
+<ul>
+<li>Animal Crossing: Wild World</li>
+<li>Big Brain Academy</li>
+<li>Brain Age: Train Your Brain in Minutes a Day! / Dr. Kawashima’s Brain Training: How Old is Your Brain?</li>
+<li>Donkey Kong: Jungle Climber</li>
+<li>Kirby: Canvas Curse / Kirby: Power Paintbrush</li>
+<li>Kirby: Mass Attack</li>
+<li>Kirby: Squeak Squad / Kirby: Mouse Attack</li>
+<li>The Legend of Zelda: Phantom Hourglass</li>
+<li>The Legend of Zelda: Spirit Tracks</li>
+<li>Mario & Luigi: Partners in Time</li>
+<li>Mario Kart DS</li>
+<li>New Super Mario Bros.</li>
+<li>Pokemon Mystery Dungeon: Explorers of the Sky</li>
+<li>Star Fox Command</li>
+<li>Super Mario 64 DS</li>
+<li>Wario: Master of Disguise</li>
+<li>WarioWare: Touched!</li>
+<li>Yoshi’s Island DS</li>
+<li>Yoshi Touch & Go</li>
+</ul>
+<p>Big Brain Academy y Brain Age / Brain Training tienen un costo de 7 dólares estadounidenses, el resto de juegos tienen un consto de 10 dólares estadounidenses.</p>
+<p>Una vez comprado el juego asegúrate de descárgalo en la memoria interna de la Wii U.</p>
+<p><a href="?s=haxchi&p=sd">Preparar la tarjeta SD</a></p>
+</div>
+</div>
+<div id="haxchi_sd" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Prepara la tarjeta SD para Haxchi</h1>
+<br>
+<p>La tarjeta SD debe ser formateada en FAT32 con tamaño de unidad de asignación (allocation unit size) de 32 kilobytes (32768). Se recomienda dejar la etiqueta del volumen (volume label) en blanco ya que poner una puede causar problemas con algunas aplicaciones. Para tarjetas SD mayores a 32 GB debes formatear usando <a href="http://ridgecrop.co.uk/index.htm?guiformat.htm">GUIFormat</a>.</p>
+<ul>
+<li>Descomprime el archivo <a href="https://drive.google.com/uc?id=1BJm2a1vRWyDk48F54JdSU6ODWhUmU1Tl">Haxchi.zip</a> y copia las carpetas <code>haxchi</code>, <code>install</code> y <code>wiiu</code> en la raíz de la tarjeta SD. Una alternativa para usuarios avanzados es <a href="?s=haxchi&p=files">preparar los archivos por cuenta propia</a>.</li>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
+<li>Cerciórate de no tener ningún dispositivo USB conectado en la Wii U antes de continuar.</li>
+</ul>
+<p><a href="?s=haxchi&p=webhack">Entrar al Homebrew Launcher por primera vez</a></p>
+</div>
+</div>
+<div id="haxchi_files" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Prepara los archivos para la tarjeta SD para Haxchi</h1>
+<br>
+<p>Los siguientes enlaces dirigen a los lanzamientos oficiales de los desarrolladores de cada aplicación, son las versiones estables más recientes.</p>
+<h2>Descarga</h2>
+<ul>
+<li><a href="https://github.com/GaryOderNichts/configurable-payload/releases/tag/v1">Configurable Payload</a> (descarga el archivo <code>payload.elf</code>).</li>
+<li><a href="https://github.com/wiiu-controller-mods/homebrew_launcher/releases/tag/v2">Homebrew Launcher</a> (descarga el archivo <code>homebrew_launcher.elf</code>).</li>
+<li><a href="https://github.com/fortheusers/hb-appstore/releases/tag/2.2">Homebrew App Store</a> (descarga el archivo <code>wiiu-extracttosd.zip</code>).</li>
+<li><a href="https://github.com/wiiu-controller-mods/wup-installer-gx2/releases/tag/v1">WUP Installer GX2</a> (descarga el archivo <code>wup_installer_gx2.elf</code>).</li>
+<li><a href="https://apps.fortheusers.org/wiiu/nanddumper">Wii U NAND Dumper</a> (clic en el botón <strong>Download</strong>).</li>
+<li><a href="https://github.com/wiiu-controller-mods/savemii/releases/tag/v1">SaveMii</a> (descarga el archivo <code>savemii.elf</code>).</li>
+<li><a href="https://apps.fortheusers.org/wiiu/haxchi">Haxchi</a> (instalador de Haxchi, clic en el botón <strong>Download</strong>).</li>
+<li><a href="https://github.com/wiiu-controller-mods/homebrew_launcher/releases/tag/channel_v2">Homebrew Launcher Channel</a> (descarga el archivo <code>install_channel.zip</code>).</li>
+<li>Archivo <a href="https://drive.google.com/uc?id=1NtEDE9luP0vjQg6-ysQWjQSO0txAGUya">payload.cfg</a> (para la configuración del payload).</li>
+<li>Archivo <a href="https://drive.google.com/uc?id=1Ieus834XA7f5vwA5G6u6z6Xh3HQ7qjvl">wiiu.zip</a> (como base para la estructura de archivos).</li>
+</ul>
+<h2>Colocación</h2>
+<p>Nota: Los archivos <code>info.json</code> y <code>manifest.install</code> no son necesarios, los puedes omitir o eliminar sin ningún problema.</p>
+<ul>
+<li>Crea una carpeta llamada <code>install</code> en la raíz de la tarjeta SD.</li>
+<li>Copia el contenido del archivo <code>wiiu.zip</code> a la raíz de la tarjeta SD.</li>
+<li>Descomprime el archivo <code>install_channel.zip</code> y copia la carpeta <code>install_channel</code> en la carpeta <code>sd:/install</code> que creaste.</li>
+<li>Copia el contenido del archivo <code>haxchi.zip</code> a la raíz de la tarjeta SD.</li>
+<li>Copia el contenido del archivo <code>nanddumper.zip</code> a la raíz de la tarjeta SD.</li>
+<li>Copia el contenido del archivo <code>wiiu-extracttosd.zip</code> a la raíz de la tarjeta SD.</li>
+<li>Copia el archivo <code>savemii.elf</code> en la carpeta <code>sd:/wiiu/apps/savemii</code>.</li>
+<li>Copia el archivo <code>wup_installer_gx2.elf</code> en la carpeta <code>sd:/wiiu/apps/wup_installer_gx2</code>.</li>
+<li>Copia el archivo <code>homebrew_launcher.elf</code> en la carpeta <code>sd:/wiiu/apps/homebrew_launcher</code>.</li>
+<li>Copia el archivo <code>payload.elf</code> en la carpeta <code>sd:/wiiu</code>.</li>
+<li>Copia el archivo <code>payload.cfg</code> en la carpeta <code>sd:/wiiu</code>.</li>
+</ul>
+<p><a onclick="window.history.back()">Regresar</a></p>
+</div>
+</div>
+<div id="haxchi_webhack" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Webhack</h1>
+<br>
+<p>Webhack es el punto de entrada para instalar Haxchi desde cero.</p>
+<p>Con la tarjeta SD preparada ya tienes instalado Webhack, sólo falta ejecutar el exploit. Ahora puedes encender la Wii U. Asegúrate de que la consola tenga acceso a internet para este paso.</p>
+<ul>
+<li>Abre el navegador de internet de la consola.</li>
+<li>Introduce la URL: <a href="http://u.wiidb.de">u.wiidb.de</a> (puedes consultar paginas alternativas <a href="?s=webhack&p=exploit">aquí</a>).</li>
+<li>Al cargar la página toca en HAXX.</li>
+<li>Espera unos segundos, deberá cargar el Homebrew Launcher.</li>
+</ul>
+<p>Si la Wii U se congela de alguna forma, espera unos 20 segundos. Si no sucede nada, mantén presionado el botón Power de la consola hasta que se apague, vuelve prender la consola, abre el navegador, entra en Ajustes, selecciona un motor de búsqueda, borra las cookies del navegador y vuelve a intentarlo.</p>
+<p>Una vez dentro del Homebrew Launcher y antes de hacer cualquier modificación en la consola es recomendable hacer un respaldo de la memoria interna.</p>
+<p><a href="?s=haxchi&p=nand_backup">Hacer respaldo</a></p>
+<p><a href="?s=haxchi&p=install">Continuar sin hacer respaldo</a></p>
+</div>
+</div>
+<div id="haxchi_nand_backup" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Haz un respaldo de la memoria interna de la Wii U</h1>
+<br>
+<p>Este paso es opcional si usas Haxchi.</p>
+<p>En el caso de que algo salga muy mal y la Wii U termine brickeada, restaurar la copia de la memoria interna puede solucionarlo.</p>
+<p>Restaurar la copia de respaldo de la Wii U requiere hardware especial y habilidades de micro soldadura. El respaldo de la memoria interna es único para cada consola, las copias de respaldo de otras consolas no funcionarán.</p>
+<ul>
+<li>Navega a través del Homebrew Launcher y abre Wii U NAND Dumper.</li>
+<li>Usa el D-Pad del Wii U GamePad para ingresar la siguiente configuración:</li>
+<ul>
+<li>Dump SLC (528MB) : yes</li>
+<li>Dump SLCCMPT (528MB) : yes</li>
+<li>Dump MLC (8GB/32GB) : Opcional</li>
+<li>Dump OTP (1KB) : yes</li>
+<li>Dump SEEPROM (1KB) : yes</li>
+</ul>
+<li>Presiona el botón A para iniciar el proceso de copia.</li>
+<li>Cuando se complete el proceso la consola cargará el menú de la Wii U.</li>
+<li>Apaga la consola, saca la tarjeta SD de la Wii U y conéctala a tu dispositivo para copiar los archivos.</li>
+<li>Copia los archivos <code>slc.bin</code>, <code>slccmpt.bin</code>, <code>seeprom.bin</code>, <code>otp.bin</code> y, si elegiste realizar una copia de seguridad completa, todos los archivos <code>mlc.bin.part</code> en tu dispositivo.</li>
+<li>Elimina los archivos de respaldo en la tarjeta SD para liberar espacio.</li>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
+</ul>
+<p>Puedes hacer varias copias de seguridad en servicios de la nube de internet para evitar perder el valioso respaldo de la Wii U.</p>
+<p><a href="?s=haxchi&p=install">Instalación de Haxchi</a></p>
+</div>
+</div>
+<div id="haxchi_install" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Instalación de Haxchi</h1>
+<br>
+<p>Ya cargado el Homebrew Launcher como se explicó <a href="?s=haxchi&p=webhack">anteriormente</a>.</p>
+<ul>
+<li>Navega a través del Homebrew Launcher y abre Haxchi.</li>
+<li>Usa el D-Pad del Wii U GamePad para navegar con el cursor hasta el juego en el que deseas inyectar Haxchi.</li>
+<li>Presiona el botón A para instalar Haxchi.</li>
+<li>Completada la instalación, la consola cargará el menú de la Wii U.</li>
+</ul>
+<p>Veras que el juego fue reemplazado por el ícono de Haxchi.</p>
+<p>En caso de que desees desinstalar Haxchi consulta como <a href="?s=uninstall_haxchi">desinstalar Haxchi correctamente</a>.</p>
+<p><a href="?s=haxchi&p=install_hbl_channel">Instalación del Homebrew Launcher Channel</a></p>
+</div>
+</div>
+<div id="haxchi_install_hbl_channel" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Instalación de Homebrew Launcher Channel</h1>
+<br>
+<p>Instalar Homebrew Launcher Channel (icono en el menú de la Wii U) facilita el acceso para usuarios de Haxchi.</p>
+<ul>
+<li>Abre el icono de Haxchi en el menú de la Wii U.</li>
+<li>Inmediatamente cargará Haxchi CFW en la consola y regresará al menú de la Wii U.</li>
+<li>Vuelve a abrir el icono de Haxchi y mantén presionado el botón A después de iniciarlo, esto cargará el Homebrew Launcher.</li>
+<li>Navega a través del Homebrew Launcher y abre WUP Installer GX2.</li>
+<li>Utiliza la pantalla táctil para seleccionar install_channel.</li>
+<li>Presiona Install y confirma con Yes.</li>
+<li>Selecciona NAND como destino de la instalación.</li>
+<li>Finalizado el proceso de instalación presiona Ok y después el botón Home para regresar al Homebrew Launcher.</li>
+<li>Presiona el botón Home y luego toca el botón Salir para regresar al menú de la Wii U.</li>
+</ul>
+<p>Ahora tienes el Homebrew Launcher Channel instalado en el menú de la Wii U.</p>
+<p><a href="?s=haxchi&p=cfw">Cargar Haxchi CFW</a></p>
+</div>
+</div>
+<div id="haxchi_cfw" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Cargar Haxchi CFW</h1>
+<br>
+<p>A diferencia de sistemas como DSi, 3DS o Wii, el CFW de la Wii U es temporal. Esto significa que cuando la consola se reinicia, pierde el CFW y tendrás que usar un punto de entrada para cargar un CFW nuevamente. Esto se puede automatizar instalando Coldboot Haxchi (CBHC).</p>
+<p>Desde este momento para cargar Haxchi CFW:</p>
+<ul>
+<li>Abre el icono de Haxchi en el menú de la Wii U.</li>
+<li>Inmediatamente cargará Haxchi CFW en la consola y regresará al menú de la Wii U.</li>
+</ul>
+<p>Con un CFW cargado puedes instalar y correr juegos con tickets falsos (todo el contenido exclusivo de la eShop como DLCs y juegos de la Consola Virtual) así como juegos de otra región y aplicaciones como emuladores.</p>
+<p>Aquí termina la guía de Haxchi.</p>
+<p><a href="../?s=main">Inicio</a></p>
+</div>
+</div>
+<div id="cbhc" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1></h1>
+<p></p>
+</div>
+</div>
+<div id="cbhc_ds_game" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Elige un juego de la Consola Virtual de Nintendo DS</h1>
+<br>
+<p>Ten en cuenta que no podrás jugar el juego en el que instales Coldboot Haxchi (a menos que desinstales Coldboot Haxchi y vuelvas a instalar el juego desde la eShop).</p>
+<p>Los residentes de países donde la versión limitada de la eShop cerró deberán cambiar el país de residencia desde configuración de la consola. Si la consola es región USA puedes cambar el país de residencia a Estados Unidos de América, Canadá o México. Deberán hacer una cuenta de usuario con el nuevo país de residencia para tener acceso a la eShop.</p>
+<p>Estos son los juegos compatibles:</p>
+<ul>
+<li>Animal Crossing: Wild World</li>
+<li>Big Brain Academy</li>
+<li>Brain Age: Train Your Brain in Minutes a Day! / Dr. Kawashima’s Brain Training: How Old is Your Brain?</li>
+<li>Donkey Kong: Jungle Climber</li>
+<li>Kirby: Canvas Curse / Kirby: Power Paintbrush</li>
+<li>Kirby: Mass Attack</li>
+<li>Kirby: Squeak Squad / Kirby: Mouse Attack</li>
+<li>The Legend of Zelda: Phantom Hourglass</li>
+<li>The Legend of Zelda: Spirit Tracks</li>
+<li>Mario & Luigi: Partners in Time</li>
+<li>Mario Kart DS</li>
+<li>New Super Mario Bros.</li>
+<li>Pokemon Mystery Dungeon: Explorers of the Sky</li>
+<li>Star Fox Command</li>
+<li>Super Mario 64 DS</li>
+<li>Wario: Master of Disguise</li>
+<li>WarioWare: Touched!</li>
+<li>Yoshi’s Island DS</li>
+<li>Yoshi Touch & Go</li>
+</ul>
+<p>Big Brain Academy y Brain Age / Brain Training tienen un costo de 7 dólares estadounidenses, el resto de juegos tienen un consto de 10 dólares estadounidenses.</p>
+<p>Una vez comprado el juego asegúrate de descárgalo en la memoria interna de la Wii U.</p>
+<p><a href="?s=cbhc&p=standby_functions">Desactiva las funciones en modo de reposo</a></p>
+</div>
+</div>
+<div id="cbhc_standby_functions" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Desactiva las funciones en modo de reposo</h1>
+<br>
+<p>Si tienes activadas las funciones en modo de reposo puedes tener problemas al usar Coldboot Haxchi (CBHC). Desactiva dichas funciones antes de continuar con la instalación y no las actives mientras tengas instalado Coldboot Haxchi (CBHC).</p>
+<ul>
+<li>Entra en la Configuración de la consola</li>
+<li>Selecciona Ajustes de apagado.</li>
+<li>Toca en el bloque de Funciones en modo de reposo.</li>
+<li>Toca en No y después en Aceptar.</li>
+<li>Toca en Aceptar.</li>
+<li>Toca en Atrás o presiona B.</li>
+<li>Toca en Salir o persona B.</li>
+</ul>
+<p>Ahora al apagar la consola no trabajará en modo de reposo y el LED de POWER no cambiará de <strong class="red">rojo</strong> a <strong class="oranje">naranja</strong>.</p>
+<p><a href="?s=cbhc&p=sd">Preparar la tarjeta SD</a></p>
+</div>
+</div>
+<div id="cbhc_sd" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Prepara la tarjeta SD para Coldboot Haxchi (CBHC)</h1>
+<br>
+<p>La tarjeta SD debe ser formateada en FAT32 con tamaño de unidad de asignación (allocation unit size) de 32 kilobytes (32768). Se recomienda dejar la etiqueta del volumen (volume label) en blanco ya que poner una puede causar problemas con algunas aplicaciones. Para tarjetas SD mayores a 32 GB debes formatear usando <a href="http://ridgecrop.co.uk/index.htm?guiformat.htm">GUIFormat</a>.</p>
+<ul>
+<li>Descomprime el archivo <a href="https://drive.google.com/uc?id=1qbLpS04EqibJdIoPko3C7DpXA2lNqPi2">CBHC.zip</a> y copia las carpetas <code>cbhc</code>, <code>haxchi</code>, <code>install</code> y <code>wiiu</code> en la raíz de la tarjeta SD. Una alternativa para usuarios avanzados es <a href="?s=cbhc&p=files">preparar los archivos por cuenta propia</a>.</li>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
+<li>Cerciórate de no tener ningún dispositivo USB conectado en la Wii U antes de continuar.</li>
+</ul>
+<p><a href="?s=cbhc&p=webhack">Entrar al Homebrew Launcher por primera vez</a></p>
+</div>
+</div>
+<div id="cbhc_files" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Prepara los archivos para la tarjeta SD para Coldboot Haxchi</h1>
+<br>
+<p>Los siguientes enlaces dirigen a los lanzamientos oficiales de los desarrolladores de cada aplicación, son las versiones estables más recientes.</p>
+<h2>Descarga</h2>
+<ul>
+<li><a href="https://github.com/GaryOderNichts/configurable-payload/releases/tag/v1">Configurable Payload</a> (descarga el archivo <code>payload.elf</code>).</li>
+<li><a href="https://github.com/wiiu-controller-mods/homebrew_launcher/releases/tag/v2">Homebrew Launcher</a> (descarga el archivo <code>homebrew_launcher.elf</code>).</li>
+<li><a href="https://github.com/fortheusers/hb-appstore/releases/tag/2.2">Homebrew App Store</a> (descarga el archivo <code>wiiu-extracttosd.zip</code>).</li>
+<li><a href="https://github.com/wiiu-controller-mods/wup-installer-gx2/releases/tag/v1">WUP Installer GX2</a> (descarga el archivo <code>wup_installer_gx2.elf</code>).</li>
+<li><a href="https://apps.fortheusers.org/wiiu/nanddumper">Wii U NAND Dumper</a> (clic en el botón <strong>Download</strong>).</li>
+<li><a href="https://github.com/wiiu-controller-mods/savemii/releases/tag/v1">SaveMii</a> (descarga el archivo <code>savemii.elf</code>).</li>
+<li><a href="https://apps.fortheusers.org/wiiu/haxchi">Haxchi</a> (instalador de Haxchi, clic en el botón <strong>Download</strong>).</li>
+<li><a href="https://apps.fortheusers.org/wiiu/cbhc">CBHC</a> (instalador de Coldboot Haxchi, clic en el botón <strong>Download</strong>).</li>
+<li><a href="https://github.com/wiiu-controller-mods/homebrew_launcher/releases/tag/channel_v2">Homebrew Launcher Channel</a> (descarga el archivo <code>install_channel.zip</code>).</li>
+<li>Archivo <a href="https://drive.google.com/uc?id=1NtEDE9luP0vjQg6-ysQWjQSO0txAGUya">payload.cfg</a> (para la configuración del payload).</li>
+<li>Archivo <a href="https://drive.google.com/uc?id=1Ieus834XA7f5vwA5G6u6z6Xh3HQ7qjvl">wiiu.zip</a> (como base para la estructura de archivos).</li>
+</ul>
+<h2>Colocación</h2>
+<p>Nota: Los archivos <code>info.json</code> y <code>manifest.install</code> no son necesarios, los puedes omitir o eliminar sin ningún problema.</p>
+<ul>
+<li>Crea una carpeta llamada <code>install</code> en la raíz de la tarjeta SD.</li>
+<li>Copia el contenido del archivo <code>wiiu.zip</code> a la raíz de la tarjeta SD.</li>
+<li>Descomprime el archivo <code>install_channel.zip</code> y copia la carpeta <code>install_channel</code> en la carpeta <code>sd:/install</code> que creaste.</li>
+<li>Copia el contenido del archivo <code>cbhc.zip</code> a la raíz de la tarjeta SD.</li>
+<li>Copia el contenido del archivo <code>haxchi.zip</code> a la raíz de la tarjeta SD.</li>
+<li>Copia el contenido del archivo <code>nanddumper.zip</code> a la raíz de la tarjeta SD.</li>
+<li>Copia el contenido del archivo <code>wiiu-extracttosd.zip</code> a la raíz de la tarjeta SD.</li>
+<li>Copia el archivo <code>savemii.elf</code> en la carpeta <code>sd:/wiiu/apps/savemii</code>.</li>
+<li>Copia el archivo <code>wup_installer_gx2.elf</code> en la carpeta <code>sd:/wiiu/apps/wup_installer_gx2</code>.</li>
+<li>Copia el archivo <code>homebrew_launcher.elf</code> en la carpeta <code>sd:/wiiu/apps/homebrew_launcher</code>.</li>
+<li>Copia el archivo <code>payload.elf</code> en la carpeta <code>sd:/wiiu</code>.</li>
+<li>Copia el archivo <code>payload.cfg</code> en la carpeta <code>sd:/wiiu</code>.</li>
+</ul>
+<p><a onclick="window.history.back()">Regresar</a></p>
+</div>
+</div>
+<div id="cbhc_webhack" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Webhack</h1>
+<br>
+<p>Webhack es el punto de entrada para instalar Coldboot Haxchi (CBHC) desde cero.</p>
+<p>Con la tarjeta SD preparada ya tienes instalado Webhack, sólo falta ejecutar el exploit. Ahora puedes encender la Wii U. Coldboot Haxchi no es compatible con el inicio rápido de la Wii U, si estás utilizando el menú inicio rápido, deshabilítalo. Asegúrate de que la consola tenga acceso a internet para este paso.</p>
+<ul>
+<li>Abre el navegador de internet de la consola.</li>
+<li>Introduce la URL: <a href="http://u.wiidb.de">u.wiidb.de</a> (puedes consultar paginas alternativas <a href="?s=webhack&p=exploit">aquí</a>).</li>
+<li>Al cargar la página toca en HAXX.</li>
+<li>Espera unos segundos, deberá cargar el Homebrew Launcher.</li>
+</ul>
+<p>Si la Wii U se congela de alguna forma, espera unos 20 segundos. Si no sucede nada, mantén presionado el botón Power de la consola hasta que se apague, vuelve prender la consola, abre el navegador, entra en Ajustes, selecciona un motor de búsqueda, borra las cookies del navegador y vuelve a intentarlo.</p>
+<p>Una vez dentro del Homebrew Launcher y antes de hacer cualquier modificación en la consola es obligatorio hacer un respaldo de la memoria interna.</p>
+<p><a href="?s=cbhc&p=nand_backup">Hacer respaldo</a></p>
+</div>
+</div>
+<div id="cbhc_nand_backup" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Haz un respaldo de la memoria interna de la Wii U</h1>
+<br>
+<p><strong class="red">¡Este paso es obligatorio si usas Coldboot Haxchi (CBHC)!</strong></p>
+<p>En el caso de que algo salga muy mal y la Wii U termine brickeada, restaurar la copia de la memoria interna puede solucionarlo.</p>
+<p>Restaurar la copia de respaldo de la Wii U requiere hardware especial y habilidades de micro soldadura. El respaldo de la memoria interna es único para cada consola, las copias de respaldo de otras consolas no funcionarán.</p>
+<ul>
+<li>Navega a través del Homebrew Launcher y abre Wii U NAND Dumper.</li>
+<li>Usa el D-Pad del Wii U GamePad para ingresar la siguiente configuración:</li>
+<ul>
+<li>Dump SLC (528MB) : yes</li>
+<li>Dump SLCCMPT (528MB) : yes</li>
+<li>Dump MLC (8GB/32GB) : Opcional</li>
+<li>Dump OTP (1KB) : yes</li>
+<li>Dump SEEPROM (1KB) : yes</li>
+</ul>
+<li>Presiona el botón A para iniciar el proceso de copia.</li>
+<li>Cuando se complete el proceso la consola cargará el menú de la Wii U.</li>
+<li>Apaga la consola, saca la tarjeta SD de la Wii U y conéctala a tu dispositivo para copiar los archivos.</li>
+<li>Copia los archivos <code>slc.bin</code>, <code>slccmpt.bin</code>, <code>seeprom.bin</code>, <code>otp.bin</code> y, si elegiste realizar una copia de seguridad completa, todos los archivos <code>mlc.bin.part</code> en tu dispositivo.</li>
+<li>Elimina los archivos de respaldo en la tarjeta SD para liberar espacio.</li>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
+</ul>
+<p>Puedes hacer varias copias de seguridad en servicios de la nube de internet para evitar perder el valioso respaldo de la Wii U.</p>
+<p><a href="?s=cbhc&p=warning">Instalación de Coldboot Haxchi (CBHC)</a></p>
+</div>
+</div>
+<div id="cbhc_warning" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Advertencias para Coldboot Haxchi (CBHC)</h1>
+<br>
+<p>Coldboot Haxchi puede dañar irreversiblemente la Wii U. Sigue al pie de la letra las siguientes reglas:</p>
+<ul>
+<li>¡El juego de Nintendo DS debe instalarse de forma legítima desde la eShop!</li>
+<li>¡No elimines la cuenta de usuario que compró el juego de Nintendo DS!</li>
+<li>¡No desinstales el juego de Nintendo DS sin antes desinstalar correctamente Coldboot Haxchi!</li>
+<li>¡No muevas el juego de Nintendo DS a un dispositivo USB!</li>
+<li>¡No reinstales el mismo juego de Nintendo DS con WUP Installer o desde la eShop!</li>
+<li>¡No reinstales Haxchi mientras tengas instalado Coldboot Haxchi!</li>
+<li>¡No formatees la Wii U mientras tenga instalado Coldboot Haxchi!</li>
+</ul>
+<p><strong class="red">¡Romper una de las reglas anteriores resultará en un brick!</strong></p>
+<p><a href="?s=cbhc&p=install">Continuar con la instalación de Coldboot Haxchi</a></p>
+</div>
+</div>
+<div id="cbhc_install" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Instalación de Coldboot Haxchi (CBHC)</h1>
+<br>
+<p>Ya cargado el Homebrew Launcher como se explicó <a href="?s=cbhc&p=webhack">anteriormente</a>.</p>
+<ul>
+<li>Navega a través del Homebrew Launcher y abre Haxchi.</li>
+<li>Usa el D-Pad del Wii U GamePad para navegar con el cursor hasta el juego en el que deseas inyectar Haxchi.</li>
+<li>Presiona el botón A para instalar Haxchi.</li>
+<li>Completada la instalación, la consola cargará el menú de la Wii U. Veras que el juego fue reemplazado por el ícono de Haxchi.</li>
+<li>Abre el icono de Haxchi, esto cargará Haxchi CFW en la Wii U.</li>
+<li>Vuelve a abrir el icono de Haxchi y mantén presionado el botón A después de iniciarlo, esto cargará el Homebrew Launcher.</li>
+<li>Navega a través del Homebrew Launcher y abre CBHC.</li>
+<li>Usa el D-Pad del Wii U GamePad para navegar con el cursor hasta el juego en el que instalaste Haxchi anteriormente.</li>
+<li>Presiona el botón A para instalar Coldboot Haxchi.</li>
+<li>Completada la instalación, tu consola cargará el menú de la Wii U.</li>
+<li>Reinicia la consola. Si Coldboot Haxchi se instaló correctamente, deberás ver un nuevo menú de inicio.</li>
+<li>Usa el D-Pad del Wii U GamePad para navegar hasta Autoboot: Disabled.</li>
+<li>Presiona el botón A hasta que diga Autoboot: System Menu.</li>
+<li>Usa el D-Pad del Wii U GamePad para navegar hasta Boot System Menu.</li>
+<li>Presiona el botón A. Esto abrirá el menú de la Wii U.</li>
+</ul>
+<p>En caso de que desees desinstalar Coldboot Haxchi consulta como <a href="?s=uninstall_cbhc">desinstalar Coldboot Haxchi (CBHC) correctamente</a>.</p>
+<p><a href="?s=cbhc&p=install_hbl_channel">Instalación del Homebrew Launcher Channel</a></p>
+</div>
+</div>
+<div id="cbhc_install_hbl_channel" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Instalación de Homebrew Launcher Channel</h1>
+<br>
+<p>Instalar Homebrew Launcher Channel (icono en el menú de la Wii U) facilita el acceso para usuarios de Coldboot Haxchi (CBHC).</p>
+<ul>
+<li>Apaga la consola y vuélvela a enciender.</li>
+<li>Presiona el botón Home durante la pantalla de Autobooting... para acceder al menú de Coldboot Haxchi.</li>
+<li>Selecciona Boot Homebrew Launcher para iniciar el Homebrew Launcher.</li>
+<li>Navega a través del Homebrew Launcher y abre WUP Installer GX2.</li>
+<li>Utiliza la pantalla táctil para seleccionar install_channel.</li>
+<li>Presiona Install y confirma con Yes.</li>
+<li>Selecciona NAND como destino de la instalación.</li>
+<li>Finalizado el proceso de instalación presiona Ok y después el botón Home para regresar al Homebrew Launcher.</li>
+<li>Presiona el botón Home y luego toca el botón Salir para regresar al menú de la Wii U.</li>
+</ul>
+<p>Ahora tienes el Homebrew Launcher Channel instalado en el menú de la Wii U.</p>
+<p><a href="?s=cbhc&p=cfw">Cargar Haxchi CFW</a></p>
+</div>
+</div>
+<div id="cbhc_cfw" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Cargar Haxchi CFW</h1>
+<br>
+<p>Desde este momento en cada reinicio la Wii U automáticamente carga Haxchi CFW.</p>
+<p>Con un CFW cargado puedes instalar y correr juegos con tickets falsos (todo el contenido exclusivo de la eShop como DLCs y juegos de la Consola Virtual) así como juegos de otra región y aplicaciones como emuladores.</p>
+<p>Aquí termina la guía de Coldboot Haxchi (CBHC).</p>
+<p><a href="../?s=main">Inicio</a></p>
+</div>
+</div>
+<div id="custom_haxchi" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Personalizar Haxchi</h1>
+<br>
+<h2>Descarga</h2>
+<p>El siguiente enlace dirige a la version más actual del instalador de Haxchi:</p>
+<ul>
+<li><a href="https://apps.fortheusers.org/wiiu/haxchi">Haxchi</a> (Clic en el botón <strong>Download</strong>).</li>
+</ul>
+<p>La estructura de archivos del instalador de Haxchi se divide en dos capetas:</p>
+<ul>
+<li><code>sd:/wiiu/apps/haxchi</code> Contiene el instalador en sí mismo (<code>haxchi.elf</code>).</li>
+<li><code>sd:/haxchi</code> Contiene los archivos de imagen y configuración que se inyectarán en el juego de DS.</li>
+</ul>
+<br>
+<h2>Editar el archivo de configuración (<code>config.txt</code>)</h2>
+<p>Esté archivo se puede editar con el Bloc de notas, cada línea corresponde a un atajo de botón y tiene la estructura:</p>
+<p><code>Botón=Ruta/De/Aplicación.elf</code></p>
+<p>Los botones disponibles son:</p>
+<p><code>a</code>, <code>b</code>, <code>x</code>, <code>y</code>, <code>left</code>, <code>right</code>, <code>up</code>, <code>down</code>, <code>zl</code>, <code>zr</code>, <code>l</code>, <code>r</code>, <code>plus</code>, <code>minus</code> y <code>default</code>.</p>
+<p>Donde <code>default</code> es cuando no presionas ningún botón.</p>
+<p>Las rutas de aplicación tienen como base la raíz de la tarjeta SD. Si tienes una aplicación homebrew <code>miapp.elf</code> en la raíz de la tarjeta SD puedes hacer un atajo así:</p>
+<p><code>x=miapp.elf</code></p>
+<p>La ruta especial sysmenu es la que permite aplicar el CFW interno de Haxchi.</p>
+<p>Por ejemplo:</p>
+<p><a target="_blank" href="../Images/cfg_haxchi/config.png"><img src="../Images/cfg_haxchi/config.png" class="auto_size center"></a></p>
+<p>Con esa configuración:</p>
+<ul>
+<li>Si no presionas ningún botón cargará el CFW interno de Haxchi y regresará al menú de la Wii U.</li>
+<li>Si presionas el botón A del GamePad cargará el Homebrew Launcher.</li>
+<li>Si presionas B cargará WUP Installer GX2.</li>
+<li>Si presionas X cargará HID to VPAD.</li>
+<li>Si presionas Y cargará Spiik.</li>
+<li>Si presionas L cargará sign_c2w_patcher.</li>
+<li>Si presionas R cargará SWAP DRC Lite.</li>
+</ul>
+<br>
+<h2>Editar el archivo de título (<code>title.txt</code>)</h2>
+<p>Al igual que el archivo de configuración esté archivo se puede editar con el Bloc de notas. Cuando pasas sobre el icono de Haxchi, verás su título personalizado. Puedes usar esto para recordar los accesos directos que configuraste o simplemente para poner el texto que quieras.</p>
+<p>Por ejemplo:</p>
+<p><a target="_blank" href="../Images/cfg_haxchi/title.png"><img src="../Images/cfg_haxchi/title.png" class="auto_size center"></a></p>
+<br>
+<h2>Editar el archivo del icono (<code>iconTex.tga</code>)</h2>
+<p>Este archivo lo puedes editar con Photoshop. Puedes usar cualquier imagen como icono, incluso con transparencia, pero debes respetar dos cosas:</p>
+<ul>
+<li>La imagen debe ser de 128x128 pixeles, ni uno más, ni uno menos.</li>
+<li>Debes guardar la imagen en formato Targa (<code>.tga</code>) a 32 bits por pixel, sin ningún tipo de compresión.</li>
+</ul>
+<p><a target="_blank" href="../Images/cfg_haxchi/icon.png"><img src="../Images/cfg_haxchi/icon.png" class="auto_size center"></a></p>
+<br>
+<h2>Editar el archivo de imagen para la TV (bootTvTex.tga)</h2>
+<p>Este archivo lo puedes editar con Photoshop. Puedes usar cualquier imagen, pero en esté caso el resultado no debe tener transparencia de fondo, debes respetar dos cosas:</p>
+<ul>
+<li>La imagen debe ser de 1280x720 pixeles, ni uno más, ni uno menos.</li>
+<li>Debes guardar la imagen en formato Targa (<code>.tga</code>) a 24 bits por pixel, sin ningún tipo de compresión.</li>
+</ul>
+<p><a target="_blank" href="../Images/cfg_haxchi/tv.png"><img src="../Images/cfg_haxchi/tv.png" class="auto_size center"></a></p>
+<br>
+<h2>Editar el archivo de imagen para el GamePad (<code>bootDrcTex.tga</code>)</h2>
+<p>Este archivo lo puedes editar con Photoshop. Igual que la imagen para TV, puedes usar cualquier imagen, pero el resultado no debe tener transparencia de fondo y debes respetar dos cosas:</p>
+<ul>
+<li>La imagen debe ser de 854x480 pixeles, ni uno más, ni uno menos.</li>
+<li>Debes guardar la imagen en formato Targa (<code>.tga</code>) a 24 bits por pixel, sin ningún tipo de compresión.</li>
+</ul>
+<p><a target="_blank" href="../Images/cfg_haxchi/drc.png"><img src="../Images/cfg_haxchi/drc.png" class="auto_size center"></a></p>
+<br>
+<h2>Aplicar la personalización</h2>
+<p>Para cambiar la configuración de Haxchi no es necesario desinstalar y reinstalar todo. Simplemente debes reinstalar Haxchi, el instalador inyectará la nueva configuración e imágenes en el juego de DS, luego bastará con reiniciar la consola para probar los cambios.</p>
+<p>Con la tarjeta SD preparada con los archivos personalizados.</p>
+<ul>
+<li>Carga el Homebrew Launcher como sabes hacerlo.</li>
+<li>Navega a través del Homebrew Launcher y abre Haxchi.</li>
+<li>Usa el D-Pad del Wii U GamePad para navegar con el cursor hasta el juego en el que deseas inyectar Haxchi.</li>
+<li>Presiona el botón A para instalar Haxchi.</li>
+<li>Completada la instalación, la consola cargará el menú de la Wii U.</li>
+</ul>
+<div class="bottomnav">
+<a href="../?s=main" class="previous">&#8249; Inicio</a>
+</div>
+</div>
+</div>
+<div id="config_payload" class="tabcontent" style="display:none;">
+<div class="cont">
+<h1>Personalizar Payload</h1>
+<br>
+<h2>Descarga</h2>
+<p>El siguiente enlace dirige a la version más actual de Configurable Payload:</p>
+<ul>
+<li><a href="https://github.com/GaryOderNichts/configurable-payload/releases/tag/v1">Configurable Payload</a> (Descarga el archivo <code>payload.elf</code>).</li>
+</ul>
+<p>Los archivos de Configurable Payload son dos:</p>
+<ul>
+<li><code>sd:/wiiu/payload.elf</code> Es el payload en sí mismo.</li>
+<li><code>sd:/wiiu/payload.cfg</code> Es el archivo de configuración del payload.</li>
+</ul>
+<br>
+<h2>Editar/Crear el archivo de configuración (<code>payload.cfg</code>)</h2>
+<p>Este archivo se puede editar con el Bloc de notas, cada línea corresponde a un atajo de botón y tiene la estructura:</p>
+<p><code>Botón=Ruta/De/Aplicación.elf</code></p>
+<p>Los botones disponibles son:</p>
+<p><code>a</code>, <code>b</code>, <code>x</code>, <code>y</code>, <code>left</code>, <code>right</code>, <code>up</code>, <code>down</code>, <code>zl</code>, <code>zr</code>, <code>l</code>, <code>r</code>, <code>plus</code>, <code>minus</code> y <code>default</code>.</p>
+<p>Donde <code>default</code> es cuando no presionas ningún botón.</p>
+<p>Las rutas de aplicación tienen como base la raíz de la tarjeta SD. Si tienes una aplicación homebrew <code>miapp.elf</code> en la raíz de la tarjeta SD puedes hacer un atajo así:</p>
+<p><code>x=miapp.elf</code></p>
+<p>Por ejemplo:</p>
+<p><a target="_blank" href="../Images/cfg_payload/cfg.png"><img src="../Images/cfg_payload/cfg.png" class="auto_size center"></a></p>
+<p>Con esa configuración:</p>
+<ul>
+<li>Si no presionas ningún botón cargará Mocha CFW.</li>
+<li>Si presionas el botón A del GamePad cargará el Homebrew Launcher.</li>
+<li>Si presionas B cargará WUP Installer GX2.</li>
+<li>Si presionas X cargará HID to VPAD.</li>
+<li>Si presionas Y cargará Spiik.</li>
+<li>Si presionas L cargará sign_c2w_patcher.</li>
+<li>Si presionas R cargará SWAP DRC Lite.</li>
+</ul>
+<br>
+<h2>Aplicar la personalización</h2>
+<p>La nueva configuración del Payload funcionará la siguiente vez que inicies la consola con la tarjeta SD preparada con el archivo personalizado y ejecutes Indexiine o Webhack.</p>
+<div class="bottomnav">
+<a href="../?s=main" class="previous">&#8249; Inicio</a>
+</div>
+</div>
+</div>
+</div>
+<script src="base_script.js"></script>
+</body>
+</html>

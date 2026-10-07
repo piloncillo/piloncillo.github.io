@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title itemprop="name">Piloncillo para tu Wii U</title>
+<link rel="canonical" href="https://piloncillo.github.io/vWii/" />
+<meta property="og:title" content="Piloncillo para tu Wii U" />
+<meta name="twitter:title" content="Piloncillo para tu Wii U" />
+<meta itemprop="name" content="Piloncillo para tu Wii U" />
+<meta name="application-name" content="Piloncillo para tu Wii U" />
+<meta property="og:site_name" content="Piloncillo para tu Wii U" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<link rel="icon" href="../Images/favicon.png" />
+<meta itemprop="image" property="og:image" content="../Images/favicon.png" />
+<meta name="twitter:image" content="../Images/favicon.png" />
+<link rel="image_src" href="../Images/favicon.png" />
+<link rel="stylesheet" href="../default_style.css" />
+</head>
+<body>
+<div id="sidebar">
+<div id="sidebar_close" onclick="closeSidebar()">&#215;</div>  
+<div id="sidebar_content"></div>
+</div>
+<div id="sidebar_toggle" onclick="toggleSidebar()">&#9776;</div>  
+<div id="content">
+
+<div class="cont">
+
+<h1>Modificación del modo virtual Wii (vWii)</h1>
+<p>En esta sección aprenderás a modificar el modo vWii instalando Homebrew Channel, d2x cIOS, IOS80 Patches, USB Loader GX y Open Shop Channel.</p>
+<div class="info">Si configuraste la Wii U para emular una tarjeta SD en un dispositivo USB, esta configuración no aplica en modo vWii. Las aplicaciones en modo vWii no detectarán ninguna tarjeta SD insertada; sin embargo, detectarán directamente la partición FAT32 en el dispositivo USB. Esto funciona sin problemas, ya que la mayoría del homebrew heredado de Wii es compatible con dispositivos USB en FAT32, salvo dos excepciones notables: CTGP-R y Retro Revolution (que requieren estrictamente una tarjeta SD real).</div>
+<h2>Preparación</h2>
+<div class="warning">Esta sección asume que la Wii U carga Aroma y tiene la HB App Store en el menú de Wii U. Si aún no has modificado tu consola adecuadamente empieza por ahí.</div>
+<p>Si planeas utilizar un dispositivo USB en FAT32 para almacenar juegos de Wii en formato WBFS, conéctalo al puerto USB 0 (el puerto USB superior en la parte trasera de la Wii U). Si utilizas un disco duro con cable Y, asegúrate de conectar el conector de datos principal (normalmente el cable central o más grueso) al puerto USB 0.</p>
+<h3>Fecha y hora</h3>
+<p>Asegúrate de que la fecha y la hora de la consola estén configuradas correctamente.</p>
+<h3>Internet</h3>
+<p>Asegúrate de que la consola esté conectada a Internet y si configuraste un DNS personalizado (por ejemplo, para bloquear actualizaciones o conectar la consola a Pretendo Network), restablece la configuración de DNS a <strong>Automático</strong>.</p>
+<h3>Instalación de vWii Compat Title Installer</h3>
+<p>vWii Compat Title Installer simplifica la modificación de vWii al permitirte instalar los canales, cIOS y herramientas homebrew necesarios directamente desde el modo Wii U.</p>
+<ol>
+<li>Abre <strong>HB App Store</strong> desde el menú de Wii U.</li>
+<li>Toca en Search, busca <code>compat</code> y selecciona <code>vWii Compat Title Installer</code>, de DaThinkingChair.</li>
+<li>Pulsa <strong class="green">A</strong> para descargar.</li>
+<li>Espera a que la descarga e instalación termine.</li>
+<li>Presiona el botón <strong class="green">SELECT ⊝</strong> para salir de HB App Store.</li>
+</ol>
+<h2>Modificación de vWii mediante Express Setup</h2>
+<ol>
+<li>Inicia la aplicación <strong>vWii Compat Installer</strong> desde el menú de Wii U.</li>
+<li>Selecciona <strong class="green">Express Setup</strong> (Instalación Rápida) y presiona <strong class="green">A</strong>.</li>
+<li>Deja todos los componentes marcados (o alterna opciones individuales con <strong class="green">A</strong>).</li>
+<li>Pulsa el botón <strong class="green">START ⊕︀</strong> para proceder con la instalación de los componentes seleccionados.</li>
+<li>Presiona <strong class="green">A</strong> en la opcion <strong class="green">Yes, start installation</strong> (Sí, iniciar instalación).</li>
+<li>Espera a que el proceso termine, una vez finalizada la instalación, revisa el resumen.</li>
+<li><strong class="green">Pulsa cualquier botón para volver al menú principal.</strong></li>
+<li>Pulsa HOME para salir.</li>
+</ol>
+<div class="info">Es posible que la consola se bloquee al salir de vWii Compat Installer. Si la consola se queda colgada, fuerza el apagado de la Wii U (manteniendo pulsado el botón de POWER de la consola, no del Wii U GamePad).</div>
+<p><strong>Lo que instala Express Setup:</strong></p>
+<ul>
+<li><strong>Homebrew Channel:</strong> Permite ejecutar aplicaciones homebrew heredadas de Wii.</li>
+<li><strong>d2x cIOS</strong>: Custom IOS (instalados en las ranuras 248, 249, 250 y 251) son necesarios para que los <em>loaders</em> (cargadores) ejecuten juegos desde la tarjeta SD o dispositivos USB en FAT32.</li>
+<li><strong>IOS80 Patches:</strong> Parches Trucha, ES y FS que permiten ejecutar canales personalizados y <em>forwarders</em> (accesos directos) desde la tarjeta SD o el Menú del sistema de vWii.</li>
+<li><strong>USB Loader GX:</strong> Permite crear copias de seguridad de tus discos de juegos de Wii y jugar dichas copias directamente desde la tarjeta SD o dispositivos USB en FAT32.
+<ul>
+<li>Instala la aplicación en <code>sd:/apps/usbloader_gx</code>.</li>
+<li>Instala el <em>forwarder</em> (<code>UNEO</code>) en el Menú del sistema de vWii.</li>
+<li>Instala la aplicacion <em>forwarder</em> para Aroma (<code>USB-Loader-GX-UNEO.wuhb</code>) en el Menú de Wii U.</li>
+</ul>
+<li><strong>Open Shop Channel:</strong> Descarga LibreShop y Homebrew Browser para descargar aplicaciones homebrew heredadas de Wii adicionales directamente usando la consola.</li>
+</ul>
+<h2>Instalación de aplicaciones homebrew adicionales</h2>
+<p>Se pueden descargar e instalar aplicaciones homebrew heredadas de Wii adicionales directamente usando la consola mediante Open Shop Channel (OSC). Ambos clientes de OSC pueden iniciarse desde el Homebrew Channel en el menú del sistema de vWii:</p>
+<ul>
+<li><strong>LibreShop:</strong> Un cliente moderno basado en texto para Open Shop Channel. Es rápido, ligero y muy estable.</li>
+<li><strong>Homebrew Browser:</strong> El clásico navegador gráfico para homebrew de Wii. Desarrollado originalmente en 2008, ofrece navegación visual y capturas de pantalla, aunque puede resultar más lento y menos estable en redes Wi-Fi modernas.</li>
+</ul>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a>
+</div>
+
+</div>
+
+</div>
+<script src="../base_script.js"></script>
+<script>setAspect();</script>
+</body>
+</html>
+
+

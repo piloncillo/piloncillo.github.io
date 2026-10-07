@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title itemprop="name">Piloncillo para tu Wii U</title>
+<meta property="og:title" content="Piloncillo para tu Wii U" />
+<meta name="twitter:title" content="Piloncillo para tu Wii U" />
+<meta itemprop="name" content="Piloncillo para tu Wii U" />
+<meta name="application-name" content="Piloncillo para tu Wii U" />
+<meta property="og:site_name" content="Piloncillo para tu Wii U" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<link rel="icon" href="../Images/favicon.png" />
+<meta itemprop="image" property="og:image" content="../Images/favicon.png" />
+<meta name="twitter:image" content="../Images/favicon.png" />
+<link rel="image_src" href="../Images/favicon.png" />
+<link rel="stylesheet" href="../default_style.css" />
+</head>
+<body>
+<div id="sidebar">
+<div id="sidebar_close" onclick="closeSidebar()">&#215;</div>  
+<div id="sidebar_content"></div>
+</div>
+<div id="sidebar_toggle" onclick="toggleSidebar()">&#9776;</div>  
+<div id="content">
+
+<div class="cont">
+
+<div class="cont_body">
+<h1>Desinstalar Indexiine</h1>
+<p>Aquí se asume que sabes cómo entrar en el Homebrew Launcher para cargar aplicaciones.</p>
+<p><a href="IndexiineExt.html">Si tu Wii U no puede abrir el Homebrew Launcher sigue los pasos de este enlace para desinstalar Indexiine.</a></p>
+<p>Si tu consola puede abrir el Homebrew Launcher entonces continua con los pasos de abajo.</p>
+<h2>Archivos necesarios</h2>
+<p>Para asegurar que todo salga bien debes preparar y revisar algunos archivos en la tarjeta SD. Así que apaga la consola, saca la tarjeta SD de la Wii U y ponla a tu PC para copiar archivos.</p>
+<h3>Descarga</h3>
+<div class="info">Los siguientes enlaces dirigen a los lanzamientos oficiales de los desarrolladores de cada aplicación, son las versiones estables más recientes.</div>
+<ul>
+<li><a href="https://github.com/GaryOderNichts/indexiine-installer/releases/tag/v2">Indexiine-Installer</a>.</li>
+<ul>
+<li>Únicamente necesitas el archivo <code>indexiine-installer.zip</code>.</li>
+</ul>
+<li><a href="https://drive.google.com/uc?id=149g4RisXhqjAZe3K0VDbTGZtpvt8-oyq">backup-index.html</a>.</li>
+<ul>
+<li>Respaldo del archivo <code>index.html</code> original del navegador.</li>
+</ul>
+</ul>
+<h3>Colocación</h3>
+<p><ins>En toda la tarjeta debe existir una sola carpeta <code>wiiu</code>.</ins> En general siempre se combina la carpeta <code>wiiu</code> del archivo <code>.zip</code> que acabas de descargar con la carpeta <code>wiiu</code> que ya tienes en la raíz de la tarjeta SD, excepto si es la primera vez que colocas una carpeta <code>wiiu</code> en la raíz de la tarjeta SD.</p>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">combinar carpetas</strong> selecciona <strong class="green">sí</strong>.</div>
+<div class="info">Si la PC te pregunta si deseas <strong class="green">reemplazar archivos</strong> selecciona <strong class="green">sí</strong>.</div>
+<ul>
+<li>En este punto debes tener la tarjeta SD conectada a una PC para colocar los archivos.</li>
+<li>Descomprime el archivo <code>indexiine-installer.zip</code>.</li>
+<li>Copia la carpeta <code>wiiu</code> a la raíz de la tarjeta SD.</li>
+<li>Revisa la carpeta <code>sd:/wiiu/apps/indexiine-installer</code>.</li>
+<ul>
+<li>Si tienes un archivo <code>backup-index.html</code> en dicha carpeta entonces remplázalo con el respaldo que descargaste.</li>
+<li>Si no tienes el archivo <code>backup-index.html</code> en dicha carpeta entonces coloca el respaldo que descargaste.</li>
+</ul>
+<li>Extrae la tarjeta SD de forma segura del dispositivo que usaste para hacer la copia de archivos e introdúcela en la ranura de la Wii U con la consola apagada.</li>
+</ul>
+<h2>Desinstalación de Indexiine</h2>
+<p>Al instalar Indexiine se remplaza el archivo index.html del navegador de internet de la Wii U por un archivo modificado. Desinstalar Indexiine es restaurar el archivo index.html original.</p>
+<p>Desinstalar Indexiine se resume en ejecutar la aplicación Indexiine Installer desde el Homebrew Launcher y presionar un botón.</p>
+<h3>Instrucciones</h3>
+<ul>
+<li>En este punto debes tener la Wii U apagada con la tarjeta SD introducida.</li>
+<li><strong class="green">Enciende la consola</strong> y accede al menú de Wii U.</li>
+<li><strong class="green">Abre el Homebrew Launcher</strong> como ya sabes hacerlo.</li>
+<li>Navega por el menú del Homebrew Launcher, <strong class="green">selecciona Indexiine Installer</strong> y toca en <em class="green">Load</em> para cargar la aplicacion.</li>
+<li>Dentro de Indexiine Installer presiona el <strong class="green">botón B</strong> para desinstalar Indexiine.</li>
+<li>Después de que la desinstalación termine regresará automáticamente al Homebrew Launcher.</li>
+<li><strong class="blue">En este punto ya desinstalaste <em>Indexiine</em> correctamente</strong>.</li>
+<li>Si quieres eliminar una aplicación homebrew instalada en el menú de Wii U como el Homebrew Launcher, WUP Installer GX2 o NUSspli puedes borrarla sin ningún problema desde la gestión de datos en la configuración de la consola.</li>
+<li>Opcionalmente haz una copia de respaldo de todo el contenido de la tarjeta SD y borra el contenido de la tarjeta SD. Puedes formatear la tarjeta SD para dejarla limpia.</li>
+</ul>
+<p>Con los pasos anteriores ya puedes instalar en limpio cualquier otra modificación. No es necesario formatear la consola ni hacer nada adicional.</p>
+<div class="bottomnav">
+<a onclick="window.history.back()" class="previous">Regresar</a>
+</div>
+</div>
+
+</div>
+
+</div>
+<script src="../base_script.js"></script>
+<script>setAspect();</script>
+</body>
+</html>
+
